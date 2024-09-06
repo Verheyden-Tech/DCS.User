@@ -2,31 +2,135 @@
 {
     public class User
     {
-        public User(string username, string password)
-        {
-            UserName = username;
-            PassWord = password;
-        }
+        private string username;
+        private string password;
+        private bool isAdmin;
+        private string? owner;
+        private string? firstName;
+        private string? lastName;
+        private string? email;
+        private string? adress;
+        private string? city;
 
-        public string UserName { get; set; }
-        public string PassWord { get; set; }
-    }
-
-    public class UserInfo : User
-    {
-        public UserInfo(string firstName, string lastName, string eMail, string adress, string city, string username, string password) : base(username, password)
+        public User(string userName, string passWord, bool isAdmin, string oWner, string firstname, string lastname, string eMail, string aDress, string cIty)
         {
-            FirstName = firstName;
-            LastName = lastName;
+            UserName = userName;
+            PassWord = passWord;
+            IsAdmin = isAdmin;
+            Owner = oWner;
+            FirstName = firstname;
+            LastName = lastname;
             Email = eMail;
-            Adress = adress;
-            City = city;
+            Adress = aDress;
+            City = cIty;
         }
 
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public string Adress { get; set; }
-        public string City { get; set; }
+        public string UserName
+        {
+            get
+            {
+                return username;
+            }
+            set
+            {
+                username = value;
+            }
+        }
+
+        public string PassWord
+        {
+            get
+            {
+                return password;
+            }
+            set
+            {
+                password = value;
+            }
+        }
+
+        public bool IsAdmin
+        {
+            get
+            {
+                return isAdmin;
+            }
+            set
+            {
+                isAdmin = value;
+            }
+        }
+
+        public string? Owner
+        {
+            get
+            {
+                return owner;
+            }
+            set
+            {
+                owner = value;
+            }
+        }
+
+        public string? FirstName
+        {
+            get
+            {
+                return firstName;
+            }
+            set
+            {
+                firstName = value;
+            }
+        }
+
+        public string? LastName
+        {
+            get
+            {
+                return lastName;
+            }
+            set
+            {
+                lastName = value;
+            }
+        }
+
+        public string? Email
+        {
+            get
+            {
+                return email;
+            }
+            set
+            {
+                email = value;
+            }
+        }
+
+        public string? Adress
+        {
+            get
+            {
+                return adress;
+            }
+            set
+            {
+                adress = value;
+            }
+        }
+
+        public string? City
+        {
+            get
+            {
+                return city;
+            }
+            set
+            {
+                city = value;
+            }
+        }
     }
 }
