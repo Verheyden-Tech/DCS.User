@@ -8,73 +8,33 @@ using Newtonsoft.Json;
 
 namespace UserLibrary
 {
-    internal class UserService : IUserLibrary
+    public class UserService : IUserService
     {
-        public User user;
-
-        private List<User> lstUserList = new List<User>();
-        private const string filePath = "users.json";
-        public User _currentUser;
-
+        private IUserManagementRepository repository;
 
         public UserService()
         {
-            LoadUsers();
-
+            repository = new UserManagementRepository();
         }
 
         public bool Login(string username, string password)
         {
-            _currentUser = lstUserList.FirstOrDefault(u => u.UserName == username && u.PassWord == password);
-            return _currentUser != null;
+            return repository.Login(username, password);
         }
 
-        public bool Register(string username, string password)
+        public void Register(string username, string password, bool isAdmin, string owner, string firstName, string lastName, string eMail, string adress, string city)
         {
-            if (lstUserList.Any(u => u.UserName == username))
-            {
-                return false;
-            }
-
-            lstUserList.Add(new User(username, password));
-            SaveUsers();
-            return true;
-        }
-
-        public bool SetUserInfo(string firstName, string lastName,  string eMail, string adress, string city, string username, string password) 
-        { 
-            if (_currentUser == null)
-            {
-                return false;
-            }
-            lstUserList.Add(new UserInfo(firstName, lastName, eMail, adress, city, username, password));
-            SaveUsers();
-            return true;
+            repository.Register(username, password, isAdmin, owner, firstName, lastName, eMail, adress, city);
         }
 
         public void LoadUsers()
         {
-            if (File.Exists(filePath))
-            {
-                string json = File.ReadAllText(filePath);
-                lstUserList = JsonConvert.DeserializeObject<List<User>>(json);
-            }
+            repository.LoadUsers();
         }
 
         public void SaveUsers()
         {
-            string json = JsonConvert.SerializeObject(lstUserList, Newtonsoft.Json.Formatting.Indented);
-            File.WriteAllText(filePath, json);
-        }
-
-        public User GetCurrentUser()
-        {
-            return _currentUser;
-        }
-
-        public void SetCurrentUser(User user)
-        {
-            _currentUser = user;
+            repository.SaveUsers();
         }
     }
 }
