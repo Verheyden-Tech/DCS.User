@@ -36,6 +36,21 @@ namespace UserLibrary
         {
             repository.SaveUsers();
         }
+
+        public void RegisterCompany(string name, string contact, string phone, string email, string adress, string city, int postalcode, string companytype)
+        {
+            repository.RegisterCompany(name, contact, phone, email, adress, city, postalcode, companytype);
+        }
+
+        public void SaveCompany()
+        {
+            repository.SaveCompany();
+        }
+
+        public void LoadCompanys()
+        {
+            repository.LoadCompanys();
+        }
     }
 }
 
