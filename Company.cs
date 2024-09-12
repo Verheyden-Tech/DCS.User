@@ -12,6 +12,7 @@
         private string? city;
         private int? postalcode;
         private string? companytype;
+        #endregion
 
         public Company(string name, string contact, string phone, string email, string adress, string city, int postalcode, string companytype)
         {
