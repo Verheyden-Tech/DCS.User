@@ -2,23 +2,41 @@
 {
     public class Company
     {
+        #region Private Member
+        private Guid guid;
         private string name;
+        private string? contact;
         private string? phone;
         private string? email;
         private string? adress;
         private string? city;
         private int? postalcode;
         private string? companytype;
+        #endregion
 
-        public Company(string name, string phone, string email, string adress, string city, int postalcode, string companytype)
+        public Company(string name, string contact, string phone, string email, string adress, string city, int postalcode, string companytype)
         {
+            Guid = Guid.NewGuid();
             Name = name;
+            Contact = contact;
             Phone = phone;
             Email = email;
             Adress = adress;
             City = city;
             Postalcode = postalcode;
             Companytype = companytype;
+        }
+
+        public Guid Guid
+        {
+            get
+            {
+                return guid;
+            }
+            set
+            {
+                guid = value;
+            }
         }
 
         public string Name
@@ -30,6 +48,18 @@
             set
             {
                 name = value;
+            }
+        }
+
+        public string? Contact
+        {
+            get
+            {
+                return contact;
+            }
+            set
+            {
+                contact = value;
             }
         }
 
