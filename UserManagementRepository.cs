@@ -65,7 +65,7 @@ namespace UserLibrary
         /// <param name="city"></param>
         /// <param name="postalcode"></param>
         /// <param name="companytype"></param>
-        public void RegisterCompany(string name, string contact, string phone, string email, string adress, string city, int postalcode, string companytype)
+        public void RegisterCompany(string name, string contact, string phone, string email, string adress, string city, string postalcode, string companytype)
         {
             CompanyList.Add(new Company(name, contact, phone, email, adress, city, postalcode, companytype));
             SaveCompany();

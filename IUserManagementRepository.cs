@@ -44,7 +44,7 @@
 
         /// <summary>
         /// Register new company to json file.
-        /// <inheritdoc cref="UserManagementRepository.RegisterCompany(string, string, string, string, string, string, int, string)"/>
+        /// <inheritdoc cref="UserManagementRepository.RegisterCompany(string, string, string, string, string, string, string, string)"/>
         /// </summary>
         /// <param name="name"></param>
         /// <param name="contact"></param>
@@ -54,7 +54,7 @@
         /// <param name="city"></param>
         /// <param name="postalcode"></param>
         /// <param name="companytype"></param>
-        void RegisterCompany(string name, string contact, string phone, string email, string adress, string city, int postalcode, string companytype);
+        void RegisterCompany(string name, string contact, string phone, string email, string adress, string city, string postalcode, string companytype);
 
         /// <summary>
         /// Save company to json file.
