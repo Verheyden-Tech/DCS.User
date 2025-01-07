@@ -1,20 +1,21 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.ObjectModel;
 
 namespace UserLibrary
 {
-    public class UserManagementRepository : IUserManagementRepository
+    public class UserManagementService : IUserManagementService
     {
         #region Private Member
-        private List<User> AccUserList = new List<User>();
+        private ObservableCollection<User> AccUserList = new ObservableCollection<User>();
         private const string filePathUser = "users.json";
-        private List<Company> CompanyList = new List<Company>();
+        private ObservableCollection<Company> CompanyList = new ObservableCollection<Company>();
         private const string filePathCompany = "companys.json";
         #endregion
 
         /// <summary>
         /// User-Management repository, contains methods for User-Account management.
         /// </summary>
-        public UserManagementRepository() 
+        public UserManagementService() 
         {
             LoadUsers();
             LoadCompanys();
@@ -48,10 +49,50 @@ namespace UserLibrary
         /// <param name="eMail"></param>
         /// <param name="adress"></param>
         /// <param name="city"></param>
-        public void Register(string username, string password, bool isAdmin, string owner, string firstName, string lastName, string eMail, string adress, string city)
+        public bool Register(string username, string password, bool isAdmin, string owner, string firstName, string lastName, string eMail, string adress, string city)
         {
-            AccUserList.Add(new User(username, password, isAdmin, owner, firstName, lastName, eMail, adress, city));
+            User newUser = new User
+            {
+                Guid = Guid.NewGuid(),
+                UserName = username,
+                PassWord = password,
+                IsAdmin = isAdmin,
+                Owner = owner,
+                FirstName = firstName,
+                LastName = lastName,
+                Email = eMail,
+                Adress = adress,
+                City = city
+            };
+
+            if(AccUserList.Contains(newUser))
+            {
+                return false;
+            }
+
+            AccUserList.Add(newUser);
             SaveUsers();
+            return true;
+        }
+
+        public bool BaseRegisterUser(string username, string password, bool isAdmin)
+        {
+            User newUser = new User
+            {
+                Guid = Guid.NewGuid(),
+                UserName = username,
+                PassWord = password,
+                IsAdmin = isAdmin
+            };
+
+            if(AccUserList.Contains(newUser))
+            {
+                return false;
+            }
+
+            AccUserList.Add(newUser);
+            SaveUsers();
+            return true;
         }
 
         /// <summary>
@@ -65,60 +106,83 @@ namespace UserLibrary
         /// <param name="city"></param>
         /// <param name="postalcode"></param>
         /// <param name="companytype"></param>
-        public void RegisterCompany(string name, string contact, string phone, string email, string adress, string city, int postalcode, string companytype)
+        public bool RegisterCompany(string name, string contact, string phone, string email, string adress, string city, string postalcode, string companytype)
         {
-            CompanyList.Add(new Company(name, contact, phone, email, adress, city, postalcode, companytype));
+            Company newCompany = new Company
+            {
+                Guid = Guid.NewGuid(),
+                Name = name,
+                Contact = contact,
+                Phone = phone,
+                Email = email,
+                Adress = adress,
+                City = city,
+                Postalcode = postalcode,
+                Companytype = companytype
+            };
+
+            if(CompanyList.Contains(newCompany))
+            {
+                return false;
+            }
+
+            CompanyList.Add(newCompany);
             SaveCompany();
+            return true;
         }
 
         /// <summary>
         /// Load user accounts from json file.
         /// </summary>
-        public void LoadUsers()
+        public ObservableCollection<User> LoadUsers()
         {
             if (File.Exists(filePathUser))
             {
                 string json = File.ReadAllText(filePathUser);
-                AccUserList = JsonConvert.DeserializeObject<List<User>>(json);
+                AccUserList = JsonConvert.DeserializeObject<ObservableCollection<User>>(json);
             }
             else
             {
-                AccUserList = new List<User>();
+                AccUserList = new ObservableCollection<User>();
             }
+            return AccUserList;
         }
 
         /// <summary>
         /// Save user accounts to json file.
         /// </summary>
-        public void SaveUsers()
+        public bool SaveUsers()
         {
             string json = JsonConvert.SerializeObject(AccUserList, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(filePathUser, json);
+            return true;
         }
 
         /// <summary>
         /// Load companys from json file.
         /// </summary>
-        public void LoadCompanys()
+        public ObservableCollection<Company> LoadCompanys()
         {
             if (File.Exists(filePathCompany))
             {
                 string json = File.ReadAllText(filePathCompany);
-                CompanyList = JsonConvert.DeserializeObject<List<Company>>(json);
+                CompanyList = JsonConvert.DeserializeObject<ObservableCollection<Company>>(json);
             }
             else
             {
-                CompanyList = new List<Company>();
+                CompanyList = new ObservableCollection<Company>();
             }
+            return CompanyList;
         }
 
         /// <summary>
         /// Save company to json file.
         /// </summary>
-        public void SaveCompany()
+        public bool SaveCompany()
         {
             string json = JsonConvert.SerializeObject(CompanyList, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(filePathCompany, json);
+            return true;
         }
     }
 }

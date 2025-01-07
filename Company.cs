@@ -2,137 +2,27 @@
 {
     public class Company
     {
-        #region Private Member
-        private Guid guid;
-        private string name;
-        private string? contact;
-        private string? phone;
-        private string? email;
-        private string? adress;
-        private string? city;
-        private int? postalcode;
-        private string? companytype;
-        #endregion
-
-        public Company(string name, string contact, string phone, string email, string adress, string city, int postalcode, string companytype)
+        public Company()
         {
-            Guid = Guid.NewGuid();
-            Name = name;
-            Contact = contact;
-            Phone = phone;
-            Email = email;
-            Adress = adress;
-            City = city;
-            Postalcode = postalcode;
-            Companytype = companytype;
+
         }
 
-        public Guid Guid
-        {
-            get
-            {
-                return guid;
-            }
-            set
-            {
-                guid = value;
-            }
-        }
+        public Guid Guid { get; set; }
 
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-            }
-        }
+        public string Name { get; set; }
 
-        public string? Contact
-        {
-            get
-            {
-                return contact;
-            }
-            set
-            {
-                contact = value;
-            }
-        }
+        public string? Contact { get; set; }
 
-        public string? Phone
-        {
-            get
-            {
-                return phone;
-            }
-            set
-            {
-                phone = value;
-            }
-        }
+        public string? Phone { get; set; }
 
-        public string? Email
-        {
-            get
-            {
-                return email;
-            }
-            set
-            {
-                email = value;
-            }
-        }
+        public string? Email { get; set; }
 
-        public string? Adress
-        {
-            get
-            {
-                return adress;
-            }
-            set
-            {
-                adress = value;
-            }
-        }
+        public string? Adress { get; set; }
 
-        public string? City
-        {
-            get
-            {
-                return city;
-            }
-            set
-            {
-                city = value;
-            }
-        }
+        public string? City { get; set; }
 
-        public int? Postalcode
-        {
-            get
-            {
-                return postalcode;
-            }
-            set
-            {
-                postalcode = value;
-            }
-        }
+        public string? Postalcode { get; set; }
 
-        public string? Companytype
-        {
-            get
-            {
-                return companytype;
-            }
-            set
-            {
-                companytype = value;
-            }
-        }
+        public string? Companytype { get; set; }
     }
 }

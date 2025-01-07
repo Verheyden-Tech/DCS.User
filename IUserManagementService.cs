@@ -1,14 +1,15 @@
-﻿namespace UserLibrary
+﻿using System.Collections.ObjectModel;
+
+namespace UserLibrary
 {
     /// <summary>
-    /// Interface for UserService.
-    /// <inheritdoc cref="UserService"/>
+    /// Interface for UserManagementService.
     /// </summary>
-    public interface IUserService
+    public interface IUserManagementService
     {
         /// <summary>
         /// Bool for user login, checks username and password in json file.
-        /// <inheritdoc cref="UserService.Login(string, string)"/>
+        /// <inheritdoc cref="UserManagementService.Login(string, string)"/>
         /// </summary>
         /// <param name="username"></param>
         /// <param name="password"></param>
@@ -17,7 +18,6 @@
 
         /// <summary>
         /// Register new user-account to json file.
-        /// <inheritdoc cref="UserService.Register(string, string, bool, string, string, string, string, string, string)"/>
         /// </summary>
         /// <param name="username"></param>
         /// <param name="password"></param>
@@ -28,23 +28,25 @@
         /// <param name="eMail"></param>
         /// <param name="adress"></param>
         /// <param name="city"></param>
-        void Register(string username, string password, bool isAdmin, string owner, string firstName, string lastName, string eMail, string adress, string city);
+        bool Register(string username, string password, bool isAdmin, string owner, string firstName, string lastName, string eMail, string adress, string city);
+
+        bool BaseRegisterUser(string username, string password, bool isAdmin);
 
         /// <summary>
         /// Load user accounts from json file.
-        /// <inheritdoc cref="UserService.LoadUsers"/>
+        /// <inheritdoc cref="UserManagementService.LoadUsers"/>
         /// </summary>
-        void LoadUsers();
+        ObservableCollection<User> LoadUsers();
 
         /// <summary>
         /// Save user accounts to json file.
-        /// <inheritdoc cref="UserService.SaveUsers"/>
+        /// <inheritdoc cref="UserManagementService.SaveUsers"/>
         /// </summary>
-        void SaveUsers();
+        bool SaveUsers();
 
         /// <summary>
         /// Register new company to json file.
-        /// <inheritdoc cref="UserService.RegisterCompany(string, string, string, string, string, string, int, string)"/>
+        /// <inheritdoc cref="UserManagementService.RegisterCompany(string, string, string, string, string, string, string, string)"/>
         /// </summary>
         /// <param name="name"></param>
         /// <param name="contact"></param>
@@ -54,18 +56,18 @@
         /// <param name="city"></param>
         /// <param name="postalcode"></param>
         /// <param name="companytype"></param>
-        void RegisterCompany(string name, string contact, string phone, string email, string adress, string city, int postalcode, string companytype);
+        bool RegisterCompany(string name, string contact, string phone, string email, string adress, string city, string postalcode, string companytype);
 
         /// <summary>
         /// Save company to json file.
-        /// <inheritdoc cref="UserService.SaveCompany"/>
+        /// <inheritdoc cref="UserManagementService.LoadCompanys"/>
         /// </summary>
-        void SaveCompany();
+        ObservableCollection<Company> LoadCompanys();
 
         /// <summary>
         /// Load companys from json file.
-        /// <inheritdoc cref="UserService.LoadCompanys"/>
+        /// <inheritdoc cref="UserManagementService.SaveCompany"/>
         /// </summary>
-        void LoadCompanys();
+        bool SaveCompany();
     }
 }
