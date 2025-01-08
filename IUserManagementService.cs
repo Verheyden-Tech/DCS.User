@@ -28,9 +28,9 @@ namespace UserLibrary
         /// <param name="eMail"></param>
         /// <param name="adress"></param>
         /// <param name="city"></param>
-        bool Register(string username, string password, bool isAdmin, string owner, string firstName, string lastName, string eMail, string adress, string city);
+        User Register(string username, string password, bool isAdmin, string owner, string firstName, string lastName, string eMail, string adress, string city);
 
-        bool BaseRegisterUser(string username, string password, bool isAdmin);
+        User BaseRegisterUser(string username, string password, bool isAdmin);
 
         /// <summary>
         /// Load user accounts from json file.
@@ -56,7 +56,7 @@ namespace UserLibrary
         /// <param name="city"></param>
         /// <param name="postalcode"></param>
         /// <param name="companytype"></param>
-        bool RegisterCompany(string name, string contact, string phone, string email, string adress, string city, string postalcode, string companytype);
+        Company RegisterCompany(string name, string contact, string phone, string email, string adress, string city, string postalcode, string companytype);
 
         /// <summary>
         /// Save company to json file.
