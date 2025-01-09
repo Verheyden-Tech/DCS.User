@@ -5,16 +5,16 @@ namespace UserLibrary
 {
     public class UserManagementService : IUserManagementService
     {
-        private ObservableCollection<User> AccUserList;
-        private ObservableCollection<Company> CompanyList;
+        private ObservableCollection<User> accUserList;
+        private ObservableCollection<Company> companyList;
 
         /// <summary>
         /// User-Management repository, contains methods for User-Account management.
         /// </summary>
         public UserManagementService() 
         {
-            AccUserList = new ObservableCollection<User>();
-            CompanyList = new ObservableCollection<Company>();
+            accUserList = new ObservableCollection<User>();
+            companyList = new ObservableCollection<Company>();
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace UserLibrary
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-        public User Register(string username, string password, bool isAdmin, string owner, string firstName, string lastName, string eMail, string adress, string city)
+        public User CreateFullUser(string username, string password, bool isAdmin, string owner, string firstName, string lastName, string eMail, string adress, string city)
         {
             User newUser = new User
             {
@@ -55,7 +55,7 @@ namespace UserLibrary
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-        public User BaseRegisterUser(string username, string password, bool isAdmin)
+        public User CreateBaseUser(string username, string password, bool isAdmin)
         {
             User newUser = new User
             {
@@ -97,13 +97,13 @@ namespace UserLibrary
             if (File.Exists(filePath))
             {
                 string json = File.ReadAllText(filePath);
-                AccUserList = JsonConvert.DeserializeObject<ObservableCollection<User>>(json);
+                var users = JsonConvert.DeserializeObject<ObservableCollection<User>>(json);
+                foreach(var user in users)
+                {
+                    accUserList.Add(user);
+                }
             }
-            else
-            {
-                AccUserList = new ObservableCollection<User>();
-            }
-            return AccUserList;
+            return accUserList;
         }
 
         /// <summary>
@@ -114,13 +114,47 @@ namespace UserLibrary
             if (File.Exists(filePath))
             {
                 string json = File.ReadAllText(filePath);
-                CompanyList = JsonConvert.DeserializeObject<ObservableCollection<Company>>(json);
+                companyList = JsonConvert.DeserializeObject<ObservableCollection<Company>>(json);
             }
-            else
-            {
-                CompanyList = new ObservableCollection<Company>();
-            }
-            return CompanyList;
+            return companyList;
         }
+
+        #region Lists
+        public ObservableCollection<User> AccUserList
+        {
+            get
+            {
+                if(accUserList == null)
+                    accUserList = new ObservableCollection<User>();
+                return accUserList;
+            }
+            set
+            {
+                if(accUserList == null)
+                {
+                    accUserList = new ObservableCollection<User>();
+                }
+                accUserList = value;
+            }
+        }
+
+        public ObservableCollection<Company> CompanyList
+        {
+            get
+            {
+                if (companyList == null)
+                    companyList = new ObservableCollection<Company>();
+                return companyList;
+            }
+            set
+            {
+                if (companyList == null)
+                {
+                    companyList = new ObservableCollection<Company>();
+                }
+                companyList = value;
+            }
+        }
+        #endregion
     }
 }

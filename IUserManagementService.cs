@@ -17,13 +17,13 @@ namespace UserLibrary
         /// Register new user-account to json file.
         /// </summary>
         /// <returns>User instance.</returns>
-        User Register(string username, string password, bool isAdmin, string owner, string firstName, string lastName, string eMail, string adress, string city);
+        User CreateFullUser(string username, string password, bool isAdmin, string owner, string firstName, string lastName, string eMail, string adress, string city);
 
         /// <summary>
         /// Basic register User.
         /// </summary>
         /// <returns>User instance.</returns>
-        User BaseRegisterUser(string username, string password, bool isAdmin);
+        User CreateBaseUser(string username, string password, bool isAdmin);
 
         /// <summary>
         /// Load user accounts from json file.
