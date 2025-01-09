@@ -49,7 +49,7 @@ namespace UserLibrary
         /// <param name="eMail"></param>
         /// <param name="adress"></param>
         /// <param name="city"></param>
-        public bool Register(string username, string password, bool isAdmin, string owner, string firstName, string lastName, string eMail, string adress, string city)
+        public User Register(string username, string password, bool isAdmin, string owner, string firstName, string lastName, string eMail, string adress, string city)
         {
             User newUser = new User
             {
@@ -65,17 +65,10 @@ namespace UserLibrary
                 City = city
             };
 
-            if(AccUserList.Contains(newUser))
-            {
-                return false;
-            }
-
-            AccUserList.Add(newUser);
-            SaveUsers();
-            return true;
+            return newUser;
         }
 
-        public bool BaseRegisterUser(string username, string password, bool isAdmin)
+        public User BaseRegisterUser(string username, string password, bool isAdmin)
         {
             User newUser = new User
             {
@@ -85,14 +78,7 @@ namespace UserLibrary
                 IsAdmin = isAdmin
             };
 
-            if(AccUserList.Contains(newUser))
-            {
-                return false;
-            }
-
-            AccUserList.Add(newUser);
-            SaveUsers();
-            return true;
+            return newUser;
         }
 
         /// <summary>
@@ -106,7 +92,7 @@ namespace UserLibrary
         /// <param name="city"></param>
         /// <param name="postalcode"></param>
         /// <param name="companytype"></param>
-        public bool RegisterCompany(string name, string contact, string phone, string email, string adress, string city, string postalcode, string companytype)
+        public Company RegisterCompany(string name, string contact, string phone, string email, string adress, string city, string postalcode, string companytype)
         {
             Company newCompany = new Company
             {
@@ -121,14 +107,7 @@ namespace UserLibrary
                 Companytype = companytype
             };
 
-            if(CompanyList.Contains(newCompany))
-            {
-                return false;
-            }
-
-            CompanyList.Add(newCompany);
-            SaveCompany();
-            return true;
+            return newCompany;
         }
 
         /// <summary>
