@@ -5,12 +5,10 @@ namespace UserLibrary
 {
     public class UserManagementService : IUserManagementService
     {
-        #region Private Member
         private ObservableCollection<User> AccUserList = new ObservableCollection<User>();
         private const string filePathUser = "users.json";
         private ObservableCollection<Company> CompanyList = new ObservableCollection<Company>();
         private const string filePathCompany = "companys.json";
-        #endregion
 
         /// <summary>
         /// User-Management repository, contains methods for User-Account management.
