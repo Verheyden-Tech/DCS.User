@@ -5,26 +5,21 @@ namespace UserLibrary
 {
     public class UserManagementService : IUserManagementService
     {
-        private ObservableCollection<User> AccUserList = new ObservableCollection<User>();
-        private const string filePathUser = "users.json";
-        private ObservableCollection<Company> CompanyList = new ObservableCollection<Company>();
-        private const string filePathCompany = "companys.json";
+        private ObservableCollection<User> AccUserList;
+        private ObservableCollection<Company> CompanyList;
 
         /// <summary>
         /// User-Management repository, contains methods for User-Account management.
         /// </summary>
         public UserManagementService() 
         {
-            LoadUsers();
-            LoadCompanys();
+            AccUserList = new ObservableCollection<User>();
+            CompanyList = new ObservableCollection<Company>();
         }
 
         /// <summary>
-        /// Bool for user login, checks username and password in json file.
+        /// <inheritdoc/>
         /// </summary>
-        /// <param name="username"></param>
-        /// <param name="password"></param>
-        /// <returns>Wether the login was succesfull.</returns>
         public bool Login(string username, string password)
         {
             var currentUser = AccUserList.FirstOrDefault(u => u.UserName == username && u.PassWord == password);
@@ -36,17 +31,8 @@ namespace UserLibrary
         }
 
         /// <summary>
-        /// Register new user-account to json file.
+        /// <inheritdoc/>
         /// </summary>
-        /// <param name="username"></param>
-        /// <param name="password"></param>
-        /// <param name="isAdmin"></param>
-        /// <param name="owner"></param>
-        /// <param name="firstName"></param>
-        /// <param name="lastName"></param>
-        /// <param name="eMail"></param>
-        /// <param name="adress"></param>
-        /// <param name="city"></param>
         public User Register(string username, string password, bool isAdmin, string owner, string firstName, string lastName, string eMail, string adress, string city)
         {
             User newUser = new User
@@ -66,6 +52,9 @@ namespace UserLibrary
             return newUser;
         }
 
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
         public User BaseRegisterUser(string username, string password, bool isAdmin)
         {
             User newUser = new User
@@ -80,16 +69,8 @@ namespace UserLibrary
         }
 
         /// <summary>
-        /// Register new company to json file.
+        /// <inheritdoc/>
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="contact"></param>
-        /// <param name="phone"></param>
-        /// <param name="email"></param>
-        /// <param name="adress"></param>
-        /// <param name="city"></param>
-        /// <param name="postalcode"></param>
-        /// <param name="companytype"></param>
         public Company RegisterCompany(string name, string contact, string phone, string email, string adress, string city, string postalcode, string companytype)
         {
             Company newCompany = new Company
@@ -109,13 +90,13 @@ namespace UserLibrary
         }
 
         /// <summary>
-        /// Load user accounts from json file.
+        /// <inheritdoc/>
         /// </summary>
-        public ObservableCollection<User> LoadUsers()
+        public ObservableCollection<User> LoadUsers(string filePath)
         {
-            if (File.Exists(filePathUser))
+            if (File.Exists(filePath))
             {
-                string json = File.ReadAllText(filePathUser);
+                string json = File.ReadAllText(filePath);
                 AccUserList = JsonConvert.DeserializeObject<ObservableCollection<User>>(json);
             }
             else
@@ -126,23 +107,13 @@ namespace UserLibrary
         }
 
         /// <summary>
-        /// Save user accounts to json file.
+        /// <inheritdoc/>
         /// </summary>
-        public bool SaveUsers()
+        public ObservableCollection<Company> LoadCompanys(string filePath)
         {
-            string json = JsonConvert.SerializeObject(AccUserList, Newtonsoft.Json.Formatting.Indented);
-            File.WriteAllText(filePathUser, json);
-            return true;
-        }
-
-        /// <summary>
-        /// Load companys from json file.
-        /// </summary>
-        public ObservableCollection<Company> LoadCompanys()
-        {
-            if (File.Exists(filePathCompany))
+            if (File.Exists(filePath))
             {
-                string json = File.ReadAllText(filePathCompany);
+                string json = File.ReadAllText(filePath);
                 CompanyList = JsonConvert.DeserializeObject<ObservableCollection<Company>>(json);
             }
             else
@@ -150,16 +121,6 @@ namespace UserLibrary
                 CompanyList = new ObservableCollection<Company>();
             }
             return CompanyList;
-        }
-
-        /// <summary>
-        /// Save company to json file.
-        /// </summary>
-        public bool SaveCompany()
-        {
-            string json = JsonConvert.SerializeObject(CompanyList, Newtonsoft.Json.Formatting.Indented);
-            File.WriteAllText(filePathCompany, json);
-            return true;
         }
     }
 }
