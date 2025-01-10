@@ -20,14 +20,17 @@ namespace UserLibrary
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-        public bool Login(string username, string password)
+        public User CheckLogin(string username, string password)
         {
             var currentUser = AccUserList.FirstOrDefault(u => u.UserName == username && u.PassWord == password);
             if (currentUser != null)
             {
-                return true;
+                return currentUser;
             }
-            return false;
+            else
+            {
+                return null;
+            }
         }
 
         /// <summary>
@@ -102,8 +105,12 @@ namespace UserLibrary
                 {
                     accUserList.Add(user);
                 }
+                return accUserList;
             }
-            return accUserList;
+            else
+            {
+                return accUserList = new ObservableCollection<User>();
+            }
         }
 
         /// <summary>

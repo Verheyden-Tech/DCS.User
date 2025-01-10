@@ -28,5 +28,7 @@ namespace UserLibrary
         public string? Adress { get; set; }
 
         public string? City { get; set; }
+
+        public bool? IsLoggedIn { get; set; }
     }
 }

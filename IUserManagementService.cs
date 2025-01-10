@@ -11,7 +11,7 @@ namespace UserLibrary
         /// Bool for user login, checks username and password in json file.
         /// </summary>
         /// <returns>Wether the login was succesfull.</returns>
-        bool Login(string username, string password);
+        User CheckLogin(string username, string password);
 
         /// <summary>
         /// Register new user-account to json file.
