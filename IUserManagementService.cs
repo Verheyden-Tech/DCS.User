@@ -8,12 +8,6 @@ namespace UserLibrary
     public interface IUserManagementService
     {
         /// <summary>
-        /// Bool for user login, checks username and password in json file.
-        /// </summary>
-        /// <returns>Wether the login was succesfull.</returns>
-        User CheckLogin(string username, string password);
-
-        /// <summary>
         /// Register new user-account to json file.
         /// </summary>
         /// <returns>User instance.</returns>
@@ -28,7 +22,7 @@ namespace UserLibrary
         /// <summary>
         /// Load user accounts from json file.
         /// </summary>
-        ObservableCollection<User> LoadUsers(string filePath);
+        ObservableCollection<User> LoadUserData(string json);
 
         /// <summary>
         /// Register new company to json file.
@@ -38,6 +32,6 @@ namespace UserLibrary
         /// <summary>
         /// Save company to json file.
         /// </summary>
-        ObservableCollection<Company> LoadCompanys(string filePath);
+        ObservableCollection<Company> LoadCompanys(string json);
     }
 }

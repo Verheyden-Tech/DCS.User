@@ -1,36 +1,16 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections.ObjectModel;
 
 namespace UserLibrary
 {
     public class UserManagementService : IUserManagementService
     {
-        private ObservableCollection<User> accUserList;
-        private ObservableCollection<Company> companyList;
-
         /// <summary>
         /// User-Management repository, contains methods for User-Account management.
         /// </summary>
         public UserManagementService() 
         {
-            accUserList = new ObservableCollection<User>();
-            companyList = new ObservableCollection<Company>();
-        }
-
-        /// <summary>
-        /// <inheritdoc/>
-        /// </summary>
-        public User CheckLogin(string username, string password)
-        {
-            var currentUser = AccUserList.FirstOrDefault(u => u.UserName == username && u.PassWord == password);
-            if (currentUser != null)
-            {
-                return currentUser;
-            }
-            else
-            {
-                return null;
-            }
         }
 
         /// <summary>
@@ -51,7 +31,6 @@ namespace UserLibrary
                 Adress = adress,
                 City = city
             };
-
             return newUser;
         }
 
@@ -67,7 +46,6 @@ namespace UserLibrary
                 PassWord = password,
                 IsAdmin = isAdmin
             };
-
             return newUser;
         }
 
@@ -88,80 +66,51 @@ namespace UserLibrary
                 Postalcode = postalcode,
                 Companytype = companytype
             };
-
             return newCompany;
         }
 
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-        public ObservableCollection<User> LoadUsers(string filePath)
+        public ObservableCollection<User> LoadUserData(string json)
         {
-            if (File.Exists(filePath))
+            var token = JToken.Parse(json);
+
+            if (token.Type == JTokenType.Array)
             {
-                string json = File.ReadAllText(filePath);
-                var users = JsonConvert.DeserializeObject<ObservableCollection<User>>(json);
-                foreach(var user in users)
-                {
-                    accUserList.Add(user);
-                }
-                return accUserList;
+                return JsonConvert.DeserializeObject<ObservableCollection<User>>(json);
+            }
+            else if (token.Type == JTokenType.Object)
+            {
+                var singleUser = JsonConvert.DeserializeObject<User>(json);
+                return new ObservableCollection<User> { singleUser };
             }
             else
             {
-                return accUserList = new ObservableCollection<User>();
+                throw new InvalidOperationException("Unerwartetes JSON-Format.");
             }
         }
 
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-        public ObservableCollection<Company> LoadCompanys(string filePath)
+        public ObservableCollection<Company> LoadCompanys(string json)
         {
-            if (File.Exists(filePath))
-            {
-                string json = File.ReadAllText(filePath);
-                companyList = JsonConvert.DeserializeObject<ObservableCollection<Company>>(json);
-            }
-            return companyList;
-        }
+            var token = JToken.Parse(json);
 
-        #region Lists
-        public ObservableCollection<User> AccUserList
-        {
-            get
+            if (token.Type == JTokenType.Array)
             {
-                if(accUserList == null)
-                    accUserList = new ObservableCollection<User>();
-                return accUserList;
+                return JsonConvert.DeserializeObject<ObservableCollection<Company>>(json);
             }
-            set
+            else if (token.Type == JTokenType.Object)
             {
-                if(accUserList == null)
-                {
-                    accUserList = new ObservableCollection<User>();
-                }
-                accUserList = value;
+                var singleCompany = JsonConvert.DeserializeObject<Company>(json);
+                return new ObservableCollection<Company> { singleCompany };
+            }
+            else
+            {
+                throw new InvalidOperationException("Unerwartetes JSON-Format.");
             }
         }
-
-        public ObservableCollection<Company> CompanyList
-        {
-            get
-            {
-                if (companyList == null)
-                    companyList = new ObservableCollection<Company>();
-                return companyList;
-            }
-            set
-            {
-                if (companyList == null)
-                {
-                    companyList = new ObservableCollection<Company>();
-                }
-                companyList = value;
-            }
-        }
-        #endregion
     }
 }

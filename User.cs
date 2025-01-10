@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography;
-
-namespace UserLibrary
+﻿namespace UserLibrary
 {
     public class User
     {
