@@ -1,4 +1,6 @@
-﻿namespace UserLibrary
+﻿using System.Collections.ObjectModel;
+
+namespace UserLibrary
 {
     public class User
     {
@@ -28,5 +30,11 @@
         public string? City { get; set; }
 
         public bool? IsLoggedIn { get; set; }
+
+        public string? CustomerDataFilePath { get; set; }
+
+        public string? CompanyDataFilePath { get; set; }
+
+        public string? SaveFolderFilePath { get; set; }
     }
 }
