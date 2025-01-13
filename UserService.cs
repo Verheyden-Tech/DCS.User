@@ -20,7 +20,7 @@
         /// Creates new user instance.
         /// </summary>
         /// <returns>User instance.</returns>
-        public User CreateFullUser(string username, string password, bool isAdmin, string firstName = "", string lastName = "", string eMail = "", string adress = "", string city = "")
+        public User CreateFullUser(string username, string password, bool isAdmin = false, string firstName = "", string lastName = "", string eMail = "", string adress = "", string city = "")
         {
             User newUser = new User
             {
@@ -41,7 +41,7 @@
         /// Creates new user with basic account informations.
         /// </summary>
         /// <returns>Base user instance.</returns>
-        public User CreateBaseUser(string username, string password, bool isAdmin)
+        public User CreateBaseUser(string username, string password, bool isAdmin = false)
         {
             User newUser = new User
             {
@@ -57,7 +57,7 @@
         /// Creates a new company instance.
         /// </summary>
         /// <returns>Company instance.</returns>
-        public Company CreateCompany(string name, string contact, string phone, string email, string adress, string city, string postalcode, string companytype)
+        public Company CreateCompany(string name, string contact = "", string phone = "", string email = "", string adress = "", string city = "", string postalcode = "", string companytype = "")
         {
             Company newCompany = new Company
             {
