@@ -1,6 +1,4 @@
-﻿using System.Collections.ObjectModel;
-
-namespace UserLibrary
+﻿namespace UserLibrary
 {
     public class User
     {
@@ -16,8 +14,6 @@ namespace UserLibrary
         public string PassWord { get; set; }
 
         public bool IsAdmin { get; set; }
-
-        public string? Owner { get; set; }
 
         public string? FirstName { get; set; }
 

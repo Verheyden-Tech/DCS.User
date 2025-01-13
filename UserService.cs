@@ -1,8 +1,4 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Collections.ObjectModel;
-
-namespace UserLibrary
+﻿namespace UserLibrary
 {
     public class UserService
     {
@@ -32,7 +28,6 @@ namespace UserLibrary
                 UserName = username,
                 PassWord = password,
                 IsAdmin = isAdmin,
-                Owner = username,
                 FirstName = firstName,
                 LastName = lastName,
                 Email = eMail,
@@ -99,78 +94,6 @@ namespace UserLibrary
                 IsActive = isActive
             };
             return newCustomer;
-        }
-
-        /// <summary>
-        /// Get local user data from json file.
-        /// </summary>
-        /// <param name="json">Json File with user data.</param>
-        /// <returns>List with avialable users.</returns>
-        public ObservableCollection<User> LoadUserData(string json)
-        {
-            var token = JToken.Parse(json);
-
-            if (token.Type == JTokenType.Array)
-            {
-                return JsonConvert.DeserializeObject<ObservableCollection<User>>(json);
-            }
-            else if (token.Type == JTokenType.Object)
-            {
-                var singleUser = JsonConvert.DeserializeObject<User>(json);
-                return new ObservableCollection<User> { singleUser };
-            }
-            else
-            {
-                throw new InvalidOperationException("Unerwartetes JSON-Format.");
-            }
-        }
-
-        /// <summary>
-        /// Get local company data from json file.
-        /// </summary>
-        /// <param name="json">Json File with user data.</param>
-        /// <returns>List with avialable companys.</returns>
-        public ObservableCollection<Company> LoadCompanyData(string json)
-        {
-            var token = JToken.Parse(json);
-
-            if (token.Type == JTokenType.Array)
-            {
-                return JsonConvert.DeserializeObject<ObservableCollection<Company>>(json);
-            }
-            else if (token.Type == JTokenType.Object)
-            {
-                var singleCompany = JsonConvert.DeserializeObject<Company>(json);
-                return new ObservableCollection<Company> { singleCompany };
-            }
-            else
-            {
-                throw new InvalidOperationException("Unerwartetes JSON-Format.");
-            }
-        }
-
-        /// <summary>
-        /// Get local customer data from json file.
-        /// </summary>
-        /// <param name="json">Json File with user data.</param>
-        /// <returns>List with avialable customers.</returns>
-        public ObservableCollection<Customer> LoadCustomerData(string json)
-        {
-            var token = JToken.Parse(json);
-
-            if (token.Type == JTokenType.Array)
-            {
-                return JsonConvert.DeserializeObject<ObservableCollection<Customer>>(json);
-            }
-            else if (token.Type == JTokenType.Object)
-            {
-                var singleCompany = JsonConvert.DeserializeObject<Customer>(json);
-                return new ObservableCollection<Customer> { singleCompany };
-            }
-            else
-            {
-                throw new InvalidOperationException("Unerwartetes JSON-Format.");
-            }
         }
     }
 }
