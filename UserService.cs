@@ -95,5 +95,30 @@
             };
             return newCustomer;
         }
+
+        public Group Creategroup(string name, string description = "", bool isActive  = true)
+        {
+            Group newGroup = new Group
+            {
+                Guid = Guid.NewGuid(),
+                Name = name,
+                Description = description,
+                IsActive = isActive
+            };
+            return newGroup;
+        }
+
+        public Role CreateRole(string roleName, string description = "", bool isAdmin = false, bool isActive = true)
+        {
+            Role newRole = new Role
+            {
+                Guid = Guid.NewGuid(),
+                Name = roleName,
+                Description = description,
+                IsAdmin = isAdmin,
+                IsActive = isActive
+            };
+            return newRole;
+        }
     }
 }
