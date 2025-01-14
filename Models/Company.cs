@@ -24,5 +24,7 @@
         public string? Postalcode { get; set; }
 
         public string? Companytype { get; set; }
+
+        public string? DataOwner { get; set; }
     }
 }

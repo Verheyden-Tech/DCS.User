@@ -78,9 +78,9 @@
         /// Creates a new customer instance.
         /// </summary>
         /// <returns>Customer instance.</returns>
-        public Customer CreateCustomer(string firstName = "", string lastName = "", string mailAddress = "", int phoneNumber = default, string adress = "", string city = "", int postalCode = default, Company? company = null, bool isActive = true)
+        public Contact CreateContact(string firstName = "", string lastName = "", string mailAddress = "", int phoneNumber = default, string adress = "", string city = "", int postalCode = default, string dataOwner = "", string? company = "", bool isActive = true)
         {
-            Customer newCustomer = new Customer
+            Contact newContact = new Contact
             {
                 Guid = Guid.NewGuid(),
                 FirstName = firstName,
@@ -90,13 +90,14 @@
                 Address = adress,
                 City = city,
                 PostalCode = postalCode,
+                DataOwner = dataOwner,
                 Company = company,
                 IsActive = isActive
             };
-            return newCustomer;
+            return newContact;
         }
 
-        public Group Creategroup(string name, string description = "", bool isActive  = true)
+        public Group CreateGroup(string name, string description = "", bool isActive  = true)
         {
             Group newGroup = new Group
             {

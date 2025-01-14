@@ -1,8 +1,8 @@
 ﻿namespace UserLibrary
 {
-    public class Customer
+    public class Contact
     {
-        public Customer() { }
+        public Contact() { }
 
         public Guid Guid { get; set; }
 
@@ -20,7 +20,9 @@
 
         public int? PostalCode { get; set; }
 
-        public Company? Company { get; set; }
+        public string? DataOwner { get; set; }
+
+        public string? Company { get; set; }
 
         public bool? IsActive { get; set; }
     }
