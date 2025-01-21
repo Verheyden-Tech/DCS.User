@@ -1,4 +1,4 @@
-﻿namespace UserLibrary
+﻿namespace DCS.User
 {
     public class User
     {
