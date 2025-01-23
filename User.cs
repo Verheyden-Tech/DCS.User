@@ -19,6 +19,12 @@
 
         public string ContactDataFilePath { get; set; }
 
+        public string PhysicalAdressDataFilePath { get; set; }
+
+        public string EmailAdressDataFilePath { get; set; }
+
+        public string PhoneNumberDataFilePath { get; set; }
+
         public string CompanyDataFilePath { get; set; }
 
         public string SaveFolderFilePath { get; set; }
