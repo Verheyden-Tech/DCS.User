@@ -17,6 +17,8 @@
 
         public bool IsLoggedIn { get; set; }
 
+        public bool IsLocalUser { get; set; }
+
         public string ContactDataFilePath { get; set; }
 
         public string PhysicalAdressDataFilePath { get; set; }
