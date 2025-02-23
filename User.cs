@@ -19,6 +19,11 @@
 
         public bool IsLocalUser { get; set; }
 
+        public DateTime? CreationDate { get; set; }
+
+        public DateTime? SubstitutionEnd { get; set; }
+
+        #region LocalStuff
         public string ContactDataFilePath { get; set; }
 
         public string PhysicalAdressDataFilePath { get; set; }
@@ -30,5 +35,6 @@
         public string CompanyDataFilePath { get; set; }
 
         public string SaveFolderFilePath { get; set; }
+        #endregion
     }
 }
