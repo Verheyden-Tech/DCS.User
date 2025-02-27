@@ -13,6 +13,8 @@
 
         public string PassWord { get; set; }
 
+        public bool KeepLoggedIn { get; set; }
+
         public bool IsAdmin { get; set; }
 
         public bool IsLoggedIn { get; set; }
