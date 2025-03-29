@@ -2,12 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
-	  <Version>1.2.1</Version>
-	  <ApplicationVersion>1.2.1</ApplicationVersion>
+	  <Version>1.2.2</Version>
+	  <ApplicationVersion>1.2.2</ApplicationVersion>
+	  <ProjectGuid>{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}</ProjectGuid>
 	  <OutputType>Library</OutputType>
 	  <Authors>Tobias Verheyden</Authors>
 	  <Description>User management for DCS.</Description>
-	  <PackageTags>DCS.User</PackageTags>
+	  <RootNamespace>DCS.User</RootNamespace>
+	  <AssemblyName>DCS.User</AssemblyName>
+	  <PackageTags>DCS</PackageTags>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -15,6 +18,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageOutputPath>C:\Users\verhe\Desktop\Local.Nuget</PackageOutputPath>
     <EnableNETAnalyzers>True</EnableNETAnalyzers>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
