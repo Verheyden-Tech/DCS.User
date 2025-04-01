@@ -1,48 +1,53 @@
 ﻿using DCS.DefaultTemplates;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace DCS.User.UI
 {
-    public class UserLoginViewModel : ViewModelBase<User>, INotifyPropertyChanged
+    /// <summary>
+    /// ViewModel for the <see cref="UserLogin"/>.
+    /// </summary>
+    public class UserLoginViewModel : ViewModelBase<Guid, User>, INotifyPropertyChanged
     {
-        private IUserLoginService userLoginService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserLoginService>();
+        private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
         private string selectedDB;
         private DefaultCollection<string> userNames;
-        private bool keepLoggedIn;
 
-        public UserLoginViewModel()
-        {
-
-        }
-
-        #region Constructor
-        public UserLoginViewModel(User user) : this()
+        /// <summary>
+        /// Default constuctor initializes a new instance of <see cref="UserLoginViewModel"/>
+        /// </summary>
+        public UserLoginViewModel(User user)
         {
             this.Model = user;
         }
 
-        public UserLoginViewModel(string selectedDB) : this()
-        {
-            this.SelectedDB = selectedDB;
-        }
-        #endregion
-
+        /// <summary>
+        /// Checks if given user credentials equals to the data on the table.
+        /// </summary>
+        /// <param name="username">User name.</param>
+        /// <param name="password">User raw password.</param>
+        /// <returns>Wether the login was succesfull.</returns>
         public bool LoginUser(string username, string password)
         {
-            if(userLoginService.LoginUser(username, password))
+            if(userService.LoginUser(username, password))
             {
                 return true;
             };
             return false;
         }
 
-        public DefaultCollection<string> SetItemsSource(string connectionType)
+        /// <summary>
+        /// Sets the items source for the database selector in the <see cref="UserLogin"/>
+        /// </summary>
+        /// <param name="connectionType">Network enviroment type.</param>
+        /// <returns></returns>
+        public ObservableCollection<string> SetItemsSource(string connectionType)
         {
             userNames = new DefaultCollection<string>();
 
             if(connectionType == "Home")
             {
-                foreach (var user in userLoginService.LoadUsers())
+                foreach (var user in userService.GetAll())
                 {
                     userNames.Add(user.UserName);
                 }
@@ -51,6 +56,9 @@ namespace DCS.User.UI
             return userNames;
         }
 
+        /// <summary>
+        /// Gets or sets the selected database as string.
+        /// </summary>
         public string SelectedDB
         {
             get
@@ -64,6 +72,9 @@ namespace DCS.User.UI
             }
         }
 
+        /// <summary>
+        /// Gets or sets the user name.
+        /// </summary>
         public string UserName
         {
             get
@@ -77,6 +88,9 @@ namespace DCS.User.UI
             }
         }
 
+        /// <summary>
+        /// Indicates if a user shall be keep logged in.
+        /// </summary>
         public bool KeepLoggedIn
         {
             get
@@ -90,6 +104,9 @@ namespace DCS.User.UI
             }
         }
 
+        /// <summary>
+        /// Contains avialable user account names.
+        /// </summary>
         public DefaultCollection<string> UserNames
         {
             get

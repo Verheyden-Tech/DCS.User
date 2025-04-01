@@ -2,22 +2,18 @@
 
 namespace DCS.User
 {
-    public interface IUserRepository
+    /// <summary>
+    /// UserRepository as <see cref="IRepositoryBase{TKey, TModel}"/> to handle user data on the table.
+    /// </summary>
+    public interface IUserRepository : IRepositoryBase<Guid, User>
     {
         /// <summary>
-        /// Gets user instance by its guid.
+        /// Gets a user by its given user name.
         /// </summary>
-        User Get(Guid guid);
-
-        /// <summary>
-        /// Gets user instance by username.
-        /// </summary>
+        /// <param name="userName">Given user name.</param>
+        /// <returns>User by user name.</returns>
+        /// <exception cref="ArgumentNullException">Gets thrown if given UserName is null or empty."</exception>
         User GetByName(string userName);
-
-        /// <summary>
-        /// Gets all avialable users from the table.
-        /// </summary>
-        DefaultCollection<User> GetAll();
 
         /// <summary>
         /// Checks if any user has flag for auto login.
@@ -38,23 +34,5 @@ namespace DCS.User
         /// <param name="user">User to unset keep logged in.</param>
         /// <returns>Wether setting flag to false was succesfull.</returns>
         public bool UnsetKeepLoggedIn(User user);
-
-        /// <summary>
-        /// Saves a new user instance to the table.
-        /// </summary>
-        /// <returns>Wether the save was succesful.</returns>
-        bool New(User obj);
-
-        /// <summary>
-        /// Updates a user instance on the table.
-        /// </summary>
-        /// <returns>Wether the update was succesful.</returns>
-        bool Update(User obj);
-
-        /// <summary>
-        /// Deletes a user instance from the table.
-        /// </summary>
-        /// <returns>Wether the delete was succesful.</returns>
-        bool Delete(Guid guid);
     }
 }

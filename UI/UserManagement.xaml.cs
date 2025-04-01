@@ -1,16 +1,19 @@
 ﻿using DCS.DefaultTemplates;
+using DCS.DefaultViewControls;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using Telerik.Windows.Controls;
 
 namespace DCS.User.UI
 {
     /// <summary>
     /// Interaction logic for UserManagement.xaml
     /// </summary>
-    public partial class UserManagement : UserControl
+    public partial class UserManagement : DefaultAppControl
     {
-        private DefaultCollection<User> users;
+        private ObservableCollection<User> users;
         private IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
         private DataGridCellInfo selectedRow;
         private UserManagementViewModel viewModel;
@@ -19,51 +22,24 @@ namespace DCS.User.UI
         {
             InitializeComponent();
 
-            viewModel = new UserManagementViewModel();
-
             SetContextMenu();
-        }
-
-        public UserManagement(User user)
-        {
-            InitializeComponent();
-
-            viewModel = new UserManagementViewModel(user);
 
             users = new DefaultCollection<User>();
             users = LoadUserData();
-            DataGrid.ItemsSource = users;
+            this.UserGridView.ItemsSource = users;
 
-            SetContextMenu();
+            var obj = new User();
+            
         }
 
-        public DefaultCollection<User> LoadUserData()
+        public UserManagement(User user) : this()
+        {
+            viewModel = new UserManagementViewModel(user);
+        }
+
+        public ObservableCollection<User> LoadUserData()
         {
             return users = userService.GetAll();
-        }
-
-        public DataGrid DataGrid
-        {
-            get
-            {
-                return this.UserDataGrid;
-            }
-            set
-            {
-                this.UserDataGrid = value;
-            }
-        }
-
-        public DataGridCellInfo SelectedRow
-        {
-            get
-            {
-                return selectedRow;
-            }
-            set
-            {
-                selectedRow = value;
-            }
         }
 
         private void SetContextMenu()
@@ -100,15 +76,25 @@ namespace DCS.User.UI
         {
             if(MessageBox.Show("Möchten Sie den Nutzer wirklich löschen?", "Nutzer löschen", MessageBoxButton.YesNo, MessageBoxImage.Hand) == MessageBoxResult.Yes)
             {
-                if(UserDataGrid.SelectedCells.Remove(SelectedRow))
+                try
                 {
-                    DataGrid.Items.Refresh();
+                    foreach (User user in UserGridView.SelectedItems)
+                    {
+                        if (!userService.Delete(user.Guid))
+                        {
+                            MessageBox.Show($"Fehler beim löschen des Benutzers {user.UserName}.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                            LogManager.LogManager.Singleton.Warning($"Error while deleting {user.UserName}.", "DeleteUser");
+                            return;
+                        }
+                    }
+                }
+                catch (IOException ex)
+                {
+                    LogManager.LogManager.Singleton.Error($"Error while trying to delete selected users. {ex.Message}", $"{ex.Source}");
+                    return;
                 }
             }
-            else
-            {
-                return;
-            }
+            return;
         }
 
         private void EditUser_Click(object sender, RoutedEventArgs e)
@@ -121,14 +107,8 @@ namespace DCS.User.UI
             var win = new RegistrateUser();
             if(win.ShowDialog() == true)
             {
-                UserDataGrid.Items.Refresh();
+                UserGridView.Items.Refresh();
             };
-        }
-
-        private void UserDataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
-        {
-            var selectedRow = (sender as DataGrid).SelectedCells as DefaultCollection<User>;
-            
         }
     }
 }

@@ -3,64 +3,47 @@ using DCS.User.Helper;
 
 namespace DCS.User.Service
 {
-    public class UserService : IServiceBase<User, IUserRepository>, IUserService
+    /// <summary>
+    /// UserService with basic methods inherited from <see cref="ServiceBase{TKey, TModel, TRepository}"/> to handle user account data.
+    /// </summary>
+    public class UserService : ServiceBase<Guid, User, IUserRepository>, IUserService
     {
-        private User model;
+        private readonly IUserRepository repository;
 
-        public IUserRepository Repository => CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserRepository>();
-
-        public User Model => model;
-
-        public UserService()
+        /// <summary>
+        /// Default constructor for UserService.
+        /// </summary>
+        /// <param name="repository"><see cref="IUserRepository"/></param>
+        public UserService(IUserRepository repository) : base(repository)
         {
-            
+            this.repository = repository;
         }
 
-        public UserService(User user) : this()
+        /// <inheritdoc/>
+        public User GetByName(string userName)
         {
-            this.model = user;
+            return repository.GetByName(userName);
         }
 
-        public bool Delete(Guid guid)
-        {
-            return Repository.Delete(guid);
-        }
-
+        /// <inheritdoc/>
         public User CheckForKeepLoggedIn()
         {
-            return Repository.CheckForKeepLoggedIn();
+            return repository.CheckForKeepLoggedIn();
         }
 
+        /// <inheritdoc/>
         public bool SetKeepLoggedIn(User user)
         {
-            return Repository.SetKeepLoggedIn(user);
+            return repository.SetKeepLoggedIn(user);
         }
 
+        /// <inheritdoc/>
         public bool UnsetKeepLoggedIn(User user)
         {
-            return Repository.UnsetKeepLoggedIn(user);
+            return repository.UnsetKeepLoggedIn(user);
         }
 
-        public User Get(Guid guid)
-        {
-            return Repository.Get(guid);
-        }
-
-        public DefaultCollection<User> GetAll()
-        {
-            return Repository.GetAll();
-        }
-
-        public bool New(User obj)
-        {
-            return Repository.New(obj);
-        }
-
-        public bool Update(User obj)
-        {
-            return Repository.Update(obj);
-        }
-
+        /// <inheritdoc/>
         public User CreateUser(string userName, string rawPassWord, bool isAdmin, bool keepLoggedIn)
         {
             var hashedPasswort = CryptographyHelper.HashSHA256(rawPassWord);
@@ -76,6 +59,30 @@ namespace DCS.User.Service
             };
 
             return newUser;
+        }
+
+        /// <inheritdoc/>
+        public string GetSha256Hash(string rawPassword)
+        {
+            var hashedPassword = CryptographyHelper.HashSHA256(rawPassword);
+            return hashedPassword;
+        }
+
+        /// <inheritdoc/>
+        public bool LoginUser(string username, string password)
+        {
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+                return false;
+
+            //Get user instance by name to check password.
+            var user = repository.GetByName(username);
+            string hashedPassword = CryptographyHelper.HashSHA256(password);
+
+            if (hashedPassword == user.PassWord)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

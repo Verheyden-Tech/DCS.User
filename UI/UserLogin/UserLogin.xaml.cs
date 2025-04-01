@@ -1,4 +1,5 @@
-﻿using DCS.DefaultViewControls;
+﻿using DCS.DBManager;
+using DCS.DefaultViewControls;
 using DCS.Resource;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -12,13 +13,16 @@ namespace DCS.User.UI
     /// </summary>
     public partial class UserLogin : DefaultMainWindow
     {
-        private IUserLoginService loginService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserLoginService>();
-        private IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
-        private IIconService iconService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IIconService>();
+        private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
+        private readonly IIconService iconService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IIconService>();
+        private readonly IDataBaseManager dataBaseManager = CommonServiceLocator.ServiceLocator.Current.GetInstance<IDataBaseManager>();
         private string connectionString;
         private ObservableCollection<string> dbServers;
         private UserLoginViewModel viewModel;
 
+        /// <summary>
+        /// Default constructor to initializes a new instance of <see cref="UserLogin"/>.
+        /// </summary>
         public UserLogin()
         {
             InitializeComponent();
@@ -34,17 +38,9 @@ namespace DCS.User.UI
             DataContext = viewModel;
         }
 
-        public UserLogin(string connectionString) : this()
-        {
-            this.ConnectionString = connectionString;
-        }
-
-        private void SetImages()
-        {
-            this.DCS_Logo_Image.Source = iconService.GetImage("DCS_Icon_Neu_86x.png");
-            this.DCS_Label_Image.Source = iconService.GetImage("DCS_Label_large.png");
-        }
-
+        /// <summary>
+        /// Represents the current data context for a user instance.
+        /// </summary>
         public UserLoginViewModel Current
         {
             get
@@ -52,11 +48,19 @@ namespace DCS.User.UI
                 return DataContext as UserLoginViewModel;
             }
         }
+
+        #region Private methods/Click handler
+        private void SetImages()
+        {
+            this.DCS_Logo_Image.Source = iconService.GetImage("DCS_Icon_Neu_86x.png");
+            this.DCS_Label_Image.Source = iconService.GetImage("DCS_Label_large.png");
+        }
+
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            if (loginService.LoginUser(UserNameLoginComboBox.Text, PassWordLoginBox.Password))
+            if (userService.LoginUser(UserNameLoginComboBox.Text, PassWordLoginBox.Password))
             {
-                LoggedInUser = loginService.GetUserByName(UserNameLoginComboBox.Text);
+                LoggedInUser = userService.GetByName(UserNameLoginComboBox.Text);
 
                 if (KeepLoggedInCheckBox.IsChecked == true)
                 {
@@ -120,7 +124,7 @@ namespace DCS.User.UI
 
         private void TestDBConnectionButton_Click(object sender, RoutedEventArgs e)
         {
-            if(loginService.TestConnection(ConnectionString))
+            if(dataBaseManager.TestConnection(ConnectionString))
             {
                 MessageBox.Show("DB-Verbindung erfolgreich.", "Erfolg!", MessageBoxButton.OK, MessageBoxImage.Information);
             }
@@ -128,16 +132,6 @@ namespace DCS.User.UI
             {
                 MessageBox.Show("Verbindungsfehler.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
-
-        public User LoggedInUser { get; set; }
-
-        public string SelectedDB { get; set; }
-
-        public string ConnectionString
-        {
-            get => connectionString;
-            set => connectionString = value;
         }
 
         private void ServerComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -177,7 +171,7 @@ namespace DCS.User.UI
             ServerComboBox.SelectionChanged += ServerComboBox_SelectionChanged;
         }
 
-        private string GetConnectionString(string dbName)
+        private static string GetConnectionString(string dbName)
         {
             return dbName switch
             {
@@ -232,6 +226,26 @@ namespace DCS.User.UI
                     comboBox.ClearSelectionButtonVisibility = Visibility.Collapsed;
                 }
             }
+        }
+        #endregion
+
+        /// <summary>
+        /// Represents the current logged in user.
+        /// </summary>
+        public User LoggedInUser { get; set; }
+
+        /// <summary>
+        /// Represents the current selected database.
+        /// </summary>
+        public string SelectedDB { get; set; }
+
+        /// <summary>
+        /// Represents the connection string for the selected database.
+        /// </summary>
+        public string ConnectionString
+        {
+            get => connectionString;
+            set => connectionString = value;
         }
     }
 }

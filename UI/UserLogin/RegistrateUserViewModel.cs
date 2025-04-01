@@ -2,7 +2,7 @@
 
 namespace DCS.User.UI
 {
-    public class RegistrateUserViewModel : ViewModelBase<User>
+    public class RegistrateUserViewModel : ViewModelBase<Guid, User>
     {
         private IUserRepository repository = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserRepository>();
 
@@ -19,7 +19,7 @@ namespace DCS.User.UI
         public bool RegistrateUser(User user)
         {
             if (user == null)
-                throw new ArgumentNullException("user");
+                throw new ArgumentNullException(nameof(user));
 
             if (repository.New(user))
             {
