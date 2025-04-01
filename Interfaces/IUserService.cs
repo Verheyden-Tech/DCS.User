@@ -58,4 +58,5 @@ namespace DCS.User
         /// <returns>Wether setting flag to false was succesfull.</returns>
         public bool UnsetKeepLoggedIn(User user);
     }
+
 }

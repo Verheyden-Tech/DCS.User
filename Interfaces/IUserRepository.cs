@@ -34,5 +34,7 @@ namespace DCS.User
         /// <param name="user">User to unset keep logged in.</param>
         /// <returns>Wether setting flag to false was succesfull.</returns>
         public bool UnsetKeepLoggedIn(User user);
+
+        void Calculate();
     }
 }
