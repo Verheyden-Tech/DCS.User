@@ -47,7 +47,7 @@ namespace DCS.User.UI
 
             if(connectionType == "Home")
             {
-                foreach (var user in userService.GetAll())
+                foreach (var user in userService.Get())
                 {
                     userNames.Add(user.UserName);
                 }
