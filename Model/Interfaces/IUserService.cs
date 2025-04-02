@@ -1,4 +1,6 @@
-﻿namespace DCS.User
+﻿using DCS.DefaultTemplates;
+
+namespace DCS.User
 {
     /// <summary>
     /// UserService to manipulate user data.

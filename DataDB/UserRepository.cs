@@ -1,7 +1,7 @@
 ﻿using DCS.DefaultTemplates;
 using DCS.SQLService;
 
-namespace DCS.User
+namespace DCS.User.DataDB
 {
     /// <summary>
     /// UserRepository with basic methods inherited from <see cref="RepositoryBase{TKey, TModel}"/> to handle user data on the table.
@@ -13,12 +13,12 @@ namespace DCS.User
         /// <summary>
         /// Tablename for the UserRepository.
         /// </summary>
-        public override string TableName => "dbo.UserData";
+        private string TableName => "dbo.UserData";
 
         /// <summary>
         /// PrimaryKeyColumn to identify users on the table.
         /// </summary>
-        public override string PrimaryKeyColumn => "Guid";
+        private string PrimaryKeyColumn => "Guid";
 
         /// <summary>
         /// Default constructor for UserRepository.
@@ -62,6 +62,9 @@ namespace DCS.User
         /// <inheritdoc/>
         public bool UnsetKeepLoggedIn(User user)
         {
+            if (user == null)
+                return false;
+
             var sql = $"UPDATE {TableName} SET KeepLoggedIn = @keepLoggedIn WHERE {PrimaryKeyColumn} = @guid";
 
             return sqlService.ExecuteSQL(sql, new { keepLoggedIn = false, guid = user.Guid });

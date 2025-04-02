@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DCS.User", "DCS.User.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DCS.User.Service", "..\DCS.User.Service\DCS.User.Service.csproj", "{73142D4F-E3BD-4CF2-B25F-D5E5294BE499}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DCS.User.UI", "..\DCS.User.UI\DCS.User.UI.csproj", "{B6B3A877-9FC2-4A07-8219-CACDB0FBE835}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{73142D4F-E3BD-4CF2-B25F-D5E5294BE499}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73142D4F-E3BD-4CF2-B25F-D5E5294BE499}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73142D4F-E3BD-4CF2-B25F-D5E5294BE499}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6B3A877-9FC2-4A07-8219-CACDB0FBE835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6B3A877-9FC2-4A07-8219-CACDB0FBE835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6B3A877-9FC2-4A07-8219-CACDB0FBE835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6B3A877-9FC2-4A07-8219-CACDB0FBE835}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
