@@ -7,9 +7,11 @@
 	  <ProjectGuid>{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}</ProjectGuid>
 	  <OutputType>Library</OutputType>
 	  <Authors>Tobias Verheyden</Authors>
+	  <Company>Verheyden Tech</Company>
 	  <Description>User management for DCS.</Description>
 	  <RootNamespace>DCS.User</RootNamespace>
 	  <AssemblyName>DCS.User</AssemblyName>
+	  <AssemblyType>PlugIn</AssemblyType>
 	  <PackageTags>DCS</PackageTags>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  <UseWPF>true</UseWPF>
@@ -38,11 +40,11 @@
 
   <ItemGroup>
     <PackageReference Include="CommonServiceLocator" Version="2.0.7" />
-    <PackageReference Include="DCS.DefaultTemplates" Version="1.2.4" />
+    <PackageReference Include="DCS.DefaultTemplates" Version="1.3.5" />
     <PackageReference Include="DCS.DefaultViewControls" Version="1.0.2" />
     <PackageReference Include="DCS.LogManager" Version="1.0.5" />
     <PackageReference Include="DCS.Resource" Version="1.0.1" />
-    <PackageReference Include="DCS.SQLService" Version="1.0.9" />
+    <PackageReference Include="DCS.SQLService" Version="1.1.1" />
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -52,9 +54,6 @@
   </ItemGroup>
 
   <ItemGroup>
-	  <Reference Include="DCS.DBManager">
-	    <HintPath>..\DCS.DBManager\bin\Debug\net7.0-windows\DCS.DBManager.dll</HintPath>
-	  </Reference>
 	  <Reference Include="Telerik.Licensing.Runtime">
 		  <HintPath>SharedDLLs\Telerik.Licensing.Runtime.dll</HintPath>
 		  <Private>True</Private>
@@ -127,18 +126,6 @@
 
   <ItemGroup>
     <None Include="C:\Users\verhe\Source\Repos\ElCartmanBra420\UserLibrary\.editorconfig" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="UI\UserLogin\RegistrateUser.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="UI\UserLogin\UserLogin.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="UI\UserManagement.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
   </ItemGroup>
 
 </Project>
