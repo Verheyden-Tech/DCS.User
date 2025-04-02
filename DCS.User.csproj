@@ -43,7 +43,7 @@
     <PackageReference Include="DCS.DefaultViewControls" Version="1.0.2" />
     <PackageReference Include="DCS.LogManager" Version="1.0.5" />
     <PackageReference Include="DCS.Resource" Version="1.0.1" />
-    <PackageReference Include="DCS.SQLService" Version="1.1.0" />
+    <PackageReference Include="DCS.SQLService" Version="1.1.1" />
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
