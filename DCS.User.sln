@@ -6,8 +6,15 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DCS.User", "DCS.User.csproj", "{A67E94D5-BFBE-4763-828A-09D4AA234984}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DCS.User.Service", "..\DCS.User.Service\DCS.User.Service.csproj", "{73142D4F-E3BD-4CF2-B25F-D5E5294BE499}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A67E94D5-BFBE-4763-828A-09D4AA234984} = {A67E94D5-BFBE-4763-828A-09D4AA234984}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DCS.User.UI", "..\DCS.User.UI\DCS.User.UI.csproj", "{B6B3A877-9FC2-4A07-8219-CACDB0FBE835}"
+	ProjectSection(ProjectDependencies) = postProject
+		{73142D4F-E3BD-4CF2-B25F-D5E5294BE499} = {73142D4F-E3BD-4CF2-B25F-D5E5294BE499}
+		{A67E94D5-BFBE-4763-828A-09D4AA234984} = {A67E94D5-BFBE-4763-828A-09D4AA234984}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -11,6 +11,7 @@
 	  <Description>User management for DCS.</Description>
 	  <RootNamespace>DCS.User</RootNamespace>
 	  <AssemblyName>DCS.User</AssemblyName>
+	  <AssemblyType>PlugIn</AssemblyType>
 	  <PackageTags>DCS</PackageTags>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  <UseWPF>true</UseWPF>
@@ -53,9 +54,6 @@
   </ItemGroup>
 
   <ItemGroup>
-	  <Reference Include="DCS.DBManager">
-	    <HintPath>..\..\DCS.DBManager\bin\Debug\net7.0-windows\DCS.DBManager.dll</HintPath>
-	  </Reference>
 	  <Reference Include="Telerik.Licensing.Runtime">
 		  <HintPath>SharedDLLs\Telerik.Licensing.Runtime.dll</HintPath>
 		  <Private>True</Private>
@@ -129,10 +127,5 @@
   <ItemGroup>
     <None Include="C:\Users\verhe\Source\Repos\ElCartmanBra420\UserLibrary\.editorconfig" />
   </ItemGroup>
-
-	<ItemGroup>
-		<Project Include="..\DCS.User.Service\DCS.User.Service.csproj" />
-		<Project Include="..\DCS.User.UI\DCS.User.UI.csproj" />
-	</ItemGroup>
 
 </Project>
