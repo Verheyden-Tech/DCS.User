@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace DCS.User.Helper
+namespace DCS.User
 {
     public class CryptographyHelper
     {

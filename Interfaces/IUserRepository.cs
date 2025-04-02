@@ -3,7 +3,7 @@
 namespace DCS.User
 {
     /// <summary>
-    /// UserRepository as <see cref="IRepositoryBase{TKey, TModel}"/> to handle user data on the table.
+    /// UserRepository to handle user data on the table.
     /// </summary>
     public interface IUserRepository : IRepositoryBase<Guid, User>
     {
@@ -34,7 +34,5 @@ namespace DCS.User
         /// <param name="user">User to unset keep logged in.</param>
         /// <returns>Wether setting flag to false was succesfull.</returns>
         public bool UnsetKeepLoggedIn(User user);
-
-        void Calculate();
     }
 }
