@@ -47,6 +47,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DCS.User.Data\DCS.User.Data.csproj" />
     <ProjectReference Include="..\DCS.User\DCS.User.csproj" />
   </ItemGroup>
 

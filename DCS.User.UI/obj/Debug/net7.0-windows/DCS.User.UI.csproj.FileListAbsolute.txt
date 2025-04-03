@@ -97,3 +97,6 @@ C:\Users\t.verheyden\Source\Repos\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\
 C:\Users\t.verheyden\Source\Repos\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\refint\DCS.User.UI.dll
 C:\Users\t.verheyden\Source\Repos\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\DCS.User.UI.pdb
 C:\Users\t.verheyden\Source\Repos\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\ref\DCS.User.UI.dll
+C:\Users\t.verheyden\source\repos\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.Data.dll
+C:\Users\t.verheyden\source\repos\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.Data.pdb
+C:\Users\t.verheyden\source\repos\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.Data.xml

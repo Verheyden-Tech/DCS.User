@@ -77,7 +77,7 @@ namespace DCS.User.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DCS.User.UI;component/usereditor.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DCS.User.UI;V1.0.2.0;component/usereditor.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UserEditor.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

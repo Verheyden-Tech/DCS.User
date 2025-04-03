@@ -13,6 +13,7 @@
           "DCS.LogManager": "1.0.5",
           "DCS.SQLService": "1.1.1",
           "DCS.User": "1.2.3",
+          "DCS.User.Data": "1.0.0.1",
           "Dapper": "2.1.66",
           "Telerik.Licensing.Runtime": "1.4.10.0",
           "Telerik.Pivot.Core": "2021.1.325.310",
@@ -538,6 +539,20 @@
           }
         }
       },
+      "DCS.User.Data/1.0.0.1": {
+        "dependencies": {
+          "DCS.DefaultTemplates": "1.3.5",
+          "DCS.LogManager": "1.0.5",
+          "DCS.SQLService": "1.1.1",
+          "DCS.User": "1.2.3"
+        },
+        "runtime": {
+          "DCS.User.Data.dll": {
+            "assemblyVersion": "1.0.0.1",
+            "fileVersion": "1.0.0.1"
+          }
+        }
+      },
       "Telerik.Licensing.Runtime/1.4.10.0": {
         "runtime": {
           "Telerik.Licensing.Runtime.dll": {
@@ -1018,6 +1033,11 @@
       "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
     },
     "DCS.User/1.2.3": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DCS.User.Data/1.0.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -868,6 +868,22 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "DCS.User.Data/1.0.0.1": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DCS.DefaultTemplates": "1.3.5",
+          "DCS.LogManager": "1.0.5",
+          "DCS.SQLService": "1.1.1",
+          "DCS.User": "1.2.3"
+        },
+        "compile": {
+          "bin/placeholder/DCS.User.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DCS.User.Data.dll": {}
+        }
+      },
       "DCS.User.Service/1.0.2": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -877,6 +893,7 @@
           "DCS.LogManager": "1.0.5",
           "DCS.SQLService": "1.1.1",
           "DCS.User": "1.2.3",
+          "DCS.User.Data": "1.0.0.1",
           "Dapper": "2.1.66"
         },
         "compile": {
@@ -2354,6 +2371,11 @@
       "path": "../DCS.User/DCS.User.csproj",
       "msbuildProject": "../DCS.User/DCS.User.csproj"
     },
+    "DCS.User.Data/1.0.0.1": {
+      "type": "project",
+      "path": "../DCS.User.Data/DCS.User.Data.csproj",
+      "msbuildProject": "../DCS.User.Data/DCS.User.Data.csproj"
+    },
     "DCS.User.Service/1.0.2": {
       "type": "project",
       "path": "../DCS.User.Service/DCS.User.Service.csproj",
@@ -2383,7 +2405,7 @@
       "projectName": "DCS.User.UI",
       "projectPath": "C:\\Users\\t.verheyden\\source\\repos\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
       "packagesPath": "C:\\Users\\t.verheyden\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\t.verheyden\\Source\\Repos\\DCS-User\\DCS.User.UI\\obj\\",
+      "outputPath": "C:\\Users\\t.verheyden\\source\\repos\\DCS-User\\DCS.User.UI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

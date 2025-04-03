@@ -67,3 +67,6 @@ C:\Users\t.verheyden\Source\Repos\DCS-User\DCS.User.Service\obj\Debug\net7.0-win
 C:\Users\t.verheyden\Source\Repos\DCS-User\DCS.User.Service\obj\Debug\net7.0-windows7.0\DCS.User.Service.xml
 C:\Users\t.verheyden\Source\Repos\DCS-User\DCS.User.Service\obj\Debug\net7.0-windows7.0\DCS.User.Service.pdb
 C:\Users\t.verheyden\Source\Repos\DCS-User\DCS.User.Service\obj\Debug\net7.0-windows7.0\ref\DCS.User.Service.dll
+C:\Users\t.verheyden\source\repos\DCS-User\DCS.User.Service\bin\Debug\net7.0-windows7.0\DCS.User.Data.dll
+C:\Users\t.verheyden\source\repos\DCS-User\DCS.User.Service\bin\Debug\net7.0-windows7.0\DCS.User.Data.pdb
+C:\Users\t.verheyden\source\repos\DCS-User\DCS.User.Service\bin\Debug\net7.0-windows7.0\DCS.User.Data.xml

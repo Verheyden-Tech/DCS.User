@@ -4,39 +4,6 @@
         <name>DCS.User</name>
     </assembly>
     <members>
-        <member name="T:DCS.User.DataDB.UserRepository">
-            <summary>
-            UserRepository with basic methods inherited from <see cref="T:DCS.DefaultTemplates.RepositoryBase`2"/> to handle user data on the table.
-            </summary>
-        </member>
-        <member name="P:DCS.User.DataDB.UserRepository.TableName">
-            <summary>
-            Tablename for the UserRepository.
-            </summary>
-        </member>
-        <member name="P:DCS.User.DataDB.UserRepository.PrimaryKeyColumn">
-            <summary>
-            PrimaryKeyColumn to identify users on the table.
-            </summary>
-        </member>
-        <member name="M:DCS.User.DataDB.UserRepository.#ctor(DCS.SQLService.ISqlService)">
-            <summary>
-            Default constructor for UserRepository.
-            </summary>
-            <param name="sqlService">Sql service.</param>
-        </member>
-        <member name="M:DCS.User.DataDB.UserRepository.GetByName(System.String)">
-            <inheritdoc/>
-        </member>
-        <member name="M:DCS.User.DataDB.UserRepository.CheckForKeepLoggedIn">
-            <inheritdoc/>
-        </member>
-        <member name="M:DCS.User.DataDB.UserRepository.SetKeepLoggedIn(DCS.User.User)">
-            <inheritdoc/>
-        </member>
-        <member name="M:DCS.User.DataDB.UserRepository.UnsetKeepLoggedIn(DCS.User.User)">
-            <inheritdoc/>
-        </member>
         <member name="T:DCS.User.IUserRepository">
             <summary>
             UserRepository to handle user data on the table.

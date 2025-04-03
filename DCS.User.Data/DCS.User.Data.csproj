@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Version>1.0.0.1</Version>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Authors>Tobias Verheyden</Authors>
+    <Company>Verheyden Tech</Company>
+    <Description>Repository database service for DCS.User.</Description>
+	  <RootNamespace>DCS.User</RootNamespace>
+	  <AssemblyName>DCS.User.Data</AssemblyName>
+    <PackageTags>DCS</PackageTags>
+	  <EnableNETAnalyzers>true</EnableNETAnalyzers>
+	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageOutputPath>C:\Users\t.verheyden\Desktop\Local.Nuget_Verheyden</PackageOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DCS.DefaultTemplates" Version="1.3.5" />
+    <PackageReference Include="DCS.LogManager" Version="1.0.5" />
+    <PackageReference Include="DCS.SQLService" Version="1.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DCS.User\DCS.User.csproj" />
+  </ItemGroup>
+
+</Project>

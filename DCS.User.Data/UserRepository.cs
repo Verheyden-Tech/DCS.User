@@ -1,7 +1,7 @@
 ﻿using DCS.DefaultTemplates;
 using DCS.SQLService;
 
-namespace DCS.User.DataDB
+namespace DCS.User.Data
 {
     /// <summary>
     /// UserRepository with basic methods inherited from <see cref="RepositoryBase{TKey, TModel}"/> to handle user data on the table.
@@ -13,12 +13,12 @@ namespace DCS.User.DataDB
         /// <summary>
         /// Tablename for the UserRepository.
         /// </summary>
-        private string TableName => "dbo.UserData";
+        private static string TableName => "dbo.UserData";
 
         /// <summary>
         /// PrimaryKeyColumn to identify users on the table.
         /// </summary>
-        private string PrimaryKeyColumn => "Guid";
+        private static string PrimaryKeyColumn => "Guid";
 
         /// <summary>
         /// Default constructor for UserRepository.
