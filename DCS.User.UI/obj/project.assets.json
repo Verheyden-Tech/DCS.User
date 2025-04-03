@@ -2401,11 +2401,11 @@
   "project": {
     "version": "1.0.1",
     "restore": {
-      "projectUniqueName": "C:\\Users\\t.verheyden\\source\\repos\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
+      "projectUniqueName": "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS.User\\DCS.User.UI\\DCS.User.UI.csproj",
       "projectName": "DCS.User.UI",
-      "projectPath": "C:\\Users\\t.verheyden\\source\\repos\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
+      "projectPath": "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS.User\\DCS.User.UI\\DCS.User.UI.csproj",
       "packagesPath": "C:\\Users\\t.verheyden\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\t.verheyden\\source\\repos\\DCS-User\\DCS.User.UI\\obj\\",
+      "outputPath": "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS.User\\DCS.User.UI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -2431,11 +2431,11 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\t.verheyden\\source\\repos\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj": {
-              "projectPath": "C:\\Users\\t.verheyden\\source\\repos\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj"
+            "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS.User\\DCS.User.Service\\DCS.User.Service.csproj": {
+              "projectPath": "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS.User\\DCS.User.Service\\DCS.User.Service.csproj"
             },
-            "C:\\Users\\t.verheyden\\source\\repos\\DCS-User\\DCS.User\\DCS.User.csproj": {
-              "projectPath": "C:\\Users\\t.verheyden\\source\\repos\\DCS-User\\DCS.User\\DCS.User.csproj"
+            "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS.User\\DCS.User\\DCS.User.csproj": {
+              "projectPath": "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS.User\\DCS.User\\DCS.User.csproj"
             }
           }
         }
@@ -2488,20 +2488,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[7.0.20, 7.0.20]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[7.0.20, 7.0.20]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[7.0.20, 7.0.20]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
