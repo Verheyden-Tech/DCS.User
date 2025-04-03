@@ -4,7 +4,10 @@ using System.Text;
 
 namespace DCS.User
 {
-    public class CryptographyHelper
+    /// <summary>
+    /// Provides methods for encrypting, decrypting, and hashing strings.
+    /// </summary>
+    public static class CryptographyHelper
     {
         private static byte[] EncryptString(byte[] clearText, byte[] Key, byte[] IV)
         {
@@ -18,6 +21,12 @@ namespace DCS.User
             return memoryStream.ToArray();
         }
 
+        /// <summary>
+        /// Encrypts a string using AES encryption with a password.
+        /// </summary>
+        /// <param name="clearText">The string to be encrypted.</param>
+        /// <param name="Password">The password used for encryption.</param>
+        /// <returns>The encrypted string in Base64 format.</returns>
         public static string EncryptString(string clearText, string Password)
         {
             byte[] bytes = Encoding.Unicode.GetBytes(clearText);
@@ -41,6 +50,12 @@ namespace DCS.User
             return memoryStream.ToArray();
         }
 
+        /// <summary>
+        /// Decrypts a string using AES decryption with a password.
+        /// </summary>
+        /// <param name="cipherText">The encrypted string in Base64 format.</param>
+        /// <param name="Password">The password used for decryption.</param>
+        /// <returns>The decrypted string.</returns>
         public static string DecryptString(string cipherText, string Password)
         {
             byte[] cipherData = Convert.FromBase64String(cipherText);
@@ -53,11 +68,22 @@ namespace DCS.User
             return Encoding.Unicode.GetString(bytes);
         }
 
+        /// <summary>
+        /// Hashes a string using SHA256.
+        /// </summary>
+        /// <param name="toHash">raw password to hash.</param>
+        /// <returns>SHA256 hashed string.</returns>
         public static string HashSHA256(string toHash)
         {
             return HashSHA256(toHash, Encoding.UTF8);
         }
 
+        /// <summary>
+        /// Hashes a string using SHA256 with the specified encoding.
+        /// </summary>
+        /// <param name="toHash">The string to hash.</param>
+        /// <param name="encoding">The encoding to use.</param>
+        /// <returns>The SHA256 hashed string.</returns>
         public static string HashSHA256(string toHash, Encoding encoding)
         {
             StringBuilder stringBuilder = new StringBuilder();

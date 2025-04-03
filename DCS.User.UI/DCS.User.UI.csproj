@@ -2,8 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
-	  <Version>1.0.2</Version>
-	  <ApplicationVersion>1.0.2</ApplicationVersion>
+	  <Version>1.0.1.0</Version>
+	  <AssemblyVersion>1.0.1.0</AssemblyVersion>
+	  <ApplicationVersion>1.2.3.0</ApplicationVersion>
 	  <ProjectGuid>{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}</ProjectGuid>
 	  <OutputType>Library</OutputType>
 	  <Authors>Tobias Verheyden</Authors>
@@ -15,6 +16,7 @@
 	  <PackageTags>DCS</PackageTags>
 	  <UseWPF>true</UseWPF>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	  <PackageOutputPath>C:\Users\t.verheyden\Desktop\Local.Nuget_Verheyden</PackageOutputPath>
 	  <EnableNETAnalyzers>True</EnableNETAnalyzers>

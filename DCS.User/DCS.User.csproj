@@ -2,8 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
-	  <Version>1.2.3</Version>
-	  <ApplicationVersion>1.2.3</ApplicationVersion>
+	  <Version>1.0.1.0</Version>
+	  <AssemblyVersion>1.0.1.0</AssemblyVersion>
+	  <ApplicationVersion>1.2.3.0</ApplicationVersion>
 	  <ProjectGuid>{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}</ProjectGuid>
 	  <OutputType>Library</OutputType>
 	  <Authors>Tobias Verheyden</Authors>
@@ -14,6 +15,7 @@
 	  <AssemblyType>PlugIn</AssemblyType>
 	  <PackageTags>DCS</PackageTags>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	  <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -21,6 +23,7 @@
     <PackageOutputPath>C:\Users\t.verheyden\Desktop\Local.Nuget_Verheyden</PackageOutputPath>
     <EnableNETAnalyzers>True</EnableNETAnalyzers>
 	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
+	  <DocumentationFile>Documentation\API.Documentation</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

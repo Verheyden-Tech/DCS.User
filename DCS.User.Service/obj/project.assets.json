@@ -845,7 +845,7 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "DCS.User/1.2.3": {
+      "DCS.User/1.0.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -868,14 +868,14 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "DCS.User.Data/1.0.0.1": {
+      "DCS.User.Data/1.0.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "DCS.DefaultTemplates": "1.3.5",
           "DCS.LogManager": "1.0.5",
           "DCS.SQLService": "1.1.1",
-          "DCS.User": "1.2.3"
+          "DCS.User": "1.0.1"
         },
         "compile": {
           "bin/placeholder/DCS.User.Data.dll": {}
@@ -2347,12 +2347,12 @@
         "version.txt"
       ]
     },
-    "DCS.User/1.2.3": {
+    "DCS.User/1.0.1": {
       "type": "project",
       "path": "../DCS.User/DCS.User.csproj",
       "msbuildProject": "../DCS.User/DCS.User.csproj"
     },
-    "DCS.User.Data/1.0.0.1": {
+    "DCS.User.Data/1.0.1": {
       "type": "project",
       "path": "../DCS.User.Data/DCS.User.Data.csproj",
       "msbuildProject": "../DCS.User.Data/DCS.User.Data.csproj"
@@ -2364,8 +2364,8 @@
       "DCS.DefaultTemplates >= 1.3.5",
       "DCS.LogManager >= 1.0.5",
       "DCS.SQLService >= 1.1.1",
-      "DCS.User >= 1.2.3",
-      "DCS.User.Data >= 1.0.0.1",
+      "DCS.User >= 1.0.1",
+      "DCS.User.Data >= 1.0.1",
       "Dapper >= 2.1.66"
     ]
   },
@@ -2375,7 +2375,7 @@
     "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages": {}
   },
   "project": {
-    "version": "1.0.2",
+    "version": "1.0.1",
     "restore": {
       "projectUniqueName": "C:\\Users\\t.verheyden\\source\\repos\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj",
       "projectName": "DCS.User.Service",

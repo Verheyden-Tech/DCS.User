@@ -4,58 +4,6 @@
         <name>DCS.User.UI</name>
     </assembly>
     <members>
-        <member name="T:DCS.User.UI.UserEditor">
-            <summary>
-            Represents the editor window for <see cref="T:DCS.User.User"/> instances.
-            </summary>
-            <summary>
-            UserEditor
-            </summary>
-        </member>
-        <member name="M:DCS.User.UI.UserEditor.#ctor">
-            <summary>
-            Default constructor initialize a new <see cref="T:DCS.User.UI.UserEditor"/> window.
-            </summary>
-        </member>
-        <member name="M:DCS.User.UI.UserEditor.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:DCS.User.UI.RegistrateUser">
-            <summary>
-            Interaction logic for RegistrateUser.xaml
-            </summary>
-            <summary>
-            RegistrateUser
-            </summary>
-        </member>
-        <member name="M:DCS.User.UI.RegistrateUser.#ctor">
-            <summary>
-            Default constructor for <see cref="T:DCS.User.UI.RegistrateUser"/>.
-            </summary>
-        </member>
-        <member name="M:DCS.User.UI.RegistrateUser.#ctor(System.String)">
-            <summary>
-            Initialize a new instance of <see cref="T:DCS.User.UI.RegistrateUser"/>.
-            </summary>
-            <param name="userName">User name.</param>
-        </member>
-        <member name="P:DCS.User.UI.RegistrateUser.ConnectionString">
-            <summary>
-            Gets or sets the connection string for the database.
-            </summary>
-        </member>
-        <member name="P:DCS.User.UI.RegistrateUser.NewRegistratedUser">
-            <summary>
-            Gets or sets the new registrated user.
-            </summary>
-        </member>
-        <member name="M:DCS.User.UI.RegistrateUser.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
         <member name="T:DCS.User.UI.RegistrateUserViewModel">
             <summary>
             ViewModel for the <see cref="M:DCS.User.UI.RegistrateUserViewModel.RegistrateUser(DCS.User.User)"/> view.
@@ -98,44 +46,6 @@
         <member name="P:DCS.User.UI.RegistrateUserViewModel.IsLocalUser">
             <summary>
             Gets or sets the flag if the user is a local user.
-            </summary>
-        </member>
-        <member name="T:DCS.User.UI.UserLogin">
-            <summary>
-            Interaction logic for UserLogin.xaml
-            </summary>
-            <summary>
-            UserLogin
-            </summary>
-        </member>
-        <member name="M:DCS.User.UI.UserLogin.#ctor">
-            <summary>
-            Default constructor to initializes a new instance of <see cref="T:DCS.User.UI.UserLogin"/>.
-            </summary>
-        </member>
-        <member name="P:DCS.User.UI.UserLogin.Current">
-            <summary>
-            Represents the current data context for a user instance.
-            </summary>
-        </member>
-        <member name="P:DCS.User.UI.UserLogin.LoggedInUser">
-            <summary>
-            Represents the current logged in user.
-            </summary>
-        </member>
-        <member name="P:DCS.User.UI.UserLogin.SelectedDB">
-            <summary>
-            Represents the current selected database.
-            </summary>
-        </member>
-        <member name="P:DCS.User.UI.UserLogin.ConnectionString">
-            <summary>
-            Represents the connection string for the selected database.
-            </summary>
-        </member>
-        <member name="M:DCS.User.UI.UserLogin.InitializeComponent">
-            <summary>
-            InitializeComponent
             </summary>
         </member>
         <member name="T:DCS.User.UI.UserLoginViewModel">
@@ -183,30 +93,6 @@
             Contains avialable user account names.
             </summary>
         </member>
-        <member name="T:DCS.User.UI.UserManagement">
-            <summary>
-            Interaction logic for UserManagement.xaml
-            </summary>
-            <summary>
-            UserManagement
-            </summary>
-        </member>
-        <member name="M:DCS.User.UI.UserManagement.#ctor">
-            <summary>
-            Default constructor for <see cref="T:DCS.User.UI.UserManagement"/>.
-            </summary>
-        </member>
-        <member name="M:DCS.User.UI.UserManagement.LoadUserData">
-            <summary>
-            Load all avialable user data from the table.
-            </summary>
-            <returns>List auf all avialable users.</returns>
-        </member>
-        <member name="M:DCS.User.UI.UserManagement.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
         <member name="T:DCS.User.UI.UserManagementViewModel">
             <summary>
             ViewModel for the <see cref="T:DCS.User.UI.UserManagement"/> view.
@@ -242,6 +128,120 @@
         <member name="P:DCS.User.UI.UserManagementViewModel.IsAdmin">
             <summary>
             Gets or sets the user is admin flag.
+            </summary>
+        </member>
+        <member name="T:DCS.User.UI.RegistrateUser">
+            <summary>
+            Interaction logic for RegistrateUser.xaml
+            </summary>
+            <summary>
+            RegistrateUser
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.RegistrateUser.#ctor">
+            <summary>
+            Default constructor for <see cref="T:DCS.User.UI.RegistrateUser"/>.
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.RegistrateUser.#ctor(System.String)">
+            <summary>
+            Initialize a new instance of <see cref="T:DCS.User.UI.RegistrateUser"/>.
+            </summary>
+            <param name="userName">User name.</param>
+        </member>
+        <member name="P:DCS.User.UI.RegistrateUser.ConnectionString">
+            <summary>
+            Gets or sets the connection string for the database.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.RegistrateUser.NewRegistratedUser">
+            <summary>
+            Gets or sets the new registrated user.
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.RegistrateUser.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:DCS.User.UI.UserEditor">
+            <summary>
+            Represents the editor window for <see cref="T:DCS.User.User"/> instances.
+            </summary>
+            <summary>
+            UserEditor
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.UserEditor.#ctor">
+            <summary>
+            Default constructor initialize a new <see cref="T:DCS.User.UI.UserEditor"/> window.
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.UserEditor.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:DCS.User.UI.UserLogin">
+            <summary>
+            Interaction logic for UserLogin.xaml
+            </summary>
+            <summary>
+            UserLogin
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.UserLogin.#ctor">
+            <summary>
+            Default constructor to initializes a new instance of <see cref="T:DCS.User.UI.UserLogin"/>.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserLogin.Current">
+            <summary>
+            Represents the current data context for a user instance.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserLogin.LoggedInUser">
+            <summary>
+            Represents the current logged in user.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserLogin.SelectedDB">
+            <summary>
+            Represents the current selected database.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserLogin.ConnectionString">
+            <summary>
+            Represents the connection string for the selected database.
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.UserLogin.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:DCS.User.UI.UserManagement">
+            <summary>
+            Interaction logic for UserManagement.xaml
+            </summary>
+            <summary>
+            UserManagement
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.UserManagement.#ctor">
+            <summary>
+            Default constructor for <see cref="T:DCS.User.UI.UserManagement"/>.
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.UserManagement.LoadUserData">
+            <summary>
+            Load all avialable user data from the table.
+            </summary>
+            <returns>List auf all avialable users.</returns>
+        </member>
+        <member name="M:DCS.User.UI.UserManagement.InitializeComponent">
+            <summary>
+            InitializeComponent
             </summary>
         </member>
     </members>
