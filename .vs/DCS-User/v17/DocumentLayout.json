@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\t.verheyden\\source\\repos\\DCS-User\\DCS.User\\",
+  "WorkspaceRootPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\",
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS_User\\DCS.User.Service\\DCS.User.Service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
@@ -26,9 +26,9 @@
               "DocumentIndex": 0,
               "Title": "DCS.User.Service.csproj",
               "DocumentMoniker": "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS_User\\DCS.User.Service\\DCS.User.Service.csproj",
-              "RelativeDocumentMoniker": "..\\..\\DCS\\DCS_User\\DCS.User.Service\\DCS.User.Service.csproj",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\t.verheyden\\source\\repos\\DCS\\DCS_User\\DCS.User.Service\\DCS.User.Service.csproj",
               "ToolTip": "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS_User\\DCS.User.Service\\DCS.User.Service.csproj",
-              "RelativeToolTip": "..\\..\\DCS\\DCS_User\\DCS.User.Service\\DCS.User.Service.csproj",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\t.verheyden\\source\\repos\\DCS\\DCS_User\\DCS.User.Service\\DCS.User.Service.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-04-02T10:35:15.374Z",
               "IsPinned": true
@@ -38,13 +38,17 @@
               "DocumentIndex": 1,
               "Title": "DCS.User.UI.csproj",
               "DocumentMoniker": "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS_User\\DCS.User.UI\\DCS.User.UI.csproj",
-              "RelativeDocumentMoniker": "..\\..\\DCS\\DCS_User\\DCS.User.UI\\DCS.User.UI.csproj",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\t.verheyden\\source\\repos\\DCS\\DCS_User\\DCS.User.UI\\DCS.User.UI.csproj",
               "ToolTip": "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS_User\\DCS.User.UI\\DCS.User.UI.csproj",
-              "RelativeToolTip": "..\\..\\DCS\\DCS_User\\DCS.User.UI\\DCS.User.UI.csproj",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\t.verheyden\\source\\repos\\DCS\\DCS_User\\DCS.User.UI\\DCS.User.UI.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-04-02T08:07:48.027Z",
               "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
             },
             {
               "$type": "Bookmark",
@@ -67,9 +71,9 @@
               "DocumentIndex": 2,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS_User\\DCS.User.Service\\UserService.cs",
-              "RelativeDocumentMoniker": "..\\..\\DCS\\DCS_User\\DCS.User.Service\\UserService.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\t.verheyden\\source\\repos\\DCS\\DCS_User\\DCS.User.Service\\UserService.cs",
               "ToolTip": "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS_User\\DCS.User.Service\\UserService.cs",
-              "RelativeToolTip": "..\\..\\DCS\\DCS_User\\DCS.User.Service\\UserService.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\t.verheyden\\source\\repos\\DCS\\DCS_User\\DCS.User.Service\\UserService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-02T11:34:50.894Z"

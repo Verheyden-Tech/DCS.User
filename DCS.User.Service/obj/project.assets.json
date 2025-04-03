@@ -73,25 +73,6 @@
           }
         }
       },
-      "DCS.DefaultTemplates/1.3.5": {
-        "type": "package",
-        "dependencies": {
-          "CommonServiceLocator": "2.0.7",
-          "DCS.LogManager": "1.0.5",
-          "DCS.SQLService": "1.1.0",
-          "Dapper": "2.1.66"
-        },
-        "compile": {
-          "lib/net7.0-windows7.0/DCS.DefaultTemplates.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0-windows7.0/DCS.DefaultTemplates.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "DCS.DefaultViewControls/1.0.2": {
         "type": "package",
         "dependencies": {
@@ -141,25 +122,6 @@
         "runtime": {
           "lib/net7.0-windows7.0/DCS.Resource.dll": {
             "related": ".runtimeconfig.json;.xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "DCS.SQLService/1.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Data.SqlClient": "5.2.2"
-        },
-        "compile": {
-          "lib/net7.0-windows7.0/DCS.SQLService.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0-windows7.0/DCS.SQLService.dll": {
-            "related": ".xml"
           }
         },
         "frameworkReferences": [
@@ -967,25 +929,12 @@
         "readme.md"
       ]
     },
-    "DCS.DefaultTemplates/1.3.5": {
-      "sha512": "lQl7Ki253ZzrXLJSGtyx6v7ebU2HP4vnUwM+Xfjf0jBqS3H4ac3P2n0pG5YyMyZKIUD1Ellf4sNciiru/dRJxA==",
-      "type": "package",
-      "path": "dcs.defaulttemplates/1.3.5",
-      "files": [
-        ".nupkg.metadata",
-        "dcs.defaulttemplates.1.3.5.nupkg.sha512",
-        "dcs.defaulttemplates.nuspec",
-        "lib/net7.0-windows7.0/DCS.DefaultTemplates.dll",
-        "lib/net7.0-windows7.0/DCS.DefaultTemplates.xml"
-      ]
-    },
     "DCS.DefaultViewControls/1.0.2": {
-      "sha512": "BC3K9KkPxp/oaVYMOH6NG19eg4fKVVWASjZA6gjA9g4EqX4KwVAHsKogubujbYuTijhE6DB9MLh3VxmPD6boMg==",
+      "sha512": "uWRlxtuTgc3C9dlC7it6B/M/jUpVkgLsGoxC/6P3yeGIzEDWQKUOATJmSXMmr/DMZR5zowc3doEnIF6fMAir7g==",
       "type": "package",
       "path": "dcs.defaultviewcontrols/1.0.2",
       "files": [
         ".nupkg.metadata",
-        "DCS_Icon_Neu_32x.png",
         "dcs.defaultviewcontrols.1.0.2.nupkg.sha512",
         "dcs.defaultviewcontrols.nuspec",
         "lib/net7.0-windows7.0/DCS.DefaultViewControls.dll",
@@ -993,7 +942,7 @@
       ]
     },
     "DCS.LogManager/1.0.5": {
-      "sha512": "xTfL+PyXuSXNMGCw7aqYWhNmqYkct681eTDag3CuGZtyY7syjaHrPntaqvm7vJc3lbFVjO6BMrxzO7ars+1AOw==",
+      "sha512": "i8wIZ7JNMNK8tmaTRaiVMTc4ckpW8siqKDw+8W6xpyvqPPOPe+vT45LmOvb4Fy5i39IZAhJYqzuUNZQYAbc4Rg==",
       "type": "package",
       "path": "dcs.logmanager/1.0.5",
       "files": [
@@ -1005,7 +954,7 @@
       ]
     },
     "DCS.Resource/1.0.1": {
-      "sha512": "TiJtf3Squ38XO496ayhaQCAFAuww3amDIn/qXk9aywS9HNGxa/RQ8bGLbD7PinD7+bbGmFPgFMoQ9ca+ZBt5kA==",
+      "sha512": "EgGxrpnoHcEwMB5WKb7pK/QHLFiE/pcXh0UXdmmQxRDD3RqpmLx/pFDY9IviF8R1CUYWBq/rw9njKinnOPgvbg==",
       "type": "package",
       "path": "dcs.resource/1.0.1",
       "files": [
@@ -1015,18 +964,6 @@
         "lib/net7.0-windows7.0/DCS.Resource.dll",
         "lib/net7.0-windows7.0/DCS.Resource.runtimeconfig.json",
         "lib/net7.0-windows7.0/DCS.Resource.xml"
-      ]
-    },
-    "DCS.SQLService/1.1.1": {
-      "sha512": "49WczdnwVETp6uusAXGKXkvoforfVroXTAkQlHHRXfr5KpBWQkneqJ01EJecHVnS1zEfi0rbKF8hm3N3B2Zu5Q==",
-      "type": "package",
-      "path": "dcs.sqlservice/1.1.1",
-      "files": [
-        ".nupkg.metadata",
-        "dcs.sqlservice.1.1.1.nupkg.sha512",
-        "dcs.sqlservice.nuspec",
-        "lib/net7.0-windows7.0/DCS.SQLService.dll",
-        "lib/net7.0-windows7.0/DCS.SQLService.xml"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/9.0.1": {
@@ -2370,25 +2307,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\t.verheyden\\.nuget\\packages\\": {},
+    "C:\\Users\\verhe\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages": {}
   },
   "project": {
     "version": "1.0.1",
     "restore": {
-      "projectUniqueName": "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS.User\\DCS.User.Service\\DCS.User.Service.csproj",
+      "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj",
       "projectName": "DCS.User.Service",
-      "projectPath": "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS.User\\DCS.User.Service\\DCS.User.Service.csproj",
-      "packagesPath": "C:\\Users\\t.verheyden\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS.User\\DCS.User.Service\\obj\\",
+      "projectPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj",
+      "packagesPath": "C:\\Users\\verhe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\t.verheyden\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\verhe\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Telerik UI for WPF.config"
@@ -2398,20 +2335,20 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\t.verheyden\\Desktop\\Local.Nuget": {},
-        "C:\\Users\\t.verheyden\\Desktop\\Local.Nuget_Verheyden": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Users\\verhe\\Desktop\\Local.Nuget": {},
         "https://api.nuget.org/v3/index.json": {},
-        "https://pkgs.dev.azure.com/simplic-cloud/_packaging/simplic-cloud/nuget/v3/index.json": {}
+        "https://nuget.telerik.com/v3/index.json": {}
       },
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows7.0",
           "projectReferences": {
-            "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS.User\\DCS.User.Data\\DCS.User.Data.csproj": {
-              "projectPath": "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS.User\\DCS.User.Data\\DCS.User.Data.csproj"
+            "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj": {
+              "projectPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj"
             },
-            "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS.User\\DCS.User\\DCS.User.csproj": {
-              "projectPath": "C:\\Users\\t.verheyden\\source\\repos\\DCS\\DCS.User\\DCS.User\\DCS.User.csproj"
+            "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj": {
+              "projectPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj"
             }
           }
         }
@@ -2474,6 +2411,24 @@
     }
   },
   "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package DCS.SQLService. No packages exist with this id in source(s): C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages, nuget.org, Telerik, Verheyden",
+      "libraryId": "DCS.SQLService",
+      "targetGraphs": [
+        "net7.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package DCS.DefaultTemplates. No packages exist with this id in source(s): C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages, nuget.org, Telerik, Verheyden",
+      "libraryId": "DCS.DefaultTemplates",
+      "targetGraphs": [
+        "net7.0-windows7.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",
