@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DCS.User.Service</name>
+    </assembly>
+    <members>
+        <member name="T:DCS.User.Service.CurrentUserService">
+            <summary>
+            CurrentUserService to set and get the current logged in user.
+            </summary>
+        </member>
+        <member name="P:DCS.User.Service.CurrentUserService.Instance">
+            <summary>
+            Gets the lazily initialized value for current user instance.
+            </summary>
+        </member>
+        <member name="P:DCS.User.Service.CurrentUserService.CurrentUser">
+            <summary>
+            Gets or sets the current logged in user and lock it after first set for the session.
+            </summary>
+        </member>
+        <member name="M:DCS.User.Service.CurrentUserService.SetUser(DCS.User.User)">
+            <summary>
+            Sets the given user as current logged in user.
+            </summary>
+            <param name="user">Current user.</param>
+        </member>
+        <member name="T:DCS.User.Service.UserService">
+            <summary>
+            UserService with basic methods inherited from <see cref="T:DCS.DefaultTemplates.ServiceBase`3"/> to handle user account data.
+            </summary>
+        </member>
+        <member name="M:DCS.User.Service.UserService.#ctor(DCS.User.IUserRepository)">
+            <summary>
+            Default constructor for UserService.
+            </summary>
+        </member>
+        <member name="M:DCS.User.Service.UserService.GetByName(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCS.User.Service.UserService.CheckForKeepLoggedIn">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCS.User.Service.UserService.SetKeepLoggedIn(DCS.User.User)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCS.User.Service.UserService.UnsetKeepLoggedIn(DCS.User.User)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCS.User.Service.UserService.CreateUser(System.String,System.String,System.Boolean,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCS.User.Service.UserService.GetSha256Hash(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCS.User.Service.UserService.LoginUser(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

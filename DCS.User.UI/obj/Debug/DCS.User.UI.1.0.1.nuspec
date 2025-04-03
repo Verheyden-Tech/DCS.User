@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>DCS.User.UI</id>
+    <version>1.0.1</version>
+    <authors>Tobias Verheyden</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <description>UI for user management in DCS.</description>
+    <tags>DCS</tags>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework="net7.0-windows7.0">
+        <dependency id="DCS.User.Service" version="1.0.1" exclude="Build,Analyzers" />
+        <dependency id="DCS.User" version="1.2.3" exclude="Build,Analyzers" />
+        <dependency id="DCS.DefaultTemplates" version="1.3.5" exclude="Build,Analyzers" />
+        <dependency id="DCS.DefaultViewControls" version="1.0.2" exclude="Build,Analyzers" />
+        <dependency id="DCS.LogManager" version="1.0.5" exclude="Build,Analyzers" />
+        <dependency id="DCS.Resource" version="1.0.1" exclude="Build,Analyzers" />
+        <dependency id="DCS.SQLService" version="1.1.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net7.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\t.verheyden\source\repos\DCS\DCS_User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.UI.dll" target="lib\net7.0-windows7.0\DCS.User.UI.dll" />
+  </files>
+</package>
