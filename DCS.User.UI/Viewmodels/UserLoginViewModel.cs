@@ -1,4 +1,4 @@
-﻿using DCS.DefaultTemplates;
+﻿using DCS.CoreLib.BaseClass;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
@@ -11,7 +11,7 @@ namespace DCS.User.UI
     {
         private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
         private string selectedDB;
-        private DefaultCollection<string> userNames;
+        private ObservableCollection<string> userNames;
 
         /// <summary>
         /// Default constuctor initializes a new instance of <see cref="UserLoginViewModel"/>
@@ -43,7 +43,7 @@ namespace DCS.User.UI
         /// <returns></returns>
         public ObservableCollection<string> SetItemsSource(string connectionType)
         {
-            userNames = new DefaultCollection<string>();
+            userNames = new ObservableCollection<string>();
 
             if(connectionType == "Home")
             {
@@ -107,7 +107,7 @@ namespace DCS.User.UI
         /// <summary>
         /// Contains avialable user account names.
         /// </summary>
-        public DefaultCollection<string> UserNames
+        public ObservableCollection<string> UserNames
         {
             get
             {

@@ -1,10 +1,10 @@
 ﻿DCS.User.UI
-1.0.1.0
+1.0.201.0
 
 library
 C#
 .cs
-C:\Users\t.verheyden\source\repos\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\
 DCS.User
 none
 false
@@ -13,7 +13,7 @@ TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 4801137622
 
 8751230715
-243-1679039152
+244463664782
 Views\RegistrateUser.xaml;Views\UserEditor.xaml;Views\UserLogin.xaml;Views\UserManagement.xaml;
 
 False

@@ -6,7 +6,7 @@
     <members>
         <member name="T:DCS.User.Data.UserRepository">
             <summary>
-            UserRepository with basic methods inherited from <see cref="T:DCS.DefaultTemplates.RepositoryBase`2"/> to handle user data on the table.
+            UserRepository with basic methods inherited from <see cref="T:DCS.CoreLib.BaseClass.RepositoryBase`2"/> to handle user data on the table.
             </summary>
         </member>
         <member name="P:DCS.User.Data.UserRepository.TableName">
@@ -19,7 +19,7 @@
             PrimaryKeyColumn to identify users on the table.
             </summary>
         </member>
-        <member name="M:DCS.User.Data.UserRepository.#ctor(DCS.SQLService.ISqlService)">
+        <member name="M:DCS.User.Data.UserRepository.#ctor(DCS.Data.ISqlService)">
             <summary>
             Default constructor for UserRepository.
             </summary>

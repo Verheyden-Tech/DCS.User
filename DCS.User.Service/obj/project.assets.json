@@ -73,20 +73,45 @@
           }
         }
       },
-      "DCS.DefaultViewControls/1.0.2": {
+      "DCS.CoreLib/1.0.101": {
         "type": "package",
         "dependencies": {
-          "CommonServiceLocator": "2.0.7"
+          "CommonServiceLocator": "2.0.7",
+          "DCS.Data": "1.0.1",
+          "DCS.LogManager": "1.0.5",
+          "Dapper": "2.1.66"
         },
         "compile": {
-          "lib/net7.0-windows7.0/DCS.DefaultViewControls.dll": {
-            "related": ".xml"
-          }
+          "lib/net7.0-windows7.0/DCS.CoreLib.dll": {}
         },
         "runtime": {
-          "lib/net7.0-windows7.0/DCS.DefaultViewControls.dll": {
-            "related": ".xml"
-          }
+          "lib/net7.0-windows7.0/DCS.CoreLib.dll": {}
+        }
+      },
+      "DCS.CoreLib.BaseClass/1.0.101": {
+        "type": "package",
+        "dependencies": {
+          "DCS.CoreLib": "1.0.101",
+          "DCS.Data": "1.0.1"
+        },
+        "compile": {
+          "lib/net7.0-windows7.0/DCS.CoreLib.BaseClass.dll": {}
+        },
+        "runtime": {
+          "lib/net7.0-windows7.0/DCS.CoreLib.BaseClass.dll": {}
+        }
+      },
+      "DCS.Data/1.0.101": {
+        "type": "package",
+        "dependencies": {
+          "DCS.LogManager": "1.0.5",
+          "Microsoft.Data.SqlClient": "5.2.2"
+        },
+        "compile": {
+          "lib/net7.0-windows7.0/DCS.Data.dll": {}
+        },
+        "runtime": {
+          "lib/net7.0-windows7.0/DCS.Data.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
@@ -807,16 +832,15 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "DCS.User/1.0.1": {
+      "DCS.User/1.0.201": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
-          "DCS.DefaultTemplates": "1.3.5",
-          "DCS.DefaultViewControls": "1.0.2",
+          "DCS.CoreLib": "1.0.101",
+          "DCS.Data": "1.0.101",
           "DCS.LogManager": "1.0.5",
           "DCS.Resource": "1.0.1",
-          "DCS.SQLService": "1.1.1",
           "Microsoft.Data.SqlClient": "6.0.1",
           "System.Management": "8.0.0"
         },
@@ -830,14 +854,15 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "DCS.User.Data/1.0.1": {
+      "DCS.User.Data/1.0.201": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "DCS.DefaultTemplates": "1.3.5",
+          "DCS.CoreLib": "1.0.101",
+          "DCS.CoreLib.BaseClass": "1.0.101",
+          "DCS.Data": "1.0.101",
           "DCS.LogManager": "1.0.5",
-          "DCS.SQLService": "1.1.1",
-          "DCS.User": "1.0.1"
+          "DCS.User": "1.0.201"
         },
         "compile": {
           "bin/placeholder/DCS.User.Data.dll": {}
@@ -929,16 +954,37 @@
         "readme.md"
       ]
     },
-    "DCS.DefaultViewControls/1.0.2": {
-      "sha512": "uWRlxtuTgc3C9dlC7it6B/M/jUpVkgLsGoxC/6P3yeGIzEDWQKUOATJmSXMmr/DMZR5zowc3doEnIF6fMAir7g==",
+    "DCS.CoreLib/1.0.101": {
+      "sha512": "hIKn2ZM0BF0029QD9cs7Tiq0oZeoK3FNmFF8ElWkCf29k7ZJ2UiWmmyopDwGb6qxQQt5/50rZlhyBF9ykHztYw==",
       "type": "package",
-      "path": "dcs.defaultviewcontrols/1.0.2",
+      "path": "dcs.corelib/1.0.101",
       "files": [
         ".nupkg.metadata",
-        "dcs.defaultviewcontrols.1.0.2.nupkg.sha512",
-        "dcs.defaultviewcontrols.nuspec",
-        "lib/net7.0-windows7.0/DCS.DefaultViewControls.dll",
-        "lib/net7.0-windows7.0/DCS.DefaultViewControls.xml"
+        "dcs.corelib.1.0.101.nupkg.sha512",
+        "dcs.corelib.nuspec",
+        "lib/net7.0-windows7.0/DCS.CoreLib.dll"
+      ]
+    },
+    "DCS.CoreLib.BaseClass/1.0.101": {
+      "sha512": "CKZil+fXxhZBmHfapKwuG+r2VdQF8daQU6uGF3Iv/SIx+EXJVA5UqqLVOk0HlDd3FSyKNShE0pxv0TWTp8TmKg==",
+      "type": "package",
+      "path": "dcs.corelib.baseclass/1.0.101",
+      "files": [
+        ".nupkg.metadata",
+        "dcs.corelib.baseclass.1.0.101.nupkg.sha512",
+        "dcs.corelib.baseclass.nuspec",
+        "lib/net7.0-windows7.0/DCS.CoreLib.BaseClass.dll"
+      ]
+    },
+    "DCS.Data/1.0.101": {
+      "sha512": "1+4f1jSLy+hGiA0Ed9MSd4LqD0HHHy01eJso8qGvNI/Vy7rGc5kAMa0GsM046FStteRp8NEe3uw8uf157wuW/A==",
+      "type": "package",
+      "path": "dcs.data/1.0.101",
+      "files": [
+        ".nupkg.metadata",
+        "dcs.data.1.0.101.nupkg.sha512",
+        "dcs.data.nuspec",
+        "lib/net7.0-windows7.0/DCS.Data.dll"
       ]
     },
     "DCS.LogManager/1.0.5": {
@@ -2284,12 +2330,12 @@
         "version.txt"
       ]
     },
-    "DCS.User/1.0.1": {
+    "DCS.User/1.0.201": {
       "type": "project",
       "path": "../DCS.User/DCS.User.csproj",
       "msbuildProject": "../DCS.User/DCS.User.csproj"
     },
-    "DCS.User.Data/1.0.1": {
+    "DCS.User.Data/1.0.201": {
       "type": "project",
       "path": "../DCS.User.Data/DCS.User.Data.csproj",
       "msbuildProject": "../DCS.User.Data/DCS.User.Data.csproj"
@@ -2298,11 +2344,12 @@
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
       "CommonServiceLocator >= 2.0.7",
-      "DCS.DefaultTemplates >= 1.3.5",
+      "DCS.CoreLib >= 1.0.101",
+      "DCS.CoreLib.BaseClass >= 1.0.101",
+      "DCS.Data >= 1.0.101",
       "DCS.LogManager >= 1.0.5",
-      "DCS.SQLService >= 1.1.1",
-      "DCS.User >= 1.0.1",
-      "DCS.User.Data >= 1.0.1",
+      "DCS.User >= 1.0.201",
+      "DCS.User.Data >= 1.0.201",
       "Dapper >= 2.1.66"
     ]
   },
@@ -2312,7 +2359,7 @@
     "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages": {}
   },
   "project": {
-    "version": "1.0.1",
+    "version": "1.0.201",
     "restore": {
       "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj",
       "projectName": "DCS.User.Service",
@@ -2373,17 +2420,21 @@
             "target": "Package",
             "version": "[2.0.7, )"
           },
-          "DCS.DefaultTemplates": {
+          "DCS.CoreLib": {
             "target": "Package",
-            "version": "[1.3.5, )"
+            "version": "[1.0.101, )"
+          },
+          "DCS.CoreLib.BaseClass": {
+            "target": "Package",
+            "version": "[1.0.101, )"
+          },
+          "DCS.Data": {
+            "target": "Package",
+            "version": "[1.0.101, )"
           },
           "DCS.LogManager": {
             "target": "Package",
             "version": "[1.0.5, )"
-          },
-          "DCS.SQLService": {
-            "target": "Package",
-            "version": "[1.1.1, )"
           },
           "Dapper": {
             "target": "Package",
@@ -2411,24 +2462,6 @@
     }
   },
   "logs": [
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Unable to find package DCS.SQLService. No packages exist with this id in source(s): C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages, nuget.org, Telerik, Verheyden",
-      "libraryId": "DCS.SQLService",
-      "targetGraphs": [
-        "net7.0-windows7.0"
-      ]
-    },
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Unable to find package DCS.DefaultTemplates. No packages exist with this id in source(s): C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages, nuget.org, Telerik, Verheyden",
-      "libraryId": "DCS.DefaultTemplates",
-      "targetGraphs": [
-        "net7.0-windows7.0"
-      ]
-    },
     {
       "code": "NU1701",
       "level": "Warning",

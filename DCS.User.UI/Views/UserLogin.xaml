@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
-        xmlns:local="clr-namespace:DCS.User"
-        xmlns:win="clr-namespace:DCS.DefaultViewControls;assembly=DCS.DefaultViewControls"
+        xmlns:local="clr-namespace:DCS.User.UI"
+        xmlns:win="clr-namespace:DCS.CoreLib.View;assembly=DCS.CoreLib.View"
         xmlns:resource="clr-namespace:DCS.Resource;assembly=DCS.Resource"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" KeyDown="DefaultMainWindow_KeyDown"
         Title="DCS" MinHeight="300" MinWidth="600" SizeToContent="WidthAndHeight">

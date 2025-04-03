@@ -1,9 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
-	  <Version>1.0.1.0</Version>
-	  <AssemblyVersion>1.0.1.0</AssemblyVersion>
+	  <Version>1.0.201.0</Version>
+	  <AssemblyVersion>1.0.201.0</AssemblyVersion>
 	  <ApplicationVersion>1.2.3.0</ApplicationVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Authors>Tobias Verheyden</Authors>
@@ -20,13 +20,14 @@
 	  <DocumentationFile>Documentation\API.Documentation</DocumentationFile>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackageOutputPath>C:\Users\t.verheyden\Desktop\Local.Nuget_Verheyden</PackageOutputPath>
+    <PackageOutputPath>C:\Users\verhe\Desktop\Local.Nuget</PackageOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DCS.DefaultTemplates" Version="1.3.5" />
+    <PackageReference Include="DCS.CoreLib" Version="1.0.101" />
+    <PackageReference Include="DCS.CoreLib.BaseClass" Version="1.0.101" />
+    <PackageReference Include="DCS.Data" Version="1.0.101" />
     <PackageReference Include="DCS.LogManager" Version="1.0.5" />
-    <PackageReference Include="DCS.SQLService" Version="1.1.1" />
   </ItemGroup>
 
   <ItemGroup>

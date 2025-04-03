@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using DCS.DefaultViewControls;
+using DCS.CoreLib.View;
 
 namespace DCS.User.UI
 {

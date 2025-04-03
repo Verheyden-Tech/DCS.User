@@ -1,5 +1,5 @@
-﻿using DCS.DBManager;
-using DCS.DefaultViewControls;
+﻿using DCS.CoreLib.View;
+using DCS.Data;
 using DCS.Resource;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -15,7 +15,7 @@ namespace DCS.User.UI
     {
         private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
         private readonly IIconService iconService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IIconService>();
-        private readonly IDataBaseManager dataBaseManager = CommonServiceLocator.ServiceLocator.Current.GetInstance<IDataBaseManager>();
+        private readonly IDataBaseService dataBaseManager = CommonServiceLocator.ServiceLocator.Current.GetInstance<IDataBaseService>();
         private string connectionString;
         private ObservableCollection<string> dbServers;
         private UserLoginViewModel viewModel;

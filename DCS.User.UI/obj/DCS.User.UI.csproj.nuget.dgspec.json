@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj": {
-      "version": "1.0.1",
+      "version": "1.0.201",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
         "projectName": "DCS.User.Data",
@@ -59,17 +59,21 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "dependencies": {
-            "DCS.DefaultTemplates": {
+            "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.3.5, )"
+              "version": "[1.0.101, )"
+            },
+            "DCS.CoreLib.BaseClass": {
+              "target": "Package",
+              "version": "[1.0.101, )"
+            },
+            "DCS.Data": {
+              "target": "Package",
+              "version": "[1.0.101, )"
             },
             "DCS.LogManager": {
               "target": "Package",
               "version": "[1.0.5, )"
-            },
-            "DCS.SQLService": {
-              "target": "Package",
-              "version": "[1.1.1, )"
             }
           },
           "imports": [
@@ -93,7 +97,7 @@
       }
     },
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj": {
-      "version": "1.0.1",
+      "version": "1.0.201",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj",
         "projectName": "DCS.User.Service",
@@ -154,17 +158,21 @@
               "target": "Package",
               "version": "[2.0.7, )"
             },
-            "DCS.DefaultTemplates": {
+            "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.3.5, )"
+              "version": "[1.0.101, )"
+            },
+            "DCS.CoreLib.BaseClass": {
+              "target": "Package",
+              "version": "[1.0.101, )"
+            },
+            "DCS.Data": {
+              "target": "Package",
+              "version": "[1.0.101, )"
             },
             "DCS.LogManager": {
               "target": "Package",
               "version": "[1.0.5, )"
-            },
-            "DCS.SQLService": {
-              "target": "Package",
-              "version": "[1.1.1, )"
             },
             "Dapper": {
               "target": "Package",
@@ -192,7 +200,7 @@
       }
     },
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj": {
-      "version": "1.0.1",
+      "version": "1.0.201",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
         "projectName": "DCS.User.UI",
@@ -249,13 +257,17 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "dependencies": {
-            "DCS.DefaultTemplates": {
+            "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.3.5, )"
+              "version": "[1.0.101, )"
             },
-            "DCS.DefaultViewControls": {
+            "DCS.CoreLib.View": {
               "target": "Package",
-              "version": "[1.0.2, )"
+              "version": "[1.0.101, )"
+            },
+            "DCS.Data": {
+              "target": "Package",
+              "version": "[1.0.101, )"
             },
             "DCS.LogManager": {
               "target": "Package",
@@ -264,10 +276,6 @@
             "DCS.Resource": {
               "target": "Package",
               "version": "[1.0.1, )"
-            },
-            "DCS.SQLService": {
-              "target": "Package",
-              "version": "[1.1.1, )"
             }
           },
           "imports": [
@@ -294,7 +302,7 @@
       }
     },
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj": {
-      "version": "1.0.1",
+      "version": "1.0.201",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj",
         "projectName": "DCS.User",
@@ -348,13 +356,13 @@
               "target": "Package",
               "version": "[2.0.7, )"
             },
-            "DCS.DefaultTemplates": {
+            "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.3.5, )"
+              "version": "[1.0.101, )"
             },
-            "DCS.DefaultViewControls": {
+            "DCS.Data": {
               "target": "Package",
-              "version": "[1.0.2, )"
+              "version": "[1.0.101, )"
             },
             "DCS.LogManager": {
               "target": "Package",
@@ -363,10 +371,6 @@
             "DCS.Resource": {
               "target": "Package",
               "version": "[1.0.1, )"
-            },
-            "DCS.SQLService": {
-              "target": "Package",
-              "version": "[1.1.1, )"
             },
             "Microsoft.CodeAnalysis.FxCopAnalyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

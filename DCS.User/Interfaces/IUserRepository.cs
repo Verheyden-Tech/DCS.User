@@ -1,4 +1,4 @@
-﻿using DCS.DefaultTemplates;
+﻿using DCS.CoreLib;
 
 namespace DCS.User
 {

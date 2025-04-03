@@ -1,5 +1,5 @@
-﻿using DCS.DefaultTemplates;
-using DCS.SQLService;
+﻿using DCS.CoreLib.BaseClass;
+using DCS.Data;
 
 namespace DCS.User.Data
 {
