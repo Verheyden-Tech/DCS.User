@@ -2,7 +2,7 @@
 
 ## Overview
 
-The DCS.User solution is responsible for managing user-related functionalities within the Data Control System (DCS). This includes user authentication, authorization, and profile management.
+The `DCS.User` solution is responsible for managing user-related functionalities within the Data Control System (DCS). This includes user authentication, authorization, and profile management.
 
 ## Features
 
