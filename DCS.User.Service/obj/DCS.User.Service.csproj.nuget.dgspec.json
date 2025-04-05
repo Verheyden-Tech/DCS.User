@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj": {
-      "version": "1.0.501",
+      "version": "1.0.601",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
         "projectName": "DCS.User.Data",
@@ -65,7 +65,7 @@
             },
             "DCS.CoreLib.BaseClass": {
               "target": "Package",
-              "version": "[1.0.101, )"
+              "version": "[1.0.201, )"
             },
             "DCS.Data": {
               "target": "Package",
@@ -164,7 +164,7 @@
             },
             "DCS.CoreLib.BaseClass": {
               "target": "Package",
-              "version": "[1.0.101, )"
+              "version": "[1.0.201, )"
             },
             "DCS.Data": {
               "target": "Package",

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>DCS.User.Data</id>
-    <version>1.0.501</version>
+    <version>1.0.601</version>
     <authors>Tobias Verheyden</authors>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <license type="expression">MIT</license>

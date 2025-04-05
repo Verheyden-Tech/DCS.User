@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
@@ -40,6 +40,7 @@
 
   <ItemGroup>
     <PackageReference Include="DCS.CoreLib" Version="1.0.101" />
+    <PackageReference Include="DCS.CoreLib.BaseClass" Version="1.0.201" />
     <PackageReference Include="DCS.CoreLib.View" Version="1.0.101" />
     <PackageReference Include="DCS.Data" Version="1.0.101" />
     <PackageReference Include="DCS.LogManager" Version="1.0.5" />

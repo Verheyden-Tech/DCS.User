@@ -88,7 +88,7 @@
           "lib/net7.0-windows7.0/DCS.CoreLib.dll": {}
         }
       },
-      "DCS.CoreLib.BaseClass/1.0.101": {
+      "DCS.CoreLib.BaseClass/1.0.201": {
         "type": "package",
         "dependencies": {
           "DCS.CoreLib": "1.0.101",
@@ -983,13 +983,13 @@
         "lib/net7.0-windows7.0/DCS.CoreLib.dll"
       ]
     },
-    "DCS.CoreLib.BaseClass/1.0.101": {
-      "sha512": "CKZil+fXxhZBmHfapKwuG+r2VdQF8daQU6uGF3Iv/SIx+EXJVA5UqqLVOk0HlDd3FSyKNShE0pxv0TWTp8TmKg==",
+    "DCS.CoreLib.BaseClass/1.0.201": {
+      "sha512": "1voBy5kAaz2KiEhdymDGCBmlKti34b5FB0lGXtKi0vSEaZG8Poy7wMs0npBM0cd6BR2QDZDrFqBJSyhWgUI73Q==",
       "type": "package",
-      "path": "dcs.corelib.baseclass/1.0.101",
+      "path": "dcs.corelib.baseclass/1.0.201",
       "files": [
         ".nupkg.metadata",
-        "dcs.corelib.baseclass.1.0.101.nupkg.sha512",
+        "dcs.corelib.baseclass.1.0.201.nupkg.sha512",
         "dcs.corelib.baseclass.nuspec",
         "lib/net7.0-windows7.0/DCS.CoreLib.BaseClass.dll"
       ]
@@ -2383,7 +2383,7 @@
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
       "DCS.CoreLib >= 1.0.101",
-      "DCS.CoreLib.BaseClass >= 1.0.101",
+      "DCS.CoreLib.BaseClass >= 1.0.201",
       "DCS.Data >= 1.0.101",
       "DCS.LogManager >= 1.0.5",
       "DCS.User >= 1.0.401"
@@ -2395,7 +2395,7 @@
     "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages": {}
   },
   "project": {
-    "version": "1.0.501",
+    "version": "1.0.601",
     "restore": {
       "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
       "projectName": "DCS.User.Data",
@@ -2455,7 +2455,7 @@
           },
           "DCS.CoreLib.BaseClass": {
             "target": "Package",
-            "version": "[1.0.101, )"
+            "version": "[1.0.201, )"
           },
           "DCS.Data": {
             "target": "Package",
