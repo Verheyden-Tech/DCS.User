@@ -13,7 +13,7 @@ namespace DCS.User.Data
         /// <summary>
         /// Tablename for the UserRepository.
         /// </summary>
-        private static string TableName => "dbo.UserData";
+        private static string TableName => "dbo.VT_User";
 
         /// <summary>
         /// PrimaryKeyColumn to identify users on the table.
