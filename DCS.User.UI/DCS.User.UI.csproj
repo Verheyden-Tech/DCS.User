@@ -1,9 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
-	  <Version>1.0.401.0</Version>
-	  <AssemblyVersion>1.0.401.0</AssemblyVersion>
+	  <Version>1.0.501.0</Version>
+	  <AssemblyVersion>1.0.501.0</AssemblyVersion>
 	  <ApplicationVersion>1.2.3.0</ApplicationVersion>
 	  <ProjectGuid>{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}</ProjectGuid>
 	  <OutputType>Library</OutputType>

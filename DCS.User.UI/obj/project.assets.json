@@ -906,7 +906,7 @@
           }
         }
       },
-      "DCS.User/1.0.401": {
+      "DCS.User/1.0.501": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -927,7 +927,7 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "DCS.User.Data/1.0.601": {
+      "DCS.User.Data/1.0.701": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -935,7 +935,7 @@
           "DCS.CoreLib.BaseClass": "1.0.401",
           "DCS.Data": "1.0.201",
           "DCS.LogManager": "1.0.5",
-          "DCS.User": "1.0.401"
+          "DCS.User": "1.0.501"
         },
         "compile": {
           "bin/placeholder/DCS.User.Data.dll": {}
@@ -944,7 +944,7 @@
           "bin/placeholder/DCS.User.Data.dll": {}
         }
       },
-      "DCS.User.Service/1.0.401": {
+      "DCS.User.Service/1.0.501": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -953,8 +953,8 @@
           "DCS.CoreLib.BaseClass": "1.0.401",
           "DCS.Data": "1.0.201",
           "DCS.LogManager": "1.0.5",
-          "DCS.User": "1.0.401",
-          "DCS.User.Data": "1.0.601",
+          "DCS.User": "1.0.501",
+          "DCS.User.Data": "1.0.701",
           "Dapper": "2.1.66"
         },
         "compile": {
@@ -2472,17 +2472,17 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "DCS.User/1.0.401": {
+    "DCS.User/1.0.501": {
       "type": "project",
       "path": "../DCS.User/DCS.User.csproj",
       "msbuildProject": "../DCS.User/DCS.User.csproj"
     },
-    "DCS.User.Data/1.0.601": {
+    "DCS.User.Data/1.0.701": {
       "type": "project",
       "path": "../DCS.User.Data/DCS.User.Data.csproj",
       "msbuildProject": "../DCS.User.Data/DCS.User.Data.csproj"
     },
-    "DCS.User.Service/1.0.401": {
+    "DCS.User.Service/1.0.501": {
       "type": "project",
       "path": "../DCS.User.Service/DCS.User.Service.csproj",
       "msbuildProject": "../DCS.User.Service/DCS.User.Service.csproj"
@@ -2496,8 +2496,8 @@
       "DCS.Data >= 1.0.201",
       "DCS.LogManager >= 1.0.5",
       "DCS.Resource >= 1.0.1",
-      "DCS.User >= 1.0.401",
-      "DCS.User.Service >= 1.0.401"
+      "DCS.User >= 1.0.501",
+      "DCS.User.Service >= 1.0.501"
     ]
   },
   "packageFolders": {
@@ -2506,7 +2506,7 @@
     "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages": {}
   },
   "project": {
-    "version": "1.0.401",
+    "version": "1.0.501",
     "restore": {
       "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
       "projectName": "DCS.User.UI",
