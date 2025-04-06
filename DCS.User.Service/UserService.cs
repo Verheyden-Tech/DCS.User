@@ -53,7 +53,8 @@ namespace DCS.User.Service
                 PassWord = hashedPasswort,
                 IsAdmin = isAdmin,
                 CreationDate = DateTime.Now.Date,
-                KeepLoggedIn = keepLoggedIn
+                KeepLoggedIn = keepLoggedIn,
+                LastManipulation = DateTime.Now.Date
             };
 
             return newUser;

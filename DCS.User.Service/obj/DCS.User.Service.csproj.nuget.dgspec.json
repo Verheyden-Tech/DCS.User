@@ -61,15 +61,15 @@
           "dependencies": {
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.0.101, )"
+              "version": "[1.0.201, )"
             },
             "DCS.CoreLib.BaseClass": {
               "target": "Package",
-              "version": "[1.0.201, )"
+              "version": "[1.0.401, )"
             },
             "DCS.Data": {
               "target": "Package",
-              "version": "[1.0.101, )"
+              "version": "[1.0.201, )"
             },
             "DCS.LogManager": {
               "target": "Package",
@@ -160,15 +160,15 @@
             },
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.0.101, )"
+              "version": "[1.0.201, )"
             },
             "DCS.CoreLib.BaseClass": {
               "target": "Package",
-              "version": "[1.0.201, )"
+              "version": "[1.0.401, )"
             },
             "DCS.Data": {
               "target": "Package",
-              "version": "[1.0.101, )"
+              "version": "[1.0.201, )"
             },
             "DCS.LogManager": {
               "target": "Package",
@@ -256,11 +256,11 @@
             },
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.0.101, )"
+              "version": "[1.0.201, )"
             },
             "DCS.Data": {
               "target": "Package",
-              "version": "[1.0.101, )"
+              "version": "[1.0.201, )"
             },
             "DCS.LogManager": {
               "target": "Package",

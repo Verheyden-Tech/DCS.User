@@ -73,11 +73,11 @@
           }
         }
       },
-      "DCS.CoreLib/1.0.101": {
+      "DCS.CoreLib/1.0.201": {
         "type": "package",
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
-          "DCS.Data": "1.0.1",
+          "DCS.Data": "1.0.201",
           "DCS.LogManager": "1.0.5",
           "Dapper": "2.1.66"
         },
@@ -88,11 +88,11 @@
           "lib/net7.0-windows7.0/DCS.CoreLib.dll": {}
         }
       },
-      "DCS.CoreLib.BaseClass/1.0.201": {
+      "DCS.CoreLib.BaseClass/1.0.401": {
         "type": "package",
         "dependencies": {
-          "DCS.CoreLib": "1.0.101",
-          "DCS.Data": "1.0.1"
+          "DCS.CoreLib": "1.0.201",
+          "DCS.Data": "1.0.201"
         },
         "compile": {
           "lib/net7.0-windows7.0/DCS.CoreLib.BaseClass.dll": {}
@@ -101,9 +101,10 @@
           "lib/net7.0-windows7.0/DCS.CoreLib.BaseClass.dll": {}
         }
       },
-      "DCS.Data/1.0.101": {
+      "DCS.Data/1.0.201": {
         "type": "package",
         "dependencies": {
+          "DCS.Log": "1.0.301.5",
           "DCS.LogManager": "1.0.5",
           "Microsoft.Data.SqlClient": "5.2.2"
         },
@@ -112,6 +113,26 @@
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.Data.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "DCS.Log/1.0.301.5": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Win32.Primitives": "4.3.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "lib/net7.0-windows7.0/DCS.Log.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-windows7.0/DCS.Log.dll": {
+            "related": ".xml"
+          }
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
@@ -873,8 +894,8 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
-          "DCS.CoreLib": "1.0.101",
-          "DCS.Data": "1.0.101",
+          "DCS.CoreLib": "1.0.201",
+          "DCS.Data": "1.0.201",
           "DCS.LogManager": "1.0.5",
           "DCS.Resource": "1.0.1",
           "System.Management": "8.0.0"
@@ -893,9 +914,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "DCS.CoreLib": "1.0.101",
-          "DCS.CoreLib.BaseClass": "1.0.201",
-          "DCS.Data": "1.0.101",
+          "DCS.CoreLib": "1.0.201",
+          "DCS.CoreLib.BaseClass": "1.0.401",
+          "DCS.Data": "1.0.201",
           "DCS.LogManager": "1.0.5",
           "DCS.User": "1.0.401"
         },
@@ -989,37 +1010,49 @@
         "readme.md"
       ]
     },
-    "DCS.CoreLib/1.0.101": {
-      "sha512": "hIKn2ZM0BF0029QD9cs7Tiq0oZeoK3FNmFF8ElWkCf29k7ZJ2UiWmmyopDwGb6qxQQt5/50rZlhyBF9ykHztYw==",
+    "DCS.CoreLib/1.0.201": {
+      "sha512": "Paejowtsf7LPU76Wxlc4lLg6JAmb1CxaiIB/bqULYzBH6FGtHg4gStUtwNDJtD84yVIPPCwAf+gxlKnky5FQ4g==",
       "type": "package",
-      "path": "dcs.corelib/1.0.101",
+      "path": "dcs.corelib/1.0.201",
       "files": [
         ".nupkg.metadata",
-        "dcs.corelib.1.0.101.nupkg.sha512",
+        "dcs.corelib.1.0.201.nupkg.sha512",
         "dcs.corelib.nuspec",
         "lib/net7.0-windows7.0/DCS.CoreLib.dll"
       ]
     },
-    "DCS.CoreLib.BaseClass/1.0.201": {
-      "sha512": "1voBy5kAaz2KiEhdymDGCBmlKti34b5FB0lGXtKi0vSEaZG8Poy7wMs0npBM0cd6BR2QDZDrFqBJSyhWgUI73Q==",
+    "DCS.CoreLib.BaseClass/1.0.401": {
+      "sha512": "P0p2EbTD8Mm9yHLOsBCV1GUNAvivbvjne5SWyPowu3StAUnsu+otHEgt3vg7uvyxrgEYl3hqMy5OG9V7fS+9DA==",
       "type": "package",
-      "path": "dcs.corelib.baseclass/1.0.201",
+      "path": "dcs.corelib.baseclass/1.0.401",
       "files": [
         ".nupkg.metadata",
-        "dcs.corelib.baseclass.1.0.201.nupkg.sha512",
+        "dcs.corelib.baseclass.1.0.401.nupkg.sha512",
         "dcs.corelib.baseclass.nuspec",
         "lib/net7.0-windows7.0/DCS.CoreLib.BaseClass.dll"
       ]
     },
-    "DCS.Data/1.0.101": {
-      "sha512": "1+4f1jSLy+hGiA0Ed9MSd4LqD0HHHy01eJso8qGvNI/Vy7rGc5kAMa0GsM046FStteRp8NEe3uw8uf157wuW/A==",
+    "DCS.Data/1.0.201": {
+      "sha512": "bdOeG5FkIm61WTt+hnzk4dpxh9m3o+4Q3F7yKIDEafWtJxwyV53lYcvQ0nzW7Efi8a430Q048F0PMsn2KCgh/Q==",
       "type": "package",
-      "path": "dcs.data/1.0.101",
+      "path": "dcs.data/1.0.201",
       "files": [
         ".nupkg.metadata",
-        "dcs.data.1.0.101.nupkg.sha512",
+        "dcs.data.1.0.201.nupkg.sha512",
         "dcs.data.nuspec",
         "lib/net7.0-windows7.0/DCS.Data.dll"
+      ]
+    },
+    "DCS.Log/1.0.301.5": {
+      "sha512": "bRoXIM6X/3EKlNBSBTqM9SxaM2e5Bu+ym3NgrRgkV92JdhyLnjc8h8zkiIrURPLb91uRD7mW19aOaYA0u+05eQ==",
+      "type": "package",
+      "path": "dcs.log/1.0.301.5",
+      "files": [
+        ".nupkg.metadata",
+        "dcs.log.1.0.301.5.nupkg.sha512",
+        "dcs.log.nuspec",
+        "lib/net7.0-windows7.0/DCS.Log.dll",
+        "lib/net7.0-windows7.0/DCS.Log.xml"
       ]
     },
     "DCS.LogManager/1.0.5": {
@@ -2405,9 +2438,9 @@
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
       "CommonServiceLocator >= 2.0.7",
-      "DCS.CoreLib >= 1.0.101",
-      "DCS.CoreLib.BaseClass >= 1.0.201",
-      "DCS.Data >= 1.0.101",
+      "DCS.CoreLib >= 1.0.201",
+      "DCS.CoreLib.BaseClass >= 1.0.401",
+      "DCS.Data >= 1.0.201",
       "DCS.LogManager >= 1.0.5",
       "DCS.User >= 1.0.401",
       "DCS.User.Data >= 1.0.601",
@@ -2483,15 +2516,15 @@
           },
           "DCS.CoreLib": {
             "target": "Package",
-            "version": "[1.0.101, )"
+            "version": "[1.0.201, )"
           },
           "DCS.CoreLib.BaseClass": {
             "target": "Package",
-            "version": "[1.0.201, )"
+            "version": "[1.0.401, )"
           },
           "DCS.Data": {
             "target": "Package",
-            "version": "[1.0.101, )"
+            "version": "[1.0.201, )"
           },
           "DCS.LogManager": {
             "target": "Package",
