@@ -32,8 +32,10 @@ namespace DCS.User.UI
         /// <param name="user">User to registrate.</param>
         /// <returns>Returns true if the registtration was successful, otherwise false.</returns>
         /// <exception cref="ArgumentNullException"></exception>
-        public bool RegistrateUser(User user)
+        public bool RegistrateUser()
         {
+            var user = service.CreateUser(this.UserName, this.PassWord, this.IsAdmin, this.KeepLoggedIn);
+
             if (user == null)
                 throw new ArgumentNullException(nameof(user));
 
@@ -96,6 +98,19 @@ namespace DCS.User.UI
             {
                 this.Model.IsLocalUser = value;
                 OnPropertyChanged(nameof(IsLocalUser));
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the flag if the user shall be keep logged in.
+        /// </summary>
+        public bool KeepLoggedIn
+        {
+            get => this.Model.KeepLoggedIn;
+            set
+            {
+                this.Model.KeepLoggedIn = value;
+                OnPropertyChanged(nameof(KeepLoggedIn));
             }
         }
         #endregion

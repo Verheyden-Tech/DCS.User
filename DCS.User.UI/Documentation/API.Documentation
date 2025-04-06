@@ -6,7 +6,7 @@
     <members>
         <member name="T:DCS.User.UI.RegistrateUserViewModel">
             <summary>
-            ViewModel for the <see cref="M:DCS.User.UI.RegistrateUserViewModel.RegistrateUser(DCS.User.User)"/> view.
+            ViewModel for the <see cref="M:DCS.User.UI.RegistrateUserViewModel.RegistrateUser"/> view.
             </summary>
         </member>
         <member name="M:DCS.User.UI.RegistrateUserViewModel.#ctor">
@@ -20,7 +20,7 @@
             </summary>
             <param name="user">Selected user.</param>
         </member>
-        <member name="M:DCS.User.UI.RegistrateUserViewModel.RegistrateUser(DCS.User.User)">
+        <member name="M:DCS.User.UI.RegistrateUserViewModel.RegistrateUser">
             <summary>
             Register a new user.
             </summary>
@@ -46,6 +46,11 @@
         <member name="P:DCS.User.UI.RegistrateUserViewModel.IsLocalUser">
             <summary>
             Gets or sets the flag if the user is a local user.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.RegistrateUserViewModel.KeepLoggedIn">
+            <summary>
+            Gets or sets the flag if the user shall be keep logged in.
             </summary>
         </member>
         <member name="T:DCS.User.UI.UserLoginViewModel">

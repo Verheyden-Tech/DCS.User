@@ -36,7 +36,13 @@
 
         <Label Content="Verbundene DB: " Grid.Row="3" Grid.Column="0" Style="{DynamicResource Label}"/>
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <telerik:RadComboBox Name="ServerComboBox" SelectionChanged="ServerComboBox_SelectionChanged" Width="150" TabIndex="3" Margin="2" IsTextSearchEnabled="True" ClearSelectionButtonVisibility="Collapsed" CanKeyboardNavigationSelectItems="True" DropDownOpened="ServerComboBox_DropDownOpened" ClearSelectionButtonContent="Auswahl aufheben" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+            <telerik:RadComboBox Name="ServerComboBox" SelectionChanged="ServerComboBox_SelectionChanged" Width="150" TabIndex="3" Margin="2" IsTextSearchEnabled="True" ClearSelectionButtonVisibility="Collapsed" CanKeyboardNavigationSelectItems="True" DropDownOpened="ServerComboBox_DropDownOpened" ClearSelectionButtonContent="Auswahl aufheben" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <telerik:RadComboBox.EmptySelectionBoxTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="Datenbank auswählen.." FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    </DataTemplate>
+                </telerik:RadComboBox.EmptySelectionBoxTemplate>
+            </telerik:RadComboBox>
             <Button x:Name="TestDBConnectionButton" Content="DB Verbindung testen" FontWeight="Normal" Visibility="Collapsed" Style="{DynamicResource ButtonAcc/Dec}" Click="TestDBConnectionButton_Click"/>
         </StackPanel>
 

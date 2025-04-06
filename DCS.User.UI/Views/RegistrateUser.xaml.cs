@@ -38,9 +38,7 @@ namespace DCS.User.UI
         {
             if(PassWordBox.Password == PassWordRepeatBox.Password)
             {
-                var user = userService.CreateUser(UserNameTextBox.Text, PassWordBox.Password, IsAdminCheckBox.IsChecked.HasValue, KeepLoggedInCheckBox.IsChecked.HasValue);
-
-                if(viewModel.RegistrateUser(user) == true)
+                if(viewModel.RegistrateUser() == true)
                 {
                     this.NewRegistratedUser = viewModel.Model;
                     this.DialogResult = true;
