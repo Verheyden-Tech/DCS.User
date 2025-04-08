@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "DCS.User.UI/1.0.701.0": {
+      "DCS.User.UI/1.0.801.0": {
         "dependencies": {
           "DCS.CoreLib": "1.0.201",
           "DCS.CoreLib.BaseClass": "1.0.401",
@@ -14,8 +14,8 @@
           "DCS.Data": "1.0.201",
           "DCS.LogManager": "1.0.5",
           "DCS.Resource": "1.0.1",
-          "DCS.User": "1.0.501",
-          "DCS.User.Service": "1.0.501",
+          "DCS.User": "1.0.601",
+          "DCS.User.Service": "1.0.601",
           "Telerik.Licensing.Runtime": "1.4.10.0",
           "Telerik.Pivot.Core": "2021.1.325.310",
           "Telerik.Windows.Controls.Data": "2021.1.325.310",
@@ -525,7 +525,7 @@
           "System.Drawing.Common": "6.0.0"
         }
       },
-      "DCS.User/1.0.501": {
+      "DCS.User/1.0.601": {
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
           "DCS.CoreLib": "1.0.201",
@@ -536,41 +536,41 @@
         },
         "runtime": {
           "DCS.User.dll": {
-            "assemblyVersion": "1.0.501.0",
-            "fileVersion": "1.0.501.0"
+            "assemblyVersion": "1.0.601.0",
+            "fileVersion": "1.0.601.0"
           }
         }
       },
-      "DCS.User.Data/1.0.701": {
+      "DCS.User.Data/1.0.801": {
         "dependencies": {
           "DCS.CoreLib": "1.0.201",
           "DCS.CoreLib.BaseClass": "1.0.401",
           "DCS.Data": "1.0.201",
           "DCS.LogManager": "1.0.5",
-          "DCS.User": "1.0.501"
+          "DCS.User": "1.0.601"
         },
         "runtime": {
           "DCS.User.Data.dll": {
-            "assemblyVersion": "1.0.701.0",
-            "fileVersion": "1.0.701.0"
+            "assemblyVersion": "1.0.801.0",
+            "fileVersion": "1.0.801.0"
           }
         }
       },
-      "DCS.User.Service/1.0.501": {
+      "DCS.User.Service/1.0.601": {
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
           "DCS.CoreLib": "1.0.201",
           "DCS.CoreLib.BaseClass": "1.0.401",
           "DCS.Data": "1.0.201",
           "DCS.LogManager": "1.0.5",
-          "DCS.User": "1.0.501",
-          "DCS.User.Data": "1.0.701",
+          "DCS.User": "1.0.601",
+          "DCS.User.Data": "1.0.801",
           "Dapper": "2.1.66"
         },
         "runtime": {
           "DCS.User.Service.dll": {
-            "assemblyVersion": "1.0.501.0",
-            "fileVersion": "1.0.501.0"
+            "assemblyVersion": "1.0.601.0",
+            "fileVersion": "1.0.601.0"
           }
         }
       },
@@ -705,7 +705,7 @@
     }
   },
   "libraries": {
-    "DCS.User.UI/1.0.701.0": {
+    "DCS.User.UI/1.0.801.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1074,17 +1074,17 @@
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
-    "DCS.User/1.0.501": {
+    "DCS.User/1.0.601": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "DCS.User.Data/1.0.701": {
+    "DCS.User.Data/1.0.801": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "DCS.User.Service/1.0.501": {
+    "DCS.User.Service/1.0.601": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

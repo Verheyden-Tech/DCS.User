@@ -158,7 +158,7 @@ namespace DCS.User.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DCS.User.UI;V1.0.701.0;component/views/userlogin.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DCS.User.UI;V1.0.801.0;component/views/userlogin.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\UserLogin.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
