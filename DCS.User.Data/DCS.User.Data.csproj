@@ -24,6 +24,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Documentation\**" />
+    <EmbeddedResource Remove="Documentation\**" />
+    <None Remove="Documentation\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="DCS.CoreLib" Version="1.0.201" />
     <PackageReference Include="DCS.CoreLib.BaseClass" Version="1.0.401" />
     <PackageReference Include="DCS.Data" Version="1.0.201" />

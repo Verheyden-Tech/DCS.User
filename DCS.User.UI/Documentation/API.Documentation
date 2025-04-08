@@ -135,6 +135,77 @@
             Gets or sets the user is admin flag.
             </summary>
         </member>
+        <member name="T:DCS.User.UI.UserViewModel">
+            <summary>
+            Implements the <see cref="T:DCS.CoreLib.BaseClass.ViewModelBase`2"/> class for the <see cref="T:DCS.User.User"/> model.
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.UserViewModel.#ctor(DCS.User.User)">
+            <summary>
+            Default constructor initialize a new instance of <see cref="T:DCS.User.UI.UserViewModel"/>.
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.UserViewModel.Save">
+            <summary>
+            Saves the current instance of the <see cref="T:DCS.User.UI.UserViewModel"/> class.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DCS.User.UI.UserViewModel.Guid">
+            <summary>
+            Gets or sets the unique identifier for the user.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserViewModel.UserName">
+            <summary>
+            Gets or sets the user name.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserViewModel.PassWord">
+            <summary>
+            Gets or sets the user password.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserViewModel.IsActive">
+            <summary>
+            Gets or sets the user is admin flag.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserViewModel.KeepLoggedIn">
+            <summary>
+            Gets or sets the user keep logged in flag.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserViewModel.IsAdmin">
+            <summary>
+            Gets or sets the user has admin rights flag.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserViewModel.IsLoggedIn">
+            <summary>
+            Gets or sets the user is logged in in current session flag.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserViewModel.IsLocalUser">
+            <summary>
+            Gets or sets the user is local user flag.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserViewModel.CreationDate">
+            <summary>
+            Gets or sets the user creation date.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserViewModel.SubstitutionEnd">
+            <summary>
+            Gets or sets the user substitution ending date.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserViewModel.LastManipulation">
+            <summary>
+            Gets or sets the user last manipulation date.
+            </summary>
+        </member>
         <member name="T:DCS.User.UI.RegistrateUser">
             <summary>
             Interaction logic for RegistrateUser.xaml
@@ -177,9 +248,14 @@
             UserEditor
             </summary>
         </member>
-        <member name="M:DCS.User.UI.UserEditor.#ctor">
+        <member name="M:DCS.User.UI.UserEditor.#ctor(DCS.User.User)">
             <summary>
             Default constructor initialize a new <see cref="T:DCS.User.UI.UserEditor"/> window.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserEditor.Current">
+            <summary>
+            Returns the current instance of the <see cref="T:DCS.User.UI.UserViewModel"/> class as DataContext.
             </summary>
         </member>
         <member name="M:DCS.User.UI.UserEditor.InitializeComponent">
@@ -236,6 +312,11 @@
         <member name="M:DCS.User.UI.UserManagement.#ctor">
             <summary>
             Default constructor for <see cref="T:DCS.User.UI.UserManagement"/>.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserManagement.Current">
+            <summary>
+            Returns the current instance of the <see cref="T:DCS.User.UI.UserManagementViewModel"/> class as DataContext.
             </summary>
         </member>
         <member name="M:DCS.User.UI.UserManagement.LoadUserData">

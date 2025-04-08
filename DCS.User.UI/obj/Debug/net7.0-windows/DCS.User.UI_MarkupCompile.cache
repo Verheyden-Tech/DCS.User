@@ -1,5 +1,5 @@
 ﻿DCS.User.UI
-1.0.601.0
+1.0.701.0
 
 library
 C#
@@ -12,8 +12,8 @@ TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 
 4801137622
 
-8751230715
-245404986909
+91781404166
+244-1528324743
 Views\RegistrateUser.xaml;Views\UserEditor.xaml;Views\UserLogin.xaml;Views\UserManagement.xaml;
 
 False

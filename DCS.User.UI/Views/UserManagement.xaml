@@ -22,9 +22,15 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <telerik:RadGridView x:Name="UserGridView" AutoGenerateColumns="True">
-            
+        <telerik:RadGridView x:Name="UserGridView" ItemsSource="{Binding Users, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Header="Benutzername" DataMemberBinding="{Binding UserName}" MinWidth="100"/>
+                <telerik:GridViewDataColumn Header="Aktiv" DataMemberBinding="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50"/>
+                <telerik:GridViewDataColumn Header="Angemeldet bleiben" DataMemberBinding="{Binding KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="120"/>
+                <telerik:GridViewDataColumn Header="Erstellt am" DataMemberBinding="{Binding CreationDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="100"/>
+            </telerik:RadGridView.Columns>
         </telerik:RadGridView>
+           
 
     </Grid>
     

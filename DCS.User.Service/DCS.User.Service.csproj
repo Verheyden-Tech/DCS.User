@@ -26,8 +26,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Documentation\**" />
     <Compile Remove="SharedDLLs\**" />
+    <EmbeddedResource Remove="Documentation\**" />
     <EmbeddedResource Remove="SharedDLLs\**" />
+    <None Remove="Documentation\**" />
     <None Remove="SharedDLLs\**" />
   </ItemGroup>
 

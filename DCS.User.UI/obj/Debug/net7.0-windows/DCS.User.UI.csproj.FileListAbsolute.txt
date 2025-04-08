@@ -111,7 +111,6 @@ C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DC
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.UI.dll
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.UI.pdb
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\API.Documentation
-C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.DBManager.dll
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.Data.dll
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.dll
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.Service.dll
@@ -134,7 +133,6 @@ C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\Te
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.Service.pdb
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.pdb
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.Data.pdb
-C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.DBManager.pdb
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\RegistrateUser.baml
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\UserEditor.baml
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\UserLogin.baml

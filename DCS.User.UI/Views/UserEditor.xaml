@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:DCS.User.UI"
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
         xmlns:win="clr-namespace:DCS.CoreLib.View;assembly=DCS.CoreLib.View"
-        mc:Ignorable="d"
-        Title="UserEditor" Height="450" Width="800">
+        mc:Ignorable="d" 
+        Title="UserEditor" Height="150" Width="500" SizeToContent="WidthAndHeight">
     
     <Grid>
 
@@ -24,8 +24,18 @@
         </Grid.ColumnDefinitions>
 
         <Label Grid.Row="0" Grid.Column="0" Content="Benutzername" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
-        <telerik:RadWatermarkTextBox Grid.Row="0" Grid.Column="1" WatermarkContent="Benutzername eingeben" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <telerik:RadWatermarkTextBox Grid.Row="0" Grid.Column="1" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Benutzername eingeben.." Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
+        <Label Grid.Row="0" Grid.Column="2" Content="Passwort" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <telerik:RadPasswordBox Grid.Row="0" Grid.Column="3" Text="{Binding PassWord, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Neues Passwort festlegen.." Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <Button Grid.Row="0" Grid.Column="3" x:Name="ChangeUserPasswordButton" Visibility="Collapsed" Command="{Binding ChangeUserPasswordCommand}" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+
+        <CheckBox Grid.Row="1" Grid.Column="2" IsChecked="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="Aktiv" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <CheckBox Grid.Row="1" Grid.Column="1" IsChecked="{Binding KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="Angemeldet bleiben" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <CheckBox Grid.Row="1" Grid.Column="3" IsChecked="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="Admin" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+
+        <Label Grid.Row="2" Grid.Column="2" Content="Erstellt am" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <telerik:RadWatermarkTextBox Grid.Row="2" Grid.Column="3" Text="{Binding CreationDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" IsReadOnly="True" ReadOnlyBackground="{x:Null}" BorderBrush="{x:Null}" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
     </Grid>
     
 </win:DefaultEditorWindow>

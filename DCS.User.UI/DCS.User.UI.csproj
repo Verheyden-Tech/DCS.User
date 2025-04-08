@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
-	  <Version>1.0.601.0</Version>
-	  <AssemblyVersion>1.0.601.0</AssemblyVersion>
+	  <Version>1.0.701.0</Version>
+	  <AssemblyVersion>1.0.701.0</AssemblyVersion>
 	  <ApplicationVersion>1.2.3.0</ApplicationVersion>
 	  <ProjectGuid>{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}</ProjectGuid>
 	  <OutputType>Library</OutputType>
@@ -53,10 +53,6 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<Reference Include="DCS.DBManager">
-		  <HintPath>SharedDLLs\DCS.DBManager.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
 		<Reference Include="Telerik.Licensing.Runtime">
 			<HintPath>SharedDLLs\Telerik.Licensing.Runtime.dll</HintPath>
 			<Private>True</Private>

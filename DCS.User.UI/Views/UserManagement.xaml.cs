@@ -4,6 +4,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using DCS.CoreLib.View;
+using System.CodeDom;
 
 namespace DCS.User.UI
 {
@@ -12,7 +13,7 @@ namespace DCS.User.UI
     /// </summary>
     public partial class UserManagement : DefaultAppControl
     {
-        private ObservableCollection<User> users;
+        private ObservableCollection<User> Users { get; set; }
         private IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
         private UserManagementViewModel viewModel;
 
@@ -25,13 +26,23 @@ namespace DCS.User.UI
 
             SetContextMenu();
 
-            users = new ObservableCollection<User>();
-            users = userService.GetAll();
-            this.UserGridView.ItemsSource = users;
+            Users = new ObservableCollection<User>();
+            Users = userService.GetAll();
 
             var obj = new User();
             viewModel = new UserManagementViewModel(obj);
             this.DataContext = viewModel;
+        }
+
+        /// <summary>
+        /// Returns the current instance of the <see cref="UserManagementViewModel"/> class as DataContext.
+        /// </summary>
+        public UserManagementViewModel Current
+        {
+            get
+            {
+                return DataContext as UserManagementViewModel;
+            }
         }
 
         /// <summary>
@@ -100,7 +111,15 @@ namespace DCS.User.UI
 
         private void EditUser_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (UserGridView.SelectedItems != null && UserGridView.SelectedItems is IList<User>)
+            {
+                var editor = new UserEditor(Current.Model);
+                editor.AddPagingObjects(UserGridView.SelectedItems);
+                if(editor.ShowDialog() == true)
+                {
+                    UserGridView.Items.Refresh();
+                }
+            }
         }
 
         private void NewUser_Click(object sender, RoutedEventArgs e)

@@ -27,6 +27,8 @@ namespace DCS.User.UI
             return userService.GetByName(userName);
         }
 
+        
+
         /// <summary>
         /// Gets or sets the unique identifier for the user.
         /// </summary>
