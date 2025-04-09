@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Repository database service for DCS.User.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.801.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.801.0+184701d5a5f5a55454ba3aba305bdc2bbbcdd84e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.801.0+39d6fc2caa14a93768f2ddc7ad6bf98fd0ef3a72")]
 [assembly: System.Reflection.AssemblyProductAttribute("DCS.User.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DCS.User.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.801.0")]

@@ -1,4 +1,5 @@
 ﻿using DCS.CoreLib.View;
+using DCS.Resource;
 
 namespace DCS.User.UI
 {
@@ -8,6 +9,7 @@ namespace DCS.User.UI
     public partial class UserEditor : DefaultEditorWindow
     {
         private UserViewModel viewModel;
+        private IIconService iconService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IIconService>();
 
         /// <summary>
         /// Default constructor initialize a new <see cref="UserEditor"/> window.
@@ -18,6 +20,13 @@ namespace DCS.User.UI
 
             this.viewModel = new UserViewModel(user);
             this.DataContext = viewModel;
+
+            if(!string.IsNullOrEmpty(user.PassWord))
+            {
+                this.ChangeUserPasswordButton.Visibility = System.Windows.Visibility.Visible;
+                this.ChangePasswordImage.Source = iconService.GetImage("Security-Password-2-icon.png");
+                this.UserPasswordBox.Visibility = System.Windows.Visibility.Collapsed;
+            }
         }
 
         /// <summary>
@@ -28,6 +37,14 @@ namespace DCS.User.UI
             get
             {
                 return DataContext as UserViewModel;
+            }
+        }
+
+        private void ChangeUserPasswordButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(Current.PassWord))
+            {
+
             }
         }
     }

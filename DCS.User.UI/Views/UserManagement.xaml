@@ -22,11 +22,19 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <telerik:RadGridView x:Name="UserGridView" ItemsSource="{Binding Users, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+        <telerik:RadGridView x:Name="UserGridView" ItemsSource="{Binding Users, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" RowIndicatorVisibility="Visible" GroupPanelForeground="Black">
+            <telerik:RadGridView.GroupPanelBackground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDFDFDF" Offset="1"/>
+                    <GradientStop Color="#FF585CF1"/>
+                </LinearGradientBrush>
+            </telerik:RadGridView.GroupPanelBackground>
             <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Header="Guid" DataMemberBinding="{Binding Guid, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="70"/>
                 <telerik:GridViewDataColumn Header="Benutzername" DataMemberBinding="{Binding UserName}" MinWidth="100"/>
-                <telerik:GridViewDataColumn Header="Aktiv" DataMemberBinding="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50"/>
-                <telerik:GridViewDataColumn Header="Angemeldet bleiben" DataMemberBinding="{Binding KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="120"/>
+                <telerik:GridViewCheckBoxColumn Header="Aktiv" DataMemberBinding="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50"/>
+                <telerik:GridViewCheckBoxColumn Header="Admin" DataMemberBinding="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50"/>
+                <telerik:GridViewCheckBoxColumn Header="Angemeldet bleiben" DataMemberBinding="{Binding KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="120"/>
                 <telerik:GridViewDataColumn Header="Erstellt am" DataMemberBinding="{Binding CreationDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="100"/>
             </telerik:RadGridView.Columns>
         </telerik:RadGridView>

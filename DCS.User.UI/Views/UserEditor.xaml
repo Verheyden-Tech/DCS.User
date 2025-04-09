@@ -27,8 +27,10 @@
         <telerik:RadWatermarkTextBox Grid.Row="0" Grid.Column="1" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Benutzername eingeben.." Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
         <Label Grid.Row="0" Grid.Column="2" Content="Passwort" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
-        <telerik:RadPasswordBox Grid.Row="0" Grid.Column="3" Text="{Binding PassWord, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Neues Passwort festlegen.." Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
-        <Button Grid.Row="0" Grid.Column="3" x:Name="ChangeUserPasswordButton" Visibility="Collapsed" Command="{Binding ChangeUserPasswordCommand}" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <telerik:RadPasswordBox Grid.Row="0" Grid.Column="3" x:Name="UserPasswordBox" Text="{Binding PassWord, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Neues Passwort festlegen.." Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <Button Grid.Row="0" Grid.Column="3" x:Name="ChangeUserPasswordButton" Visibility="Collapsed" Click="ChangeUserPasswordButton_Click" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left">
+            <Image x:Name="ChangePasswordImage" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        </Button>
 
         <CheckBox Grid.Row="1" Grid.Column="2" IsChecked="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="Aktiv" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
         <CheckBox Grid.Row="1" Grid.Column="1" IsChecked="{Binding KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="Angemeldet bleiben" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
