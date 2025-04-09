@@ -1,5 +1,6 @@
 ﻿using DCS.CoreLib.View;
 using DCS.Resource;
+using DCS.User.Views;
 
 namespace DCS.User.UI
 {
@@ -44,7 +45,8 @@ namespace DCS.User.UI
         {
             if (!string.IsNullOrEmpty(Current.PassWord))
             {
-
+                var win = new ChangeUserPassword(Current.Model);
+                win.Show();
             }
         }
     }
