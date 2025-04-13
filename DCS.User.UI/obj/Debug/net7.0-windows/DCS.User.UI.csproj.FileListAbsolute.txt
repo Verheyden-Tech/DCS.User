@@ -145,3 +145,5 @@ C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\DC
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\DCS.User.UI.sourcelink.json
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\DCS.User.64500F30.Up2Date
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\ref\DCS.User.UI.dll
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\ChangeUserPassword.g.cs
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\ChangeUserPassword.baml

@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using DCS.CoreLib.View;
 using System.CodeDom;
+using DCS.OnBoarding.UI;
 
 namespace DCS.User.UI
 {
@@ -59,7 +60,7 @@ namespace DCS.User.UI
             MenuItem newUser = new MenuItem()
             {
                 Header = "Neuer User",
-                Icon = "/Images/usermanagement_add_user_16x.png"
+                Icon = "Resources/Images/usermanagement_add_user_16x.png"
             };
             newUser.Click += NewUser_Click;
 
@@ -68,7 +69,7 @@ namespace DCS.User.UI
             MenuItem editUser = new MenuItem()
             {
                 Header = "Nutzer bearbeiten",
-                Icon = "/Images/usermanagement_edit_user_16x.png"
+                Icon = "Resources/Images/usermanagement_edit_user_16x.png"
             };
             editUser.Click += EditUser_Click;
 
@@ -77,11 +78,29 @@ namespace DCS.User.UI
             MenuItem deleteUser = new MenuItem()
             {
                 Header = "User löschen",
-                Icon = "/Images/usermanagement_remove_user_16x.png"
+                Icon = "Resources/Images/usermanagement_remove_user_16x.png"
             };
             deleteUser.Click += DeleteUser_Click;
 
             UserManagementContextMenu.Items.Add(deleteUser);
+
+            MenuItem generateUser = new MenuItem()
+            {
+                Header = "Nutzer generieren",
+                Icon = "Resources/Images/add_user_group_32x.png"
+            };
+            generateUser.Click += GenerateUser_Click;
+
+            UserManagementContextMenu.Items.Add(generateUser);
+        }
+
+        private void GenerateUser_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new AddTestDataWindow();
+            if(win.ShowDialog() == true)
+            {
+                UserGridView.Items.Refresh();
+            }
         }
 
         private void DeleteUser_Click(object sender, RoutedEventArgs e)
@@ -124,7 +143,7 @@ namespace DCS.User.UI
 
         private void NewUser_Click(object sender, RoutedEventArgs e)
         {
-            var win = new RegistrateUser();
+            var win = new UserEditor(Current.Model);
             if(win.ShowDialog() == true)
             {
                 UserGridView.Items.Refresh();

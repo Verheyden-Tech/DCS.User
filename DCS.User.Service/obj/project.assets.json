@@ -73,11 +73,13 @@
           }
         }
       },
-      "DCS.CoreLib/1.0.201": {
+      "DCS.CoreLib/1.0.401": {
         "type": "package",
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
           "DCS.Data": "1.0.201",
+          "DCS.Localization": "1.0.301",
+          "DCS.Log": "1.0.301.5",
           "DCS.LogManager": "1.0.5",
           "Dapper": "2.1.66"
         },
@@ -88,11 +90,13 @@
           "lib/net7.0-windows7.0/DCS.CoreLib.dll": {}
         }
       },
-      "DCS.CoreLib.BaseClass/1.0.401": {
+      "DCS.CoreLib.BaseClass/1.0.701": {
         "type": "package",
         "dependencies": {
-          "DCS.CoreLib": "1.0.201",
-          "DCS.Data": "1.0.201"
+          "DCS.CoreLib": "1.0.401",
+          "DCS.Data": "1.0.201",
+          "DCS.Localization": "1.0.301",
+          "DCS.Log": "1.0.301.5"
         },
         "compile": {
           "lib/net7.0-windows7.0/DCS.CoreLib.BaseClass.dll": {}
@@ -118,7 +122,19 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "DCS.Log/1.0.301.5": {
+      "DCS.Localization/1.0.301": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-windows7.0/DCS.Localization.dll": {}
+        },
+        "runtime": {
+          "lib/net7.0-windows7.0/DCS.Localization.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "DCS.Log/1.0.401.5": {
         "type": "package",
         "dependencies": {
           "Microsoft.Win32.Primitives": "4.3.0",
@@ -889,13 +905,15 @@
           }
         }
       },
-      "DCS.User/1.0.601": {
+      "DCS.User/1.0.701": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
-          "DCS.CoreLib": "1.0.201",
+          "DCS.CoreLib": "1.0.401",
           "DCS.Data": "1.0.201",
+          "DCS.Localization": "1.0.301",
+          "DCS.Log": "1.0.401.5",
           "DCS.LogManager": "1.0.5",
           "DCS.Resource": "1.0.1",
           "System.Management": "8.0.0"
@@ -910,15 +928,17 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "DCS.User.Data/1.0.801": {
+      "DCS.User.Data/1.0.901": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "DCS.CoreLib": "1.0.201",
-          "DCS.CoreLib.BaseClass": "1.0.401",
+          "DCS.CoreLib": "1.0.401",
+          "DCS.CoreLib.BaseClass": "1.0.701",
           "DCS.Data": "1.0.201",
+          "DCS.Localization": "1.0.301",
+          "DCS.Log": "1.0.401.5",
           "DCS.LogManager": "1.0.5",
-          "DCS.User": "1.0.601"
+          "DCS.User": "1.0.701"
         },
         "compile": {
           "bin/placeholder/DCS.User.Data.dll": {}
@@ -1010,24 +1030,24 @@
         "readme.md"
       ]
     },
-    "DCS.CoreLib/1.0.201": {
-      "sha512": "Paejowtsf7LPU76Wxlc4lLg6JAmb1CxaiIB/bqULYzBH6FGtHg4gStUtwNDJtD84yVIPPCwAf+gxlKnky5FQ4g==",
+    "DCS.CoreLib/1.0.401": {
+      "sha512": "Y53bKfplUuW37Dwqiwic2VErsYAkM0YPEJUsIHI435a+uMkhAzkbgH4Fi6IfQMMDE2TXMSr0LU780OmGvxLzqg==",
       "type": "package",
-      "path": "dcs.corelib/1.0.201",
+      "path": "dcs.corelib/1.0.401",
       "files": [
         ".nupkg.metadata",
-        "dcs.corelib.1.0.201.nupkg.sha512",
+        "dcs.corelib.1.0.401.nupkg.sha512",
         "dcs.corelib.nuspec",
         "lib/net7.0-windows7.0/DCS.CoreLib.dll"
       ]
     },
-    "DCS.CoreLib.BaseClass/1.0.401": {
-      "sha512": "P0p2EbTD8Mm9yHLOsBCV1GUNAvivbvjne5SWyPowu3StAUnsu+otHEgt3vg7uvyxrgEYl3hqMy5OG9V7fS+9DA==",
+    "DCS.CoreLib.BaseClass/1.0.701": {
+      "sha512": "9TlhYsTrxpE504oji/XNdXbz9ftZU03PXqvAp9CRXqU6nVPurC3lWxjDhv1KIPn9uSnbBWO8kuB4IIM1KFm7NA==",
       "type": "package",
-      "path": "dcs.corelib.baseclass/1.0.401",
+      "path": "dcs.corelib.baseclass/1.0.701",
       "files": [
         ".nupkg.metadata",
-        "dcs.corelib.baseclass.1.0.401.nupkg.sha512",
+        "dcs.corelib.baseclass.1.0.701.nupkg.sha512",
         "dcs.corelib.baseclass.nuspec",
         "lib/net7.0-windows7.0/DCS.CoreLib.BaseClass.dll"
       ]
@@ -1043,13 +1063,24 @@
         "lib/net7.0-windows7.0/DCS.Data.dll"
       ]
     },
-    "DCS.Log/1.0.301.5": {
-      "sha512": "bRoXIM6X/3EKlNBSBTqM9SxaM2e5Bu+ym3NgrRgkV92JdhyLnjc8h8zkiIrURPLb91uRD7mW19aOaYA0u+05eQ==",
+    "DCS.Localization/1.0.301": {
+      "sha512": "oMLxldeSSHa7nRDdWrpd1yH623uS2GZLm1/WHTGmFNVQeMZo9Ji4V+68Gb4yeJoA/lMs/HO9HYB22YupqGbEMw==",
       "type": "package",
-      "path": "dcs.log/1.0.301.5",
+      "path": "dcs.localization/1.0.301",
       "files": [
         ".nupkg.metadata",
-        "dcs.log.1.0.301.5.nupkg.sha512",
+        "dcs.localization.1.0.301.nupkg.sha512",
+        "dcs.localization.nuspec",
+        "lib/net7.0-windows7.0/DCS.Localization.dll"
+      ]
+    },
+    "DCS.Log/1.0.401.5": {
+      "sha512": "0cPCyWhxfYzuZsCDsDNtzVeOKCXd5PlD2IB0/KHx1inW8u7tul9Ffd87CP4vdnkIIjPa07YNYVjeUdHYjS2ccg==",
+      "type": "package",
+      "path": "dcs.log/1.0.401.5",
+      "files": [
+        ".nupkg.metadata",
+        "dcs.log.1.0.401.5.nupkg.sha512",
         "dcs.log.nuspec",
         "lib/net7.0-windows7.0/DCS.Log.dll",
         "lib/net7.0-windows7.0/DCS.Log.xml"
@@ -2424,12 +2455,12 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "DCS.User/1.0.601": {
+    "DCS.User/1.0.701": {
       "type": "project",
       "path": "../DCS.User/DCS.User.csproj",
       "msbuildProject": "../DCS.User/DCS.User.csproj"
     },
-    "DCS.User.Data/1.0.801": {
+    "DCS.User.Data/1.0.901": {
       "type": "project",
       "path": "../DCS.User.Data/DCS.User.Data.csproj",
       "msbuildProject": "../DCS.User.Data/DCS.User.Data.csproj"
@@ -2438,12 +2469,14 @@
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
       "CommonServiceLocator >= 2.0.7",
-      "DCS.CoreLib >= 1.0.201",
-      "DCS.CoreLib.BaseClass >= 1.0.401",
+      "DCS.CoreLib >= 1.0.401",
+      "DCS.CoreLib.BaseClass >= 1.0.701",
       "DCS.Data >= 1.0.201",
+      "DCS.Localization >= 1.0.301",
+      "DCS.Log >= 1.0.401.5",
       "DCS.LogManager >= 1.0.5",
-      "DCS.User >= 1.0.601",
-      "DCS.User.Data >= 1.0.801",
+      "DCS.User >= 1.0.701",
+      "DCS.User.Data >= 1.0.901",
       "Dapper >= 2.1.66"
     ]
   },
@@ -2453,7 +2486,7 @@
     "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages": {}
   },
   "project": {
-    "version": "1.0.601",
+    "version": "1.0.701",
     "restore": {
       "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj",
       "projectName": "DCS.User.Service",
@@ -2516,15 +2549,23 @@
           },
           "DCS.CoreLib": {
             "target": "Package",
-            "version": "[1.0.201, )"
+            "version": "[1.0.401, )"
           },
           "DCS.CoreLib.BaseClass": {
             "target": "Package",
-            "version": "[1.0.401, )"
+            "version": "[1.0.701, )"
           },
           "DCS.Data": {
             "target": "Package",
             "version": "[1.0.201, )"
+          },
+          "DCS.Localization": {
+            "target": "Package",
+            "version": "[1.0.301, )"
+          },
+          "DCS.Log": {
+            "target": "Package",
+            "version": "[1.0.401.5, )"
           },
           "DCS.LogManager": {
             "target": "Package",
@@ -2551,7 +2592,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

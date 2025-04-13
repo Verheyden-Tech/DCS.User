@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj": {
-      "version": "1.0.801",
+      "version": "1.0.901",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
         "projectName": "DCS.User.Data",
@@ -61,15 +61,23 @@
           "dependencies": {
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.0.201, )"
+              "version": "[1.0.401, )"
             },
             "DCS.CoreLib.BaseClass": {
               "target": "Package",
-              "version": "[1.0.401, )"
+              "version": "[1.0.701, )"
             },
             "DCS.Data": {
               "target": "Package",
               "version": "[1.0.201, )"
+            },
+            "DCS.Localization": {
+              "target": "Package",
+              "version": "[1.0.301, )"
+            },
+            "DCS.Log": {
+              "target": "Package",
+              "version": "[1.0.401.5, )"
             },
             "DCS.LogManager": {
               "target": "Package",
@@ -92,12 +100,12 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj": {
-      "version": "1.0.601",
+      "version": "1.0.701",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj",
         "projectName": "DCS.User",
@@ -153,11 +161,19 @@
             },
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.0.201, )"
+              "version": "[1.0.401, )"
             },
             "DCS.Data": {
               "target": "Package",
               "version": "[1.0.201, )"
+            },
+            "DCS.Localization": {
+              "target": "Package",
+              "version": "[1.0.301, )"
+            },
+            "DCS.Log": {
+              "target": "Package",
+              "version": "[1.0.401.5, )"
             },
             "DCS.LogManager": {
               "target": "Package",
@@ -197,7 +213,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,5 +1,5 @@
 ﻿DCS.User.UI
-1.0.801.0
+1.0.901.0
 
 library
 C#
@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 
-4801137622
+5148939937
 
-91781404166
-244-1528324743
-Views\RegistrateUser.xaml;Views\UserEditor.xaml;Views\UserLogin.xaml;Views\UserManagement.xaml;
+10-1992246673
+254-571694682
+Views\ChangeUserPassword.xaml;Views\RegistrateUser.xaml;Views\UserEditor.xaml;Views\UserLogin.xaml;Views\UserManagement.xaml;
 
 False
 
