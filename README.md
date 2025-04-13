@@ -19,3 +19,7 @@ This solution is entirely written in C#.
 ## License
 
 This project is licensed under the MIT License.
+
+## Contact
+
+For further inquiries, please contact us at verheyden.tech@gmail.com.
