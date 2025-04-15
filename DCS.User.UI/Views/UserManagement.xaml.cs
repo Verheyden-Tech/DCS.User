@@ -1,11 +1,9 @@
-﻿using DCS.CoreLib.BaseClass;
+﻿using DCS.CoreLib.View;
+using DCS.OnBoarding.UI;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using DCS.CoreLib.View;
-using System.CodeDom;
-using DCS.OnBoarding.UI;
 
 namespace DCS.User.UI
 {
@@ -29,6 +27,7 @@ namespace DCS.User.UI
 
             Users = new ObservableCollection<User>();
             Users = userService.GetAll();
+            UserGridView.ItemsSource = Users;
 
             var obj = new User();
             viewModel = new UserManagementViewModel(obj);
@@ -44,15 +43,6 @@ namespace DCS.User.UI
             {
                 return DataContext as UserManagementViewModel;
             }
-        }
-
-        /// <summary>
-        /// Load all avialable user data from the table.
-        /// </summary>
-        /// <returns>List auf all avialable users.</returns>
-        public ObservableCollection<User> LoadUserData()
-        {
-            return userService.GetAll();
         }
 
         private void SetContextMenu()

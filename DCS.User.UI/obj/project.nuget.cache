@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zl2xUg3i5FM=",
+  "dgSpecHash": "DdyN1wb7soY=",
   "success": true,
   "projectFilePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
   "expectedPackageFiles": [
@@ -14,11 +14,11 @@
     "C:\\Users\\verhe\\.nuget\\packages\\dcs.corelib\\1.0.401\\dcs.corelib.1.0.401.nupkg.sha512",
     "C:\\Users\\verhe\\.nuget\\packages\\dcs.corelib.baseclass\\1.0.701\\dcs.corelib.baseclass.1.0.701.nupkg.sha512",
     "C:\\Users\\verhe\\.nuget\\packages\\dcs.corelib.collection\\1.0.301\\dcs.corelib.collection.1.0.301.nupkg.sha512",
-    "C:\\Users\\verhe\\.nuget\\packages\\dcs.corelib.view\\1.0.801\\dcs.corelib.view.1.0.801.nupkg.sha512",
+    "C:\\Users\\verhe\\.nuget\\packages\\dcs.corelib.view\\1.0.901\\dcs.corelib.view.1.0.901.nupkg.sha512",
     "C:\\Users\\verhe\\.nuget\\packages\\dcs.data\\1.0.201\\dcs.data.1.0.201.nupkg.sha512",
     "C:\\Users\\verhe\\.nuget\\packages\\dcs.hr\\1.0.101\\dcs.hr.1.0.101.nupkg.sha512",
     "C:\\Users\\verhe\\.nuget\\packages\\dcs.localization\\1.0.301\\dcs.localization.1.0.301.nupkg.sha512",
-    "C:\\Users\\verhe\\.nuget\\packages\\dcs.log\\1.0.401.5\\dcs.log.1.0.401.5.nupkg.sha512",
+    "C:\\Users\\verhe\\.nuget\\packages\\dcs.log\\1.0.501.5\\dcs.log.1.0.501.5.nupkg.sha512",
     "C:\\Users\\verhe\\.nuget\\packages\\dcs.logmanager\\1.0.5\\dcs.logmanager.1.0.5.nupkg.sha512",
     "C:\\Users\\verhe\\.nuget\\packages\\dcs.onboarding\\1.0.201\\dcs.onboarding.1.0.201.nupkg.sha512",
     "C:\\Users\\verhe\\.nuget\\packages\\dcs.onboarding.data\\1.0.201\\dcs.onboarding.data.1.0.201.nupkg.sha512",

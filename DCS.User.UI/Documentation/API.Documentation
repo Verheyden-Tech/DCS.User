@@ -319,12 +319,6 @@
             Returns the current instance of the <see cref="T:DCS.User.UI.UserManagementViewModel"/> class as DataContext.
             </summary>
         </member>
-        <member name="M:DCS.User.UI.UserManagement.LoadUserData">
-            <summary>
-            Load all avialable user data from the table.
-            </summary>
-            <returns>List auf all avialable users.</returns>
-        </member>
         <member name="M:DCS.User.UI.UserManagement.InitializeComponent">
             <summary>
             InitializeComponent

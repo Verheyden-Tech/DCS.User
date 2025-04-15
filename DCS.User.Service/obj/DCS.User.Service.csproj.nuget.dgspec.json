@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj": {
-      "version": "1.0.901",
+      "version": "1.0.1001",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
         "projectName": "DCS.User.Data",
@@ -77,7 +77,7 @@
             },
             "DCS.Log": {
               "target": "Package",
-              "version": "[1.0.401.5, )"
+              "version": "[1.0.501.5, )"
             },
             "DCS.LogManager": {
               "target": "Package",
@@ -105,7 +105,7 @@
       }
     },
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj": {
-      "version": "1.0.701",
+      "version": "1.0.801",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj",
         "projectName": "DCS.User.Service",
@@ -184,7 +184,7 @@
             },
             "DCS.Log": {
               "target": "Package",
-              "version": "[1.0.401.5, )"
+              "version": "[1.0.501.5, )"
             },
             "DCS.LogManager": {
               "target": "Package",
@@ -216,7 +216,7 @@
       }
     },
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj": {
-      "version": "1.0.701",
+      "version": "1.0.801",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj",
         "projectName": "DCS.User",
@@ -284,7 +284,7 @@
             },
             "DCS.Log": {
               "target": "Package",
-              "version": "[1.0.401.5, )"
+              "version": "[1.0.501.5, )"
             },
             "DCS.LogManager": {
               "target": "Package",

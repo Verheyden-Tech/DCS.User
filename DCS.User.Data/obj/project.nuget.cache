@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qEXcQJN25dE=",
+  "dgSpecHash": "rQkBsh00ulo=",
   "success": true,
   "projectFilePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
   "expectedPackageFiles": [
@@ -12,7 +12,7 @@
     "C:\\Users\\verhe\\.nuget\\packages\\dcs.corelib.baseclass\\1.0.701\\dcs.corelib.baseclass.1.0.701.nupkg.sha512",
     "C:\\Users\\verhe\\.nuget\\packages\\dcs.data\\1.0.201\\dcs.data.1.0.201.nupkg.sha512",
     "C:\\Users\\verhe\\.nuget\\packages\\dcs.localization\\1.0.301\\dcs.localization.1.0.301.nupkg.sha512",
-    "C:\\Users\\verhe\\.nuget\\packages\\dcs.log\\1.0.401.5\\dcs.log.1.0.401.5.nupkg.sha512",
+    "C:\\Users\\verhe\\.nuget\\packages\\dcs.log\\1.0.501.5\\dcs.log.1.0.501.5.nupkg.sha512",
     "C:\\Users\\verhe\\.nuget\\packages\\dcs.logmanager\\1.0.5\\dcs.logmanager.1.0.5.nupkg.sha512",
     "C:\\Users\\verhe\\.nuget\\packages\\dcs.resource\\1.0.1\\dcs.resource.1.0.1.nupkg.sha512",
     "C:\\Users\\verhe\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\9.0.1\\microsoft.bcl.asyncinterfaces.9.0.1.nupkg.sha512",

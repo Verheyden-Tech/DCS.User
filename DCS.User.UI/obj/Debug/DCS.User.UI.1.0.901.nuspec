@@ -9,17 +9,17 @@
     <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
     <description>UI for user management in DCS.</description>
     <tags>DCS</tags>
-    <repository type="git" commit="7ac04c6b7ef76596713e3b58f5782fccf857c88f" />
+    <repository type="git" commit="33974e736e28fc940b164cd7e82eab4894d6fc0d" />
     <dependencies>
       <group targetFramework="net7.0-windows7.0">
         <dependency id="DCS.User.Service" version="1.0.701" exclude="Build,Analyzers" />
         <dependency id="DCS.User" version="1.0.701" exclude="Build,Analyzers" />
         <dependency id="DCS.CoreLib" version="1.0.401" exclude="Build,Analyzers" />
         <dependency id="DCS.CoreLib.BaseClass" version="1.0.701" exclude="Build,Analyzers" />
-        <dependency id="DCS.CoreLib.View" version="1.0.801" exclude="Build,Analyzers" />
+        <dependency id="DCS.CoreLib.View" version="1.0.901" exclude="Build,Analyzers" />
         <dependency id="DCS.Data" version="1.0.201" exclude="Build,Analyzers" />
         <dependency id="DCS.Localization" version="1.0.301" exclude="Build,Analyzers" />
-        <dependency id="DCS.Log" version="1.0.401.5" exclude="Build,Analyzers" />
+        <dependency id="DCS.Log" version="1.0.501.5" exclude="Build,Analyzers" />
         <dependency id="DCS.LogManager" version="1.0.5" exclude="Build,Analyzers" />
         <dependency id="DCS.OnBoarding" version="1.0.201" exclude="Build,Analyzers" />
         <dependency id="DCS.OnBoarding.UI" version="1.0.201" exclude="Build,Analyzers" />
