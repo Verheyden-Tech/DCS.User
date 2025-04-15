@@ -22,7 +22,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <telerik:RadGridView x:Name="UserGridView" RowIndicatorVisibility="Visible" GroupPanelForeground="Black">
+        <telerik:RadGridView x:Name="UserGridView" RowIndicatorVisibility="Visible" GroupPanelForeground="Black" AutoGenerateColumns="False">
             <telerik:RadGridView.GroupPanelBackground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFDFDFDF" Offset="1"/>
