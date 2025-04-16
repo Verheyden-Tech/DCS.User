@@ -29,12 +29,16 @@ namespace DCS.User.UI
         /// <summary>
         /// Register a new user.
         /// </summary>
-        /// <param name="user">User to registrate.</param>
         /// <returns>Returns true if the registtration was successful, otherwise false.</returns>
-        /// <exception cref="ArgumentNullException"></exception>
         public bool RegistrateUser()
         {
-            var user = service.CreateUser(this.UserName, this.PassWord, this.IsAdmin, this.KeepLoggedIn);
+            if(this.IsADUser)
+            {
+                if(service.RegisterADUser(this.UserName, this.PassWord))
+                    return true;
+            }
+
+            var user = service.CreateUser(this.UserName, this.PassWord, this.IsAdmin, this.KeepLoggedIn, this.Domain);
 
             if (user == null)
                 throw new ArgumentNullException(nameof(user));
@@ -76,6 +80,19 @@ namespace DCS.User.UI
         }
 
         /// <summary>
+        /// Gets or sets the domain name of the user.
+        /// </summary>
+        public string Domain
+        {
+            get => this.Model.Domain;
+            set
+            {
+                this.Model.Domain = value;
+                OnPropertyChanged(nameof(Domain));
+            }
+        }
+
+        /// <summary>
         /// Gets or sets the flag if the user has admin rights.
         /// </summary>
         public bool IsAdmin
@@ -91,13 +108,13 @@ namespace DCS.User.UI
         /// <summary>
         /// Gets or sets the flag if the user is a local user.
         /// </summary>
-        public bool IsLocalUser
+        public bool IsADUser
         {
-            get => this.Model.IsLocalUser;
+            get => this.Model.IsADUser;
             set
             {
-                this.Model.IsLocalUser = value;
-                OnPropertyChanged(nameof(IsLocalUser));
+                this.Model.IsADUser = value;
+                OnPropertyChanged(nameof(IsADUser));
             }
         }
 

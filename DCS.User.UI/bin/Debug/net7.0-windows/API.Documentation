@@ -24,9 +24,7 @@
             <summary>
             Register a new user.
             </summary>
-            <param name="user">User to registrate.</param>
             <returns>Returns true if the registtration was successful, otherwise false.</returns>
-            <exception cref="T:System.ArgumentNullException"></exception>
         </member>
         <member name="P:DCS.User.UI.RegistrateUserViewModel.UserName">
             <summary>
@@ -38,12 +36,17 @@
             Gets or sets the password of the user.
             </summary>
         </member>
+        <member name="P:DCS.User.UI.RegistrateUserViewModel.Domain">
+            <summary>
+            Gets or sets the domain name of the user.
+            </summary>
+        </member>
         <member name="P:DCS.User.UI.RegistrateUserViewModel.IsAdmin">
             <summary>
             Gets or sets the flag if the user has admin rights.
             </summary>
         </member>
-        <member name="P:DCS.User.UI.RegistrateUserViewModel.IsLocalUser">
+        <member name="P:DCS.User.UI.RegistrateUserViewModel.IsADUser">
             <summary>
             Gets or sets the flag if the user is a local user.
             </summary>
@@ -166,6 +169,11 @@
             Gets or sets the user password.
             </summary>
         </member>
+        <member name="P:DCS.User.UI.UserViewModel.Domain">
+            <summary>
+            Gets or sets the user domain name.
+            </summary>
+        </member>
         <member name="P:DCS.User.UI.UserViewModel.IsActive">
             <summary>
             Gets or sets the user is admin flag.
@@ -186,7 +194,7 @@
             Gets or sets the user is logged in in current session flag.
             </summary>
         </member>
-        <member name="P:DCS.User.UI.UserViewModel.IsLocalUser">
+        <member name="P:DCS.User.UI.UserViewModel.IsADUser">
             <summary>
             Gets or sets the user is local user flag.
             </summary>
@@ -225,9 +233,9 @@
             </summary>
             <param name="userName">User name.</param>
         </member>
-        <member name="P:DCS.User.UI.RegistrateUser.ConnectionString">
+        <member name="P:DCS.User.UI.RegistrateUser.DomainName">
             <summary>
-            Gets or sets the connection string for the database.
+            Gets or sets the domain name.
             </summary>
         </member>
         <member name="P:DCS.User.UI.RegistrateUser.NewRegistratedUser">
@@ -286,12 +294,12 @@
             Represents the current logged in user.
             </summary>
         </member>
-        <member name="P:DCS.User.UI.UserLogin.SelectedDB">
+        <member name="P:DCS.User.UI.UserLogin.SelectedDomain">
             <summary>
             Represents the current selected database.
             </summary>
         </member>
-        <member name="P:DCS.User.UI.UserLogin.ConnectionString">
+        <member name="P:DCS.User.UI.UserLogin.DomainName">
             <summary>
             Represents the connection string for the selected database.
             </summary>

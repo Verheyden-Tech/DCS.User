@@ -26,6 +26,11 @@
         public string PassWord { get; set; }
 
         /// <summary>
+        /// User domain name.
+        /// </summary>
+        public string Domain { get; set; }
+
+        /// <summary>
         /// User is active flag.
         /// </summary>
         public bool IsActive { get; set; }
@@ -48,7 +53,7 @@
         /// <summary>
         /// User is local user flag.
         /// </summary>
-        public bool IsLocalUser { get; set; }
+        public bool IsADUser { get; set; }
 
         /// <summary>
         /// User creation date.

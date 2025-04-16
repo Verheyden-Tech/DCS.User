@@ -18,6 +18,20 @@ namespace DCS.User.Service
         }
 
         /// <inheritdoc/>
+        public bool RegisterADUser(string userDomainName, string rawPassWord)
+        {
+            var passWord = CryptographyHelper.HashSHA256(rawPassWord);
+
+            return repository.RegisterADUser(userDomainName, passWord);
+        }
+
+        /// <inheritdoc/>
+        public IList<User> GetDomainNames()
+        {
+            return repository.GetDomainNames();
+        }
+
+        /// <inheritdoc/>
         public User GetByName(string userName)
         {
             return repository.GetByName(userName);
@@ -42,19 +56,23 @@ namespace DCS.User.Service
         }
 
         /// <inheritdoc/>
-        public User CreateUser(string userName, string rawPassWord, bool isAdmin, bool keepLoggedIn)
+        public User CreateUser(string userName, string rawPassWord, bool isAdmin, bool keepLoggedIn, string adDomain)
         {
             var hashedPasswort = CryptographyHelper.HashSHA256(rawPassWord);
+
+            var fullUserName = !string.IsNullOrEmpty(adDomain) ? $"{adDomain}/{userName}" : userName;
 
             var newUser = new User
             {
                 Guid = Guid.NewGuid(),
-                UserName = userName,
+                UserName = fullUserName,
                 PassWord = hashedPasswort,
                 IsAdmin = isAdmin,
-                CreationDate = DateTime.Now.Date,
+                IsADUser = !string.IsNullOrEmpty(adDomain),
+                IsActive = true,
+                CreationDate = DateTime.Today,
                 KeepLoggedIn = keepLoggedIn,
-                LastManipulation = DateTime.Now.Date
+                LastManipulation = DateTime.Today
             };
 
             return newUser;

@@ -63,6 +63,15 @@ namespace DCS.User.UI
         }
 
         /// <summary>
+        /// Gets or sets the user domain name.
+        /// </summary>
+        public string Domain
+        {
+            get => Model.Domain;
+            set => Model.Domain = value;
+        }
+
+        /// <summary>
         /// Gets or sets the user is admin flag.
         /// </summary>
         public bool IsActive
@@ -101,10 +110,10 @@ namespace DCS.User.UI
         /// <summary>
         /// Gets or sets the user is local user flag.
         /// </summary>
-        public bool IsLocalUser
+        public bool IsADUser
         {
-            get => Model.IsLocalUser;
-            set => Model.IsLocalUser = value;
+            get => Model.IsADUser;
+            set => Model.IsADUser = value;
         }
 
         /// <summary>

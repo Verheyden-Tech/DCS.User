@@ -34,6 +34,7 @@
                 <telerik:GridViewDataColumn Header="Benutzername" DataMemberBinding="{Binding UserName}" MinWidth="100"/>
                 <telerik:GridViewCheckBoxColumn Header="Aktiv" DataMemberBinding="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50"/>
                 <telerik:GridViewCheckBoxColumn Header="Admin" DataMemberBinding="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50"/>
+                <telerik:GridViewCheckBoxColumn Header="AD-Benutzer" DataMemberBinding="{Binding IsADUser, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50"/>
                 <telerik:GridViewCheckBoxColumn Header="Angemeldet bleiben" DataMemberBinding="{Binding KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="120"/>
                 <telerik:GridViewDataColumn Header="Erstellt am" DataMemberBinding="{Binding CreationDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="100"/>
             </telerik:RadGridView.Columns>

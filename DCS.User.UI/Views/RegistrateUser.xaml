@@ -38,6 +38,7 @@
         <telerik:RadPasswordBox x:Name="PassWordRepeatBox" Grid.Row="3" Grid.Column="1" WatermarkContent="Neues Passwort wiederholen" WatermarkBehavior="HideOnTextEntered" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Left"/>
 
         <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Right" VerticalAlignment="Stretch" Grid.Row="4" Grid.Column="1">
+            <CheckBox x:Name="IsADUserCheckBox" Content="AD-Benutzer" Margin="2" Checked="IsADUserCheckBox_Checked" Unchecked="IsADUserCheckBox_Unchecked" IsChecked="{Binding Path=IsADUser, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Style="{DynamicResource CheckBox}"/>
             <CheckBox x:Name="KeepLoggedInCheckBox" Content="Angemeldet bleiben" Margin="2" IsChecked="{Binding Path=KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
             <CheckBox x:Name="IsAdminCheckBox" Content="Admin" Margin="2" IsChecked="{Binding Path=IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Style="{DynamicResource CheckBox}"/>
         </StackPanel>

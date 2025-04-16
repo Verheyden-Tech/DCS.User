@@ -12,8 +12,9 @@
         /// <param name="rawPassWord">User raw password to hash.</param>
         /// <param name="isAdmin">User has admin rights flag.</param>
         /// <param name="keepLoggedIn">User keep logged in flag.</param>
+        /// <param name="adDomain">Active Directory domain name.</param>
         /// <returns>New instance of <see cref="User"/>.</returns>
-        User CreateUser(string userName, string rawPassWord, bool isAdmin, bool keepLoggedIn);
+        User CreateUser(string userName, string rawPassWord, bool isAdmin, bool keepLoggedIn, string adDomain);
 
         /// <summary>
         /// Gets the Sha256 hash for the user password.

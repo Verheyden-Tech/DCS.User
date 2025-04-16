@@ -58,9 +58,9 @@ namespace DCS.User.UI
         }
 
         /// <summary>
-        /// Gets or sets the connection string for the database.
+        /// Gets or sets the domain name.
         /// </summary>
-        public string ConnectionString { get; set; }
+        public string DomainName { get; set; }
 
         /// <summary>
         /// Gets or sets the new registrated user.
@@ -78,6 +78,24 @@ namespace DCS.User.UI
             {
                 return;
             }
+        }
+
+        private void IsADUserCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            IsAdminCheckBox.IsEnabled = false;
+            IsAdminCheckBox.IsChecked = false;
+
+            KeepLoggedInCheckBox.IsChecked = false;
+            KeepLoggedInCheckBox.IsEnabled = false;
+        }
+
+        private void IsADUserCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            IsAdminCheckBox.IsEnabled = true;
+            IsAdminCheckBox.IsChecked = true;
+
+            KeepLoggedInCheckBox.IsChecked = true;
+            KeepLoggedInCheckBox.IsEnabled = true;
         }
     }
 }

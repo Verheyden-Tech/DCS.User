@@ -1,5 +1,6 @@
 ﻿using DCS.CoreLib.View;
 using DCS.OnBoarding.UI;
+using DCS.Resource;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
@@ -12,8 +13,9 @@ namespace DCS.User.UI
     /// </summary>
     public partial class UserManagement : DefaultAppControl
     {
-        private ObservableCollection<User> Users { get; set; }
         private IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
+        private readonly IIconService iconService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IIconService>();
+        private ObservableCollection<User> Users { get; set; }
         private UserManagementViewModel viewModel;
 
         /// <summary>
@@ -50,37 +52,34 @@ namespace DCS.User.UI
             MenuItem newUser = new MenuItem()
             {
                 Header = "Neuer User",
-                Icon = "Resources/Images/usermanagement_add_user_16x.png"
+                Icon = iconService.GetImage("usermanagement_add_user_16x.png")
             };
             newUser.Click += NewUser_Click;
-
-            UserManagementContextMenu.Items.Add(newUser);
 
             MenuItem editUser = new MenuItem()
             {
                 Header = "Nutzer bearbeiten",
-                Icon = "Resources/Images/usermanagement_edit_user_16x.png"
+                Icon = iconService.GetImage("usermanagement_edit_user_16x.png")
             };
             editUser.Click += EditUser_Click;
-
-            UserManagementContextMenu.Items.Add(editUser);
 
             MenuItem deleteUser = new MenuItem()
             {
                 Header = "User löschen",
-                Icon = "Resources/Images/usermanagement_remove_user_16x.png"
+                Icon = iconService.GetImage("usermanagement_remove_user_16x.png")
             };
             deleteUser.Click += DeleteUser_Click;
-
-            UserManagementContextMenu.Items.Add(deleteUser);
 
             MenuItem generateUser = new MenuItem()
             {
                 Header = "Nutzer generieren",
-                Icon = "Resources/Images/add_user_group_32x.png"
+                Icon = iconService.GetImage("add_user_group_32x.png")
             };
             generateUser.Click += GenerateUser_Click;
 
+            UserManagementContextMenu.Items.Add(newUser);
+            UserManagementContextMenu.Items.Add(editUser);
+            UserManagementContextMenu.Items.Add(deleteUser);
             UserManagementContextMenu.Items.Add(generateUser);
         }
 

@@ -45,6 +45,20 @@
             UserRepository to handle user data on the table.
             </summary>
         </member>
+        <member name="M:DCS.User.IUserRepository.RegisterADUser(System.String,System.String)">
+            <summary>
+            Register a new Active Directory user in the database.
+            </summary>
+            <param name="userDomainName">Domain name.</param>
+            <param name="passWord">Hashed domain password.</param>
+            <returns>True if the insert was successful, otherwise false.</returns>
+        </member>
+        <member name="M:DCS.User.IUserRepository.GetDomainNames">
+            <summary>
+            Gets all domain names from the database.
+            </summary>
+            <returns>List of avialable domain names on the table.</returns>
+        </member>
         <member name="M:DCS.User.IUserRepository.GetByName(System.String)">
             <summary>
             Gets a user by its given user name.
@@ -78,7 +92,7 @@
             UserService to manipulate user data.
             </summary>
         </member>
-        <member name="M:DCS.User.IUserService.CreateUser(System.String,System.String,System.Boolean,System.Boolean)">
+        <member name="M:DCS.User.IUserService.CreateUser(System.String,System.String,System.Boolean,System.Boolean,System.String)">
             <summary>
             Creates new instance of <see cref="T:DCS.User.User"/>.
             </summary>
@@ -86,6 +100,7 @@
             <param name="rawPassWord">User raw password to hash.</param>
             <param name="isAdmin">User has admin rights flag.</param>
             <param name="keepLoggedIn">User keep logged in flag.</param>
+            <param name="adDomain">Active Directory domain name.</param>
             <returns>New instance of <see cref="T:DCS.User.User"/>.</returns>
         </member>
         <member name="M:DCS.User.IUserService.GetSha256Hash(System.String)">
@@ -126,6 +141,11 @@
             User password.
             </summary>
         </member>
+        <member name="P:DCS.User.User.Domain">
+            <summary>
+            User domain name.
+            </summary>
+        </member>
         <member name="P:DCS.User.User.IsActive">
             <summary>
             User is active flag.
@@ -146,7 +166,7 @@
             User is logged in in current session flag.
             </summary>
         </member>
-        <member name="P:DCS.User.User.IsLocalUser">
+        <member name="P:DCS.User.User.IsADUser">
             <summary>
             User is local user flag.
             </summary>

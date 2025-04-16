@@ -25,6 +25,12 @@
             </summary>
             <param name="sqlService">Sql service.</param>
         </member>
+        <member name="M:DCS.User.Data.UserRepository.RegisterADUser(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCS.User.Data.UserRepository.GetDomainNames">
+            <inheritdoc/>
+        </member>
         <member name="M:DCS.User.Data.UserRepository.GetByName(System.String)">
             <inheritdoc/>
         </member>

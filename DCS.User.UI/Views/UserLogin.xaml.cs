@@ -16,8 +16,8 @@ namespace DCS.User.UI
         private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
         private readonly IIconService iconService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IIconService>();
         private readonly IDataBaseService dataBaseManager = CommonServiceLocator.ServiceLocator.Current.GetInstance<IDataBaseService>();
-        private string connectionString;
-        private ObservableCollection<string> dbServers;
+        private string domainName;
+        private ObservableCollection<string> domainNames;
         private UserLoginViewModel viewModel;
 
         /// <summary>
@@ -29,9 +29,7 @@ namespace DCS.User.UI
 
             SetImages();
 
-            ConnectionString = "Home";
-
-            SetUpDataBases();
+            GetDomainNames();
 
             var obj = new User();
             viewModel = new UserLoginViewModel(obj);
@@ -82,7 +80,7 @@ namespace DCS.User.UI
         {
             if(!string.IsNullOrWhiteSpace(UserNameLoginComboBox.Text))
             {
-                var win = new RegistrateUser(UserNameLoginComboBox.Text);
+                var win = new RegistrateUser(UserNameLoginComboBox.Text) { DomainName = SelectedDomain};
                 if (win.ShowDialog() == true)
                 {
                     this.LoggedInUser = win.NewRegistratedUser;
@@ -102,7 +100,7 @@ namespace DCS.User.UI
             }
             else
             {
-                var win = new RegistrateUser();
+                var win = new RegistrateUser() { DomainName = SelectedDomain };
                 if(win.ShowDialog() == true)
                 {
                     this.LoggedInUser = win.NewRegistratedUser;
@@ -122,67 +120,34 @@ namespace DCS.User.UI
             }
         }
 
-        private void TestDBConnectionButton_Click(object sender, RoutedEventArgs e)
+        private void ServerComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            if(dataBaseManager.TestConnection(ConnectionString))
+            SelectedDomain = ServerComboBox.SelectedItem as string;
+
+            if(SelectedDomain != null)
             {
-                MessageBox.Show("DB-Verbindung erfolgreich.", "Erfolg!", MessageBoxButton.OK, MessageBoxImage.Information);
+                RegistrateButton.IsEnabled = true;
+                LoginButton.IsEnabled = true;
             }
             else
             {
-                MessageBox.Show("Verbindungsfehler.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                RegistrateButton.IsEnabled = false;
+                LoginButton.IsEnabled = false;
             }
         }
 
-        private void ServerComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void GetDomainNames()
         {
-            this.SelectedDB = string.Empty;
+            domainNames = new ObservableCollection<string>();
 
-            this.SelectedDB = (sender as RadComboBox).SelectedItem as string;
-            ConnectionString = GetConnectionString(SelectedDB);
-
-            if(SelectedDB != "LocalUser")
+            foreach (var domain in userService.GetDomainNames())
             {
-                TestDBConnectionButton.IsEnabled = true;
-                TestDBConnectionButton.Visibility = Visibility.Visible;
+                domainNames.Add(domain.UserName);
             }
 
-            var userAccounts = viewModel.SetItemsSource(SelectedDB);
-
-            if(userAccounts.Count > 0)
-            {
-                UserNameLoginTextBox.Visibility = Visibility.Hidden;
-                UserNameLoginComboBox.Visibility = Visibility.Visible;
-                UserNameLoginComboBox.ItemsSource = userAccounts;
-            }
-        }
-
-        private void SetUpDataBases()
-        {
-            dbServers = new ObservableCollection<string>();
-
-            var server1 = "Home";
-            dbServers.Add(server1);
-
-            var server2 = "Office";
-            dbServers.Add(server2);
-
-            ServerComboBox.ItemsSource = dbServers;
+            ServerComboBox.ItemsSource = domainNames;
             ServerComboBox.SelectionChanged += ServerComboBox_SelectionChanged;
         }
-
-        private static string GetConnectionString(string dbName)
-        {
-            return dbName switch
-            {
-                "Home" => "Data Source=PCHOME;Initial Catalog = IT_Verheyden; Integrated Security = True; Connect Timeout = 30; Encrypt=True;Trust Server Certificate=True;Application Intent = ReadWrite; Multi Subnet Failover=False",
-                "Office" => "Data Source=TC-P360-01/DCS_DB;Initial Catalog = DCS; Integrated Security = True; Connect Timeout = 30; Encrypt=True;Trust Server Certificate=True;Application Intent = ReadWrite; Multi Subnet Failover=False",
-                "Local" => "LocalUser",
-                _ => string.Empty
-            };
-        }
-
-        public bool IsConnectionSelected {  get; set; }
 
         private void DefaultMainWindow_KeyDown(object sender, KeyEventArgs e)
         {
@@ -205,7 +170,7 @@ namespace DCS.User.UI
             var comboBox = (sender as RadComboBox);
             if(comboBox != null)
             {
-                if (!string.IsNullOrEmpty(SelectedDB))
+                if (!string.IsNullOrEmpty(comboBox.SelectedValue as string))
                     comboBox.ClearSelectionButtonVisibility = Visibility.Visible;
                 else
                 {
@@ -237,15 +202,15 @@ namespace DCS.User.UI
         /// <summary>
         /// Represents the current selected database.
         /// </summary>
-        public string SelectedDB { get; set; }
+        public string SelectedDomain { get; set; }
 
         /// <summary>
         /// Represents the connection string for the selected database.
         /// </summary>
-        public string ConnectionString
+        public string DomainName
         {
-            get => connectionString;
-            set => connectionString = value;
+            get => domainName;
+            set => domainName= value;
         }
     }
 }
