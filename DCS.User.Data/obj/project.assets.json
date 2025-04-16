@@ -905,7 +905,7 @@
           }
         }
       },
-      "DCS.User/1.0.901": {
+      "DCS.User/1.0.1001": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -2436,7 +2436,7 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "DCS.User/1.0.901": {
+    "DCS.User/1.0.1001": {
       "type": "project",
       "path": "../DCS.User/DCS.User.csproj",
       "msbuildProject": "../DCS.User/DCS.User.csproj"
@@ -2450,7 +2450,7 @@
       "DCS.Localization >= 1.0.301",
       "DCS.Log >= 1.0.501.5",
       "DCS.LogManager >= 1.0.5",
-      "DCS.User >= 1.0.901"
+      "DCS.User >= 1.0.1001"
     ]
   },
   "packageFolders": {
@@ -2459,7 +2459,7 @@
     "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages": {}
   },
   "project": {
-    "version": "1.0.1101",
+    "version": "1.0.1201",
     "restore": {
       "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
       "projectName": "DCS.User.Data",

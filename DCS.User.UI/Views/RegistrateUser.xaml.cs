@@ -38,7 +38,7 @@ namespace DCS.User.UI
         {
             if(PassWordBox.Password == PassWordRepeatBox.Password)
             {
-                if(viewModel.RegistrateUser() == true)
+                if(viewModel.RegistrateUser())
                 {
                     this.NewRegistratedUser = viewModel.Model;
                     this.DialogResult = true;

@@ -90,8 +90,7 @@
               "RelativeToolTip": "DCS.User.UI\\Views\\UserLogin.xaml.cs",
               "ViewState": "AgIAAGYAAAAAAAAAAAAowH8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T09:07:11.8Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T09:07:11.8Z"
             },
             {
               "$type": "Document",
@@ -136,7 +135,7 @@
               "RelativeDocumentMoniker": "DCS.User.UI\\Viewmodels\\RegistrateUserViewModel.cs",
               "ToolTip": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\Viewmodels\\RegistrateUserViewModel.cs",
               "RelativeToolTip": "DCS.User.UI\\Viewmodels\\RegistrateUserViewModel.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAvwCUAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAADgvzwAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-16T08:30:16.342Z",
               "EditorCaption": ""
@@ -162,8 +161,7 @@
               "RelativeToolTip": "DCS.User.Service\\UserService.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAAwBgAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T08:21:19.246Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T08:21:19.246Z"
             },
             {
               "$type": "Document",
@@ -175,8 +173,7 @@
               "RelativeToolTip": "DCS.User\\Interfaces\\IUserRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T08:19:42.724Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T08:19:42.724Z"
             },
             {
               "$type": "Document",
@@ -211,8 +208,7 @@
               "RelativeToolTip": "DCS.User.Data\\UserRepository.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAYwCAAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T14:24:47.13Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T14:24:47.13Z"
             },
             {
               "$type": "Document",

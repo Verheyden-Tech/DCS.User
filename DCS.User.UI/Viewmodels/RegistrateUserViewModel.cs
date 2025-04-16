@@ -37,19 +37,28 @@ namespace DCS.User.UI
                 if(service.RegisterADUser(Guid.NewGuid(), this.UserName, this.PassWord))
                     return true;
             }
-
-            var user = service.CreateUser(this.UserName, this.PassWord, this.IsAdmin, this.KeepLoggedIn, this.Domain);
-
-            if (user == null)
-                throw new ArgumentNullException(nameof(user));
-
-            if (service.New(user))
+            else
             {
-                this.Model = user;
-                return true;
-            }
+                try
+                {
+                    var user = service.CreateUser(this.UserName, this.PassWord, this.IsAdmin, this.KeepLoggedIn, this.Domain);
 
-            return false;
+                    if (user == null)
+                        throw new ArgumentNullException(nameof(user));
+
+                    if (service.New(user))
+                    {
+                        this.Model = user;
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.LogManager.Singleton.Error($"Error while creating user: {ex.Message}.", $"{ex.Source}");
+                    return false;
+                }
+            }
+            return true;
         }
 
         #region Public Props

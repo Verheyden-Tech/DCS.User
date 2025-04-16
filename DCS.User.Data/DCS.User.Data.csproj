@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
-	  <Version>1.0.1101.0</Version>
-	  <AssemblyVersion>1.0.1101.0</AssemblyVersion>
+	  <Version>1.0.1201.0</Version>
+	  <AssemblyVersion>1.0.1201.0</AssemblyVersion>
 	  <ApplicationVersion>1.2.3.0</ApplicationVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Authors>Tobias Verheyden</Authors>
