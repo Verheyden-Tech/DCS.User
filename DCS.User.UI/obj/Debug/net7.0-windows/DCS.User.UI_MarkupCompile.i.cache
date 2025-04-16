@@ -1,5 +1,5 @@
 ﻿DCS.User.UI
-1.0.1501.0
+1.0.1601.0
 
 library
 C#
@@ -16,5 +16,5 @@ TRACE;DEBUG;NET;NET7_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR
 2542078267076
 Views\ChangeUserPassword.xaml;Views\RegistrateUser.xaml;Views\UserEditor.xaml;Views\UserLogin.xaml;Views\UserManagement.xaml;
 
-False
+True
 

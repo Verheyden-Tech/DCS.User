@@ -15,7 +15,6 @@ namespace DCS.User.UI
     {
         private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
         private readonly IIconService iconService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IIconService>();
-        private readonly IDataBaseService dataBaseManager = CommonServiceLocator.ServiceLocator.Current.GetInstance<IDataBaseService>();
         private string domainName;
         private ObservableCollection<string> domainNames;
         private UserLoginViewModel viewModel;
@@ -140,7 +139,7 @@ namespace DCS.User.UI
 
             foreach (var domain in userService.GetDomainNames())
             {
-                domainNames.Add(domain.UserName);
+                domainNames.Add(domain.DomainName);
             }
 
             ServerComboBox.ItemsSource = domainNames;

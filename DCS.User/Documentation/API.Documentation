@@ -45,12 +45,10 @@
             UserRepository to handle user data on the table.
             </summary>
         </member>
-        <member name="M:DCS.User.IUserRepository.RegisterADUser(System.Guid,System.String,System.String)">
+        <member name="M:DCS.User.IUserRepository.RegisterADUser(DCS.User.ADUser)">
             <summary>
             Register a new Active Directory user in the database.
             </summary>
-            <param name="userDomainName">Domain name.</param>
-            <param name="passWord">Hashed domain password.</param>
             <returns>True if the insert was successful, otherwise false.</returns>
         </member>
         <member name="M:DCS.User.IUserRepository.GetDomainNames">
@@ -115,6 +113,36 @@
             Login user with username and password.
             </summary>
             <returns>Wether the login was successful.</returns>
+        </member>
+        <member name="T:DCS.User.ADUser">
+            <summary>
+            Model for Active Directory user.
+            </summary>
+        </member>
+        <member name="M:DCS.User.ADUser.#ctor">
+            <summary>
+            Default constructor for <see cref="T:DCS.User.ADUser"/> class.
+            </summary>
+        </member>
+        <member name="P:DCS.User.ADUser.Guid">
+            <summary>
+            Gets or sets the unique identifier for the domain.
+            </summary>
+        </member>
+        <member name="P:DCS.User.ADUser.DomainName">
+            <summary>
+            Gets or sets the name of the user domain.
+            </summary>
+        </member>
+        <member name="P:DCS.User.ADUser.IsActive">
+            <summary>
+            Indicates whether the user is an active.
+            </summary>
+        </member>
+        <member name="P:DCS.User.ADUser.CompanyGuid">
+            <summary>
+            Gets or sets the unique identifier for the associated company.
+            </summary>
         </member>
         <member name="T:DCS.User.User">
             <summary>

@@ -10,16 +10,14 @@ namespace DCS.User
         /// <summary>
         /// Register a new Active Directory user in the database.
         /// </summary>
-        /// <param name="userDomainName">Domain name.</param>
-        /// <param name="passWord">Hashed domain password.</param>
         /// <returns>True if the insert was successful, otherwise false.</returns>
-        bool RegisterADUser(Guid guid, string userDomainName, string passWord);
+        bool RegisterADUser(ADUser aDUser);
 
         /// <summary>
         /// Gets all domain names from the database.
         /// </summary>
         /// <returns>List of avialable domain names on the table.</returns>
-        IList<User> GetDomainNames();
+        IList<ADUser> GetDomainNames();
 
         /// <summary>
         /// Gets a user by its given user name.

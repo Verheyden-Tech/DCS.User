@@ -34,13 +34,26 @@ namespace DCS.User.UI
         {
             if(this.IsADUser)
             {
-                if(service.RegisterADUser(Guid.NewGuid(), this.UserName, this.PassWord))
+                var adUser = new ADUser
+                {
+                    Guid = Guid.NewGuid(),
+                    DomainName = this.UserName,
+                    IsActive = true,
+                    CompanyGuid = Guid.Empty
+                };
+
+                if(service.RegisterADUser(adUser))
                     return true;
+
+                return false;
             }
             else
             {
                 try
                 {
+                    if(string.IsNullOrEmpty(this.Domain))
+                        return false;
+
                     var user = service.CreateUser(this.UserName, this.PassWord, this.IsAdmin, this.KeepLoggedIn, this.Domain);
 
                     if (user == null)

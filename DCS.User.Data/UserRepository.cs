@@ -1,5 +1,6 @@
 ﻿using DCS.CoreLib.BaseClass;
 using DCS.Data;
+using System.Collections.ObjectModel;
 
 namespace DCS.User.Data
 {
@@ -30,22 +31,22 @@ namespace DCS.User.Data
         }
 
         /// <inheritdoc/>
-        public bool RegisterADUser(Guid guid, string userDomainName, string passWord)
+        public bool RegisterADUser(ADUser aDUser)
         {
-            if(string.IsNullOrEmpty(userDomainName))
+            if(aDUser == null)
                 return false;
 
-            string sql = $"INSERT INTO {TableName} (Guid, UserName, PassWord, IsADUser) VALUES (@guid, @userDomainName, @passWord, @isADUser)";
+            string sql = $"INSERT INTO dbo.VT_ADUser (Guid, DomainName, IsActive, CompanyGuid) VALUES (@Guid, @DomainName, @IsActive, @CompanyGuid)";
 
-            return sqlService.ExecuteSQL(sql, new { guid, userDomainName, passWord, isADUser = true });
+            return sqlService.ExecuteSQL(sql, aDUser);
         }
 
         /// <inheritdoc/>
-        public IList<User> GetDomainNames()
+        public IList<ADUser> GetDomainNames()
         {
-            string sql = $"SELECT * FROM {TableName} WHERE IsADUser = @isADUser";
+            string sql = $"SELECT * FROM dbo.VT_ADUser";
 
-            return sqlService.SQLQueryList<User>(sql, new { isADUser = true });
+            return sqlService.SQLQueryList<ADUser>(sql);
         }
 
         /// <inheritdoc/>
@@ -64,7 +65,7 @@ namespace DCS.User.Data
         {
             string sql = $"SELECT * FROM {TableName} WHERE KeepLoggedIn = @keepLoggedIn";
 
-            return sqlService.SQLQuery<User>(sql, new { keepLoggedIn = true });
+            return sqlService.SQLQuery<User>(sql, true);
         }
 
         /// <inheritdoc/>

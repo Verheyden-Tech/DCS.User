@@ -35,7 +35,7 @@
             Default constructor for UserService.
             </summary>
         </member>
-        <member name="M:DCS.User.Service.UserService.RegisterADUser(System.Guid,System.String,System.String)">
+        <member name="M:DCS.User.Service.UserService.RegisterADUser(DCS.User.ADUser)">
             <inheritdoc/>
         </member>
         <member name="M:DCS.User.Service.UserService.GetDomainNames">
