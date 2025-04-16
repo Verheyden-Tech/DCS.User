@@ -48,7 +48,7 @@
         <CheckBox x:Name="KeepLoggedInCheckBox" Content="Angemeldet bleiben" Grid.Column="1" Grid.Row="4" TabIndex="4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" IsChecked="{Binding Path=KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch">
-            <Button x:Name="RegistrateButton" Click="RegistrateButton_Click" Background="{x:Null}" BorderBrush="{x:Null}" TabIndex="5" IsEnabled="False" Content="Registrieren" Style="{DynamicResource ButtonAcc/Dec}"/>
+            <Button x:Name="RegistrateButton" Click="RegistrateButton_Click" Background="{x:Null}" BorderBrush="{x:Null}" TabIndex="5" IsEnabled="True" Content="Registrieren" Style="{DynamicResource ButtonAcc/Dec}"/>
             <Button x:Name="LoginButton" Click="LoginButton_Click" Content="Anmelden" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False" TabIndex="6" Style="{DynamicResource ButtonAcc/Dec}"/>
         </StackPanel>
 

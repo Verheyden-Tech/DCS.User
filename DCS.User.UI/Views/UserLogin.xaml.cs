@@ -126,12 +126,10 @@ namespace DCS.User.UI
 
             if(SelectedDomain != null)
             {
-                RegistrateButton.IsEnabled = true;
                 LoginButton.IsEnabled = true;
             }
             else
             {
-                RegistrateButton.IsEnabled = false;
                 LoginButton.IsEnabled = false;
             }
         }
