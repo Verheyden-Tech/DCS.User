@@ -30,14 +30,14 @@ namespace DCS.User.Data
         }
 
         /// <inheritdoc/>
-        public bool RegisterADUser(string userDomainName, string passWord)
+        public bool RegisterADUser(Guid guid, string userDomainName, string passWord)
         {
             if(string.IsNullOrEmpty(userDomainName))
                 return false;
 
-            string sql = $"INSERT INTO {TableName} (UserName, PassWord, IsADUser) VALUES (@userDomainName, @passWord, @isADUser)";
+            string sql = $"INSERT INTO {TableName} (Guid, UserName, PassWord, IsADUser) VALUES (@guid, @userDomainName, @passWord, @isADUser)";
 
-            return sqlService.ExecuteSQL(sql, new { userDomainName, passWord, isADUser = true });
+            return sqlService.ExecuteSQL(sql, new { guid, userDomainName, passWord, isADUser = true });
         }
 
         /// <inheritdoc/>

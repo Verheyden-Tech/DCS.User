@@ -45,7 +45,7 @@
             UserRepository to handle user data on the table.
             </summary>
         </member>
-        <member name="M:DCS.User.IUserRepository.RegisterADUser(System.String,System.String)">
+        <member name="M:DCS.User.IUserRepository.RegisterADUser(System.Guid,System.String,System.String)">
             <summary>
             Register a new Active Directory user in the database.
             </summary>

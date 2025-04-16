@@ -34,7 +34,7 @@ namespace DCS.User.UI
         {
             if(this.IsADUser)
             {
-                if(service.RegisterADUser(this.UserName, this.PassWord))
+                if(service.RegisterADUser(Guid.NewGuid(), this.UserName, this.PassWord))
                     return true;
             }
 

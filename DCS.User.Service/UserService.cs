@@ -18,11 +18,13 @@ namespace DCS.User.Service
         }
 
         /// <inheritdoc/>
-        public bool RegisterADUser(string userDomainName, string rawPassWord)
+        public bool RegisterADUser(Guid guid, string userDomainName, string rawPassWord)
         {
             var passWord = CryptographyHelper.HashSHA256(rawPassWord);
+            if(guid == Guid.Empty)
+                guid = Guid.NewGuid();
 
-            return repository.RegisterADUser(userDomainName, passWord);
+            return repository.RegisterADUser(guid, userDomainName, passWord);
         }
 
         /// <inheritdoc/>

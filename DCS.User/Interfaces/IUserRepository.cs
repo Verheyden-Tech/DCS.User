@@ -13,7 +13,7 @@ namespace DCS.User
         /// <param name="userDomainName">Domain name.</param>
         /// <param name="passWord">Hashed domain password.</param>
         /// <returns>True if the insert was successful, otherwise false.</returns>
-        bool RegisterADUser(string userDomainName, string passWord);
+        bool RegisterADUser(Guid guid, string userDomainName, string passWord);
 
         /// <summary>
         /// Gets all domain names from the database.
