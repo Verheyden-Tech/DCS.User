@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|c:\\users\\verhe\\source\\repos\\dcs\\dcs-user\\dcs.user.ui\\views\\registrateuser.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|solutionrelative:dcs.user.ui\\views\\registrateuser.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|c:\\users\\verhe\\source\\repos\\dcs\\dcs-user\\dcs.user.ui\\views\\userlogin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|solutionrelative:dcs.user.ui\\views\\userlogin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|c:\\users\\verhe\\source\\repos\\dcs\\dcs-user\\dcs.user.ui\\views\\usermanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|solutionrelative:dcs.user.ui\\views\\usermanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|c:\\users\\verhe\\source\\repos\\dcs\\dcs-user\\dcs.user.ui\\views\\userlogin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|solutionrelative:dcs.user.ui\\views\\userlogin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,16 +43,8 @@
       "RelativeMoniker": "D:0:0:{20E29E27-7C76-4FBC-8F6D-E17CAAA53038}|DCS.User.Data\\DCS.User.Data.csproj|solutionrelative:dcs.user.data\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|c:\\users\\verhe\\source\\repos\\dcs\\dcs-user\\dcs.user.ui\\views\\registrateuser.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|solutionrelative:dcs.user.ui\\views\\registrateuser.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}|DCS.User\\DCS.User.csproj|c:\\users\\verhe\\source\\repos\\dcs\\dcs-user\\dcs.user\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}|DCS.User\\DCS.User.csproj|solutionrelative:dcs.user\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|c:\\users\\verhe\\source\\repos\\dcs\\dcs-user\\dcs.user.ui\\views\\usermanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|solutionrelative:dcs.user.ui\\views\\usermanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|c:\\users\\verhe\\source\\repos\\dcs\\dcs-user\\dcs.user.ui\\views\\usermanagement.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,12 +82,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "UserLogin.xaml",
+              "DocumentMoniker": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\Views\\UserLogin.xaml",
+              "RelativeDocumentMoniker": "DCS.User.UI\\Views\\UserLogin.xaml",
+              "ToolTip": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\Views\\UserLogin.xaml",
+              "RelativeToolTip": "DCS.User.UI\\Views\\UserLogin.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-18T09:52:36.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "UserLogin.xaml.cs",
               "DocumentMoniker": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\Views\\UserLogin.xaml.cs",
               "RelativeDocumentMoniker": "DCS.User.UI\\Views\\UserLogin.xaml.cs",
-              "ToolTip": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\Views\\UserLogin.xaml.cs*",
-              "RelativeToolTip": "DCS.User.UI\\Views\\UserLogin.xaml.cs*",
+              "ToolTip": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\Views\\UserLogin.xaml.cs",
+              "RelativeToolTip": "DCS.User.UI\\Views\\UserLogin.xaml.cs",
               "ViewState": "AgIAACkAAAAAAAAAAAAewI0AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-16T11:28:45.239Z",
@@ -91,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "UserLoginViewModel.cs",
               "DocumentMoniker": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\Viewmodels\\UserLoginViewModel.cs",
               "RelativeDocumentMoniker": "DCS.User.UI\\Viewmodels\\UserLoginViewModel.cs",
@@ -99,12 +115,11 @@
               "RelativeToolTip": "DCS.User.UI\\Viewmodels\\UserLoginViewModel.cs",
               "ViewState": "AgIAAGUAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T09:07:09.125Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T09:07:09.125Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "RegistrateUser.xaml.cs",
               "DocumentMoniker": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\Views\\RegistrateUser.xaml.cs",
               "RelativeDocumentMoniker": "DCS.User.UI\\Views\\RegistrateUser.xaml.cs",
@@ -112,12 +127,11 @@
               "RelativeToolTip": "DCS.User.UI\\Views\\RegistrateUser.xaml.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAQwBwAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T08:30:23.739Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T08:30:23.739Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "RegistrateUserViewModel.cs",
               "DocumentMoniker": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\Viewmodels\\RegistrateUserViewModel.cs",
               "RelativeDocumentMoniker": "DCS.User.UI\\Viewmodels\\RegistrateUserViewModel.cs",
@@ -125,23 +139,23 @@
               "RelativeToolTip": "DCS.User.UI\\Viewmodels\\RegistrateUserViewModel.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAQwC8AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T08:30:16.342Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T08:30:16.342Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "RegistrateUser.xaml",
               "DocumentMoniker": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\Views\\RegistrateUser.xaml",
               "RelativeDocumentMoniker": "DCS.User.UI\\Views\\RegistrateUser.xaml",
               "ToolTip": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\Views\\RegistrateUser.xaml",
               "RelativeToolTip": "DCS.User.UI\\Views\\RegistrateUser.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-16T08:28:40.042Z"
+              "WhenOpened": "2025-04-16T08:28:40.042Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\UserService.cs",
               "RelativeDocumentMoniker": "DCS.User.Service\\UserService.cs",
@@ -149,12 +163,11 @@
               "RelativeToolTip": "DCS.User.Service\\UserService.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T08:21:19.246Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T08:21:19.246Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\Interfaces\\IUserRepository.cs",
               "RelativeDocumentMoniker": "DCS.User\\Interfaces\\IUserRepository.cs",
@@ -162,12 +175,11 @@
               "RelativeToolTip": "DCS.User\\Interfaces\\IUserRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T08:19:42.724Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T08:19:42.724Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\Model\\User.cs",
               "RelativeDocumentMoniker": "DCS.User\\Model\\User.cs",
@@ -179,18 +191,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
               "Title": "UserManagement.xaml",
               "DocumentMoniker": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\Views\\UserManagement.xaml",
               "RelativeDocumentMoniker": "DCS.User.UI\\Views\\UserManagement.xaml",
               "ToolTip": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\Views\\UserManagement.xaml",
               "RelativeToolTip": "DCS.User.UI\\Views\\UserManagement.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-15T14:27:20.886Z"
+              "WhenOpened": "2025-04-15T14:27:20.886Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\UserRepository.cs",
               "RelativeDocumentMoniker": "DCS.User.Data\\UserRepository.cs",
@@ -198,12 +211,11 @@
               "RelativeToolTip": "DCS.User.Data\\UserRepository.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAQwCEAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T14:24:47.13Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T14:24:47.13Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "UserManagement.xaml.cs",
               "DocumentMoniker": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\Views\\UserManagement.xaml.cs",
               "RelativeDocumentMoniker": "DCS.User.UI\\Views\\UserManagement.xaml.cs",

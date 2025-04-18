@@ -15,6 +15,17 @@
             <ContextMenu Name="UserManagementContextMenu"/>
         </Grid.ContextMenu>
 
+        <Grid.Resources>
+            <Style TargetType="telerik:GridViewHeaderCell" x:Key="GridColumn">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderBrush" Value="SteelBlue"/>
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            </Style>
+        </Grid.Resources>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
@@ -30,13 +41,13 @@
                 </LinearGradientBrush>
             </telerik:RadGridView.GroupPanelBackground>
             <telerik:RadGridView.Columns>
-                <telerik:GridViewDataColumn Header="Guid" DataMemberBinding="{Binding Guid, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="70"/>
-                <telerik:GridViewDataColumn Header="Benutzername" DataMemberBinding="{Binding UserName}" MinWidth="100"/>
-                <telerik:GridViewCheckBoxColumn Header="Aktiv" DataMemberBinding="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50"/>
-                <telerik:GridViewCheckBoxColumn Header="Admin" DataMemberBinding="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50"/>
-                <telerik:GridViewCheckBoxColumn Header="AD-Benutzer" DataMemberBinding="{Binding IsADUser, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50"/>
-                <telerik:GridViewCheckBoxColumn Header="Angemeldet bleiben" DataMemberBinding="{Binding KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="120"/>
-                <telerik:GridViewDataColumn Header="Erstellt am" DataMemberBinding="{Binding CreationDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="100"/>
+                <telerik:GridViewDataColumn Header="Guid" DataMemberBinding="{Binding Guid, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="70" HeaderCellStyle="{DynamicResource ResourceKey=GridColumn}"/>
+                <telerik:GridViewDataColumn Header="Benutzername" DataMemberBinding="{Binding UserName}" MinWidth="100" HeaderCellStyle="{DynamicResource ResourceKey=GridColumn}"/>
+                <telerik:GridViewCheckBoxColumn Header="Aktiv" DataMemberBinding="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50" HeaderCellStyle="{DynamicResource ResourceKey=GridColumn}"/>
+                <telerik:GridViewCheckBoxColumn Header="Admin" DataMemberBinding="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50" HeaderCellStyle="{DynamicResource ResourceKey=GridColumn}"/>
+                <telerik:GridViewCheckBoxColumn Header="AD-Benutzer" DataMemberBinding="{Binding IsADUser, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50" HeaderCellStyle="{DynamicResource ResourceKey=GridColumn}"/>
+                <telerik:GridViewCheckBoxColumn Header="Angemeldet bleiben" DataMemberBinding="{Binding KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="120" HeaderCellStyle="{DynamicResource ResourceKey=GridColumn}"/>
+                <telerik:GridViewDataColumn Header="Erstellt am" DataMemberBinding="{Binding CreationDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="100" HeaderCellStyle="{DynamicResource ResourceKey=GridColumn}"/>
             </telerik:RadGridView.Columns>
         </telerik:RadGridView>
            

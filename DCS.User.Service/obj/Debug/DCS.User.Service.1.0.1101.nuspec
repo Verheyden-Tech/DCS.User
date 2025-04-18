@@ -9,7 +9,7 @@
     <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
     <description>Service for user management in DCS.</description>
     <tags>DCS</tags>
-    <repository type="git" commit="72b9a862281dbfe86cbbb4229dc9804a02b8d33b" />
+    <repository type="git" commit="7764ee8dbefae5dceccdcf821a2bd7600e9125ff" />
     <dependencies>
       <group targetFramework="net7.0-windows7.0">
         <dependency id="DCS.User.Data" version="1.0.1301" exclude="Build,Analyzers" />
