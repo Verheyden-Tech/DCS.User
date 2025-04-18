@@ -716,7 +716,7 @@
           }
         }
       },
-      "DCS.User.Data/1.0.1301": {
+      "DCS.User.Data/1.0.1401": {
         "dependencies": {
           "DCS.CoreLib": "1.0.401",
           "DCS.CoreLib.BaseClass": "1.0.701",
@@ -728,8 +728,8 @@
         },
         "runtime": {
           "DCS.User.Data.dll": {
-            "assemblyVersion": "1.0.1301.0",
-            "fileVersion": "1.0.1301.0"
+            "assemblyVersion": "1.0.1401.0",
+            "fileVersion": "1.0.1401.0"
           }
         }
       },
@@ -743,7 +743,7 @@
           "DCS.Log": "1.0.501.5",
           "DCS.LogManager": "1.0.5",
           "DCS.User": "1.0.1101",
-          "DCS.User.Data": "1.0.1301",
+          "DCS.User.Data": "1.0.1401",
           "Dapper": "2.1.66"
         },
         "runtime": {
@@ -1328,7 +1328,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "DCS.User.Data/1.0.1301": {
+    "DCS.User.Data/1.0.1401": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

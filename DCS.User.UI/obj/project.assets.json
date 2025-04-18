@@ -1136,7 +1136,7 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "DCS.User.Data/1.0.1301": {
+      "DCS.User.Data/1.0.1401": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -1167,7 +1167,7 @@
           "DCS.Log": "1.0.501.5",
           "DCS.LogManager": "1.0.5",
           "DCS.User": "1.0.1101",
-          "DCS.User.Data": "1.0.1301",
+          "DCS.User.Data": "1.0.1401",
           "Dapper": "2.1.66"
         },
         "compile": {
@@ -2810,7 +2810,7 @@
       "path": "../DCS.User/DCS.User.csproj",
       "msbuildProject": "../DCS.User/DCS.User.csproj"
     },
-    "DCS.User.Data/1.0.1301": {
+    "DCS.User.Data/1.0.1401": {
       "type": "project",
       "path": "../DCS.User.Data/DCS.User.Data.csproj",
       "msbuildProject": "../DCS.User.Data/DCS.User.Data.csproj"

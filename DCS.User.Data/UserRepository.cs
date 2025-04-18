@@ -57,7 +57,7 @@ namespace DCS.User.Data
 
             string sql = $"SELECT * FROM {TableName} WHERE UserName = @username";
 
-            return sqlService.SQLQuery<User>(sql, userName);
+            return sqlService.SQLQuery<User>(sql, new { username = userName});
         }
 
         /// <inheritdoc/>
@@ -65,7 +65,7 @@ namespace DCS.User.Data
         {
             string sql = $"SELECT * FROM {TableName} WHERE KeepLoggedIn = @keepLoggedIn";
 
-            return sqlService.SQLQuery<User>(sql, true);
+            return sqlService.SQLQuery<User>(sql, new { keepLoggedIn = true });
         }
 
         /// <inheritdoc/>
