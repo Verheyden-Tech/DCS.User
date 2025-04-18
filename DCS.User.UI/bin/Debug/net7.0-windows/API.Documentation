@@ -279,6 +279,11 @@
             UserLogin
             </summary>
         </member>
+        <member name="P:DCS.User.UI.UserLogin.DomainNames">
+            <summary>
+            Represents the domain names for the database connection.
+            </summary>
+        </member>
         <member name="M:DCS.User.UI.UserLogin.#ctor">
             <summary>
             Default constructor to initializes a new instance of <see cref="T:DCS.User.UI.UserLogin"/>.

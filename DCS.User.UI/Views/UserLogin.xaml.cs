@@ -16,7 +16,10 @@ namespace DCS.User.UI
         private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
         private readonly IIconService iconService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IIconService>();
         private string domainName;
-        private ObservableCollection<string> domainNames;
+        /// <summary>
+        /// Represents the domain names for the database connection.
+        /// </summary>
+        public ObservableCollection<string> DomainNames { get; set; }
         private UserLoginViewModel viewModel;
 
         /// <summary>
@@ -135,14 +138,12 @@ namespace DCS.User.UI
 
         private void GetDomainNames()
         {
-            domainNames = new ObservableCollection<string>();
-
             foreach (var domain in userService.GetDomainNames())
             {
-                domainNames.Add(domain.DomainName);
+                DomainNames.Add(domain.DomainName);
             }
 
-            ServerComboBox.ItemsSource = domainNames;
+            ServerComboBox.ItemsSource = DomainNames;
             ServerComboBox.SelectionChanged += ServerComboBox_SelectionChanged;
         }
 
