@@ -90,7 +90,7 @@
           "DCS.LogManager": "1.0.5",
           "DCS.Resource": "1.0.1",
           "DCS.User": "1.0.1101",
-          "DCS.User.Service": "1.0.1101"
+          "DCS.User.Service": "1.0.1301"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.Contact.dll": {

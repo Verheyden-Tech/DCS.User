@@ -82,29 +82,9 @@ namespace DCS.User.UI
 
         private void RegistrateButton_Click(object sender, RoutedEventArgs e)
         {
-            if(!string.IsNullOrWhiteSpace(UserNameLoginComboBox.Text))
+            if(!string.IsNullOrWhiteSpace(SelectedDomain))
             {
-                var win = new RegistrateUser(UserNameLoginComboBox.Text) { DomainName = SelectedDomain};
-                if (win.ShowDialog() == true)
-                {
-                    this.LoggedInUser = win.NewRegistratedUser;
-
-                    if (KeepLoggedInCheckBox.IsChecked == true)
-                    {
-                        userService.SetKeepLoggedIn(LoggedInUser);
-                    }
-
-                    this.DialogResult = true;
-                    this.Close();
-                }
-                else
-                {
-                    return;
-                }
-            }
-            else
-            {
-                var win = new RegistrateUser() { DomainName = SelectedDomain };
+                var win = new RegistrateUser(SelectedDomain);
                 if(win.ShowDialog() == true)
                 {
                     this.LoggedInUser = win.NewRegistratedUser;
@@ -119,6 +99,7 @@ namespace DCS.User.UI
                 }
                 else
                 {
+                    MessageBox.Show("Bitte Domain wählen vor der registrierung.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
             }
@@ -203,14 +184,5 @@ namespace DCS.User.UI
         /// Represents the current selected database.
         /// </summary>
         public string SelectedDomain { get; set; }
-
-        /// <summary>
-        /// Represents the connection string for the selected database.
-        /// </summary>
-        public string DomainName
-        {
-            get => domainName;
-            set => domainName= value;
-        }
     }
 }

@@ -106,12 +106,8 @@ namespace DCS.User.UI
         /// </summary>
         public string Domain
         {
-            get => this.Model.Domain;
-            set
-            {
-                this.Model.Domain = value;
-                OnPropertyChanged(nameof(Domain));
-            }
+            get;
+            set;
         }
 
         /// <summary>

@@ -65,9 +65,10 @@ namespace DCS.User.Service
                 Guid = Guid.NewGuid(),
                 UserName = fullUserName,
                 PassWord = hashedPasswort,
+                Domain = adDomain,
                 IsAdmin = isAdmin,
-                IsADUser = !string.IsNullOrEmpty(adDomain),
                 IsActive = true,
+                IsADUser = false,
                 CreationDate = DateTime.Today,
                 KeepLoggedIn = keepLoggedIn,
                 LastManipulation = DateTime.Today

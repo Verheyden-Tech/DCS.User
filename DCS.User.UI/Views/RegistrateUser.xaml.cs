@@ -14,23 +14,15 @@ namespace DCS.User.UI
         /// <summary>
         /// Default constructor for <see cref="RegistrateUser"/>.
         /// </summary>
-        public RegistrateUser()
+        public RegistrateUser(string domainName)
         {
             InitializeComponent();
 
+            this.DomainName = domainName;
+
             var obj = new User();
             viewModel = new RegistrateUserViewModel(obj);
-            this.DataContext = viewModel;
-        }
-
-        /// <summary>
-        /// Initialize a new instance of <see cref="RegistrateUser"/>.
-        /// </summary>
-        /// <param name="userName">User name.</param>
-        public RegistrateUser(string userName) : this()
-        {
-            var obj = new User() { UserName = userName};
-            viewModel = new RegistrateUserViewModel(obj);
+            viewModel.Domain = domainName;
             this.DataContext = viewModel;
         }
 
@@ -38,7 +30,9 @@ namespace DCS.User.UI
         {
             if(PassWordBox.Password == PassWordRepeatBox.Password)
             {
-                if(viewModel.RegistrateUser())
+                viewModel.PassWord = PassWordBox.Password;
+
+                if (viewModel.RegistrateUser())
                 {
                     this.NewRegistratedUser = viewModel.Model;
                     this.DialogResult = true;

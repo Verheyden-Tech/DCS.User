@@ -222,16 +222,10 @@
             RegistrateUser
             </summary>
         </member>
-        <member name="M:DCS.User.UI.RegistrateUser.#ctor">
+        <member name="M:DCS.User.UI.RegistrateUser.#ctor(System.String)">
             <summary>
             Default constructor for <see cref="T:DCS.User.UI.RegistrateUser"/>.
             </summary>
-        </member>
-        <member name="M:DCS.User.UI.RegistrateUser.#ctor(System.String)">
-            <summary>
-            Initialize a new instance of <see cref="T:DCS.User.UI.RegistrateUser"/>.
-            </summary>
-            <param name="userName">User name.</param>
         </member>
         <member name="P:DCS.User.UI.RegistrateUser.DomainName">
             <summary>
@@ -302,11 +296,6 @@
         <member name="P:DCS.User.UI.UserLogin.SelectedDomain">
             <summary>
             Represents the current selected database.
-            </summary>
-        </member>
-        <member name="P:DCS.User.UI.UserLogin.DomainName">
-            <summary>
-            Represents the connection string for the selected database.
             </summary>
         </member>
         <member name="M:DCS.User.UI.UserLogin.InitializeComponent">
