@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rBAKzBqP+SA=",
+  "dgSpecHash": "c2nM6ID0dtk=",
   "success": true,
   "projectFilePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
   "expectedPackageFiles": [
@@ -67,6 +67,7 @@
     "C:\\Users\\verhe\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\verhe\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\verhe\\.nuget\\packages\\dcs.user\\1.0.1101\\dcs.user.1.0.1101.nupkg.sha512",
+    "C:\\Users\\verhe\\.nuget\\packages\\dcs.user.data\\1.0.1401\\dcs.user.data.1.0.1401.nupkg.sha512",
     "C:\\Users\\verhe\\.nuget\\packages\\dcs.user.service\\1.0.1101\\dcs.user.service.1.0.1101.nupkg.sha512"
   ],
   "logs": []

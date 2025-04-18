@@ -31,6 +31,8 @@ namespace DCS.User.UI
 
             SetImages();
 
+            DomainNames = new ObservableCollection<string>();
+
             GetDomainNames();
 
             var obj = new User();
