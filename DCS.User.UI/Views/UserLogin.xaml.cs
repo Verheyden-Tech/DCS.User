@@ -60,9 +60,9 @@ namespace DCS.User.UI
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            if (userService.LoginUser(UserNameLoginComboBox.Text, PassWordLoginBox.Password))
+            if (userService.LoginUser(UserNameLoginTextBox.Text, PassWordLoginBox.Password))
             {
-                LoggedInUser = userService.GetByName(UserNameLoginComboBox.Text);
+                LoggedInUser = userService.GetByName(UserNameLoginTextBox.Text);
 
                 if (KeepLoggedInCheckBox.IsChecked == true)
                 {
