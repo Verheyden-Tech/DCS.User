@@ -27,7 +27,7 @@
         /// Login user with username and password.
         /// </summary>
         /// <returns>Wether the login was successful.</returns>
-        bool LoginUser(string username, string password);
+        bool LoginUser(string username, string password, string domain);
     }
 
 }

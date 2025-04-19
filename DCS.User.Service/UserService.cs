@@ -85,13 +85,15 @@ namespace DCS.User.Service
         }
 
         /// <inheritdoc/>
-        public bool LoginUser(string username, string password)
+        public bool LoginUser(string username, string password, string domain)
         {
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                 return false;
 
+            var fullUserName = Path.Combine(domain + "/", username);
+
             //Get user instance by name to check password.
-            var user = repository.GetByName(username);
+            var user = repository.GetByName(fullUserName);
             string hashedPassword = CryptographyHelper.HashSHA256(password);
 
             if (hashedPassword == user.PassWord)

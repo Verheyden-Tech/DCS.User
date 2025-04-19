@@ -66,7 +66,7 @@
             Default constuctor initializes a new instance of <see cref="T:DCS.User.UI.UserLoginViewModel"/>
             </summary>
         </member>
-        <member name="M:DCS.User.UI.UserLoginViewModel.LoginUser(System.String,System.String)">
+        <member name="M:DCS.User.UI.UserLoginViewModel.LoginUser(System.String,System.String,System.String)">
             <summary>
             Checks if given user credentials equals to the data on the table.
             </summary>

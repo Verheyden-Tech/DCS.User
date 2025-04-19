@@ -1,6 +1,7 @@
 ﻿using DCS.CoreLib.BaseClass;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 
 namespace DCS.User.UI
 {
@@ -27,9 +28,9 @@ namespace DCS.User.UI
         /// <param name="username">User name.</param>
         /// <param name="password">User raw password.</param>
         /// <returns>Wether the login was succesfull.</returns>
-        public bool LoginUser(string username, string password)
+        public bool LoginUser(string username, string password, string adDomain)
         {
-            if(userService.LoginUser(username, password))
+            if (userService.LoginUser(username, password, adDomain))
             {
                 return true;
             };

@@ -108,7 +108,7 @@
             <param name="rawPassword">User password.</param>
             <returns>Sha256 hashed user password.</returns>
         </member>
-        <member name="M:DCS.User.IUserService.LoginUser(System.String,System.String)">
+        <member name="M:DCS.User.IUserService.LoginUser(System.String,System.String,System.String)">
             <summary>
             Login user with username and password.
             </summary>

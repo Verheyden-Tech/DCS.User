@@ -59,7 +59,7 @@
         <member name="M:DCS.User.Service.UserService.GetSha256Hash(System.String)">
             <inheritdoc/>
         </member>
-        <member name="M:DCS.User.Service.UserService.LoginUser(System.String,System.String)">
+        <member name="M:DCS.User.Service.UserService.LoginUser(System.String,System.String,System.String)">
             <inheritdoc/>
         </member>
     </members>

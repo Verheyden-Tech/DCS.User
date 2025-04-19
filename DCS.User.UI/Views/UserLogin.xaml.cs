@@ -2,6 +2,7 @@
 using DCS.Data;
 using DCS.Resource;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Windows;
 using System.Windows.Input;
 using Telerik.Windows.Controls;
@@ -60,9 +61,11 @@ namespace DCS.User.UI
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            if (userService.LoginUser(UserNameLoginTextBox.Text, PassWordLoginBox.Password))
+            if (userService.LoginUser(UserNameLoginTextBox.Text, PassWordLoginBox.Password, SelectedDomain))
             {
-                LoggedInUser = userService.GetByName(UserNameLoginTextBox.Text);
+                var fullUserName = Path.Combine(SelectedDomain + "/", UserNameLoginTextBox.Text);
+
+                LoggedInUser = userService.GetByName(fullUserName);
 
                 if (KeepLoggedInCheckBox.IsChecked == true)
                 {

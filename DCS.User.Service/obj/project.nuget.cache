@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TsqB/udTHX0=",
+  "dgSpecHash": "vbl+SMcbteM=",
   "success": true,
   "projectFilePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj",
   "expectedPackageFiles": [
@@ -55,9 +55,7 @@
     "C:\\Users\\verhe\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
     "C:\\Users\\verhe\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\verhe\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\verhe\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
-    "C:\\Users\\verhe\\.nuget\\packages\\dcs.user\\1.0.1201\\dcs.user.1.0.1201.nupkg.sha512",
-    "C:\\Users\\verhe\\.nuget\\packages\\dcs.user.data\\1.0.1601\\dcs.user.data.1.0.1601.nupkg.sha512"
+    "C:\\Users\\verhe\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }
