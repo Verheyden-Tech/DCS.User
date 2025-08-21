@@ -27,13 +27,13 @@
         <Image x:Name="DCS_Logo_Image" Grid.Row="0" Grid.Column="0" Stretch="Uniform" Height="86" Width="86" Margin="5"/>
         <Image x:Name="DCS_Label_Image" Height="60" Width="300" Stretch="Uniform" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1"/>
 
-        <Label Content="Benutzername" Grid.Row="1" Grid.Column="0" Style="{DynamicResource Label}"/>
+        <Label Content="Benutzername" Grid.Row="1" Grid.Column="0" Style="{DynamicResource Label}" Visibility="Collapsed"/>
         <telerik:RadWatermarkTextBox x:Name="UserNameLoginTextBox" Grid.Row="1" Grid.Column="1" BorderBrush="SteelBlue" WatermarkContent="Benutzername eingeben" WatermarkBehavior="HideOnTextEntered" Margin="2" Text="{Binding Path=UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" TabIndex="1" Visibility="Visible" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
-        <Label Content="Passwort" Grid.Row="2" Grid.Column="0" Style="{DynamicResource Label}"/>
+        <Label Content="Passwort" Grid.Row="2" Grid.Column="0" Style="{DynamicResource Label}"  Visibility="Collapsed"/>
         <telerik:RadPasswordBox x:Name="PassWordLoginBox" Grid.Row="2" Grid.Column="1" BorderBrush="SteelBlue" WatermarkContent="Passwort eingeben" WatermarkBehavior="HideOnTextEntered" Margin="2" TabIndex="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
-        <Label Content="Domain" Grid.Row="3" Grid.Column="0" Style="{DynamicResource Label}"/>
+        <Label Content="Domain" Grid.Row="3" Grid.Column="0" Style="{DynamicResource Label}"  Visibility="Collapsed"/>
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <telerik:RadComboBox Name="ServerComboBox" SelectionChanged="ServerComboBox_SelectionChanged" BorderBrush="SteelBlue" Width="150" TabIndex="3" Margin="2" IsTextSearchEnabled="True" ClearSelectionButtonVisibility="Collapsed" CanKeyboardNavigationSelectItems="True" DropDownOpened="ServerComboBox_DropDownOpened" ClearSelectionButtonContent="Auswahl aufheben" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 <telerik:RadComboBox.EmptySelectionBoxTemplate>
