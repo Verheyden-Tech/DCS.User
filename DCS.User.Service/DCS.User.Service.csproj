@@ -17,7 +17,6 @@
 	  <EnableNETAnalyzers>true</EnableNETAnalyzers>
 	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
 	  <DocumentationFile>Documentation\API.Documentation</DocumentationFile>
-	  <PackageOutputPath>C:\Users\verhe\Desktop\Local.Nuget</PackageOutputPath>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
