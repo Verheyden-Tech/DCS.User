@@ -39,7 +39,7 @@
                     }
                     else
                     {
-                        LogManager.LogManager.Singleton.Error("Current user is already set and cannot be changed.", "Setting current user");
+                        Log.LogManager.Singleton.Error("Current user is already set and cannot be changed.", "Setting current user");
                     }
                 }
             }

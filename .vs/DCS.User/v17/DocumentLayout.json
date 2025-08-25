@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|c:\\users\\tobias\\source\\repos\\verheyden-tech\\dcs.user\\dcs.user.ui\\views\\userlogin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|solutionrelative:dcs.user.ui\\views\\userlogin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|c:\\users\\tobias\\source\\repos\\verheyden-tech\\dcs.user\\dcs.user.ui\\views\\usermanagement.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|solutionrelative:dcs.user.ui\\views\\usermanagement.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|c:\\users\\tobias\\source\\repos\\verheyden-tech\\dcs.user\\dcs.user.ui\\dcs.user.ui.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|solutionrelative:dcs.user.ui\\dcs.user.ui.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B28D9A92-5043-4506-BD1B-39B655468F52}|DCS.User.Service\\DCS.User.Service.csproj|c:\\users\\tobias\\source\\repos\\verheyden-tech\\dcs.user\\dcs.user.service\\currentuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B28D9A92-5043-4506-BD1B-39B655468F52}|DCS.User.Service\\DCS.User.Service.csproj|solutionrelative:dcs.user.service\\currentuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B28D9A92-5043-4506-BD1B-39B655468F52}|DCS.User.Service\\DCS.User.Service.csproj|c:\\users\\tobias\\source\\repos\\verheyden-tech\\dcs.user\\dcs.user.service\\dcs.user.service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -59,70 +71,107 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DCS.User.UI",
+              "Title": "UserLogin.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.UI\\Views\\UserLogin.xaml.cs",
+              "RelativeDocumentMoniker": "DCS.User.UI\\Views\\UserLogin.xaml.cs",
+              "ToolTip": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.UI\\Views\\UserLogin.xaml.cs",
+              "RelativeToolTip": "DCS.User.UI\\Views\\UserLogin.xaml.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAQwFAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T07:49:42.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserManagement.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.UI\\Views\\UserManagement.xaml.cs",
+              "RelativeDocumentMoniker": "DCS.User.UI\\Views\\UserManagement.xaml.cs",
+              "ToolTip": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.UI\\Views\\UserManagement.xaml.cs",
+              "RelativeToolTip": "DCS.User.UI\\Views\\UserManagement.xaml.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAzwHAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T07:49:25.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CurrentUserService.cs",
+              "DocumentMoniker": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.Service\\CurrentUserService.cs",
+              "RelativeDocumentMoniker": "DCS.User.Service\\CurrentUserService.cs",
+              "ToolTip": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.Service\\CurrentUserService.cs",
+              "RelativeToolTip": "DCS.User.Service\\CurrentUserService.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAkwCgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T18:00:25.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DCS.User.UI.csproj",
               "DocumentMoniker": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.UI\\DCS.User.UI.csproj",
               "RelativeDocumentMoniker": "DCS.User.UI\\DCS.User.UI.csproj",
               "ToolTip": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.UI\\DCS.User.UI.csproj",
               "RelativeToolTip": "DCS.User.UI\\DCS.User.UI.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-08-24T17:01:11.027Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DCS.User.Service",
+              "DocumentIndex": 4,
+              "Title": "DCS.User.Service.csproj",
               "DocumentMoniker": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.Service\\DCS.User.Service.csproj",
               "RelativeDocumentMoniker": "DCS.User.Service\\DCS.User.Service.csproj",
               "ToolTip": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.Service\\DCS.User.Service.csproj",
               "RelativeToolTip": "DCS.User.Service\\DCS.User.Service.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABJAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACoAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-08-24T17:01:00.103Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DCS.User.Data",
+              "DocumentIndex": 5,
+              "Title": "DCS.User.Data.csproj",
               "DocumentMoniker": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.Data\\DCS.User.Data.csproj",
               "RelativeDocumentMoniker": "DCS.User.Data\\DCS.User.Data.csproj",
               "ToolTip": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.Data\\DCS.User.Data.csproj",
               "RelativeToolTip": "DCS.User.Data\\DCS.User.Data.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACMAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-08-24T17:00:52.917Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DCS.User",
+              "DocumentIndex": 6,
+              "Title": "DCS.User.csproj",
               "DocumentMoniker": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User\\DCS.User.csproj",
               "RelativeDocumentMoniker": "DCS.User\\DCS.User.csproj",
               "ToolTip": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User\\DCS.User.csproj",
               "RelativeToolTip": "DCS.User\\DCS.User.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-08-24T17:00:45.585Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "UserEditor.xaml",
               "DocumentMoniker": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.UI\\Views\\UserEditor.xaml",
               "RelativeDocumentMoniker": "DCS.User.UI\\Views\\UserEditor.xaml",
               "ToolTip": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.UI\\Views\\UserEditor.xaml",
               "RelativeToolTip": "DCS.User.UI\\Views\\UserEditor.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-21T12:31:12.339Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-21T12:31:12.339Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "UserLogin.xaml",
               "DocumentMoniker": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.UI\\Views\\UserLogin.xaml",
               "RelativeDocumentMoniker": "DCS.User.UI\\Views\\UserLogin.xaml",

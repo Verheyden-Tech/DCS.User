@@ -103,14 +103,14 @@ namespace DCS.User.UI
                         if (!userService.Delete(user.Guid))
                         {
                             MessageBox.Show($"Fehler beim löschen des Benutzers {user.UserName}.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
-                            LogManager.LogManager.Singleton.Warning($"Error while deleting {user.UserName}.", "DeleteUser");
+                            Log.LogManager.Singleton.Warning($"Error while deleting {user.UserName}.", "DeleteUser");
                             return;
                         }
                     }
                 }
                 catch (IOException ex)
                 {
-                    LogManager.LogManager.Singleton.Error($"Error while trying to delete selected users. {ex.Message}", $"{ex.Source}");
+                    Log.LogManager.Singleton.Error($"Error while trying to delete selected users. {ex.Message}", $"{ex.Source}");
                     return;
                 }
             }

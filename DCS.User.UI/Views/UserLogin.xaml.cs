@@ -78,7 +78,7 @@ namespace DCS.User.UI
             else
             {
                 MessageBox.Show("Login nicht erfolgreich. Bitte überprüfen Sie ihre Anmeldedaten.", "Fehler beim Login", MessageBoxButton.OK, MessageBoxImage.Error);
-                DCS.LogManager.LogManager.Singleton.Warning($"Failed login attempt for user account", "UserLogin");
+                Log.LogManager.Singleton.Warning($"Failed login attempt for user account", "UserLogin");
                 return;
             }
         }

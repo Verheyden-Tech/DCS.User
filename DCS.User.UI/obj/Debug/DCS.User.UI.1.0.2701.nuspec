@@ -9,7 +9,7 @@
     <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
     <description>UI for user management in DCS.</description>
     <tags>DCS</tags>
-    <repository type="git" commit="1da2c7e0b32b516a54e2d7fa67cf5367baa93746" />
+    <repository type="git" commit="0f60cbf1a967101b183ff8423edc1dd63b194240" />
     <dependencies>
       <group targetFramework="net7.0-windows7.0">
         <dependency id="DCS.User.Service" version="1.0.1501" exclude="Build,Analyzers" />
@@ -20,7 +20,6 @@
         <dependency id="DCS.Data" version="1.0.201" exclude="Build,Analyzers" />
         <dependency id="DCS.Localization" version="1.0.301" exclude="Build,Analyzers" />
         <dependency id="DCS.Log" version="1.0.501.5" exclude="Build,Analyzers" />
-        <dependency id="DCS.LogManager" version="1.0.5" exclude="Build,Analyzers" />
         <dependency id="DCS.OnBoarding" version="1.0.201" exclude="Build,Analyzers" />
         <dependency id="DCS.OnBoarding.UI" version="1.0.201" exclude="Build,Analyzers" />
         <dependency id="DCS.Resource" version="1.0.1" exclude="Build,Analyzers" />
@@ -33,6 +32,6 @@
     </frameworkReferences>
   </metadata>
   <files>
-    <file src="C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.UI.dll" target="lib\net7.0-windows7.0\DCS.User.UI.dll" />
+    <file src="C:\Users\Tobias\source\repos\Verheyden-Tech\DCS.User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.UI.dll" target="lib\net7.0-windows7.0\DCS.User.UI.dll" />
   </files>
 </package>
