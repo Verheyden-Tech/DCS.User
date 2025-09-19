@@ -25,7 +25,9 @@ namespace DCS.User.UI
         {
             if(Model != null)
             {
-                if(userService.Update(Model))
+                Model.LastManipulation = DateTime.Now;
+
+                if (userService.Update(Model))
                 {
                     return true;
                 }
@@ -42,6 +44,15 @@ namespace DCS.User.UI
         {
             get => Model.Guid;
             set => Model.Guid = value;
+        }
+
+        /// <summary>
+        /// Gets or sets the user identifier.
+        /// </summary>
+        public int Ident
+        {
+            get => Model.Ident;
+            set => Model.Ident = value;
         }
 
         /// <summary>

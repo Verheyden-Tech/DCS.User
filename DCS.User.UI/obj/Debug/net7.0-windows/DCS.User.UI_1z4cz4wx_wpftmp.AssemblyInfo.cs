@@ -13,12 +13,12 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Verheyden Tech")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyDescriptionAttribute("Service for user management in DCS.")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.1601.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.1601.0+a88e07b53ddda2900dfee39d2c2a2f4cef5ef955")]
-[assembly: System.Reflection.AssemblyProductAttribute("DCS.User.Service")]
-[assembly: System.Reflection.AssemblyTitleAttribute("DCS.User.Service")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.1601.0")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("UI for user management in DCS.")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.2701.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.2701.0+a88e07b53ddda2900dfee39d2c2a2f4cef5ef955")]
+[assembly: System.Reflection.AssemblyProductAttribute("DCS.User.UI")]
+[assembly: System.Reflection.AssemblyTitleAttribute("DCS.User.UI")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.2701.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
 
