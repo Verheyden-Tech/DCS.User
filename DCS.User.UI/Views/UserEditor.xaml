@@ -16,6 +16,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
@@ -33,8 +34,12 @@
         <CheckBox Grid.Row="1" Grid.Column="0" IsChecked="{Binding KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="Angemeldet bleiben" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
         <CheckBox Grid.Row="2" Grid.Column="0" IsChecked="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="Admin" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
-        <Label Grid.Row="4" Grid.Column="0" Content="Erstellt am" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
-        <telerik:RadWatermarkTextBox Grid.Row="4" Grid.Column="1" Text="{Binding CreationDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" IsReadOnly="True" ReadOnlyBackground="{x:Null}" BorderBrush="{x:Null}" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Erstellt am" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <telerik:RadWatermarkTextBox Grid.Row="3" Grid.Column="1" Text="{Binding CreationDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" IsReadOnly="True" ReadOnlyBackground="{x:Null}" BorderBrush="{x:Null}" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Zuletzt bearbeitet am" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <telerik:RadWatermarkTextBox Grid.Row="4" Grid.Column="1" Text="{Binding LastManipulation, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" IsReadOnly="True" ReadOnlyBackground="{x:Null}" BorderBrush="{x:Null}" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+
     </Grid>
     
 </win:DefaultEditorWindow>

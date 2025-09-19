@@ -41,7 +41,7 @@
                 </LinearGradientBrush>
             </telerik:RadGridView.GroupPanelBackground>
             <telerik:RadGridView.Columns>
-                <telerik:GridViewDataColumn Header="Ident" DataMemberBinding="{Binding Ident, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="70" HeaderCellStyle="{DynamicResource ResourceKey=GridColumn}"/>
+                <telerik:GridViewDataColumn Header="ID" DataMemberBinding="{Binding Ident, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="70" HeaderCellStyle="{DynamicResource ResourceKey=GridColumn}"/>
                 <telerik:GridViewDataColumn Header="Benutzername" DataMemberBinding="{Binding UserName}" MinWidth="100" HeaderCellStyle="{DynamicResource ResourceKey=GridColumn}"/>
                 <telerik:GridViewCheckBoxColumn Header="Aktiv" DataMemberBinding="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50" HeaderCellStyle="{DynamicResource ResourceKey=GridColumn}"/>
                 <telerik:GridViewCheckBoxColumn Header="Admin" DataMemberBinding="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50" HeaderCellStyle="{DynamicResource ResourceKey=GridColumn}"/>

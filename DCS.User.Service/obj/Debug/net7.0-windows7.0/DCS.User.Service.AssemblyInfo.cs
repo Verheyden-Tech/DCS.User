@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Service for user management in DCS.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.1501.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.1501.0+1da2c7e0b32b516a54e2d7fa67cf5367baa93746")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.1501.0+2db9a02dde9d8ae90958f9bf0925d2c1abd759eb")]
 [assembly: System.Reflection.AssemblyProductAttribute("DCS.User.Service")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DCS.User.Service")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.1501.0")]
