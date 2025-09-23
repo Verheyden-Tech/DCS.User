@@ -7,7 +7,7 @@
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
         xmlns:win="clr-namespace:DCS.CoreLib.View;assembly=DCS.CoreLib.View"
         mc:Ignorable="d" 
-        Title="UserEditor" Height="150" Width="500" SizeToContent="WidthAndHeight">
+        Title="Neuen Benutzer erstellen" Height="150" Width="500" SizeToContent="WidthAndHeight">
     
     <Grid>
 
@@ -21,25 +21,48 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
-        <telerik:RadWatermarkTextBox Grid.Row="0" Grid.Column="0" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Benutzername eingeben.." Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <telerik:RadButton Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+            
+        </telerik:RadButton>
 
-        <telerik:RadPasswordBox Grid.Row="0" Grid.Column="1" x:Name="UserPasswordBox" Text="{Binding PassWord, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Neues Passwort festlegen.." Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
-        <Button Grid.Row="0" Grid.Column="1" x:Name="ChangeUserPasswordButton" Visibility="Collapsed" Click="ChangeUserPasswordButton_Click" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left">
+        <telerik:RadWatermarkTextBox Grid.Row="0" Grid.Column="1" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Benutzername eingeben.." Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+
+        <telerik:RadPasswordBox Grid.Row="0" Grid.Column="2" x:Name="UserPasswordBox" Text="{Binding PassWord, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Neues Passwort festlegen.." Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <Button Grid.Row="0" Grid.Column="2" x:Name="ChangeUserPasswordButton" Visibility="Collapsed" Click="ChangeUserPasswordButton_Click" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left">
             <Image x:Name="ChangePasswordImage" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         </Button>
 
-        <CheckBox Grid.Row="1" Grid.Column="1" IsChecked="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="Aktiv" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
-        <CheckBox Grid.Row="1" Grid.Column="0" IsChecked="{Binding KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="Angemeldet bleiben" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
-        <CheckBox Grid.Row="2" Grid.Column="0" IsChecked="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="Admin" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <CheckBox Grid.Row="1" Grid.Column="2" IsChecked="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="Aktiv" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <CheckBox Grid.Row="1" Grid.Column="1" IsChecked="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="Admin" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
-        <Label Grid.Row="3" Grid.Column="0" Content="Erstellt am" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
-        <telerik:RadWatermarkTextBox Grid.Row="3" Grid.Column="1" Text="{Binding CreationDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" IsReadOnly="True" ReadOnlyBackground="{x:Null}" BorderBrush="{x:Null}" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <Grid Grid.Row="2" Grid.Column="1" x:Name="GroupBoxGrid">
 
-        <Label Grid.Row="4" Grid.Column="0" Content="Zuletzt bearbeitet am" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
-        <telerik:RadWatermarkTextBox Grid.Row="4" Grid.Column="1" Text="{Binding LastManipulation, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" IsReadOnly="True" ReadOnlyBackground="{x:Null}" BorderBrush="{x:Null}" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
 
+        </Grid>
+
+        <Grid Grid.Row="3" Grid.Column="2" x:Name="OrganisationBoxGrid">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
     </Grid>
     
 </win:DefaultEditorWindow>

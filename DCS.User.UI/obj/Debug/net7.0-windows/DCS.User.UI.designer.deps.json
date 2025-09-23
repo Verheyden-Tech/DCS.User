@@ -89,8 +89,8 @@
           "DCS.Data": "1.0.201",
           "DCS.LogManager": "1.0.5",
           "DCS.Resource": "1.0.1",
-          "DCS.User": "1.0.1301",
-          "DCS.User.Service": "1.0.1501"
+          "DCS.User": "1.0.1401",
+          "DCS.User.Service": "1.0.1601"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.Contact.dll": {
@@ -231,7 +231,7 @@
           "DCS.Data": "1.0.201",
           "DCS.HR": "1.0.101",
           "DCS.Log": "1.0.501.5",
-          "DCS.User": "1.0.1301"
+          "DCS.User": "1.0.1401"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.OnBoarding.dll": {
@@ -252,7 +252,7 @@
           "DCS.HR": "1.0.101",
           "DCS.Log": "1.0.501.5",
           "DCS.OnBoarding": "1.0.201",
-          "DCS.User": "1.0.1301"
+          "DCS.User": "1.0.1401"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.OnBoarding.Data.dll": {
@@ -275,7 +275,7 @@
           "DCS.Log": "1.0.501.5",
           "DCS.OnBoarding": "1.0.201",
           "DCS.OnBoarding.Data": "1.0.201",
-          "DCS.User": "1.0.1301"
+          "DCS.User": "1.0.1401"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.OnBoarding.Service.dll": {
@@ -297,7 +297,7 @@
           "DCS.Log": "1.0.501.5",
           "DCS.OnBoarding": "1.0.201",
           "DCS.OnBoarding.Service": "1.0.201",
-          "DCS.User": "1.0.1301"
+          "DCS.User": "1.0.1401"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.OnBoarding.UI.dll": {

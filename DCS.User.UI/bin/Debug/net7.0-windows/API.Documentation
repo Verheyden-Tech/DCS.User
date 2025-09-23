@@ -159,6 +159,11 @@
             Gets or sets the unique identifier for the user.
             </summary>
         </member>
+        <member name="P:DCS.User.UI.UserViewModel.Ident">
+            <summary>
+            Gets or sets the user identifier.
+            </summary>
+        </member>
         <member name="P:DCS.User.UI.UserViewModel.UserName">
             <summary>
             Gets or sets the user name.

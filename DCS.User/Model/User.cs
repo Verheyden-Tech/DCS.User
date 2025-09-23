@@ -71,7 +71,7 @@
         public DateTime? SubstitutionEnd { get; set; }
 
         /// <summary>
-        /// User last time properties changed date.
+        /// User properties last time changed date.
         /// </summary>
         public DateTime? LastManipulation {  get; set; }
     }

@@ -6,14 +6,14 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "DCS.User.Data/1.0.1701.0": {
+      "DCS.User.Data/1.0.1801.0": {
         "dependencies": {
           "DCS.CoreLib": "1.0.401",
           "DCS.CoreLib.BaseClass": "1.0.701",
           "DCS.Data": "1.0.201",
           "DCS.Localization": "1.0.301",
           "DCS.Log": "1.0.501.5",
-          "DCS.User": "1.0.1301"
+          "DCS.User": "1.0.1401"
         },
         "runtime": {
           "DCS.User.Data.dll": {}
@@ -506,7 +506,7 @@
           "System.Drawing.Common": "6.0.0"
         }
       },
-      "DCS.User/1.0.1301": {
+      "DCS.User/1.0.1401": {
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
           "DCS.CoreLib": "1.0.401",
@@ -518,15 +518,15 @@
         },
         "runtime": {
           "DCS.User.dll": {
-            "assemblyVersion": "1.0.1301.0",
-            "fileVersion": "1.0.1301.0"
+            "assemblyVersion": "1.0.1401.0",
+            "fileVersion": "1.0.1401.0"
           }
         }
       }
     }
   },
   "libraries": {
-    "DCS.User.Data/1.0.1701.0": {
+    "DCS.User.Data/1.0.1801.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -895,7 +895,7 @@
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
-    "DCS.User/1.0.1301": {
+    "DCS.User/1.0.1401": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
