@@ -9,7 +9,7 @@
     <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
     <description>Repository database service for DCS.User.</description>
     <tags>DCS</tags>
-    <repository type="git" commit="330864d795cb4dde02bcb361e7f4b43f0a67992f" />
+    <repository type="git" commit="4fe0c674134ea4a4f204f6351ca6016bd4b95e15" />
     <dependencies>
       <group targetFramework="net7.0-windows7.0">
         <dependency id="DCS.User" version="1.0.1401" exclude="Build,Analyzers" />
@@ -22,6 +22,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.Data\bin\Debug\net7.0-windows\DCS.User.Data.dll" target="lib\net7.0-windows7.0\DCS.User.Data.dll" />
+    <file src="C:\Users\Tobias\source\repos\Verheyden-Tech\DCS.User\DCS.User.Data\bin\Debug\net7.0-windows\DCS.User.Data.dll" target="lib\net7.0-windows7.0\DCS.User.Data.dll" />
   </files>
 </package>

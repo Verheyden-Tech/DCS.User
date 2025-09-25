@@ -1,4 +1,4 @@
-﻿namespace DCS.User.Model
+﻿namespace DCS.User
 {
     /// <summary>
     /// Represents the user group class.

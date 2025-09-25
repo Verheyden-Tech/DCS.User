@@ -255,6 +255,26 @@
             UserEditor
             </summary>
         </member>
+        <member name="F:DCS.User.UI.UserEditor.groups">
+            <summary>
+            Contains all avialable user groups from the table.
+            </summary>
+        </member>
+        <member name="F:DCS.User.UI.UserEditor.organisations">
+            <summary>
+            Contains all avialable user organisations from the table.
+            </summary>
+        </member>
+        <member name="F:DCS.User.UI.UserEditor.userGroups">
+            <summary>
+            Contains all added user groups.
+            </summary>
+        </member>
+        <member name="F:DCS.User.UI.UserEditor.userOrganisations">
+            <summary>
+            Contains all added user organisations.
+            </summary>
+        </member>
         <member name="M:DCS.User.UI.UserEditor.#ctor(DCS.User.User)">
             <summary>
             Default constructor initialize a new <see cref="T:DCS.User.UI.UserEditor"/> window.

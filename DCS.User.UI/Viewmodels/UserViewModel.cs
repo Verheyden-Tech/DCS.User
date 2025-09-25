@@ -1,4 +1,5 @@
 ﻿using DCS.CoreLib.BaseClass;
+using System.Collections.ObjectModel;
 
 namespace DCS.User.UI
 {
@@ -8,6 +9,23 @@ namespace DCS.User.UI
     public class UserViewModel : ViewModelBase<Guid, User>
     {
         private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
+
+        /// <summary>
+        /// Contains all avialable user groups from the table.
+        /// </summary>
+        private ObservableCollection<Group> groups = new ObservableCollection<Group>();
+        /// <summary>
+        /// Contains all avialable user organisations from the table.
+        /// </summary>
+        private ObservableCollection<Organisation> organisations = new ObservableCollection<Organisation>();
+        /// <summary>
+        /// Contains all added user groups.
+        /// </summary>
+        private ObservableCollection<Group> userGroups = new ObservableCollection<Group>();
+        /// <summary>
+        /// Contains all added user organisations.
+        /// </summary>
+        private ObservableCollection<Organisation> userOrganisations = new ObservableCollection<Organisation>();
 
         /// <summary>
         /// Default constructor initialize a new instance of <see cref="UserViewModel"/>.
@@ -20,7 +38,7 @@ namespace DCS.User.UI
         /// <summary>
         /// Saves the current instance of the <see cref="UserViewModel"/> class.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>True if the save was successful; otherwise, false.</returns>
         public bool Save()
         {
             if(Model != null)
