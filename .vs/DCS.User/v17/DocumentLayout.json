@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B28D9A92-5043-4506-BD1B-39B655468F52}|DCS.User.Service\\DCS.User.Service.csproj|c:\\users\\tobias\\source\\repos\\verheyden-tech\\dcs.user\\dcs.user.service\\roleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B28D9A92-5043-4506-BD1B-39B655468F52}|DCS.User.Service\\DCS.User.Service.csproj|solutionrelative:dcs.user.service\\roleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}|DCS.User\\DCS.User.csproj|c:\\users\\tobias\\source\\repos\\verheyden-tech\\dcs.user\\dcs.user\\interfaces\\services\\iroleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}|DCS.User\\DCS.User.csproj|solutionrelative:dcs.user\\interfaces\\services\\iroleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B28D9A92-5043-4506-BD1B-39B655468F52}|DCS.User.Service\\DCS.User.Service.csproj|c:\\users\\tobias\\source\\repos\\verheyden-tech\\dcs.user\\dcs.user.service\\organisationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B28D9A92-5043-4506-BD1B-39B655468F52}|DCS.User.Service\\DCS.User.Service.csproj|solutionrelative:dcs.user.service\\organisationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B28D9A92-5043-4506-BD1B-39B655468F52}|DCS.User.Service\\DCS.User.Service.csproj|c:\\users\\tobias\\source\\repos\\verheyden-tech\\dcs.user\\dcs.user.service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B28D9A92-5043-4506-BD1B-39B655468F52}|DCS.User.Service\\DCS.User.Service.csproj|solutionrelative:dcs.user.service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}|DCS.User\\DCS.User.csproj|c:\\users\\tobias\\source\\repos\\verheyden-tech\\dcs.user\\dcs.user\\interfaces\\services\\iorganisationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}|DCS.User\\DCS.User.csproj|solutionrelative:dcs.user\\interfaces\\services\\iorganisationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}|DCS.User\\DCS.User.csproj|c:\\users\\tobias\\source\\repos\\verheyden-tech\\dcs.user\\dcs.user\\interfaces\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}|DCS.User\\DCS.User.csproj|solutionrelative:dcs.user\\interfaces\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}|DCS.User\\DCS.User.csproj|c:\\users\\tobias\\source\\repos\\verheyden-tech\\dcs.user\\dcs.user\\interfaces\\repositorys\\iorganisationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}|DCS.User\\DCS.User.csproj|solutionrelative:dcs.user\\interfaces\\repositorys\\iorganisationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|c:\\users\\tobias\\source\\repos\\verheyden-tech\\dcs.user\\dcs.user.ui\\views\\usereditor.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}|DCS.User.UI\\DCS.User.UI.csproj|solutionrelative:dcs.user.ui\\views\\usereditor.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -47,40 +75,130 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "IRoleService.cs",
+              "DocumentMoniker": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User\\Interfaces\\Services\\IRoleService.cs",
+              "RelativeDocumentMoniker": "DCS.User\\Interfaces\\Services\\IRoleService.cs",
+              "ToolTip": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User\\Interfaces\\Services\\IRoleService.cs",
+              "RelativeToolTip": "DCS.User\\Interfaces\\Services\\IRoleService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T07:09:42.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RoleService.cs",
+              "DocumentMoniker": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.Service\\RoleService.cs",
+              "RelativeDocumentMoniker": "DCS.User.Service\\RoleService.cs",
+              "ToolTip": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.Service\\RoleService.cs",
+              "RelativeToolTip": "DCS.User.Service\\RoleService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T07:08:54.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IOrganisationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User\\Interfaces\\Repositorys\\IOrganisationRepository.cs",
+              "RelativeDocumentMoniker": "DCS.User\\Interfaces\\Repositorys\\IOrganisationRepository.cs",
+              "ToolTip": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User\\Interfaces\\Repositorys\\IOrganisationRepository.cs",
+              "RelativeToolTip": "DCS.User\\Interfaces\\Repositorys\\IOrganisationRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T07:03:36.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User\\Interfaces\\Services\\IUserService.cs",
+              "RelativeDocumentMoniker": "DCS.User\\Interfaces\\Services\\IUserService.cs",
+              "ToolTip": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User\\Interfaces\\Services\\IUserService.cs",
+              "RelativeToolTip": "DCS.User\\Interfaces\\Services\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T07:03:16.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IOrganisationService.cs",
+              "DocumentMoniker": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User\\Interfaces\\Services\\IOrganisationService.cs",
+              "RelativeDocumentMoniker": "DCS.User\\Interfaces\\Services\\IOrganisationService.cs",
+              "ToolTip": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User\\Interfaces\\Services\\IOrganisationService.cs",
+              "RelativeToolTip": "DCS.User\\Interfaces\\Services\\IOrganisationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAACQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T07:01:33.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrganisationService.cs",
+              "DocumentMoniker": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.Service\\OrganisationService.cs",
+              "RelativeDocumentMoniker": "DCS.User.Service\\OrganisationService.cs",
+              "ToolTip": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.Service\\OrganisationService.cs",
+              "RelativeToolTip": "DCS.User.Service\\OrganisationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T07:00:35.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.Service\\UserService.cs",
+              "RelativeDocumentMoniker": "DCS.User.Service\\UserService.cs",
+              "ToolTip": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.Service\\UserService.cs",
+              "RelativeToolTip": "DCS.User.Service\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T06:56:18.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "UserViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.UI\\Viewmodels\\UserViewModel.cs",
               "RelativeDocumentMoniker": "DCS.User.UI\\Viewmodels\\UserViewModel.cs",
               "ToolTip": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.UI\\Viewmodels\\UserViewModel.cs",
               "RelativeToolTip": "DCS.User.UI\\Viewmodels\\UserViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAAAAAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-24T17:55:18.376Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "UserEditor.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.UI\\Views\\UserEditor.xaml.cs",
               "RelativeDocumentMoniker": "DCS.User.UI\\Views\\UserEditor.xaml.cs",
               "ToolTip": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.UI\\Views\\UserEditor.xaml.cs",
               "RelativeToolTip": "DCS.User.UI\\Views\\UserEditor.xaml.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAAB8AAABwAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAuwA4AAABzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-24T17:55:00.36Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "UserEditor.xaml",
               "DocumentMoniker": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.UI\\Views\\UserEditor.xaml",
               "RelativeDocumentMoniker": "DCS.User.UI\\Views\\UserEditor.xaml",
               "ToolTip": "C:\\Users\\Tobias\\source\\repos\\Verheyden-Tech\\DCS.User\\DCS.User.UI\\Views\\UserEditor.xaml",
               "RelativeToolTip": "DCS.User.UI\\Views\\UserEditor.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-21T12:31:12.339Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-21T12:31:12.339Z"
             }
           ]
         },

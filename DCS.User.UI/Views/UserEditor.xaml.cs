@@ -15,23 +15,6 @@ namespace DCS.User.UI
         private IIconService iconService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IIconService>();
 
         /// <summary>
-        /// Contains all avialable user groups from the table.
-        /// </summary>
-        private ObservableCollection<Group> groups = new ObservableCollection<Group>();
-        /// <summary>
-        /// Contains all avialable user organisations from the table.
-        /// </summary>
-        private ObservableCollection<Organisation> organisations = new ObservableCollection<Organisation>();
-        /// <summary>
-        /// Contains all added user groups.
-        /// </summary>
-        private ObservableCollection<Group> userGroups = new ObservableCollection<Group>();
-        /// <summary>
-        /// Contains all added user organisations.
-        /// </summary>
-        private ObservableCollection<Organisation> userOrganisations = new ObservableCollection<Organisation>();
-
-        /// <summary>
         /// Default constructor initialize a new <see cref="UserEditor"/> window.
         /// </summary>
         public UserEditor(User user) : base(user)
