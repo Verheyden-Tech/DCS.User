@@ -1,4 +1,5 @@
 ﻿using DCS.CoreLib.BaseClass;
+using System.Collections.ObjectModel;
 
 namespace DCS.User.UI
 {
@@ -34,6 +35,30 @@ namespace DCS.User.UI
                 return false;
             }
             return false;
+        }
+
+        /// <summary>
+        /// Gets all available active groups from the table.
+        /// </summary>
+        /// <returns>All avialable active groups from the table.</returns>
+        public ObservableCollection<Group> GetAllActiveGroups()
+        {
+            ObservableCollection<Group> groups = new ObservableCollection<Group>();
+
+            var allGroups = groupService.GetAll();
+
+            if (allGroups != null && allGroups.Count > 0)
+            {
+                foreach (var group in allGroups)
+                {
+                    if(group.IsActive)
+                    {
+                        groups.Add(group);
+                    }
+                }
+            }
+
+            return groups;
         }
 
         #region Properties

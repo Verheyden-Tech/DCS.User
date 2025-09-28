@@ -9,7 +9,11 @@ namespace DCS.User.UI
     public class UserViewModel : ViewModelBase<Guid, User>
     {
         private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
+        private readonly IGroupService groupService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IGroupService>();
+        private readonly IOrganisationService organisationService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IOrganisationService>();
+        private readonly IRoleService roleService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IRoleService>();
 
+        #region List Initializations
         /// <summary>
         /// Contains all avialable user groups from the table.
         /// </summary>
@@ -19,6 +23,10 @@ namespace DCS.User.UI
         /// </summary>
         private ObservableCollection<Organisation> organisations = new ObservableCollection<Organisation>();
         /// <summary>
+        /// Contains all avialable user roles from the table.
+        /// </summary>
+        private ObservableCollection<Role> roles = new ObservableCollection<Role>();
+        /// <summary>
         /// Contains all added user groups.
         /// </summary>
         private ObservableCollection<Group> userGroups = new ObservableCollection<Group>();
@@ -26,6 +34,11 @@ namespace DCS.User.UI
         /// Contains all added user organisations.
         /// </summary>
         private ObservableCollection<Organisation> userOrganisations = new ObservableCollection<Organisation>();
+        /// <summary>
+        /// Contains all added user roles.
+        /// </summary>
+        private ObservableCollection<Role> userRoles = new ObservableCollection<Role>();
+        #endregion
 
         /// <summary>
         /// Default constructor initialize a new instance of <see cref="UserViewModel"/>.
@@ -33,6 +46,10 @@ namespace DCS.User.UI
         public UserViewModel(User user) : base(user)
         {
             this.Model = user;
+
+            groups = groupService.GetAll();
+            organisations = organisationService.GetAll();
+            roles = roleService.GetAll();
         }
 
         /// <summary>
@@ -53,6 +70,104 @@ namespace DCS.User.UI
             }
             return false;
         }
+
+        #region Lists
+        /// <summary>
+        /// Contains all avialable user groups from the table.
+        /// </summary>
+        public ObservableCollection<Group> AllGroups
+        {
+            get => groups;
+            set
+            {
+                if(groups != value)
+                {
+                    groups = value;
+                    OnPropertyChanged(nameof(AllGroups));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Contains all added user groups.
+        /// </summary>
+        public ObservableCollection<Group> UserGroups
+        {
+            get => userGroups;
+            set
+            {
+                if (userGroups != value)
+                {
+                    userGroups = value;
+                    OnPropertyChanged(nameof(UserGroups));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Contains all avialable user organisations from the table.
+        /// </summary>
+        public ObservableCollection<Organisation> AllOrganisations
+        {
+            get => organisations;
+            set
+            {
+                if (organisations != value)
+                {
+                    organisations = value;
+                    OnPropertyChanged(nameof(AllOrganisations));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Contains all added user organisations.
+        /// </summary>
+        public ObservableCollection<Organisation> UserOrganisations
+        {
+            get => userOrganisations;
+            set
+            {
+                if (userOrganisations != value)
+                {
+                    userOrganisations = value;
+                    OnPropertyChanged(nameof(UserOrganisations));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Contains all avialable user roles from the table.
+        /// </summary>
+        public ObservableCollection<Role> AllRoles
+        {
+            get => roles;
+            set
+            {
+                if (roles != value)
+                {
+                    roles = value;
+                    OnPropertyChanged(nameof(AllRoles));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Contains all added user roles.
+        /// </summary>
+        public ObservableCollection<Role> UserRoles
+        {
+            get => userRoles;
+            set
+            {
+                if (userRoles != value)
+                {
+                    userRoles = value;
+                    OnPropertyChanged(nameof(UserRoles));
+                }
+            }
+        }
+        #endregion
 
         #region Properties
         /// <summary>

@@ -1,8 +1,6 @@
 ﻿using DCS.CoreLib.View;
 using DCS.Resource;
-using DCS.User.Model;
 using DCS.User.Views;
-using System.Collections.ObjectModel;
 
 namespace DCS.User.UI
 {

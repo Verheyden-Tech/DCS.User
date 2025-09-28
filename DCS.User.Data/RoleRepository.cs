@@ -12,7 +12,7 @@ namespace DCS.User.Data
         /// <summary>
         /// Tablename for the RoleRepository.
         /// </summary>
-        private static string tableName => "dbo.VT_Role";
+        private static string tableName => "dbo.VT_User_Role";
         /// <summary>
         /// PrimaryKeyColumn to identify roles on the table.
         /// </summary>

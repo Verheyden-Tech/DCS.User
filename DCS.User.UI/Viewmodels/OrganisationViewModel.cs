@@ -1,4 +1,6 @@
 ﻿using DCS.CoreLib.BaseClass;
+using DCS.User.Service;
+using System.Collections.ObjectModel;
 
 namespace DCS.User.UI
 {
@@ -33,6 +35,30 @@ namespace DCS.User.UI
                 return false;
             }
             return false;
+        }
+
+        /// <summary>
+        /// Gets all available active organisations from the table.
+        /// </summary>
+        /// <returns>All avialable active organisations from the table.</returns>
+        public ObservableCollection<Organisation> GetAllActiveOrganisations()
+        {
+            ObservableCollection<Organisation> organisations = new ObservableCollection<Organisation>();
+
+            var allOrganisations = organisationService.GetAll();
+
+            if (allOrganisations != null && allOrganisations.Count > 0)
+            {
+                foreach (var organisation in allOrganisations)
+                {
+                    if (organisation.IsActive)
+                    {
+                        organisations.Add(organisation);
+                    }
+                }
+            }
+
+            return organisations;
         }
 
         #region Properties

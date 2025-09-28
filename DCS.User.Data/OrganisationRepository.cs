@@ -9,7 +9,7 @@ namespace DCS.User.Data
     public class OrganisationRepository : RepositoryBase<Guid, Organisation>, IOrganisationRepository
     {
         private readonly ISqlService sqlService;
-        private static string tableName => "dbo.VT_Organisation";
+        private static string tableName => "dbo.VT_User_Organisation";
         private static string primaryKeyColumn => "Guid";
         /// <summary>
         /// Default constructor for OrganisationRepository.

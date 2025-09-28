@@ -12,7 +12,7 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\verhe\\.nuget\\packages",
+      "C:\\Users\\verhe\\Documents\\DCS\\Nuget",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
       "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages"
     ],

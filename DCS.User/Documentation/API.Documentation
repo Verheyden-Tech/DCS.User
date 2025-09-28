@@ -40,6 +40,21 @@
             <param name="encoding">The encoding to use.</param>
             <returns>The SHA256 hashed string.</returns>
         </member>
+        <member name="T:DCS.User.IGroupRepository">
+            <summary>
+            Represents the repository for managing <see cref="T:DCS.User.Group"/> entities in the database.
+            </summary>
+        </member>
+        <member name="T:DCS.User.IOrganisationRepository">
+            <summary>
+            Represents the repository for managing <see cref="T:DCS.User.Organisation"/> entities in the database.
+            </summary>
+        </member>
+        <member name="T:DCS.User.IRoleRepository">
+            <summary>
+            Represents the repository to manage <see cref="T:DCS.User.Role"/> entities in the database.
+            </summary>
+        </member>
         <member name="T:DCS.User.IUserRepository">
             <summary>
             UserRepository to handle user data on the table.
@@ -84,6 +99,21 @@
             </summary>
             <param name="user">User to unset keep logged in.</param>
             <returns>Wether setting flag to false was succesfull.</returns>
+        </member>
+        <member name="T:DCS.User.IGroupService">
+            <summary>
+            Represents the GroupService for <see cref="T:DCS.User.Group"/> entities.
+            </summary>
+        </member>
+        <member name="T:DCS.User.IOrganisationService">
+            <summary>
+            Represents the organisation service with basic methods inherited from <see cref="T:DCS.User.IOrganisationRepository"/> to handle organisation data.
+            </summary>
+        </member>
+        <member name="T:DCS.User.IRoleService">
+            <summary>
+            Represents the service for managing <see cref="T:DCS.User.Role"/> entities.
+            </summary>
         </member>
         <member name="T:DCS.User.IUserService">
             <summary>
@@ -144,152 +174,152 @@
             Gets or sets the unique identifier for the associated company.
             </summary>
         </member>
-        <member name="T:DCS.User.Model.Group">
+        <member name="T:DCS.User.Group">
             <summary>
             Represents the user group class.
             </summary>
         </member>
-        <member name="M:DCS.User.Model.Group.#ctor">
+        <member name="M:DCS.User.Group.#ctor">
             <summary>
-            Default constructor for <see cref="T:DCS.User.Model.Group"/> instances.
+            Default constructor for <see cref="T:DCS.User.Group"/> instances.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Group.Guid">
+        <member name="P:DCS.User.Group.Guid">
             <summary>
             Group unique identifier.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Group.Ident">
+        <member name="P:DCS.User.Group.Ident">
             <summary>
             Group ident.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Group.Name">
+        <member name="P:DCS.User.Group.Name">
             <summary>
             Group name.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Group.Description">
+        <member name="P:DCS.User.Group.Description">
             <summary>
             Group description.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Group.IsActive">
+        <member name="P:DCS.User.Group.IsActive">
             <summary>
             Group is active flag.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Group.UserGuid">
+        <member name="P:DCS.User.Group.UserGuid">
             <summary>
             Group creator user unique identifier.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Group.CreationDate">
+        <member name="P:DCS.User.Group.CreationDate">
             <summary>
             Group creation date.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Group.LastManipulation">
+        <member name="P:DCS.User.Group.LastManipulation">
             <summary>
             Group properties last time changed date.
             </summary>
         </member>
-        <member name="T:DCS.User.Model.Organisation">
+        <member name="T:DCS.User.Organisation">
             <summary>
             Represents the user organisation class.
             </summary>
         </member>
-        <member name="M:DCS.User.Model.Organisation.#ctor">
+        <member name="M:DCS.User.Organisation.#ctor">
             <summary>
-            Default constructor for <see cref="T:DCS.User.Model.Organisation"/> instances.
+            Default constructor for <see cref="T:DCS.User.Organisation"/> instances.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Organisation.Guid">
+        <member name="P:DCS.User.Organisation.Guid">
             <summary>
             Organisation unique identifier.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Organisation.Ident">
+        <member name="P:DCS.User.Organisation.Ident">
             <summary>
             Organisation ident.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Organisation.Name">
+        <member name="P:DCS.User.Organisation.Name">
             <summary>
             Organisation name.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Organisation.Description">
+        <member name="P:DCS.User.Organisation.Description">
             <summary>
             Organisation description.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Organisation.IsActive">
+        <member name="P:DCS.User.Organisation.IsActive">
             <summary>
             Organisation is active flag.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Organisation.UserGuid">
+        <member name="P:DCS.User.Organisation.UserGuid">
             <summary>
             Organisation creator user unique identifier.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Organisation.CreationDate">
+        <member name="P:DCS.User.Organisation.CreationDate">
             <summary>
             Organisation creation date.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Organisation.LastManipulation">
+        <member name="P:DCS.User.Organisation.LastManipulation">
             <summary>
             Organisation properties last time changed date.
             </summary>
         </member>
-        <member name="T:DCS.User.Model.Role">
+        <member name="T:DCS.User.Role">
             <summary>
             Represents the user role class.
             </summary>
         </member>
-        <member name="M:DCS.User.Model.Role.#ctor">
+        <member name="M:DCS.User.Role.#ctor">
             <summary>
-            Default constructor for <see cref="T:DCS.User.Model.Role"/> instances.
+            Default constructor for <see cref="T:DCS.User.Role"/> instances.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Role.Guid">
+        <member name="P:DCS.User.Role.Guid">
             <summary>
             Role unique identifier.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Role.Ident">
+        <member name="P:DCS.User.Role.Ident">
             <summary>
             Role ident.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Role.Name">
+        <member name="P:DCS.User.Role.Name">
             <summary>
             Role name.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Role.Description">
+        <member name="P:DCS.User.Role.Description">
             <summary>
             Role description.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Role.IsActive">
+        <member name="P:DCS.User.Role.IsActive">
             <summary>
             Role is active flag.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Role.UserGuid">
+        <member name="P:DCS.User.Role.UserGuid">
             <summary>
             Role creator user unique identifier.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Role.CreationDate">
+        <member name="P:DCS.User.Role.CreationDate">
             <summary>
             Role creation date.
             </summary>
         </member>
-        <member name="P:DCS.User.Model.Role.LastManipulation">
+        <member name="P:DCS.User.Role.LastManipulation">
             <summary>
             Role properties last time changed date.
             </summary>

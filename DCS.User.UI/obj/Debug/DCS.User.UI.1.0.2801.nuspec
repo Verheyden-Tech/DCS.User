@@ -9,7 +9,7 @@
     <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
     <description>UI for user management in DCS.</description>
     <tags>DCS</tags>
-    <repository type="git" commit="4fe0c674134ea4a4f204f6351ca6016bd4b95e15" />
+    <repository type="git" commit="156cdbc976cbbde9cc9d2cc7ec1a2b2a517e0f43" />
     <dependencies>
       <group targetFramework="net7.0-windows7.0">
         <dependency id="DCS.User.Service" version="1.0.1601" exclude="Build,Analyzers" />
@@ -32,6 +32,6 @@
     </frameworkReferences>
   </metadata>
   <files>
-    <file src="C:\Users\Tobias\source\repos\Verheyden-Tech\DCS.User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.UI.dll" target="lib\net7.0-windows7.0\DCS.User.UI.dll" />
+    <file src="C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.UI.dll" target="lib\net7.0-windows7.0\DCS.User.UI.dll" />
   </files>
 </package>

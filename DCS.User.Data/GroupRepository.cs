@@ -10,7 +10,7 @@ namespace DCS.User.Data
     {
         private readonly ISqlService sqlService;
 
-        private static string tableName => "dbo.VT_Group";
+        private static string tableName => "dbo.VT_User_Group";
 
         private static string primaryKeyColumn => "Guid";
 

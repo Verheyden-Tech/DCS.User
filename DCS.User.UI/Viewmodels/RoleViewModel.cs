@@ -1,4 +1,5 @@
 ﻿using DCS.CoreLib.BaseClass;
+using System.Collections.ObjectModel;
 
 namespace DCS.User.Viewmodels
 {
@@ -34,6 +35,30 @@ namespace DCS.User.Viewmodels
                 return false;
             }
             return false;
+        }
+
+        /// <summary>
+        /// Gets all available active roles from the table.
+        /// </summary>
+        /// <returns>All avialable active roles from the table.</returns>
+        public ObservableCollection<Role> GetAllActiveRoles()
+        {
+            ObservableCollection<Role> roles = new ObservableCollection<Role>();
+
+            var allRoles = roleService.GetAll();
+
+            if (allRoles != null && allRoles.Count > 0)
+            {
+                foreach (var role in allRoles)
+                {
+                    if (role.IsActive)
+                    {
+                        roles.Add(role);
+                    }
+                }
+            }
+
+            return roles;
         }
 
         #region Properties

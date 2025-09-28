@@ -10,7 +10,7 @@
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
         "projectName": "DCS.User.Data",
         "projectPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
-        "packagesPath": "C:\\Users\\verhe\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\verhe\\Documents\\DCS\\Nuget",
         "outputPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
@@ -18,6 +18,7 @@
           "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages"
         ],
         "configFilePaths": [
+          "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\NuGet.Config",
           "C:\\Users\\verhe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
@@ -30,6 +31,7 @@
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "C:\\Users\\verhe\\Desktop\\Local.Nuget": {},
+          "C:\\Users\\verhe\\Documents\\DCS\\Nuget": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.telerik.com/v3/index.json": {}
         },
@@ -61,15 +63,15 @@
           "dependencies": {
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.0.401, )"
+              "version": "[1.0.901, )"
             },
             "DCS.CoreLib.BaseClass": {
               "target": "Package",
-              "version": "[1.0.701, )"
+              "version": "[1.0.901, )"
             },
             "DCS.Data": {
               "target": "Package",
-              "version": "[1.0.201, )"
+              "version": "[1.0.301, )"
             },
             "DCS.Localization": {
               "target": "Package",
@@ -77,7 +79,7 @@
             },
             "DCS.Log": {
               "target": "Package",
-              "version": "[1.0.501.5, )"
+              "version": "[1.0.601.5, )"
             }
           },
           "imports": [
@@ -106,7 +108,7 @@
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj",
         "projectName": "DCS.User.Service",
         "projectPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj",
-        "packagesPath": "C:\\Users\\verhe\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\verhe\\Documents\\DCS\\Nuget",
         "outputPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
@@ -114,6 +116,7 @@
           "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages"
         ],
         "configFilePaths": [
+          "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\NuGet.Config",
           "C:\\Users\\verhe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
@@ -126,6 +129,7 @@
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "C:\\Users\\verhe\\Desktop\\Local.Nuget": {},
+          "C:\\Users\\verhe\\Documents\\DCS\\Nuget": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.telerik.com/v3/index.json": {}
         },
@@ -164,15 +168,15 @@
             },
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.0.401, )"
+              "version": "[1.0.901, )"
             },
             "DCS.CoreLib.BaseClass": {
               "target": "Package",
-              "version": "[1.0.701, )"
+              "version": "[1.0.901, )"
             },
             "DCS.Data": {
               "target": "Package",
-              "version": "[1.0.201, )"
+              "version": "[1.0.301, )"
             },
             "DCS.Localization": {
               "target": "Package",
@@ -180,7 +184,7 @@
             },
             "DCS.Log": {
               "target": "Package",
-              "version": "[1.0.501.5, )"
+              "version": "[1.0.601.5, )"
             },
             "Dapper": {
               "target": "Package",
@@ -213,7 +217,7 @@
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj",
         "projectName": "DCS.User",
         "projectPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj",
-        "packagesPath": "C:\\Users\\verhe\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\verhe\\Documents\\DCS\\Nuget",
         "outputPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
@@ -221,6 +225,7 @@
           "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages"
         ],
         "configFilePaths": [
+          "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\NuGet.Config",
           "C:\\Users\\verhe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
@@ -233,6 +238,7 @@
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "C:\\Users\\verhe\\Desktop\\Local.Nuget": {},
+          "C:\\Users\\verhe\\Documents\\DCS\\Nuget": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.telerik.com/v3/index.json": {}
         },
@@ -264,11 +270,11 @@
             },
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.0.401, )"
+              "version": "[1.0.901, )"
             },
             "DCS.Data": {
               "target": "Package",
-              "version": "[1.0.201, )"
+              "version": "[1.0.301, )"
             },
             "DCS.Localization": {
               "target": "Package",
@@ -276,7 +282,7 @@
             },
             "DCS.Log": {
               "target": "Package",
-              "version": "[1.0.501.5, )"
+              "version": "[1.0.601.5, )"
             },
             "DCS.Resource": {
               "target": "Package",

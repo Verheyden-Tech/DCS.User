@@ -25,6 +25,39 @@
             </summary>
             <param name="user">Current user.</param>
         </member>
+        <member name="T:DCS.User.Service.GroupService">
+            <summary>
+            Represents the GroupService for <see cref="T:DCS.User.Group"/> entities.
+            </summary>
+        </member>
+        <member name="M:DCS.User.Service.GroupService.#ctor(DCS.User.IGroupRepository)">
+            <summary>
+            Default constructor initialize a new instance of the <see cref="T:DCS.User.Service.GroupService"/> class.
+            </summary>
+            <param name="repository">Instance of <see cref="T:DCS.User.IGroupRepository"/>.</param>
+        </member>
+        <member name="T:DCS.User.Service.OrganisationService">
+            <summary>
+            Represents the OrganisationService for <see cref="T:DCS.User.Organisation"/> entities.
+            </summary>
+        </member>
+        <member name="M:DCS.User.Service.OrganisationService.#ctor(DCS.User.IOrganisationRepository)">
+            <summary>
+            Default constructor for OrganisationService.
+            </summary>
+            <param name="repository">Instance of <see cref="T:DCS.User.IOrganisationRepository"/>.</param>
+        </member>
+        <member name="T:DCS.User.Service.RoleService">
+            <summary>
+            Represents the RoleService for <see cref="T:DCS.User.Role"/> entities.
+            </summary>
+        </member>
+        <member name="M:DCS.User.Service.RoleService.#ctor(DCS.User.IRoleRepository)">
+            <summary>
+            Default constructor for RoleService.
+            </summary>
+            <param name="repository">Instance of <see cref="T:DCS.User.IRoleRepository"/>.</param>
+        </member>
         <member name="T:DCS.User.Service.UserService">
             <summary>
             UserService with basic methods inherited from <see cref="T:DCS.CoreLib.BaseClass.ServiceBase`3"/> to handle user account data.

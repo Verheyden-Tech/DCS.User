@@ -4,6 +4,131 @@
         <name>DCS.User.UI</name>
     </assembly>
     <members>
+        <member name="T:DCS.User.UI.GroupViewModel">
+            <summary>
+            Represents the ViewModel for the <see cref="T:DCS.User.Group"/> model. Implements the <see cref="T:DCS.CoreLib.BaseClass.ViewModelBase`2"/> class.
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.GroupViewModel.#ctor(DCS.User.Group)">
+            <summary>
+            Default constructor initialize a new instance of <see cref="T:DCS.User.UI.GroupViewModel"/>.
+            </summary>
+            <param name="group">Instance of <see cref="T:DCS.User.Group"/>.</param>
+        </member>
+        <member name="M:DCS.User.UI.GroupViewModel.Save">
+            <summary>
+            Saves the current instance of the <see cref="T:DCS.User.UI.GroupViewModel"/> class.
+            </summary>
+            <returns>True if the save was successful; otherwise, false.</returns>
+        </member>
+        <member name="M:DCS.User.UI.GroupViewModel.GetAllActiveGroups">
+            <summary>
+            Gets all available active groups from the table.
+            </summary>
+            <returns>All avialable active groups from the table.</returns>
+        </member>
+        <member name="P:DCS.User.UI.GroupViewModel.Guid">
+            <summary>
+            Group unique identifier.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.GroupViewModel.Ident">
+            <summary>
+            Group ident.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.GroupViewModel.Name">
+            <summary>
+            Group name.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.GroupViewModel.Description">
+            <summary>
+            Group description.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.GroupViewModel.IsActive">
+            <summary>
+            Group is active flag.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.GroupViewModel.UserGuid">
+            <summary>
+            Group creator user unique identifier.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.GroupViewModel.CreationDate">
+            <summary>
+            Group creation date.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.GroupViewModel.LastManipulation">
+            <summary>
+            Group properties last time changed date.
+            </summary>
+        </member>
+        <member name="T:DCS.User.UI.OrganisationViewModel">
+            <summary>
+            Represents the view model for the <see cref="T:DCS.User.Organisation"/> model. Implements the <see cref="T:DCS.CoreLib.BaseClass.ViewModelBase`2"/> class.
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.OrganisationViewModel.#ctor(DCS.User.Organisation)">
+            <summary>
+            Default constructor initialize a new instance of <see cref="T:DCS.User.UI.OrganisationViewModel"/>.
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.OrganisationViewModel.Save">
+            <summary>
+            Saves the current instance of the <see cref="T:DCS.User.UI.OrganisationViewModel"/> class.
+            </summary>
+            <returns>True if the save was successful; otherwise, false.</returns>
+        </member>
+        <member name="M:DCS.User.UI.OrganisationViewModel.GetAllActiveOrganisations">
+            <summary>
+            Gets all available active organisations from the table.
+            </summary>
+            <returns>All avialable active organisations from the table.</returns>
+        </member>
+        <member name="P:DCS.User.UI.OrganisationViewModel.Guid">
+            <summary>
+            Organisation unique identifier.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.OrganisationViewModel.Ident">
+            <summary>
+            Organisation ident.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.OrganisationViewModel.Name">
+            <summary>
+            Organisation name.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.OrganisationViewModel.Description">
+            <summary>
+            Organisation description.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.OrganisationViewModel.IsActive">
+            <summary>
+            Organisation is active flag.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.OrganisationViewModel.UserGuid">
+            <summary>
+            Organisation creator user unique identifier.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.OrganisationViewModel.CreationDate">
+            <summary>
+            Organisation creation date.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.OrganisationViewModel.LastManipulation">
+            <summary>
+            Organisation properties last time changed date.
+            </summary>
+        </member>
         <member name="T:DCS.User.UI.RegistrateUserViewModel">
             <summary>
             ViewModel for the <see cref="M:DCS.User.UI.RegistrateUserViewModel.RegistrateUser"/> view.
@@ -143,6 +268,36 @@
             Implements the <see cref="T:DCS.CoreLib.BaseClass.ViewModelBase`2"/> class for the <see cref="T:DCS.User.User"/> model.
             </summary>
         </member>
+        <member name="F:DCS.User.UI.UserViewModel.groups">
+            <summary>
+            Contains all avialable user groups from the table.
+            </summary>
+        </member>
+        <member name="F:DCS.User.UI.UserViewModel.organisations">
+            <summary>
+            Contains all avialable user organisations from the table.
+            </summary>
+        </member>
+        <member name="F:DCS.User.UI.UserViewModel.roles">
+            <summary>
+            Contains all avialable user roles from the table.
+            </summary>
+        </member>
+        <member name="F:DCS.User.UI.UserViewModel.userGroups">
+            <summary>
+            Contains all added user groups.
+            </summary>
+        </member>
+        <member name="F:DCS.User.UI.UserViewModel.userOrganisations">
+            <summary>
+            Contains all added user organisations.
+            </summary>
+        </member>
+        <member name="F:DCS.User.UI.UserViewModel.userRoles">
+            <summary>
+            Contains all added user roles.
+            </summary>
+        </member>
         <member name="M:DCS.User.UI.UserViewModel.#ctor(DCS.User.User)">
             <summary>
             Default constructor initialize a new instance of <see cref="T:DCS.User.UI.UserViewModel"/>.
@@ -152,7 +307,37 @@
             <summary>
             Saves the current instance of the <see cref="T:DCS.User.UI.UserViewModel"/> class.
             </summary>
-            <returns></returns>
+            <returns>True if the save was successful; otherwise, false.</returns>
+        </member>
+        <member name="P:DCS.User.UI.UserViewModel.AllGroups">
+            <summary>
+            Contains all avialable user groups from the table.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserViewModel.UserGroups">
+            <summary>
+            Contains all added user groups.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserViewModel.AllOrganisations">
+            <summary>
+            Contains all avialable user organisations from the table.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserViewModel.UserOrganisations">
+            <summary>
+            Contains all added user organisations.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserViewModel.AllRoles">
+            <summary>
+            Contains all avialable user roles from the table.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserViewModel.UserRoles">
+            <summary>
+            Contains all added user roles.
+            </summary>
         </member>
         <member name="P:DCS.User.UI.UserViewModel.Guid">
             <summary>
@@ -255,26 +440,6 @@
             UserEditor
             </summary>
         </member>
-        <member name="F:DCS.User.UI.UserEditor.groups">
-            <summary>
-            Contains all avialable user groups from the table.
-            </summary>
-        </member>
-        <member name="F:DCS.User.UI.UserEditor.organisations">
-            <summary>
-            Contains all avialable user organisations from the table.
-            </summary>
-        </member>
-        <member name="F:DCS.User.UI.UserEditor.userGroups">
-            <summary>
-            Contains all added user groups.
-            </summary>
-        </member>
-        <member name="F:DCS.User.UI.UserEditor.userOrganisations">
-            <summary>
-            Contains all added user organisations.
-            </summary>
-        </member>
         <member name="M:DCS.User.UI.UserEditor.#ctor(DCS.User.User)">
             <summary>
             Default constructor initialize a new <see cref="T:DCS.User.UI.UserEditor"/> window.
@@ -349,6 +514,69 @@
         <member name="M:DCS.User.UI.UserManagement.InitializeComponent">
             <summary>
             InitializeComponent
+            </summary>
+        </member>
+        <member name="T:DCS.User.Viewmodels.RoleViewModel">
+            <summary>
+            Represents the ViewModel for the <see cref="T:DCS.User.Role"/> model. Implements the <see cref="T:DCS.CoreLib.BaseClass.ViewModelBase`2"/> class.
+            </summary>
+        </member>
+        <member name="M:DCS.User.Viewmodels.RoleViewModel.#ctor(DCS.User.Role)">
+            <summary>
+            Default constructor to initialize a new instance of <see cref="T:DCS.User.Viewmodels.RoleViewModel"/>.
+            </summary>
+            <param name="role">Instance of <see cref="T:DCS.User.Role"/>.</param>
+        </member>
+        <member name="M:DCS.User.Viewmodels.RoleViewModel.Save">
+            <summary>
+            Saves the current instance of the <see cref="T:DCS.User.Viewmodels.RoleViewModel"/> class.
+            </summary>
+            <returns>True if the save was succesful; otherwise, false.</returns>
+        </member>
+        <member name="M:DCS.User.Viewmodels.RoleViewModel.GetAllActiveRoles">
+            <summary>
+            Gets all available active roles from the table.
+            </summary>
+            <returns>All avialable active roles from the table.</returns>
+        </member>
+        <member name="P:DCS.User.Viewmodels.RoleViewModel.Guid">
+            <summary>
+            Role unique identifier.
+            </summary>
+        </member>
+        <member name="P:DCS.User.Viewmodels.RoleViewModel.Ident">
+            <summary>
+            Role ident.
+            </summary>
+        </member>
+        <member name="P:DCS.User.Viewmodels.RoleViewModel.Name">
+            <summary>
+            Role name.
+            </summary>
+        </member>
+        <member name="P:DCS.User.Viewmodels.RoleViewModel.Description">
+            <summary>
+            Role description.
+            </summary>
+        </member>
+        <member name="P:DCS.User.Viewmodels.RoleViewModel.IsActive">
+            <summary>
+            Role is active flag.
+            </summary>
+        </member>
+        <member name="P:DCS.User.Viewmodels.RoleViewModel.UserGuid">
+            <summary>
+            Role creator user unique identifier.
+            </summary>
+        </member>
+        <member name="P:DCS.User.Viewmodels.RoleViewModel.CreationDate">
+            <summary>
+            Role creation date.
+            </summary>
+        </member>
+        <member name="P:DCS.User.Viewmodels.RoleViewModel.LastManipulation">
+            <summary>
+            Role properties last time changed date.
             </summary>
         </member>
         <member name="T:DCS.User.Views.ChangeUserPassword">

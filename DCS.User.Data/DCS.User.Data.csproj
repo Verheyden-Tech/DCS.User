@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
@@ -29,11 +29,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DCS.CoreLib" Version="1.0.401" />
-    <PackageReference Include="DCS.CoreLib.BaseClass" Version="1.0.701" />
-    <PackageReference Include="DCS.Data" Version="1.0.201" />
+    <None Include="..\DCS.User\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DCS.CoreLib" Version="1.0.901" />
+    <PackageReference Include="DCS.CoreLib.BaseClass" Version="1.0.901" />
+    <PackageReference Include="DCS.Data" Version="1.0.301" />
     <PackageReference Include="DCS.Localization" Version="1.0.301" />
-    <PackageReference Include="DCS.Log" Version="1.0.501.5" />
+    <PackageReference Include="DCS.Log" Version="1.0.601.5" />
   </ItemGroup>
 
   <ItemGroup>

@@ -4,6 +4,49 @@
         <name>DCS.User.Data</name>
     </assembly>
     <members>
+        <member name="T:DCS.User.Data.GroupRepository">
+            <summary>
+            Represents the repository for managing <see cref="T:DCS.User.Group"/> entities in the database.
+            </summary>
+        </member>
+        <member name="M:DCS.User.Data.GroupRepository.#ctor(DCS.Data.ISqlService)">
+            <summary>
+            Default constructor for GroupRepository.
+            </summary>
+            <param name="sqlService">Sql service.</param>
+        </member>
+        <member name="T:DCS.User.Data.OrganisationRepository">
+            <summary>
+            Represents the repository for managing <see cref="T:DCS.User.Organisation"/> entities in the database.
+            </summary>
+        </member>
+        <member name="M:DCS.User.Data.OrganisationRepository.#ctor(DCS.Data.ISqlService)">
+            <summary>
+            Default constructor for OrganisationRepository.
+            </summary>
+            <param name="sqlService">Sql service.</param>
+        </member>
+        <member name="T:DCS.User.Data.RoleRepository">
+            <summary>
+            Represents the repository to manage <see cref="T:DCS.User.Role"/> entities in the database.
+            </summary>
+        </member>
+        <member name="P:DCS.User.Data.RoleRepository.tableName">
+            <summary>
+            Tablename for the RoleRepository.
+            </summary>
+        </member>
+        <member name="P:DCS.User.Data.RoleRepository.primaryKeyColumn">
+            <summary>
+            PrimaryKeyColumn to identify roles on the table.
+            </summary>
+        </member>
+        <member name="M:DCS.User.Data.RoleRepository.#ctor(DCS.Data.ISqlService)">
+            <summary>
+            Default constructor for RoleRepository.
+            </summary>
+            <param name="sqlService">Sql service.</param>
+        </member>
         <member name="T:DCS.User.Data.UserRepository">
             <summary>
             UserRepository with basic methods inherited from <see cref="T:DCS.CoreLib.BaseClass.RepositoryBase`2"/> to handle user data on the table.
