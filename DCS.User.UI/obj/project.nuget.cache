@@ -1,29 +1,29 @@
 {
   "version": 2,
-  "dgSpecHash": "Qzh3V5dKKr0=",
-  "success": false,
+  "dgSpecHash": "2+eFx56RenU=",
+  "success": true,
   "projectFilePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\bogus\\35.6.2\\bogus.35.6.2.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\bogus\\35.6.4\\bogus.35.6.4.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\commonservicelocator\\2.0.7\\commonservicelocator.2.0.7.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.billing\\1.0.201\\dcs.billing.1.0.201.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.contact\\1.0.401\\dcs.contact.1.0.401.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib\\1.0.401\\dcs.corelib.1.0.401.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.baseclass\\1.0.701\\dcs.corelib.baseclass.1.0.701.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.collection\\1.0.401\\dcs.corelib.collection.1.0.401.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.view\\1.0.901\\dcs.corelib.view.1.0.901.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data\\1.0.201\\dcs.data.1.0.201.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.hr\\1.0.201\\dcs.hr.1.0.201.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.localization\\1.0.301\\dcs.localization.1.0.301.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.log\\1.0.501.5\\dcs.log.1.0.501.5.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.onboarding\\1.0.201\\dcs.onboarding.1.0.201.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.onboarding.data\\1.0.201\\dcs.onboarding.data.1.0.201.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.onboarding.service\\1.0.201\\dcs.onboarding.service.1.0.201.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.onboarding.ui\\1.0.201\\dcs.onboarding.ui.1.0.201.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.resource\\1.0.1\\dcs.resource.1.0.1.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.billing\\1.0.401\\dcs.billing.1.0.401.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.contact\\1.0.501\\dcs.contact.1.0.501.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib\\1.1.101\\dcs.corelib.1.1.101.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.baseclass\\1.1.101\\dcs.corelib.baseclass.1.1.101.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.collection\\1.1.101\\dcs.corelib.collection.1.1.101.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.view\\1.1.101\\dcs.corelib.view.1.1.101.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data\\1.0.401\\dcs.data.1.0.401.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.hr\\1.0.301\\dcs.hr.1.0.301.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.localization\\1.0.401\\dcs.localization.1.0.401.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.log\\1.0.601.5\\dcs.log.1.0.601.5.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.onboarding\\1.0.401\\dcs.onboarding.1.0.401.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.onboarding.data\\1.0.401\\dcs.onboarding.data.1.0.401.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.onboarding.service\\1.0.401\\dcs.onboarding.service.1.0.401.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.onboarding.ui\\1.0.401\\dcs.onboarding.ui.1.0.401.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.resource\\1.0.201\\dcs.resource.1.0.201.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\microsoft.bcl.asyncinterfaces\\9.0.1\\microsoft.bcl.asyncinterfaces.9.0.1.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\microsoft.data.sqlclient\\5.2.2\\microsoft.data.sqlclient.5.2.2.nupkg.sha512",
@@ -64,66 +64,7 @@
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.user\\1.0.1401\\dcs.user.1.0.1401.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.user.data\\1.0.1801\\dcs.user.data.1.0.1801.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.user.service\\1.0.1601\\dcs.user.service.1.0.1601.nupkg.sha512"
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Unable to find package DCS.LogManager. No packages exist with this id in source(s): C:\\Program Files\\dotnet\\library-packs, DCS, Microsoft Visual Studio Offline Packages, nuget.org, Telerik, Verheyden",
-      "projectPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
-      "filePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
-      "libraryId": "DCS.LogManager",
-      "targetGraphs": [
-        "net7.0-windows7.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Detected package downgrade: DCS.CoreLib from 1.0.501 to 1.0.401. Reference the package directly from the project to select a different version. \r\n DCS.User.UI -> DCS.OnBoarding.UI 1.0.201 -> DCS.CoreLib (>= 1.0.501) \r\n DCS.User.UI -> DCS.CoreLib (>= 1.0.401)",
-      "projectPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
-      "filePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
-      "libraryId": "DCS.CoreLib",
-      "targetGraphs": [
-        "net7.0-windows7.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Detected package downgrade: DCS.CoreLib.BaseClass from 1.0.801 to 1.0.701. Reference the package directly from the project to select a different version. \r\n DCS.User.UI -> DCS.OnBoarding.UI 1.0.201 -> DCS.CoreLib.BaseClass (>= 1.0.801) \r\n DCS.User.UI -> DCS.CoreLib.BaseClass (>= 1.0.701)",
-      "projectPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
-      "filePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
-      "libraryId": "DCS.CoreLib.BaseClass",
-      "targetGraphs": [
-        "net7.0-windows7.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Detected package downgrade: DCS.Data from 1.0.301 to 1.0.201. Reference the package directly from the project to select a different version. \r\n DCS.User.UI -> DCS.User.Service -> DCS.Data (>= 1.0.301) \r\n DCS.User.UI -> DCS.Data (>= 1.0.201)",
-      "projectPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
-      "filePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
-      "libraryId": "DCS.Data",
-      "targetGraphs": [
-        "net7.0-windows7.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Detected package downgrade: DCS.Log from 1.0.601.5 to 1.0.501.5. Reference the package directly from the project to select a different version. \r\n DCS.User.UI -> DCS.User.Service -> DCS.Log (>= 1.0.601.5) \r\n DCS.User.UI -> DCS.Log (>= 1.0.501.5)",
-      "projectPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
-      "filePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
-      "libraryId": "DCS.Log",
-      "targetGraphs": [
-        "net7.0-windows7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

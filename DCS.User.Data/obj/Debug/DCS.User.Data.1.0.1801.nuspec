@@ -9,15 +9,15 @@
     <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
     <description>Repository database service for DCS.User.</description>
     <tags>DCS</tags>
-    <repository type="git" commit="156cdbc976cbbde9cc9d2cc7ec1a2b2a517e0f43" />
+    <repository type="git" commit="d43b56f7f2d457485ef7c1469aae462921e57f48" />
     <dependencies>
       <group targetFramework="net7.0-windows7.0">
         <dependency id="DCS.User" version="1.0.1401" exclude="Build,Analyzers" />
-        <dependency id="DCS.CoreLib" version="1.0.401" exclude="Build,Analyzers" />
-        <dependency id="DCS.CoreLib.BaseClass" version="1.0.701" exclude="Build,Analyzers" />
-        <dependency id="DCS.Data" version="1.0.201" exclude="Build,Analyzers" />
-        <dependency id="DCS.Localization" version="1.0.301" exclude="Build,Analyzers" />
-        <dependency id="DCS.Log" version="1.0.501.5" exclude="Build,Analyzers" />
+        <dependency id="DCS.CoreLib" version="1.1.101" exclude="Build,Analyzers" />
+        <dependency id="DCS.CoreLib.BaseClass" version="1.1.101" exclude="Build,Analyzers" />
+        <dependency id="DCS.Data" version="1.0.401" exclude="Build,Analyzers" />
+        <dependency id="DCS.Localization" version="1.0.401" exclude="Build,Analyzers" />
+        <dependency id="DCS.Log" version="1.0.601.5" exclude="Build,Analyzers" />
       </group>
     </dependencies>
   </metadata>

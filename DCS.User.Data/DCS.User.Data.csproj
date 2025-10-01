@@ -1,47 +1,42 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
-	  <Version>1.0.1801.0</Version>
-	  <AssemblyVersion>1.0.1801.0</AssemblyVersion>
-	  <ApplicationVersion>1.2.3.0</ApplicationVersion>
+    <Version>1.0.101.1</Version>
+    <AssemblyVersion>1.0.1801.0</AssemblyVersion>
+    <ApplicationVersion>1.2.3.0</ApplicationVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Authors>Tobias Verheyden</Authors>
     <Company>Verheyden Tech</Company>
     <Description>Repository database service for DCS.User.</Description>
-	  <RootNamespace>DCS.User</RootNamespace>
-	  <AssemblyName>DCS.User.Data</AssemblyName>
-	  <AssemblyType>Repository</AssemblyType>
+    <RootNamespace>DCS.User</RootNamespace>
+    <AssemblyName>DCS.User.Data</AssemblyName>
+    <AssemblyType>Repository</AssemblyType>
     <PackageTags>DCS</PackageTags>
-	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
-	  <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-	  <EnableNETAnalyzers>true</EnableNETAnalyzers>
-	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
-	  <DocumentationFile>Documentation\API.Documentation</DocumentationFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>Documentation\API.Documentation</DocumentationFile>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Remove="Documentation\**" />
     <EmbeddedResource Remove="Documentation\**" />
     <None Remove="Documentation\**" />
   </ItemGroup>
-
   <ItemGroup>
     <None Include="..\DCS.User\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="DCS.CoreLib" Version="1.0.901" />
-    <PackageReference Include="DCS.CoreLib.BaseClass" Version="1.0.901" />
-    <PackageReference Include="DCS.Data" Version="1.0.301" />
-    <PackageReference Include="DCS.Localization" Version="1.0.301" />
+    <PackageReference Include="DCS.CoreLib" Version="1.1.101" />
+    <PackageReference Include="DCS.CoreLib.BaseClass" Version="1.1.101" />
+    <PackageReference Include="DCS.Data" Version="1.0.401" />
+    <PackageReference Include="DCS.Localization" Version="1.0.401" />
     <PackageReference Include="DCS.Log" Version="1.0.601.5" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\DCS.User\DCS.User.csproj" />
   </ItemGroup>
-
 </Project>
