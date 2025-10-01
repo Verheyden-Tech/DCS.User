@@ -22,5 +22,16 @@ namespace DCS.User.Data
         {
             this.sqlService = sqlService;
         }
+
+        /// <inheritdoc/>
+        public Group GetByName(string groupName)
+        {
+            if (string.IsNullOrEmpty(groupName))
+                throw new ArgumentNullException(nameof(groupName));
+
+            string sql = $"SELECT * FROM {tableName} WHERE Name = @groupname";
+
+            return sqlService.SQLQuery<Group>(sql, new { groupname = groupName });
+        }
     }
 }

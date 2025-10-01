@@ -17,5 +17,28 @@ namespace DCS.User.Service
         {
             this.repository = repository;
         }
+
+        /// <inheritdoc/>
+        public Organisation CreateOrganisation(string name, string description, bool isActive, Guid userGuid)
+        {
+            var organisation = new Organisation
+            {
+                Guid = Guid.NewGuid(),
+                Name = name,
+                Description = description,
+                IsActive = isActive,
+                UserGuid = userGuid,
+                CreationDate = DateTime.UtcNow,
+                LastManipulation = DateTime.UtcNow
+            };
+
+            return organisation;
+        }
+
+        /// <inheritdoc/>
+        public Organisation GetByName(string organisationName)
+        {
+            return repository.GetByName(organisationName);
+        }
     }
 }

@@ -12,6 +12,7 @@ namespace DCS.User.UI
         private readonly IGroupService groupService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IGroupService>();
         private readonly IOrganisationService organisationService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IOrganisationService>();
         private readonly IRoleService roleService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IRoleService>();
+        private readonly IUserAssignementService assignementService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserAssignementService>();
 
         #region List Initializations
         /// <summary>
@@ -58,7 +59,7 @@ namespace DCS.User.UI
         /// <returns>True if the save was successful; otherwise, false.</returns>
         public bool Save()
         {
-            if(Model != null)
+            if (Model != null)
             {
                 Model.LastManipulation = DateTime.Now;
 
@@ -67,6 +68,47 @@ namespace DCS.User.UI
                     return true;
                 }
                 return false;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Adds the current user to the specified group.
+        /// </summary>
+        /// <remarks>This method checks if the user is already a member of the specified group before
+        /// attempting to add them. If the user is already a member or if the operation fails, the method returns <see
+        /// langword="false"/>.</remarks>
+        /// <param name="group">The group to which the user will be added. Cannot be <see langword="null"/>.</param>
+        /// <returns><see langword="true"/> if the user was successfully added to the group; otherwise, <see langword="false"/>.</returns>
+        public bool AddUserToGroup(Group group)
+        {
+            if (Model != null && group != null)
+            {
+                if (!userGroups.Contains(group))
+                {
+                    if (assignementService.AddUserToGroup(Model.Guid, group.Guid))
+                    {
+                        userGroups.Add(group);
+                        return true;
+                    }
+
+                    return false;
+                }
+
+                return false;
+            }
+
+            return false;
+        }
+
+        public bool RemoveUserFromGroup(UserAssignement userAssignement)
+        {
+            if (Model != null && userAssignement != null && Model.Guid == userAssignement.UserGuid)
+            {
+                    if (assignementService.RemoveUserFromGroup(userAssignement))
+                    {
+                    }
+                    return false;
             }
             return false;
         }
@@ -80,7 +122,7 @@ namespace DCS.User.UI
             get => groups;
             set
             {
-                if(groups != value)
+                if (groups != value)
                 {
                     groups = value;
                     OnPropertyChanged(nameof(AllGroups));

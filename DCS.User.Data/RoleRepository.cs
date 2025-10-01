@@ -9,6 +9,7 @@ namespace DCS.User.Data
     public class RoleRepository : RepositoryBase<Guid, Role>, IRoleRepository
     {
         private readonly ISqlService sqlService;
+
         /// <summary>
         /// Tablename for the RoleRepository.
         /// </summary>
@@ -17,6 +18,7 @@ namespace DCS.User.Data
         /// PrimaryKeyColumn to identify roles on the table.
         /// </summary>
         private static string primaryKeyColumn => "Guid";
+
         /// <summary>
         /// Default constructor for RoleRepository.
         /// </summary>
@@ -24,6 +26,17 @@ namespace DCS.User.Data
         public RoleRepository(ISqlService sqlService) : base(sqlService, tableName, primaryKeyColumn)
         {
             this.sqlService = sqlService;
+        }
+
+        /// <inheritdoc/>
+        public Role GetByName(string roleName)
+        {
+            if (string.IsNullOrEmpty(roleName))
+                throw new ArgumentNullException(nameof(roleName));
+
+            string sql = $"SELECT * FROM {tableName} WHERE Name = @roleName";
+
+            return sqlService.SQLQuery<Role>(sql, new { roleName });
         }
     }
 }
