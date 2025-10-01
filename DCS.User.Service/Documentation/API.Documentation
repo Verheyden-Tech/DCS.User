@@ -36,6 +36,12 @@
             </summary>
             <param name="repository">Instance of <see cref="T:DCS.User.IGroupRepository"/>.</param>
         </member>
+        <member name="M:DCS.User.Service.GroupService.CreateGroup(System.String,System.String,System.Boolean,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCS.User.Service.GroupService.GetByName(System.String)">
+            <inheritdoc/>
+        </member>
         <member name="T:DCS.User.Service.OrganisationService">
             <summary>
             Represents the OrganisationService for <see cref="T:DCS.User.Organisation"/> entities.
@@ -47,6 +53,12 @@
             </summary>
             <param name="repository">Instance of <see cref="T:DCS.User.IOrganisationRepository"/>.</param>
         </member>
+        <member name="M:DCS.User.Service.OrganisationService.CreateOrganisation(System.String,System.String,System.Boolean,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCS.User.Service.OrganisationService.GetByName(System.String)">
+            <inheritdoc/>
+        </member>
         <member name="T:DCS.User.Service.RoleService">
             <summary>
             Represents the RoleService for <see cref="T:DCS.User.Role"/> entities.
@@ -57,6 +69,12 @@
             Default constructor for RoleService.
             </summary>
             <param name="repository">Instance of <see cref="T:DCS.User.IRoleRepository"/>.</param>
+        </member>
+        <member name="M:DCS.User.Service.RoleService.GetByName(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCS.User.Service.RoleService.CreateRole(System.String,System.String,System.Boolean,System.Guid)">
+            <inheritdoc/>
         </member>
         <member name="T:DCS.User.Service.UserService">
             <summary>
@@ -93,6 +111,35 @@
             <inheritdoc/>
         </member>
         <member name="M:DCS.User.Service.UserService.LoginUser(System.String,System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCS.User.UserAssignementService">
+            <summary>
+            Represents the service for managing user assignments.
+            </summary>
+        </member>
+        <member name="M:DCS.User.UserAssignementService.#ctor(DCS.User.IUserAssignementRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DCS.User.UserAssignementService"/> class.
+            </summary>
+            <param name="repository">The repository used to manage user assignments. This parameter cannot be null.</param>
+        </member>
+        <member name="M:DCS.User.UserAssignementService.AddUserToGroup(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCS.User.UserAssignementService.RemoveUserFromGroup(DCS.User.UserAssignement)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCS.User.UserAssignementService.AddUserToOrganisation(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCS.User.UserAssignementService.RemoveUserFromOrganisation(DCS.User.UserAssignement)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCS.User.UserAssignementService.AddUserToRole(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCS.User.UserAssignementService.RemoveUserFromRole(DCS.User.UserAssignement)">
             <inheritdoc/>
         </member>
     </members>

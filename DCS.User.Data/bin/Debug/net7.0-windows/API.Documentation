@@ -15,6 +15,9 @@
             </summary>
             <param name="sqlService">Sql service.</param>
         </member>
+        <member name="M:DCS.User.Data.GroupRepository.GetByName(System.String)">
+            <inheritdoc/>
+        </member>
         <member name="T:DCS.User.Data.OrganisationRepository">
             <summary>
             Represents the repository for managing <see cref="T:DCS.User.Organisation"/> entities in the database.
@@ -25,6 +28,9 @@
             Default constructor for OrganisationRepository.
             </summary>
             <param name="sqlService">Sql service.</param>
+        </member>
+        <member name="M:DCS.User.Data.OrganisationRepository.GetByName(System.String)">
+            <inheritdoc/>
         </member>
         <member name="T:DCS.User.Data.RoleRepository">
             <summary>
@@ -46,6 +52,9 @@
             Default constructor for RoleRepository.
             </summary>
             <param name="sqlService">Sql service.</param>
+        </member>
+        <member name="M:DCS.User.Data.RoleRepository.GetByName(System.String)">
+            <inheritdoc/>
         </member>
         <member name="T:DCS.User.Data.UserRepository">
             <summary>
@@ -85,6 +94,18 @@
         </member>
         <member name="M:DCS.User.Data.UserRepository.UnsetKeepLoggedIn(DCS.User.User)">
             <inheritdoc/>
+        </member>
+        <member name="T:DCS.User.UserAssignementRepository">
+            <summary>
+            Represents the repository for managing user assignments on the table.
+            </summary>
+        </member>
+        <member name="M:DCS.User.UserAssignementRepository.#ctor(DCS.Data.ISqlService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DCS.User.UserAssignementRepository"/> class,  providing access to user
+            assignment data on the table.
+            </summary>
+            <param name="sqlService">The SQL service used to interact with the database. This parameter cannot be null.</param>
         </member>
     </members>
 </doc>

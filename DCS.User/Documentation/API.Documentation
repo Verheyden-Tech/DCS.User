@@ -45,14 +45,42 @@
             Represents the repository for managing <see cref="T:DCS.User.Group"/> entities in the database.
             </summary>
         </member>
+        <member name="M:DCS.User.IGroupRepository.GetByName(System.String)">
+            <summary>
+            Retrieves a group by its name.
+            </summary>
+            <param name="groupName">The name of the group to retrieve. This value cannot be null or empty.</param>
+            <returns>The <see cref="T:DCS.User.Group"/> object that matches the specified name, or <see langword="null"/> if no group with
+            the given name exists.</returns>
+        </member>
         <member name="T:DCS.User.IOrganisationRepository">
             <summary>
             Represents the repository for managing <see cref="T:DCS.User.Organisation"/> entities in the database.
             </summary>
         </member>
+        <member name="M:DCS.User.IOrganisationRepository.GetByName(System.String)">
+            <summary>
+            Gets an organisation by its name.
+            </summary>
+            <param name="organisationName">The name of the organisation.</param>
+            <returns>The organisation with the specified name, or null if not found.</returns>
+        </member>
         <member name="T:DCS.User.IRoleRepository">
             <summary>
             Represents the repository to manage <see cref="T:DCS.User.Role"/> entities in the database.
+            </summary>
+        </member>
+        <member name="M:DCS.User.IRoleRepository.GetByName(System.String)">
+            <summary>
+            Retrieves a role by its name.
+            </summary>
+            <param name="roleName">The name of the role to retrieve. This value is case-sensitive and cannot be null or empty.</param>
+            <returns>The <see cref="T:DCS.User.Role"/> object that matches the specified name, or <see langword="null"/> if no matching role
+            is found.</returns>
+        </member>
+        <member name="T:DCS.User.IUserAssignementRepository">
+            <summary>
+            Represents the repository for managing user assignments on the table.
             </summary>
         </member>
         <member name="T:DCS.User.IUserRepository">
@@ -105,15 +133,117 @@
             Represents the GroupService for <see cref="T:DCS.User.Group"/> entities.
             </summary>
         </member>
+        <member name="M:DCS.User.IGroupService.CreateGroup(System.String,System.String,System.Boolean,System.Guid)">
+            <summary>
+            Creates a new group with the specified name, description, and status, and associates it with the specified
+            user.
+            </summary>
+            <param name="name">The name of the group. This value cannot be null or empty.</param>
+            <param name="description">A description of the group. This value can be null or empty.</param>
+            <param name="isActive">A value indicating whether the group is active.</param>
+            <param name="userGuid">The unique identifier of the user creating the group. This value must not be <see cref="F:System.Guid.Empty"/>.</param>
+            <returns>A <see cref="T:DCS.User.Group"/> object representing the newly created group.</returns>
+        </member>
         <member name="T:DCS.User.IOrganisationService">
             <summary>
             Represents the organisation service with basic methods inherited from <see cref="T:DCS.User.IOrganisationRepository"/> to handle organisation data.
             </summary>
         </member>
+        <member name="M:DCS.User.IOrganisationService.CreateOrganisation(System.String,System.String,System.Boolean,System.Guid)">
+            <summary>
+            Creates a new organisation with the specified name, description, and status.
+            </summary>
+            <param name="name">The name of the organisation. Cannot be null or empty.</param>
+            <param name="description">A brief description of the organisation. Can be null or empty.</param>
+            <param name="isActive">A value indicating whether the organisation is active.</param>
+            <param name="userGuid">The unique identifier of the user creating the organisation. Must be a valid <see cref="T:System.Guid"/>.</param>
+            <returns>An <see cref="T:DCS.User.Organisation"/> object representing the newly created organisation.</returns>
+        </member>
         <member name="T:DCS.User.IRoleService">
             <summary>
             Represents the service for managing <see cref="T:DCS.User.Role"/> entities.
             </summary>
+        </member>
+        <member name="M:DCS.User.IRoleService.CreateRole(System.String,System.String,System.Boolean,System.Guid)">
+            <summary>
+            Creates a new role with the specified name, description, and status, and associates it with the specified
+            user.
+            </summary>
+            <param name="name">The name of the role. This value cannot be null or empty.</param>
+            <param name="description">A description of the role. This value can be null or empty.</param>
+            <param name="isActive">A value indicating whether the role is active.</param>
+            <param name="userGuid">The unique identifier of the user associated with the role.</param>
+            <returns>The newly created <see cref="T:DCS.User.Role"/> instance.</returns>
+        </member>
+        <member name="T:DCS.User.IUserAssignementService">
+            <summary>
+            Represents the service for managing user assignments.
+            </summary>
+        </member>
+        <member name="M:DCS.User.IUserAssignementService.AddUserToGroup(System.Guid,System.Guid)">
+            <summary>
+            Adds a user to a specified group.
+            </summary>
+            <remarks>This method does not throw an exception if the user is already a member of the group
+            or if the group does not exist. Instead, it returns <see langword="false"/> in such cases.</remarks>
+            <param name="userGuid">The unique identifier of the user to be added to the group.</param>
+            <param name="groupGuid">The unique identifier of the group to which the user will be added.</param>
+            <returns><see langword="true"/> if the user was successfully added to the group; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DCS.User.IUserAssignementService.RemoveUserFromGroup(DCS.User.UserAssignement)">
+            <summary>
+            Removes a user from the specified group.
+            </summary>
+            <remarks>This method will return <see langword="false"/> if the user is not a member of the
+            specified group.</remarks>
+            <param name="userAssignement">An object containing the user and group information for the removal operation.</param>
+            <returns><see langword="true"/> if the user was successfully removed from the group; otherwise, <see
+            langword="false"/>.</returns>
+        </member>
+        <member name="M:DCS.User.IUserAssignementService.AddUserToOrganisation(System.Guid,System.Guid)">
+            <summary>
+            Adds a user to the specified organization.
+            </summary>
+            <remarks>This method does not allow duplicate user entries for the same organization. If the
+            user is already a member of the specified organization, the method will return <see
+            langword="false"/>.</remarks>
+            <param name="userGuid">The unique identifier of the user to be added.</param>
+            <param name="organisationGuid">The unique identifier of the organization to which the user will be added.</param>
+            <returns><see langword="true"/> if the user was successfully added to the organization; otherwise, <see
+            langword="false"/>.</returns>
+        </member>
+        <member name="M:DCS.User.IUserAssignementService.RemoveUserFromOrganisation(DCS.User.UserAssignement)">
+            <summary>
+            Removes a user from the specified organization.
+            </summary>
+            <remarks>The operation will fail if the user is not currently assigned to the specified
+            organization. Ensure that the <paramref name="userAssignement"/> parameter is not <see langword="null"/> and
+            contains valid data.</remarks>
+            <param name="userAssignement">An object containing the details of the user and the organization from which the user should be removed.</param>
+            <returns><see langword="true"/> if the user was successfully removed from the organization; otherwise, <see
+            langword="false"/>.</returns>
+        </member>
+        <member name="M:DCS.User.IUserAssignementService.AddUserToRole(System.Guid,System.Guid)">
+            <summary>
+            Adds a user to a specified role.
+            </summary>
+            <remarks>This method associates the specified user with the specified role. If the user is
+            already a member of the role,  the method returns <see langword="false"/> without making any
+            changes.</remarks>
+            <param name="userGuid">The unique identifier of the user to be added to the role.</param>
+            <param name="roleGuid">The unique identifier of the role to which the user will be added.</param>
+            <returns><see langword="true"/> if the user was successfully added to the role; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DCS.User.IUserAssignementService.RemoveUserFromRole(DCS.User.UserAssignement)">
+            <summary>
+            Removes a user from the specified role.
+            </summary>
+            <remarks>This method does not throw an exception if the user is not currently assigned to the
+            specified role. Ensure that the <paramref name="userAssignement"/> parameter is not <see langword="null"/>
+            and contains valid user and role data.</remarks>
+            <param name="userAssignement">An object containing the user and role information to be removed.</param>
+            <returns><see langword="true"/> if the user was successfully removed from the role; otherwise, <see
+            langword="false"/>.</returns>
         </member>
         <member name="T:DCS.User.IUserService">
             <summary>
@@ -397,6 +527,56 @@
         <member name="P:DCS.User.User.LastManipulation">
             <summary>
             User properties last time changed date.
+            </summary>
+        </member>
+        <member name="T:DCS.User.UserAssignement">
+            <summary>
+            Represents the assignment of a user to a group, organisation, and/or role.
+            </summary>
+        </member>
+        <member name="M:DCS.User.UserAssignement.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DCS.User.UserAssignement"/> class.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UserAssignement.Guid">
+            <summary>
+            Gets or sets the unique identifier for the assignement.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UserAssignement.UserGuid">
+            <summary>
+            Gets or sets the unique identifier for the user to assign.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UserAssignement.GroupGuid">
+            <summary>
+            Gets or sets the unique identifier for the group to assign to.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UserAssignement.OrganisationGuid">
+            <summary>
+            Gets or sets the unique identifier for the organization to assign to.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UserAssignement.RoleGuid">
+            <summary>
+            Gets or sets the unique identifier for the role to assign to.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UserAssignement.IsActive">
+            <summary>
+            Gets or sets a value indicating whether the assignement is currently active.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UserAssignement.CreationDate">
+            <summary>
+            Gets or sets the date and time when the assignement was created.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UserAssignement.LastManipulation">
+            <summary>
+            Gets or sets the timestamp of the most recent manipulation or update of the assignement.
             </summary>
         </member>
     </members>

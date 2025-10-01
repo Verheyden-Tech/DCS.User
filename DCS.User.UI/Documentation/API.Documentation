@@ -309,6 +309,16 @@
             </summary>
             <returns>True if the save was successful; otherwise, false.</returns>
         </member>
+        <member name="M:DCS.User.UI.UserViewModel.AddUserToGroup(DCS.User.Group)">
+            <summary>
+            Adds the current user to the specified group.
+            </summary>
+            <remarks>This method checks if the user is already a member of the specified group before
+            attempting to add them. If the user is already a member or if the operation fails, the method returns <see
+            langword="false"/>.</remarks>
+            <param name="group">The group to which the user will be added. Cannot be <see langword="null"/>.</param>
+            <returns><see langword="true"/> if the user was successfully added to the group; otherwise, <see langword="false"/>.</returns>
+        </member>
         <member name="P:DCS.User.UI.UserViewModel.AllGroups">
             <summary>
             Contains all avialable user groups from the table.
@@ -594,6 +604,19 @@
             <param name="user">Selected user.</param>
         </member>
         <member name="M:DCS.User.Views.ChangeUserPassword.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:DCS.User.Views.GroupManagement">
+            <summary>
+            Interaction logic for GroupManagement.xaml
+            </summary>
+            <summary>
+            GroupManagement
+            </summary>
+        </member>
+        <member name="M:DCS.User.Views.GroupManagement.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>

@@ -197,3 +197,5 @@ C:\Users\Tobias\source\repos\Verheyden-Tech\DCS.User\DCS.User.UI\obj\Debug\net7.
 C:\Users\Tobias\source\repos\Verheyden-Tech\DCS.User\DCS.User.UI\obj\Debug\net7.0-windows\DCS.User.UI.sourcelink.json
 C:\Users\Tobias\source\repos\Verheyden-Tech\DCS.User\DCS.User.UI\obj\Debug\net7.0-windows\DCS.User.64500F30.Up2Date
 C:\Users\Tobias\source\repos\Verheyden-Tech\DCS.User\DCS.User.UI\obj\Debug\net7.0-windows\ref\DCS.User.UI.dll
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\GroupManagement.g.cs
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\GroupManagement.baml
