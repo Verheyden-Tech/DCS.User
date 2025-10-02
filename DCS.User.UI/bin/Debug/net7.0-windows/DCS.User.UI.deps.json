@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "DCS.User.UI/1.0.3901.1": {
+      "DCS.User.UI/1.0.4001.1": {
         "dependencies": {
           "DCS.CoreLib": "1.1.101",
           "DCS.CoreLib.BaseClass": "1.1.101",
@@ -873,7 +873,7 @@
     }
   },
   "libraries": {
-    "DCS.User.UI/1.0.3901.1": {
+    "DCS.User.UI/1.0.4001.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
