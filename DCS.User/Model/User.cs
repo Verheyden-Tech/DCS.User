@@ -74,5 +74,10 @@
         /// User properties last time changed date.
         /// </summary>
         public DateTime? LastManipulation {  get; set; }
+
+        /// <summary>
+        /// Gets or sets the path to the user's profile picture.
+        /// </summary>
+        public string? ProfilePicturePath { get; set; }
     }
 }

@@ -22,5 +22,32 @@ namespace DCS.User
         {
             this.sqlService = sqlService;
         }
+
+        /// <inheritdoc/>
+        public UserAssignement GetByUserAndGroup(Guid userGuid, Guid groupGuid)
+        {
+            var query = $"SELECT * FROM {tableName} WHERE UserGuid = @UserGuid AND GroupGuid = @GroupGuid";
+            var assignement = sqlService.SQLQuery<UserAssignement>(query, new { UserGuid = userGuid, GroupGuid = groupGuid });
+
+            return assignement;
+        }
+
+        /// <inheritdoc/>
+        public UserAssignement GetByUserAndOrganisation(Guid userGuid, Guid organisationGuid)
+        {
+            var query = $"SELECT * FROM {tableName} WHERE UserGuid = @UserGuid AND OrganisationGuid = @OrganisationGuid";
+            var assignement = sqlService.SQLQuery<UserAssignement>(query, new { UserGuid = userGuid, OrganisationGuid = organisationGuid });
+
+            return assignement;
+        }
+
+        /// <inheritdoc/>
+        public UserAssignement GetByUserAndRole(Guid userGuid, Guid roleGuid)
+        {
+            var query = $"SELECT * FROM {tableName} WHERE UserGuid = @UserGuid AND RoleGuid = @RoleGuid";
+            var assignement = sqlService.SQLQuery<UserAssignement>(query, new { UserGuid = userGuid, RoleGuid = roleGuid });
+
+            return assignement;
+        }
     }
 }

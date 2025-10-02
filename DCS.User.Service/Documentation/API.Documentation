@@ -142,5 +142,14 @@
         <member name="M:DCS.User.UserAssignementService.RemoveUserFromRole(DCS.User.UserAssignement)">
             <inheritdoc/>
         </member>
+        <member name="M:DCS.User.UserAssignementService.GetByUserAndGroup(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCS.User.UserAssignementService.GetByUserAndOrganisation(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCS.User.UserAssignementService.GetByUserAndRole(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
     </members>
 </doc>

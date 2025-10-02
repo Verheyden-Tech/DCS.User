@@ -1,14 +1,13 @@
 ﻿<win:DefaultEditorWindow x:Class="DCS.User.UI.UserEditor"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DCS.User.UI"
-        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
-        xmlns:win="clr-namespace:DCS.CoreLib.View;assembly=DCS.CoreLib.View"
-        mc:Ignorable="d" 
+                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                         xmlns:win="clr-namespace:DCS.CoreLib.View;assembly=DCS.CoreLib.View"
+                         mc:Ignorable="d" 
         Title="Neuen Benutzer erstellen" MinHeight="200" MinWidth="400" SizeToContent="WidthAndHeight">
-    
+
     <Grid>
 
         <Grid.RowDefinitions>
@@ -24,21 +23,38 @@
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
-        <telerik:RadButton Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="5" MinWidth="50" MinHeight="50">
-            
+        <telerik:RadButton Grid.Row="0" Grid.Column="0" x:Name="AddUserProfilePictureButton" Click="AddUserProfilePictureButton_Click" IsEnabled="False" Background="Transparent" Grid.RowSpan="2" Margin="5" MinWidth="50" MinHeight="50" ToolTip="Benutzer Profilbild hinzufügen">
+            <Image x:Name="AddUserProfilPicture" HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="32" MinWidth="32" Source="/DCS.User;component/Resources/Images/usermanagement_add_user_32x.png"/>
         </telerik:RadButton>
+        <Image Grid.Row="0" Grid.Column="0" x:Name="UserProfilePicture" Stretch="Fill" Source="{Binding ProfilePicturePath, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.RowSpan="2" Margin="5" MinWidth="50" MinHeight="50" Visibility="Collapsed">
+
+        </Image>
 
         <telerik:RadWatermarkTextBox Grid.Row="0" Grid.Column="1" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Benutzername eingeben.." Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
         <telerik:RadPasswordBox Grid.Row="0" Grid.Column="2" x:Name="UserPasswordBox" Text="{Binding PassWord, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Neues Passwort festlegen.." Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
-        <Button Grid.Row="0" Grid.Column="2" x:Name="ChangeUserPasswordButton" Visibility="Collapsed" Click="ChangeUserPasswordButton_Click" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left">
-            <Image x:Name="ChangePasswordImage" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        </Button>
+        <Button Grid.Row="0" Grid.Column="2" x:Name="ChangeUserPasswordButton" Visibility="Visible" Content="Neues Passwort festlegen" FontSize="8" Click="ChangeUserPasswordButton_Click" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
 
         <CheckBox Grid.Row="1" Grid.Column="2" IsChecked="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="Aktiv" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
         <CheckBox Grid.Row="1" Grid.Column="1" IsChecked="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="Admin" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
         <Grid x:Name="ListBoxGrid" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="5">
+
+            <Grid.Resources>
+                <DataTemplate DataType="telerik:RadListBoxItem">
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Text="{Binding DataContext.Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2"/>
+                        <Button Grid.Column="1" Content="X" x:Name="RemoveItemButton" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" Click="RemoveItemButton_Click"/>
+
+                    </Grid>
+                </DataTemplate>
+            </Grid.Resources>
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -59,14 +75,11 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
 
-                <telerik:RadAutoCompleteBox Grid.Row="0" Grid.Column="0" x:Name="GroupAutoCompleteBox" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5">
+                <telerik:RadAutoSuggestBox Grid.Row="0" Grid.Column="0" x:Name="GroupAutoCompleteBox" DisplayMemberPath="Name" PreviewKeyDown="GroupAutoCompleteBox_PreviewKeyDown" WatermarkContent="Gruppe suchen.." ItemsSource="{Binding AllGroups, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5">
 
-                </telerik:RadAutoCompleteBox>
-                <telerik:RadButton Grid.Row="0" Grid.Column="1" x:Name="AddGroupButton" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,5,5,5" MinHeight="20" MinWidth="20">
+                </telerik:RadAutoSuggestBox>
 
-                </telerik:RadButton>
-
-                <telerik:RadListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="GroupListBox" ItemsSource="{Binding AllGroups, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="60" MinWidth="120">
+                <telerik:RadListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="GroupListBox" DataContextChanged="GroupListBox_DataContextChanged" ItemsSource="{Binding UserGroups, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="60" MinWidth="120">
                     
                 </telerik:RadListBox>
 
@@ -83,20 +96,17 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
 
-                <telerik:RadAutoCompleteBox Grid.Row="0" Grid.Column="0" x:Name="OrganisationAutoCompleteBox" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5">
-                    
-                </telerik:RadAutoCompleteBox>
-                <telerik:RadButton Grid.Row="0" Grid.Column="1" x:Name="AddOrganisationButton" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,5,5,5" MinHeight="20" MinWidth="20">
+                <telerik:RadAutoSuggestBox Grid.Row="0" Grid.Column="0" x:Name="OrganisationAutoCompleteBox" DisplayMemberPath="Name" WatermarkContent="Organisation suchen.." QuerySubmitted="OrganisationAutoCompleteBox_QuerySubmitted" ItemsSource="{Binding AllOrganisations, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5">
 
-                </telerik:RadButton>
+                </telerik:RadAutoSuggestBox>
 
-                <telerik:RadListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="OrganisationListBox" ItemsSource="{Binding AllOrganisations, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="60" MinWidth="120">
+                <telerik:RadListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="OrganisationListBox" DataContextChanged="OrganisationListBox_DataContextChanged" ItemsSource="{Binding UserOrganisations, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="60" MinWidth="120">
 
                 </telerik:RadListBox>
 
             </Grid>
         </Grid>
-        
+
     </Grid>
-    
+
 </win:DefaultEditorWindow>

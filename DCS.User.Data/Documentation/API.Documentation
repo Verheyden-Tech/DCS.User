@@ -107,5 +107,14 @@
             </summary>
             <param name="sqlService">The SQL service used to interact with the database. This parameter cannot be null.</param>
         </member>
+        <member name="M:DCS.User.UserAssignementRepository.GetByUserAndGroup(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCS.User.UserAssignementRepository.GetByUserAndOrganisation(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCS.User.UserAssignementRepository.GetByUserAndRole(System.Guid,System.Guid)">
+            <inheritdoc/>
+        </member>
     </members>
 </doc>

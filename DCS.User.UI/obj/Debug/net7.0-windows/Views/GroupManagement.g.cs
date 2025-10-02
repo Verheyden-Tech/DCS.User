@@ -84,7 +84,7 @@ namespace DCS.User.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DCS.User.UI;V1.0.2801.0;component/views/groupmanagement.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DCS.User.UI;V1.0.3901.0;component/views/groupmanagement.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\GroupManagement.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

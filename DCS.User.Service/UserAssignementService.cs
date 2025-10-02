@@ -116,5 +116,23 @@ namespace DCS.User
 
             return false;
         }
+
+        /// <inheritdoc/>
+        public UserAssignement GetByUserAndGroup(Guid userGuid, Guid groupGuid)
+        {
+            return repository.GetByUserAndGroup(userGuid, groupGuid);
+        }
+
+        /// <inheritdoc/>
+        public UserAssignement GetByUserAndOrganisation(Guid userGuid, Guid organisationGuid)
+        {
+            return repository.GetByUserAndOrganisation(userGuid, organisationGuid);
+        }
+
+        /// <inheritdoc/>
+        public UserAssignement GetByUserAndRole(Guid userGuid, Guid roleGuid)
+        {
+            return repository.GetByUserAndRole(userGuid, roleGuid);
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace DCS.User.UI
 {
@@ -119,13 +120,29 @@ namespace DCS.User.UI
 
         private void EditUser_Click(object sender, RoutedEventArgs e)
         {
-            if (UserGridView.SelectedItems != null && UserGridView.SelectedItems is IList<User>)
+            if (UserGridView.SelectedItems != null || UserGridView.SelectedItems is IList<User>)
             {
-                var editor = new UserEditor(Current.Model);
-                editor.AddPagingObjects(UserGridView.SelectedItems);
-                if(editor.ShowDialog() == true)
+                var user = UserGridView.SelectedItems.FirstOrDefault() as User;
+
+                if(user != null)
                 {
-                    UserGridView.Items.Refresh();
+                    var editor = new UserEditor(user);
+                    editor.AddPagingObjects(UserGridView.SelectedItems);
+                    if (editor.ShowDialog() == true)
+                    {
+                        UserGridView.Items.Refresh();
+                    }
+                }
+                else
+                {
+                    Log.LogManager.Singleton.Warning($"User {user.UserName} failed to open to edit.", $"{this}");
+
+                    var editor = new UserEditor(Current.Model);
+                    editor.AddPagingObjects(UserGridView.SelectedItems);
+                    if (editor.ShowDialog() == true)
+                    {
+                        UserGridView.Items.Refresh();
+                    }
                 }
             }
         }
