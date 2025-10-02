@@ -11,6 +11,7 @@ The `DCS.User` solution is responsible for managing user-related functionalities
 3. **Profile Management:** CRUD operations for user profiles.
 4. **Password Management:** Secure password hashing and reset functionalities.
 5. **Logging and Monitoring:** Integrated logging for user activities and system events.
+6. **Group, Organisation and Role Management** 
 
 ## Language
 
