@@ -1,7 +1,7 @@
 ﻿using DCS.CoreLib.BaseClass;
 using System.Collections.ObjectModel;
 
-namespace DCS.User.Viewmodels
+namespace DCS.User.UI
 {
     /// <summary>
     /// Represents the ViewModel for the <see cref="Role"/> model. Implements the <see cref="ViewModelBase{TKey, TModel}"/> class.

@@ -1,5 +1,5 @@
 ﻿DCS.User.UI
-1.0.4101.0
+1.0.4201.0
 
 library
 C#
@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 
-6-1038501416
+11140870113
 
-14374985016
+19-1344829701
 253-378289712
-Views\ChangeUserPassword.xaml;Views\GroupManagement.xaml;Views\RegistrateUser.xaml;Views\UserEditor.xaml;Views\UserLogin.xaml;Views\UserManagement.xaml;
+Views\Group\GroupEditor.xaml;Views\Group\GroupManagement.xaml;Views\Organisation\OrganisationEditor.xaml;Views\Organisation\OrganisationManagement.xaml;Views\Role\RoleEditor.xaml;Views\Role\RoleManagement.xaml;Views\User\ChangeUserPassword.xaml;Views\User\RegistrateUser.xaml;Views\User\UserEditor.xaml;Views\User\UserLogin.xaml;Views\User\UserManagement.xaml;
 
 False
 

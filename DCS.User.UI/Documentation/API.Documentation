@@ -181,6 +181,69 @@
             Gets or sets the flag if the user shall be keep logged in.
             </summary>
         </member>
+        <member name="T:DCS.User.UI.RoleViewModel">
+            <summary>
+            Represents the ViewModel for the <see cref="T:DCS.User.Role"/> model. Implements the <see cref="T:DCS.CoreLib.BaseClass.ViewModelBase`2"/> class.
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.RoleViewModel.#ctor(DCS.User.Role)">
+            <summary>
+            Default constructor to initialize a new instance of <see cref="T:DCS.User.UI.RoleViewModel"/>.
+            </summary>
+            <param name="role">Instance of <see cref="T:DCS.User.Role"/>.</param>
+        </member>
+        <member name="M:DCS.User.UI.RoleViewModel.Save">
+            <summary>
+            Saves the current instance of the <see cref="T:DCS.User.UI.RoleViewModel"/> class.
+            </summary>
+            <returns>True if the save was succesful; otherwise, false.</returns>
+        </member>
+        <member name="M:DCS.User.UI.RoleViewModel.GetAllActiveRoles">
+            <summary>
+            Gets all available active roles from the table.
+            </summary>
+            <returns>All avialable active roles from the table.</returns>
+        </member>
+        <member name="P:DCS.User.UI.RoleViewModel.Guid">
+            <summary>
+            Role unique identifier.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.RoleViewModel.Ident">
+            <summary>
+            Role ident.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.RoleViewModel.Name">
+            <summary>
+            Role name.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.RoleViewModel.Description">
+            <summary>
+            Role description.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.RoleViewModel.IsActive">
+            <summary>
+            Role is active flag.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.RoleViewModel.UserGuid">
+            <summary>
+            Role creator user unique identifier.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.RoleViewModel.CreationDate">
+            <summary>
+            Role creation date.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.RoleViewModel.LastManipulation">
+            <summary>
+            Role properties last time changed date.
+            </summary>
+        </member>
         <member name="T:DCS.User.UI.UserLoginViewModel">
             <summary>
             ViewModel for the <see cref="T:DCS.User.UI.UserLogin"/>.
@@ -520,6 +583,134 @@
             Gets or sets the file path to the user's profile picture.
             </summary>
         </member>
+        <member name="T:DCS.User.UI.GroupEditor">
+            <summary>
+            Interaction logic for GroupEditor.xaml
+            </summary>
+            <summary>
+            GroupEditor
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.GroupEditor.#ctor(DCS.User.Group)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DCS.User.UI.GroupEditor"/> class with the specified group.
+            </summary>
+            <remarks>This constructor sets up the data context for the editor using a <see
+            cref="T:DCS.User.UI.GroupViewModel"/> initialized with the provided <paramref name="group"/>. Ensure that the <paramref
+            name="group"/> parameter is not <see langword="null"/> before calling this constructor.</remarks>
+            <param name="group">The <see cref="T:DCS.User.Group"/> instance to be edited. Cannot be <see langword="null"/>.</param>
+        </member>
+        <member name="P:DCS.User.UI.GroupEditor.Current">
+            <summary>
+            Returns the current instance of the <see cref="T:DCS.User.UI.GroupViewModel"/> class as DataContext.
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.GroupEditor.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:DCS.User.UI.GroupManagement">
+            <summary>
+            Interaction logic for GroupManagement.xaml
+            </summary>
+            <summary>
+            GroupManagement
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.GroupManagement.#ctor(DCS.User.Group)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DCS.User.UI.GroupManagement"/> class with the specified group.
+            </summary>
+            <remarks>This constructor sets up the data context for the view using a <see
+            cref="T:DCS.User.UI.GroupViewModel"/>  initialized with the provided <paramref name="group"/>.</remarks>
+            <param name="group">The group to be managed. This parameter cannot be <see langword="null"/>.</param>
+        </member>
+        <member name="M:DCS.User.UI.GroupManagement.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:DCS.User.UI.OrganisationEditor">
+            <summary>
+            Interaction logic for OrganisationEditor.xaml
+            </summary>
+            <summary>
+            OrganisationEditor
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.OrganisationEditor.#ctor(DCS.User.Organisation)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DCS.User.UI.OrganisationEditor"/> class.
+            </summary>
+            <param name="organisation">Instance of <see cref="T:DCS.User.Organisation"/>.</param>
+        </member>
+        <member name="P:DCS.User.UI.OrganisationEditor.Current">
+            <summary>
+            Returns the current instance of the <see cref="T:DCS.User.UI.OrganisationViewModel"/> class as DataContext.
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.OrganisationEditor.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:DCS.User.UI.OrganisationManagement">
+            <summary>
+            Interaction logic for OrganisationManagement.xaml
+            </summary>
+            <summary>
+            OrganisationManagement
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.OrganisationManagement.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:DCS.User.UI.RoleEditor">
+            <summary>
+            Interaction logic for RoleEditor.xaml
+            </summary>
+            <summary>
+            RoleEditor
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.RoleEditor.#ctor(DCS.User.Role)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DCS.User.UI.RoleEditor"/> class.
+            </summary>
+            <param name="role">Instance of <see cref="T:DCS.User.Role"/>.</param>
+        </member>
+        <member name="P:DCS.User.UI.RoleEditor.Current">
+            <summary>
+            Returns the current instance of the <see cref="T:DCS.User.UI.RoleViewModel"/> class as DataContext.
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.RoleEditor.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:DCS.User.UI.RoleManagement">
+            <summary>
+            Interaction logic for RoleManagement.xaml
+            </summary>
+            <summary>
+            RoleManagement
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.RoleManagement.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DCS.User.UI.RoleManagement"/> class with the specified role.
+            </summary>
+            <param name="role">The role to be used for initializing the role management context.</param>
+        </member>
+        <member name="M:DCS.User.UI.RoleManagement.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
         <member name="T:DCS.User.UI.RegistrateUser">
             <summary>
             Interaction logic for RegistrateUser.xaml
@@ -632,69 +823,6 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="T:DCS.User.Viewmodels.RoleViewModel">
-            <summary>
-            Represents the ViewModel for the <see cref="T:DCS.User.Role"/> model. Implements the <see cref="T:DCS.CoreLib.BaseClass.ViewModelBase`2"/> class.
-            </summary>
-        </member>
-        <member name="M:DCS.User.Viewmodels.RoleViewModel.#ctor(DCS.User.Role)">
-            <summary>
-            Default constructor to initialize a new instance of <see cref="T:DCS.User.Viewmodels.RoleViewModel"/>.
-            </summary>
-            <param name="role">Instance of <see cref="T:DCS.User.Role"/>.</param>
-        </member>
-        <member name="M:DCS.User.Viewmodels.RoleViewModel.Save">
-            <summary>
-            Saves the current instance of the <see cref="T:DCS.User.Viewmodels.RoleViewModel"/> class.
-            </summary>
-            <returns>True if the save was succesful; otherwise, false.</returns>
-        </member>
-        <member name="M:DCS.User.Viewmodels.RoleViewModel.GetAllActiveRoles">
-            <summary>
-            Gets all available active roles from the table.
-            </summary>
-            <returns>All avialable active roles from the table.</returns>
-        </member>
-        <member name="P:DCS.User.Viewmodels.RoleViewModel.Guid">
-            <summary>
-            Role unique identifier.
-            </summary>
-        </member>
-        <member name="P:DCS.User.Viewmodels.RoleViewModel.Ident">
-            <summary>
-            Role ident.
-            </summary>
-        </member>
-        <member name="P:DCS.User.Viewmodels.RoleViewModel.Name">
-            <summary>
-            Role name.
-            </summary>
-        </member>
-        <member name="P:DCS.User.Viewmodels.RoleViewModel.Description">
-            <summary>
-            Role description.
-            </summary>
-        </member>
-        <member name="P:DCS.User.Viewmodels.RoleViewModel.IsActive">
-            <summary>
-            Role is active flag.
-            </summary>
-        </member>
-        <member name="P:DCS.User.Viewmodels.RoleViewModel.UserGuid">
-            <summary>
-            Role creator user unique identifier.
-            </summary>
-        </member>
-        <member name="P:DCS.User.Viewmodels.RoleViewModel.CreationDate">
-            <summary>
-            Role creation date.
-            </summary>
-        </member>
-        <member name="P:DCS.User.Viewmodels.RoleViewModel.LastManipulation">
-            <summary>
-            Role properties last time changed date.
-            </summary>
-        </member>
         <member name="T:DCS.User.Views.ChangeUserPassword">
             <summary>
             Interaction logic for ChangeUserPassword.xaml
@@ -710,19 +838,6 @@
             <param name="user">Selected user.</param>
         </member>
         <member name="M:DCS.User.Views.ChangeUserPassword.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:DCS.User.Views.GroupManagement">
-            <summary>
-            Interaction logic for GroupManagement.xaml
-            </summary>
-            <summary>
-            GroupManagement
-            </summary>
-        </member>
-        <member name="M:DCS.User.Views.GroupManagement.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>

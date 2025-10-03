@@ -1,5 +1,4 @@
 ﻿using DCS.CoreLib.BaseClass;
-using DCS.User.Service;
 using System.Collections.ObjectModel;
 
 namespace DCS.User.UI

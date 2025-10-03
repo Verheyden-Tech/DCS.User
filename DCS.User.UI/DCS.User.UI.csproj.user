@@ -2,10 +2,19 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="Views\ChangeUserPassword.xaml.cs">
+    <Compile Update="Views\Group\GroupEditor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\GroupManagement.xaml.cs">
+    <Compile Update="Views\User\ChangeUserPassword.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Group\GroupManagement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Organisation\OrganisationManagement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Role\RoleManagement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
