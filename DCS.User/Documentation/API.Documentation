@@ -611,5 +611,15 @@
             Gets or sets the timestamp of the most recent manipulation or update of the assignement.
             </summary>
         </member>
+        <member name="P:DCS.User.UserAssignement.MembershipStart">
+            <summary>
+            Gets or sets the start date of the membership.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UserAssignement.MembershipEnd">
+            <summary>
+            Gets or sets the date and time when the membership ends.
+            </summary>
+        </member>
     </members>
 </doc>

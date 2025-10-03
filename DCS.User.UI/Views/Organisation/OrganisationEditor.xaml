@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="Neue Organisation anlegen" MinHeight="120" MinWidth="400" SizeToContent="WidthAndHeight">
     
-    <Grid Margin="5">
+    <Grid Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
         
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -26,8 +26,11 @@
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Name" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <telerik:RadWatermarkTextBox Grid.Row="0" Grid.Column="1" WatermarkContent="Neuen Organisationsnamen eingeben.." Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
 
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="Aktiv" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <CheckBox Grid.Row="0" Grid.Column="3" IsChecked="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Beschreibung" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        <telerik:RadWatermarkTextBox Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" WatermarkContent="Beschreibung eingeben.." Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" Margin="5" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" TextWrapping="Wrap"/>
+        <telerik:RadWatermarkTextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" WatermarkContent="Beschreibung eingeben.." Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" Margin="5" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" TextWrapping="Wrap"/>
 
     </Grid>
     

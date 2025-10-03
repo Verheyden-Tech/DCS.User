@@ -618,13 +618,10 @@
             GroupManagement
             </summary>
         </member>
-        <member name="M:DCS.User.UI.GroupManagement.#ctor(DCS.User.Group)">
+        <member name="M:DCS.User.UI.GroupManagement.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:DCS.User.UI.GroupManagement"/> class with the specified group.
             </summary>
-            <remarks>This constructor sets up the data context for the view using a <see
-            cref="T:DCS.User.UI.GroupViewModel"/>  initialized with the provided <paramref name="group"/>.</remarks>
-            <param name="group">The group to be managed. This parameter cannot be <see langword="null"/>.</param>
         </member>
         <member name="M:DCS.User.UI.GroupManagement.InitializeComponent">
             <summary>
@@ -661,6 +658,12 @@
             </summary>
             <summary>
             OrganisationManagement
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.OrganisationManagement.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DCS.User.UI.OrganisationManagement"/> class with the specified
+            organisation.
             </summary>
         </member>
         <member name="M:DCS.User.UI.OrganisationManagement.InitializeComponent">
@@ -704,7 +707,6 @@
             <summary>
             Initializes a new instance of the <see cref="T:DCS.User.UI.RoleManagement"/> class with the specified role.
             </summary>
-            <param name="role">The role to be used for initializing the role management context.</param>
         </member>
         <member name="M:DCS.User.UI.RoleManagement.InitializeComponent">
             <summary>

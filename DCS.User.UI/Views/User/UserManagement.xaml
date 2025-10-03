@@ -7,50 +7,37 @@
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
         xmlns:local="clr-namespace:DCS.User.UI"
         mc:Ignorable="d"
-        MinHeight="300" MinWidth="600">
+        d:DesignHeight="450" d:DesignWidth="800">
 
-    <Grid x:Name="UserManagementMain_Grid" Background="White">
+    <Grid x:Name="UserManagementMain_Grid" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
 
         <Grid.ContextMenu>
             <ContextMenu Name="UserManagementContextMenu"/>
         </Grid.ContextMenu>
 
-        <Grid.Resources>
-            <Style TargetType="telerik:GridViewHeaderCell" x:Key="GridColumn">
-                <Setter Property="Background" Value="Transparent"/>
-                <Setter Property="BorderBrush" Value="SlateGray"/>
-                <Setter Property="VerticalAlignment" Value="Stretch"/>
-                <Setter Property="HorizontalAlignment" Value="Stretch"/>
-                <Setter Property="VerticalContentAlignment" Value="Center"/>
-                <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            </Style>
-        </Grid.Resources>
-
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
-        <telerik:RadGridView x:Name="UserGridView" RowIndicatorVisibility="Collapsed" GroupPanelForeground="Black" FontWeight="SemiBold" AutoGenerateColumns="False">
-            <telerik:RadGridView.GroupPanelBackground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFDFDFDF" Offset="1"/>
-                    <GradientStop Color="#FF585CF1"/>
-                </LinearGradientBrush>
-            </telerik:RadGridView.GroupPanelBackground>
-            <telerik:RadGridView.Columns>
-                <telerik:GridViewDataColumn Header="ID" DataMemberBinding="{Binding Ident, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="70" HeaderCellStyle="{DynamicResource ResourceKey=GridColumn}"/>
-                <telerik:GridViewDataColumn Header="Benutzername" DataMemberBinding="{Binding UserName}" MinWidth="100" HeaderCellStyle="{DynamicResource ResourceKey=GridColumn}"/>
-                <telerik:GridViewCheckBoxColumn Header="Aktiv" DataMemberBinding="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50" HeaderCellStyle="{DynamicResource ResourceKey=GridColumn}"/>
-                <telerik:GridViewCheckBoxColumn Header="Admin" DataMemberBinding="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50" HeaderCellStyle="{DynamicResource ResourceKey=GridColumn}"/>
-                <telerik:GridViewCheckBoxColumn Header="AD-Benutzer" DataMemberBinding="{Binding IsADUser, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50" HeaderCellStyle="{DynamicResource ResourceKey=GridColumn}"/>
-                <telerik:GridViewCheckBoxColumn Header="Angemeldet bleiben" DataMemberBinding="{Binding KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="120" HeaderCellStyle="{DynamicResource ResourceKey=GridColumn}"/>
-                <telerik:GridViewDataColumn Header="Erstellt am" DataMemberBinding="{Binding CreationDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="100" HeaderCellStyle="{DynamicResource ResourceKey=GridColumn}"/>
-            </telerik:RadGridView.Columns>
-        </telerik:RadGridView>
-           
+        <telerik:RadAutoCompleteBox x:Name="SearchUserBox" Grid.Row="0" Grid.Column="0" WatermarkContent="Benutzer suchen.." Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <telerik:RadButton Grid.Row="0" Grid.Column="1" x:Name="CreateNewUserButton" Content="Neuen Benutzer anlegen" Click="NewUser_Click" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+
+        <GroupBox Header="Verfügbare Benutzer" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <telerik:RadGridView x:Name="UserGridView" ShowGroupPanel="True" GroupPanelBackground="Transparent" BorderBrush="Transparent" Margin="5" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single">
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn Header="ID" DataMemberBinding="{Binding Ident, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="70"/>
+                    <telerik:GridViewDataColumn Header="Benutzername" DataMemberBinding="{Binding UserName}" MinWidth="150"/>
+                    <telerik:GridViewCheckBoxColumn Header="Aktiv" DataMemberBinding="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50"/>
+                    <telerik:GridViewCheckBoxColumn Header="Admin" DataMemberBinding="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50"/>
+                </telerik:RadGridView.Columns>
+            </telerik:RadGridView>
+        </GroupBox>
+
 
     </Grid>
     

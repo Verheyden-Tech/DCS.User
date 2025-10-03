@@ -37,17 +37,5 @@ namespace DCS.User.UI
                 return DataContext as RoleViewModel;
             }
         }
-
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (viewModel.Save())
-            {
-                this.DialogResult = true;
-            }
-            else
-            {
-                MessageBox.Show("Fehler beim Speichern der Rolle.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
     }
 }

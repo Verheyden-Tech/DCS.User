@@ -23,21 +23,24 @@
         <telerik:RadAutoCompleteBox x:Name="SearchUserRoleBox" Grid.Row="0" Grid.Column="0" WatermarkContent="Rolle suchen.." Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <telerik:RadButton Grid.Row="0" Grid.Column="1" x:Name="CreateNewRoleButton" Content="Neue Rolle erstellen" Click="CreateNewRoleButton_Click" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
-        <telerik:RadGridView x:Name="RoleGridView" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" AutoGenerateColumns="False" ShowGroupPanel="False" IsReadOnly="True" SelectionMode="Single">
+        <GroupBox Header="Verfügbare Rollen" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5">
+            <telerik:RadGridView x:Name="RoleGridView" AutoGenerateColumns="False" ShowGroupPanel="True" GroupPanelBackground="Transparent" BorderBrush="Transparent" IsReadOnly="True" SelectionMode="Single" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+                <telerik:RadGridView.ContextMenu>
+                    <ContextMenu x:Name="RoleManagementContextMenu"/>
+                </telerik:RadGridView.ContextMenu>
+
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Ident}" Header="ID" MinWidth="70"/>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="Rollenname" MinWidth="150"/>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Description}" Header="Beschreibung" MinWidth="200"/>
+                    <telerik:GridViewCheckBoxColumn DataMemberBinding="{Binding IsActive}" Header="Aktiv" MinWidth="50"/>
+                </telerik:RadGridView.Columns>
+
+            </telerik:RadGridView>
             
-            <telerik:RadGridView.ContextMenu>
-                <ContextMenu x:Name="RoleManagementContextMenu"/>
-            </telerik:RadGridView.ContextMenu>
-            
-            <telerik:RadGridView.Columns>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding Ident}" Header="ID" MinWidth="70"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="Rollenname" MinWidth="150"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding Description}" Header="Beschreibung" MinWidth="200"/>
-                <telerik:GridViewCheckBoxColumn DataMemberBinding="{Binding IsActive}" Header="Aktiv" MinWidth="50"/>
-            </telerik:RadGridView.Columns>
-            
-        </telerik:RadGridView>
-        
+        </GroupBox>
+
     </Grid>
     
 </view:DefaultAppControl>

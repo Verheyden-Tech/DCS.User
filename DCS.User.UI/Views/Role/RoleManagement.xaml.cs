@@ -21,7 +21,6 @@ namespace DCS.User.UI
         /// <summary>
         /// Initializes a new instance of the <see cref="RoleManagement"/> class with the specified role.
         /// </summary>
-        /// <param name="role">The role to be used for initializing the role management context.</param>
         public RoleManagement()
         {
             InitializeComponent();
@@ -42,21 +41,21 @@ namespace DCS.User.UI
             MenuItem newRole = new MenuItem()
             {
                 Header = "Neue Rolle",
-                Icon = iconService.GetImage("add_16x.png") // Beispiel-Icon
+                Icon = iconService.GetImage("usermanagement_add_user_16x.png")
             };
             newRole.Click += NewRole_Click;
 
             MenuItem editRole = new MenuItem()
             {
                 Header = "Rolle bearbeiten",
-                Icon = iconService.GetImage("edit_16x.png") // Beispiel-Icon
+                Icon = iconService.GetImage("usermanagement_edit_user_16x.png")
             };
             editRole.Click += EditRole_Click;
 
             MenuItem deleteRole = new MenuItem()
             {
                 Header = "Rolle löschen",
-                Icon = iconService.GetImage("remove_16x.png") // Beispiel-Icon
+                Icon = iconService.GetImage("usermanagement_remove_user_16x.png")
             };
             deleteRole.Click += DeleteRole_Click;
 

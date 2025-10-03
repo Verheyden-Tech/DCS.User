@@ -21,17 +21,11 @@ namespace DCS.User.UI
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupManagement"/> class with the specified group.
         /// </summary>
-        /// <remarks>This constructor sets up the data context for the view using a <see
-        /// cref="GroupViewModel"/>  initialized with the provided <paramref name="group"/>.</remarks>
-        /// <param name="group">The group to be managed. This parameter cannot be <see langword="null"/>.</param>
-        public GroupManagement(Group group)
+        public GroupManagement()
         {
             InitializeComponent();
 
             SetContextMenu();
-
-            this.viewModel = new GroupViewModel(group);
-            this.DataContext = viewModel;
 
             Groups = new ObservableCollection<Group>();
             Groups = groupService.GetAll();

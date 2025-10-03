@@ -55,5 +55,15 @@ namespace DCS.User
         /// Gets or sets the timestamp of the most recent manipulation or update of the assignement.
         /// </summary>
         public DateTime? LastManipulation { get; set; }
+
+        /// <summary>
+        /// Gets or sets the start date of the membership.
+        /// </summary>
+        public DateTime? MembershipStart { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date and time when the membership ends.
+        /// </summary>
+        public DateTime? MembershipEnd { get; set; }
     }
 }

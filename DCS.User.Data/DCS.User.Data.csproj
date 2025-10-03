@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net7.0-windows</TargetFramework>
-		<Version>1.0.2401.1</Version>
-		<AssemblyVersion>1.0.2401.0</AssemblyVersion>
+		<Version>1.0.2601.1</Version>
+		<AssemblyVersion>1.0.2601.0</AssemblyVersion>
 		<ApplicationVersion>1.2.3.0</ApplicationVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Authors>Tobias Verheyden</Authors>
@@ -34,8 +34,8 @@
 		<None Include="..\DCS.User\.editorconfig" Link=".editorconfig" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="DCS.CoreLib" Version="1.1.101" />
-		<PackageReference Include="DCS.CoreLib.BaseClass" Version="1.1.101" />
+		<PackageReference Include="DCS.CoreLib" Version="1.1.201" />
+		<PackageReference Include="DCS.CoreLib.BaseClass" Version="1.1.301" />
 		<PackageReference Include="DCS.Data" Version="1.0.401" />
 		<PackageReference Include="DCS.Localization" Version="1.0.401" />
 		<PackageReference Include="DCS.Log" Version="1.0.601.5" />

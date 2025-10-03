@@ -29,7 +29,9 @@ namespace DCS.User
                 GroupGuid = groupGuid,
                 IsActive = true,
                 CreationDate = DateTime.UtcNow,
-                LastManipulation = DateTime.UtcNow
+                LastManipulation = DateTime.UtcNow,
+                MembershipStart = DateTime.UtcNow,
+                MembershipEnd = null
             };
 
             if (repository.New(userAssignement))
@@ -43,6 +45,8 @@ namespace DCS.User
         {
             if (userAssignement.GroupGuid != Guid.Empty)
             {
+                userAssignement.MembershipEnd = DateTime.UtcNow;
+
                 if (repository.Delete(userAssignement.Guid))
                     return true;
 
@@ -62,7 +66,9 @@ namespace DCS.User
                 OrganisationGuid = organisationGuid,
                 IsActive = true,
                 CreationDate = DateTime.UtcNow,
-                LastManipulation = DateTime.UtcNow
+                LastManipulation = DateTime.UtcNow,
+                MembershipStart = DateTime.UtcNow,
+                MembershipEnd = null
             };
 
             if (repository.New(userAssignement))
@@ -76,6 +82,8 @@ namespace DCS.User
         {
             if (userAssignement.OrganisationGuid != Guid.Empty)
             {
+                userAssignement.MembershipEnd = DateTime.UtcNow;
+
                 if (repository.Delete(userAssignement.Guid))
                     return true;
 
@@ -95,7 +103,9 @@ namespace DCS.User
                 RoleGuid = roleGuid,
                 IsActive = true,
                 CreationDate = DateTime.UtcNow,
-                LastManipulation = DateTime.UtcNow
+                LastManipulation = DateTime.UtcNow,
+                MembershipStart = DateTime.UtcNow,
+                MembershipEnd = null
             };
 
             if (repository.New(userAssignement))
@@ -109,6 +119,8 @@ namespace DCS.User
         {
             if (userAssignement.RoleGuid != Guid.Empty)
             {
+                userAssignement.MembershipEnd = DateTime.UtcNow;
+
                 if (repository.Delete(userAssignement.Guid))
                     return true;
 

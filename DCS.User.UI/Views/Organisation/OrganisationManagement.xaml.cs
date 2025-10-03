@@ -18,7 +18,11 @@ namespace DCS.User.UI
         private ObservableCollection<Organisation> Organisations { get; set; }
         private OrganisationViewModel viewModel;
 
-        public OrganisationManagement(Organisation organisation)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganisationManagement"/> class with the specified
+        /// organisation.
+        /// </summary>
+        public OrganisationManagement()
         {
             InitializeComponent();
 
@@ -37,21 +41,21 @@ namespace DCS.User.UI
             MenuItem newOrganisation = new MenuItem()
             {
                 Header = "Neue Organisation",
-                Icon = iconService.GetImage("add_16x.png") // Beispiel-Icon
+                Icon = iconService.GetImage("usermanagement_add_user_16x.png")
             };
             newOrganisation.Click += NewOrganisation_Click;
 
             MenuItem editOrganisation = new MenuItem()
             {
                 Header = "Organisation bearbeiten",
-                Icon = iconService.GetImage("edit_16x.png") // Beispiel-Icon
+                Icon = iconService.GetImage("usermanagement_edit_user_16x.png")
             };
             editOrganisation.Click += EditOrganisation_Click;
 
             MenuItem deleteOrganisation = new MenuItem()
             {
                 Header = "Organisation löschen",
-                Icon = iconService.GetImage("remove_16x.png") // Beispiel-Icon
+                Icon = iconService.GetImage("usermanagement_remove_user_16x.png")
             };
             deleteOrganisation.Click += DeleteOrganisation_Click;
 
