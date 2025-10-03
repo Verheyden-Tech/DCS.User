@@ -25,7 +25,7 @@ namespace DCS.User.UI
             this.viewModel = new UserViewModel(user);
             this.DataContext = viewModel;
 
-            if(!string.IsNullOrWhiteSpace(user.UserName))
+            if (!string.IsNullOrWhiteSpace(user.UserName))
             {
                 this.Title = user.UserName;
             }
@@ -63,7 +63,7 @@ namespace DCS.User.UI
                 win.Show();
             }
         }
-        
+
         private void GroupAutoCompleteBox_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             if (e.Key == System.Windows.Input.Key.Enter)
@@ -158,15 +158,22 @@ namespace DCS.User.UI
 
         private void OrganisationAutoCompleteBox_QuerySubmitted(object sender, Telerik.Windows.Controls.AutoSuggestBox.QuerySubmittedEventArgs e)
         {
-            if(e.Suggestion is Organisation organisation && organisation != null)
+            if (e.Suggestion is Organisation organisation && organisation != null)
             {
                 if (!Current.UserOrganisations.Contains(organisation))
                 {
                     Current.AddUserToOrganisation(organisation);
-                    if(sender is RadAutoSuggestBox box)
-                    {
-                        
-                    }
+                }
+            }
+        }
+
+        private void GroupAutoCompleteBox_QuerySubmitted(object sender, Telerik.Windows.Controls.AutoSuggestBox.QuerySubmittedEventArgs e)
+        {
+            if (e.Suggestion is Group group && group != null)
+            {
+                if (!Current.UserGroups.Contains(group))
+                {
+                    Current.AddUserToGroup(group);
                 }
             }
         }

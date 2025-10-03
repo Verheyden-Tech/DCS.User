@@ -330,6 +330,18 @@
             <returns><see langword="true"/> if the user was successfully removed from the group; otherwise, <see
             langword="false"/>.</returns>
         </member>
+        <member name="M:DCS.User.UI.UserViewModel.GetUserGroups(DCS.User.User)">
+            <summary>
+            Retrieves the collection of groups associated with the specified user.
+            </summary>
+            <remarks>This method filters the user's group assignments based on valid group identifiers and
+            retrieves the corresponding group objects from the available groups. If a group associated with the user
+            cannot be found, it is skipped.</remarks>
+            <param name="user">The user whose groups are to be retrieved. Cannot be <see langword="null"/>.</param>
+            <returns>An <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/> of <see cref="T:DCS.User.Group"/> objects representing the groups the
+            specified user is assigned to. Returns an empty collection if the user is not assigned to any groups or if
+            <paramref name="user"/> is <see langword="null"/>.</returns>
+        </member>
         <member name="M:DCS.User.UI.UserViewModel.AddUserToOrganisation(DCS.User.Organisation)">
             <summary>
             Adds the current user to the specified organisation.
@@ -351,6 +363,17 @@
             <param name="organisation">The organisation from which the user should be removed. Cannot be <see langword="null"/>.</param>
             <returns><see langword="true"/> if the user was successfully removed from the organisation;  otherwise, <see
             langword="false"/>.</returns>
+        </member>
+        <member name="M:DCS.User.UI.UserViewModel.GetUserOrganisations(DCS.User.User)">
+            <summary>
+            Retrieves a collection of organisations associated with the specified user.
+            </summary>
+            <remarks>This method filters organisations based on the user's assignments, ensuring that only
+            valid organisations  with non-empty GUIDs are included in the result.</remarks>
+            <param name="user">The user whose associated organisations are to be retrieved. Cannot be <see langword="null"/>.</param>
+            <returns>An <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/> of <see cref="T:DCS.User.Organisation"/> objects representing the
+            organisations  linked to the specified user. Returns an empty collection if the user has no associated
+            organisations or if  <paramref name="user"/> is <see langword="null"/>.</returns>
         </member>
         <member name="M:DCS.User.UI.UserViewModel.AddUserToRole(DCS.User.Role)">
             <summary>
@@ -374,6 +397,18 @@
             <param name="role">The role to be removed from the user. Cannot be <see langword="null"/>.</param>
             <returns><see langword="true"/> if the role was successfully removed from the user; otherwise, <see
             langword="false"/>.</returns>
+        </member>
+        <member name="M:DCS.User.UI.UserViewModel.GetUserRoles(DCS.User.User)">
+            <summary>
+            Retrieves the roles assigned to the specified user.
+            </summary>
+            <remarks>This method filters roles based on the user's assignments and excludes any roles with
+            an empty GUID. The returned collection is dynamically observable, meaning changes to the collection will
+            notify any bound UI or listeners.</remarks>
+            <param name="user">The user for whom to retrieve roles. Cannot be <see langword="null"/>.</param>
+            <returns>An <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/> of <see cref="T:DCS.User.Role"/> objects representing the roles assigned to
+            the user. If the user has no roles or if <paramref name="user"/> is <see langword="null"/>, an empty
+            collection is returned.</returns>
         </member>
         <member name="M:DCS.User.UI.UserViewModel.SetUserProfilePicture">
             <summary>

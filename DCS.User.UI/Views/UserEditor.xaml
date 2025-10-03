@@ -41,7 +41,7 @@
         <Grid x:Name="ListBoxGrid" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="5">
 
             <Grid.Resources>
-                <DataTemplate DataType="telerik:RadListBoxItem">
+                <DataTemplate DataType="ListViewItem">
                     <Grid>
 
                         <Grid.ColumnDefinitions>
@@ -75,13 +75,13 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
 
-                <telerik:RadAutoSuggestBox Grid.Row="0" Grid.Column="0" x:Name="GroupAutoCompleteBox" DisplayMemberPath="Name" PreviewKeyDown="GroupAutoCompleteBox_PreviewKeyDown" WatermarkContent="Gruppe suchen.." ItemsSource="{Binding AllGroups, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5">
+                <telerik:RadAutoSuggestBox Grid.Row="0" Grid.Column="0" x:Name="GroupAutoCompleteBox" DisplayMemberPath="Name" QuerySubmitted="GroupAutoCompleteBox_QuerySubmitted" WatermarkContent="Gruppe suchen.." ItemsSource="{Binding AllGroups, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5">
 
                 </telerik:RadAutoSuggestBox>
 
-                <telerik:RadListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="GroupListBox" DataContextChanged="GroupListBox_DataContextChanged" ItemsSource="{Binding UserGroups, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="60" MinWidth="120">
-                    
-                </telerik:RadListBox>
+                <ListView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="GroupListBox" DataContextChanged="GroupListBox_DataContextChanged" ItemsSource="{Binding UserGroups, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="60" MinWidth="120">
+
+                </ListView>
 
             </Grid>
 
@@ -100,9 +100,9 @@
 
                 </telerik:RadAutoSuggestBox>
 
-                <telerik:RadListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="OrganisationListBox" DataContextChanged="OrganisationListBox_DataContextChanged" ItemsSource="{Binding UserOrganisations, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="60" MinWidth="120">
+                <ListView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="OrganisationListBox" DataContextChanged="OrganisationListBox_DataContextChanged" ItemsSource="{Binding UserOrganisations, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="60" MinWidth="120">
 
-                </telerik:RadListBox>
+                </ListView>
 
             </Grid>
         </Grid>

@@ -87,7 +87,7 @@ namespace DCS.User.UI
         private void GenerateUser_Click(object sender, RoutedEventArgs e)
         {
             var win = new AddTestDataWindow();
-            if(win.ShowDialog() == true)
+            if (win.ShowDialog() == true)
             {
                 UserGridView.Items.Refresh();
             }
@@ -95,7 +95,7 @@ namespace DCS.User.UI
 
         private void DeleteUser_Click(object sender, RoutedEventArgs e)
         {
-            if(MessageBox.Show("Möchten Sie den Nutzer wirklich löschen?", "Nutzer löschen", MessageBoxButton.YesNo, MessageBoxImage.Hand) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Möchten Sie den Nutzer wirklich löschen?", "Nutzer löschen", MessageBoxButton.YesNo, MessageBoxImage.Hand) == MessageBoxResult.Yes)
             {
                 try
                 {
@@ -124,7 +124,7 @@ namespace DCS.User.UI
             {
                 var user = UserGridView.SelectedItems.FirstOrDefault() as User;
 
-                if(user != null)
+                if (user != null)
                 {
                     var editor = new UserEditor(user);
                     editor.AddPagingObjects(UserGridView.SelectedItems);
@@ -150,10 +150,11 @@ namespace DCS.User.UI
         private void NewUser_Click(object sender, RoutedEventArgs e)
         {
             var win = new UserEditor(Current.Model);
-            if(win.ShowDialog() == true)
+            if (win.ShowDialog() == true)
             {
                 UserGridView.Items.Refresh();
-            };
+            }
+            ;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DCS.CoreLib.BaseClass;
+using System.Collections.ObjectModel;
 
 namespace DCS.User
 {
@@ -40,9 +41,9 @@ namespace DCS.User
         /// <inheritdoc/>
         public bool RemoveUserFromGroup(UserAssignement userAssignement)
         {
-            if(userAssignement.GroupGuid != Guid.Empty)
+            if (userAssignement.GroupGuid != Guid.Empty)
             {
-                if(repository.Delete(userAssignement.Guid))
+                if (repository.Delete(userAssignement.Guid))
                     return true;
 
                 return false;
@@ -73,7 +74,7 @@ namespace DCS.User
         /// <inheritdoc/>
         public bool RemoveUserFromOrganisation(UserAssignement userAssignement)
         {
-            if(userAssignement.OrganisationGuid != Guid.Empty)
+            if (userAssignement.OrganisationGuid != Guid.Empty)
             {
                 if (repository.Delete(userAssignement.Guid))
                     return true;
@@ -106,7 +107,7 @@ namespace DCS.User
         /// <inheritdoc/>
         public bool RemoveUserFromRole(UserAssignement userAssignement)
         {
-            if(userAssignement.RoleGuid != Guid.Empty)
+            if (userAssignement.RoleGuid != Guid.Empty)
             {
                 if (repository.Delete(userAssignement.Guid))
                     return true;

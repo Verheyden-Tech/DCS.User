@@ -49,9 +49,13 @@ namespace DCS.User.UI
         {
             this.Model = user;
 
-            groups = groupService.GetAll();
-            organisations = organisationService.GetAll();
-            roles = roleService.GetAll();
+            AllGroups = groupService.GetAll();
+            AllOrganisations = organisationService.GetAll();
+            AllRoles = roleService.GetAll();
+
+            UserGroups = GetUserGroups(user);
+            UserOrganisations = GetUserOrganisations(user);
+            UserRoles = GetUserRoles(user);
         }
 
         /// <summary>
@@ -116,11 +120,11 @@ namespace DCS.User.UI
         {
             if (Model != null && group != null)
             {
-                if(UserGroups.Contains(group))
+                if (UserGroups.Contains(group))
                 {
                     var assignement = assignementService.GetByUserAndGroup(Model.Guid, group.Guid);
 
-                    if(assignement != null)
+                    if (assignement != null)
                     {
                         if (assignementService.RemoveUserFromGroup(assignement))
                         {
@@ -139,6 +143,39 @@ namespace DCS.User.UI
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// Retrieves the collection of groups associated with the specified user.
+        /// </summary>
+        /// <remarks>This method filters the user's group assignments based on valid group identifiers and
+        /// retrieves the corresponding group objects from the available groups. If a group associated with the user
+        /// cannot be found, it is skipped.</remarks>
+        /// <param name="user">The user whose groups are to be retrieved. Cannot be <see langword="null"/>.</param>
+        /// <returns>An <see cref="ObservableCollection{T}"/> of <see cref="Group"/> objects representing the groups the
+        /// specified user is assigned to. Returns an empty collection if the user is not assigned to any groups or if
+        /// <paramref name="user"/> is <see langword="null"/>.</returns>
+        public ObservableCollection<Group> GetUserGroups(User user)
+        {
+            var userGroups = new ObservableCollection<Group>();
+
+            if (user != null)
+            {
+                var assignments = assignementService.GetAll().Where(ua => ua.UserGuid == user.Guid && ua.GroupGuid != Guid.Empty);
+
+                foreach (var assignment in assignments)
+                {
+                    var group = AllGroups.FirstOrDefault(g => g.Guid == assignment.GroupGuid);
+                    if (group != null)
+                    {
+                        userGroups.Add(group);
+                    }
+                }
+
+                return userGroups;
+            }
+
+            return userGroups;
         }
 
         /// <summary>
@@ -210,6 +247,39 @@ namespace DCS.User.UI
         }
 
         /// <summary>
+        /// Retrieves a collection of organisations associated with the specified user.
+        /// </summary>
+        /// <remarks>This method filters organisations based on the user's assignments, ensuring that only
+        /// valid organisations  with non-empty GUIDs are included in the result.</remarks>
+        /// <param name="user">The user whose associated organisations are to be retrieved. Cannot be <see langword="null"/>.</param>
+        /// <returns>An <see cref="ObservableCollection{T}"/> of <see cref="Organisation"/> objects representing the
+        /// organisations  linked to the specified user. Returns an empty collection if the user has no associated
+        /// organisations or if  <paramref name="user"/> is <see langword="null"/>.</returns>
+        public ObservableCollection<Organisation> GetUserOrganisations(User user)
+        {
+            var userOrganisations = new ObservableCollection<Organisation>();
+
+            if (user != null)
+            {
+                var assignments = assignementService.GetAll().Where(ua => ua.UserGuid == user.Guid && ua.OrganisationGuid != Guid.Empty);
+
+                foreach (var assignment in assignments)
+                {
+                    var organisation = AllOrganisations.FirstOrDefault(o => o.Guid == assignment.OrganisationGuid);
+
+                    if (organisation != null)
+                    {
+                        userOrganisations.Add(organisation);
+                    }
+                }
+
+                return userOrganisations;
+            }
+
+            return userOrganisations;
+        }
+
+        /// <summary>
         /// Adds the specified role to the user if it is not already assigned.
         /// </summary>
         /// <remarks>This method checks if the role is not already assigned to the user before attempting
@@ -276,6 +346,40 @@ namespace DCS.User.UI
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// Retrieves the roles assigned to the specified user.
+        /// </summary>
+        /// <remarks>This method filters roles based on the user's assignments and excludes any roles with
+        /// an empty GUID. The returned collection is dynamically observable, meaning changes to the collection will
+        /// notify any bound UI or listeners.</remarks>
+        /// <param name="user">The user for whom to retrieve roles. Cannot be <see langword="null"/>.</param>
+        /// <returns>An <see cref="ObservableCollection{T}"/> of <see cref="Role"/> objects representing the roles assigned to
+        /// the user. If the user has no roles or if <paramref name="user"/> is <see langword="null"/>, an empty
+        /// collection is returned.</returns>
+        public ObservableCollection<Role> GetUserRoles(User user)
+        {
+            var userRoles = new ObservableCollection<Role>();
+
+            if (user != null)
+            {
+                var assignments = assignementService.GetAll().Where(ua => ua.UserGuid == user.Guid && ua.RoleGuid != Guid.Empty);
+
+                foreach (var assignment in assignments)
+                {
+                    var role = AllRoles.FirstOrDefault(r => r.Guid == assignment.RoleGuid);
+
+                    if (role != null)
+                    {
+                        userRoles.Add(role);
+                    }
+                }
+
+                return userRoles;
+            }
+
+            return userRoles;
         }
         #endregion
 
