@@ -5,7 +5,8 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media.Imaging;
+using System.Windows.Media;
+using Telerik.Windows.Controls;
 
 namespace DCS.User.UI
 {
@@ -50,31 +51,36 @@ namespace DCS.User.UI
 
         private void SetContextMenu()
         {
+            var glyphDelete = new RadGlyph() { Glyph = "\te10C", FontSize = 16, Foreground = Brushes.Black };
+            var glyphEdit = new RadGlyph() { Glyph = "\te10B", FontSize = 16, Foreground = Brushes.Black };
+            var glyphAdd = new RadGlyph() { Glyph = "\te11E", FontSize = 16, Foreground = Brushes.Black };
+            var glyphGenerate = new RadGlyph() { Glyph = "\te13B", FontSize = 16, Foreground = Brushes.Black };
+
             MenuItem newUser = new MenuItem()
             {
                 Header = "Neuer User",
-                Icon = iconService.GetImage("usermanagement_add_user_16x.png")
+                Icon = glyphAdd
             };
             newUser.Click += NewUser_Click;
 
             MenuItem editUser = new MenuItem()
             {
                 Header = "Nutzer bearbeiten",
-                Icon = iconService.GetImage("usermanagement_edit_user_16x.png")
+                Icon = glyphEdit
             };
             editUser.Click += EditUser_Click;
 
             MenuItem deleteUser = new MenuItem()
             {
                 Header = "User löschen",
-                Icon = iconService.GetImage("usermanagement_remove_user_16x.png")
+                Icon = glyphDelete
             };
             deleteUser.Click += DeleteUser_Click;
 
             MenuItem generateUser = new MenuItem()
             {
-                Header = "Nutzer generieren",
-                Icon = iconService.GetImage("add_user_group_32x.png")
+                Header = "Test Nutzer generieren",
+                Icon = glyphGenerate
             };
             generateUser.Click += GenerateUser_Click;
 

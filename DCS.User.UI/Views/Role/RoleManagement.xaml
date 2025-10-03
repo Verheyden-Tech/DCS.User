@@ -20,11 +20,11 @@
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
-        <telerik:RadAutoCompleteBox x:Name="SearchUserRoleBox" Grid.Row="0" Grid.Column="0" WatermarkContent="Rolle suchen.." Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        <telerik:RadButton Grid.Row="0" Grid.Column="1" x:Name="CreateNewRoleButton" Content="Neue Rolle erstellen" Click="CreateNewRoleButton_Click" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <telerik:RadAutoCompleteBox x:Name="SearchUserRoleBox" Grid.Row="0" Grid.Column="0" WatermarkContent="Rolle suchen.." Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <telerik:RadButton Grid.Row="0" Grid.Column="1" x:Name="CreateNewRoleButton" Content="Neue Rolle erstellen" CornerRadius="5" Click="CreateNewRoleButton_Click" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
         <GroupBox Header="Verfügbare Rollen" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5">
-            <telerik:RadGridView x:Name="RoleGridView" AutoGenerateColumns="False" ShowGroupPanel="True" GroupPanelBackground="Transparent" BorderBrush="Transparent" IsReadOnly="True" SelectionMode="Single" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <telerik:RadGridView x:Name="RoleGridView" AutoGenerateColumns="False" ShowGroupPanel="True" GroupPanelBackground="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" SelectionMode="Single" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
 
                 <telerik:RadGridView.ContextMenu>
                     <ContextMenu x:Name="RoleManagementContextMenu"/>

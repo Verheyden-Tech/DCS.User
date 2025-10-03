@@ -7,14 +7,32 @@
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
         xmlns:win="clr-namespace:DCS.CoreLib.View;assembly=DCS.CoreLib.View"
         mc:Ignorable="d"
-        Title="Neue Gruppe erstellen" MinHeight="120" MinWidth="400" SizeToContent="WidthAndHeight">
+        Title="Neue Gruppe erstellen" MinHeight="120" MinWidth="400">
     
     <Grid Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+        <Grid.Resources>
+            <DataTemplate DataType="ListViewItem" x:Key="ListItem">
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="{Binding DataContext.Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2"/>
+                    <Button Grid.Column="1" Content="X" x:Name="RemoveItemButton" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" Click="RemoveItemButton_Click"/>
+
+                </Grid>
+            </DataTemplate>
+        </Grid.Resources>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
@@ -32,6 +50,13 @@
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Beschreibung:" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Right"/>
         <telerik:RadWatermarkTextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Text="{Binding Description, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Beschreibung eingeben.." TextWrapping="Wrap" TextAlignment="Left" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
 
+        <telerik:RadAutoSuggestBox x:Name="AddUserSuggestBox" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Margin="5" QuerySubmitted="AddUserSuggestBox_QuerySubmitted" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <GroupBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Header="Bereits hinzugefügte Benutzer" Margin="5">
+            <ListView x:Name="UserListBox" ItemsSource="{Binding GroupMember, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" BorderBrush="{x:Null}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ItemTemplate="{StaticResource ListItem}">
+                
+            </ListView>
+        </GroupBox>
+        
     </Grid>
     
 </win:DefaultEditorWindow>

@@ -4,6 +4,8 @@ using DCS.User.Service;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
+using Telerik.Windows.Controls;
 
 namespace DCS.User.UI
 {
@@ -38,31 +40,36 @@ namespace DCS.User.UI
 
         private void SetContextMenu()
         {
+            var glyphDelete = new RadGlyph() { Glyph = "\te10C", FontSize = 16, Foreground = Brushes.Black };
+            var glyphEdit = new RadGlyph() { Glyph = "\te10B", FontSize = 16, Foreground = Brushes.Black };
+            var glyphAdd = new RadGlyph() { Glyph = "\te11E", FontSize = 16, Foreground = Brushes.Black };
+            var glyphGenerate = new RadGlyph() { Glyph = "\te13B", FontSize = 16, Foreground = Brushes.Black };
+
             MenuItem newGroup = new MenuItem()
             {
                 Header = "Neue Gruppe",
-                Icon = iconService.GetImage("usermanagement_add_user_16x.png")
+                Icon = glyphAdd
             };
             newGroup.Click += NewGroup_Click;
 
             MenuItem editGroup = new MenuItem()
             {
                 Header = "Gruppe bearbeiten",
-                Icon = iconService.GetImage("usermanagement_edit_user_16x.png")
+                Icon = glyphEdit
             };
             editGroup.Click += EditGroup_Click;
 
             MenuItem deleteGroup = new MenuItem()
             {
                 Header = "Gruppe löschen",
-                Icon = iconService.GetImage("usermanagement_remove_user_16x.png")
+                Icon = glyphDelete
             };
             deleteGroup.Click += DeleteGroup_Click;
 
             MenuItem generateGroup = new MenuItem()
             {
                 Header = "Gruppen generieren",
-                Icon = iconService.GetImage("add_user_group_32x.png")
+                Icon = glyphGenerate
             };
             generateGroup.Click += GenerateGroup_Click;
 

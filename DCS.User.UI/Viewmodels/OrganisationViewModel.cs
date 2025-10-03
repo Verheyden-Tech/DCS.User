@@ -9,6 +9,8 @@ namespace DCS.User.UI
     public class OrganisationViewModel : ViewModelBase<Guid, Organisation>
     {
         private readonly IOrganisationService organisationService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IOrganisationService>();
+        private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
+        private readonly IUserAssignementService userAssignementService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserAssignementService>();
 
         /// <summary>
         /// Default constructor initialize a new instance of <see cref="OrganisationViewModel"/>.
@@ -58,6 +60,44 @@ namespace DCS.User.UI
             }
 
             return organisations;
+        }
+
+        /// <summary>
+        /// Retrieves all members of the specified organisation.
+        /// </summary>
+        /// <remarks>This method queries the user assignments associated with the specified organisation
+        /// and retrieves the corresponding user details.</remarks>
+        /// <param name="organisation">The organisation for which to retrieve the members. Cannot be <see langword="null"/>.</param>
+        /// <returns>An <see cref="ObservableCollection{T}"/> of <see cref="User"/> objects representing the members of the
+        /// specified organisation.  Returns an empty collection if the organisation has no members or if the
+        /// organisation is <see langword="null"/>.</returns>
+        public ObservableCollection<User> GetAllOrganisationMember(Organisation organisation)
+        {
+            ObservableCollection<User> users = new ObservableCollection<User>();
+
+            if(organisation != null)
+            {
+                ObservableCollection<UserAssignement> userAssignments = userAssignementService.GetAll();
+
+                if(userAssignments != null && userAssignments.Count > 0)
+                {
+                    foreach(var userAssignment in userAssignments)
+                    {
+                        if(userAssignment.OrganisationGuid == organisation.Guid)
+                        {
+                            var user = userService.Get(userAssignment.UserGuid);
+                            if(user != null)
+                            {
+                                users.Add(user);
+                            }
+                        }
+                    }
+                }
+
+                return users;
+            }
+
+            return users;
         }
 
         #region Properties

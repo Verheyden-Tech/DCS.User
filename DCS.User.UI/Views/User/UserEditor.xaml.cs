@@ -124,6 +124,8 @@ namespace DCS.User.UI
                 this.AddUserProfilePictureButton.Visibility = Visibility.Collapsed;
                 this.AddUserProfilePictureButton.IsEnabled = false;
                 this.UserProfilePicture.Visibility = Visibility.Visible;
+                this.UserProfilePicture.Width = 16;
+                this.UserProfilePicture.Height = 16;
             }
         }
 

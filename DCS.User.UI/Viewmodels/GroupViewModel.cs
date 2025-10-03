@@ -9,6 +9,8 @@ namespace DCS.User.UI
     public class GroupViewModel : ViewModelBase<Guid, Group>
     {
         private readonly IGroupService groupService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IGroupService>();
+        private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
+        private readonly IUserAssignementService userAssignementService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserAssignementService>();
 
         /// <summary>
         /// Default constructor initialize a new instance of <see cref="GroupViewModel"/>.
@@ -59,6 +61,45 @@ namespace DCS.User.UI
             }
 
             return groups;
+        }
+
+        /// <summary>
+        /// Retrieves all members of the specified group.
+        /// </summary>
+        /// <remarks>This method queries the user assignments to determine which users belong to the
+        /// specified group. If a user assignment references a user that cannot be retrieved, that user is
+        /// skipped.</remarks>
+        /// <param name="group">The group for which to retrieve the members. Cannot be <see langword="null"/>.</param>
+        /// <returns>An <see cref="ObservableCollection{T}"/> of <see cref="User"/> objects representing the members of the
+        /// specified group.  Returns an empty collection if the group has no members or if the group is <see
+        /// langword="null"/>.</returns>
+        public ObservableCollection<User> GetAllGroupMember(Group group)
+        {
+            ObservableCollection<User> users = new ObservableCollection<User>();
+            
+            if(group != null)
+            {
+                ObservableCollection<UserAssignement> userAssignements = userAssignementService.GetAll();
+
+                if(userAssignements != null && userAssignements.Count > 0)
+                {
+                    foreach(var userAssignement in userAssignements)
+                    {
+                        if(userAssignement.GroupGuid == group.Guid)
+                        {
+                            var user = userService.Get(userAssignement.UserGuid);
+                            if(user != null)
+                            {
+                                users.Add(user);
+                            }
+                        }
+                    }
+                }
+
+                return users;
+            }
+
+            return users;
         }
 
         #region Properties

@@ -27,6 +27,18 @@
             </summary>
             <returns>All avialable active groups from the table.</returns>
         </member>
+        <member name="M:DCS.User.UI.GroupViewModel.GetAllGroupMember(DCS.User.Group)">
+            <summary>
+            Retrieves all members of the specified group.
+            </summary>
+            <remarks>This method queries the user assignments to determine which users belong to the
+            specified group. If a user assignment references a user that cannot be retrieved, that user is
+            skipped.</remarks>
+            <param name="group">The group for which to retrieve the members. Cannot be <see langword="null"/>.</param>
+            <returns>An <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/> of <see cref="T:DCS.User.User"/> objects representing the members of the
+            specified group.  Returns an empty collection if the group has no members or if the group is <see
+            langword="null"/>.</returns>
+        </member>
         <member name="P:DCS.User.UI.GroupViewModel.Guid">
             <summary>
             Group unique identifier.
@@ -88,6 +100,17 @@
             Gets all available active organisations from the table.
             </summary>
             <returns>All avialable active organisations from the table.</returns>
+        </member>
+        <member name="M:DCS.User.UI.OrganisationViewModel.GetAllOrganisationMember(DCS.User.Organisation)">
+            <summary>
+            Retrieves all members of the specified organisation.
+            </summary>
+            <remarks>This method queries the user assignments associated with the specified organisation
+            and retrieves the corresponding user details.</remarks>
+            <param name="organisation">The organisation for which to retrieve the members. Cannot be <see langword="null"/>.</param>
+            <returns>An <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/> of <see cref="T:DCS.User.User"/> objects representing the members of the
+            specified organisation.  Returns an empty collection if the organisation has no members or if the
+            organisation is <see langword="null"/>.</returns>
         </member>
         <member name="P:DCS.User.UI.OrganisationViewModel.Guid">
             <summary>
@@ -203,6 +226,17 @@
             Gets all available active roles from the table.
             </summary>
             <returns>All avialable active roles from the table.</returns>
+        </member>
+        <member name="M:DCS.User.UI.RoleViewModel.GetAllRoleMember(DCS.User.Role)">
+            <summary>
+            Retrieves all users assigned to the specified role.
+            </summary>
+            <remarks>This method queries the user assignments to find all users associated with the
+            specified role.  If the role is <see langword="null"/>, an empty collection is returned.</remarks>
+            <param name="role">The role for which to retrieve the assigned users. Cannot be <see langword="null"/>.</param>
+            <returns>An <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/> of <see cref="T:DCS.User.User"/> objects representing the users assigned to
+            the specified role.  Returns an empty collection if no users are assigned to the role or if the role is <see
+            langword="null"/>.</returns>
         </member>
         <member name="P:DCS.User.UI.RoleViewModel.Guid">
             <summary>

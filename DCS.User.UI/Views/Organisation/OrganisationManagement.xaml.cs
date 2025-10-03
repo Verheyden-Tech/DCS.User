@@ -1,9 +1,11 @@
-﻿using DCS.CoreLib.View;
+﻿using CommonServiceLocator;
+using DCS.CoreLib.View;
 using DCS.Resource;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
-using CommonServiceLocator;
+using System.Windows.Media;
+using Telerik.Windows.Controls;
 
 namespace DCS.User.UI
 {
@@ -38,30 +40,47 @@ namespace DCS.User.UI
 
         private void SetContextMenu()
         {
+            var glyphDelete = new RadGlyph() { Glyph = "\te10C", FontSize = 16, Foreground = Brushes.Black };
+            var glyphEdit = new RadGlyph() { Glyph = "\te10B", FontSize = 16, Foreground = Brushes.Black };
+            var glyphAdd = new RadGlyph() { Glyph = "\te11E", FontSize = 16, Foreground = Brushes.Black };
+            var glyphGenerate = new RadGlyph() { Glyph = "\te13B", FontSize = 16, Foreground = Brushes.Black };
+
             MenuItem newOrganisation = new MenuItem()
             {
                 Header = "Neue Organisation",
-                Icon = iconService.GetImage("usermanagement_add_user_16x.png")
+                Icon = glyphAdd
             };
             newOrganisation.Click += NewOrganisation_Click;
 
             MenuItem editOrganisation = new MenuItem()
             {
                 Header = "Organisation bearbeiten",
-                Icon = iconService.GetImage("usermanagement_edit_user_16x.png")
+                Icon = glyphEdit
             };
             editOrganisation.Click += EditOrganisation_Click;
 
             MenuItem deleteOrganisation = new MenuItem()
             {
                 Header = "Organisation löschen",
-                Icon = iconService.GetImage("usermanagement_remove_user_16x.png")
+                Icon = glyphDelete
             };
             deleteOrganisation.Click += DeleteOrganisation_Click;
+
+            MenuItem generateOrganisations = new MenuItem()
+            {
+                Header = "Test Organisationen generieren",
+                Icon = glyphGenerate
+            };
+            generateOrganisations.Click += GenerateOrganisations_Click;
 
             OrganisationManagementContextMenu.Items.Add(newOrganisation);
             OrganisationManagementContextMenu.Items.Add(editOrganisation);
             OrganisationManagementContextMenu.Items.Add(deleteOrganisation);
+        }
+
+        private void GenerateOrganisations_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void NewOrganisation_Click(object sender, RoutedEventArgs e)

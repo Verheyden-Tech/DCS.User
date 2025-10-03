@@ -20,11 +20,11 @@
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
-        <telerik:RadAutoCompleteBox x:Name="SearchUserOrganisationBox" Grid.Row="0" Grid.Column="0" WatermarkContent="Organisation suchen.." Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        <telerik:RadButton Grid.Row="0" Grid.Column="1" x:Name="CreateNewOrganisationButton" Content="Neue Organisation erstellen" Click="CreateNewOrganisationButton_Click" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <telerik:RadAutoCompleteBox x:Name="SearchUserOrganisationBox" Grid.Row="0" Grid.Column="0" WatermarkContent="Organisation suchen.." Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <telerik:RadButton Grid.Row="0" Grid.Column="1" x:Name="CreateNewOrganisationButton" Content="Neue Organisation erstellen" CornerRadius="5" Click="CreateNewOrganisationButton_Click" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
         <GroupBox Header="Verfügbare Organisationen" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            <telerik:RadGridView x:Name="OrganisationGridView" GroupPanelBackground="Transparent" Margin="5" BorderBrush="Transparent" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <telerik:RadGridView x:Name="OrganisationGridView" GroupPanelBackground="{x:Null}" Margin="5" BorderBrush="{x:Null}" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 
                 <telerik:RadGridView.ContextMenu>
                     <ContextMenu Name="OrganisationManagementContextMenu"/>

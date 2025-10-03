@@ -9,6 +9,8 @@ namespace DCS.User.UI
     public class RoleViewModel : ViewModelBase<Guid, Role>
     {
         private readonly IRoleService roleService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IRoleService>();
+        private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
+        private readonly IUserAssignementService userAssignmentService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserAssignementService>();
 
         /// <summary>
         /// Default constructor to initialize a new instance of <see cref="RoleViewModel"/>.
@@ -59,6 +61,44 @@ namespace DCS.User.UI
             }
 
             return roles;
+        }
+
+        /// <summary>
+        /// Retrieves all users assigned to the specified role.
+        /// </summary>
+        /// <remarks>This method queries the user assignments to find all users associated with the
+        /// specified role.  If the role is <see langword="null"/>, an empty collection is returned.</remarks>
+        /// <param name="role">The role for which to retrieve the assigned users. Cannot be <see langword="null"/>.</param>
+        /// <returns>An <see cref="ObservableCollection{T}"/> of <see cref="User"/> objects representing the users assigned to
+        /// the specified role.  Returns an empty collection if no users are assigned to the role or if the role is <see
+        /// langword="null"/>.</returns>
+        public ObservableCollection<User> GetAllRoleMember(Role role)
+        {
+            ObservableCollection<User> users = new ObservableCollection<User>();
+
+            if(role != null)
+            {
+                ObservableCollection<UserAssignement> userAssignments = userAssignmentService.GetAll();
+
+                if(userAssignments != null && userAssignments.Count > 0)
+                {
+                    foreach(var userAssignment in userAssignments)
+                    {
+                        if (userAssignment.RoleGuid == role.Guid)
+                        {
+                            var user = userService.Get(userAssignment.UserGuid);
+                            if (user != null)
+                            {
+                                users.Add(user);
+                            }
+                        }
+                    }
+                }
+
+                return users;
+            }
+
+            return users;
         }
 
         #region Properties

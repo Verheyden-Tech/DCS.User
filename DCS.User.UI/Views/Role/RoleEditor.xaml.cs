@@ -1,5 +1,7 @@
 using DCS.CoreLib.View;
+using System.Collections.ObjectModel;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace DCS.User.UI
 {
@@ -9,6 +11,8 @@ namespace DCS.User.UI
     public partial class RoleEditor : DefaultEditorWindow
     {
         private RoleViewModel viewModel;
+
+        private ObservableCollection<User> RoleMember = new ObservableCollection<User>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RoleEditor"/> class.
@@ -25,6 +29,9 @@ namespace DCS.User.UI
             {
                 this.Title = role.Name;
             }
+
+            if(viewModel.GetAllRoleMember(role) != null && viewModel.GetAllRoleMember(role).Count >= 0)
+                RoleMember = viewModel.GetAllRoleMember(role);
         }
 
         /// <summary>
@@ -35,6 +42,30 @@ namespace DCS.User.UI
             get
             {
                 return DataContext as RoleViewModel;
+            }
+        }
+
+        private void AddUserSuggestBox_QuerySubmitted(object sender, Telerik.Windows.Controls.AutoSuggestBox.QuerySubmittedEventArgs e)
+        {
+            if(e.Suggestion is User user)
+            {
+                if(!RoleMember.Contains(user))
+                {
+                    RoleMember.Add(user);
+                }
+
+                AddUserSuggestBox.Text = string.Empty;
+            }
+        }
+
+        private void RemoveItemButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(sender is ListViewItem item && item.DataContext is User user)
+            {
+                if(RoleMember.Contains(user))
+                {
+                    RoleMember.Remove(user);
+                }
             }
         }
     }

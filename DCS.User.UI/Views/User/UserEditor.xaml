@@ -6,7 +6,7 @@
                          xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
                          xmlns:win="clr-namespace:DCS.CoreLib.View;assembly=DCS.CoreLib.View"
                          mc:Ignorable="d"
-        Title="Neuen Benutzer erstellen" MinHeight="200" MinWidth="400" SizeToContent="WidthAndHeight">
+        Title="Neuen Benutzer erstellen" MinHeight="200" MinWidth="400" WindowStartupLocation="CenterScreen">
 
     <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
 
@@ -24,7 +24,7 @@
         </Grid.ColumnDefinitions>
 
         <telerik:RadButton Grid.Row="0" Grid.Column="0" x:Name="AddUserProfilePictureButton" Click="AddUserProfilePictureButton_Click" IsEnabled="False" Background="Transparent" Grid.RowSpan="2" Margin="5" MinWidth="50" MinHeight="50" ToolTip="Benutzer Profilbild hinzufügen">
-            <Image x:Name="AddUserProfilPicture" HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="32" MinWidth="32" Source="/DCS.User;component/Resources/Images/usermanagement_add_user_32x.png"/>
+            <Image x:Name="AddUserProfilPicture" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="32" MinWidth="32" Source="{telerik:RadGlyph Size=1, Type=Image, Glyph=&#xe652;}"/>
         </telerik:RadButton>
         <Image Grid.Row="0" Grid.Column="0" x:Name="UserProfilePicture" Stretch="Fill" Source="{Binding ProfilePicturePath, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.RowSpan="2" Margin="5" MinWidth="50" MinHeight="50" Visibility="Collapsed">
 
@@ -33,7 +33,9 @@
         <telerik:RadWatermarkTextBox Grid.Row="0" Grid.Column="1" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Benutzername eingeben.." Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
         <telerik:RadPasswordBox Grid.Row="0" Grid.Column="2" x:Name="UserPasswordBox" Text="{Binding PassWord, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Neues Passwort festlegen.." Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
-        <Button Grid.Row="0" Grid.Column="2" x:Name="ChangeUserPasswordButton" Visibility="Collapsed" Content="Neues Passwort festlegen" FontSize="8" Click="ChangeUserPasswordButton_Click" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <telerik:RadButton Grid.Row="0" Grid.Column="2" x:Name="ChangeUserPasswordButton" Visibility="Collapsed" Background="LightGray" Click="ChangeUserPasswordButton_Click" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+            <Image x:Name="ChangeUserPasswordImage" Source="{telerik:RadGlyph Size=1, Type=Image, Glyph=&#xe113;}" Height="16" Width="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        </telerik:RadButton>
 
         <CheckBox Grid.Row="1" Grid.Column="2" IsChecked="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="Aktiv" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
         <CheckBox Grid.Row="1" Grid.Column="1" IsChecked="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="Admin" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
