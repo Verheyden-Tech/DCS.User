@@ -9,7 +9,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <Grid Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+    <Grid Background="White">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -27,7 +27,12 @@
             <telerik:RadGridView x:Name="OrganisationGridView" GroupPanelBackground="{x:Null}" Margin="5" BorderBrush="{x:Null}" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 
                 <telerik:RadGridView.ContextMenu>
-                    <ContextMenu Name="OrganisationManagementContextMenu"/>
+                    <ContextMenu Name="OrganisationManagementContextMenu">
+                        <MenuItem Header="Organisation anlegen" Click="CreateNewOrganisationButton_Click" Icon="{telerik:RadGlyph Size=16, Glyph=&#xe11e;}"/>
+                        <MenuItem Header="Organisation bearbeiten" Click="EditOrganisation_Click" Icon="{telerik:RadGlyph Size=16, Glyph=&#xe10b;}"/>
+                        <MenuItem Header="Organisation löschen" Click="DeleteOrganisation_Click" Icon="{telerik:RadGlyph Size=16, Glyph=&#xe10c;}"/>
+                        <MenuItem Header="Organisationen generieren" Click="GenerateOrganisations_Click" Icon="{telerik:RadGlyph Size=16, Glyph=&#xe13b;}"/>
+                    </ContextMenu>
                 </telerik:RadGridView.ContextMenu>
                 
                 <telerik:RadGridView.Columns>

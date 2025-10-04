@@ -7,9 +7,9 @@
         xmlns:win="clr-namespace:DCS.CoreLib.View;assembly=DCS.CoreLib.View"
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
         mc:Ignorable="d"
-        Title="Neue Organisation anlegen" MinHeight="120" MinWidth="400">
+        Title="Neue Organisation anlegen" MinHeight="120" MinWidth="400" SizeToContent="WidthAndHeight">
     
-    <Grid Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+    <Grid Margin="5" Background="White">
 
         <Grid.Resources>
             <DataTemplate DataType="ListViewItem" x:Key="ListItem">
@@ -28,11 +28,11 @@
         </Grid.Resources>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>

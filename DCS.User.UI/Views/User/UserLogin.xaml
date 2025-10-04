@@ -8,23 +8,24 @@
         xmlns:win="clr-namespace:DCS.CoreLib.View;assembly=DCS.CoreLib.View"
         xmlns:resource="clr-namespace:DCS.Resource;assembly=DCS.Resource"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" KeyDown="DefaultMainWindow_KeyDown"
-        Title="DCS" MinHeight="300" MinWidth="600" SizeToContent="WidthAndHeight">
+        Title="DCS" MinHeight="200" MinWidth="500" SizeToContent="WidthAndHeight">
 
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Image x:Name="DCS_Logo_Image" Grid.Row="0" Grid.Column="0" Stretch="Uniform" Height="86" Width="86" Margin="5"/>
+        <Image x:Name="DCS_Logo_Image" Grid.Row="0" Grid.Column="2" Stretch="Uniform" Height="86" Width="86" Margin="5"/>
         <Image x:Name="DCS_Label_Image" Height="60" Width="300" Stretch="Uniform" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1"/>
 
         <Label Content="Benutzername" Grid.Row="1" Grid.Column="0" Style="{DynamicResource Label}" Visibility="Collapsed"/>

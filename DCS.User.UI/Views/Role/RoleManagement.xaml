@@ -9,7 +9,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     
-    <Grid Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+    <Grid Background="White">
         
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -27,7 +27,12 @@
             <telerik:RadGridView x:Name="RoleGridView" AutoGenerateColumns="False" ShowGroupPanel="True" GroupPanelBackground="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" SelectionMode="Single" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
 
                 <telerik:RadGridView.ContextMenu>
-                    <ContextMenu x:Name="RoleManagementContextMenu"/>
+                    <ContextMenu x:Name="RoleManagementContextMenu">
+                        <MenuItem Header="Rolle anlegen" Click="CreateNewRoleButton_Click" Icon="{telerik:RadGlyph Type=Image, Glyph=&#xe11e;}"/>
+                        <MenuItem Header="Rolle bearbeiten" Click="EditRole_Click" Icon="{telerik:RadGlyph Type=Image, Glyph=&#xe10b;}"/>
+                        <MenuItem Header="Rolle löschen" Click="DeleteRole_Click" Icon="{telerik:RadGlyph Type=Image, Glyph=	&#xe10c;}"/>
+                        <MenuItem Header="Rollen generieren" Click="GenerateRoles_Click" Icon="{telerik:RadGlyph Type=Image, Glyph=&#xe13b;}"/>
+                    </ContextMenu>
                 </telerik:RadGridView.ContextMenu>
 
                 <telerik:RadGridView.Columns>

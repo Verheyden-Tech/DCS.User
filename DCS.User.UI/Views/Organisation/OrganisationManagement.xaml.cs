@@ -28,54 +28,12 @@ namespace DCS.User.UI
         {
             InitializeComponent();
 
-            SetContextMenu();
-
             Organisations = organisationService.GetAll();
             OrganisationGridView.ItemsSource = Organisations;
 
             var obj = new Organisation();
             viewModel = new OrganisationViewModel(obj);
             this.DataContext = viewModel;
-        }
-
-        private void SetContextMenu()
-        {
-            var glyphDelete = new RadGlyph() { Glyph = "\te10C", FontSize = 16, Foreground = Brushes.Black };
-            var glyphEdit = new RadGlyph() { Glyph = "\te10B", FontSize = 16, Foreground = Brushes.Black };
-            var glyphAdd = new RadGlyph() { Glyph = "\te11E", FontSize = 16, Foreground = Brushes.Black };
-            var glyphGenerate = new RadGlyph() { Glyph = "\te13B", FontSize = 16, Foreground = Brushes.Black };
-
-            MenuItem newOrganisation = new MenuItem()
-            {
-                Header = "Neue Organisation",
-                Icon = glyphAdd
-            };
-            newOrganisation.Click += NewOrganisation_Click;
-
-            MenuItem editOrganisation = new MenuItem()
-            {
-                Header = "Organisation bearbeiten",
-                Icon = glyphEdit
-            };
-            editOrganisation.Click += EditOrganisation_Click;
-
-            MenuItem deleteOrganisation = new MenuItem()
-            {
-                Header = "Organisation löschen",
-                Icon = glyphDelete
-            };
-            deleteOrganisation.Click += DeleteOrganisation_Click;
-
-            MenuItem generateOrganisations = new MenuItem()
-            {
-                Header = "Test Organisationen generieren",
-                Icon = glyphGenerate
-            };
-            generateOrganisations.Click += GenerateOrganisations_Click;
-
-            OrganisationManagementContextMenu.Items.Add(newOrganisation);
-            OrganisationManagementContextMenu.Items.Add(editOrganisation);
-            OrganisationManagementContextMenu.Items.Add(deleteOrganisation);
         }
 
         private void GenerateOrganisations_Click(object sender, RoutedEventArgs e)

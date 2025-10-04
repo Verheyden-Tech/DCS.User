@@ -27,8 +27,6 @@ namespace DCS.User.UI
         {
             InitializeComponent();
 
-            SetContextMenu();
-
             Users = new ObservableCollection<User>();
             Users = userService.GetAll();
             UserGridView.ItemsSource = Users;
@@ -47,47 +45,6 @@ namespace DCS.User.UI
             {
                 return DataContext as UserManagementViewModel;
             }
-        }
-
-        private void SetContextMenu()
-        {
-            var glyphDelete = new RadGlyph() { Glyph = "\te10C", FontSize = 16, Foreground = Brushes.Black };
-            var glyphEdit = new RadGlyph() { Glyph = "\te10B", FontSize = 16, Foreground = Brushes.Black };
-            var glyphAdd = new RadGlyph() { Glyph = "\te11E", FontSize = 16, Foreground = Brushes.Black };
-            var glyphGenerate = new RadGlyph() { Glyph = "\te13B", FontSize = 16, Foreground = Brushes.Black };
-
-            MenuItem newUser = new MenuItem()
-            {
-                Header = "Neuer User",
-                Icon = glyphAdd
-            };
-            newUser.Click += NewUser_Click;
-
-            MenuItem editUser = new MenuItem()
-            {
-                Header = "Nutzer bearbeiten",
-                Icon = glyphEdit
-            };
-            editUser.Click += EditUser_Click;
-
-            MenuItem deleteUser = new MenuItem()
-            {
-                Header = "User löschen",
-                Icon = glyphDelete
-            };
-            deleteUser.Click += DeleteUser_Click;
-
-            MenuItem generateUser = new MenuItem()
-            {
-                Header = "Test Nutzer generieren",
-                Icon = glyphGenerate
-            };
-            generateUser.Click += GenerateUser_Click;
-
-            UserManagementContextMenu.Items.Add(newUser);
-            UserManagementContextMenu.Items.Add(editUser);
-            UserManagementContextMenu.Items.Add(deleteUser);
-            UserManagementContextMenu.Items.Add(generateUser);
         }
 
         private void GenerateUser_Click(object sender, RoutedEventArgs e)
@@ -141,7 +98,7 @@ namespace DCS.User.UI
                 }
                 else
                 {
-                    Log.LogManager.Singleton.Warning($"User {user.UserName} failed to open to edit.", $"{this}");
+                    Log.LogManager.Singleton.Warning($"User {user.UserName} failed to open to edit.", "UserEditor");
 
                     var editor = new UserEditor(Current.Model);
                     editor.AddPagingObjects(UserGridView.SelectedItems);
