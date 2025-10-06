@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>DCS.User.UI</id>
+    <version>1.0.5201.1</version>
+    <authors>Tobias Verheyden</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <description>UI for user management in DCS.</description>
+    <tags>DCS</tags>
+    <repository type="git" commit="862f950999a698bedbbdd4df3dec10459cc6d703" />
+    <dependencies>
+      <group targetFramework="net7.0-windows7.0">
+        <dependency id="DCS.User.Service" version="1.0.2601.1" exclude="Build,Analyzers" />
+        <dependency id="DCS.User" version="1.0.2601.1" exclude="Build,Analyzers" />
+        <dependency id="DCS.CoreLib" version="1.1.201" exclude="Build,Analyzers" />
+        <dependency id="DCS.CoreLib.BaseClass" version="1.1.301" exclude="Build,Analyzers" />
+        <dependency id="DCS.CoreLib.View" version="1.1.701" exclude="Build,Analyzers" />
+        <dependency id="DCS.Data" version="1.0.401" exclude="Build,Analyzers" />
+        <dependency id="DCS.Localization" version="1.0.401" exclude="Build,Analyzers" />
+        <dependency id="DCS.Log" version="1.0.601.5" exclude="Build,Analyzers" />
+        <dependency id="DCS.OnBoarding" version="1.0.401" exclude="Build,Analyzers" />
+        <dependency id="DCS.OnBoarding.UI" version="1.0.401" exclude="Build,Analyzers" />
+        <dependency id="DCS.Resource" version="1.0.201" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net7.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.UI.dll" target="lib\net7.0-windows7.0\DCS.User.UI.dll" />
+  </files>
+</package>

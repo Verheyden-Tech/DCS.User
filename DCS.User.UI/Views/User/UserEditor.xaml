@@ -18,15 +18,15 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
-        <telerik:RadButton Grid.Row="0" Grid.Column="0" x:Name="AddUserProfilePictureButton" Click="AddUserProfilePictureButton_Click" IsEnabled="False" Background="{x:Null}" Grid.RowSpan="2" Margin="5" MinWidth="50" MinHeight="50" ToolTip="Benutzer Profilbild hinzufügen">
-            <Image x:Name="AddUserProfilPicture" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="32" MinWidth="32" Source="{telerik:RadGlyph Size=1, Type=Image, Glyph=&#xe652;}"/>
+        <telerik:RadButton Grid.Row="0" Grid.Column="0" x:Name="AddUserProfilePictureButton" Click="AddUserProfilePictureButton_Click" IsEnabled="False" Background="{x:Null}" Grid.RowSpan="2" Margin="5" Width="64" Height="64" ToolTip="Benutzer Profilbild hinzufügen">
+            <Image x:Name="AddUserProfilPicture" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="32" Width="32" Source="{telerik:RadGlyph Size=1, Type=Image, Glyph=&#xe652;}"/>
         </telerik:RadButton>
-        <Image Grid.Row="0" Grid.Column="0" x:Name="UserProfilePicture" Stretch="UniformToFill" Source="{Binding ProfilePicturePath, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.RowSpan="2" Margin="5" MinWidth="50" MinHeight="50" Visibility="Collapsed">
+        <Image Grid.Row="0" Grid.Column="0" x:Name="UserProfilePicture" Stretch="Uniform" Source="{Binding ProfilePicturePath, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.RowSpan="2" Margin="5" Width="64" Height="64" Visibility="Collapsed">
 
         </Image>
 
