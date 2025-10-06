@@ -8,25 +8,26 @@
         xmlns:win="clr-namespace:DCS.CoreLib.View;assembly=DCS.CoreLib.View"
         xmlns:resource="clr-namespace:DCS.Resource;assembly=DCS.Resource"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" KeyDown="DefaultMainWindow_KeyDown"
-        Title="DCS" MinHeight="200" MinWidth="500" SizeToContent="WidthAndHeight">
+        Title="DCS" MinHeight="250" MinWidth="500" SizeToContent="WidthAndHeight">
 
     <Grid>
 
         <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Image x:Name="DCS_Logo_Image" Grid.Row="0" Grid.Column="2" Stretch="Uniform" Height="86" Width="86" Margin="5"/>
-        <Image x:Name="DCS_Label_Image" Height="60" Width="300" Stretch="Uniform" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1"/>
+        <Image x:Name="DCS_Logo_Image" Grid.Row="0" Grid.Column="2" Stretch="Uniform" Height="64" Width="64" Margin="2" Source="/DCS.User;component/Resources/Images/VT (1).PNG"/>
+        <Image x:Name="DCS_Label_Image" Grid.Row="5" Grid.Column="1" Source="/DCS.User;component/Resources/Images/Data Control System.PNG" Height="64" Width="200" Stretch="Uniform" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
         <Label Content="Benutzername" Grid.Row="1" Grid.Column="0" Style="{DynamicResource Label}" Visibility="Collapsed"/>
         <telerik:RadWatermarkTextBox x:Name="UserNameLoginTextBox" Grid.Row="1" Grid.Column="1" BorderBrush="SteelBlue" WatermarkContent="Benutzername eingeben" WatermarkBehavior="HideOnTextEntered" Margin="2" Text="{Binding Path=UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" TabIndex="1" Visibility="Visible" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>

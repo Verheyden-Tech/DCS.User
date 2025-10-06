@@ -8,9 +8,9 @@
              xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    
+
     <Grid Background="White">
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -23,29 +23,26 @@
         <telerik:RadAutoCompleteBox x:Name="SearchUserRoleBox" Grid.Row="0" Grid.Column="0" WatermarkContent="Rolle suchen.." Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <telerik:RadButton Grid.Row="0" Grid.Column="1" x:Name="CreateNewRoleButton" Content="Neue Rolle erstellen" CornerRadius="5" Click="CreateNewRoleButton_Click" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
-        <GroupBox Header="Verfügbare Rollen" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5">
-            <telerik:RadGridView x:Name="RoleGridView" AutoGenerateColumns="False" ShowGroupPanel="True" GroupPanelBackground="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" SelectionMode="Single" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <telerik:RadGridView x:Name="RoleGridView" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" AutoGenerateColumns="False" GroupPanelBackground="White" IsReadOnly="True" SelectionMode="Single" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
 
-                <telerik:RadGridView.ContextMenu>
-                    <ContextMenu x:Name="RoleManagementContextMenu">
-                        <MenuItem Header="Rolle anlegen" Click="CreateNewRoleButton_Click" Icon="{telerik:RadGlyph Type=Image, Glyph=&#xe11e;}"/>
-                        <MenuItem Header="Rolle bearbeiten" Click="EditRole_Click" Icon="{telerik:RadGlyph Type=Image, Glyph=&#xe10b;}"/>
-                        <MenuItem Header="Rolle löschen" Click="DeleteRole_Click" Icon="{telerik:RadGlyph Type=Image, Glyph=	&#xe10c;}"/>
-                        <MenuItem Header="Rollen generieren" Click="GenerateRoles_Click" Icon="{telerik:RadGlyph Type=Image, Glyph=&#xe13b;}"/>
-                    </ContextMenu>
-                </telerik:RadGridView.ContextMenu>
+            <telerik:RadGridView.ContextMenu>
+                <ContextMenu x:Name="RoleManagementContextMenu">
+                    <MenuItem Header="Rolle anlegen" Click="CreateNewRoleButton_Click" Icon="{telerik:RadGlyph Glyph=&#xe11e;}"/>
+                    <MenuItem Header="Rolle bearbeiten" Click="EditRole_Click" Icon="{telerik:RadGlyph Glyph=&#xe10b;}"/>
+                    <MenuItem Header="Rolle löschen" Click="DeleteRole_Click" Icon="{telerik:RadGlyph Glyph=&#xe10c;}"/>
+                    <MenuItem Header="Rollen generieren" Click="GenerateRoles_Click" Icon="{telerik:RadGlyph Glyph=&#xe13b;}"/>
+                </ContextMenu>
+            </telerik:RadGridView.ContextMenu>
 
-                <telerik:RadGridView.Columns>
-                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Ident}" Header="ID" MinWidth="70"/>
-                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="Rollenname" MinWidth="150"/>
-                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Description}" Header="Beschreibung" MinWidth="200"/>
-                    <telerik:GridViewCheckBoxColumn DataMemberBinding="{Binding IsActive}" Header="Aktiv" MinWidth="50"/>
-                </telerik:RadGridView.Columns>
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Ident}" Header="ID" MinWidth="70"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="Rollenname" MinWidth="150"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Description}" Header="Beschreibung" MinWidth="200"/>
+                <telerik:GridViewCheckBoxColumn DataMemberBinding="{Binding IsActive}" Header="Aktiv" MinWidth="50"/>
+            </telerik:RadGridView.Columns>
 
-            </telerik:RadGridView>
-            
-        </GroupBox>
+        </telerik:RadGridView>
 
     </Grid>
-    
+
 </view:DefaultAppControl>

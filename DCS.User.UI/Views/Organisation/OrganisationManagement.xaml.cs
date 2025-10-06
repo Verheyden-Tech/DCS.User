@@ -1,11 +1,7 @@
 ﻿using CommonServiceLocator;
 using DCS.CoreLib.View;
-using DCS.Resource;
 using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
-using Telerik.Windows.Controls;
 
 namespace DCS.User.UI
 {
@@ -14,7 +10,6 @@ namespace DCS.User.UI
     /// </summary>
     public partial class OrganisationManagement : DefaultAppControl
     {
-        private readonly IIconService iconService = ServiceLocator.Current.GetInstance<IIconService>();
         private readonly IOrganisationService organisationService = ServiceLocator.Current.GetInstance<IOrganisationService>();
 
         private ObservableCollection<Organisation> Organisations { get; set; }

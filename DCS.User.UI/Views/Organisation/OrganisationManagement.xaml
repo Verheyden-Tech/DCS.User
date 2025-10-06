@@ -23,26 +23,24 @@
         <telerik:RadAutoCompleteBox x:Name="SearchUserOrganisationBox" Grid.Row="0" Grid.Column="0" WatermarkContent="Organisation suchen.." Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <telerik:RadButton Grid.Row="0" Grid.Column="1" x:Name="CreateNewOrganisationButton" Content="Neue Organisation erstellen" CornerRadius="5" Click="CreateNewOrganisationButton_Click" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
-        <GroupBox Header="Verfügbare Organisationen" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            <telerik:RadGridView x:Name="OrganisationGridView" GroupPanelBackground="{x:Null}" Margin="5" BorderBrush="{x:Null}" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                
-                <telerik:RadGridView.ContextMenu>
-                    <ContextMenu Name="OrganisationManagementContextMenu">
-                        <MenuItem Header="Organisation anlegen" Click="CreateNewOrganisationButton_Click" Icon="{telerik:RadGlyph Size=16, Glyph=&#xe11e;}"/>
-                        <MenuItem Header="Organisation bearbeiten" Click="EditOrganisation_Click" Icon="{telerik:RadGlyph Size=16, Glyph=&#xe10b;}"/>
-                        <MenuItem Header="Organisation löschen" Click="DeleteOrganisation_Click" Icon="{telerik:RadGlyph Size=16, Glyph=&#xe10c;}"/>
-                        <MenuItem Header="Organisationen generieren" Click="GenerateOrganisations_Click" Icon="{telerik:RadGlyph Size=16, Glyph=&#xe13b;}"/>
-                    </ContextMenu>
-                </telerik:RadGridView.ContextMenu>
-                
-                <telerik:RadGridView.Columns>
-                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Ident}" Header="ID" MinWidth="70"/>
-                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="Organisationsname" MinWidth="150"/>
-                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Description}" Header="Beschreibung" MinWidth="200"/>
-                    <telerik:GridViewCheckBoxColumn DataMemberBinding="{Binding IsActive}" Header="Aktiv" MinWidth="50"/>
-                </telerik:RadGridView.Columns>
-            </telerik:RadGridView>
-        </GroupBox>
+        <telerik:RadGridView x:Name="OrganisationGridView" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" GroupPanelBackground="White" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+            <telerik:RadGridView.ContextMenu>
+                <ContextMenu Name="OrganisationManagementContextMenu">
+                    <MenuItem Header="Organisation anlegen" Click="CreateNewOrganisationButton_Click" Icon="{telerik:RadGlyph Glyph=&#xe11e;}"/>
+                    <MenuItem Header="Organisation bearbeiten" Click="EditOrganisation_Click" Icon="{telerik:RadGlyph Glyph=&#xe10b;}"/>
+                    <MenuItem Header="Organisation löschen" Click="DeleteOrganisation_Click" Icon="{telerik:RadGlyph Glyph=&#xe10c;}"/>
+                    <MenuItem Header="Organisationen generieren" Click="GenerateOrganisations_Click" Icon="{telerik:RadGlyph Glyph=&#xe13b;}"/>
+                </ContextMenu>
+            </telerik:RadGridView.ContextMenu>
+
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Ident}" Header="ID" MinWidth="70"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="Organisationsname" MinWidth="150"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Description}" Header="Beschreibung" MinWidth="200"/>
+                <telerik:GridViewCheckBoxColumn DataMemberBinding="{Binding IsActive}" Header="Aktiv" MinWidth="50"/>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
 
     </Grid>
 </view:DefaultAppControl>

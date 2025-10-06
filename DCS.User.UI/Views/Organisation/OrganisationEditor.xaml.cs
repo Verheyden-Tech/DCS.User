@@ -50,7 +50,8 @@ namespace DCS.User.UI
             {
                 if(!OrganisationMember.Contains(user))
                 {
-                    OrganisationMember.Add(user);
+                    if(viewModel.AddUserToOrganisation(user))
+                        OrganisationMember.Add(user);
                 }
 
                 AddUserSuggestBox.Text = string.Empty;
@@ -63,7 +64,8 @@ namespace DCS.User.UI
             {
                 if(OrganisationMember.Contains(user))
                 {
-                    OrganisationMember.Remove(user);
+                    if(viewModel.RemoveUserFromOrganisation(user))
+                        OrganisationMember.Remove(user);
                 }
             }
         }

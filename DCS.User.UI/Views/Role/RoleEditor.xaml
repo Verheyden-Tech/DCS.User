@@ -20,7 +20,7 @@
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Column="0" Text="{Binding DataContext.Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2"/>
+                    <TextBlock Grid.Column="0" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2"/>
                     <Button Grid.Column="1" Content="X" x:Name="RemoveItemButton" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" Click="RemoveItemButton_Click"/>
 
                 </Grid>
@@ -28,27 +28,27 @@
         </Grid.Resources>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Rollenname" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Rollenname" Margin="5" TextAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <telerik:RadWatermarkTextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Rollenname eingeben.." Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
-        <TextBlock Grid.Row="0" Grid.Column="2" Text="Aktiv" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="Aktiv" Margin="5" TextAlignment="Right" VerticalAlignment="Center" HorizontalAlignment="Right"/>
         <CheckBox Grid.Row="0" Grid.Column="3" IsChecked="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Beschreibung" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-        <telerik:RadWatermarkTextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Text="{Binding Description, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Beschreibung eingeben.." TextWrapping="Wrap" TextAlignment="Left" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Beschreibung" Margin="5" TextAlignment="Left" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <telerik:RadWatermarkTextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Text="{Binding Description, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Beschreibung eingeben.." TextWrapping="Wrap" TextAlignment="Left" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
         <telerik:RadAutoSuggestBox x:Name="AddUserSuggestBox" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Margin="5" QuerySubmitted="AddUserSuggestBox_QuerySubmitted" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
         <GroupBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Header="Bereits hinzugefuegte Benutzer" Margin="5">

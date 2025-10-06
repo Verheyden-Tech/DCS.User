@@ -101,6 +101,59 @@ namespace DCS.User.UI
             return users;
         }
 
+        /// <summary>
+        /// Adds the specified user to the role associated with the current model.
+        /// </summary>
+        /// <remarks>This method attempts to assign the specified user to the role represented by the
+        /// current model.  Ensure that both the user and the model are valid before calling this method.</remarks>
+        /// <param name="user">The user to be added to the role. Cannot be <see langword="null"/>.</param>
+        /// <returns><see langword="true"/> if the user was successfully added to the role; otherwise, <see langword="false"/>.</returns>
+        public bool AddUserToRole(User user)
+        {
+            if(user != null && Model != null)
+            {
+                if(userAssignmentService.AddUserToRole(user.Guid, Model.Guid))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Removes the specified user from the current role.
+        /// </summary>
+        /// <remarks>This method checks if the user is assigned to the current role and removes the
+        /// assignment if it exists. If the user is not assigned to the role, the method returns <see
+        /// langword="false"/>.</remarks>
+        /// <param name="user">The user to be removed from the role. Cannot be <see langword="null"/>.</param>
+        /// <returns><see langword="true"/> if the user was successfully removed from the role; otherwise, <see
+        /// langword="false"/>.</returns>
+        public bool RemoveUserFromRole(User user)
+        {
+            if (user != null && Model != null)
+            {
+                var ua = userAssignmentService.GetAll().FirstOrDefault(x => x.UserGuid == user.Guid && x.RoleGuid == Model.Guid);
+
+                if (ua != null)
+                {
+                    if (userAssignmentService.RemoveUserFromRole(ua))
+                    {
+                        return true;
+                    }
+
+                    return false;
+                }
+
+                return false;
+            }
+
+            return false;
+        }
+
         #region Properties
         /// <summary>
         /// Role unique identifier.

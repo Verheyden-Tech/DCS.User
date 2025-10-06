@@ -13,10 +13,10 @@
 
         <Grid.ContextMenu>
             <ContextMenu Name="UserManagementContextMenu">
-                <MenuItem Header="Benutzer anlegen" Click="NewUser_Click" Icon="{telerik:RadGlyph Type=Image, Glyph=&#xe11e;}"/>
-                <MenuItem Header="Benutzer bearbeiten" Click="EditUser_Click" Icon="{telerik:RadGlyph Type=Image, Glyph=&#xe10b;}"/>
-                <MenuItem Header="Benutzer löschen" Click="DeleteUser_Click" Icon="{telerik:RadGlyph Type=Image, Glyph=&#xe10c;}"/>
-                <MenuItem Header="Benutzer generieren" Click="GenerateUser_Click" Icon="{telerik:RadGlyph Type=Image, Glyph=&#xe13b;}"/>
+                <MenuItem Header="Benutzer anlegen" Click="NewUser_Click" Icon="{telerik:RadGlyph Glyph=&#xe11e;}"/>
+                <MenuItem Header="Benutzer bearbeiten" Click="EditUser_Click" Icon="{telerik:RadGlyph Glyph=&#xe10b;}"/>
+                <MenuItem Header="Benutzer löschen" Click="DeleteUser_Click" Icon="{telerik:RadGlyph Glyph=&#xe10c;}"/>
+                <MenuItem Header="Benutzer generieren" Click="GenerateUser_Click" Icon="{telerik:RadGlyph Glyph=&#xe13b;}"/>
             </ContextMenu>
         </Grid.ContextMenu>
 
@@ -32,18 +32,16 @@
         <telerik:RadAutoCompleteBox x:Name="SearchUserBox" Grid.Row="0" Grid.Column="0" WatermarkContent="Benutzer suchen.." Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <telerik:RadButton Grid.Row="0" Grid.Column="1" x:Name="CreateNewUserButton" CornerRadius="5" Content="Neuen Benutzer anlegen" Click="NewUser_Click" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
-        <GroupBox Header="Verfügbare Benutzer" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            <telerik:RadGridView x:Name="UserGridView" ShowGroupPanel="True" GroupPanelBackground="{x:Null}" BorderBrush="{x:Null}" Margin="5" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single">
-                <telerik:RadGridView.Columns>
-                    <telerik:GridViewDataColumn Header="ID" DataMemberBinding="{Binding Ident, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="70"/>
-                    <telerik:GridViewDataColumn Header="Benutzername" DataMemberBinding="{Binding UserName}" MinWidth="150"/>
-                    <telerik:GridViewCheckBoxColumn Header="Aktiv" DataMemberBinding="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50"/>
-                    <telerik:GridViewCheckBoxColumn Header="Admin" DataMemberBinding="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50"/>
-                </telerik:RadGridView.Columns>
-            </telerik:RadGridView>
-        </GroupBox>
+        <telerik:RadGridView x:Name="UserGridView" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" GroupPanelBackground="White" Margin="5" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Header="ID" DataMemberBinding="{Binding Ident, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="70"/>
+                <telerik:GridViewDataColumn Header="Benutzername" DataMemberBinding="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="150"/>
+                <telerik:GridViewCheckBoxColumn Header="Aktiv" DataMemberBinding="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50"/>
+                <telerik:GridViewCheckBoxColumn Header="Admin" DataMemberBinding="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50"/>
+            </telerik:RadGridView.Columns>
 
+        </telerik:RadGridView>
 
     </Grid>
-    
+
 </win:DefaultAppControl>

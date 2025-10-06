@@ -100,6 +100,61 @@ namespace DCS.User.UI
             return users;
         }
 
+        /// <summary>
+        /// Adds the specified user to the current organization.
+        /// </summary>
+        /// <remarks>This method attempts to associate the specified user with the organization
+        /// represented by the current model. Ensure that both the user and the organization are valid before calling
+        /// this method.</remarks>
+        /// <param name="user">The user to be added to the organization. The user must not be <see langword="null"/>.</param>
+        /// <returns><see langword="true"/> if the user was successfully added to the organization; otherwise, <see
+        /// langword="false"/>.</returns>
+        public bool AddUserToOrganisation(User user)
+        {
+            if(user != null && Model != null)
+            {
+                if(userAssignementService.AddUserToOrganisation(user.Guid, Model.Guid))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Removes the specified user from the current organization.
+        /// </summary>
+        /// <remarks>This method attempts to remove the specified user from the organization associated
+        /// with the current model. If the user is not assigned to the organization or if the operation fails, the
+        /// method returns <see langword="false"/>.</remarks>
+        /// <param name="user">The user to be removed from the organization. Cannot be <see langword="null"/>.</param>
+        /// <returns><see langword="true"/> if the user was successfully removed from the organization; otherwise, <see
+        /// langword="false"/>.</returns>
+        public bool RemoveUserFromOrganisation(User user)
+        {
+            if (user != null && Model != null)
+            {
+                var ua = userAssignementService.GetAll().FirstOrDefault(x => x.UserGuid == user.Guid && x.OrganisationGuid == Model.Guid);
+
+                if(ua != null)
+                {
+                    if (userAssignementService.RemoveUserFromOrganisation(ua))
+                    {
+                        return true;
+                    }
+
+                    return false;
+                }
+
+                return false;
+            }
+
+            return false;
+        }
+
         #region Properties
         /// <summary>
         /// Organisation unique identifier.

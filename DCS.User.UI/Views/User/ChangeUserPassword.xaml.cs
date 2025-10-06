@@ -1,47 +1,44 @@
-﻿using DCS.CoreLib.View;
-using DCS.User.UI;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
-namespace DCS.User.Views
+namespace DCS.User.UI
 {
     /// <summary>
     /// Interaction logic for ChangeUserPassword.xaml
     /// </summary>
-    public partial class ChangeUserPassword : DefaultEditorWindow
+    public partial class ChangeUserPassword : Window
     {
         private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
-        private UserViewModel viewModel;
         private User selectedUser;
 
         /// <summary>
-        /// Default constructor initialize a new <see cref="ChangeUserPassword"/> window.
+        /// Initializes a new instance of the <see cref="ChangeUserPassword"/> class with the specified user.
         /// </summary>
-        /// <param name="user">Selected user.</param>
-        public ChangeUserPassword(User user) : base(user)
+        /// <param name="user">The user whose password is to be changed. Cannot be <see langword="null"/>.</param>
+        public ChangeUserPassword(User user)
         {
             InitializeComponent();
+
             this.selectedUser = user;
-
-            viewModel = new UserViewModel(user);
-            this.DataContext = viewModel;
-
-            this.Closing += ChangeUserPassword_OnClosing;
         }
 
         private void ChangeUserPassword_OnClosing(object? sender, CancelEventArgs e)
+        {
+            
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show($"Möchten Sie beenden ohne das Passwort zu speichern für {selectedUser.UserName}?", "Speichern?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                this.Close();
+            }
+
+            return;
+
+        }
+
+        private void SavePasswordButton_Click(object sender, RoutedEventArgs e)
         {
             if (Equals(UserPassword.Password, UserPasswordRepeat.Password))
             {
@@ -54,13 +51,13 @@ namespace DCS.User.Views
                         this.Close();
                     }
                 }
-                else if (MessageBox.Show($"Möchten Sie das Passwort speichern für {selectedUser.UserName}?", "Speichern?", MessageBoxButton.YesNoCancel, MessageBoxImage.Question) == MessageBoxResult.No)
+                else if (MessageBox.Show($"Möchten Sie beenden ohne das Passwort zu speichern für {selectedUser.UserName}?", "Speichern?", MessageBoxButton.YesNoCancel, MessageBoxImage.Question) == MessageBoxResult.No)
                 {
                     this.Close();
                 }
                 else
                 {
-                    e.Cancel = true;
+                    return;
                 }
             }
         }

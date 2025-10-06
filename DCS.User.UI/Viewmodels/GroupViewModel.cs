@@ -102,6 +102,60 @@ namespace DCS.User.UI
             return users;
         }
 
+        /// <summary>
+        /// Adds the specified user to the specified group.
+        /// </summary>
+        /// <remarks>This method attempts to add the user to the group using the underlying user
+        /// assignment service. Ensure that both the user and group objects are valid and initialized before calling
+        /// this method.</remarks>
+        /// <param name="user">The user to be added to the group. Cannot be <see langword="null"/>.</param>
+        /// <returns><see langword="true"/> if the user was successfully added to the group; otherwise, <see langword="false"/>.</returns>
+        public bool AddUserToGroup(User user)
+        {
+            if(user != null && Model != null)
+            {
+                if(userAssignementService.AddUserToGroup(user.Guid, Model.Guid))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Removes the specified user from the specified group.
+        /// </summary>
+        /// <remarks>This method checks if the user is currently assigned to the group before attempting
+        /// to remove them. If either the user or the group is <see langword="null"/>, the method returns <see
+        /// langword="false"/>.</remarks>
+        /// <param name="user">The user to be removed from the group. Cannot be <see langword="null"/>.</param>
+        /// <returns><see langword="true"/> if the user was successfully removed from the group; otherwise, <see
+        /// langword="false"/>.</returns>
+        public bool RemoveUserFromGroup(User user)
+        {
+            if (user != null && Model != null)
+            {
+                var ua = userAssignementService.GetAll().FirstOrDefault(x => x.UserGuid == user.Guid && x.GroupGuid == Model.Guid);
+
+                if (ua != null)
+                {
+                    if(userAssignementService.RemoveUserFromGroup(ua))
+                    {
+                        return true;
+                    }
+
+                    return false;
+                }
+
+                return false;
+            }
+
+            return false;
+        }
+
         #region Properties
         /// <summary>
         /// Group unique identifier.

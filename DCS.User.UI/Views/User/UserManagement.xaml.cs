@@ -1,12 +1,8 @@
 ﻿using DCS.CoreLib.View;
 using DCS.OnBoarding.UI;
-using DCS.Resource;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
-using Telerik.Windows.Controls;
 
 namespace DCS.User.UI
 {
@@ -16,7 +12,7 @@ namespace DCS.User.UI
     public partial class UserManagement : DefaultAppControl
     {
         private IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
-        private readonly IIconService iconService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IIconService>();
+
         private ObservableCollection<User> Users { get; set; }
         private UserManagementViewModel viewModel;
 
@@ -117,7 +113,6 @@ namespace DCS.User.UI
             {
                 UserGridView.Items.Refresh();
             }
-            ;
         }
     }
 }

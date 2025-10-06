@@ -1,5 +1,5 @@
-﻿using System.Windows;
-using DCS.CoreLib.View;
+﻿using DCS.CoreLib.View;
+using System.Windows;
 
 namespace DCS.User.UI
 {
@@ -8,12 +8,16 @@ namespace DCS.User.UI
     /// </summary>
     public partial class RegistrateUser : DefaultMainWindow
     {
-        private IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
         private RegistrateUserViewModel viewModel;
 
         /// <summary>
-        /// Default constructor for <see cref="RegistrateUser"/>.
+        /// Initializes a new instance of the <see cref="RegistrateUser"/> class with the specified domain name.
         /// </summary>
+        /// <remarks>This constructor sets up the data context for the user registration view by creating
+        /// a new instance of <see cref="RegistrateUserViewModel"/> and associating it with the provided domain
+        /// name.</remarks>
+        /// <param name="domainName">The domain name to associate with the user registration process. This value is used to initialize the <see
+        /// cref="RegistrateUserViewModel"/> and set its domain context.</param>
         public RegistrateUser(string domainName)
         {
             InitializeComponent();
@@ -28,7 +32,7 @@ namespace DCS.User.UI
 
         private void RegistrateButton_Click(object sender, RoutedEventArgs e)
         {
-            if(PassWordBox.Password == PassWordRepeatBox.Password)
+            if (PassWordBox.Password == PassWordRepeatBox.Password)
             {
                 viewModel.PassWord = PassWordBox.Password;
 
@@ -63,7 +67,7 @@ namespace DCS.User.UI
 
         private void DeclineButton_Click(object sender, RoutedEventArgs e)
         {
-            if(MessageBox.Show("Möchten Sie den Vorgang wirklich abbrechen?", "Warnung", MessageBoxButton.OKCancel, MessageBoxImage.Warning) == MessageBoxResult.OK)
+            if (MessageBox.Show("Möchten Sie den Vorgang wirklich abbrechen?", "Warnung", MessageBoxButton.OKCancel, MessageBoxImage.Warning) == MessageBoxResult.OK)
             {
                 this.DialogResult = false;
                 this.Close();

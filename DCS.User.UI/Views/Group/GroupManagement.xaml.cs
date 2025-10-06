@@ -1,11 +1,6 @@
 ﻿using DCS.CoreLib.View;
-using DCS.Resource;
-using DCS.User.Service;
 using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
-using Telerik.Windows.Controls;
 
 namespace DCS.User.UI
 {
@@ -14,7 +9,6 @@ namespace DCS.User.UI
     /// </summary>
     public partial class GroupManagement : DefaultAppControl
     {
-        private readonly IIconService iconService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IIconService>();
         private readonly IGroupService groupService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IGroupService>();
 
         private ObservableCollection<Group> Groups { get; set; }

@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net7.0-windows</TargetFramework>
-		<Version>1.0.2601.1</Version>
-		<AssemblyVersion>1.0.2601.0</AssemblyVersion>
+		<Version>1.0.2701.1</Version>
+		<AssemblyVersion>1.0.2701.0</AssemblyVersion>
 		<ApplicationVersion>1.2.3.0</ApplicationVersion>
 		<ProjectGuid>{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}</ProjectGuid>
 		<OutputType>Library</OutputType>
@@ -128,17 +128,23 @@
 		<EditorConfigFiles Remove="C:\Users\verhe\Source\Repos\ElCartmanBra420\UserLibrary\.editorconfig" />
 	</ItemGroup>
 	<ItemGroup>
+		<None Remove="Resources\Images\Data Control System.PNG" />
 		<None Remove="Resources\Images\usermanagement_add_user_16x.png" />
 		<None Remove="Resources\Images\usermanagement_add_user_32x.png" />
 		<None Remove="Resources\Images\usermanagement_edit_user_16x.png" />
 		<None Remove="Resources\Images\usermanagement_edit_user_32x.png" />
 		<None Remove="Resources\Images\usermanagement_remove_user_16x.png" />
 		<None Remove="Resources\Images\usermanagement_remove_user_32x.png" />
+		<None Remove="Resources\Images\VT %281%29.PNG" />
+		<None Remove="Resources\Images\VT.PNG" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Include="C:\Users\verhe\Source\Repos\ElCartmanBra420\UserLibrary\.editorconfig" />
 	</ItemGroup>
 	<ItemGroup>
+		<Resource Include="Resources\Images\Data Control System.PNG">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
 		<Resource Include="Resources\Images\usermanagement_add_user_16x.png">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Resource>
@@ -156,6 +162,12 @@
 		</Resource>
 		<Resource Include="Resources\Images\usermanagement_remove_user_32x.png">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Images\VT (1).PNG">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Images\VT.PNG">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Resource>
 	</ItemGroup>
 </Project>

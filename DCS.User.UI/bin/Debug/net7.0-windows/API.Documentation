@@ -39,6 +39,27 @@
             specified group.  Returns an empty collection if the group has no members or if the group is <see
             langword="null"/>.</returns>
         </member>
+        <member name="M:DCS.User.UI.GroupViewModel.AddUserToGroup(DCS.User.User)">
+            <summary>
+            Adds the specified user to the specified group.
+            </summary>
+            <remarks>This method attempts to add the user to the group using the underlying user
+            assignment service. Ensure that both the user and group objects are valid and initialized before calling
+            this method.</remarks>
+            <param name="user">The user to be added to the group. Cannot be <see langword="null"/>.</param>
+            <returns><see langword="true"/> if the user was successfully added to the group; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DCS.User.UI.GroupViewModel.RemoveUserFromGroup(DCS.User.User)">
+            <summary>
+            Removes the specified user from the specified group.
+            </summary>
+            <remarks>This method checks if the user is currently assigned to the group before attempting
+            to remove them. If either the user or the group is <see langword="null"/>, the method returns <see
+            langword="false"/>.</remarks>
+            <param name="user">The user to be removed from the group. Cannot be <see langword="null"/>.</param>
+            <returns><see langword="true"/> if the user was successfully removed from the group; otherwise, <see
+            langword="false"/>.</returns>
+        </member>
         <member name="P:DCS.User.UI.GroupViewModel.Guid">
             <summary>
             Group unique identifier.
@@ -112,6 +133,28 @@
             specified organisation.  Returns an empty collection if the organisation has no members or if the
             organisation is <see langword="null"/>.</returns>
         </member>
+        <member name="M:DCS.User.UI.OrganisationViewModel.AddUserToOrganisation(DCS.User.User)">
+            <summary>
+            Adds the specified user to the current organization.
+            </summary>
+            <remarks>This method attempts to associate the specified user with the organization
+            represented by the current model. Ensure that both the user and the organization are valid before calling
+            this method.</remarks>
+            <param name="user">The user to be added to the organization. The user must not be <see langword="null"/>.</param>
+            <returns><see langword="true"/> if the user was successfully added to the organization; otherwise, <see
+            langword="false"/>.</returns>
+        </member>
+        <member name="M:DCS.User.UI.OrganisationViewModel.RemoveUserFromOrganisation(DCS.User.User)">
+            <summary>
+            Removes the specified user from the current organization.
+            </summary>
+            <remarks>This method attempts to remove the specified user from the organization associated
+            with the current model. If the user is not assigned to the organization or if the operation fails, the
+            method returns <see langword="false"/>.</remarks>
+            <param name="user">The user to be removed from the organization. Cannot be <see langword="null"/>.</param>
+            <returns><see langword="true"/> if the user was successfully removed from the organization; otherwise, <see
+            langword="false"/>.</returns>
+        </member>
         <member name="P:DCS.User.UI.OrganisationViewModel.Guid">
             <summary>
             Organisation unique identifier.
@@ -157,22 +200,21 @@
             ViewModel for the <see cref="M:DCS.User.UI.RegistrateUserViewModel.RegistrateUser"/> view.
             </summary>
         </member>
-        <member name="M:DCS.User.UI.RegistrateUserViewModel.#ctor">
-            <summary>
-            Default constructor initialize a new instance of <see cref="T:DCS.User.UI.RegistrateUserViewModel"/>.
-            </summary>
-        </member>
         <member name="M:DCS.User.UI.RegistrateUserViewModel.#ctor(DCS.User.User)">
             <summary>
-            Initialize a new instance of <see cref="T:DCS.User.UI.RegistrateUserViewModel"/> with a given user.
+            Initializes a new instance of the <see cref="T:DCS.User.UI.RegistrateUserViewModel"/> class with the specified user.
             </summary>
-            <param name="user">Selected user.</param>
+            <param name="user">The user model to associate with this view model. Cannot be <see langword="null"/>.</param>
         </member>
         <member name="M:DCS.User.UI.RegistrateUserViewModel.RegistrateUser">
             <summary>
-            Register a new user.
+            Registers a user in the system, either as an Active Directory (AD) user or a standard user.
             </summary>
-            <returns>Returns true if the registtration was successful, otherwise false.</returns>
+            <remarks>This method determines the type of user based on the <see cref="P:DCS.User.UI.RegistrateUserViewModel.IsADUser"/> property.
+            If the user is an AD user, it creates and registers the user using Active Directory-specific logic. 
+            Otherwise, it creates a standard user and registers them in the system.</remarks>
+            <returns><see langword="true"/> if the user was successfully registered; otherwise, <see langword="false"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if the user creation process for a standard user results in a null user object.</exception>
         </member>
         <member name="P:DCS.User.UI.RegistrateUserViewModel.UserName">
             <summary>
@@ -238,6 +280,26 @@
             the specified role.  Returns an empty collection if no users are assigned to the role or if the role is <see
             langword="null"/>.</returns>
         </member>
+        <member name="M:DCS.User.UI.RoleViewModel.AddUserToRole(DCS.User.User)">
+            <summary>
+            Adds the specified user to the role associated with the current model.
+            </summary>
+            <remarks>This method attempts to assign the specified user to the role represented by the
+            current model.  Ensure that both the user and the model are valid before calling this method.</remarks>
+            <param name="user">The user to be added to the role. Cannot be <see langword="null"/>.</param>
+            <returns><see langword="true"/> if the user was successfully added to the role; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DCS.User.UI.RoleViewModel.RemoveUserFromRole(DCS.User.User)">
+            <summary>
+            Removes the specified user from the current role.
+            </summary>
+            <remarks>This method checks if the user is assigned to the current role and removes the
+            assignment if it exists. If the user is not assigned to the role, the method returns <see
+            langword="false"/>.</remarks>
+            <param name="user">The user to be removed from the role. Cannot be <see langword="null"/>.</param>
+            <returns><see langword="true"/> if the user was successfully removed from the role; otherwise, <see
+            langword="false"/>.</returns>
+        </member>
         <member name="P:DCS.User.UI.RoleViewModel.Guid">
             <summary>
             Role unique identifier.
@@ -280,28 +342,39 @@
         </member>
         <member name="T:DCS.User.UI.UserLoginViewModel">
             <summary>
-            ViewModel for the <see cref="T:DCS.User.UI.UserLogin"/>.
+            Represents the view model for user login functionality, providing properties and methods to manage user
+            authentication and related data.
             </summary>
+            <remarks>This view model is designed to facilitate user login operations, including Active Directory
+            authentication and retrieval of user-related data. It provides properties for managing user credentials,
+            selected database, and user account names, as well as methods for logging in and retrieving user names based on
+            connection type.</remarks>
         </member>
         <member name="M:DCS.User.UI.UserLoginViewModel.#ctor(DCS.User.User)">
             <summary>
-            Default constuctor initializes a new instance of <see cref="T:DCS.User.UI.UserLoginViewModel"/>
+            Initializes a new instance of the <see cref="T:DCS.User.UI.UserLoginViewModel"/> class with the specified user.
             </summary>
+            <param name="user">The user associated with this view model. Cannot be <see langword="null"/>.</param>
         </member>
         <member name="M:DCS.User.UI.UserLoginViewModel.LoginUser(System.String,System.String,System.String)">
             <summary>
-            Checks if given user credentials equals to the data on the table.
+            Attempts to log in a user using the provided credentials and Active Directory domain.
             </summary>
-            <param name="username">User name.</param>
-            <param name="password">User raw password.</param>
-            <returns>Wether the login was succesfull.</returns>
+            <param name="username">The username of the user attempting to log in. Cannot be null or empty.</param>
+            <param name="password">The password associated with the specified username. Cannot be null or empty.</param>
+            <param name="adDomain">The Active Directory domain to authenticate against. Cannot be null or empty.</param>
+            <returns><see langword="true"/> if the login is successful; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:DCS.User.UI.UserLoginViewModel.SetItemsSource(System.String)">
             <summary>
-            Sets the items source for the database selector in the <see cref="T:DCS.User.UI.UserLogin"/>
+            Retrieves a collection of user names based on the specified connection type.
             </summary>
-            <param name="connectionType">Network enviroment type.</param>
-            <returns></returns>
+            <remarks>This method initializes a new <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/> and populates it
+            with user names  retrieved from the user service when the connection type is "Home."</remarks>
+            <param name="connectionType">The type of connection to use when retrieving user names.  Must be "Home" to populate the collection;
+            otherwise, an empty collection is returned.</param>
+            <returns>An <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/> containing the user names.  The collection will be empty if the
+            connection type is not "Home."</returns>
         </member>
         <member name="P:DCS.User.UI.UserLoginViewModel.SelectedDB">
             <summary>
@@ -397,14 +470,21 @@
         </member>
         <member name="M:DCS.User.UI.UserViewModel.#ctor(DCS.User.User)">
             <summary>
-            Default constructor initialize a new instance of <see cref="T:DCS.User.UI.UserViewModel"/>.
+            Initializes a new instance of the <see cref="T:DCS.User.UI.UserViewModel"/> class using the specified user.
             </summary>
+            <remarks>This constructor populates the view model with data related to the specified user,
+            including their groups, organizations, and roles. It also retrieves all available groups, organizations, and
+            roles for reference.</remarks>
+            <param name="user">The user model used to initialize the view model. Cannot be <see langword="null"/>.</param>
         </member>
         <member name="M:DCS.User.UI.UserViewModel.Save">
             <summary>
-            Saves the current instance of the <see cref="T:DCS.User.UI.UserViewModel"/> class.
+            Saves the current model by updating its state and persisting changes.
             </summary>
-            <returns>True if the save was successful; otherwise, false.</returns>
+            <remarks>This method updates the <see cref="T:DCS.User.User"/> with the current timestamp and attempts
+            to persist the changes  using the associated user service. The operation will fail if <see cref="T:DCS.User.User"/> is
+            null or if the update  operation is unsuccessful.</remarks>
+            <returns><see langword="true"/> if the model was successfully updated and saved; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:DCS.User.UI.UserViewModel.AddUserToGroup(DCS.User.Group)">
             <summary>
@@ -747,6 +827,25 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:DCS.User.UI.ChangeUserPassword">
+            <summary>
+            Interaction logic for ChangeUserPassword.xaml
+            </summary>
+            <summary>
+            ChangeUserPassword
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.ChangeUserPassword.#ctor(DCS.User.User)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DCS.User.UI.ChangeUserPassword"/> class with the specified user.
+            </summary>
+            <param name="user">The user whose password is to be changed. Cannot be <see langword="null"/>.</param>
+        </member>
+        <member name="M:DCS.User.UI.ChangeUserPassword.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
         <member name="T:DCS.User.UI.RegistrateUser">
             <summary>
             Interaction logic for RegistrateUser.xaml
@@ -757,8 +856,13 @@
         </member>
         <member name="M:DCS.User.UI.RegistrateUser.#ctor(System.String)">
             <summary>
-            Default constructor for <see cref="T:DCS.User.UI.RegistrateUser"/>.
+            Initializes a new instance of the <see cref="T:DCS.User.UI.RegistrateUser"/> class with the specified domain name.
             </summary>
+            <remarks>This constructor sets up the data context for the user registration view by creating
+            a new instance of <see cref="T:DCS.User.UI.RegistrateUserViewModel"/> and associating it with the provided domain
+            name.</remarks>
+            <param name="domainName">The domain name to associate with the user registration process. This value is used to initialize the <see
+            cref="T:DCS.User.UI.RegistrateUserViewModel"/> and set its domain context.</param>
         </member>
         <member name="P:DCS.User.UI.RegistrateUser.DomainName">
             <summary>
@@ -855,25 +959,6 @@
             </summary>
         </member>
         <member name="M:DCS.User.UI.UserManagement.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:DCS.User.Views.ChangeUserPassword">
-            <summary>
-            Interaction logic for ChangeUserPassword.xaml
-            </summary>
-            <summary>
-            ChangeUserPassword
-            </summary>
-        </member>
-        <member name="M:DCS.User.Views.ChangeUserPassword.#ctor(DCS.User.User)">
-            <summary>
-            Default constructor initialize a new <see cref="T:DCS.User.Views.ChangeUserPassword"/> window.
-            </summary>
-            <param name="user">Selected user.</param>
-        </member>
-        <member name="M:DCS.User.Views.ChangeUserPassword.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>

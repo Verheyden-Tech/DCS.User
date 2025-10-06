@@ -20,7 +20,7 @@
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Column="0" Text="{Binding DataContext.Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2"/>
+                    <TextBlock Grid.Column="0" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2"/>
                     <Button Grid.Column="1" Content="X" x:Name="RemoveItemButton" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" Click="RemoveItemButton_Click"/>
 
                 </Grid>
@@ -35,9 +35,9 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 

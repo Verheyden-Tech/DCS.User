@@ -8,34 +8,33 @@
         xmlns:win="clr-namespace:DCS.CoreLib.View;assembly=DCS.CoreLib.View"
         xmlns:resource="clr-namespace:DCS.Resource;assembly=DCS.Resource"
         mc:Ignorable="d"
-        Height="300" MinWidth="600" SizeToContent="WidthAndHeight">
+        MinHeight="300" MinWidth="600" SizeToContent="WidthAndHeight">
 
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <Image Source="/Resources/Images/DCS_Icon_Neu_86x.png" Grid.Row="0" Grid.Column="0" Stretch="Uniform" Height="86" Width="86" Margin="5"/>
-        <Image Source="/Resources/Images/DCS_Label_large.png" Height="60" Width="300" Stretch="Uniform" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1"/>
+        <Image Source="/DCS.User;component/Resources/Images/Data Control System.PNG" Grid.Row="0" Grid.Column="1" MinHeight="64" MinWidth="200" Stretch="Uniform" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
-        <Label Content="Benutzername" Grid.Row="1" Grid.Column="0" Style="{DynamicResource Label}"/>
-        <telerik:RadWatermarkTextBox Grid.Row="1" Grid.Column="1" x:Name="UserNameTextBox" BorderBrush="SteelBlue" Text="{Binding Path=UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Neuen Benutzernamen festlegen" WatermarkBehavior="HideOnTextEntered" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Left"/>
+        <Label Content="Benutzername" Grid.Row="1" Grid.Column="0" Style="{DynamicResource Label}" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <telerik:RadWatermarkTextBox Grid.Row="1" Grid.Column="1" x:Name="UserNameTextBox" BorderBrush="SteelBlue" Text="{Binding Path=UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Neuen Benutzernamen festlegen" WatermarkBehavior="HideOnTextEntered" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
-        <Label Content="Passwort" Grid.Row="2" Grid.Column="0" Style="{DynamicResource Label}"/>
-        <telerik:RadPasswordBox x:Name="PassWordBox" Grid.Row="2" Grid.Column="1" BorderBrush="SteelBlue" WatermarkContent="Neues Passwort festlegen" WatermarkBehavior="HideOnTextEntered" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Left"/>
+        <Label Content="Passwort" Grid.Row="2" Grid.Column="0" Style="{DynamicResource Label}" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <telerik:RadPasswordBox x:Name="PassWordBox" Grid.Row="2" Grid.Column="1" BorderBrush="SteelBlue" WatermarkContent="Neues Passwort festlegen" WatermarkBehavior="HideOnTextEntered" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
-        <Label Content="Passwort wiederholen" Grid.Row="3" Grid.Column="0" Style="{DynamicResource Label}"/>
-        <telerik:RadPasswordBox x:Name="PassWordRepeatBox" Grid.Row="3" Grid.Column="1" BorderBrush="SteelBlue" WatermarkContent="Neues Passwort wiederholen" WatermarkBehavior="HideOnTextEntered" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Left"/>
+        <Label Content="Passwort wiederholen" Grid.Row="3" Grid.Column="0" Style="{DynamicResource Label}" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <telerik:RadPasswordBox x:Name="PassWordRepeatBox" Grid.Row="3" Grid.Column="1" BorderBrush="SteelBlue" WatermarkContent="Neues Passwort wiederholen" WatermarkBehavior="HideOnTextEntered" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
         <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Right" VerticalAlignment="Stretch" Grid.Row="4" Grid.Column="1">
             <CheckBox x:Name="IsADUserCheckBox" Content="AD-Benutzer" Margin="2" Checked="IsADUserCheckBox_Checked" Unchecked="IsADUserCheckBox_Unchecked" IsChecked="{Binding Path=IsADUser, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Style="{DynamicResource CheckBox}"/>
@@ -47,7 +46,6 @@
             <Button x:Name="RegistrateButton" Click="RegistrateButton_Click" Content="Registrieren" Margin="2" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="14"/>
             <Button x:Name="DeclineButton" Click="DeclineButton_Click" Content="Abbrechen" Margin="2" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="14"/>
         </StackPanel>
-
 
     </Grid>
 

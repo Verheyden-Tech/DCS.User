@@ -30,8 +30,6 @@ namespace DCS.User.UI
         {
             InitializeComponent();
 
-            SetImages();
-
             DomainNames = new ObservableCollection<string>();
 
             GetDomainNames();
@@ -53,12 +51,6 @@ namespace DCS.User.UI
         }
 
         #region Private methods/Click handler
-        private void SetImages()
-        {
-            this.DCS_Logo_Image.Source = iconService.GetImage("DCS_Icon_Neu_86x.png");
-            this.DCS_Label_Image.Source = iconService.GetImage("DCS_Label_large.png");
-        }
-
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             if (userService.LoginUser(UserNameLoginTextBox.Text, PassWordLoginBox.Password, SelectedDomain))

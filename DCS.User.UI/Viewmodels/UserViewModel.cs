@@ -43,8 +43,12 @@ namespace DCS.User.UI
         #endregion
 
         /// <summary>
-        /// Default constructor initialize a new instance of <see cref="UserViewModel"/>.
+        /// Initializes a new instance of the <see cref="UserViewModel"/> class using the specified user.
         /// </summary>
+        /// <remarks>This constructor populates the view model with data related to the specified user,
+        /// including their groups, organizations, and roles. It also retrieves all available groups, organizations, and
+        /// roles for reference.</remarks>
+        /// <param name="user">The user model used to initialize the view model. Cannot be <see langword="null"/>.</param>
         public UserViewModel(User user) : base(user)
         {
             this.Model = user;
@@ -59,9 +63,12 @@ namespace DCS.User.UI
         }
 
         /// <summary>
-        /// Saves the current instance of the <see cref="UserViewModel"/> class.
+        /// Saves the current model by updating its state and persisting changes.
         /// </summary>
-        /// <returns>True if the save was successful; otherwise, false.</returns>
+        /// <remarks>This method updates the <see cref="User"/> with the current timestamp and attempts
+        /// to persist the changes  using the associated user service. The operation will fail if <see cref="User"/> is
+        /// null or if the update  operation is unsuccessful.</remarks>
+        /// <returns><see langword="true"/> if the model was successfully updated and saved; otherwise, <see langword="false"/>.</returns>
         public bool Save()
         {
             if (Model != null)

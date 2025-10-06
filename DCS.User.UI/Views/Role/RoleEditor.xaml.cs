@@ -51,7 +51,8 @@ namespace DCS.User.UI
             {
                 if(!RoleMember.Contains(user))
                 {
-                    RoleMember.Add(user);
+                    if(viewModel.AddUserToRole(user))
+                        RoleMember.Add(user);
                 }
 
                 AddUserSuggestBox.Text = string.Empty;
@@ -64,7 +65,8 @@ namespace DCS.User.UI
             {
                 if(RoleMember.Contains(user))
                 {
-                    RoleMember.Remove(user);
+                    if(viewModel.RemoveUserFromRole(user))
+                        RoleMember.Remove(user);
                 }
             }
         }

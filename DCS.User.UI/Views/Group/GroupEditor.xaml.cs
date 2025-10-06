@@ -53,7 +53,8 @@ namespace DCS.User.UI
             {
                 if(!GroupMember.Contains(user))
                 {
-                    GroupMember.Add(user);
+                    if(viewModel.AddUserToGroup(user))
+                        GroupMember.Add(user);
                 }
 
                 AddUserSuggestBox.Text = string.Empty;
@@ -66,7 +67,8 @@ namespace DCS.User.UI
             {
                 if(GroupMember.Contains(user))
                 {
-                    GroupMember.Remove(user);
+                    if(viewModel.RemoveUserFromGroup(user))
+                        GroupMember.Remove(user);
                 }
             }
         }

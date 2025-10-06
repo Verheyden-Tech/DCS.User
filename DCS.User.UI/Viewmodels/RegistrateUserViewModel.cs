@@ -10,29 +10,25 @@ namespace DCS.User.UI
         private IUserService service = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
 
         /// <summary>
-        /// Default constructor initialize a new instance of <see cref="RegistrateUserViewModel"/>.
+        /// Initializes a new instance of the <see cref="RegistrateUserViewModel"/> class with the specified user.
         /// </summary>
-        public RegistrateUserViewModel() 
-        {
-
-        }
-
-        /// <summary>
-        /// Initialize a new instance of <see cref="RegistrateUserViewModel"/> with a given user.
-        /// </summary>
-        /// <param name="user">Selected user.</param>
+        /// <param name="user">The user model to associate with this view model. Cannot be <see langword="null"/>.</param>
         public RegistrateUserViewModel(User user)
         {
             this.Model = user;
         }
 
         /// <summary>
-        /// Register a new user.
+        /// Registers a user in the system, either as an Active Directory (AD) user or a standard user.
         /// </summary>
-        /// <returns>Returns true if the registtration was successful, otherwise false.</returns>
+        /// <remarks>This method determines the type of user based on the <see cref="IsADUser"/> property.
+        /// If the user is an AD user, it creates and registers the user using Active Directory-specific logic. 
+        /// Otherwise, it creates a standard user and registers them in the system.</remarks>
+        /// <returns><see langword="true"/> if the user was successfully registered; otherwise, <see langword="false"/>.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if the user creation process for a standard user results in a null user object.</exception>
         public bool RegistrateUser()
         {
-            if(this.IsADUser)
+            if (this.IsADUser)
             {
                 var adUser = new ADUser
                 {
@@ -42,7 +38,7 @@ namespace DCS.User.UI
                     CompanyGuid = Guid.Empty
                 };
 
-                if(service.RegisterADUser(adUser))
+                if (service.RegisterADUser(adUser))
                     return true;
 
                 return false;
@@ -51,7 +47,7 @@ namespace DCS.User.UI
             {
                 try
                 {
-                    if(string.IsNullOrEmpty(this.Domain))
+                    if (string.IsNullOrEmpty(this.Domain))
                         return false;
 
                     var user = service.CreateUser(this.UserName, this.PassWord, this.IsAdmin, this.KeepLoggedIn, this.Domain);
