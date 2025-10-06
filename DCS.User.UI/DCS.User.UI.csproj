@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net7.0-windows</TargetFramework>
-		<Version>1.0.5501.1</Version>
-		<AssemblyVersion>1.0.5501.0</AssemblyVersion>
+		<Version>1.0.5601.1</Version>
+		<AssemblyVersion>1.0.5601.0</AssemblyVersion>
 		<ApplicationVersion>1.2.3.0</ApplicationVersion>
 		<ProjectGuid>{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}</ProjectGuid>
 		<OutputType>Library</OutputType>
@@ -43,7 +43,7 @@
 	<ItemGroup>
 		<PackageReference Include="DCS.CoreLib" Version="1.1.201" />
 		<PackageReference Include="DCS.CoreLib.BaseClass" Version="1.1.301" />
-		<PackageReference Include="DCS.CoreLib.View" Version="1.1.901" />
+		<PackageReference Include="DCS.CoreLib.View" Version="1.1.1001" />
 		<PackageReference Include="DCS.Data" Version="1.0.401" />
 		<PackageReference Include="DCS.Localization" Version="1.0.401" />
 		<PackageReference Include="DCS.Log" Version="1.0.601.5" />

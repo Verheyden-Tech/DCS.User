@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vfm3Wya0FMI=",
+  "dgSpecHash": "8aHjvSfOvz4=",
   "success": true,
   "projectFilePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
   "expectedPackageFiles": [
@@ -14,7 +14,7 @@
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib\\1.1.201\\dcs.corelib.1.1.201.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.baseclass\\1.1.301\\dcs.corelib.baseclass.1.1.301.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.collection\\1.1.201\\dcs.corelib.collection.1.1.201.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.view\\1.1.901\\dcs.corelib.view.1.1.901.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.view\\1.1.1001\\dcs.corelib.view.1.1.1001.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data\\1.0.401\\dcs.data.1.0.401.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.hr\\1.0.301\\dcs.hr.1.0.301.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.localization\\1.0.401\\dcs.localization.1.0.401.nupkg.sha512",
@@ -64,10 +64,7 @@
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.user\\1.0.2701.1\\dcs.user.1.0.2701.1.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.user.data\\1.0.2801.1\\dcs.user.data.1.0.2801.1.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.user.service\\1.0.2701.1\\dcs.user.service.1.0.2701.1.nupkg.sha512"
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }
