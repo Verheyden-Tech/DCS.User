@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ednuy6BTCjs=",
+  "dgSpecHash": "tMnn6Xvo92g=",
   "success": true,
   "projectFilePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
   "expectedPackageFiles": [
@@ -14,7 +14,7 @@
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib\\1.1.201\\dcs.corelib.1.1.201.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.baseclass\\1.1.301\\dcs.corelib.baseclass.1.1.301.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.collection\\1.1.201\\dcs.corelib.collection.1.1.201.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.view\\1.1.801\\dcs.corelib.view.1.1.801.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.view\\1.1.901\\dcs.corelib.view.1.1.901.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data\\1.0.401\\dcs.data.1.0.401.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.hr\\1.0.301\\dcs.hr.1.0.301.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.localization\\1.0.401\\dcs.localization.1.0.401.nupkg.sha512",

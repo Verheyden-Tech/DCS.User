@@ -281,7 +281,7 @@
             },
             "DCS.CoreLib.View": {
               "target": "Package",
-              "version": "[1.1.801, )"
+              "version": "[1.1.901, )"
             },
             "DCS.Data": {
               "target": "Package",
