@@ -24,10 +24,5 @@
         /// Indicates whether the user is an active.
         /// </summary>
         public bool IsActive { get; set; }
-
-        /// <summary>
-        /// Gets or sets the unique identifier for the associated company.
-        /// </summary>
-        public Guid CompanyGuid { get; set; }
     }
 }

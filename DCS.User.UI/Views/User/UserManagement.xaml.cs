@@ -14,7 +14,7 @@ namespace DCS.User.UI
         private IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
 
         private ObservableCollection<User> Users { get; set; }
-        private UserManagementViewModel viewModel;
+        private UserViewModel viewModel;
 
         /// <summary>
         /// Default constructor for <see cref="UserManagement"/>.
@@ -28,18 +28,18 @@ namespace DCS.User.UI
             UserGridView.ItemsSource = Users;
 
             var obj = new User();
-            viewModel = new UserManagementViewModel(obj);
+            viewModel = new UserViewModel(obj);
             this.DataContext = viewModel;
         }
 
         /// <summary>
-        /// Returns the current instance of the <see cref="UserManagementViewModel"/> class as DataContext.
+        /// Returns the current instance of the <see cref="UserViewModel"/> class as DataContext.
         /// </summary>
-        public UserManagementViewModel Current
+        public UserViewModel Current
         {
             get
             {
-                return DataContext as UserManagementViewModel;
+                return DataContext as UserViewModel;
             }
         }
 

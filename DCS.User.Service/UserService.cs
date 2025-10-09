@@ -58,12 +58,10 @@ namespace DCS.User.Service
         {
             var hashedPasswort = CryptographyHelper.HashSHA256(rawPassWord);
 
-            var fullUserName = !string.IsNullOrEmpty(adDomain) ? $"{adDomain}/{userName}" : userName;
-
             var newUser = new User
             {
                 Guid = Guid.NewGuid(),
-                UserName = fullUserName,
+                UserName = userName,
                 PassWord = hashedPasswort,
                 Domain = adDomain,
                 IsAdmin = isAdmin,

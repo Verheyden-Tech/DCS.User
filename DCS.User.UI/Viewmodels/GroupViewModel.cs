@@ -238,22 +238,6 @@ namespace DCS.User.UI
         }
 
         /// <summary>
-        /// Group creator user unique identifier.
-        /// </summary>
-        public Guid UserGuid
-        {
-            get { return Model.UserGuid; }
-            set
-            {
-                if (Model.UserGuid != value)
-                {
-                    Model.UserGuid = value;
-                    OnPropertyChanged(nameof(UserGuid));
-                }
-            }
-        }
-
-        /// <summary>
         /// Group creation date.
         /// </summary>
         public DateTime? CreationDate

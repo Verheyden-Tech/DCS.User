@@ -236,22 +236,6 @@ namespace DCS.User.UI
         }
 
         /// <summary>
-        /// Role creator user unique identifier.
-        /// </summary>
-        public Guid UserGuid
-        {
-            get { return Model.UserGuid; }
-            set
-            {
-                if (Model.UserGuid != value)
-                {
-                    Model.UserGuid = value;
-                    OnPropertyChanged(nameof(UserGuid));
-                }
-            }
-        }
-
-        /// <summary>
         /// Role creation date.
         /// </summary>
         public DateTime? CreationDate

@@ -36,11 +36,6 @@
         public bool IsActive { get; set; }
 
         /// <summary>
-        /// Role creator user unique identifier.
-        /// </summary>
-        public Guid UserGuid { get; set; }
-
-        /// <summary>
         /// Role creation date.
         /// </summary>
         public DateTime? CreationDate { get; set; }

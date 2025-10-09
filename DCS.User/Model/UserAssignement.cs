@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DCS.User
+﻿namespace DCS.User
 {
     /// <summary>
     /// Represents the assignment of a user to a group, organisation, and/or role.
@@ -29,17 +23,17 @@ namespace DCS.User
         /// <summary>
         /// Gets or sets the unique identifier for the group to assign to.
         /// </summary>
-        public Guid? GroupGuid { get; set; }
+        public Guid GroupGuid { get; set; }
 
         /// <summary>
         /// Gets or sets the unique identifier for the organization to assign to.
         /// </summary>
-        public Guid? OrganisationGuid { get; set; }
+        public Guid OrganisationGuid { get; set; }
 
         /// <summary>
         /// Gets or sets the unique identifier for the role to assign to.
         /// </summary>
-        public Guid? RoleGuid { get; set; }
+        public Guid RoleGuid { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the assignement is currently active.

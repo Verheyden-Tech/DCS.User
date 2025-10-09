@@ -1,4 +1,5 @@
 ﻿using DCS.CoreLib.View;
+using DCS.User.Service;
 using System.Windows;
 
 namespace DCS.User.UI
@@ -8,25 +9,20 @@ namespace DCS.User.UI
     /// </summary>
     public partial class RegistrateUser : DefaultMainWindow
     {
-        private RegistrateUserViewModel viewModel;
+        private UserViewModel viewModel;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RegistrateUser"/> class with the specified domain name.
         /// </summary>
         /// <remarks>This constructor sets up the data context for the user registration view by creating
-        /// a new instance of <see cref="RegistrateUserViewModel"/> and associating it with the provided domain
+        /// a new instance of <see cref="UserViewModel"/> and associating it with the provided domain
         /// name.</remarks>
-        /// <param name="domainName">The domain name to associate with the user registration process. This value is used to initialize the <see
-        /// cref="RegistrateUserViewModel"/> and set its domain context.</param>
-        public RegistrateUser(string domainName)
+        public RegistrateUser()
         {
             InitializeComponent();
 
-            this.DomainName = domainName;
-
             var obj = new User();
-            viewModel = new RegistrateUserViewModel(obj);
-            viewModel.Domain = domainName;
+            viewModel = new UserViewModel(obj);
             this.DataContext = viewModel;
         }
 
@@ -38,7 +34,7 @@ namespace DCS.User.UI
 
                 if (viewModel.RegistrateUser())
                 {
-                    this.NewRegistratedUser = viewModel.Model;
+                    CurrentUserService.Instance.SetUser(viewModel.Model);
                     this.DialogResult = true;
                     this.Close();
                 }
@@ -54,16 +50,6 @@ namespace DCS.User.UI
                 return;
             }
         }
-
-        /// <summary>
-        /// Gets or sets the domain name.
-        /// </summary>
-        public string DomainName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the new registrated user.
-        /// </summary>
-        public User NewRegistratedUser { get; set; }
 
         private void DeclineButton_Click(object sender, RoutedEventArgs e)
         {

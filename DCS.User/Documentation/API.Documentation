@@ -326,11 +326,6 @@
             Indicates whether the user is an active.
             </summary>
         </member>
-        <member name="P:DCS.User.ADUser.CompanyGuid">
-            <summary>
-            Gets or sets the unique identifier for the associated company.
-            </summary>
-        </member>
         <member name="T:DCS.User.Group">
             <summary>
             Represents the user group class.
@@ -364,11 +359,6 @@
         <member name="P:DCS.User.Group.IsActive">
             <summary>
             Group is active flag.
-            </summary>
-        </member>
-        <member name="P:DCS.User.Group.UserGuid">
-            <summary>
-            Group creator user unique identifier.
             </summary>
         </member>
         <member name="P:DCS.User.Group.CreationDate">
@@ -416,11 +406,6 @@
             Organisation is active flag.
             </summary>
         </member>
-        <member name="P:DCS.User.Organisation.UserGuid">
-            <summary>
-            Organisation creator user unique identifier.
-            </summary>
-        </member>
         <member name="P:DCS.User.Organisation.CreationDate">
             <summary>
             Organisation creation date.
@@ -464,11 +449,6 @@
         <member name="P:DCS.User.Role.IsActive">
             <summary>
             Role is active flag.
-            </summary>
-        </member>
-        <member name="P:DCS.User.Role.UserGuid">
-            <summary>
-            Role creator user unique identifier.
             </summary>
         </member>
         <member name="P:DCS.User.Role.CreationDate">
@@ -529,11 +509,6 @@
         <member name="P:DCS.User.User.IsAdmin">
             <summary>
             User has admin rights flag.
-            </summary>
-        </member>
-        <member name="P:DCS.User.User.IsLoggedIn">
-            <summary>
-            User is logged in in current session flag.
             </summary>
         </member>
         <member name="P:DCS.User.User.IsADUser">

@@ -1,6 +1,5 @@
 ﻿using DCS.CoreLib.View;
-using DCS.Data;
-using DCS.Resource;
+using DCS.User.Service;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
@@ -15,13 +14,12 @@ namespace DCS.User.UI
     public partial class UserLogin : DefaultMainWindow
     {
         private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
-        private readonly IIconService iconService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IIconService>();
-        private string domainName;
+
         /// <summary>
         /// Represents the domain names for the database connection.
         /// </summary>
         public ObservableCollection<string> DomainNames { get; set; }
-        private UserLoginViewModel viewModel;
+        private UserViewModel viewModel;
 
         /// <summary>
         /// Default constructor to initializes a new instance of <see cref="UserLogin"/>.
@@ -35,22 +33,22 @@ namespace DCS.User.UI
             GetDomainNames();
 
             var obj = new User();
-            viewModel = new UserLoginViewModel(obj);
+            viewModel = new UserViewModel(obj);
             DataContext = viewModel;
         }
 
         /// <summary>
-        /// Represents the current data context for a user instance.
+        /// Gets the current user view model associated as data context.
         /// </summary>
-        public UserLoginViewModel Current
+        public UserViewModel Current
         {
             get
             {
-                return DataContext as UserLoginViewModel;
+                return DataContext as UserViewModel;
             }
         }
 
-        #region Private methods/Click handler
+        #region Private methods/click handler
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             if (userService.LoginUser(UserNameLoginTextBox.Text, PassWordLoginBox.Password, SelectedDomain))
@@ -77,16 +75,12 @@ namespace DCS.User.UI
 
         private void RegistrateButton_Click(object sender, RoutedEventArgs e)
         {
-            if(!string.IsNullOrWhiteSpace(SelectedDomain))
-            {
-                var win = new RegistrateUser(SelectedDomain);
+                var win = new RegistrateUser();
                 if(win.ShowDialog() == true)
                 {
-                    this.LoggedInUser = win.NewRegistratedUser;
-
                     if (KeepLoggedInCheckBox.IsChecked == true)
                     {
-                        userService.SetKeepLoggedIn(LoggedInUser);
+                        userService.SetKeepLoggedIn(CurrentUserService.Instance.CurrentUser);
                     }
 
                     this.DialogResult = true;
@@ -97,7 +91,6 @@ namespace DCS.User.UI
                     MessageBox.Show("Bitte Domain wählen vor der registrierung.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
-            }
         }
 
         private void ServerComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)

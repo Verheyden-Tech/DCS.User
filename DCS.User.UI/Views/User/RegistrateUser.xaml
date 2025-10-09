@@ -25,7 +25,7 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <Image Source="/DCS.User;component/Resources/Images/Data Control System.PNG" Grid.Row="0" Grid.Column="1" MinHeight="64" MinWidth="200" Stretch="Uniform" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Image Source="/DCS.User;component/Resources/Images/Data Control System.PNG" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" MinHeight="64" MinWidth="200" Stretch="Uniform" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
         <Label Content="Benutzername" Grid.Row="1" Grid.Column="0" Style="{DynamicResource Label}" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
         <telerik:RadWatermarkTextBox Grid.Row="1" Grid.Column="1" x:Name="UserNameTextBox" BorderBrush="SteelBlue" Text="{Binding Path=UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Neuen Benutzernamen festlegen" WatermarkBehavior="HideOnTextEntered" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>

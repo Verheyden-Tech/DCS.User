@@ -182,6 +182,7 @@ C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Vi
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\Role\RoleEditor.g.cs
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\Role\RoleManagement.g.cs
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\ChangeUserPassword.g.cs
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\CreateNewADUserDomain.g.cs
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\RegistrateUser.g.cs
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\UserEditor.g.cs
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\UserLogin.g.cs
@@ -195,6 +196,7 @@ C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Vi
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\Role\RoleEditor.baml
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\Role\RoleManagement.baml
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\ChangeUserPassword.baml
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\CreateNewADUserDomain.baml
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\RegistrateUser.baml
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\UserLogin.baml
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\UserManagement.baml

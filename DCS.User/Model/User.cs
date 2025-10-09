@@ -51,11 +51,6 @@
         public bool IsAdmin { get; set; }
 
         /// <summary>
-        /// User is logged in in current session flag.
-        /// </summary>
-        public bool IsLoggedIn { get; set; }
-
-        /// <summary>
         /// User is local user flag.
         /// </summary>
         public bool IsADUser { get; set; }

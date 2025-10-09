@@ -1,19 +1,22 @@
 ﻿using DCS.CoreLib.BaseClass;
 using Microsoft.Win32;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace DCS.User.UI
 {
     /// <summary>
     /// Implements the <see cref="ViewModelBase{TKey, TModel}"/> class for the <see cref="User"/> model.
     /// </summary>
-    public class UserViewModel : ViewModelBase<Guid, User>
+    public class UserViewModel : ViewModelBase<Guid, User>, INotifyPropertyChanged
     {
         private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
         private readonly IGroupService groupService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IGroupService>();
         private readonly IOrganisationService organisationService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IOrganisationService>();
         private readonly IRoleService roleService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IRoleService>();
         private readonly IUserAssignementService assignementService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserAssignementService>();
+        private string selectedDB;
+        private ObservableCollection<string> userNames;
 
         #region List Initializations
         /// <summary>
@@ -416,6 +419,91 @@ namespace DCS.User.UI
             return false;
         }
 
+        /// <summary>
+        /// Registers a new user with the specified credentials and settings.
+        /// </summary>
+        /// <remarks>This method attempts to create and register a user based on the current instance's
+        /// properties. The operation will fail if the <see cref="Domain"/> property is null or empty, or if the user
+        /// creation process encounters an error.</remarks>
+        /// <returns><see langword="true"/> if the user was successfully registered; otherwise, <see langword="false"/>.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if the user creation process returns a null user object.</exception>
+        public bool RegistrateUser()
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(this.Domain))
+                    return false;
+
+                var user = userService.CreateUser(this.UserName, this.PassWord, this.IsAdmin, this.KeepLoggedIn, this.Domain);
+
+                if (user == null)
+                    throw new ArgumentNullException(nameof(user));
+
+                if (userService.New(user))
+                {
+                    this.Model = user;
+                    return true;
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Log.LogManager.Singleton.Error($"Error while creating user: {ex.Message}.", $"{ex.Source}");
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Attempts to log in a user using the provided credentials and Active Directory domain.
+        /// </summary>
+        /// <param name="username">The username of the user attempting to log in. Cannot be null or empty.</param>
+        /// <param name="password">The password associated with the specified username. Cannot be null or empty.</param>
+        /// <param name="adDomain">The Active Directory domain to authenticate against. Cannot be null or empty.</param>
+        /// <returns><see langword="true"/> if the login is successful; otherwise, <see langword="false"/>.</returns>
+        public bool LoginUser(string username, string password, string adDomain)
+        {
+            if (userService.LoginUser(username, password, adDomain))
+            {
+                return true;
+            };
+            return false;
+        }
+
+        /// <summary>
+        /// Retrieves a collection of user names based on the specified connection type.
+        /// </summary>
+        /// <remarks>This method initializes a new <see cref="ObservableCollection{T}"/> and populates it
+        /// with user names  retrieved from the user service when the connection type is "Home."</remarks>
+        /// <param name="connectionType">The type of connection to use when retrieving user names.  Must be "Home" to populate the collection;
+        /// otherwise, an empty collection is returned.</param>
+        /// <returns>An <see cref="ObservableCollection{T}"/> containing the user names.  The collection will be empty if the
+        /// connection type is not "Home."</returns>
+        public ObservableCollection<string> SetItemsSource(string connectionType)
+        {
+            userNames = new ObservableCollection<string>();
+
+            if (connectionType == "Home")
+            {
+                foreach (var user in userService.GetAll())
+                {
+                    userNames.Add(user.UserName);
+                }
+            }
+
+            return userNames;
+        }
+
+        /// <summary>
+        /// Gets a user by its user name.
+        /// </summary>
+        /// <param name="userName">Given user name.</param>
+        /// <returns>User instance by its username.</returns>
+        public User GetByName(string userName)
+        {
+            return userService.GetByName(userName);
+        }
+
         #region Lists
         /// <summary>
         /// Contains all avialable user groups from the table.
@@ -512,9 +600,41 @@ namespace DCS.User.UI
                 }
             }
         }
+
+        /// <summary>
+        /// Contains avialable user account names.
+        /// </summary>
+        public ObservableCollection<string> UserNames
+        {
+            get
+            {
+                return userNames;
+            }
+            set
+            {
+                userNames = value;
+                OnPropertyChanged(nameof(UserNames));
+            }
+        }
         #endregion
 
         #region Properties
+        /// <summary>
+        /// Gets or sets the selected database as string.
+        /// </summary>
+        public string SelectedDB
+        {
+            get
+            {
+                return selectedDB;
+            }
+            set
+            {
+                selectedDB = value;
+                OnPropertyChanged(nameof(SelectedDB));
+            }
+        }
+
         /// <summary>
         /// Gets or sets the unique identifier for the user.
         /// </summary>
@@ -585,15 +705,6 @@ namespace DCS.User.UI
         {
             get => Model.IsAdmin;
             set => Model.IsAdmin = value;
-        }
-
-        /// <summary>
-        /// Gets or sets the user is logged in in current session flag.
-        /// </summary>
-        public bool IsLoggedIn
-        {
-            get => Model.IsLoggedIn;
-            set => Model.IsLoggedIn = value;
         }
 
         /// <summary>

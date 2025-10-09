@@ -36,11 +36,6 @@
         public bool IsActive { get; set; }
 
         /// <summary>
-        /// Organisation creator user unique identifier.
-        /// </summary>
-        public Guid UserGuid { get; set; }
-
-        /// <summary>
         /// Organisation creation date.
         /// </summary>
         public DateTime? CreationDate { get; set; }

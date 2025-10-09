@@ -33,7 +33,6 @@ namespace DCS.User.Service
                 Name = name,
                 Description = description,
                 IsActive = isActive,
-                UserGuid = userGuid,
                 CreationDate = DateTime.UtcNow,
                 LastManipulation = DateTime.UtcNow
             };

@@ -36,11 +36,6 @@
         public bool IsActive { get; set; }
 
         /// <summary>
-        /// Group creator user unique identifier.
-        /// </summary>
-        public Guid UserGuid { get; set; }
-
-        /// <summary>
         /// Group creation date.
         /// </summary>
         public DateTime? CreationDate { get; set; }
