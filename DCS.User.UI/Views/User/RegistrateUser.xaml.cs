@@ -40,7 +40,7 @@ namespace DCS.User.UI
                 }
                 else
                 {
-                    MessageBox.Show("Fehler beim anlegen und speichern des Accounts.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Fehler beim anlegen des Accounts.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
             }

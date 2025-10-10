@@ -2,10 +2,25 @@
 
 namespace DCS.User.UI
 {
+    /// <summary>
+    /// Represents a view model for an Active Directory (AD) user, providing properties and methods to manage and
+    /// interact with the underlying <see cref="ADUser"/> model.
+    /// </summary>
+    /// <remarks>This class serves as a bridge between the UI and the underlying <see cref="ADUser"/> model,
+    /// encapsulating the logic for creating, updating, and managing AD user data. It provides properties to access and
+    /// modify the user's unique identifier, domain name, and active status, as well as a method to create and register
+    /// new AD users.</remarks>
     public class ADUserViewModel : ViewModelBase<Guid, ADUser>
     {
         private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ADUserViewModel"/> class using the specified Active Directory
+        /// user model.
+        /// </summary>
+        /// <remarks>This constructor sets the <see cref="ViewModelBase{TKey, TModel}.Model"/> property to the provided <paramref
+        /// name="adUser"/> instance.</remarks>
+        /// <param name="adUser">The Active Directory user model used to initialize the view model. Cannot be <see langword="null"/>.</param>
         public ADUserViewModel(ADUser adUser) : base(adUser)
         {
             this.Model = adUser;

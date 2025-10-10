@@ -172,5 +172,15 @@ namespace DCS.User.UI
         /// Represents the current selected database.
         /// </summary>
         public string SelectedDomain { get; set; }
+
+        private void CreateNewDomain_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new CreateNewADUserDomain();
+            if(win.ShowDialog() == true)
+            {
+                this.ServerComboBox.SelectedItem = win.NewDomain.DomainName;
+                ServerComboBox.Items.Refresh();
+            }
+        }
     }
 }

@@ -8,7 +8,7 @@
         xmlns:win="clr-namespace:DCS.CoreLib.View;assembly=DCS.CoreLib.View"
         xmlns:resource="clr-namespace:DCS.Resource;assembly=DCS.Resource"
         mc:Ignorable="d"
-        MinHeight="300" MinWidth="600" SizeToContent="WidthAndHeight">
+        d:DesignHeight="300" d:DesignWidth="600" SizeToContent="WidthAndHeight">
 
     <Grid>
 
@@ -25,7 +25,7 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <Image Source="/DCS.User;component/Resources/Images/Data Control System.PNG" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" MinHeight="64" MinWidth="200" Stretch="Uniform" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Image Source="/DCS.User;component/Resources/Images/Data Control System.PNG" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Height="64" Width="200" Stretch="Uniform" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
         <Label Content="Benutzername" Grid.Row="1" Grid.Column="0" Style="{DynamicResource Label}" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
         <telerik:RadWatermarkTextBox Grid.Row="1" Grid.Column="1" x:Name="UserNameTextBox" BorderBrush="SteelBlue" Text="{Binding Path=UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Neuen Benutzernamen festlegen" WatermarkBehavior="HideOnTextEntered" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
@@ -37,9 +37,8 @@
         <telerik:RadPasswordBox x:Name="PassWordRepeatBox" Grid.Row="3" Grid.Column="1" BorderBrush="SteelBlue" WatermarkContent="Neues Passwort wiederholen" WatermarkBehavior="HideOnTextEntered" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
         <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Right" VerticalAlignment="Stretch" Grid.Row="4" Grid.Column="1">
-            <CheckBox x:Name="IsADUserCheckBox" Content="AD-Benutzer" Margin="2" Checked="IsADUserCheckBox_Checked" Unchecked="IsADUserCheckBox_Unchecked" IsChecked="{Binding Path=IsADUser, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Style="{DynamicResource CheckBox}"/>
-            <CheckBox x:Name="KeepLoggedInCheckBox" Content="Angemeldet bleiben" Margin="2" IsChecked="{Binding Path=KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-            <CheckBox x:Name="IsAdminCheckBox" Content="Admin" Margin="2" IsChecked="{Binding Path=IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Style="{DynamicResource CheckBox}"/>
+            <CheckBox x:Name="KeepLoggedInCheckBox" Content="Angemeldet bleiben" Margin="5" IsChecked="{Binding Path=KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <CheckBox x:Name="IsAdminCheckBox" Content="Admin" Margin="5" IsChecked="{Binding Path=IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Right" VerticalAlignment="Stretch" Grid.Row="5" Grid.Column="1">

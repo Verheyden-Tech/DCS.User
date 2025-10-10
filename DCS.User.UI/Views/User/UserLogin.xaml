@@ -13,7 +13,7 @@
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -22,12 +22,9 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Image x:Name="DCS_Logo_Image" Grid.Row="0" Grid.Column="2" Stretch="Uniform" Height="64" Width="64" Margin="2" Source="/DCS.User;component/Resources/Images/VT (1).PNG"/>
-        <Image x:Name="DCS_Label_Image" Grid.Row="5" Grid.Column="1" Source="/DCS.User;component/Resources/Images/Data Control System.PNG" Height="64" Width="200" Stretch="Uniform" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Image x:Name="DCS_Label_Image" Grid.Row="0" Grid.Column="1" Source="/DCS.User;component/Resources/Images/Data Control System.PNG" Height="64" Width="200" Stretch="Uniform" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
         <Label Content="Benutzername" Grid.Row="1" Grid.Column="0" Style="{DynamicResource Label}" Visibility="Collapsed"/>
         <telerik:RadWatermarkTextBox x:Name="UserNameLoginTextBox" Grid.Row="1" Grid.Column="1" BorderBrush="SteelBlue" WatermarkContent="Benutzername eingeben" WatermarkBehavior="HideOnTextEntered" Margin="2" Text="{Binding Path=UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" TabIndex="1" Visibility="Visible" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
@@ -46,11 +43,14 @@
             </telerik:RadComboBox>
         </StackPanel>
 
-        <CheckBox x:Name="KeepLoggedInCheckBox" Content="Angemeldet bleiben" Grid.Column="1" Grid.Row="4" TabIndex="4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" IsChecked="{Binding Path=KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <CheckBox x:Name="KeepLoggedInCheckBox" Content="Angemeldet bleiben" TabIndex="4" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left" IsChecked="{Binding Path=KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            <telerik:RadButton x:Name="CreateNewDomain" Content="Neue Domain anlegen" Click="CreateNewDomain_Click" Background="{x:Null}" TabIndex="5" BorderBrush="{x:Null}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+        </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch">
-            <Button x:Name="RegistrateButton" Click="RegistrateButton_Click" Background="{x:Null}" BorderBrush="{x:Null}" TabIndex="5" IsEnabled="True" Content="Registrieren" Style="{DynamicResource ButtonAcc/Dec}"/>
-            <Button x:Name="LoginButton" Click="LoginButton_Click" Content="Anmelden" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False" TabIndex="6" Style="{DynamicResource ButtonAcc/Dec}"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch">
+            <Button x:Name="RegistrateButton" Click="RegistrateButton_Click" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" TabIndex="5" IsEnabled="True" Content="Registrieren" Style="{DynamicResource ButtonAcc/Dec}"/>
+            <Button x:Name="LoginButton" Click="LoginButton_Click" Content="Anmelden" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False" TabIndex="6" Style="{DynamicResource ButtonAcc/Dec}"/>
         </StackPanel>
 
     </Grid>
