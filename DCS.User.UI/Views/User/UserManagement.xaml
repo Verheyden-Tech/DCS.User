@@ -13,10 +13,26 @@
 
         <Grid.ContextMenu>
             <ContextMenu Name="UserManagementContextMenu">
-                <MenuItem Header="Benutzer anlegen" Click="NewUser_Click" Icon="{telerik:RadGlyph Glyph=&#xe11e;}"/>
-                <MenuItem Header="Benutzer bearbeiten" Click="EditUser_Click" Icon="{telerik:RadGlyph Glyph=&#xe10b;}"/>
-                <MenuItem Header="Benutzer löschen" Click="DeleteUser_Click" Icon="{telerik:RadGlyph Glyph=&#xe10c;}"/>
-                <MenuItem Header="Benutzer generieren" Click="GenerateUser_Click" Icon="{telerik:RadGlyph Glyph=&#xe13b;}"/>
+                <MenuItem Header="Benutzer anlegen" Click="NewUser_Click">
+                    <MenuItem.Icon>
+                        <Image Source="{telerik:RadGlyph Size=1, Type=Image, Glyph=&#xe11e;}" Width="16" Height="16" Stretch="Uniform"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Benutzer bearbeiten" Click="EditUser_Click">
+                    <MenuItem.Icon>
+                        <Image Source="{telerik:RadGlyph Size=1, Type=Image, Glyph=&#xe10b;}" Width="16" Height="16" Stretch="Uniform"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Benutzer löschen" Click="DeleteUser_Click">
+                    <MenuItem.Icon>
+                        <Image Source="{telerik:RadGlyph Size=1, Type=Image, Glyph=&#xe10c;}" Width="16" Height="16" Stretch="Uniform"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Benutzer generieren" Click="GenerateUser_Click">
+                    <MenuItem.Icon>
+                        <Image Source="{telerik:RadGlyph Size=1, Type=Image, Glyph=&#xe13b;}" Width="16" Height="16" Stretch="Uniform"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </ContextMenu>
         </Grid.ContextMenu>
 

@@ -27,10 +27,26 @@
 
             <telerik:RadGridView.ContextMenu>
                 <ContextMenu Name="OrganisationManagementContextMenu">
-                    <MenuItem Header="Organisation anlegen" Click="CreateNewOrganisationButton_Click" Icon="{telerik:RadGlyph Glyph=&#xe11e;}"/>
-                    <MenuItem Header="Organisation bearbeiten" Click="EditOrganisation_Click" Icon="{telerik:RadGlyph Glyph=&#xe10b;}"/>
-                    <MenuItem Header="Organisation löschen" Click="DeleteOrganisation_Click" Icon="{telerik:RadGlyph Glyph=&#xe10c;}"/>
-                    <MenuItem Header="Organisationen generieren" Click="GenerateOrganisations_Click" Icon="{telerik:RadGlyph Glyph=&#xe13b;}"/>
+                    <MenuItem Header="Organisation anlegen" Click="CreateNewOrganisationButton_Click">
+                        <MenuItem.Icon>
+                            <Image Source="{telerik:RadGlyph Size=1, Type=Image, Glyph=&#xe11e;}" Width="16" Height="16" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Organisation bearbeiten" Click="EditOrganisation_Click">
+                        <MenuItem.Icon>
+                            <Image Source="{telerik:RadGlyph Size=1, Type=Image, Glyph=&#xe10b;}" Width="16" Height="16" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Organisation löschen" Click="DeleteOrganisation_Click">
+                        <MenuItem.Icon>
+                            <Image Source="{telerik:RadGlyph Size=1, Type=Image, Glyph=&#xe10c;}" Width="16" Height="16" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Organisationen generieren" Click="GenerateOrganisations_Click">
+                        <MenuItem.Icon>
+                            <Image Source="{telerik:RadGlyph Size=1, Type=Image, Glyph=&#xe13b;}" Width="16" Height="16" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </ContextMenu>
             </telerik:RadGridView.ContextMenu>
 

@@ -27,10 +27,26 @@
 
             <telerik:RadGridView.ContextMenu>
                 <ContextMenu x:Name="RoleManagementContextMenu">
-                    <MenuItem Header="Rolle anlegen" Click="CreateNewRoleButton_Click" Icon="{telerik:RadGlyph Glyph=&#xe11e;}"/>
-                    <MenuItem Header="Rolle bearbeiten" Click="EditRole_Click" Icon="{telerik:RadGlyph Glyph=&#xe10b;}"/>
-                    <MenuItem Header="Rolle löschen" Click="DeleteRole_Click" Icon="{telerik:RadGlyph Glyph=&#xe10c;}"/>
-                    <MenuItem Header="Rollen generieren" Click="GenerateRoles_Click" Icon="{telerik:RadGlyph Glyph=&#xe13b;}"/>
+                    <MenuItem Header="Rolle anlegen" Click="CreateNewRoleButton_Click">
+                        <MenuItem.Icon>
+                            <Image Source="{telerik:RadGlyph Size=1, Type=Image, Glyph=&#xe11e;}" Width="16" Height="16" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Rolle bearbeiten" Click="EditRole_Click">
+                        <MenuItem.Icon>
+                            <Image Source="{telerik:RadGlyph Size=1, Type=Image, Glyph=&#xe10b;}" Width="16" Height="16" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Rolle löschen" Click="DeleteRole_Click">
+                        <MenuItem.Icon>
+                            <Image Source="{telerik:RadGlyph Size=1, Type=Image, Glyph=&#xe10c;}" Width="16" Height="16" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Rollen generieren" Click="GenerateRoles_Click">
+                        <MenuItem.Icon>
+                            <Image Source="{telerik:RadGlyph Size=1, Type=Image, Glyph=&#xe13b;}" Width="16" Height="16" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </ContextMenu>
             </telerik:RadGridView.ContextMenu>
 
