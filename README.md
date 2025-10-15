@@ -47,6 +47,16 @@ To get the project up and running on your local machine, follow these steps.
 
 A primary use case is the creation and management of users within a specific domain. Roles can be dynamically assigned to users through the "UserEditor" interface. This allows for granular control over what data and functionalities specific employees of a customer can see and access within the system.
 
+```csharp
+// How to set the current user with the CurrentUserService.
+
+// < Login logic >
+if (Login == true)
+{
+  CurrentUserService.Singleton.SetCurrentUser(user);
+}
+```
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
