@@ -53,4 +53,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For inquiries, please contact us at verheyden.tech@gmail.com.
+For inquiries, please contact us at info@verheyden-tech.de.
