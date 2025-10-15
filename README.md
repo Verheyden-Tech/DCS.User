@@ -11,10 +11,14 @@ This document serves as a technical overview for developers and future team memb
 ## Features
 
 *   **Secure User Authentication:** Handles user login, logout, and session management using modern security practices.
+
 *   **Advanced Authorization:** Implements flexible Role-Based Access Control (RBAC). Permissions and data visibility are controlled through a dynamic management system.
+
 *   **Group, Organization, and Role Management:** Allows the creation and administration of user groups and organizational structures to logically separate and manage users.
+
 *   **Full User Profile Management:** Complete CRUD (Create, Read, Update, Delete) operations for user profiles.
 *   **Secure Password Handling:** Uses strong password hashing and provides a secure mechanism for password resets.
+
 *   **Integrated Logging:** Logs user activities and critical system events for monitoring and auditing purposes.
 
 ## Getting Started
