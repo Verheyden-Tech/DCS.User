@@ -4,7 +4,7 @@
 
 ## Overview
 
-DCS.User is a comprehensive C# solution for managing all user-related functionalities within the Data Control System (DCS). It provides a robust backend for authentication, authorization, and advanced profile management.
+'DCS.User' is a comprehensive C# solution for managing all user-related functionalities within the Data Control System (DCS -> 'DCS.Framework'). It provides a robust backend for authentication, authorization, and advanced profile management.
 
 This document serves as a technical overview for developers and future team members to understand the architecture and purpose of the `DCS.User` component within the main Data Control System (DCS).
 
