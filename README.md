@@ -51,7 +51,7 @@ A primary use case is the creation and management of users within a specific dom
 // How to set the current user with the CurrentUserService.
 
 // < Login logic >
-if (Login == true)
+if (Login(user) == true)
 {
   CurrentUserService.Singleton.SetCurrentUser(user);
 }
