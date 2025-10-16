@@ -76,6 +76,27 @@ namespace DCS.User.UI
             Domains = domainService.GetAll();
         }
 
+        /// <summary>
+        /// Refreshes the list of domains by clearing the current collection and retrieving the latest data.
+        /// </summary>
+        /// <remarks>This method attempts to update the domain list by invoking the domain service.  If an
+        /// error occurs during the operation, the method logs the error and returns <see langword="false"/>.</remarks>
+        /// <returns><see langword="true"/> if the domain list was successfully refreshed; otherwise, <see langword="false"/>.</returns>
+        public bool RefreshDomains()
+        {
+            try
+            {
+                Domains.Clear();
+                Domains = domainService.GetAll();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Log.LogManager.Singleton.Error($"Error while refreshing domains: {ex.Message}.", $"{ex.Source}");
+                return false;
+            }
+        }
+
         #region Register, Update, Delete, Login, Set Profile Picture for User
         /// <summary>
         /// Registers a new user with the specified credentials and settings.
@@ -91,9 +112,25 @@ namespace DCS.User.UI
             {
                 try
                 {
-                    if (userService.New(Model))
+                    var newUser = new User
                     {
-                        CurrentUserService.Instance.SetUser(Model);
+                        Guid = Guid.NewGuid(),
+                        UserName = Model.UserName,
+                        PassWord = userService.GetSha256Hash(Model.PassWord),
+                        Domain = CurrentDomainService.Instance.CurrentDomain.DomainName,
+                        IsActive = true,
+                        IsAdmin = Model.IsAdmin,
+                        IsADUser = false,
+                        KeepLoggedIn = Model.KeepLoggedIn,
+                        CreationDate = DateTime.Today,
+                        LastManipulation = DateTime.Today,
+                        ProfilePicturePath = Model.ProfilePicturePath
+                    };
+
+                    if (userService.New(newUser))
+                    {
+                        Model = newUser;
+                        CurrentUserService.Instance.SetUser(newUser);
                         return true;
                     }
 
@@ -689,15 +726,6 @@ namespace DCS.User.UI
         {
             get => Model.Guid;
             set => Model.Guid = value;
-        }
-
-        /// <summary>
-        /// Gets or sets the user identifier.
-        /// </summary>
-        public int Ident
-        {
-            get => Model.Ident;
-            set => Model.Ident = value;
         }
 
         /// <summary>

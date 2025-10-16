@@ -65,25 +65,13 @@ namespace DCS.User.UI
         private void RegistrateButton_Click(object sender, RoutedEventArgs e)
         {
             var win = new RegistrateUser();
-            if (!string.IsNullOrWhiteSpace(Current.Domain))
+            if (CurrentDomainService.Instance.CurrentDomain != null)
             {
                 if (win.ShowDialog() == true)
                 {
                     if (KeepLoggedInCheckBox.IsChecked == true)
                     {
                         userService.SetKeepLoggedIn(CurrentUserService.Instance.CurrentUser);
-                    }
-
-                    var domain = Current.Domains.FirstOrDefault(d => d.DomainName == Current.Domain);
-                    if(domain != null)
-                    {
-                        CurrentDomainService.Instance.SetDomain(domain);
-                    }
-                    else
-                    {
-                        MessageBox.Show($"Die ausgewählte Domain '{Current.Domain}' ist nicht verfügbar.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
-                        Log.LogManager.Singleton.Warning($"Could not find the selected domain '{Current.Domain}' in the available domains.", "UserLogin");
-                        return;
                     }
 
                     this.DialogResult = true;
@@ -133,16 +121,19 @@ namespace DCS.User.UI
             var win = new CreateNewUserDomain();
             if (win.ShowDialog() == true)
             {
-                ServerComboBox.Text = win.DomainNameTextBox.Text;
-                ServerComboBox.Items.Refresh();
+                ServerComboBox.Text = CurrentDomainService.Instance.CurrentDomain.DomainName;
+                ServerComboBox.ItemsSource = Current.Domains;
             }
         }
 
         private void ServerComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            if (ServerComboBox.SelectedItem is UserDomain domain && domain.DomainName != Current.Domain)
+            var domain = Current.Domains.FirstOrDefault(d => d.DomainName == ServerComboBox.Text);
+
+            if (domain != null && domain != CurrentDomainService.Instance.CurrentDomain)
             {
-                Current.Domain = domain.DomainName;
+                CurrentDomainService.Instance.UnsetDomain();
+                CurrentDomainService.Instance.SetDomain(domain);
             }
         }
     }

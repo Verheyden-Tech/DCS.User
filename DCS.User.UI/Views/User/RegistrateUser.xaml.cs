@@ -45,7 +45,7 @@ namespace DCS.User.UI
 
                 if (Current.RegistrateUser())
                 {
-                    CurrentUserService.Instance.SetUser(viewModel.Model);
+                    CurrentUserService.Instance.SetUser(Current.Model);
                     this.DialogResult = true;
                     this.Close();
                 }

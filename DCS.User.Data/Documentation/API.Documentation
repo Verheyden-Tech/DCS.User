@@ -79,12 +79,12 @@
             UserRepository with basic methods inherited from <see cref="T:DCS.CoreLib.BaseClass.RepositoryBase`2"/> to handle user data on the table.
             </summary>
         </member>
-        <member name="P:DCS.User.Data.UserRepository.tableName">
+        <member name="F:DCS.User.Data.UserRepository.TableName">
             <summary>
             Tablename for the UserRepository.
             </summary>
         </member>
-        <member name="P:DCS.User.Data.UserRepository.primaryKeyColumn">
+        <member name="F:DCS.User.Data.UserRepository.PrimaryKeyColumn">
             <summary>
             PrimaryKeyColumn to identify users on the table.
             </summary>

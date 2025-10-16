@@ -6,7 +6,7 @@
         xmlns:win="clr-namespace:DCS.CoreLib.View;assembly=DCS.CoreLib.View"
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
         xmlns:local="clr-namespace:DCS.User.UI"
-        mc:Ignorable="d"
+        mc:Ignorable="d" d:DataContext="{d:DesignInstance Type=local:UserViewModel}"
         d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid x:Name="UserManagementMain_Grid" Background="White">
@@ -48,10 +48,10 @@
         <telerik:RadAutoCompleteBox x:Name="SearchUserBox" Grid.Row="0" Grid.Column="0" WatermarkContent="Benutzer suchen.." Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <telerik:RadButton Grid.Row="0" Grid.Column="1" x:Name="CreateNewUserButton" CornerRadius="5" Content="Neuen Benutzer anlegen" Click="NewUser_Click" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
-        <telerik:RadGridView x:Name="UserGridView" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" GroupPanelBackground="White" Margin="5" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <telerik:RadGridView x:Name="UserGridView" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <telerik:RadGridView.Columns>
-                <telerik:GridViewDataColumn Header="ID" DataMemberBinding="{Binding Ident, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="70"/>
                 <telerik:GridViewDataColumn Header="Benutzername" DataMemberBinding="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="150"/>
+                <telerik:GridViewDataColumn Header="Domain" DataMemberBinding="{Binding Domain, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="150"/>
                 <telerik:GridViewCheckBoxColumn Header="Aktiv" DataMemberBinding="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50"/>
                 <telerik:GridViewCheckBoxColumn Header="Admin" DataMemberBinding="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="50"/>
             </telerik:RadGridView.Columns>

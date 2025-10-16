@@ -439,11 +439,6 @@
             User unique identifier.
             </summary>
         </member>
-        <member name="P:DCS.User.User.Ident">
-            <summary>
-            User identifier.
-            </summary>
-        </member>
         <member name="P:DCS.User.User.UserName">
             <summary>
             User name.

@@ -8,23 +8,23 @@ namespace DCS.User.Data
     /// </summary>
     public class UserRepository : RepositoryBase<Guid, User>, IUserRepository
     {
-        private readonly ISqlService sqlService;
+        private readonly ISqlService sqlService = CommonServiceLocator.ServiceLocator.Current.GetInstance<ISqlService>();
 
         /// <summary>
         /// Tablename for the UserRepository.
         /// </summary>
-        private static string tableName => "dbo.VT_User";
+        private static readonly new string TableName = "dbo.VT_User";
 
         /// <summary>
         /// PrimaryKeyColumn to identify users on the table.
         /// </summary>
-        private static string primaryKeyColumn => "Guid";
+        private static readonly new string PrimaryKeyColumn = "Guid";
 
         /// <summary>
         /// Default constructor for UserRepository.
         /// </summary>
         /// <param name="sqlService">Sql service.</param>
-        public UserRepository(ISqlService sqlService) : base(sqlService, tableName, primaryKeyColumn)
+        public UserRepository(ISqlService sqlService) : base(sqlService, TableName, PrimaryKeyColumn)
         {
             this.sqlService = sqlService;
         }

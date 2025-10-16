@@ -405,6 +405,14 @@
             roles for reference.</remarks>
             <param name="user">The user model used to initialize the view model. Cannot be <see langword="null"/>.</param>
         </member>
+        <member name="M:DCS.User.UI.UserViewModel.RefreshDomains">
+            <summary>
+            Refreshes the list of domains by clearing the current collection and retrieving the latest data.
+            </summary>
+            <remarks>This method attempts to update the domain list by invoking the domain service.  If an
+            error occurs during the operation, the method logs the error and returns <see langword="false"/>.</remarks>
+            <returns><see langword="true"/> if the domain list was successfully refreshed; otherwise, <see langword="false"/>.</returns>
+        </member>
         <member name="M:DCS.User.UI.UserViewModel.RegistrateUser">
             <summary>
             Registers a new user with the specified credentials and settings.
@@ -591,11 +599,6 @@
         <member name="P:DCS.User.UI.UserViewModel.Guid">
             <summary>
             Gets or sets the unique identifier for the user.
-            </summary>
-        </member>
-        <member name="P:DCS.User.UI.UserViewModel.Ident">
-            <summary>
-            Gets or sets the user identifier.
             </summary>
         </member>
         <member name="P:DCS.User.UI.UserViewModel.UserName">

@@ -16,11 +16,6 @@
         public Guid Guid { get; set; }
 
         /// <summary>
-        /// User identifier.
-        /// </summary>
-        public int Ident { get; set; }
-
-        /// <summary>
         /// User name.
         /// </summary>
         public string UserName { get; set; }

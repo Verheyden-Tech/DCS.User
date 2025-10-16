@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net7.0-windows</TargetFramework>
-		<Version>1.0.3401.1</Version>
-		<AssemblyVersion>1.0.3401.0</AssemblyVersion>
+		<Version>1.0.3501.1</Version>
+		<AssemblyVersion>1.0.3501.0</AssemblyVersion>
 		<ApplicationVersion>1.2.3.0</ApplicationVersion>
 		<ProjectGuid>{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}</ProjectGuid>
 		<OutputType>Library</OutputType>
@@ -57,7 +57,7 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="System.Management" Version="8.0.0" />
+		<PackageReference Include="System.Management" Version="9.0.10" />
 	</ItemGroup>
 	<ItemGroup>
 		<Reference Include="Telerik.Licensing.Runtime">

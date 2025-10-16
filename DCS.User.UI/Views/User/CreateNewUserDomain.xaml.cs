@@ -42,6 +42,7 @@ namespace DCS.User.UI
             {
                 if (Current.CreateNewDomain())
                 {
+                    CurrentDomainService.Instance.SetDomain(Current.Model);
                     this.DialogResult = true;
                     this.Close();
                 }
