@@ -39,9 +39,9 @@ namespace DCS.User.UI
 
         private void RegistrateButton_Click(object sender, RoutedEventArgs e)
         {
-            if (PassWordBox.Text == PassWordRepeatBox.Text)
+            if (PassWordBox.Password == PassWordRepeatBox.Password)
             {
-                Current.PassWord = PassWordBox.Text;
+                Current.PassWord = PassWordBox.Password;
 
                 if (Current.RegistrateUser())
                 {
