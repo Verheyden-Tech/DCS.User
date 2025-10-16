@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "oiqn9gXd6w0=",
+  "dgSpecHash": "0lcPRiWK7ME=",
   "success": true,
   "projectFilePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
   "expectedPackageFiles": [
@@ -9,13 +9,13 @@
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\bogus\\35.6.4\\bogus.35.6.4.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\commonservicelocator\\2.0.7\\commonservicelocator.2.0.7.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.authorisation\\1.0.801\\dcs.authorisation.1.0.801.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.authorisation\\1.0.901\\dcs.authorisation.1.0.901.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.billing\\1.0.401\\dcs.billing.1.0.401.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.contact\\1.0.501\\dcs.contact.1.0.501.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib\\1.1.401\\dcs.corelib.1.1.401.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.baseclass\\1.1.501\\dcs.corelib.baseclass.1.1.501.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.collection\\1.1.401\\dcs.corelib.collection.1.1.401.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.view\\1.1.2701\\dcs.corelib.view.1.1.2701.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.view\\1.1.2801\\dcs.corelib.view.1.1.2801.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data\\1.0.401\\dcs.data.1.0.401.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.hr\\1.0.301\\dcs.hr.1.0.301.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.localization\\1.0.401\\dcs.localization.1.0.401.nupkg.sha512",

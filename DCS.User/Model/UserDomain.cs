@@ -38,6 +38,6 @@
         /// <summary>
         /// Gets or sets the estimated date and time when the subscription ends.
         /// </summary>
-        public DateTime EndSubscription { get; set; }
+        public DateTime? EndSubscription { get; set; }
     }
 }

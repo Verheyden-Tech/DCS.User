@@ -28,7 +28,7 @@
 
         <telerik:RadWatermarkTextBox Grid.Row="1" Grid.Column="1" x:Name="UserNameTextBox" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Neuen Benutzernamen festlegen" WatermarkBehavior="HideOnTextEntered" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
-        <telerik:RadPasswordBox x:Name="PassWordBox" Grid.Row="2" Grid.Column="1" Text="{Binding PassWord, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Neues Passwort festlegen" WatermarkBehavior="HideOnTextEntered" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <telerik:RadPasswordBox x:Name="PassWordBox" Grid.Row="2" Grid.Column="1" WatermarkContent="Neues Passwort festlegen" WatermarkBehavior="HideOnTextEntered" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
         <telerik:RadPasswordBox x:Name="PassWordRepeatBox" Grid.Row="3" Grid.Column="1" WatermarkContent="Neues Passwort wiederholen" WatermarkBehavior="HideOnTextEntered" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 

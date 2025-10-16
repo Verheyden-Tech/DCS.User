@@ -40,7 +40,7 @@ namespace DCS.User.UI
         {
             if (!string.IsNullOrWhiteSpace(DomainNameTextBox.Text))
             {
-                if (Current.UpdateDomain())
+                if (Current.CreateNewDomain())
                 {
                     this.DialogResult = true;
                     this.Close();

@@ -254,7 +254,7 @@ namespace DCS.User.UI
         /// <summary>
         /// Gets or sets the date and time when the subscription ends.
         /// </summary>
-        public DateTime EndSubscription
+        public DateTime? EndSubscription
         {
             get => this.Model.EndSubscription;
             set

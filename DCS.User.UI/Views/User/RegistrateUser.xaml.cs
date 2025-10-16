@@ -39,9 +39,11 @@ namespace DCS.User.UI
 
         private void RegistrateButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Current.Model.PassWord == PassWordRepeatBox.Password)
+            if (PassWordBox.Text == PassWordRepeatBox.Text)
             {
-                if (viewModel.RegistrateUser())
+                Current.PassWord = PassWordBox.Text;
+
+                if (Current.RegistrateUser())
                 {
                     CurrentUserService.Instance.SetUser(viewModel.Model);
                     this.DialogResult = true;

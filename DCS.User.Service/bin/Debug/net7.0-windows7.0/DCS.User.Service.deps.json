@@ -6,17 +6,17 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "DCS.User.Service/1.0.3301.1": {
+      "DCS.User.Service/1.0.3401.1": {
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
-          "DCS.Authorisation": "1.0.801",
+          "DCS.Authorisation": "1.0.901",
           "DCS.CoreLib": "1.1.401",
           "DCS.CoreLib.BaseClass": "1.1.501",
           "DCS.Data": "1.0.401",
           "DCS.Localization": "1.0.401",
           "DCS.Log": "1.0.601.5",
-          "DCS.User": "1.0.3301.1",
-          "DCS.User.Data": "1.0.3401.1",
+          "DCS.User": "1.0.3401.1",
+          "DCS.User.Data": "1.0.3501.1",
           "Dapper": "2.1.66",
           "Telerik.Licensing.Runtime": "1.4.10.0",
           "Telerik.Pivot.Core": "2021.1.325.310",
@@ -94,7 +94,7 @@
           }
         }
       },
-      "DCS.Authorisation/1.0.801": {
+      "DCS.Authorisation/1.0.901": {
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
           "DCS.CoreLib": "1.1.401",
@@ -105,8 +105,8 @@
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.Authorisation.dll": {
-            "assemblyVersion": "1.0.801.0",
-            "fileVersion": "1.0.801.0"
+            "assemblyVersion": "1.0.901.0",
+            "fileVersion": "1.0.901.0"
           }
         }
       },
@@ -548,10 +548,10 @@
           "System.Drawing.Common": "6.0.0"
         }
       },
-      "DCS.User/1.0.3301.1": {
+      "DCS.User/1.0.3401.1": {
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
-          "DCS.Authorisation": "1.0.801",
+          "DCS.Authorisation": "1.0.901",
           "DCS.CoreLib": "1.1.401",
           "DCS.Data": "1.0.401",
           "DCS.Localization": "1.0.401",
@@ -561,25 +561,25 @@
         },
         "runtime": {
           "DCS.User.dll": {
-            "assemblyVersion": "1.0.3301.0",
-            "fileVersion": "1.0.3301.0"
+            "assemblyVersion": "1.0.3401.0",
+            "fileVersion": "1.0.3401.0"
           }
         }
       },
-      "DCS.User.Data/1.0.3401.1": {
+      "DCS.User.Data/1.0.3501.1": {
         "dependencies": {
-          "DCS.Authorisation": "1.0.801",
+          "DCS.Authorisation": "1.0.901",
           "DCS.CoreLib": "1.1.401",
           "DCS.CoreLib.BaseClass": "1.1.501",
           "DCS.Data": "1.0.401",
           "DCS.Localization": "1.0.401",
           "DCS.Log": "1.0.601.5",
-          "DCS.User": "1.0.3301.1"
+          "DCS.User": "1.0.3401.1"
         },
         "runtime": {
           "DCS.User.Data.dll": {
-            "assemblyVersion": "1.0.3401.0",
-            "fileVersion": "1.0.3401.0"
+            "assemblyVersion": "1.0.3501.0",
+            "fileVersion": "1.0.3501.0"
           }
         }
       },
@@ -714,7 +714,7 @@
     }
   },
   "libraries": {
-    "DCS.User.Service/1.0.3301.1": {
+    "DCS.User.Service/1.0.3401.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -747,12 +747,12 @@
       "path": "dapper/2.1.66",
       "hashPath": "dapper.2.1.66.nupkg.sha512"
     },
-    "DCS.Authorisation/1.0.801": {
+    "DCS.Authorisation/1.0.901": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1lU0A3BqnzeX0suaIy2gIsCzFL9zRzDAdPcxeBVABj/E9ixlDb69k1bUOKBkNoUQ0N8jm3d0+/aL0SaobSvTVQ==",
-      "path": "dcs.authorisation/1.0.801",
-      "hashPath": "dcs.authorisation.1.0.801.nupkg.sha512"
+      "sha512": "sha512-YdUuf4c/oIsXGH/ZoM5oFlwytuhxtDUmyDCiBfsFHimFSaiyJ8RN6q6912TRWwlU//XPV03EVu9BZPhPdoQrHA==",
+      "path": "dcs.authorisation/1.0.901",
+      "hashPath": "dcs.authorisation.1.0.901.nupkg.sha512"
     },
     "DCS.CoreLib/1.1.401": {
       "type": "package",
@@ -1090,12 +1090,12 @@
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
-    "DCS.User/1.0.3301.1": {
+    "DCS.User/1.0.3401.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "DCS.User.Data/1.0.3401.1": {
+    "DCS.User.Data/1.0.3501.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
