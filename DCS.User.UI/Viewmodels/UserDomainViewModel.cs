@@ -43,49 +43,43 @@ namespace DCS.User.UI
             if (string.IsNullOrWhiteSpace(Model.DomainName))
                 return false;
 
-            if(domainService.Get(Model.Guid) == null)
+            try
             {
-                try
+                var userDomain = new UserDomain
                 {
-                    var userDomain = new UserDomain
-                    {
-                        Guid = Guid.NewGuid(),
-                        DomainName = Model.DomainName,
-                        SubscriptionActive = true,
-                        StartSubscription = DateTime.UtcNow
-                    };
+                    Guid = Guid.NewGuid(),
+                    DomainName = Model.DomainName,
+                    SubscriptionActive = true,
+                    StartSubscription = DateTime.UtcNow
+                };
 
-                    var subscription = new DomainSubscription
-                    {
-                        Guid = Guid.NewGuid(),
-                        DomainGuid = userDomain.Guid,
-                        DomainName = userDomain.DomainName,
-                        SubscriptionGuid = Guid.NewGuid(),
-                        SubscriptionCreated = DateTime.UtcNow,
-                        SubscriptionUpdated = DateTime.UtcNow,
-                        SubscriptionStart = DateTime.UtcNow
-                    };
-
-                    if(subscriptionService.New(subscription))
-                    {
-                        userDomain.LicenceKey = subscription.SubscriptionGuid;
-
-                        if (domainService.New(userDomain))
-                            return true;
-                    }
-
-                    Log.LogManager.Singleton.Error($"Failed to create new subscription for domain: {Model.DomainName}", "UserDomainViewModel.CreateNewDomain");
-                    return false;
-                }
-                catch(Exception ex)
+                var subscription = new DomainSubscription
                 {
-                    Log.LogManager.Singleton.Error($"Failed to create new domain: {Model.DomainName}. Exception: {ex.Message}", $"{ex.Source}");
-                    return false;
+                    Guid = Guid.NewGuid(),
+                    DomainGuid = userDomain.Guid,
+                    DomainName = userDomain.DomainName,
+                    SubscriptionGuid = Guid.NewGuid(),
+                    SubscriptionCreated = DateTime.UtcNow,
+                    SubscriptionUpdated = DateTime.UtcNow,
+                    SubscriptionStart = DateTime.UtcNow
+                };
+
+                if (subscriptionService.New(subscription))
+                {
+                    userDomain.LicenceKey = subscription.SubscriptionGuid;
+
+                    if (domainService.New(userDomain))
+                        return true;
                 }
+
+                Log.LogManager.Singleton.Error($"Failed to create new subscription for domain: {Model.DomainName}", "UserDomainViewModel.CreateNewDomain");
+                return false;
             }
-            
-            Log.LogManager.Singleton.Error($"Domain already exists: {Model.DomainName}", "UserDomainViewModel.CreateNewDomain");
-            return false;
+            catch (Exception ex)
+            {
+                Log.LogManager.Singleton.Error($"Failed to create new domain: {Model.DomainName}. Exception: {ex.Message}", $"{ex.Source}");
+                return false;
+            }
         }
 
         /// <summary>
@@ -101,38 +95,49 @@ namespace DCS.User.UI
             if (string.IsNullOrWhiteSpace(Model.DomainName))
                 return false;
 
-            if(domainService.Get(Model.Guid) != null)
+            if (Model.Guid != default)
             {
-                var subscription = subscriptionService.GetAll().Where(s => s.SubscriptionGuid == Model.LicenceKey).FirstOrDefault();
-                if(subscription != null)
+                if (domainService.Get(Model.Guid) != null)
                 {
-                    try
+                    var subscription = subscriptionService.GetAll().Where(s => s.SubscriptionGuid == Model.LicenceKey).FirstOrDefault();
+                    if (subscription != null)
                     {
-                        subscription.SubscriptionUpdated = DateTime.UtcNow;
-                        subscription.SubscriptionEnd = Model.EndSubscription;
-                        subscription.DomainName = Model.DomainName;
-
-                        if(subscriptionService.Update(subscription))
+                        try
                         {
-                            Model.SubscriptionActive = subscription.SubscriptionEnd > DateTime.UtcNow;
+                            subscription.SubscriptionUpdated = DateTime.UtcNow;
+                            subscription.SubscriptionEnd = Model.EndSubscription;
+                            subscription.DomainName = Model.DomainName;
 
-                            if (domainService.Update(Model))
-                                return true;
+                            if (subscriptionService.Update(subscription))
+                            {
+                                Model.SubscriptionActive = subscription.SubscriptionEnd > DateTime.UtcNow;
+
+                                if (domainService.Update(Model))
+                                    return true;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.LogManager.Singleton.Error($"Failed to update domain: {Model.DomainName}. Exception: {ex.Message}", $"{ex.Source}");
+                            return false;
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        Log.LogManager.Singleton.Error($"Failed to update domain: {Model.DomainName}. Exception: {ex.Message}", $"{ex.Source}");
-                        return false;
-                    }
+
+                    Log.LogManager.Singleton.Error($"Subscription not found for domain: {Model.DomainName}", "UserDomainViewModel.UpdateDomain");
+                    return false;
                 }
 
-                Log.LogManager.Singleton.Error($"Subscription not found for domain: {Model.DomainName}", "UserDomainViewModel.UpdateDomain");
+                Log.LogManager.Singleton.Error($"Domain not found: {Model.DomainName}", "UserDomainViewModel.UpdateDomain");
                 return false;
             }
+            else
+            {
+                if (CreateNewDomain())
+                    return true;
 
-            Log.LogManager.Singleton.Error($"Domain not found: {Model.DomainName}", "UserDomainViewModel.UpdateDomain");
-            return false;
+                Log.LogManager.Singleton.Error($"Failed to create new domain: {Model.DomainName}", "UserDomainViewModel.UpdateDomain");
+                return false;
+            }
         }
 
         /// <summary>

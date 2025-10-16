@@ -1,4 +1,5 @@
 ﻿using DCS.CoreLib.View;
+using DCS.User.Service;
 using System.Windows;
 
 namespace DCS.User.UI
@@ -9,8 +10,6 @@ namespace DCS.User.UI
     public partial class CreateNewUserDomain : DefaultMainWindow
     {
         private UserDomainViewModel viewModel;
-
-        private UserDomain newDomain;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateNewUserDomain"/> class.
@@ -24,8 +23,6 @@ namespace DCS.User.UI
             var obj = new UserDomain();
             this.viewModel = new UserDomainViewModel(obj);
             this.DataContext = this.viewModel;
-
-            NewDomain = obj;
         }
 
         /// <summary>
@@ -43,10 +40,8 @@ namespace DCS.User.UI
         {
             if (!string.IsNullOrWhiteSpace(DomainNameTextBox.Text))
             {
-                if (viewModel.CreateNewDomain())
+                if (Current.UpdateDomain())
                 {
-                    NewDomain = viewModel.Model;
-
                     this.DialogResult = true;
                     this.Close();
                 }
@@ -55,15 +50,6 @@ namespace DCS.User.UI
                     MessageBox.Show("Failed to create the AD User. Please try again.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
-        }
-
-        /// <summary>
-        /// Gets or sets the new createt domain.
-        /// </summary>
-        public UserDomain NewDomain
-        {
-            get { return newDomain; }
-            set { newDomain = value; }
         }
     }
 }

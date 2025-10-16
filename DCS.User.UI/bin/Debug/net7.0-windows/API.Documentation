@@ -822,11 +822,6 @@
             Gets the current <see cref="T:DCS.User.UI.UserDomainViewModel"/> instance associated with the data context.
             </summary>
         </member>
-        <member name="P:DCS.User.UI.CreateNewUserDomain.NewDomain">
-            <summary>
-            Gets or sets the new createt domain.
-            </summary>
-        </member>
         <member name="M:DCS.User.UI.CreateNewUserDomain.InitializeComponent">
             <summary>
             InitializeComponent
