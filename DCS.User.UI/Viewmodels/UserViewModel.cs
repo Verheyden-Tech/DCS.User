@@ -1,4 +1,5 @@
 ﻿using DCS.CoreLib.BaseClass;
+using DCS.User.Service;
 using Microsoft.Win32;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -15,8 +16,7 @@ namespace DCS.User.UI
         private readonly IOrganisationService organisationService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IOrganisationService>();
         private readonly IRoleService roleService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IRoleService>();
         private readonly IUserAssignementService assignementService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserAssignementService>();
-        private string selectedDB;
-        private ObservableCollection<string> userNames;
+        private readonly IUserDomainService domainService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserDomainService>();
 
         #region List Initializations
         /// <summary>
@@ -43,6 +43,13 @@ namespace DCS.User.UI
         /// Contains all added user roles.
         /// </summary>
         private ObservableCollection<Role> userRoles = new ObservableCollection<Role>();
+        /// <summary>
+        /// Represents a collection of user domains that can be observed for changes.
+        /// </summary>
+        /// <remarks>This collection is used to store and manage instances of <see cref="UserDomain"/>. 
+        /// Changes to the collection, such as additions or removals, will raise notifications  to any observers, making
+        /// it suitable for data binding scenarios.</remarks>
+        private ObservableCollection<UserDomain> domains = new ObservableCollection<UserDomain>();
         #endregion
 
         /// <summary>
@@ -56,6 +63,8 @@ namespace DCS.User.UI
         {
             this.Model = user;
 
+            Collection = userService.GetAll();
+
             AllGroups = groupService.GetAll();
             AllOrganisations = organisationService.GetAll();
             AllRoles = roleService.GetAll();
@@ -63,29 +72,194 @@ namespace DCS.User.UI
             UserGroups = GetUserGroups(user);
             UserOrganisations = GetUserOrganisations(user);
             UserRoles = GetUserRoles(user);
+
+            Domains = domainService.GetAll();
         }
 
+        #region Register, Update, Delete, Login, Set Profile Picture for User
         /// <summary>
-        /// Saves the current model by updating its state and persisting changes.
+        /// Registers a new user with the specified credentials and settings.
         /// </summary>
-        /// <remarks>This method updates the <see cref="User"/> with the current timestamp and attempts
-        /// to persist the changes  using the associated user service. The operation will fail if <see cref="User"/> is
-        /// null or if the update  operation is unsuccessful.</remarks>
-        /// <returns><see langword="true"/> if the model was successfully updated and saved; otherwise, <see langword="false"/>.</returns>
-        public bool Save()
+        /// <remarks>This method attempts to create and register a user based on the current instance's
+        /// properties. The operation will fail if the <see cref="Domain"/> property is null or empty, or if the user
+        /// creation process encounters an error.</remarks>
+        /// <returns><see langword="true"/> if the user was successfully registered; otherwise, <see langword="false"/>.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if the user creation process returns a null user object.</exception>
+        public bool RegistrateUser()
         {
             if (Model != null)
             {
-                Model.LastManipulation = DateTime.Now;
-
-                if (userService.Update(Model))
+                try
                 {
-                    return true;
+                    if (userService.New(Model))
+                    {
+                        CurrentUserService.Instance.SetUser(Model);
+                        return true;
+                    }
+
+                    return false;
                 }
-                return false;
+                catch (Exception ex)
+                {
+                    Log.LogManager.Singleton.Error($"Error while creating user: {ex.Message}.", $"{ex.Source}");
+                    return false;
+                }
             }
+
+            Log.LogManager.Singleton.Error("User model is null during registration.", "UserViewModel");
             return false;
         }
+
+        /// <summary>
+        /// Updates the user information in the system. If the user does not exist, attempts to create a new user.
+        /// </summary>
+        /// <remarks>This method first checks if the user model is valid and whether the user already
+        /// exists in the system. If the user exists, their information is updated. If the user does not exist, a new
+        /// user is created. Any errors encountered during the update or creation process are logged.</remarks>
+        /// <returns><see langword="true"/> if the user was successfully updated or created; otherwise, <see langword="false"/>.</returns>
+        public bool UpdateUser()
+        {
+            if (Model != null)
+            {
+                if (userService.Get(Model.Guid) != null)
+                {
+                    try
+                    {
+                        Model.LastManipulation = DateTime.Now;
+
+                        if (userService.Update(Model))
+                        {
+                            Log.LogManager.Singleton.Warning($"User {Model.UserName} updated successfully.", "UserViewModel");
+                            return true;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.LogManager.Singleton.Error($"Error while updating user: {ex.Message}.", $"{ex.Source}");
+                        return false;
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        if (RegistrateUser())
+                        {
+                            Log.LogManager.Singleton.Warning($"User {Model.UserName} created successfully.", "UserViewModel");
+                            return true;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.LogManager.Singleton.Error($"Error while creating user: {ex.Message}.", $"{ex.Source}");
+                        return false;
+                    }
+                }
+
+                Log.LogManager.Singleton.Error("User model is null during update.", "UserViewModel");
+                return false;
+            }
+
+            Log.LogManager.Singleton.Error("User model is null during update.", "UserViewModel");
+            return false;
+        }
+
+        /// <summary>
+        /// Deletes the user associated with the current model.
+        /// </summary>
+        /// <remarks>This method attempts to delete the user identified by its <see cref="Guid"/>
+        /// property. If the deletion is successful, a warning log entry is created. If the deletion fails or an
+        /// exception occurs, an error log entry is created, and the method returns <see langword="false"/>.</remarks>
+        /// <returns><see langword="true"/> if the user was successfully deleted; otherwise, <see langword="false"/>.</returns>
+        public bool DeleteUser()
+        {
+            if (Model != null)
+            {
+                try
+                {
+                    if (userService.Delete(Model.Guid))
+                    {
+                        Log.LogManager.Singleton.Warning($"User {Model.UserName} deleted successfully.", "UserViewModel");
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.LogManager.Singleton.Error($"Error while deleting user: {ex.Message}.", $"{ex.Source}");
+                    return false;
+                }
+            }
+
+            Log.LogManager.Singleton.Error("User model is null during deletion.", "UserViewModel");
+            return false;
+        }
+
+        /// <summary>
+        /// Attempts to log in a user based on the provided user model and credentials.
+        /// </summary>
+        /// <remarks>This method verifies the user's credentials by comparing the provided username,
+        /// password, and domain against the stored user data. If the credentials are valid, the user is set as the
+        /// current user in the system.</remarks>
+        /// <returns><see langword="true"/> if the login is successful; otherwise, <see langword="false"/>.</returns>
+        public bool LoginUser()
+        {
+            if(Model != null)
+            {
+                var user = Collection.FirstOrDefault(u => u.UserName == Model.UserName);
+                if(user != null)
+                {
+                    var hasehedPassword = userService.GetSha256Hash(Model.PassWord);
+                    if(user.PassWord == hasehedPassword && user.Domain == Model.Domain)
+                    {
+                        CurrentUserService.Instance.SetUser(user);
+                        Log.LogManager.Singleton.Warning($"User {Model.UserName} logged in successfully.", "UserViewModel");
+                        return true;
+                    }
+
+                    Log.LogManager.Singleton.Warning($"Failed login attempt for user account {Model.UserName}", "UserViewModel");
+                    return false;
+                }
+            }
+
+            Log.LogManager.Singleton.Error("User model is null during login.", "UserViewModel");
+            return false;
+        }
+
+        /// <summary>
+        /// Opens a file dialog to allow the user to select an image file and sets the selected file  as the user's
+        /// profile picture.
+        /// </summary>
+        /// <remarks>The file dialog filters for common image file formats, including .jpg, .jpeg, .png,
+        /// .gif, and .bmp. If a file is selected, the profile picture path is updated and a property change
+        /// notification is raised.</remarks>
+        /// <returns><see langword="true"/> if the user successfully selects an image file; otherwise,  <see langword="false"/>.</returns>
+        public bool SetUserProfilePicture()
+        {
+            var openFileDialog = new OpenFileDialog
+            {
+                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp",
+                Title = "Profilbild auswählen"
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                try
+                {
+                    Model.ProfilePicturePath = openFileDialog.FileName;
+                    OnPropertyChanged(nameof(Model.ProfilePicturePath));
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Log.LogManager.Singleton.Error($"Error while setting profile picture for {Model.UserName}: {ex.Message}.", $"{ex.Source}");
+                    return false;
+                }
+            }
+
+            Log.LogManager.Singleton.Warning($"No profile picture selected for {Model.UserName}.", "UserViewModel");
+            return false;
+        }
+        #endregion
 
         #region Add/Remove User from Group/Organisation/Role Methods
         /// <summary>
@@ -393,117 +567,6 @@ namespace DCS.User.UI
         }
         #endregion
 
-        /// <summary>
-        /// Opens a file dialog to allow the user to select an image file and sets the selected file  as the user's
-        /// profile picture.
-        /// </summary>
-        /// <remarks>The file dialog filters for common image file formats, including .jpg, .jpeg, .png,
-        /// .gif, and .bmp. If a file is selected, the profile picture path is updated and a property change
-        /// notification is raised.</remarks>
-        /// <returns><see langword="true"/> if the user successfully selects an image file; otherwise,  <see langword="false"/>.</returns>
-        public bool SetUserProfilePicture()
-        {
-            var openFileDialog = new OpenFileDialog
-            {
-                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp",
-                Title = "Profilbild auswählen"
-            };
-
-            if (openFileDialog.ShowDialog() == true)
-            {
-                Model.ProfilePicturePath = openFileDialog.FileName;
-                OnPropertyChanged(nameof(Model.ProfilePicturePath));
-                return true;
-            }
-
-            return false;
-        }
-
-        /// <summary>
-        /// Registers a new user with the specified credentials and settings.
-        /// </summary>
-        /// <remarks>This method attempts to create and register a user based on the current instance's
-        /// properties. The operation will fail if the <see cref="Domain"/> property is null or empty, or if the user
-        /// creation process encounters an error.</remarks>
-        /// <returns><see langword="true"/> if the user was successfully registered; otherwise, <see langword="false"/>.</returns>
-        /// <exception cref="ArgumentNullException">Thrown if the user creation process returns a null user object.</exception>
-        public bool RegistrateUser()
-        {
-            try
-            {
-                if (string.IsNullOrEmpty(this.Domain))
-                    return false;
-
-                var user = userService.CreateUser(this.UserName, this.PassWord, this.IsAdmin, this.KeepLoggedIn, this.Domain);
-
-                if (user == null)
-                    throw new ArgumentNullException(nameof(user));
-
-                if (userService.New(user))
-                {
-                    this.Model = user;
-                    return true;
-                }
-
-                return false;
-            }
-            catch (Exception ex)
-            {
-                Log.LogManager.Singleton.Error($"Error while creating user: {ex.Message}.", $"{ex.Source}");
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Attempts to log in a user using the provided credentials and Active Directory domain.
-        /// </summary>
-        /// <param name="username">The username of the user attempting to log in. Cannot be null or empty.</param>
-        /// <param name="password">The password associated with the specified username. Cannot be null or empty.</param>
-        /// <param name="adDomain">The Active Directory domain to authenticate against. Cannot be null or empty.</param>
-        /// <returns><see langword="true"/> if the login is successful; otherwise, <see langword="false"/>.</returns>
-        public bool LoginUser(string username, string password, string adDomain)
-        {
-            if (userService.LoginUser(username, password, adDomain))
-            {
-                return true;
-            };
-            return false;
-        }
-
-        /// <summary>
-        /// Retrieves a collection of user names based on the specified connection type.
-        /// </summary>
-        /// <remarks>This method initializes a new <see cref="ObservableCollection{T}"/> and populates it
-        /// with user names  retrieved from the user service when the connection type is "Home."</remarks>
-        /// <param name="connectionType">The type of connection to use when retrieving user names.  Must be "Home" to populate the collection;
-        /// otherwise, an empty collection is returned.</param>
-        /// <returns>An <see cref="ObservableCollection{T}"/> containing the user names.  The collection will be empty if the
-        /// connection type is not "Home."</returns>
-        public ObservableCollection<string> SetItemsSource(string connectionType)
-        {
-            userNames = new ObservableCollection<string>();
-
-            if (connectionType == "Home")
-            {
-                foreach (var user in userService.GetAll())
-                {
-                    userNames.Add(user.UserName);
-                }
-            }
-
-            return userNames;
-        }
-
-        /// <summary>
-        /// Gets a user by its user name.
-        /// </summary>
-        /// <param name="userName">Given user name.</param>
-        /// <returns>User instance by its username.</returns>
-        public User GetByName(string userName)
-        {
-            return userService.GetByName(userName);
-        }
-
         #region Lists
         /// <summary>
         /// Contains all avialable user groups from the table.
@@ -602,39 +665,23 @@ namespace DCS.User.UI
         }
 
         /// <summary>
-        /// Contains avialable user account names.
+        /// Gets or sets the collection of user domains associated with the current context.
         /// </summary>
-        public ObservableCollection<string> UserNames
+        public ObservableCollection<UserDomain> Domains
         {
-            get
-            {
-                return userNames;
-            }
+            get => domains;
             set
             {
-                userNames = value;
-                OnPropertyChanged(nameof(UserNames));
+                if (domains != value)
+                {
+                    domains = value;
+                    OnPropertyChanged(nameof(Domains));
+                }
             }
         }
         #endregion
 
         #region Properties
-        /// <summary>
-        /// Gets or sets the selected database as string.
-        /// </summary>
-        public string SelectedDB
-        {
-            get
-            {
-                return selectedDB;
-            }
-            set
-            {
-                selectedDB = value;
-                OnPropertyChanged(nameof(SelectedDB));
-            }
-        }
-
         /// <summary>
         /// Gets or sets the unique identifier for the user.
         /// </summary>

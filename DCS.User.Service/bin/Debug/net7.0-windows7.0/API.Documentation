@@ -76,6 +76,21 @@
         <member name="M:DCS.User.Service.RoleService.CreateRole(System.String,System.String,System.Boolean,System.Guid)">
             <inheritdoc/>
         </member>
+        <member name="T:DCS.User.Service.UserDomainService">
+            <summary>
+            Provides domain-specific operations for managing user data, including access and manipulation of user domain
+            entities.
+            </summary>
+            <remarks>This service acts as a bridge between the application layer and the data access layer,
+            encapsulating business logic  related to user domains. It relies on an <see cref="T:DCS.User.IUserDomainRepository"/>
+            implementation to perform data operations.</remarks>
+        </member>
+        <member name="M:DCS.User.Service.UserDomainService.#ctor(DCS.User.IUserDomainRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DCS.User.Service.UserDomainService"/> class with the specified repository.
+            </summary>
+            <param name="repository">The repository used to access and manage user domain data. This parameter cannot be <see langword="null"/>.</param>
+        </member>
         <member name="T:DCS.User.Service.UserService">
             <summary>
             UserService with basic methods inherited from <see cref="T:DCS.CoreLib.BaseClass.ServiceBase`3"/> to handle user account data.
@@ -85,12 +100,6 @@
             <summary>
             Default constructor for UserService.
             </summary>
-        </member>
-        <member name="M:DCS.User.Service.UserService.RegisterADUser(DCS.User.ADUser)">
-            <inheritdoc/>
-        </member>
-        <member name="M:DCS.User.Service.UserService.GetDomainNames">
-            <inheritdoc/>
         </member>
         <member name="M:DCS.User.Service.UserService.GetByName(System.String)">
             <inheritdoc/>
@@ -104,13 +113,7 @@
         <member name="M:DCS.User.Service.UserService.UnsetKeepLoggedIn(DCS.User.User)">
             <inheritdoc/>
         </member>
-        <member name="M:DCS.User.Service.UserService.CreateUser(System.String,System.String,System.Boolean,System.Boolean,System.String)">
-            <inheritdoc/>
-        </member>
         <member name="M:DCS.User.Service.UserService.GetSha256Hash(System.String)">
-            <inheritdoc/>
-        </member>
-        <member name="M:DCS.User.Service.UserService.LoginUser(System.String,System.String,System.String)">
             <inheritdoc/>
         </member>
         <member name="T:DCS.User.UserAssignementService">

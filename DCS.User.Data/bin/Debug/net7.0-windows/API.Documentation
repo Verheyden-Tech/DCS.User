@@ -56,6 +56,24 @@
         <member name="M:DCS.User.Data.RoleRepository.GetByName(System.String)">
             <inheritdoc/>
         </member>
+        <member name="T:DCS.User.Data.UserDomainRepository">
+            <summary>
+            Provides data access functionality for the <see cref="T:DCS.User.UserDomain"/> entity, enabling operations such as
+            retrieval, insertion, updating, and deletion of user domain records in the database.
+            </summary>
+            <remarks>This repository is designed to interact with the database table <c>VT_User_Domain</c>, using
+            <c>Guid</c> as the primary key. It leverages the provided <see cref="T:DCS.Data.ISqlService"/> to perform SQL operations.
+            The repository is intended to be used in scenarios where user domain data needs to be managed
+            programmatically.</remarks>
+        </member>
+        <member name="M:DCS.User.Data.UserDomainRepository.#ctor(DCS.Data.ISqlService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DCS.User.Data.UserDomainRepository"/> class,  providing access to user domain
+            data stored in the database.
+            </summary>
+            <param name="sqlService">The <see cref="T:DCS.Data.ISqlService"/> instance used to interact with the database. This service is required to
+            perform SQL operations.</param>
+        </member>
         <member name="T:DCS.User.Data.UserRepository">
             <summary>
             UserRepository with basic methods inherited from <see cref="T:DCS.CoreLib.BaseClass.RepositoryBase`2"/> to handle user data on the table.
@@ -76,12 +94,6 @@
             Default constructor for UserRepository.
             </summary>
             <param name="sqlService">Sql service.</param>
-        </member>
-        <member name="M:DCS.User.Data.UserRepository.RegisterADUser(DCS.User.ADUser)">
-            <inheritdoc/>
-        </member>
-        <member name="M:DCS.User.Data.UserRepository.GetDomainNames">
-            <inheritdoc/>
         </member>
         <member name="M:DCS.User.Data.UserRepository.GetByName(System.String)">
             <inheritdoc/>

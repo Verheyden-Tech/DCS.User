@@ -8,18 +8,6 @@ namespace DCS.User
     public interface IUserRepository : IRepositoryBase<Guid, User>
     {
         /// <summary>
-        /// Register a new Active Directory user in the database.
-        /// </summary>
-        /// <returns>True if the insert was successful, otherwise false.</returns>
-        bool RegisterADUser(ADUser aDUser);
-
-        /// <summary>
-        /// Gets all domain names from the database.
-        /// </summary>
-        /// <returns>List of avialable domain names on the table.</returns>
-        IList<ADUser> GetDomainNames();
-
-        /// <summary>
         /// Gets a user by its given user name.
         /// </summary>
         /// <param name="userName">Given user name.</param>

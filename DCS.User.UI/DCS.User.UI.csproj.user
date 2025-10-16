@@ -17,7 +17,7 @@
     <Compile Update="Views\Role\RoleManagement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\User\CreateNewADUserDomain.xaml.cs">
+    <Compile Update="Views\User\CreateNewUserDomain.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

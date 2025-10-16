@@ -110,22 +110,19 @@
             <returns>The <see cref="T:DCS.User.UserAssignement"/> object representing the assignment of the user to the role,  or <see
             langword="null"/> if no such assignment exists.</returns>
         </member>
+        <member name="T:DCS.User.IUserDomainRepository">
+            <summary>
+            Defines a contract for a repository that manages <see cref="T:DCS.User.UserDomain"/> entities, identified by a <see
+            cref="T:System.Guid"/>.
+            </summary>
+            <remarks>This interface extends <see cref="T:DCS.CoreLib.IRepositoryBase`2"/> to provide repository
+            functionality  specific to <see cref="T:DCS.User.UserDomain"/> entities. It serves as a domain-level abstraction for user-related
+            data operations.</remarks>
+        </member>
         <member name="T:DCS.User.IUserRepository">
             <summary>
             UserRepository to handle user data on the table.
             </summary>
-        </member>
-        <member name="M:DCS.User.IUserRepository.RegisterADUser(DCS.User.ADUser)">
-            <summary>
-            Register a new Active Directory user in the database.
-            </summary>
-            <returns>True if the insert was successful, otherwise false.</returns>
-        </member>
-        <member name="M:DCS.User.IUserRepository.GetDomainNames">
-            <summary>
-            Gets all domain names from the database.
-            </summary>
-            <returns>List of avialable domain names on the table.</returns>
         </member>
         <member name="M:DCS.User.IUserRepository.GetByName(System.String)">
             <summary>
@@ -272,21 +269,18 @@
             <returns><see langword="true"/> if the user was successfully removed from the role; otherwise, <see
             langword="false"/>.</returns>
         </member>
+        <member name="T:DCS.User.IUserDomainService">
+            <summary>
+            Defines the contract for domain-level operations related to user management.
+            </summary>
+            <remarks>This interface extends <see cref="T:DCS.User.IUserDomainRepository"/> to include additional
+            domain-specific behaviors and rules for managing users. Implementations of this interface should encapsulate
+            business logic that operates on user entities, ensuring consistency and enforcing domain constraints.</remarks>
+        </member>
         <member name="T:DCS.User.IUserService">
             <summary>
             UserService to manipulate user data.
             </summary>
-        </member>
-        <member name="M:DCS.User.IUserService.CreateUser(System.String,System.String,System.Boolean,System.Boolean,System.String)">
-            <summary>
-            Creates new instance of <see cref="T:DCS.User.User"/>.
-            </summary>
-            <param name="userName">User name.</param>
-            <param name="rawPassWord">User raw password to hash.</param>
-            <param name="isAdmin">User has admin rights flag.</param>
-            <param name="keepLoggedIn">User keep logged in flag.</param>
-            <param name="adDomain">Active Directory domain name.</param>
-            <returns>New instance of <see cref="T:DCS.User.User"/>.</returns>
         </member>
         <member name="M:DCS.User.IUserService.GetSha256Hash(System.String)">
             <summary>
@@ -294,37 +288,6 @@
             </summary>
             <param name="rawPassword">User password.</param>
             <returns>Sha256 hashed user password.</returns>
-        </member>
-        <member name="M:DCS.User.IUserService.LoginUser(System.String,System.String,System.String)">
-            <summary>
-            Login user with username and password.
-            </summary>
-            <returns>Wether the login was successful.</returns>
-        </member>
-        <member name="T:DCS.User.ADUser">
-            <summary>
-            Model for Active Directory user.
-            </summary>
-        </member>
-        <member name="M:DCS.User.ADUser.#ctor">
-            <summary>
-            Default constructor for <see cref="T:DCS.User.ADUser"/> class.
-            </summary>
-        </member>
-        <member name="P:DCS.User.ADUser.Guid">
-            <summary>
-            Gets or sets the unique identifier for the domain.
-            </summary>
-        </member>
-        <member name="P:DCS.User.ADUser.DomainName">
-            <summary>
-            Gets or sets the name of the user domain.
-            </summary>
-        </member>
-        <member name="P:DCS.User.ADUser.IsActive">
-            <summary>
-            Indicates whether the user is an active.
-            </summary>
         </member>
         <member name="T:DCS.User.Group">
             <summary>
@@ -594,6 +557,46 @@
         <member name="P:DCS.User.UserAssignement.MembershipEnd">
             <summary>
             Gets or sets the date and time when the membership ends.
+            </summary>
+        </member>
+        <member name="T:DCS.User.UserDomain">
+            <summary>
+            Model for Active Directory user.
+            </summary>
+        </member>
+        <member name="M:DCS.User.UserDomain.#ctor">
+            <summary>
+            Default constructor for <see cref="T:DCS.User.UserDomain"/> class.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UserDomain.Guid">
+            <summary>
+            Gets or sets the unique identifier for the domain.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UserDomain.DomainName">
+            <summary>
+            Gets or sets the name of the domain.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UserDomain.SubscriptionActive">
+            <summary>
+            Indicates whether the domain has an active subscription.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UserDomain.LicenceKey">
+            <summary>
+            Gets or sets the license key used to activate the application or service.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UserDomain.StartSubscription">
+            <summary>
+            Gets or sets the date and time when the subscription for the domain starts.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UserDomain.EndSubscription">
+            <summary>
+            Gets or sets the estimated date and time when the subscription ends.
             </summary>
         </member>
     </members>

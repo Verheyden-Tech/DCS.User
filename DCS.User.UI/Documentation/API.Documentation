@@ -4,51 +4,6 @@
         <name>DCS.User.UI</name>
     </assembly>
     <members>
-        <member name="T:DCS.User.UI.ADUserViewModel">
-            <summary>
-            Represents a view model for an Active Directory (AD) user, providing properties and methods to manage and
-            interact with the underlying <see cref="T:DCS.User.ADUser"/> model.
-            </summary>
-            <remarks>This class serves as a bridge between the UI and the underlying <see cref="T:DCS.User.ADUser"/> model,
-            encapsulating the logic for creating, updating, and managing AD user data. It provides properties to access and
-            modify the user's unique identifier, domain name, and active status, as well as a method to create and register
-            new AD users.</remarks>
-        </member>
-        <member name="M:DCS.User.UI.ADUserViewModel.#ctor(DCS.User.ADUser)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DCS.User.UI.ADUserViewModel"/> class using the specified Active Directory
-            user model.
-            </summary>
-            <remarks>This constructor sets the <see cref="P:DCS.CoreLib.BaseClass.ViewModelBase`2.Model"/> property to the provided <paramref
-            name="adUser"/> instance.</remarks>
-            <param name="adUser">The Active Directory user model used to initialize the view model. Cannot be <see langword="null"/>.</param>
-        </member>
-        <member name="M:DCS.User.UI.ADUserViewModel.CreateNewADUser">
-            <summary>
-            Creates a new Active Directory (AD) user and registers it in the system.
-            </summary>
-            <remarks>This method generates a new AD user with a unique identifier, associates it with the
-            current domain,  and marks it as active. The user is then registered using the underlying user service. If
-            the domain  name is not specified or the registration fails, the method returns <see
-            langword="false"/>.</remarks>
-            <returns><see langword="true"/> if the AD user is successfully created and registered; otherwise, <see
-            langword="false"/>.</returns>
-        </member>
-        <member name="P:DCS.User.UI.ADUserViewModel.Guid">
-            <summary>
-            Gets or sets the unique identifier of the <see cref="T:DCS.User.ADUser"/>.
-            </summary>
-        </member>
-        <member name="P:DCS.User.UI.ADUserViewModel.DomainName">
-            <summary>
-            Gets or sets the domain name of the <see cref="T:DCS.User.ADUser"/>.
-            </summary>
-        </member>
-        <member name="P:DCS.User.UI.ADUserViewModel.IsActive">
-            <summary>
-            Gets or sets a value indicating whether the current <see cref="T:DCS.User.ADUser"/> is active.
-            </summary>
-        </member>
         <member name="T:DCS.User.UI.GroupViewModel">
             <summary>
             Represents the ViewModel for the <see cref="T:DCS.User.Group"/> model. Implements the <see cref="T:DCS.CoreLib.BaseClass.ViewModelBase`2"/> class.
@@ -319,6 +274,85 @@
             Role properties last time changed date.
             </summary>
         </member>
+        <member name="T:DCS.User.UI.UserDomainViewModel">
+            <summary>
+            Represents a view model for an Active Directory (AD) user, providing properties and methods to manage and
+            interact with the underlying <see cref="T:DCS.User.UserDomain"/> model.
+            </summary>
+            <remarks>This class serves as a bridge between the UI and the underlying <see cref="T:DCS.User.UserDomain"/> model,
+            encapsulating the logic for creating, updating, and managing AD user data. It provides properties to access and
+            modify the user's unique identifier, domain name, and active status, as well as a method to create and register
+            new AD users.</remarks>
+        </member>
+        <member name="M:DCS.User.UI.UserDomainViewModel.#ctor(DCS.User.UserDomain)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DCS.User.UI.UserDomainViewModel"/> class using the specified Active Directory
+            user model.
+            </summary>
+            <remarks>This constructor sets the <see cref="P:DCS.CoreLib.BaseClass.ViewModelBase`2.Model"/> property to the provided <paramref
+            name="userDomain"/> instance.</remarks>
+            <param name="userDomain">The Active Directory user model used to initialize the view model. Cannot be <see langword="null"/>.</param>
+        </member>
+        <member name="M:DCS.User.UI.UserDomainViewModel.CreateNewDomain">
+            <summary>
+            Creates a new domain and its associated subscription if the domain does not already exist.
+            </summary>
+            <remarks>This method checks if the domain specified in the <c>Model.DomainName</c> property is
+            valid and does not already exist.  If the domain is valid and does not exist, a new domain and subscription
+            are created and persisted.  If the operation fails at any step, an error is logged, and the method returns
+            <see langword="false"/>.</remarks>
+            <returns><see langword="true"/> if the domain and subscription are successfully created; otherwise, <see
+            langword="false"/>.</returns>
+        </member>
+        <member name="M:DCS.User.UI.UserDomainViewModel.UpdateDomain">
+            <summary>
+            Updates the domain information associated with the current model.
+            </summary>
+            <remarks>This method updates the domain details in the system if the domain exists and the
+            model contains valid data. If the domain does not exist or the model's domain name is null, empty, or
+            whitespace, the update operation will fail. Logs are written to capture errors or when the domain is not
+            found.</remarks>
+            <returns><see langword="true"/> if the domain was successfully updated; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DCS.User.UI.UserDomainViewModel.DeleteDomain">
+            <summary>
+            Deletes the domain associated with the current model, if it exists.
+            </summary>
+            <remarks>This method attempts to delete the domain identified by the <c>Guid</c> property of
+            the current model. If the domain does not exist or the deletion fails, the method logs an error and returns
+            <see langword="false"/>.</remarks>
+            <returns><see langword="true"/> if the domain was successfully deleted; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="P:DCS.User.UI.UserDomainViewModel.Guid">
+            <summary>
+            Gets or sets the unique identifier of the <see cref="T:DCS.User.UserDomain"/>.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserDomainViewModel.DomainName">
+            <summary>
+            Gets or sets the domain name of the <see cref="T:DCS.User.UserDomain"/>.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserDomainViewModel.SubscriptionActive">
+            <summary>
+            Gets or sets a value indicating whether the current <see cref="T:DCS.User.UserDomain"/> is active.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserDomainViewModel.LicenceKey">
+            <summary>
+            Gets or sets the license key associated with the application.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserDomainViewModel.StartSubscription">
+            <summary>
+            Gets or sets the start date of the subscription.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserDomainViewModel.EndSubscription">
+            <summary>
+            Gets or sets the date and time when the subscription ends.
+            </summary>
+        </member>
         <member name="T:DCS.User.UI.UserViewModel">
             <summary>
             Implements the <see cref="T:DCS.CoreLib.BaseClass.ViewModelBase`2"/> class for the <see cref="T:DCS.User.User"/> model.
@@ -354,6 +388,14 @@
             Contains all added user roles.
             </summary>
         </member>
+        <member name="F:DCS.User.UI.UserViewModel.domains">
+            <summary>
+            Represents a collection of user domains that can be observed for changes.
+            </summary>
+            <remarks>This collection is used to store and manage instances of <see cref="T:DCS.User.UserDomain"/>. 
+            Changes to the collection, such as additions or removals, will raise notifications  to any observers, making
+            it suitable for data binding scenarios.</remarks>
+        </member>
         <member name="M:DCS.User.UI.UserViewModel.#ctor(DCS.User.User)">
             <summary>
             Initializes a new instance of the <see cref="T:DCS.User.UI.UserViewModel"/> class using the specified user.
@@ -363,14 +405,52 @@
             roles for reference.</remarks>
             <param name="user">The user model used to initialize the view model. Cannot be <see langword="null"/>.</param>
         </member>
-        <member name="M:DCS.User.UI.UserViewModel.Save">
+        <member name="M:DCS.User.UI.UserViewModel.RegistrateUser">
             <summary>
-            Saves the current model by updating its state and persisting changes.
+            Registers a new user with the specified credentials and settings.
             </summary>
-            <remarks>This method updates the <see cref="T:DCS.User.User"/> with the current timestamp and attempts
-            to persist the changes  using the associated user service. The operation will fail if <see cref="T:DCS.User.User"/> is
-            null or if the update  operation is unsuccessful.</remarks>
-            <returns><see langword="true"/> if the model was successfully updated and saved; otherwise, <see langword="false"/>.</returns>
+            <remarks>This method attempts to create and register a user based on the current instance's
+            properties. The operation will fail if the <see cref="P:DCS.User.UI.UserViewModel.Domain"/> property is null or empty, or if the user
+            creation process encounters an error.</remarks>
+            <returns><see langword="true"/> if the user was successfully registered; otherwise, <see langword="false"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if the user creation process returns a null user object.</exception>
+        </member>
+        <member name="M:DCS.User.UI.UserViewModel.UpdateUser">
+            <summary>
+            Updates the user information in the system. If the user does not exist, attempts to create a new user.
+            </summary>
+            <remarks>This method first checks if the user model is valid and whether the user already
+            exists in the system. If the user exists, their information is updated. If the user does not exist, a new
+            user is created. Any errors encountered during the update or creation process are logged.</remarks>
+            <returns><see langword="true"/> if the user was successfully updated or created; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DCS.User.UI.UserViewModel.DeleteUser">
+            <summary>
+            Deletes the user associated with the current model.
+            </summary>
+            <remarks>This method attempts to delete the user identified by its <see cref="P:DCS.User.UI.UserViewModel.Guid"/>
+            property. If the deletion is successful, a warning log entry is created. If the deletion fails or an
+            exception occurs, an error log entry is created, and the method returns <see langword="false"/>.</remarks>
+            <returns><see langword="true"/> if the user was successfully deleted; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DCS.User.UI.UserViewModel.LoginUser">
+            <summary>
+            Attempts to log in a user based on the provided user model and credentials.
+            </summary>
+            <remarks>This method verifies the user's credentials by comparing the provided username,
+            password, and domain against the stored user data. If the credentials are valid, the user is set as the
+            current user in the system.</remarks>
+            <returns><see langword="true"/> if the login is successful; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DCS.User.UI.UserViewModel.SetUserProfilePicture">
+            <summary>
+            Opens a file dialog to allow the user to select an image file and sets the selected file  as the user's
+            profile picture.
+            </summary>
+            <remarks>The file dialog filters for common image file formats, including .jpg, .jpeg, .png,
+            .gif, and .bmp. If a file is selected, the profile picture path is updated and a property change
+            notification is raised.</remarks>
+            <returns><see langword="true"/> if the user successfully selects an image file; otherwise,  <see langword="false"/>.</returns>
         </member>
         <member name="M:DCS.User.UI.UserViewModel.AddUserToGroup(DCS.User.Group)">
             <summary>
@@ -473,53 +553,6 @@
             the user. If the user has no roles or if <paramref name="user"/> is <see langword="null"/>, an empty
             collection is returned.</returns>
         </member>
-        <member name="M:DCS.User.UI.UserViewModel.SetUserProfilePicture">
-            <summary>
-            Opens a file dialog to allow the user to select an image file and sets the selected file  as the user's
-            profile picture.
-            </summary>
-            <remarks>The file dialog filters for common image file formats, including .jpg, .jpeg, .png,
-            .gif, and .bmp. If a file is selected, the profile picture path is updated and a property change
-            notification is raised.</remarks>
-            <returns><see langword="true"/> if the user successfully selects an image file; otherwise,  <see langword="false"/>.</returns>
-        </member>
-        <member name="M:DCS.User.UI.UserViewModel.RegistrateUser">
-            <summary>
-            Registers a new user with the specified credentials and settings.
-            </summary>
-            <remarks>This method attempts to create and register a user based on the current instance's
-            properties. The operation will fail if the <see cref="P:DCS.User.UI.UserViewModel.Domain"/> property is null or empty, or if the user
-            creation process encounters an error.</remarks>
-            <returns><see langword="true"/> if the user was successfully registered; otherwise, <see langword="false"/>.</returns>
-            <exception cref="T:System.ArgumentNullException">Thrown if the user creation process returns a null user object.</exception>
-        </member>
-        <member name="M:DCS.User.UI.UserViewModel.LoginUser(System.String,System.String,System.String)">
-            <summary>
-            Attempts to log in a user using the provided credentials and Active Directory domain.
-            </summary>
-            <param name="username">The username of the user attempting to log in. Cannot be null or empty.</param>
-            <param name="password">The password associated with the specified username. Cannot be null or empty.</param>
-            <param name="adDomain">The Active Directory domain to authenticate against. Cannot be null or empty.</param>
-            <returns><see langword="true"/> if the login is successful; otherwise, <see langword="false"/>.</returns>
-        </member>
-        <member name="M:DCS.User.UI.UserViewModel.SetItemsSource(System.String)">
-            <summary>
-            Retrieves a collection of user names based on the specified connection type.
-            </summary>
-            <remarks>This method initializes a new <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/> and populates it
-            with user names  retrieved from the user service when the connection type is "Home."</remarks>
-            <param name="connectionType">The type of connection to use when retrieving user names.  Must be "Home" to populate the collection;
-            otherwise, an empty collection is returned.</param>
-            <returns>An <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/> containing the user names.  The collection will be empty if the
-            connection type is not "Home."</returns>
-        </member>
-        <member name="M:DCS.User.UI.UserViewModel.GetByName(System.String)">
-            <summary>
-            Gets a user by its user name.
-            </summary>
-            <param name="userName">Given user name.</param>
-            <returns>User instance by its username.</returns>
-        </member>
         <member name="P:DCS.User.UI.UserViewModel.AllGroups">
             <summary>
             Contains all avialable user groups from the table.
@@ -550,14 +583,9 @@
             Contains all added user roles.
             </summary>
         </member>
-        <member name="P:DCS.User.UI.UserViewModel.UserNames">
+        <member name="P:DCS.User.UI.UserViewModel.Domains">
             <summary>
-            Contains avialable user account names.
-            </summary>
-        </member>
-        <member name="P:DCS.User.UI.UserViewModel.SelectedDB">
-            <summary>
-            Gets or sets the selected database as string.
+            Gets or sets the collection of user domains associated with the current context.
             </summary>
         </member>
         <member name="P:DCS.User.UI.UserViewModel.Guid">
@@ -774,32 +802,32 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="T:DCS.User.UI.CreateNewADUserDomain">
+        <member name="T:DCS.User.UI.CreateNewUserDomain">
             <summary>
             Interaction logic for CreateNewADUserDomain.xaml
             </summary>
             <summary>
-            CreateNewADUserDomain
+            CreateNewUserDomain
             </summary>
         </member>
-        <member name="M:DCS.User.UI.CreateNewADUserDomain.#ctor">
+        <member name="M:DCS.User.UI.CreateNewUserDomain.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:DCS.User.UI.CreateNewADUserDomain"/> class.
+            Initializes a new instance of the <see cref="T:DCS.User.UI.CreateNewUserDomain"/> class.
             </summary>
             <remarks>This constructor sets up the data context for the view by creating a new instance of 
-            <see cref="T:DCS.User.ADUser"/> and initializing the associated <see cref="T:DCS.User.UI.ADUserViewModel"/>.</remarks>
+            <see cref="T:DCS.User.UserDomain"/> and initializing the associated <see cref="T:DCS.User.UI.UserDomainViewModel"/>.</remarks>
         </member>
-        <member name="P:DCS.User.UI.CreateNewADUserDomain.Current">
+        <member name="P:DCS.User.UI.CreateNewUserDomain.Current">
             <summary>
-            Gets the current <see cref="T:DCS.User.UI.ADUserViewModel"/> instance associated with the data context.
+            Gets the current <see cref="T:DCS.User.UI.UserDomainViewModel"/> instance associated with the data context.
             </summary>
         </member>
-        <member name="P:DCS.User.UI.CreateNewADUserDomain.NewDomain">
+        <member name="P:DCS.User.UI.CreateNewUserDomain.NewDomain">
             <summary>
             Gets or sets the new createt domain.
             </summary>
         </member>
-        <member name="M:DCS.User.UI.CreateNewADUserDomain.InitializeComponent">
+        <member name="M:DCS.User.UI.CreateNewUserDomain.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
@@ -819,6 +847,11 @@
             <remarks>This constructor sets up the data context for the user registration view by creating
             a new instance of <see cref="T:DCS.User.UI.UserViewModel"/> and associating it with the provided domain
             name.</remarks>
+        </member>
+        <member name="P:DCS.User.UI.RegistrateUser.Current">
+            <summary>
+            Gets the current user view model associated with the data context.
+            </summary>
         </member>
         <member name="M:DCS.User.UI.RegistrateUser.InitializeComponent">
             <summary>
@@ -856,11 +889,6 @@
             UserLogin
             </summary>
         </member>
-        <member name="P:DCS.User.UI.UserLogin.DomainNames">
-            <summary>
-            Represents the domain names for the database connection.
-            </summary>
-        </member>
         <member name="M:DCS.User.UI.UserLogin.#ctor">
             <summary>
             Default constructor to initializes a new instance of <see cref="T:DCS.User.UI.UserLogin"/>.
@@ -868,17 +896,7 @@
         </member>
         <member name="P:DCS.User.UI.UserLogin.Current">
             <summary>
-            Gets the current user view model associated as data context.
-            </summary>
-        </member>
-        <member name="P:DCS.User.UI.UserLogin.LoggedInUser">
-            <summary>
-            Represents the current logged in user.
-            </summary>
-        </member>
-        <member name="P:DCS.User.UI.UserLogin.SelectedDomain">
-            <summary>
-            Represents the current selected database.
+            Gets the current user view model as data context.
             </summary>
         </member>
         <member name="M:DCS.User.UI.UserLogin.InitializeComponent">

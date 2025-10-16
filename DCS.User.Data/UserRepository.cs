@@ -30,25 +30,6 @@ namespace DCS.User.Data
         }
 
         /// <inheritdoc/>
-        public bool RegisterADUser(ADUser aDUser)
-        {
-            if(aDUser == null)
-                return false;
-
-            string sql = $"INSERT INTO dbo.VT_ADUser (Guid, DomainName, IsActive, CompanyGuid) VALUES (@Guid, @DomainName, @IsActive, @CompanyGuid)";
-
-            return sqlService.ExecuteSQL(sql, aDUser);
-        }
-
-        /// <inheritdoc/>
-        public IList<ADUser> GetDomainNames()
-        {
-            string sql = $"SELECT * FROM dbo.VT_ADUser";
-
-            return sqlService.SQLQueryList<ADUser>(sql);
-        }
-
-        /// <inheritdoc/>
         public User GetByName(string userName)
         {
             if (string.IsNullOrEmpty(userName))

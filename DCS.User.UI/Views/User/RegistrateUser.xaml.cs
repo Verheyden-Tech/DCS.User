@@ -26,12 +26,21 @@ namespace DCS.User.UI
             this.DataContext = viewModel;
         }
 
+        /// <summary>
+        /// Gets the current user view model associated with the data context.
+        /// </summary>
+        public UserViewModel Current
+        {
+            get
+            {
+                return DataContext as UserViewModel;
+            }
+        }
+
         private void RegistrateButton_Click(object sender, RoutedEventArgs e)
         {
-            if (PassWordBox.Password == PassWordRepeatBox.Password)
+            if (Current.Model.PassWord == PassWordRepeatBox.Password)
             {
-                viewModel.PassWord = PassWordBox.Password;
-
                 if (viewModel.RegistrateUser())
                 {
                     CurrentUserService.Instance.SetUser(viewModel.Model);
@@ -62,24 +71,6 @@ namespace DCS.User.UI
             {
                 return;
             }
-        }
-
-        private void IsADUserCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            IsAdminCheckBox.IsEnabled = false;
-            IsAdminCheckBox.IsChecked = false;
-
-            KeepLoggedInCheckBox.IsChecked = false;
-            KeepLoggedInCheckBox.IsEnabled = false;
-        }
-
-        private void IsADUserCheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            IsAdminCheckBox.IsEnabled = true;
-            IsAdminCheckBox.IsChecked = true;
-
-            KeepLoggedInCheckBox.IsChecked = true;
-            KeepLoggedInCheckBox.IsEnabled = true;
         }
     }
 }
