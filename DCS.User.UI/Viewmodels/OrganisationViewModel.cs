@@ -12,54 +12,102 @@ namespace DCS.User.UI
         private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
         private readonly IUserAssignementService userAssignementService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserAssignementService>();
 
+        private UserAssignementViewModel assignementViewModel;
+
         /// <summary>
         /// Default constructor initialize a new instance of <see cref="OrganisationViewModel"/>.
         /// </summary>
         public OrganisationViewModel(Organisation organisation) : base(organisation)
         {
             this.Model = organisation;
+
+            Collection = organisationService.GetAll();
+
+            var ua = new UserAssignement();
+            assignementViewModel = new UserAssignementViewModel(ua);
         }
 
         /// <summary>
-        /// Saves the current instance of the <see cref="OrganisationViewModel"/> class.
+        /// Creates a new organisation based on the current model and saves it using the organisation service.
         /// </summary>
-        /// <returns>True if the save was successful; otherwise, false.</returns>
-        public bool Save()
+        /// <remarks>This method initializes a new organisation with the properties specified in the
+        /// current model, assigns a unique identifier, and sets default values for its state. The organisation is then
+        /// persisted using the organisation service. If the model is null or an error occurs during the creation
+        /// process, the method logs the error and returns <see langword="false"/>.</remarks>
+        /// <returns><see langword="true"/> if the organisation is successfully created and saved; otherwise, <see
+        /// langword="false"/>.</returns>
+        public bool CreateNewOrganisation()
         {
             if (Model != null)
             {
-                Model.LastManipulation = DateTime.Now;
-                if (organisationService.Update(Model))
+                try
                 {
-                    return true;
+                    var newOrganisation = new Organisation
+                    {
+                        Guid = Guid.NewGuid(),
+                        Name = Model.Name,
+                        Description = Model.Description,
+                        IsActive = true,
+                        CreationDate = DateTime.Now,
+                        LastManipulation = DateTime.Now
+                    };
+
+                    if (organisationService.New(newOrganisation))
+                        return true;
                 }
-                return false;
+                catch (Exception ex)
+                {
+                    Log.LogManager.Singleton.Error($"Error while creating new organisation: {ex.Message}.", $"{ex.Source}");
+                    return false;
+                }
             }
+
+            Log.LogManager.Singleton.Error("Organisation model is null.", "OrganisationViewModel.CreateNewOrganisation");
             return false;
         }
 
         /// <summary>
-        /// Gets all available active organisations from the table.
+        /// Updates the organisation based on the current model. If the organisation exists, its details are updated;
+        /// otherwise, a new organisation is created.
         /// </summary>
-        /// <returns>All avialable active organisations from the table.</returns>
-        public ObservableCollection<Organisation> GetAllActiveOrganisations()
+        /// <remarks>This method first attempts to retrieve an existing organisation using the model's
+        /// unique identifier. If found, the organisation's details are updated. If the update fails or the organisation
+        /// does not exist, a new organisation is created. Any errors during the update process are logged.</remarks>
+        /// <returns><see langword="true"/> if the organisation was successfully updated or created; otherwise, <see
+        /// langword="false"/>.</returns>
+        public bool UpdateOrganisation()
         {
-            ObservableCollection<Organisation> organisations = new ObservableCollection<Organisation>();
-
-            var allOrganisations = organisationService.GetAll();
-
-            if (allOrganisations != null && allOrganisations.Count > 0)
+            if (Model != null && Model.Guid != default)
             {
-                foreach (var organisation in allOrganisations)
+                var organisation = organisationService.Get(Model.Guid);
+                if (organisation != null)
                 {
-                    if (organisation.IsActive)
+                    try
                     {
-                        organisations.Add(organisation);
+                        organisation.Name = Model.Name;
+                        organisation.Description = Model.Description;
+                        organisation.IsActive = Model.IsActive;
+                        organisation.LastManipulation = DateTime.Now;
+
+                        if (organisationService.Update(organisation))
+                        {
+                            return true;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.LogManager.Singleton.Error($"Error while updating organisation: {ex.Message}.", $"{ex.Source}");
+                        return false;
                     }
                 }
             }
-
-            return organisations;
+            if (CreateNewOrganisation())
+                return true;
+            else
+            {
+                Log.LogManager.Singleton.Error("Failed to create new organisation during update process.", "OrganisationViewModel.UpdateOrganisation");
+                return false;
+            }
         }
 
         /// <summary>
@@ -75,18 +123,18 @@ namespace DCS.User.UI
         {
             ObservableCollection<User> users = new ObservableCollection<User>();
 
-            if(organisation != null)
+            if (organisation != null)
             {
                 ObservableCollection<UserAssignement> userAssignments = userAssignementService.GetAll();
 
-                if(userAssignments != null && userAssignments.Count > 0)
+                if (userAssignments != null && userAssignments.Count > 0)
                 {
-                    foreach(var userAssignment in userAssignments)
+                    foreach (var userAssignment in userAssignments)
                     {
-                        if(userAssignment.OrganisationGuid == organisation.Guid)
+                        if (userAssignment.OrganisationGuid == organisation.Guid)
                         {
                             var user = userService.Get(userAssignment.UserGuid);
-                            if(user != null)
+                            if (user != null)
                             {
                                 users.Add(user);
                             }
@@ -111,9 +159,9 @@ namespace DCS.User.UI
         /// langword="false"/>.</returns>
         public bool AddUserToOrganisation(User user)
         {
-            if(user != null && Model != null)
+            if (user != null && Model != null)
             {
-                if(userAssignementService.AddUserToOrganisation(user.Guid, Model.Guid))
+                if (assignementViewModel.AddUserToOrganisation(user.Guid, Model.Guid))
                 {
                     return true;
                 }
@@ -137,21 +185,17 @@ namespace DCS.User.UI
         {
             if (user != null && Model != null)
             {
-                var ua = userAssignementService.GetAll().FirstOrDefault(x => x.UserGuid == user.Guid && x.OrganisationGuid == Model.Guid);
-
-                if(ua != null)
+                if (assignementViewModel.RemoveUserFromOrganisation(user.Guid, Model.Guid))
                 {
-                    if (userAssignementService.RemoveUserFromOrganisation(ua))
-                    {
-                        return true;
-                    }
-
-                    return false;
+                    Collection.Remove(Model);
+                    return true;
                 }
 
+                Log.LogManager.Singleton.Error($"Failed to remove user {user.UserName} from organisation {Model.Name}.", "OrganisationViewModel");
                 return false;
             }
 
+            Log.LogManager.Singleton.Error("User model or organisation model is null during removal from organisation.", "OrganisationViewModel");
             return false;
         }
 

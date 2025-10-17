@@ -17,27 +17,5 @@ namespace DCS.User.Service
         {
             this.repository = repository;
         }
-
-        /// <inheritdoc/>
-        public Group CreateGroup(string name, string description, bool isActive, Guid userGuid)
-        {
-            var group = new Group
-            {
-                Guid = Guid.NewGuid(),
-                Name = name,
-                Description = description,
-                IsActive = isActive,
-                CreationDate = DateTime.UtcNow,
-                LastManipulation = DateTime.UtcNow
-            };
-            
-            return group;
-        }
-
-        /// <inheritdoc/>
-        public Group GetByName(string groupName)
-        {
-            return repository.GetByName(groupName);
-        }
     }
 }

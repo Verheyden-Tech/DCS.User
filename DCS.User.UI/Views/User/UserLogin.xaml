@@ -11,7 +11,7 @@
         WindowStartupLocation="CenterScreen" KeyDown="DefaultMainWindow_KeyDown"
         Title="DCS" MinHeight="250" MinWidth="500" SizeToContent="WidthAndHeight">
 
-    <Grid>
+    <Grid Margin="10">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -27,28 +27,28 @@
 
         <Image x:Name="DCS_Label_Image" Grid.Row="0" Grid.Column="1" Source="/DCS.User;component/Resources/Images/DCS_LoginLabel_500x64.png" Height="64" Width="250" Stretch="Uniform" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
-        <telerik:RadWatermarkTextBox x:Name="UserNameLoginTextBox" Grid.Row="1" Grid.Column="1" WatermarkContent="Benutzername eingeben" Margin="2" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" TabIndex="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <telerik:RadWatermarkTextBox x:Name="UserNameLoginTextBox" Grid.Row="1" Grid.Column="1" WatermarkContent="Benutzername eingeben" Margin="2" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" TabIndex="1" Foreground="#b8860b" BorderBrush="#b8860b" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
-        <telerik:RadPasswordBox x:Name="PassWordLoginBox" Grid.Row="2" Grid.Column="1" Text="{Binding PassWord, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Passwort eingeben" Margin="2" TabIndex="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <telerik:RadPasswordBox x:Name="PassWordLoginBox" Grid.Row="2" Grid.Column="1" Text="{Binding PassWord, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Passwort eingeben" Margin="2" TabIndex="2" Foreground="#b8860b" BorderBrush="#b8860b" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <telerik:RadComboBox Name="ServerComboBox" ItemsSource="{Binding Domains, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectionChanged="ServerComboBox_SelectionChanged" DisplayMemberPath="DomainName" MinWidth="150" TabIndex="3" Margin="2" IsTextSearchEnabled="True" ClearSelectionButtonVisibility="Collapsed" CanKeyboardNavigationSelectItems="True" DropDownOpened="ServerComboBox_DropDownOpened" ClearSelectionButtonContent="Auswahl aufheben" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <telerik:RadComboBox Name="ServerComboBox" ItemsSource="{Binding Domains, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectionChanged="ServerComboBox_SelectionChanged" DisplayMemberPath="DomainName" MinWidth="150" TabIndex="3" Margin="2" BorderBrush="#b8860b" IsTextSearchEnabled="True" ClearSelectionButtonVisibility="Collapsed" CanKeyboardNavigationSelectItems="True" DropDownOpened="ServerComboBox_DropDownOpened" ClearSelectionButtonContent="Auswahl aufheben" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 <telerik:RadComboBox.EmptySelectionBoxTemplate>
                     <DataTemplate>
                         <TextBlock Text="Domain wählen" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                     </DataTemplate>
                 </telerik:RadComboBox.EmptySelectionBoxTemplate>
             </telerik:RadComboBox>
-            <telerik:RadButton x:Name="CreateNewDomain" Content="Neue Domain anlegen" Click="CreateNewDomain_Click" Background="{x:Null}" TabIndex="5" BorderBrush="{x:Null}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+            <telerik:RadButton x:Name="CreateNewDomain" Content="Neue Domain anlegen" Click="CreateNewDomain_Click" Background="{x:Null}" TabIndex="5" Foreground="#b8860b" BorderBrush="{x:Null}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <CheckBox x:Name="KeepLoggedInCheckBox" Content="Angemeldet bleiben" TabIndex="4" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left" IsChecked="{Binding Path=KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            <CheckBox x:Name="KeepLoggedInCheckBox" Content="Angemeldet bleiben" TabIndex="4" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#b8860b" BorderBrush="#b8860b" IsChecked="{Binding Path=KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch">
-            <Button x:Name="RegistrateButton" Click="RegistrateButton_Click" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" TabIndex="5" IsEnabled="True" Content="Registrieren" Style="{DynamicResource ButtonAcc/Dec}"/>
-            <Button x:Name="LoginButton" Click="LoginButton_Click" Content="Anmelden" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" TabIndex="6" Style="{DynamicResource ButtonAcc/Dec}"/>
+            <Button x:Name="RegistrateButton" Click="RegistrateButton_Click" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" TabIndex="5" IsEnabled="True" Foreground="#b8860b" Content="Registrieren" Style="{DynamicResource ButtonAcc/Dec}"/>
+            <Button x:Name="LoginButton" Click="LoginButton_Click" Content="Anmelden" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" TabIndex="6" Foreground="#b8860b" Style="{DynamicResource ButtonAcc/Dec}"/>
         </StackPanel>
 
     </Grid>

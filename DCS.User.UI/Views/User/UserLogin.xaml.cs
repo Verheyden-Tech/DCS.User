@@ -48,7 +48,9 @@ namespace DCS.User.UI
             {
                 if (KeepLoggedInCheckBox.IsChecked == true)
                 {
-                    userService.SetKeepLoggedIn(CurrentUserService.Instance.CurrentUser);
+                    Current.KeepLoggedIn = true;
+                    if(Current.UpdateUser())
+                        Log.LogManager.Singleton.Warning($"User chose to keep logged in for user account. Keep logged in flag succesful setted.", "UserLogin");
                 }
 
                 this.DialogResult = true;
@@ -71,7 +73,9 @@ namespace DCS.User.UI
                 {
                     if (KeepLoggedInCheckBox.IsChecked == true)
                     {
-                        userService.SetKeepLoggedIn(CurrentUserService.Instance.CurrentUser);
+                        Current.KeepLoggedIn = true;
+                        if (Current.UpdateUser())
+                            Log.LogManager.Singleton.Warning($"New crated user chose to keep logged in for user account. Keep logged in flag succesful set.", "UserRegistration");
                     }
 
                     this.DialogResult = true;

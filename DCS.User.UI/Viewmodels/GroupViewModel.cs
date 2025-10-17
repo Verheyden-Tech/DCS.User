@@ -12,6 +12,8 @@ namespace DCS.User.UI
         private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
         private readonly IUserAssignementService userAssignementService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserAssignementService>();
 
+        private UserAssignementViewModel assignementViewModel;
+
         /// <summary>
         /// Default constructor initialize a new instance of <see cref="GroupViewModel"/>.
         /// </summary>
@@ -19,24 +21,88 @@ namespace DCS.User.UI
         public GroupViewModel(Group group) : base(group)
         {
             this.Model = group;
+
+            Collection = groupService.GetAll();
+
+            var ua = new UserAssignement();
+            assignementViewModel = new UserAssignementViewModel(ua);
         }
 
         /// <summary>
-        /// Saves the current instance of the <see cref="GroupViewModel"/> class.
+        /// Creates a new group based on the current model and adds it to the collection if successful.
         /// </summary>
-        /// <returns>True if the save was successful; otherwise, false.</returns>
-        public bool Save()
+        /// <remarks>This method initializes a new group using the properties of the current <see
+        /// cref="ViewModelBase{TKey, TModel}.Model"/>. The group is then passed to the group service for creation. If the creation is successful,
+        /// the group is added to the <see cref="ViewModelBase{TKey, TModel}.Collection"/>. If the model is null or the group service fails to
+        /// create the group, an error is logged and the method returns <see langword="false"/>.</remarks>
+        /// <returns><see langword="true"/> if the group is successfully created and added to the collection; otherwise, <see
+        /// langword="false"/>.</returns>
+        public bool CreateNewGroup()
         {
             if (Model != null)
             {
-                Model.LastManipulation = DateTime.Now;
-                if (groupService.Update(Model))
+                var newGroup = new Group()
                 {
+                    Guid = Guid.NewGuid(),
+                    Name = Model.Name,
+                    Description = Model.Description,
+                    IsActive = true,
+                    CreationDate = DateTime.Now,
+                    LastManipulation = DateTime.Now
+                };
+
+                if (groupService.New(newGroup))
+                {
+                    Collection.Add(newGroup);
                     return true;
                 }
+
+                Log.LogManager.Singleton.Error("Failed to create new group - service create method returned false.", "GroupViewModel.CreateNewGroup");
                 return false;
             }
+
+            Log.LogManager.Singleton.Error("Failed to create new group - model is null.", "GroupViewModel.CreateNewGroup");
             return false;
+        }
+
+        /// <summary>
+        /// Updates the group information based on the current model.  If the group exists, its details are updated;
+        /// otherwise, a new group is created.
+        /// </summary>
+        /// <remarks>This method attempts to update an existing group identified by the <see
+        /// cref="Guid"/>.  If the group does not exist or the <see cref="Guid"/> is not set, a new group is
+        /// created  using the <see cref="CreateNewGroup"/> method.  Logs an error if the update or creation process
+        /// fails.</remarks>
+        /// <returns><see langword="true"/> if the group was successfully updated or created; otherwise, <see langword="false"/>.</returns>
+        public bool UpdateGroup()
+        {
+            if (Model != null && Model.Guid != default)
+            {
+                var group = groupService.Get(Model.Guid);
+                if (group != null)
+                {
+                    group.Name = Model.Name;
+                    group.Description = Model.Description;
+                    group.IsActive = Model.IsActive;
+                    group.LastManipulation = DateTime.Now;
+
+                    if (groupService.Update(group))
+                    {
+                        return true;
+                    }
+                }
+
+                Log.LogManager.Singleton.Error("Failed to update group - group not found.", "GroupViewModel.UpdateGroup");
+                return false;
+            }
+            else
+            {
+                if (CreateNewGroup())
+                    return true;
+
+                Log.LogManager.Singleton.Error("Failed to update group - create new group failed.", "GroupViewModel.UpdateGroup");
+                return false;
+            }
         }
 
         /// <summary>
@@ -53,7 +119,7 @@ namespace DCS.User.UI
             {
                 foreach (var group in allGroups)
                 {
-                    if(group.IsActive)
+                    if (group.IsActive)
                     {
                         groups.Add(group);
                     }
@@ -76,19 +142,19 @@ namespace DCS.User.UI
         public ObservableCollection<User> GetAllGroupMember(Group group)
         {
             ObservableCollection<User> users = new ObservableCollection<User>();
-            
-            if(group != null)
+
+            if (group != null)
             {
                 ObservableCollection<UserAssignement> userAssignements = userAssignementService.GetAll();
 
-                if(userAssignements != null && userAssignements.Count > 0)
+                if (userAssignements != null && userAssignements.Count > 0)
                 {
-                    foreach(var userAssignement in userAssignements)
+                    foreach (var userAssignement in userAssignements)
                     {
-                        if(userAssignement.GroupGuid == group.Guid)
+                        if (userAssignement.GroupGuid == group.Guid)
                         {
                             var user = userService.Get(userAssignement.UserGuid);
-                            if(user != null)
+                            if (user != null)
                             {
                                 users.Add(user);
                             }
@@ -112,9 +178,9 @@ namespace DCS.User.UI
         /// <returns><see langword="true"/> if the user was successfully added to the group; otherwise, <see langword="false"/>.</returns>
         public bool AddUserToGroup(User user)
         {
-            if(user != null && Model != null)
+            if (user != null && Model != null)
             {
-                if(userAssignementService.AddUserToGroup(user.Guid, Model.Guid))
+                if (assignementViewModel.AddUserToGroup(user.Guid, Model.Guid))
                 {
                     return true;
                 }
@@ -138,21 +204,17 @@ namespace DCS.User.UI
         {
             if (user != null && Model != null)
             {
-                var ua = userAssignementService.GetAll().FirstOrDefault(x => x.UserGuid == user.Guid && x.GroupGuid == Model.Guid);
-
-                if (ua != null)
+                if (assignementViewModel.RemoveUserFromGroup(user.Guid, Model.Guid))
                 {
-                    if(userAssignementService.RemoveUserFromGroup(ua))
-                    {
-                        return true;
-                    }
-
-                    return false;
+                    Collection.Remove(Model);
+                    return true;
                 }
 
+                Log.LogManager.Singleton.Error($"Failed to remove user {user.UserName} from group {Model.Name}.", "GroupViewModel");
                 return false;
             }
 
+            Log.LogManager.Singleton.Error("User model or group is null during removal from group.", "GroupViewModel");
             return false;
         }
 

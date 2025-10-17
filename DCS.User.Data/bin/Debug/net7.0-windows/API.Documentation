@@ -15,9 +15,6 @@
             </summary>
             <param name="sqlService">Sql service.</param>
         </member>
-        <member name="M:DCS.User.Data.GroupRepository.GetByName(System.String)">
-            <inheritdoc/>
-        </member>
         <member name="T:DCS.User.Data.OrganisationRepository">
             <summary>
             Represents the repository for managing <see cref="T:DCS.User.Organisation"/> entities in the database.
@@ -29,20 +26,17 @@
             </summary>
             <param name="sqlService">Sql service.</param>
         </member>
-        <member name="M:DCS.User.Data.OrganisationRepository.GetByName(System.String)">
-            <inheritdoc/>
-        </member>
         <member name="T:DCS.User.Data.RoleRepository">
             <summary>
             Represents the repository to manage <see cref="T:DCS.User.Role"/> entities in the database.
             </summary>
         </member>
-        <member name="P:DCS.User.Data.RoleRepository.tableName">
+        <member name="F:DCS.User.Data.RoleRepository.TableName">
             <summary>
             Tablename for the RoleRepository.
             </summary>
         </member>
-        <member name="P:DCS.User.Data.RoleRepository.primaryKeyColumn">
+        <member name="F:DCS.User.Data.RoleRepository.PrimaryKeyColumn">
             <summary>
             PrimaryKeyColumn to identify roles on the table.
             </summary>
@@ -52,9 +46,6 @@
             Default constructor for RoleRepository.
             </summary>
             <param name="sqlService">Sql service.</param>
-        </member>
-        <member name="M:DCS.User.Data.RoleRepository.GetByName(System.String)">
-            <inheritdoc/>
         </member>
         <member name="T:DCS.User.Data.UserDomainRepository">
             <summary>
@@ -95,18 +86,6 @@
             </summary>
             <param name="sqlService">Sql service.</param>
         </member>
-        <member name="M:DCS.User.Data.UserRepository.GetByName(System.String)">
-            <inheritdoc/>
-        </member>
-        <member name="M:DCS.User.Data.UserRepository.CheckForKeepLoggedIn">
-            <inheritdoc/>
-        </member>
-        <member name="M:DCS.User.Data.UserRepository.SetKeepLoggedIn(DCS.User.User)">
-            <inheritdoc/>
-        </member>
-        <member name="M:DCS.User.Data.UserRepository.UnsetKeepLoggedIn(DCS.User.User)">
-            <inheritdoc/>
-        </member>
         <member name="T:DCS.User.UserAssignementRepository">
             <summary>
             Represents the repository for managing user assignments on the table.
@@ -118,15 +97,6 @@
             assignment data on the table.
             </summary>
             <param name="sqlService">The SQL service used to interact with the database. This parameter cannot be null.</param>
-        </member>
-        <member name="M:DCS.User.UserAssignementRepository.GetByUserAndGroup(System.Guid,System.Guid)">
-            <inheritdoc/>
-        </member>
-        <member name="M:DCS.User.UserAssignementRepository.GetByUserAndOrganisation(System.Guid,System.Guid)">
-            <inheritdoc/>
-        </member>
-        <member name="M:DCS.User.UserAssignementRepository.GetByUserAndRole(System.Guid,System.Guid)">
-            <inheritdoc/>
         </member>
     </members>
 </doc>

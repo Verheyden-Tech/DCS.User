@@ -10,27 +10,16 @@ namespace DCS.User.Data
     {
         private readonly ISqlService sqlService;
 
-        private static string tableName => "dbo.VT_User_Organisation";
-        private static string primaryKeyColumn => "Guid";
+        private static readonly new string TableName = "dbo.VT_User_Organisation";
+        private static readonly new string PrimaryKeyColumn = "Guid";
 
         /// <summary>
         /// Default constructor for OrganisationRepository.
         /// </summary>
         /// <param name="sqlService">Sql service.</param>
-        public OrganisationRepository(ISqlService sqlService) : base(sqlService, tableName, primaryKeyColumn)
+        public OrganisationRepository(ISqlService sqlService) : base(sqlService, TableName, PrimaryKeyColumn)
         {
             this.sqlService = sqlService;
-        }
-
-        /// <inheritdoc/>
-        public Organisation GetByName(string organisationName)
-        {
-            if (string.IsNullOrEmpty(organisationName))
-                throw new ArgumentNullException(nameof(organisationName));
-
-            string sql = $"SELECT * FROM {tableName} WHERE Name = @organisationName";
-
-            return sqlService.SQLQuery<Organisation>(sql, new { organisationName });
         }
     }
 }

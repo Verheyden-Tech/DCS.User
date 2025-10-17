@@ -8,7 +8,7 @@ namespace DCS.User.Data
     /// </summary>
     public class UserRepository : RepositoryBase<Guid, User>, IUserRepository
     {
-        private readonly ISqlService sqlService = CommonServiceLocator.ServiceLocator.Current.GetInstance<ISqlService>();
+        private readonly ISqlService sqlService;
 
         /// <summary>
         /// Tablename for the UserRepository.
@@ -27,47 +27,6 @@ namespace DCS.User.Data
         public UserRepository(ISqlService sqlService) : base(sqlService, TableName, PrimaryKeyColumn)
         {
             this.sqlService = sqlService;
-        }
-
-        /// <inheritdoc/>
-        public User GetByName(string userName)
-        {
-            if (string.IsNullOrEmpty(userName))
-                throw new ArgumentNullException(nameof(userName));
-
-            string sql = $"SELECT * FROM {TableName} WHERE UserName = @username";
-
-            return sqlService.SQLQuery<User>(sql, new { username = userName});
-        }
-
-        /// <inheritdoc/>
-        public User CheckForKeepLoggedIn()
-        {
-            string sql = $"SELECT * FROM {TableName} WHERE KeepLoggedIn = @keepLoggedIn";
-
-            return sqlService.SQLQuery<User>(sql, new { keepLoggedIn = true });
-        }
-
-        /// <inheritdoc/>
-        public bool SetKeepLoggedIn(User user)
-        {
-            if(user == null)
-                return false;
-
-            var sql = $"UPDATE {TableName} SET KeepLoggedIn = @keepLoggedIn WHERE {PrimaryKeyColumn} = @guid";
-
-            return sqlService.ExecuteSQL(sql, new { keepLoggedIn = true, guid = user.Guid });
-        }
-
-        /// <inheritdoc/>
-        public bool UnsetKeepLoggedIn(User user)
-        {
-            if (user == null)
-                return false;
-
-            var sql = $"UPDATE {TableName} SET KeepLoggedIn = @keepLoggedIn WHERE {PrimaryKeyColumn} = @guid";
-
-            return sqlService.ExecuteSQL(sql, new { keepLoggedIn = false, guid = user.Guid });
         }
     }
 }

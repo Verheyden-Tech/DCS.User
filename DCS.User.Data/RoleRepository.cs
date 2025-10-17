@@ -13,30 +13,19 @@ namespace DCS.User.Data
         /// <summary>
         /// Tablename for the RoleRepository.
         /// </summary>
-        private static string tableName => "dbo.VT_User_Role";
+        private static readonly new string TableName = "dbo.VT_User_Role";
         /// <summary>
         /// PrimaryKeyColumn to identify roles on the table.
         /// </summary>
-        private static string primaryKeyColumn => "Guid";
+        private static readonly new string PrimaryKeyColumn = "Guid";
 
         /// <summary>
         /// Default constructor for RoleRepository.
         /// </summary>
         /// <param name="sqlService">Sql service.</param>
-        public RoleRepository(ISqlService sqlService) : base(sqlService, tableName, primaryKeyColumn)
+        public RoleRepository(ISqlService sqlService) : base(sqlService, TableName, PrimaryKeyColumn)
         {
             this.sqlService = sqlService;
-        }
-
-        /// <inheritdoc/>
-        public Role GetByName(string roleName)
-        {
-            if (string.IsNullOrEmpty(roleName))
-                throw new ArgumentNullException(nameof(roleName));
-
-            string sql = $"SELECT * FROM {tableName} WHERE Name = @roleName";
-
-            return sqlService.SQLQuery<Role>(sql, new { roleName });
         }
     }
 }

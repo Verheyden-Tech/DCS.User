@@ -7,11 +7,5 @@ namespace DCS.User
     /// </summary>
     public interface IOrganisationRepository : IRepositoryBase<Guid, Organisation>
     {
-        /// <summary>
-        /// Gets an organisation by its name.
-        /// </summary>
-        /// <param name="organisationName">The name of the organisation.</param>
-        /// <returns>The organisation with the specified name, or null if not found.</returns>
-        Organisation GetByName(string organisationName);
     }
 }

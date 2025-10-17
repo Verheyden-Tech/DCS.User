@@ -18,6 +18,8 @@ namespace DCS.User.UI
         private readonly IUserAssignementService assignementService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserAssignementService>();
         private readonly IUserDomainService domainService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserDomainService>();
 
+        private UserAssignementViewModel assignementViewModel;
+
         #region List Initializations
         /// <summary>
         /// Contains all avialable user groups from the table.
@@ -64,6 +66,9 @@ namespace DCS.User.UI
             this.Model = user;
 
             Collection = userService.GetAll();
+
+            var ua = new UserAssignement();
+            assignementViewModel = new UserAssignementViewModel(ua);
 
             AllGroups = groupService.GetAll();
             AllOrganisations = organisationService.GetAll();
@@ -240,13 +245,13 @@ namespace DCS.User.UI
         /// <returns><see langword="true"/> if the login is successful; otherwise, <see langword="false"/>.</returns>
         public bool LoginUser()
         {
-            if(Model != null)
+            if (Model != null)
             {
                 var user = Collection.FirstOrDefault(u => u.UserName == Model.UserName);
-                if(user != null)
+                if (user != null)
                 {
                     var hasehedPassword = userService.GetSha256Hash(Model.PassWord);
-                    if(user.PassWord == hasehedPassword && user.Domain == Model.Domain)
+                    if (user.PassWord == hasehedPassword && user.Domain == Model.Domain)
                     {
                         CurrentUserService.Instance.SetUser(user);
                         Log.LogManager.Singleton.Warning($"User {Model.UserName} logged in successfully.", "UserViewModel");
@@ -313,18 +318,21 @@ namespace DCS.User.UI
             {
                 if (!UserGroups.Contains(group))
                 {
-                    if (assignementService.AddUserToGroup(Model.Guid, group.Guid))
+                    if (assignementViewModel.AddUserToGroup(Model.Guid, group.Guid))
                     {
                         UserGroups.Add(group);
                         return true;
                     }
 
+                    Log.LogManager.Singleton.Error($"Failed to add user {Model.UserName} to group {group.Name}.", "UserViewModel");
                     return false;
                 }
 
+                Log.LogManager.Singleton.Error($"User {Model.UserName} is already a member of group {group.Name}.", "UserViewModel");
                 return false;
             }
 
+            Log.LogManager.Singleton.Error("User model or group is null during addition to group.", "UserViewModel");
             return false;
         }
 
@@ -343,26 +351,21 @@ namespace DCS.User.UI
             {
                 if (UserGroups.Contains(group))
                 {
-                    var assignement = assignementService.GetByUserAndGroup(Model.Guid, group.Guid);
-
-                    if (assignement != null)
+                    if (assignementViewModel.RemoveUserFromGroup(Model.Guid, group.Guid))
                     {
-                        if (assignementService.RemoveUserFromGroup(assignement))
-                        {
-                            UserGroups.Remove(group);
-
-                            return true;
-                        }
-
-                        return false;
+                        UserGroups.Remove(group);
+                        return true;
                     }
 
+                    Log.LogManager.Singleton.Error($"Failed to remove user {Model.UserName} from group {group.Name}.", "UserViewModel");
                     return false;
                 }
 
+                Log.LogManager.Singleton.Error($"User {Model.UserName} is not a member of group {group.Name}.", "UserViewModel");
                 return false;
             }
 
+            Log.LogManager.Singleton.Error("User model or group is null during removal from group.", "UserViewModel");
             return false;
         }
 
@@ -390,6 +393,7 @@ namespace DCS.User.UI
                     if (group != null)
                     {
                         userGroups.Add(group);
+                        continue;
                     }
                 }
 
@@ -414,19 +418,21 @@ namespace DCS.User.UI
             {
                 if (!UserOrganisations.Contains(organisation))
                 {
-                    if (assignementService.AddUserToOrganisation(Model.Guid, organisation.Guid))
+                    if (assignementViewModel.AddUserToOrganisation(Model.Guid, organisation.Guid))
                     {
                         UserOrganisations.Add(organisation);
-
                         return true;
                     }
 
+                    Log.LogManager.Singleton.Error($"Failed to add user {Model.UserName} to organisation {organisation.Name}.", "UserViewModel");
                     return false;
                 }
 
+                Log.LogManager.Singleton.Error($"User {Model.UserName} is already a member of organisation {organisation.Name}.", "UserViewModel");
                 return false;
             }
 
+            Log.LogManager.Singleton.Error("User model or organisation is null during addition to organisation.", "UserViewModel");
             return false;
         }
 
@@ -445,25 +451,21 @@ namespace DCS.User.UI
             {
                 if (UserOrganisations.Contains(organisation))
                 {
-                    var assignement = assignementService.GetByUserAndOrganisation(Model.Guid, organisation.Guid);
-                    if (assignement != null)
+                    if (assignementViewModel.RemoveUserFromOrganisation(Model.Guid, organisation.Guid))
                     {
-                        if (assignementService.RemoveUserFromOrganisation(assignement))
-                        {
-                            UserOrganisations.Remove(organisation);
-
-                            return true;
-                        }
-
-                        return false;
+                        UserOrganisations.Remove(organisation);
+                        return true;
                     }
 
+                    Log.LogManager.Singleton.Error($"Failed to remove user {Model.UserName} from organisation {organisation.Name}.", "UserViewModel");
                     return false;
                 }
 
+                Log.LogManager.Singleton.Error($"User {Model.UserName} is not a member of organisation {organisation.Name}.", "UserViewModel");
                 return false;
             }
 
+            Log.LogManager.Singleton.Error("User model or organisation is null during removal from organisation.", "UserViewModel");
             return false;
         }
 
@@ -514,7 +516,7 @@ namespace DCS.User.UI
             {
                 if (!UserRoles.Contains(role))
                 {
-                    if (assignementService.AddUserToRole(Model.Guid, role.Guid))
+                    if (assignementViewModel.AddUserToRole(Model.Guid, role.Guid))
                     {
                         UserRoles.Add(role);
 
@@ -547,25 +549,21 @@ namespace DCS.User.UI
             {
                 if (UserRoles.Contains(role))
                 {
-                    var assignement = assignementService.GetByUserAndRole(Model.Guid, role.Guid);
-                    if (assignement != null)
+                    if (assignementViewModel.RemoveUserFromRole(Model.Guid, role.Guid))
                     {
-                        if (assignementService.RemoveUserFromRole(assignement))
-                        {
-                            UserRoles.Remove(role);
-
-                            return true;
-                        }
-
-                        return false;
+                        UserRoles.Remove(role);
+                        return true;
                     }
 
+                    Log.LogManager.Singleton.Error($"Failed to remove user {Model.UserName} from role {role.Name}.", "UserViewModel");
                     return false;
                 }
 
+                Log.LogManager.Singleton.Error($"User {Model.UserName} is not a member of role {role.Name}.", "UserViewModel");
                 return false;
             }
 
+            Log.LogManager.Singleton.Error("User model or role is null during removal from role.", "UserViewModel");
             return false;
         }
 

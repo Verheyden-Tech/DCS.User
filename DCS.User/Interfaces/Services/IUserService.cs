@@ -1,9 +1,11 @@
-﻿namespace DCS.User
+﻿using DCS.CoreLib;
+
+namespace DCS.User
 {
     /// <summary>
     /// UserService to manipulate user data.
     /// </summary>
-    public interface IUserService : IUserRepository
+    public interface IUserService : IServiceBase<Guid, User, IUserRepository>
     {
         /// <summary>
         /// Gets the Sha256 hash for the user password.

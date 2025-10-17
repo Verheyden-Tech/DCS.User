@@ -12,6 +12,8 @@ namespace DCS.User.UI
         private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
         private readonly IUserAssignementService userAssignmentService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserAssignementService>();
 
+        private UserAssignementViewModel assignementViewModel;
+
         /// <summary>
         /// Default constructor to initialize a new instance of <see cref="RoleViewModel"/>.
         /// </summary>
@@ -19,48 +21,99 @@ namespace DCS.User.UI
         public RoleViewModel(Role role) : base(role)
         {
             this.Model = role;
+
+            Collection = roleService.GetAll();
+
+            var ua = new UserAssignement();
+            assignementViewModel = new UserAssignementViewModel(ua);
         }
 
         /// <summary>
-        /// Saves the current instance of the <see cref="RoleViewModel"/> class.
+        /// Creates a new role based on the current model and adds it to the collection or persists it using the role
+        /// service.
         /// </summary>
-        /// <returns>True if the save was succesful; otherwise, false.</returns>
-        public bool Save()
+        /// <remarks>This method initializes a new <see cref="Role"/> object using the properties of the
+        /// current model. The role is marked as active and timestamps for creation and last manipulation are set to the
+        /// current time. If the role service successfully persists the new role, the method returns <see
+        /// langword="true"/>. Otherwise, the role is added to the collection. Logs an error if the model is <see
+        /// langword="null"/> or if an exception occurs during the operation.</remarks>
+        /// <returns><see langword="true"/> if the role is successfully created and persisted; otherwise, <see
+        /// langword="false"/>.</returns>
+        public bool CreateNewRole()
         {
-            if (Model != null)
+            if(Model != null)
             {
-                Model.LastManipulation = DateTime.Now;
-                if (roleService.Update(Model))
+                try
                 {
-                    return true;
+                    var newRole = new Role
+                    {
+                        Guid = Guid.NewGuid(),
+                        Name = Model.Name,
+                        Description = Model.Description,
+                        IsActive = true,
+                        CreationDate = DateTime.Now,
+                        LastManipulation = DateTime.Now
+                    };
+
+                    if(roleService.New(newRole))
+                        return true;
+
+                    Collection.Add(newRole);
                 }
-                return false;
+                catch (Exception ex)
+                {
+                    Log.LogManager.Singleton.Error($"Error while creating new role: {ex.Message}.", $"{ex.Source}");
+                    return false;
+                }
             }
+
+            Log.LogManager.Singleton.Error("Role model is null.", "RoleViewModel.CreateNewRole");
             return false;
         }
 
         /// <summary>
-        /// Gets all available active roles from the table.
+        /// Updates the role associated with the current model. If the role does not exist, attempts to create a new
+        /// role.
         /// </summary>
-        /// <returns>All avialable active roles from the table.</returns>
-        public ObservableCollection<Role> GetAllActiveRoles()
+        /// <remarks>This method retrieves the role using the GUID from the current model. If the role
+        /// exists, it updates the role with the latest information from the model. If the role does not exist, it
+        /// attempts to create a new role by invoking the  <see cref="CreateNewRole"/> method. Any errors encountered
+        /// during the update or creation process are logged.</remarks>
+        /// <returns><see langword="true"/> if the role was successfully updated or created; otherwise, <see langword="false"/>.</returns>
+        public bool UpdateRole()
         {
-            ObservableCollection<Role> roles = new ObservableCollection<Role>();
-
-            var allRoles = roleService.GetAll();
-
-            if (allRoles != null && allRoles.Count > 0)
+            if (Model != null && Model.Guid != default)
             {
-                foreach (var role in allRoles)
+                var role = roleService.Get(Model.Guid);
+                if(role != null)
                 {
-                    if (role.IsActive)
+                    try
                     {
-                        roles.Add(role);
+                        Model.LastManipulation = DateTime.Now;
+
+                        if (roleService.Update(Model))
+                        {
+                            return true;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.LogManager.Singleton.Error($"Error while updating role: {ex.Message}.", $"{ex.Source}");
+                        return false;
                     }
                 }
+                
+                Log.LogManager.Singleton.Error($"Role with GUID {Model.Guid} not found.", "RoleViewModel.UpdateRole");
+                return false;
+            }
+            else
+            {
+                if (CreateNewRole())
+                    return true;
             }
 
-            return roles;
+            Log.LogManager.Singleton.Error("Role model is null.", "RoleViewModel.UpdateRole");
+            return false;
         }
 
         /// <summary>
@@ -76,13 +129,13 @@ namespace DCS.User.UI
         {
             ObservableCollection<User> users = new ObservableCollection<User>();
 
-            if(role != null)
+            if (role != null)
             {
                 ObservableCollection<UserAssignement> userAssignments = userAssignmentService.GetAll();
 
-                if(userAssignments != null && userAssignments.Count > 0)
+                if (userAssignments != null && userAssignments.Count > 0)
                 {
-                    foreach(var userAssignment in userAssignments)
+                    foreach (var userAssignment in userAssignments)
                     {
                         if (userAssignment.RoleGuid == role.Guid)
                         {
@@ -110,9 +163,9 @@ namespace DCS.User.UI
         /// <returns><see langword="true"/> if the user was successfully added to the role; otherwise, <see langword="false"/>.</returns>
         public bool AddUserToRole(User user)
         {
-            if(user != null && Model != null)
+            if (user != null && Model != null)
             {
-                if(userAssignmentService.AddUserToRole(user.Guid, Model.Guid))
+                if (assignementViewModel.AddUserToRole(user.Guid, Model.Guid))
                 {
                     return true;
                 }
@@ -136,21 +189,17 @@ namespace DCS.User.UI
         {
             if (user != null && Model != null)
             {
-                var ua = userAssignmentService.GetAll().FirstOrDefault(x => x.UserGuid == user.Guid && x.RoleGuid == Model.Guid);
-
-                if (ua != null)
+                if (assignementViewModel.RemoveUserFromRole(user.Guid, Model.Guid))
                 {
-                    if (userAssignmentService.RemoveUserFromRole(ua))
-                    {
-                        return true;
-                    }
-
-                    return false;
+                    Collection.Remove(Model);
+                    return true;
                 }
 
+                Log.LogManager.Singleton.Error($"User with GUID {user.Guid} is not assigned to role with GUID {Model.Guid}.", "RoleViewModel.RemoveUserFromRole");
                 return false;
             }
 
+            Log.LogManager.Singleton.Error("User or Role model is null.", "RoleViewModel.RemoveUserFromRole");
             return false;
         }
 
