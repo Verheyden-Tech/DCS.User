@@ -8,7 +8,7 @@ namespace DCS.User
     /// </summary>
     public class UserAssignementRepository : RepositoryBase<Guid, UserAssignement>, IUserAssignementRepository
     {
-        private readonly ISqlService sqlService;
+        private readonly ISqlService sqlService = CommonServiceLocator.ServiceLocator.Current.GetInstance<ISqlService>();
 
         private static readonly new string TableName = "dbo.VT_User_Assignement";
         private static readonly new string PrimaryKeyColumn = "Guid";

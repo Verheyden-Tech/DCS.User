@@ -8,7 +8,7 @@ namespace DCS.User.Data
     /// </summary>
     public class OrganisationRepository : RepositoryBase<Guid, Organisation>, IOrganisationRepository
     {
-        private readonly ISqlService sqlService;
+        private readonly ISqlService sqlService = CommonServiceLocator.ServiceLocator.Current.GetInstance<ISqlService>();
 
         private static readonly new string TableName = "dbo.VT_User_Organisation";
         private static readonly new string PrimaryKeyColumn = "Guid";

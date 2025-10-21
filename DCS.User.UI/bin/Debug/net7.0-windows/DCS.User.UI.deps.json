@@ -6,20 +6,20 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "DCS.User.UI/1.0.7701.1": {
+      "DCS.User.UI/1.0.7901.1": {
         "dependencies": {
-          "DCS.Authorisation": "1.0.1101",
-          "DCS.CoreLib": "1.1.701",
-          "DCS.CoreLib.BaseClass": "1.1.801",
-          "DCS.CoreLib.View": "1.1.3101",
-          "DCS.Data": "1.0.601",
-          "DCS.Localization": "1.0.401",
-          "DCS.Log": "1.0.601.5",
-          "DCS.OnBoarding": "1.0.401",
-          "DCS.OnBoarding.UI": "1.0.401",
-          "DCS.Resource": "1.0.201",
-          "DCS.User": "1.0.3901.1",
-          "DCS.User.Service": "1.0.4001.1",
+          "DCS.Authorisation": "1.0.1401",
+          "DCS.CoreLib": "1.1.901",
+          "DCS.CoreLib.BaseClass": "1.1.1001",
+          "DCS.CoreLib.View": "1.1.3301",
+          "DCS.Data": "1.0.701",
+          "DCS.Localization": "1.0.501",
+          "DCS.Log": "1.0.701.5",
+          "DCS.OnBoarding": "1.0.501",
+          "DCS.OnBoarding.UI": "1.0.501",
+          "DCS.Resource": "1.0.301",
+          "DCS.User": "1.0.4401.1",
+          "DCS.User.Service": "1.0.4201.1",
           "Telerik.Licensing.Runtime": "1.4.10.0",
           "Telerik.Pivot.Core": "2021.1.325.310",
           "Telerik.Windows.Controls.Data": "2021.1.325.310",
@@ -101,14 +101,14 @@
           }
         }
       },
-      "DCS.Authorisation/1.0.1101": {
+      "DCS.Authorisation/1.0.1401": {
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
-          "DCS.CoreLib": "1.1.701",
-          "DCS.CoreLib.BaseClass": "1.1.801",
-          "DCS.Data": "1.0.601",
-          "DCS.Log": "1.0.601.5",
-          "DCS.Resource": "1.0.201"
+          "DCS.CoreLib": "1.1.901",
+          "DCS.CoreLib.BaseClass": "1.1.1001",
+          "DCS.Data": "1.0.701",
+          "DCS.Log": "1.0.701.5",
+          "DCS.Resource": "1.0.301"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.Authorisation.dll": {
@@ -119,10 +119,10 @@
       },
       "DCS.Billing/1.0.401": {
         "dependencies": {
-          "DCS.CoreLib": "1.1.701",
-          "DCS.CoreLib.BaseClass": "1.1.801",
-          "DCS.Data": "1.0.601",
-          "DCS.Log": "1.0.601.5"
+          "DCS.CoreLib": "1.1.901",
+          "DCS.CoreLib.BaseClass": "1.1.1001",
+          "DCS.Data": "1.0.701",
+          "DCS.Log": "1.0.701.5"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.Billing.dll": {
@@ -133,11 +133,11 @@
       },
       "DCS.Contact/1.0.501": {
         "dependencies": {
-          "DCS.CoreLib": "1.1.701",
-          "DCS.Data": "1.0.601",
-          "DCS.Resource": "1.0.201",
-          "DCS.User": "1.0.3901.1",
-          "DCS.User.Service": "1.0.4001.1"
+          "DCS.CoreLib": "1.1.901",
+          "DCS.Data": "1.0.701",
+          "DCS.Resource": "1.0.301",
+          "DCS.User": "1.0.4401.1",
+          "DCS.User.Service": "1.0.4201.1"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.Contact.dll": {
@@ -146,12 +146,12 @@
           }
         }
       },
-      "DCS.CoreLib/1.1.701": {
+      "DCS.CoreLib/1.1.901": {
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
-          "DCS.Data": "1.0.601",
-          "DCS.Localization": "1.0.401",
-          "DCS.Log": "1.0.601.5",
+          "DCS.Data": "1.0.701",
+          "DCS.Localization": "1.0.501",
+          "DCS.Log": "1.0.701.5",
           "Dapper": "2.1.66"
         },
         "runtime": {
@@ -161,12 +161,12 @@
           }
         }
       },
-      "DCS.CoreLib.BaseClass/1.1.801": {
+      "DCS.CoreLib.BaseClass/1.1.1001": {
         "dependencies": {
-          "DCS.CoreLib": "1.1.701",
-          "DCS.Data": "1.0.601",
-          "DCS.Localization": "1.0.401",
-          "DCS.Log": "1.0.601.5"
+          "DCS.CoreLib": "1.1.901",
+          "DCS.Data": "1.0.701",
+          "DCS.Localization": "1.0.501",
+          "DCS.Log": "1.0.701.5"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.CoreLib.BaseClass.dll": {
@@ -175,12 +175,12 @@
           }
         }
       },
-      "DCS.CoreLib.Collection/1.1.801": {
+      "DCS.CoreLib.Collection/1.1.1001": {
         "dependencies": {
-          "DCS.CoreLib": "1.1.701",
-          "DCS.Data": "1.0.601",
-          "DCS.Localization": "1.0.401",
-          "DCS.Log": "1.0.601.5"
+          "DCS.CoreLib": "1.1.901",
+          "DCS.Data": "1.0.701",
+          "DCS.Localization": "1.0.501",
+          "DCS.Log": "1.0.701.5"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.CoreLib.Collection.dll": {
@@ -189,16 +189,16 @@
           }
         }
       },
-      "DCS.CoreLib.View/1.1.3101": {
+      "DCS.CoreLib.View/1.1.3301": {
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
-          "DCS.CoreLib": "1.1.701",
-          "DCS.CoreLib.BaseClass": "1.1.801",
-          "DCS.CoreLib.Collection": "1.1.801",
-          "DCS.Data": "1.0.601",
-          "DCS.Localization": "1.0.401",
-          "DCS.Log": "1.0.601.5",
-          "DCS.Resource": "1.0.201"
+          "DCS.CoreLib": "1.1.901",
+          "DCS.CoreLib.BaseClass": "1.1.1001",
+          "DCS.CoreLib.Collection": "1.1.1001",
+          "DCS.Data": "1.0.701",
+          "DCS.Localization": "1.0.501",
+          "DCS.Log": "1.0.701.5",
+          "DCS.Resource": "1.0.301"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.CoreLib.View.dll": {
@@ -207,9 +207,9 @@
           }
         }
       },
-      "DCS.Data/1.0.601": {
+      "DCS.Data/1.0.701": {
         "dependencies": {
-          "DCS.Log": "1.0.601.5",
+          "DCS.Log": "1.0.701.5",
           "Microsoft.Data.SqlClient": "6.1.2"
         },
         "runtime": {
@@ -221,11 +221,11 @@
       },
       "DCS.HR/1.0.301": {
         "dependencies": {
-          "DCS.CoreLib": "1.1.701",
-          "DCS.CoreLib.BaseClass": "1.1.801",
-          "DCS.Data": "1.0.601",
-          "DCS.Log": "1.0.601.5",
-          "DCS.Resource": "1.0.201"
+          "DCS.CoreLib": "1.1.901",
+          "DCS.CoreLib.BaseClass": "1.1.1001",
+          "DCS.Data": "1.0.701",
+          "DCS.Log": "1.0.701.5",
+          "DCS.Resource": "1.0.301"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.HR.dll": {
@@ -234,7 +234,7 @@
           }
         }
       },
-      "DCS.Localization/1.0.401": {
+      "DCS.Localization/1.0.501": {
         "runtime": {
           "lib/net7.0-windows7.0/DCS.Localization.dll": {
             "assemblyVersion": "1.0.401.0",
@@ -242,7 +242,7 @@
           }
         }
       },
-      "DCS.Log/1.0.601.5": {
+      "DCS.Log/1.0.701.5": {
         "dependencies": {
           "Microsoft.Win32.Primitives": "4.3.0",
           "Newtonsoft.Json": "13.0.3"
@@ -254,19 +254,19 @@
           }
         }
       },
-      "DCS.OnBoarding/1.0.401": {
+      "DCS.OnBoarding/1.0.501": {
         "dependencies": {
           "Bogus": "35.6.4",
           "DCS.Billing": "1.0.401",
           "DCS.Contact": "1.0.501",
-          "DCS.CoreLib": "1.1.701",
-          "DCS.CoreLib.BaseClass": "1.1.801",
-          "DCS.CoreLib.Collection": "1.1.801",
-          "DCS.CoreLib.View": "1.1.3101",
-          "DCS.Data": "1.0.601",
+          "DCS.CoreLib": "1.1.901",
+          "DCS.CoreLib.BaseClass": "1.1.1001",
+          "DCS.CoreLib.Collection": "1.1.1001",
+          "DCS.CoreLib.View": "1.1.3301",
+          "DCS.Data": "1.0.701",
           "DCS.HR": "1.0.301",
-          "DCS.Log": "1.0.601.5",
-          "DCS.User": "1.0.3901.1"
+          "DCS.Log": "1.0.701.5",
+          "DCS.User": "1.0.4401.1"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.OnBoarding.dll": {
@@ -275,19 +275,19 @@
           }
         }
       },
-      "DCS.OnBoarding.Data/1.0.401": {
+      "DCS.OnBoarding.Data/1.0.501": {
         "dependencies": {
           "DCS.Billing": "1.0.401",
           "DCS.Contact": "1.0.501",
-          "DCS.CoreLib": "1.1.701",
-          "DCS.CoreLib.BaseClass": "1.1.801",
-          "DCS.CoreLib.Collection": "1.1.801",
-          "DCS.CoreLib.View": "1.1.3101",
-          "DCS.Data": "1.0.601",
+          "DCS.CoreLib": "1.1.901",
+          "DCS.CoreLib.BaseClass": "1.1.1001",
+          "DCS.CoreLib.Collection": "1.1.1001",
+          "DCS.CoreLib.View": "1.1.3301",
+          "DCS.Data": "1.0.701",
           "DCS.HR": "1.0.301",
-          "DCS.Log": "1.0.601.5",
-          "DCS.OnBoarding": "1.0.401",
-          "DCS.User": "1.0.3901.1"
+          "DCS.Log": "1.0.701.5",
+          "DCS.OnBoarding": "1.0.501",
+          "DCS.User": "1.0.4401.1"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.OnBoarding.Data.dll": {
@@ -296,21 +296,21 @@
           }
         }
       },
-      "DCS.OnBoarding.Service/1.0.401": {
+      "DCS.OnBoarding.Service/1.0.501": {
         "dependencies": {
           "Bogus": "35.6.4",
           "DCS.Billing": "1.0.401",
           "DCS.Contact": "1.0.501",
-          "DCS.CoreLib": "1.1.701",
-          "DCS.CoreLib.BaseClass": "1.1.801",
-          "DCS.CoreLib.Collection": "1.1.801",
-          "DCS.CoreLib.View": "1.1.3101",
-          "DCS.Data": "1.0.601",
+          "DCS.CoreLib": "1.1.901",
+          "DCS.CoreLib.BaseClass": "1.1.1001",
+          "DCS.CoreLib.Collection": "1.1.1001",
+          "DCS.CoreLib.View": "1.1.3301",
+          "DCS.Data": "1.0.701",
           "DCS.HR": "1.0.301",
-          "DCS.Log": "1.0.601.5",
-          "DCS.OnBoarding": "1.0.401",
-          "DCS.OnBoarding.Data": "1.0.401",
-          "DCS.User": "1.0.3901.1"
+          "DCS.Log": "1.0.701.5",
+          "DCS.OnBoarding": "1.0.501",
+          "DCS.OnBoarding.Data": "1.0.501",
+          "DCS.User": "1.0.4401.1"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.OnBoarding.Service.dll": {
@@ -319,20 +319,20 @@
           }
         }
       },
-      "DCS.OnBoarding.UI/1.0.401": {
+      "DCS.OnBoarding.UI/1.0.501": {
         "dependencies": {
           "DCS.Billing": "1.0.401",
           "DCS.Contact": "1.0.501",
-          "DCS.CoreLib": "1.1.701",
-          "DCS.CoreLib.BaseClass": "1.1.801",
-          "DCS.CoreLib.Collection": "1.1.801",
-          "DCS.CoreLib.View": "1.1.3101",
-          "DCS.Data": "1.0.601",
+          "DCS.CoreLib": "1.1.901",
+          "DCS.CoreLib.BaseClass": "1.1.1001",
+          "DCS.CoreLib.Collection": "1.1.1001",
+          "DCS.CoreLib.View": "1.1.3301",
+          "DCS.Data": "1.0.701",
           "DCS.HR": "1.0.301",
-          "DCS.Log": "1.0.601.5",
-          "DCS.OnBoarding": "1.0.401",
-          "DCS.OnBoarding.Service": "1.0.401",
-          "DCS.User": "1.0.3901.1"
+          "DCS.Log": "1.0.701.5",
+          "DCS.OnBoarding": "1.0.501",
+          "DCS.OnBoarding.Service": "1.0.501",
+          "DCS.User": "1.0.4401.1"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.OnBoarding.UI.dll": {
@@ -341,12 +341,12 @@
           }
         }
       },
-      "DCS.Resource/1.0.201": {
+      "DCS.Resource/1.0.301": {
         "dependencies": {
-          "DCS.CoreLib": "1.1.701",
-          "DCS.CoreLib.BaseClass": "1.1.801",
-          "DCS.CoreLib.Collection": "1.1.801",
-          "DCS.Log": "1.0.601.5"
+          "DCS.CoreLib": "1.1.901",
+          "DCS.CoreLib.BaseClass": "1.1.1001",
+          "DCS.CoreLib.Collection": "1.1.1001",
+          "DCS.Log": "1.0.701.5"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.Resource.dll": {
@@ -794,15 +794,15 @@
         }
       },
       "System.Threading.Tasks.Extensions/4.5.4": {},
-      "DCS.User/1.0.3901.1": {
+      "DCS.User/1.0.4401.1": {
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
-          "DCS.Authorisation": "1.0.1101",
-          "DCS.CoreLib": "1.1.701",
-          "DCS.Data": "1.0.601",
-          "DCS.Localization": "1.0.401",
-          "DCS.Log": "1.0.601.5",
-          "DCS.Resource": "1.0.201",
+          "DCS.Authorisation": "1.0.1401",
+          "DCS.CoreLib": "1.1.901",
+          "DCS.Data": "1.0.701",
+          "DCS.Localization": "1.0.501",
+          "DCS.Log": "1.0.701.5",
+          "DCS.Resource": "1.0.301",
           "System.Management": "9.0.10"
         },
         "runtime": {
@@ -812,15 +812,15 @@
           }
         }
       },
-      "DCS.User.Data/1.0.4101.1": {
+      "DCS.User.Data/1.0.4301.1": {
         "dependencies": {
-          "DCS.Authorisation": "1.0.1101",
-          "DCS.CoreLib": "1.1.701",
-          "DCS.CoreLib.BaseClass": "1.1.801",
-          "DCS.Data": "1.0.601",
-          "DCS.Localization": "1.0.401",
-          "DCS.Log": "1.0.601.5",
-          "DCS.User": "1.0.3901.1"
+          "DCS.Authorisation": "1.0.1401",
+          "DCS.CoreLib": "1.1.901",
+          "DCS.CoreLib.BaseClass": "1.1.1001",
+          "DCS.Data": "1.0.701",
+          "DCS.Localization": "1.0.501",
+          "DCS.Log": "1.0.701.5",
+          "DCS.User": "1.0.4401.1"
         },
         "runtime": {
           "DCS.User.Data.dll": {
@@ -829,17 +829,17 @@
           }
         }
       },
-      "DCS.User.Service/1.0.4001.1": {
+      "DCS.User.Service/1.0.4201.1": {
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
-          "DCS.Authorisation": "1.0.1101",
-          "DCS.CoreLib": "1.1.701",
-          "DCS.CoreLib.BaseClass": "1.1.801",
-          "DCS.Data": "1.0.601",
-          "DCS.Localization": "1.0.401",
-          "DCS.Log": "1.0.601.5",
-          "DCS.User": "1.0.3901.1",
-          "DCS.User.Data": "1.0.4101.1",
+          "DCS.Authorisation": "1.0.1401",
+          "DCS.CoreLib": "1.1.901",
+          "DCS.CoreLib.BaseClass": "1.1.1001",
+          "DCS.Data": "1.0.701",
+          "DCS.Localization": "1.0.501",
+          "DCS.Log": "1.0.701.5",
+          "DCS.User": "1.0.4401.1",
+          "DCS.User.Data": "1.0.4301.1",
           "Dapper": "2.1.66"
         },
         "runtime": {
@@ -980,7 +980,7 @@
     }
   },
   "libraries": {
-    "DCS.User.UI/1.0.7701.1": {
+    "DCS.User.UI/1.0.7901.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1020,12 +1020,12 @@
       "path": "dapper/2.1.66",
       "hashPath": "dapper.2.1.66.nupkg.sha512"
     },
-    "DCS.Authorisation/1.0.1101": {
+    "DCS.Authorisation/1.0.1401": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ktP1sXqhmP+ytO3aD9C89pQBlcXedasrgwpwnpJ8h1G1xUPbTsiNN6Qf5upjgb+xwxfd08UeqmVkUIBwMpjsmw==",
-      "path": "dcs.authorisation/1.0.1101",
-      "hashPath": "dcs.authorisation.1.0.1101.nupkg.sha512"
+      "sha512": "sha512-eLDYkAz0FSUTtNVLVt7xmbJ05ChE6gR+fHiVD+PykCTFye1NMRST47BaDq2zwUlH6mUrV7pUV2qhPkfe4+KmgA==",
+      "path": "dcs.authorisation/1.0.1401",
+      "hashPath": "dcs.authorisation.1.0.1401.nupkg.sha512"
     },
     "DCS.Billing/1.0.401": {
       "type": "package",
@@ -1041,40 +1041,40 @@
       "path": "dcs.contact/1.0.501",
       "hashPath": "dcs.contact.1.0.501.nupkg.sha512"
     },
-    "DCS.CoreLib/1.1.701": {
+    "DCS.CoreLib/1.1.901": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-e8/8bIvqdwD9LCDYcK/9ozKHqua6eFhOgtvU3He1kDy0TkWxC+yD6H3UEa1ocW4zDF3eNvyX2g61TcBDuAiboQ==",
-      "path": "dcs.corelib/1.1.701",
-      "hashPath": "dcs.corelib.1.1.701.nupkg.sha512"
+      "sha512": "sha512-tRIA/1AyM+NFJq79Q2bP49rmdLvk9TORG/mR7cT+EcOn5L/lC5bMDVdiCxy23KrHEYn6AqSgpwXXGK8+ke4tPg==",
+      "path": "dcs.corelib/1.1.901",
+      "hashPath": "dcs.corelib.1.1.901.nupkg.sha512"
     },
-    "DCS.CoreLib.BaseClass/1.1.801": {
+    "DCS.CoreLib.BaseClass/1.1.1001": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-lnv0oohUNdzSLkOBCEHnrohBCqo1W6t1E9HlxZPD9X1r3MH5KRMHhEdLrJqLPssu3GMNSvmMMrKjC8n/vINVZQ==",
-      "path": "dcs.corelib.baseclass/1.1.801",
-      "hashPath": "dcs.corelib.baseclass.1.1.801.nupkg.sha512"
+      "sha512": "sha512-bhBpVth83tJULjtwB3pKveFRShtbCuPzcCfQHP4aZuKOxHrXl27WxxnWzmy6yRBFroTPifmdfYDWSooX5j+MSg==",
+      "path": "dcs.corelib.baseclass/1.1.1001",
+      "hashPath": "dcs.corelib.baseclass.1.1.1001.nupkg.sha512"
     },
-    "DCS.CoreLib.Collection/1.1.801": {
+    "DCS.CoreLib.Collection/1.1.1001": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-TStkhGRfr5Szapx866Yoa8gi/fo2G3VNzizC+qxU65EAFJW/g7aghjYAOJ/BKF3o3xQ1cDhzqjaq3gZZ5wGmIg==",
-      "path": "dcs.corelib.collection/1.1.801",
-      "hashPath": "dcs.corelib.collection.1.1.801.nupkg.sha512"
+      "sha512": "sha512-kWeHcJpUs8HFiKr2Dq/pQDmV2RWo7uqKSUUK0oEqDhYK2UotVgkKCoUJur7psnCkkXDR0tFitjyMC3mkEhl/sQ==",
+      "path": "dcs.corelib.collection/1.1.1001",
+      "hashPath": "dcs.corelib.collection.1.1.1001.nupkg.sha512"
     },
-    "DCS.CoreLib.View/1.1.3101": {
+    "DCS.CoreLib.View/1.1.3301": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-yIzmuzSyHXeq455tE/y0DyuENdd3kyfg0gGmAn3UuHOPVdOBwxTh2yk14iSEmswkO97C5Pgz8f6I8q8WgbAsXg==",
-      "path": "dcs.corelib.view/1.1.3101",
-      "hashPath": "dcs.corelib.view.1.1.3101.nupkg.sha512"
+      "sha512": "sha512-1sj9yZB/r58iaLAZcJIzR2PX0fXpt0zml6HN3TzBD2N+6kXk3lC9C4k2cQbv0gCIYaN3QKb4aE4wkmr/KkdBXw==",
+      "path": "dcs.corelib.view/1.1.3301",
+      "hashPath": "dcs.corelib.view.1.1.3301.nupkg.sha512"
     },
-    "DCS.Data/1.0.601": {
+    "DCS.Data/1.0.701": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-GMPBOFZNFKetVwtuudmW7GXx7BTIgZdEkLMZGhQiqLUPQtMNXDH64VZX/2uTsysDJgMwn5ERPtF2/U8xOSrw+A==",
-      "path": "dcs.data/1.0.601",
-      "hashPath": "dcs.data.1.0.601.nupkg.sha512"
+      "sha512": "sha512-sbsF+k5KpxT9SdVZFdLTNdQvEDLp1bmy24RHhAPMMe6tmtUDQWt03TIbSrZvxpDJyg4Dsrm6vP53QIIbwGlh2Q==",
+      "path": "dcs.data/1.0.701",
+      "hashPath": "dcs.data.1.0.701.nupkg.sha512"
     },
     "DCS.HR/1.0.301": {
       "type": "package",
@@ -1083,54 +1083,54 @@
       "path": "dcs.hr/1.0.301",
       "hashPath": "dcs.hr.1.0.301.nupkg.sha512"
     },
-    "DCS.Localization/1.0.401": {
+    "DCS.Localization/1.0.501": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-caNdPw0U9zpHO2LHzNlPk/pgpslU/fNHjU2IHwY0oiiyiCZpqzlx8s0tZz49SlNJf5hIIHfcXtykixp4w86j6A==",
-      "path": "dcs.localization/1.0.401",
-      "hashPath": "dcs.localization.1.0.401.nupkg.sha512"
+      "sha512": "sha512-P7078pMOhijAjCX12KTN8n3t81ggVz1xyVB2kkahLjh4S/7rOZZwxUm76P0OOpLtCWrc3xCktkOCw/OCvN/tyg==",
+      "path": "dcs.localization/1.0.501",
+      "hashPath": "dcs.localization.1.0.501.nupkg.sha512"
     },
-    "DCS.Log/1.0.601.5": {
+    "DCS.Log/1.0.701.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7Q5zZMq5DfuWtgLV+W3spMBS/YCn12+uxELPays2WCLyxitRsh/9Yr2tV+JLaXp61xNNE6smHKdTu9ee6CEvlw==",
-      "path": "dcs.log/1.0.601.5",
-      "hashPath": "dcs.log.1.0.601.5.nupkg.sha512"
+      "sha512": "sha512-U9jUnIaeUG+phD2Lvn2+hAznMEa4nYTvShYWroFJFSdVxiW1Xk2AYNvqa0vpC9FGFUQph0xJIjJS/dheenBCGg==",
+      "path": "dcs.log/1.0.701.5",
+      "hashPath": "dcs.log.1.0.701.5.nupkg.sha512"
     },
-    "DCS.OnBoarding/1.0.401": {
+    "DCS.OnBoarding/1.0.501": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tAuVgoGy59wKCc2WreTcG9pP6fqSRAecugP4flIuTdnvLu0ngADKnxsamg9I7h9JFSug9HKGMj38rwOWpIs76Q==",
-      "path": "dcs.onboarding/1.0.401",
-      "hashPath": "dcs.onboarding.1.0.401.nupkg.sha512"
+      "sha512": "sha512-jXu99/qwo3ZPfPnash8VFAK1feRmC1qtOI2ZFSRATgudTotUZftO5MU2LO3A+gBr758YNx7KECU1thJ1lFYSZA==",
+      "path": "dcs.onboarding/1.0.501",
+      "hashPath": "dcs.onboarding.1.0.501.nupkg.sha512"
     },
-    "DCS.OnBoarding.Data/1.0.401": {
+    "DCS.OnBoarding.Data/1.0.501": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-dJJaclePqpVMJiiU2YhmWJD8cwI01SHOtFtieQh28wvwKUO2763rdIS22iHEDQmb5zvrvvCdRLx2ymW0l3enhw==",
-      "path": "dcs.onboarding.data/1.0.401",
-      "hashPath": "dcs.onboarding.data.1.0.401.nupkg.sha512"
+      "sha512": "sha512-MeXYh+8zgcHfLu+kfqnWIVwHID7ZBrizupHZrPgIskX/bOO1bu6pgkH/0lbN7bM3eev7S+92b58OfCc6S6QyYQ==",
+      "path": "dcs.onboarding.data/1.0.501",
+      "hashPath": "dcs.onboarding.data.1.0.501.nupkg.sha512"
     },
-    "DCS.OnBoarding.Service/1.0.401": {
+    "DCS.OnBoarding.Service/1.0.501": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Tkn2w+4oSZMCS73h4hPmvxOorXJKjbHsI+ntrK5TMKdK34T31jM0JpY+DJ2mVi9gfAZPcDjRFJ91G+7xee665w==",
-      "path": "dcs.onboarding.service/1.0.401",
-      "hashPath": "dcs.onboarding.service.1.0.401.nupkg.sha512"
+      "sha512": "sha512-p9l/+0hFlFdewYUQXJBVQhDRBhFFLJ2JYkHxWUsPN2DQEP91fPiMxXXYatueOYOxKcq3LjGkoyakoHXfQUtJmg==",
+      "path": "dcs.onboarding.service/1.0.501",
+      "hashPath": "dcs.onboarding.service.1.0.501.nupkg.sha512"
     },
-    "DCS.OnBoarding.UI/1.0.401": {
+    "DCS.OnBoarding.UI/1.0.501": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-DWA0hjd7qaqq91QdurLLEz4atpTErPgPC3iTFi6LZDukqM1N5uz9RL/FfvZvv8ukPqpUQul82w5KeGRHlJBe2Q==",
-      "path": "dcs.onboarding.ui/1.0.401",
-      "hashPath": "dcs.onboarding.ui.1.0.401.nupkg.sha512"
+      "sha512": "sha512-clnF9R/5Z6mRk957NLtcPXyR61ikDeqFwenbK46IFA8ZmDU/GLDUFRavWwJUNZeHqfBa6mYfzWppliHDl6LNXg==",
+      "path": "dcs.onboarding.ui/1.0.501",
+      "hashPath": "dcs.onboarding.ui.1.0.501.nupkg.sha512"
     },
-    "DCS.Resource/1.0.201": {
+    "DCS.Resource/1.0.301": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-FzSZB/6hNgsUGQ9TNqYA+u6SApxymudsdFDv6jarPUPUlADN0z8n9TFFOjo+kncMvIl6b17fDf2KtwaHz0BejA==",
-      "path": "dcs.resource/1.0.201",
-      "hashPath": "dcs.resource.1.0.201.nupkg.sha512"
+      "sha512": "sha512-QiVoXwh0dXYg2CN4kp4Ra53nu7GzEQ+9/oGRCn5clzf2M/929rgKfie3vLPQQdRaeizu5KtTB+sI9/Fsi15ADw==",
+      "path": "dcs.resource/1.0.301",
+      "hashPath": "dcs.resource.1.0.301.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/9.0.5": {
       "type": "package",
@@ -1468,17 +1468,17 @@
       "path": "system.threading.tasks.extensions/4.5.4",
       "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
     },
-    "DCS.User/1.0.3901.1": {
+    "DCS.User/1.0.4401.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "DCS.User.Data/1.0.4101.1": {
+    "DCS.User.Data/1.0.4301.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "DCS.User.Service/1.0.4001.1": {
+    "DCS.User.Service/1.0.4201.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

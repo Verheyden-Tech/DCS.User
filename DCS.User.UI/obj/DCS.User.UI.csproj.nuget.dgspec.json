@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj": {
-      "version": "1.0.4101.1",
+      "version": "1.0.4301.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
         "projectName": "DCS.User.Data",
@@ -30,9 +30,9 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\verhe\\Desktop\\Local.Nuget": {},
           "C:\\Users\\verhe\\Documents\\DCS\\Nuget": {},
           "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/Verheyden-Tech/index.json": {},
           "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
@@ -63,27 +63,27 @@
           "dependencies": {
             "DCS.Authorisation": {
               "target": "Package",
-              "version": "[1.0.1101, )"
+              "version": "[1.0.1401, )"
             },
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.1.701, )"
+              "version": "[1.1.901, )"
             },
             "DCS.CoreLib.BaseClass": {
               "target": "Package",
-              "version": "[1.1.801, )"
+              "version": "[1.1.1001, )"
             },
             "DCS.Data": {
               "target": "Package",
-              "version": "[1.0.601, )"
+              "version": "[1.0.701, )"
             },
             "DCS.Localization": {
               "target": "Package",
-              "version": "[1.0.401, )"
+              "version": "[1.0.501, )"
             },
             "DCS.Log": {
               "target": "Package",
-              "version": "[1.0.601.5, )"
+              "version": "[1.0.701.5, )"
             }
           },
           "imports": [
@@ -107,7 +107,7 @@
       }
     },
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj": {
-      "version": "1.0.4001.1",
+      "version": "1.0.4201.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj",
         "projectName": "DCS.User.Service",
@@ -132,9 +132,9 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\verhe\\Desktop\\Local.Nuget": {},
           "C:\\Users\\verhe\\Documents\\DCS\\Nuget": {},
           "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/Verheyden-Tech/index.json": {},
           "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
@@ -172,27 +172,27 @@
             },
             "DCS.Authorisation": {
               "target": "Package",
-              "version": "[1.0.1101, )"
+              "version": "[1.0.1401, )"
             },
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.1.701, )"
+              "version": "[1.1.901, )"
             },
             "DCS.CoreLib.BaseClass": {
               "target": "Package",
-              "version": "[1.1.801, )"
+              "version": "[1.1.1001, )"
             },
             "DCS.Data": {
               "target": "Package",
-              "version": "[1.0.601, )"
+              "version": "[1.0.701, )"
             },
             "DCS.Localization": {
               "target": "Package",
-              "version": "[1.0.401, )"
+              "version": "[1.0.501, )"
             },
             "DCS.Log": {
               "target": "Package",
-              "version": "[1.0.601.5, )"
+              "version": "[1.0.701.5, )"
             },
             "Dapper": {
               "target": "Package",
@@ -220,7 +220,7 @@
       }
     },
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj": {
-      "version": "1.0.7701.1",
+      "version": "1.0.7901.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
         "projectName": "DCS.User.UI",
@@ -245,9 +245,9 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\verhe\\Desktop\\Local.Nuget": {},
           "C:\\Users\\verhe\\Documents\\DCS\\Nuget": {},
           "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/Verheyden-Tech/index.json": {},
           "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
@@ -281,43 +281,43 @@
           "dependencies": {
             "DCS.Authorisation": {
               "target": "Package",
-              "version": "[1.0.1101, )"
+              "version": "[1.0.1401, )"
             },
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.1.701, )"
+              "version": "[1.1.901, )"
             },
             "DCS.CoreLib.BaseClass": {
               "target": "Package",
-              "version": "[1.1.801, )"
+              "version": "[1.1.1001, )"
             },
             "DCS.CoreLib.View": {
               "target": "Package",
-              "version": "[1.1.3101, )"
+              "version": "[1.1.3301, )"
             },
             "DCS.Data": {
               "target": "Package",
-              "version": "[1.0.601, )"
+              "version": "[1.0.701, )"
             },
             "DCS.Localization": {
               "target": "Package",
-              "version": "[1.0.401, )"
+              "version": "[1.0.501, )"
             },
             "DCS.Log": {
               "target": "Package",
-              "version": "[1.0.601.5, )"
+              "version": "[1.0.701.5, )"
             },
             "DCS.OnBoarding": {
               "target": "Package",
-              "version": "[1.0.401, )"
+              "version": "[1.0.501, )"
             },
             "DCS.OnBoarding.UI": {
               "target": "Package",
-              "version": "[1.0.401, )"
+              "version": "[1.0.501, )"
             },
             "DCS.Resource": {
               "target": "Package",
-              "version": "[1.0.201, )"
+              "version": "[1.0.301, )"
             }
           },
           "imports": [
@@ -344,7 +344,7 @@
       }
     },
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj": {
-      "version": "1.0.3901.1",
+      "version": "1.0.4401.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj",
         "projectName": "DCS.User",
@@ -369,9 +369,9 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\verhe\\Desktop\\Local.Nuget": {},
           "C:\\Users\\verhe\\Documents\\DCS\\Nuget": {},
           "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/Verheyden-Tech/index.json": {},
           "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
@@ -402,27 +402,27 @@
             },
             "DCS.Authorisation": {
               "target": "Package",
-              "version": "[1.0.1101, )"
+              "version": "[1.0.1401, )"
             },
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.1.701, )"
+              "version": "[1.1.901, )"
             },
             "DCS.Data": {
               "target": "Package",
-              "version": "[1.0.601, )"
+              "version": "[1.0.701, )"
             },
             "DCS.Localization": {
               "target": "Package",
-              "version": "[1.0.401, )"
+              "version": "[1.0.501, )"
             },
             "DCS.Log": {
               "target": "Package",
-              "version": "[1.0.601.5, )"
+              "version": "[1.0.701.5, )"
             },
             "DCS.Resource": {
               "target": "Package",
-              "version": "[1.0.201, )"
+              "version": "[1.0.301, )"
             },
             "Microsoft.CodeAnalysis.FxCopAnalyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

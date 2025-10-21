@@ -8,7 +8,7 @@ namespace DCS.User.Data
     /// </summary>
     public class RoleRepository : RepositoryBase<Guid, Role>, IRoleRepository
     {
-        private readonly ISqlService sqlService;
+        private readonly ISqlService sqlService = CommonServiceLocator.ServiceLocator.Current.GetInstance<ISqlService>();
 
         /// <summary>
         /// Tablename for the RoleRepository.

@@ -1,125 +1,125 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<TargetFramework>net7.0-windows</TargetFramework>
-		<Version>1.0.7701.1</Version>
-		<AssemblyVersion>1.0.7701.0</AssemblyVersion>
-		<ApplicationVersion>1.2.3.0</ApplicationVersion>
-		<ProjectGuid>{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}</ProjectGuid>
-		<OutputType>Library</OutputType>
-		<Authors>Tobias Verheyden</Authors>
-		<Company>Verheyden Tech</Company>
-		<Description>UI for user management in DCS.</Description>
-		<RootNamespace>DCS.User</RootNamespace>
-		<AssemblyName>DCS.User.UI</AssemblyName>
-		<AssemblyType>UI</AssemblyType>
-		<PackageTags>DCS</PackageTags>
-		<UseWPF>true</UseWPF>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<PackageOutputPath>Nuget</PackageOutputPath>
-		<EnableNETAnalyzers>True</EnableNETAnalyzers>
-		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<DocumentationFile>Documentation\API.Documentation</DocumentationFile>
-		<Nullable>enable</Nullable>
-		<UseWPF>true</UseWPF>
-		<ImplicitUsings>enable</ImplicitUsings>
-	</PropertyGroup>
-	<ItemGroup>
-		<Compile Remove="Documentation\**" />
-		<Compile Remove="Nuget\**" />
-		<Compile Remove="SharedDLLs\**" />
-		<EmbeddedResource Remove="Documentation\**" />
-		<EmbeddedResource Remove="Nuget\**" />
-		<EmbeddedResource Remove="SharedDLLs\**" />
-		<None Remove="Documentation\**" />
-		<None Remove="Nuget\**" />
-		<None Remove="SharedDLLs\**" />
-		<Page Remove="Documentation\**" />
-		<Page Remove="Nuget\**" />
-		<Page Remove="SharedDLLs\**" />
-	</ItemGroup>
-	<ItemGroup>
-		<PackageReference Include="DCS.Authorisation" Version="1.0.1101" />
-		<PackageReference Include="DCS.CoreLib" Version="1.1.701" />
-		<PackageReference Include="DCS.CoreLib.BaseClass" Version="1.1.801" />
-		<PackageReference Include="DCS.CoreLib.View" Version="1.1.3101" />
-		<PackageReference Include="DCS.Data" Version="1.0.601" />
-		<PackageReference Include="DCS.Localization" Version="1.0.401" />
-		<PackageReference Include="DCS.Log" Version="1.0.601.5" />
-		<PackageReference Include="DCS.OnBoarding" Version="1.0.401" />
-		<PackageReference Include="DCS.OnBoarding.UI" Version="1.0.401" />
-		<PackageReference Include="DCS.Resource" Version="1.0.201" />
-	</ItemGroup>
-	<ItemGroup>
-		<ProjectReference Include="..\DCS.User.Service\DCS.User.Service.csproj" />
-		<ProjectReference Include="..\DCS.User\DCS.User.csproj" />
-	</ItemGroup>
-	<ItemGroup>
-		<Reference Include="Telerik.Licensing.Runtime">
-			<HintPath>SharedDLLs\Telerik.Licensing.Runtime.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-		<Reference Include="Telerik.Pivot.Core">
-			<HintPath>SharedDLLs\Telerik.Pivot.Core.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-		<Reference Include="Telerik.Windows.Controls">
-			<HintPath>SharedDLLs\Telerik.Windows.Controls.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-		<Reference Include="Telerik.Windows.Controls.Data">
-			<HintPath>SharedDLLs\Telerik.Windows.Controls.Data.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-		<Reference Include="Telerik.Windows.Controls.Docking">
-			<HintPath>SharedDLLs\Telerik.Windows.Controls.Docking.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-		<Reference Include="Telerik.Windows.Controls.FileDialogs">
-			<HintPath>SharedDLLs\Telerik.Windows.Controls.FileDialogs.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-		<Reference Include="Telerik.Windows.Controls.FixedDocumentViewers">
-			<HintPath>SharedDLLs\Telerik.Windows.Controls.FixedDocumentViewers.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-		<Reference Include="Telerik.Windows.Controls.GridView">
-			<HintPath>SharedDLLs\Telerik.Windows.Controls.GridView.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-		<Reference Include="Telerik.Windows.Controls.Input">
-			<HintPath>SharedDLLs\Telerik.Windows.Controls.Input.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-		<Reference Include="Telerik.Windows.Controls.Navigation">
-			<HintPath>SharedDLLs\Telerik.Windows.Controls.Navigation.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-		<Reference Include="Telerik.Windows.Controls.resources">
-			<HintPath>SharedDLLs\Telerik.Windows.Controls.resources.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-		<Reference Include="Telerik.Windows.Data">
-			<HintPath>SharedDLLs\Telerik.Windows.Data.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-		<Reference Include="Telerik.Windows.Documents.Core">
-			<HintPath>SharedDLLs\Telerik.Windows.Documents.Core.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-		<Reference Include="Telerik.Windows.Documents.Fixed">
-			<HintPath>SharedDLLs\Telerik.Windows.Documents.Fixed.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-		<Reference Include="Telerik.Windows.Documents.Flow">
-			<HintPath>SharedDLLs\Telerik.Windows.Documents.Flow.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-		<Reference Include="Telerik.Windows.Zip">
-			<HintPath>SharedDLLs\Telerik.Windows.Zip.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-	</ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Version>1.0.7901.1</Version>
+    <AssemblyVersion>1.0.7701.0</AssemblyVersion>
+    <ApplicationVersion>1.2.3.0</ApplicationVersion>
+    <ProjectGuid>{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <Authors>Tobias Verheyden</Authors>
+    <Company>Verheyden Tech</Company>
+    <Description>UI for user management in DCS.</Description>
+    <RootNamespace>DCS.User</RootNamespace>
+    <AssemblyName>DCS.User.UI</AssemblyName>
+    <AssemblyType>UI</AssemblyType>
+    <PackageTags>DCS</PackageTags>
+    <UseWPF>true</UseWPF>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageOutputPath>Nuget</PackageOutputPath>
+    <EnableNETAnalyzers>True</EnableNETAnalyzers>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>Documentation\API.Documentation</DocumentationFile>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Documentation\**" />
+    <Compile Remove="Nuget\**" />
+    <Compile Remove="SharedDLLs\**" />
+    <EmbeddedResource Remove="Documentation\**" />
+    <EmbeddedResource Remove="Nuget\**" />
+    <EmbeddedResource Remove="SharedDLLs\**" />
+    <None Remove="Documentation\**" />
+    <None Remove="Nuget\**" />
+    <None Remove="SharedDLLs\**" />
+    <Page Remove="Documentation\**" />
+    <Page Remove="Nuget\**" />
+    <Page Remove="SharedDLLs\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DCS.Authorisation" Version="1.0.1401" />
+    <PackageReference Include="DCS.CoreLib" Version="1.1.901" />
+    <PackageReference Include="DCS.CoreLib.BaseClass" Version="1.1.1001" />
+    <PackageReference Include="DCS.CoreLib.View" Version="1.1.3301" />
+    <PackageReference Include="DCS.Data" Version="1.0.701" />
+    <PackageReference Include="DCS.Localization" Version="1.0.501" />
+    <PackageReference Include="DCS.Log" Version="1.0.701.5" />
+    <PackageReference Include="DCS.OnBoarding" Version="1.0.501" />
+    <PackageReference Include="DCS.OnBoarding.UI" Version="1.0.501" />
+    <PackageReference Include="DCS.Resource" Version="1.0.301" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DCS.User.Service\DCS.User.Service.csproj" />
+    <ProjectReference Include="..\DCS.User\DCS.User.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Telerik.Licensing.Runtime">
+      <HintPath>SharedDLLs\Telerik.Licensing.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Pivot.Core">
+      <HintPath>SharedDLLs\Telerik.Pivot.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>SharedDLLs\Telerik.Windows.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data">
+      <HintPath>SharedDLLs\Telerik.Windows.Controls.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Docking">
+      <HintPath>SharedDLLs\Telerik.Windows.Controls.Docking.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.FileDialogs">
+      <HintPath>SharedDLLs\Telerik.Windows.Controls.FileDialogs.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.FixedDocumentViewers">
+      <HintPath>SharedDLLs\Telerik.Windows.Controls.FixedDocumentViewers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView">
+      <HintPath>SharedDLLs\Telerik.Windows.Controls.GridView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>SharedDLLs\Telerik.Windows.Controls.Input.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>SharedDLLs\Telerik.Windows.Controls.Navigation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.resources">
+      <HintPath>SharedDLLs\Telerik.Windows.Controls.resources.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>SharedDLLs\Telerik.Windows.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core">
+      <HintPath>SharedDLLs\Telerik.Windows.Documents.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Fixed">
+      <HintPath>SharedDLLs\Telerik.Windows.Documents.Fixed.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow">
+      <HintPath>SharedDLLs\Telerik.Windows.Documents.Flow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip">
+      <HintPath>SharedDLLs\Telerik.Windows.Zip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
 </Project>
