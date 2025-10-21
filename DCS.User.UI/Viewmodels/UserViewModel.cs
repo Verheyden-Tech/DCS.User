@@ -74,9 +74,12 @@ namespace DCS.User.UI
             AllOrganisations = organisationService.GetAll();
             AllRoles = roleService.GetAll();
 
-            UserGroups = GetUserGroups(user);
-            UserOrganisations = GetUserOrganisations(user);
-            UserRoles = GetUserRoles(user);
+            if(user.Guid != default)
+            {
+                UserGroups = GetUserGroups(user);
+                UserOrganisations = GetUserOrganisations(user);
+                UserRoles = GetUserRoles(user);
+            }
 
             Domains = domainService.GetAll();
         }
