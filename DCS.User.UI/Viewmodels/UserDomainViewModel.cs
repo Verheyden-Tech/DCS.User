@@ -26,9 +26,11 @@ namespace DCS.User.UI
         /// <param name="userDomain">The Active Directory user model used to initialize the view model. Cannot be <see langword="null"/>.</param>
         public UserDomainViewModel(UserDomain userDomain) : base(userDomain)
         {
-            this.Model = userDomain;
+            Model = userDomain;
+            Collection = domainService.GetAll();
         }
 
+        #region Create, Update, Delete Domain
         /// <summary>
         /// Creates a new domain and its associated subscription if the domain does not already exist.
         /// </summary>
@@ -169,6 +171,7 @@ namespace DCS.User.UI
             Log.LogManager.Singleton.Error($"Domain not found: {Model.DomainName}", "UserDomainViewModel.DeleteDomain");
             return false;
         }
+        #endregion
 
         #region Properties
         /// <summary>

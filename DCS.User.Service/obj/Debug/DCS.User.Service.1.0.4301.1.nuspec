@@ -9,16 +9,16 @@
     <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
     <description>Service for user management in DCS.</description>
     <tags>DCS</tags>
-    <repository type="git" commit="8c803213fef6028eaeca342c272b27fb4cc2791d" />
+    <repository type="git" commit="456283e855b2d19196108045a8b88ce999c6ddde" />
     <dependencies>
       <group targetFramework="net7.0-windows7.0">
         <dependency id="DCS.User.Data" version="1.0.4401.1" exclude="Build,Analyzers" />
         <dependency id="DCS.User" version="1.0.4501.1" exclude="Build,Analyzers" />
         <dependency id="CommonServiceLocator" version="2.0.7" exclude="Build,Analyzers" />
-        <dependency id="DCS.Authorisation" version="1.0.1401" exclude="Build,Analyzers" />
-        <dependency id="DCS.CoreLib" version="1.1.901" exclude="Build,Analyzers" />
-        <dependency id="DCS.CoreLib.BaseClass" version="1.1.1001" exclude="Build,Analyzers" />
-        <dependency id="DCS.Data" version="1.0.701" exclude="Build,Analyzers" />
+        <dependency id="DCS.Authorisation" version="1.0.1501" exclude="Build,Analyzers" />
+        <dependency id="DCS.CoreLib" version="1.1.1001" exclude="Build,Analyzers" />
+        <dependency id="DCS.CoreLib.BaseClass" version="1.1.1201" exclude="Build,Analyzers" />
+        <dependency id="DCS.Data" version="1.0.801" exclude="Build,Analyzers" />
         <dependency id="DCS.Localization" version="1.0.501" exclude="Build,Analyzers" />
         <dependency id="DCS.Log" version="1.0.701.5" exclude="Build,Analyzers" />
         <dependency id="Dapper" version="2.1.66" exclude="Build,Analyzers" />

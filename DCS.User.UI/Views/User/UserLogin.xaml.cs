@@ -26,7 +26,7 @@ namespace DCS.User.UI
             viewModel = new UserViewModel(obj);
             DataContext = viewModel;
 
-            if (Current.Domains.Count >= 0)
+            if (Current.Domains != null && Current.Domains.Count > 0)
                 ServerComboBox.Text = Current.Domains.First().DomainName;
         }
 
