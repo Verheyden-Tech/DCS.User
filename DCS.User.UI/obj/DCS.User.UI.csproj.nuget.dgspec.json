@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj": {
-      "version": "1.0.4301.1",
+      "version": "1.0.4401.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
         "projectName": "DCS.User.Data",
@@ -107,7 +107,7 @@
       }
     },
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj": {
-      "version": "1.0.4201.1",
+      "version": "1.0.4301.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj",
         "projectName": "DCS.User.Service",
@@ -220,7 +220,7 @@
       }
     },
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj": {
-      "version": "1.0.7901.1",
+      "version": "1.0.8001.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
         "projectName": "DCS.User.UI",
@@ -344,7 +344,7 @@
       }
     },
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj": {
-      "version": "1.0.4401.1",
+      "version": "1.0.4501.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj",
         "projectName": "DCS.User",

@@ -312,6 +312,16 @@
             Role properties last time changed date.
             </summary>
         </member>
+        <member name="T:DCS.User.UI.UserAssignementViewModel">
+            <summary>
+            Represents a view model for managing user assignments, including operations for adding and removing users from
+            groups, organizations, and roles, as well as managing assignment properties.
+            </summary>
+            <remarks>The <see cref="T:DCS.User.UI.UserAssignementViewModel"/> class provides functionality to manage user
+            assignments in various contexts such as groups, organizations, and roles. It includes methods for adding and
+            removing users from these entities, as well as properties for accessing and modifying assignment details. This
+            view model is backed by a service layer for data retrieval and persistence.</remarks>
+        </member>
         <member name="M:DCS.User.UI.UserAssignementViewModel.#ctor(DCS.User.UserAssignement)">
             <summary>
             Initializes a new instance of the <see cref="T:DCS.User.UI.UserAssignementViewModel"/> class using the specified <see

@@ -1,7 +1,17 @@
 ﻿using DCS.CoreLib.BaseClass;
+using DCS.CoreLib.Collection;
+using System.Collections.ObjectModel;
 
 namespace DCS.User.UI
 {
+    /// <summary>
+    /// Represents a view model for managing user assignments, including operations for adding and removing users from
+    /// groups, organizations, and roles, as well as managing assignment properties.
+    /// </summary>
+    /// <remarks>The <see cref="UserAssignementViewModel"/> class provides functionality to manage user
+    /// assignments in various contexts such as groups, organizations, and roles. It includes methods for adding and
+    /// removing users from these entities, as well as properties for accessing and modifying assignment details. This
+    /// view model is backed by a service layer for data retrieval and persistence.</remarks>
     public class UserAssignementViewModel : ViewModelBase<Guid, UserAssignement>
     {
         private readonly IUserAssignementService service = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserAssignementService>();

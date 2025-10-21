@@ -382,12 +382,11 @@ namespace DCS.User.UI
         public ObservableCollection<Group> GetUserGroups(User user)
         {
             var userGroups = new ObservableCollection<Group>();
+            var assignments = new ObservableCollection<UserAssignement>(assignementService.GetAll());
 
             if (user != null)
             {
-                var assignments = assignementService.GetAll().Where(ua => ua.UserGuid == user.Guid && ua.GroupGuid != Guid.Empty);
-
-                foreach (var assignment in assignments)
+                foreach (var assignment in assignments.Where(ua => ua.UserGuid == user.Guid && ua.GroupGuid != default))
                 {
                     var group = AllGroups.FirstOrDefault(g => g.Guid == assignment.GroupGuid);
                     if (group != null)
@@ -481,12 +480,11 @@ namespace DCS.User.UI
         public ObservableCollection<Organisation> GetUserOrganisations(User user)
         {
             var userOrganisations = new ObservableCollection<Organisation>();
+            var assignments = new ObservableCollection<UserAssignement>(assignementService.GetAll());
 
             if (user != null)
             {
-                var assignments = assignementService.GetAll().Where(ua => ua.UserGuid == user.Guid && ua.OrganisationGuid != Guid.Empty);
-
-                foreach (var assignment in assignments)
+                foreach (var assignment in assignments.Where(ua => ua.UserGuid == user.Guid && ua.OrganisationGuid != default))
                 {
                     var organisation = AllOrganisations.FirstOrDefault(o => o.Guid == assignment.OrganisationGuid);
 
@@ -580,12 +578,11 @@ namespace DCS.User.UI
         public ObservableCollection<Role> GetUserRoles(User user)
         {
             var userRoles = new ObservableCollection<Role>();
+            var assignments = new ObservableCollection<UserAssignement>(assignementService.GetAll());
 
             if (user != null)
             {
-                var assignments = assignementService.GetAll().Where(ua => ua.UserGuid == user.Guid && ua.RoleGuid != Guid.Empty);
-
-                foreach (var assignment in assignments)
+                foreach (var assignment in assignments.Where(ua => ua.UserGuid == user.Guid && ua.RoleGuid != default))
                 {
                     var role = AllRoles.FirstOrDefault(r => r.Guid == assignment.RoleGuid);
 

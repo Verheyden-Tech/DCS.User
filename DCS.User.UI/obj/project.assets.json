@@ -1222,7 +1222,7 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "DCS.User/1.0.4401.1": {
+      "DCS.User/1.0.4501.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -1245,7 +1245,7 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "DCS.User.Data/1.0.4301.1": {
+      "DCS.User.Data/1.0.4401.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -1255,7 +1255,7 @@
           "DCS.Data": "1.0.701",
           "DCS.Localization": "1.0.501",
           "DCS.Log": "1.0.701.5",
-          "DCS.User": "1.0.4401.1"
+          "DCS.User": "1.0.4501.1"
         },
         "compile": {
           "bin/placeholder/DCS.User.Data.dll": {}
@@ -1264,7 +1264,7 @@
           "bin/placeholder/DCS.User.Data.dll": {}
         }
       },
-      "DCS.User.Service/1.0.4201.1": {
+      "DCS.User.Service/1.0.4301.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -1275,8 +1275,8 @@
           "DCS.Data": "1.0.701",
           "DCS.Localization": "1.0.501",
           "DCS.Log": "1.0.701.5",
-          "DCS.User": "1.0.4401.1",
-          "DCS.User.Data": "1.0.4301.1",
+          "DCS.User": "1.0.4501.1",
+          "DCS.User.Data": "1.0.4401.1",
           "Dapper": "2.1.66"
         },
         "compile": {
@@ -3281,17 +3281,17 @@
         "version.txt"
       ]
     },
-    "DCS.User/1.0.4401.1": {
+    "DCS.User/1.0.4501.1": {
       "type": "project",
       "path": "../DCS.User/DCS.User.csproj",
       "msbuildProject": "../DCS.User/DCS.User.csproj"
     },
-    "DCS.User.Data/1.0.4301.1": {
+    "DCS.User.Data/1.0.4401.1": {
       "type": "project",
       "path": "../DCS.User.Data/DCS.User.Data.csproj",
       "msbuildProject": "../DCS.User.Data/DCS.User.Data.csproj"
     },
-    "DCS.User.Service/1.0.4201.1": {
+    "DCS.User.Service/1.0.4301.1": {
       "type": "project",
       "path": "../DCS.User.Service/DCS.User.Service.csproj",
       "msbuildProject": "../DCS.User.Service/DCS.User.Service.csproj"
@@ -3309,8 +3309,8 @@
       "DCS.OnBoarding >= 1.0.501",
       "DCS.OnBoarding.UI >= 1.0.501",
       "DCS.Resource >= 1.0.301",
-      "DCS.User >= 1.0.4401.1",
-      "DCS.User.Service >= 1.0.4201.1"
+      "DCS.User >= 1.0.4501.1",
+      "DCS.User.Service >= 1.0.4301.1"
     ]
   },
   "packageFolders": {
@@ -3319,7 +3319,7 @@
     "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages": {}
   },
   "project": {
-    "version": "1.0.7901.1",
+    "version": "1.0.8001.1",
     "restore": {
       "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
       "projectName": "DCS.User.UI",
