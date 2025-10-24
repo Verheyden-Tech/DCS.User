@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1lZD2iyNud0=",
+  "dgSpecHash": "oQIaLtnc3Vs=",
   "success": true,
   "projectFilePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
   "expectedPackageFiles": [
@@ -8,11 +8,12 @@
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\commonservicelocator\\2.0.7\\commonservicelocator.2.0.7.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.authorisation\\1.0.1801\\dcs.authorisation.1.0.1801.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib\\1.1.1101\\dcs.corelib.1.1.1101.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.baseclass\\1.1.1301\\dcs.corelib.baseclass.1.1.1301.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.collection\\1.1.101\\dcs.corelib.collection.1.1.101.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data\\1.0.1001\\dcs.data.1.0.1001.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.authorisation\\1.0.1901\\dcs.authorisation.1.0.1901.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib\\1.1.1201\\dcs.corelib.1.1.1201.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.baseclass\\1.1.1401\\dcs.corelib.baseclass.1.1.1401.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.collection\\1.1.1001\\dcs.corelib.collection.1.1.1001.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data\\1.0.1401\\dcs.data.1.0.1401.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data.sql\\1.0.1601\\dcs.data.sql.1.0.1601.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.localization\\1.0.501\\dcs.localization.1.0.501.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.log\\1.0.701.5\\dcs.log.1.0.701.5.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.resource\\1.0.301\\dcs.resource.1.0.301.nupkg.sha512",
@@ -65,5 +66,18 @@
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.text.json\\9.0.5\\system.text.json.9.0.5.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "DCS.Resource 1.0.301 depends on DCS.CoreLib.Collection (>= 1.1.101) but DCS.CoreLib.Collection 1.1.101 was not found. DCS.CoreLib.Collection 1.1.1001 was resolved instead.",
+      "projectPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
+      "libraryId": "DCS.CoreLib.Collection",
+      "targetGraphs": [
+        "net7.0-windows7.0"
+      ]
+    }
+  ]
 }

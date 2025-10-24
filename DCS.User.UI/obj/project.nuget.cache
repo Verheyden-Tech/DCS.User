@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VLSn9wt3uYc=",
+  "dgSpecHash": "tFBIgrbPP+I=",
   "success": true,
   "projectFilePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
   "expectedPackageFiles": [
@@ -9,15 +9,16 @@
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\bogus\\35.6.4\\bogus.35.6.4.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\commonservicelocator\\2.0.7\\commonservicelocator.2.0.7.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.authorisation\\1.0.1801\\dcs.authorisation.1.0.1801.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.billing\\1.0.401\\dcs.billing.1.0.401.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.contact\\1.0.501\\dcs.contact.1.0.501.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib\\1.1.1101\\dcs.corelib.1.1.1101.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.baseclass\\1.1.1301\\dcs.corelib.baseclass.1.1.1301.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.collection\\1.1.1001\\dcs.corelib.collection.1.1.1001.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.view\\1.1.3301\\dcs.corelib.view.1.1.3301.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data\\1.0.1001\\dcs.data.1.0.1001.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.hr\\1.0.301\\dcs.hr.1.0.301.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.authorisation\\1.0.1901\\dcs.authorisation.1.0.1901.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.billing\\1.0.501\\dcs.billing.1.0.501.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.contact\\1.0.1101\\dcs.contact.1.0.1101.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib\\1.1.1201\\dcs.corelib.1.1.1201.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.baseclass\\1.1.1401\\dcs.corelib.baseclass.1.1.1401.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.collection\\1.1.1101\\dcs.corelib.collection.1.1.1101.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.view\\1.1.3401\\dcs.corelib.view.1.1.3401.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data\\1.0.1401\\dcs.data.1.0.1401.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data.sql\\1.0.1601\\dcs.data.sql.1.0.1601.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.hr\\1.0.401\\dcs.hr.1.0.401.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.localization\\1.0.501\\dcs.localization.1.0.501.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.log\\1.0.701.5\\dcs.log.1.0.701.5.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.onboarding\\1.0.501\\dcs.onboarding.1.0.501.nupkg.sha512",
@@ -74,5 +75,42 @@
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.text.json\\9.0.5\\system.text.json.9.0.5.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "DCS.OnBoarding.UI 1.0.501 depends on DCS.Billing (>= 1.0.401) but DCS.Billing 1.0.401 was not found. DCS.Billing 1.0.501 was resolved instead.",
+      "projectPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
+      "libraryId": "DCS.Billing",
+      "targetGraphs": [
+        "net7.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "DCS.OnBoarding.UI 1.0.501 depends on DCS.Contact (>= 1.0.501) but DCS.Contact 1.0.501 was not found. DCS.Contact 1.0.1101 was resolved instead.",
+      "projectPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
+      "libraryId": "DCS.Contact",
+      "targetGraphs": [
+        "net7.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "DCS.OnBoarding.UI 1.0.501 depends on DCS.HR (>= 1.0.301) but DCS.HR 1.0.301 was not found. DCS.HR 1.0.401 was resolved instead.",
+      "projectPath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
+      "libraryId": "DCS.HR",
+      "targetGraphs": [
+        "net7.0-windows7.0"
+      ]
+    }
+  ]
 }

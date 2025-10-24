@@ -27,7 +27,7 @@ namespace DCS.User.UI
         public UserDomainViewModel(UserDomain userDomain) : base(userDomain)
         {
             Model = userDomain;
-            Collection = domainService.GetAll().Result;
+            Collection = domainService.GetAll();
         }
 
         #region Create, Update, Delete Domain
@@ -68,13 +68,13 @@ namespace DCS.User.UI
 
                 try
                 {
-                    if (subscriptionService.New(subscription).Result)
+                    if (subscriptionService.New(subscription))
                     {
                         userDomain.LicenceKey = subscription.SubscriptionGuid;
 
                         try
                         {
-                            if (domainService.New(userDomain).Result)
+                            if (domainService.New(userDomain))
                                 return true;
                             return false;
                         }
@@ -117,7 +117,7 @@ namespace DCS.User.UI
             {
                 if (domainService.Get(Model.Guid) != null)
                 {
-                    var subscription = subscriptionService.GetAll().Result.Where(s => s.SubscriptionGuid == Model.LicenceKey).FirstOrDefault();
+                    var subscription = subscriptionService.GetAll().Where(s => s.SubscriptionGuid == Model.LicenceKey).FirstOrDefault();
                     if (subscription != null)
                     {
                         try
@@ -126,11 +126,11 @@ namespace DCS.User.UI
                             subscription.SubscriptionEnd = Model.EndSubscription;
                             subscription.DomainName = Model.DomainName;
 
-                            if (subscriptionService.Update(subscription).Result)
+                            if (subscriptionService.Update(subscription))
                             {
                                 Model.SubscriptionActive = subscription.SubscriptionEnd > DateTime.UtcNow;
 
-                                if (domainService.Update(Model).Result)
+                                if (domainService.Update(Model))
                                     return true;
                             }
                         }
@@ -174,7 +174,7 @@ namespace DCS.User.UI
             {
                 try
                 {
-                    if (domainService.Delete(Model.Guid).Result)
+                    if (domainService.Delete(Model.Guid))
                         return true;
                 }
                 catch (Exception ex)

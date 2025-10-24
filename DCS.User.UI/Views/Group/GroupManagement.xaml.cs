@@ -22,7 +22,7 @@ namespace DCS.User.UI
             InitializeComponent();
 
             Groups = new ObservableCollection<Group>();
-            Groups = groupService.GetAll().Result;
+            Groups = groupService.GetAll();
             GroupGridView.ItemsSource = Groups;
 
             var obj = new Group();
