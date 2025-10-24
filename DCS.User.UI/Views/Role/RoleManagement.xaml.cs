@@ -23,7 +23,7 @@ namespace DCS.User.UI
             InitializeComponent();
 
             Roles = new ObservableCollection<Role>();
-            Roles = roleService.GetAll();
+            Roles = roleService.GetAll().Result;
             RoleGridView.ItemsSource = Roles;
 
             var obj = new Role();

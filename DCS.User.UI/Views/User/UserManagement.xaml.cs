@@ -24,7 +24,7 @@ namespace DCS.User.UI
             InitializeComponent();
 
             Users = new ObservableCollection<User>();
-            Users = userService.GetAll();
+            Users = userService.GetAll().Result;
             UserGridView.ItemsSource = Users;
 
             var obj = new User();
@@ -60,7 +60,7 @@ namespace DCS.User.UI
                 {
                     foreach (User user in UserGridView.SelectedItems)
                     {
-                        if (!userService.Delete(user.Guid))
+                        if (!userService.Delete(user.Guid).Result)
                         {
                             MessageBox.Show($"Fehler beim löschen des Benutzers {user.UserName}.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
                             Log.LogManager.Singleton.Warning($"Error while deleting {user.UserName}.", "DeleteUser");

@@ -22,7 +22,7 @@ namespace DCS.User.UI
         {
             this.Model = role;
 
-            Collection = roleService.GetAll();
+            Collection = roleService.GetAll().Result;
 
             var ua = new UserAssignement();
             assignementViewModel = new UserAssignementViewModel(ua);
@@ -55,7 +55,7 @@ namespace DCS.User.UI
                         LastManipulation = DateTime.Now
                     };
 
-                    if(roleService.New(newRole))
+                    if(roleService.New(newRole).Result)
                         return true;
 
                     Collection.Add(newRole);
@@ -91,7 +91,7 @@ namespace DCS.User.UI
                     {
                         Model.LastManipulation = DateTime.Now;
 
-                        if (roleService.Update(Model))
+                        if (roleService.Update(Model).Result)
                         {
                             return true;
                         }
@@ -131,7 +131,7 @@ namespace DCS.User.UI
 
             if (role != null)
             {
-                ObservableCollection<UserAssignement> userAssignments = userAssignmentService.GetAll();
+                ObservableCollection<UserAssignement> userAssignments = userAssignmentService.GetAll().Result;
 
                 if (userAssignments != null && userAssignments.Count > 0)
                 {
@@ -139,7 +139,7 @@ namespace DCS.User.UI
                     {
                         if (userAssignment.RoleGuid == role.Guid)
                         {
-                            var user = userService.Get(userAssignment.UserGuid);
+                            var user = userService.Get(userAssignment.UserGuid).Result;
                             if (user != null)
                             {
                                 users.Add(user);

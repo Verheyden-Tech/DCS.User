@@ -21,7 +21,7 @@ namespace DCS.User.UI
         {
             this.Model = organisation;
 
-            Collection = organisationService.GetAll();
+            Collection = organisationService.GetAll().Result;
 
             var ua = new UserAssignement();
             assignementViewModel = new UserAssignementViewModel(ua);
@@ -52,7 +52,7 @@ namespace DCS.User.UI
                         LastManipulation = DateTime.Now
                     };
 
-                    if (organisationService.New(newOrganisation))
+                    if (organisationService.New(newOrganisation).Result)
                         return true;
                 }
                 catch (Exception ex)
@@ -79,7 +79,7 @@ namespace DCS.User.UI
         {
             if (Model != null && Model.Guid != default)
             {
-                var organisation = organisationService.Get(Model.Guid);
+                var organisation = organisationService.Get(Model.Guid).Result;
                 if (organisation != null)
                 {
                     try
@@ -89,7 +89,7 @@ namespace DCS.User.UI
                         organisation.IsActive = Model.IsActive;
                         organisation.LastManipulation = DateTime.Now;
 
-                        if (organisationService.Update(organisation))
+                        if (organisationService.Update(organisation).Result)
                         {
                             return true;
                         }
@@ -125,7 +125,7 @@ namespace DCS.User.UI
 
             if (organisation != null)
             {
-                ObservableCollection<UserAssignement> userAssignments = userAssignementService.GetAll();
+                ObservableCollection<UserAssignement> userAssignments = userAssignementService.GetAll().Result;
 
                 if (userAssignments != null && userAssignments.Count > 0)
                 {
@@ -133,7 +133,7 @@ namespace DCS.User.UI
                     {
                         if (userAssignment.OrganisationGuid == organisation.Guid)
                         {
-                            var user = userService.Get(userAssignment.UserGuid);
+                            var user = userService.Get(userAssignment.UserGuid).Result;
                             if (user != null)
                             {
                                 users.Add(user);

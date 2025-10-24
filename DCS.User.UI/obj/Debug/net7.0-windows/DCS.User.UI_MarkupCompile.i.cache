@@ -13,8 +13,8 @@ TRACE;DEBUG;NET;NET7_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR
 12-201990861
 
 21-2109702553
-258-862932881
+258-698898518
 Views\Group\GroupEditor.xaml;Views\Group\GroupManagement.xaml;Views\Organisation\OrganisationEditor.xaml;Views\Organisation\OrganisationManagement.xaml;Views\Role\RoleEditor.xaml;Views\Role\RoleManagement.xaml;Views\User\ChangeUserPassword.xaml;Views\User\CreateNewUserDomain.xaml;Views\User\RegistrateUser.xaml;Views\User\UserEditor.xaml;Views\User\UserLogin.xaml;Views\User\UserManagement.xaml;
 
-False
+True
 

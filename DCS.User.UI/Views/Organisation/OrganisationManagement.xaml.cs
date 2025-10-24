@@ -23,7 +23,7 @@ namespace DCS.User.UI
         {
             InitializeComponent();
 
-            Organisations = organisationService.GetAll();
+            Organisations = organisationService.GetAll().Result;
             OrganisationGridView.ItemsSource = Organisations;
 
             var obj = new Organisation();

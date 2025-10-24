@@ -7,7 +7,7 @@ namespace DCS.User
     /// </summary>
     public class UserAssignementService : ServiceBase<Guid, UserAssignement, IUserAssignementRepository>, IUserAssignementService
     {
-        private readonly IUserAssignementRepository repository;
+        private readonly IUserAssignementRepository repository = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserAssignementRepository>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UserAssignementService"/> class.

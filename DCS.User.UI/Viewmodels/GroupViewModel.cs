@@ -22,7 +22,7 @@ namespace DCS.User.UI
         {
             this.Model = group;
 
-            Collection = groupService.GetAll();
+            Collection = groupService.GetAll().Result;
 
             var ua = new UserAssignement();
             assignementViewModel = new UserAssignementViewModel(ua);
@@ -51,7 +51,7 @@ namespace DCS.User.UI
                     LastManipulation = DateTime.Now
                 };
 
-                if (groupService.New(newGroup))
+                if (groupService.New(newGroup).Result)
                 {
                     Collection.Add(newGroup);
                     return true;
@@ -78,7 +78,7 @@ namespace DCS.User.UI
         {
             if (Model != null && Model.Guid != default)
             {
-                var group = groupService.Get(Model.Guid);
+                var group = groupService.Get(Model.Guid).Result;
                 if (group != null)
                 {
                     group.Name = Model.Name;
@@ -86,7 +86,7 @@ namespace DCS.User.UI
                     group.IsActive = Model.IsActive;
                     group.LastManipulation = DateTime.Now;
 
-                    if (groupService.Update(group))
+                    if (groupService.Update(group).Result)
                     {
                         return true;
                     }
@@ -113,7 +113,7 @@ namespace DCS.User.UI
         {
             ObservableCollection<Group> groups = new ObservableCollection<Group>();
 
-            var allGroups = groupService.GetAll();
+            var allGroups = groupService.GetAll().Result;
 
             if (allGroups != null && allGroups.Count > 0)
             {
@@ -145,7 +145,7 @@ namespace DCS.User.UI
 
             if (group != null)
             {
-                ObservableCollection<UserAssignement> userAssignements = userAssignementService.GetAll();
+                ObservableCollection<UserAssignement> userAssignements = userAssignementService.GetAll().Result;
 
                 if (userAssignements != null && userAssignements.Count > 0)
                 {
@@ -153,7 +153,7 @@ namespace DCS.User.UI
                     {
                         if (userAssignement.GroupGuid == group.Guid)
                         {
-                            var user = userService.Get(userAssignement.UserGuid);
+                            var user = userService.Get(userAssignement.UserGuid).Result;
                             if (user != null)
                             {
                                 users.Add(user);

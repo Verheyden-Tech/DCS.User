@@ -27,7 +27,7 @@ namespace DCS.User.UI
         public UserDomainViewModel(UserDomain userDomain) : base(userDomain)
         {
             Model = userDomain;
-            Collection = domainService.GetAll();
+            Collection = domainService.GetAll().Result;
         }
 
         #region Create, Update, Delete Domain
@@ -66,16 +66,32 @@ namespace DCS.User.UI
                     SubscriptionStart = DateTime.UtcNow
                 };
 
-                if (subscriptionService.New(subscription))
+                try
                 {
-                    userDomain.LicenceKey = subscription.SubscriptionGuid;
+                    if (subscriptionService.New(subscription).Result)
+                    {
+                        userDomain.LicenceKey = subscription.SubscriptionGuid;
 
-                    if (domainService.New(userDomain))
-                        return true;
+                        try
+                        {
+                            if (domainService.New(userDomain).Result)
+                                return true;
+                            return false;
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.LogManager.Singleton.Error($"Failed to create domain: {Model.DomainName}. Exception: {ex.Message}", $"{ex.Source}");
+                            return false;
+                        }
+                    }
+
+                    return false;
                 }
-
-                Log.LogManager.Singleton.Error($"Failed to create new subscription for domain: {Model.DomainName}", "UserDomainViewModel.CreateNewDomain");
-                return false;
+                catch (Exception ex)
+                {
+                    Log.LogManager.Singleton.Error($"Failed to create subscription for domain: {Model.DomainName}. Exception: {ex.Message}", $"{ex.Source}");
+                    return false;
+                }
             }
             catch (Exception ex)
             {
@@ -101,7 +117,7 @@ namespace DCS.User.UI
             {
                 if (domainService.Get(Model.Guid) != null)
                 {
-                    var subscription = subscriptionService.GetAll().Where(s => s.SubscriptionGuid == Model.LicenceKey).FirstOrDefault();
+                    var subscription = subscriptionService.GetAll().Result.Where(s => s.SubscriptionGuid == Model.LicenceKey).FirstOrDefault();
                     if (subscription != null)
                     {
                         try
@@ -110,11 +126,11 @@ namespace DCS.User.UI
                             subscription.SubscriptionEnd = Model.EndSubscription;
                             subscription.DomainName = Model.DomainName;
 
-                            if (subscriptionService.Update(subscription))
+                            if (subscriptionService.Update(subscription).Result)
                             {
                                 Model.SubscriptionActive = subscription.SubscriptionEnd > DateTime.UtcNow;
 
-                                if (domainService.Update(Model))
+                                if (domainService.Update(Model).Result)
                                     return true;
                             }
                         }
@@ -158,7 +174,7 @@ namespace DCS.User.UI
             {
                 try
                 {
-                    if (domainService.Delete(Model.Guid))
+                    if (domainService.Delete(Model.Guid).Result)
                         return true;
                 }
                 catch (Exception ex)

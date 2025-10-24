@@ -45,7 +45,7 @@ namespace DCS.User.UI
                 if (MessageBox.Show($"Möchten Sie das neue Passwort speichern für {selectedUser.UserName}?", "Speichern?", MessageBoxButton.YesNoCancel, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     selectedUser.PassWord = UserPassword.Password;
-                    if (userService.Update(selectedUser))
+                    if (userService.Update(selectedUser).Result)
                     {
                         MessageBox.Show("Passwort erfolgreich geändert.", "Erfolg", MessageBoxButton.OK, MessageBoxImage.Information);
                         this.Close();

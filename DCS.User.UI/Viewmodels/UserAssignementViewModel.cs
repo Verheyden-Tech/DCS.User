@@ -27,7 +27,7 @@ namespace DCS.User.UI
         public UserAssignementViewModel(UserAssignement userAssignement) : base(userAssignement)
         {
             this.Model = userAssignement;
-            Collection = service.GetAll();
+            Collection = service.GetAll().Result;
         }
 
         #region Add/Remove User from Group/Organisation/Role
@@ -56,7 +56,7 @@ namespace DCS.User.UI
                         MembershipStart = DateTime.UtcNow
                     };
 
-                    if (service.New(userAssignement))
+                    if (service.New(userAssignement).Result)
                         return true;
                 }
                 catch (Exception ex)
@@ -93,7 +93,7 @@ namespace DCS.User.UI
                     {
                         assignement.MembershipEnd = DateTime.UtcNow;
 
-                        if (service.Delete(assignement.Guid))
+                        if (service.Delete(assignement.Guid).Result)
                             return true;
                     }
 
@@ -133,7 +133,7 @@ namespace DCS.User.UI
                 MembershipStart = DateTime.UtcNow
             };
 
-            if (service.New(userAssignement))
+            if (service.New(userAssignement).Result)
                 return true;
 
             return false;
@@ -160,7 +160,7 @@ namespace DCS.User.UI
                     if (assignement != null)
                     {
                         assignement.MembershipEnd = DateTime.UtcNow;
-                        if (service.Delete(assignement.Guid))
+                        if (service.Delete(assignement.Guid).Result)
                             return true;
                     }
 
@@ -200,7 +200,7 @@ namespace DCS.User.UI
                 MembershipStart = DateTime.UtcNow
             };
 
-            if (service.New(userAssignement))
+            if (service.New(userAssignement).Result)
                 return true;
 
             return false;
@@ -226,7 +226,7 @@ namespace DCS.User.UI
                     if (assignement != null)
                     {
                         assignement.MembershipEnd = DateTime.UtcNow;
-                        if (service.Delete(assignement.Guid))
+                        if (service.Delete(assignement.Guid).Result)
                             return true;
                     }
 

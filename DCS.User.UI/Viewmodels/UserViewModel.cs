@@ -65,14 +65,14 @@ namespace DCS.User.UI
         {
             this.Model = user;
 
-            Collection = userService.GetAll();
+            Collection = userService.GetAll().Result;
 
             var ua = new UserAssignement();
             assignementViewModel = new UserAssignementViewModel(ua);
 
-            AllGroups = groupService.GetAll();
-            AllOrganisations = organisationService.GetAll();
-            AllRoles = roleService.GetAll();
+            AllGroups = groupService.GetAll().Result;
+            AllOrganisations = organisationService.GetAll().Result;
+            AllRoles = roleService.GetAll().Result;
 
             if(user.Guid != default)
             {
@@ -81,7 +81,7 @@ namespace DCS.User.UI
                 UserRoles = GetUserRoles(user);
             }
 
-            Domains = domainService.GetAll();
+            Domains = domainService.GetAll().Result;
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace DCS.User.UI
             try
             {
                 Domains.Clear();
-                Domains = domainService.GetAll();
+                Domains = domainService.GetAll().Result;
                 return true;
             }
             catch (Exception ex)
@@ -135,7 +135,7 @@ namespace DCS.User.UI
                         ProfilePicturePath = Model.ProfilePicturePath
                     };
 
-                    if (userService.New(newUser))
+                    if (userService.New(newUser).Result)
                     {
                         Model = newUser;
                         CurrentUserService.Instance.SetUser(newUser);
@@ -172,7 +172,7 @@ namespace DCS.User.UI
                     {
                         Model.LastManipulation = DateTime.Now;
 
-                        if (userService.Update(Model))
+                        if (userService.Update(Model).Result)
                         {
                             Log.LogManager.Singleton.Warning($"User {Model.UserName} updated successfully.", "UserViewModel");
                             return true;
@@ -222,7 +222,7 @@ namespace DCS.User.UI
             {
                 try
                 {
-                    if (userService.Delete(Model.Guid))
+                    if (userService.Delete(Model.Guid).Result)
                     {
                         Log.LogManager.Singleton.Warning($"User {Model.UserName} deleted successfully.", "UserViewModel");
                         return true;
@@ -385,7 +385,7 @@ namespace DCS.User.UI
         public ObservableCollection<Group> GetUserGroups(User user)
         {
             var userGroups = new ObservableCollection<Group>();
-            var assignments = new ObservableCollection<UserAssignement>(assignementService.GetAll());
+            var assignments = new ObservableCollection<UserAssignement>(assignementService.GetAll().Result);
 
             if (user != null)
             {
@@ -483,7 +483,7 @@ namespace DCS.User.UI
         public ObservableCollection<Organisation> GetUserOrganisations(User user)
         {
             var userOrganisations = new ObservableCollection<Organisation>();
-            var assignments = new ObservableCollection<UserAssignement>(assignementService.GetAll());
+            var assignments = new ObservableCollection<UserAssignement>(assignementService.GetAll().Result);
 
             if (user != null)
             {
@@ -581,7 +581,7 @@ namespace DCS.User.UI
         public ObservableCollection<Role> GetUserRoles(User user)
         {
             var userRoles = new ObservableCollection<Role>();
-            var assignments = new ObservableCollection<UserAssignement>(assignementService.GetAll());
+            var assignments = new ObservableCollection<UserAssignement>(assignementService.GetAll().Result);
 
             if (user != null)
             {
