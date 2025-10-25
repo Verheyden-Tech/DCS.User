@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "DCS.User.Service/1.0.4901.1": {
+      "DCS.User.Service/1.0.5001.1": {
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
           "DCS.Authorisation": "1.0.2101",
@@ -15,8 +15,8 @@
           "DCS.Data": "1.0.1601",
           "DCS.Localization": "1.0.501",
           "DCS.Log": "1.0.701.5",
-          "DCS.User": "1.0.5001.1",
-          "DCS.User.Data": "1.0.4901.1",
+          "DCS.User": "1.0.5101.1",
+          "DCS.User.Data": "1.0.5001.1",
           "Dapper": "2.1.66",
           "Telerik.Licensing.Runtime": "1.4.10.0",
           "Telerik.Pivot.Core": "2021.1.325.310",
@@ -650,7 +650,7 @@
         }
       },
       "System.Threading.Tasks.Extensions/4.5.4": {},
-      "DCS.User/1.0.5001.1": {
+      "DCS.User/1.0.5101.1": {
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
           "DCS.Authorisation": "1.0.2101",
@@ -663,12 +663,12 @@
         },
         "runtime": {
           "DCS.User.dll": {
-            "assemblyVersion": "1.0.5001.1",
-            "fileVersion": "1.0.5001.1"
+            "assemblyVersion": "1.0.5101.1",
+            "fileVersion": "1.0.5101.1"
           }
         }
       },
-      "DCS.User.Data/1.0.4901.1": {
+      "DCS.User.Data/1.0.5001.1": {
         "dependencies": {
           "DCS.Authorisation": "1.0.2101",
           "DCS.CoreLib": "1.1.1501",
@@ -676,12 +676,12 @@
           "DCS.Data": "1.0.1601",
           "DCS.Localization": "1.0.501",
           "DCS.Log": "1.0.701.5",
-          "DCS.User": "1.0.5001.1"
+          "DCS.User": "1.0.5101.1"
         },
         "runtime": {
           "DCS.User.Data.dll": {
-            "assemblyVersion": "1.0.4901.1",
-            "fileVersion": "1.0.4901.1"
+            "assemblyVersion": "1.0.5001.1",
+            "fileVersion": "1.0.5001.1"
           }
         }
       },
@@ -816,7 +816,7 @@
     }
   },
   "libraries": {
-    "DCS.User.Service/1.0.4901.1": {
+    "DCS.User.Service/1.0.5001.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1248,12 +1248,12 @@
       "path": "system.threading.tasks.extensions/4.5.4",
       "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
     },
-    "DCS.User/1.0.5001.1": {
+    "DCS.User/1.0.5101.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "DCS.User.Data/1.0.4901.1": {
+    "DCS.User.Data/1.0.5001.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

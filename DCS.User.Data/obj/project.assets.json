@@ -1047,7 +1047,7 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "DCS.User/1.0.5001.1": {
+      "DCS.User/1.0.5101.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -2967,7 +2967,7 @@
         "version.txt"
       ]
     },
-    "DCS.User/1.0.5001.1": {
+    "DCS.User/1.0.5101.1": {
       "type": "project",
       "path": "../DCS.User/DCS.User.csproj",
       "msbuildProject": "../DCS.User/DCS.User.csproj"
@@ -2981,7 +2981,7 @@
       "DCS.Data >= 1.0.1601",
       "DCS.Localization >= 1.0.501",
       "DCS.Log >= 1.0.701.5",
-      "DCS.User >= 1.0.5001.1"
+      "DCS.User >= 1.0.5101.1"
     ]
   },
   "packageFolders": {
@@ -2990,7 +2990,7 @@
     "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages": {}
   },
   "project": {
-    "version": "1.0.4901.1",
+    "version": "1.0.5001.1",
     "restore": {
       "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
       "projectName": "DCS.User.Data",
