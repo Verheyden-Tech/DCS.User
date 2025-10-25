@@ -7,7 +7,7 @@ namespace DCS.User.Service
     /// </summary>
     public class RoleService : ServiceBase<Guid, Role, IRoleRepository>, IRoleService
     {
-        private readonly IRoleRepository repository;
+        private readonly IRoleRepository repository = CommonServiceLocator.ServiceLocator.Current.GetInstance<IRoleRepository>();
 
         /// <summary>
         /// Default constructor for RoleService.

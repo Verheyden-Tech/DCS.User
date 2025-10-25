@@ -7,7 +7,7 @@ namespace DCS.User.Service
     /// </summary>
     public class OrganisationService : ServiceBase<Guid, Organisation, IOrganisationRepository>, IOrganisationService
     {
-        private readonly IOrganisationRepository repository;
+        private readonly IOrganisationRepository repository = CommonServiceLocator.ServiceLocator.Current.GetInstance<IOrganisationRepository>();
 
         /// <summary>
         /// Default constructor for OrganisationService.

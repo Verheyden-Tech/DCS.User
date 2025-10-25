@@ -63,19 +63,19 @@
           "dependencies": {
             "DCS.Authorisation": {
               "target": "Package",
-              "version": "[1.0.1901, )"
+              "version": "[1.0.2101, )"
             },
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.1.1201, )"
+              "version": "[1.1.1501, )"
             },
             "DCS.CoreLib.BaseClass": {
               "target": "Package",
-              "version": "[1.1.1401, )"
+              "version": "[1.1.1701, )"
             },
             "DCS.Data": {
               "target": "Package",
-              "version": "[1.0.1401, )"
+              "version": "[1.0.1601, )"
             },
             "DCS.Localization": {
               "target": "Package",
@@ -165,15 +165,15 @@
             },
             "DCS.Authorisation": {
               "target": "Package",
-              "version": "[1.0.1901, )"
+              "version": "[1.0.2101, )"
             },
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.1.1201, )"
+              "version": "[1.1.1501, )"
             },
             "DCS.Data": {
               "target": "Package",
-              "version": "[1.0.1401, )"
+              "version": "[1.0.1601, )"
             },
             "DCS.Localization": {
               "target": "Package",

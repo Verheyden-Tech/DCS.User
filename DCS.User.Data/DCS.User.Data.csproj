@@ -3,8 +3,6 @@
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
     <Version>1.0.4901.1</Version>
-    <AssemblyVersion>1.0.4101.0</AssemblyVersion>
-    <ApplicationVersion>1.2.3.0</ApplicationVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Authors>Tobias Verheyden</Authors>
     <Company>Verheyden Tech</Company>
@@ -19,8 +17,6 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <DocumentationFile>Documentation\API.Documentation</DocumentationFile>
     <Nullable>enable</Nullable>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackageOutputPath>Nuget</PackageOutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Documentation\**" />
@@ -31,13 +27,10 @@
     <None Remove="Nuget\**" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\DCS.User\.editorconfig" Link=".editorconfig" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="DCS.Authorisation" Version="1.0.1901" />
-    <PackageReference Include="DCS.CoreLib" Version="1.1.1201" />
-    <PackageReference Include="DCS.CoreLib.BaseClass" Version="1.1.1401" />
-    <PackageReference Include="DCS.Data" Version="1.0.1401" />
+    <PackageReference Include="DCS.Authorisation" Version="1.0.2101" />
+    <PackageReference Include="DCS.CoreLib" Version="1.1.1501" />
+    <PackageReference Include="DCS.CoreLib.BaseClass" Version="1.1.1701" />
+    <PackageReference Include="DCS.Data" Version="1.0.1601" />
     <PackageReference Include="DCS.Localization" Version="1.0.501" />
     <PackageReference Include="DCS.Log" Version="1.0.701.5" />
   </ItemGroup>

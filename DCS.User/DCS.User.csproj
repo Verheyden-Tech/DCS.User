@@ -3,8 +3,6 @@
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
     <Version>1.0.5001.1</Version>
-    <AssemblyVersion>1.0.3901.0</AssemblyVersion>
-    <ApplicationVersion>1.2.3.0</ApplicationVersion>
     <ProjectGuid>{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <Authors>Tobias Verheyden</Authors>
@@ -19,8 +17,6 @@
     <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackageOutputPath>Nuget</PackageOutputPath>
     <EnableNETAnalyzers>True</EnableNETAnalyzers>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <DocumentationFile>Documentation\API.Documentation</DocumentationFile>
@@ -47,9 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CommonServiceLocator" Version="2.0.7" />
-    <PackageReference Include="DCS.Authorisation" Version="1.0.1901" />
-    <PackageReference Include="DCS.CoreLib" Version="1.1.1201" />
-    <PackageReference Include="DCS.Data" Version="1.0.1401" />
+    <PackageReference Include="DCS.Authorisation" Version="1.0.2101" />
+    <PackageReference Include="DCS.CoreLib" Version="1.1.1501" />
+    <PackageReference Include="DCS.Data" Version="1.0.1601" />
     <PackageReference Include="DCS.Localization" Version="1.0.501" />
     <PackageReference Include="DCS.Log" Version="1.0.701.5" />
     <PackageReference Include="DCS.Resource" Version="1.0.301" />
@@ -124,15 +120,6 @@
       <HintPath>SharedDLLs\Telerik.Windows.Zip.dll</HintPath>
       <Private>True</Private>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <EditorConfigFiles Remove="C:\Users\verhe\Source\Repos\ElCartmanBra420\UserLibrary\.editorconfig" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="Resources\Images\DCS_LoginLabel_500x64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="C:\Users\verhe\Source\Repos\ElCartmanBra420\UserLibrary\.editorconfig" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\DCS_LoginLabel_500x64.png">

@@ -67,12 +67,16 @@
         </member>
         <member name="T:DCS.User.Data.UserRepository">
             <summary>
-            UserRepository with basic methods inherited from <see cref="T:DCS.CoreLib.BaseClass.RepositoryBase`2"/> to handle user data on the table.
+            Provides data access functionality for <see cref="T:DCS.User.User"/> entities, enabling CRUD operations and database
+            interactions specific to the "dbo.VT_User" table.
             </summary>
+            <remarks>This repository is designed to work with the "dbo.VT_User" table in the database, where each
+            user is uniquely identified by a GUID. It leverages the <see cref="T:DCS.Data.ISqlService"/> to perform database operations
+            and inherits common repository functionality from <see cref="T:DCS.CoreLib.BaseClass.RepositoryBase`2"/>.</remarks>
         </member>
         <member name="F:DCS.User.Data.UserRepository.TableName">
             <summary>
-            Tablename for the UserRepository.
+            Tablename for user entities on the database.
             </summary>
         </member>
         <member name="F:DCS.User.Data.UserRepository.PrimaryKeyColumn">
@@ -82,9 +86,9 @@
         </member>
         <member name="M:DCS.User.Data.UserRepository.#ctor(DCS.Data.ISqlService)">
             <summary>
-            Default constructor for UserRepository.
+            Initializes a new instance of the <see cref="T:DCS.User.Data.UserRepository"/> class with the specified SQL service.
             </summary>
-            <param name="sqlService">Sql service.</param>
+            <param name="sqlService">The SQL service used to interact with the database.</param>
         </member>
         <member name="T:DCS.User.UserAssignementRepository">
             <summary>

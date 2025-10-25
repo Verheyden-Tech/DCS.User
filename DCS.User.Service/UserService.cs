@@ -7,7 +7,7 @@ namespace DCS.User.Service
     /// </summary>
     public class UserService : ServiceBase<Guid, User, IUserRepository>, IUserService
     {
-        private readonly IUserRepository repository;
+        private readonly IUserRepository repository = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserRepository>();
 
         /// <summary>
         /// Default constructor for UserService.

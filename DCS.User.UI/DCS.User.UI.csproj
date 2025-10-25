@@ -3,22 +3,18 @@
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
     <Version>1.0.9001.1</Version>
-    <AssemblyVersion>1.0.7701.0</AssemblyVersion>
-    <ApplicationVersion>1.2.3.0</ApplicationVersion>
     <ProjectGuid>{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <Authors>Tobias Verheyden</Authors>
     <Company>Verheyden Tech</Company>
     <Description>UI for user management in DCS.</Description>
-    <RootNamespace>DCS.User</RootNamespace>
+    <RootNamespace>DCS.User.UI</RootNamespace>
     <AssemblyName>DCS.User.UI</AssemblyName>
     <AssemblyType>UI</AssemblyType>
     <PackageTags>DCS</PackageTags>
     <UseWPF>true</UseWPF>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackageOutputPath>Nuget</PackageOutputPath>
     <EnableNETAnalyzers>True</EnableNETAnalyzers>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <DocumentationFile>Documentation\API.Documentation</DocumentationFile>
@@ -41,11 +37,11 @@
     <Page Remove="SharedDLLs\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DCS.Authorisation" Version="1.0.1901" />
-    <PackageReference Include="DCS.CoreLib" Version="1.1.1201" />
-    <PackageReference Include="DCS.CoreLib.BaseClass" Version="1.1.1401" />
-    <PackageReference Include="DCS.CoreLib.View" Version="1.1.3401" />
-    <PackageReference Include="DCS.Data" Version="1.0.1401" />
+    <PackageReference Include="DCS.Authorisation" Version="1.0.2101" />
+    <PackageReference Include="DCS.CoreLib" Version="1.1.1501" />
+    <PackageReference Include="DCS.CoreLib.BaseClass" Version="1.1.1701" />
+    <PackageReference Include="DCS.CoreLib.View" Version="1.1.3701" />
+    <PackageReference Include="DCS.Data" Version="1.0.1601" />
     <PackageReference Include="DCS.Localization" Version="1.0.501" />
     <PackageReference Include="DCS.Log" Version="1.0.701.5" />
     <PackageReference Include="DCS.OnBoarding" Version="1.0.501" />

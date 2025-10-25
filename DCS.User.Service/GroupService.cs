@@ -7,7 +7,7 @@ namespace DCS.User.Service
     /// </summary>
     public class GroupService : ServiceBase<Guid, Group, IGroupRepository>, IGroupService
     {
-        private readonly IGroupRepository repository;
+        private readonly IGroupRepository repository = CommonServiceLocator.ServiceLocator.Current.GetInstance<IGroupRepository>();
 
         /// <summary>
         /// Default constructor initialize a new instance of the <see cref="GroupService"/> class.
