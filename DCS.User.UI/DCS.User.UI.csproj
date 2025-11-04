@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
-    <Version>1.0.9201.1</Version>
+    <Version>1.0.9301.1</Version>
     <ProjectGuid>{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <Authors>Tobias Verheyden</Authors>
@@ -37,11 +37,12 @@
     <Page Remove="SharedDLLs\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DCS.Authorisation" Version="1.0.2201" />
-    <PackageReference Include="DCS.CoreLib" Version="1.1.1601" />
-    <PackageReference Include="DCS.CoreLib.BaseClass" Version="1.1.1801" />
-    <PackageReference Include="DCS.CoreLib.View" Version="1.1.3701" />
-    <PackageReference Include="DCS.Data" Version="1.0.1701" />
+    <PackageReference Include="DCS.Authorisation" Version="1.0.2401" />
+    <PackageReference Include="DCS.CoreLib" Version="1.1.1701" />
+    <PackageReference Include="DCS.CoreLib.BaseClass" Version="1.1.1901" />
+    <PackageReference Include="DCS.CoreLib.View" Version="1.1.3801" />
+    <PackageReference Include="DCS.Data" Version="1.0.2001" />
+    <PackageReference Include="DCS.Data.UI" Version="1.0.301" />
     <PackageReference Include="DCS.Localization" Version="1.0.501" />
     <PackageReference Include="DCS.Log" Version="1.0.701.5" />
     <PackageReference Include="DCS.OnBoarding" Version="1.0.501" />

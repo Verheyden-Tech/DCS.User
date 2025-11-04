@@ -1,4 +1,5 @@
 ﻿using DCS.CoreLib.View;
+using DCS.Data.UI;
 using DCS.User.Service;
 using System.Windows;
 using System.Windows.Input;
@@ -120,16 +121,6 @@ namespace DCS.User.UI
         }
         #endregion
 
-        private void CreateNewDomain_Click(object sender, RoutedEventArgs e)
-        {
-            var win = new CreateNewUserDomain();
-            if (win.ShowDialog() == true)
-            {
-                ServerComboBox.Text = CurrentDomainService.Instance.CurrentDomain.DomainName;
-                ServerComboBox.ItemsSource = Current.Domains;
-            }
-        }
-
         private void ServerComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             var domain = Current.Domains.FirstOrDefault(d => d.DomainName == ServerComboBox.Text);
@@ -139,6 +130,12 @@ namespace DCS.User.UI
                 CurrentDomainService.Instance.UnsetDomain();
                 CurrentDomainService.Instance.SetDomain(domain);
             }
+        }
+
+        private void ChooseDB_Click(object sender, RoutedEventArgs e)
+        {
+            var dbWin = new DBManagerView();
+            dbWin.Show();
         }
     }
 }
