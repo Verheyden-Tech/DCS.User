@@ -44,82 +44,17 @@
   <ItemGroup>
     <PackageReference Include="CommonServiceLocator" Version="2.0.7" />
     <PackageReference Include="DCS.Authorisation" Version="1.0.2801" />
-    <PackageReference Include="DCS.CoreLib" Version="1.1.2201" />
-    <PackageReference Include="DCS.Data" Version="1.0.2501" />
+    <PackageReference Include="DCS.CoreLib" Version="1.1.2301" />
+    <PackageReference Include="DCS.Data" Version="1.0.2701" />
     <PackageReference Include="DCS.Localization" Version="1.0.501" />
     <PackageReference Include="DCS.Log" Version="1.0.701.5" />
-    <PackageReference Include="DCS.Resource" Version="1.0.301" />
+    <PackageReference Include="DCS.Resource" Version="1.0.601" />
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="System.Management" Version="9.0.10" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Telerik.Licensing.Runtime">
-      <HintPath>SharedDLLs\Telerik.Licensing.Runtime.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.Pivot.Core">
-      <HintPath>SharedDLLs\Telerik.Pivot.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls">
-      <HintPath>SharedDLLs\Telerik.Windows.Controls.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.Data">
-      <HintPath>SharedDLLs\Telerik.Windows.Controls.Data.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.Docking">
-      <HintPath>SharedDLLs\Telerik.Windows.Controls.Docking.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.FileDialogs">
-      <HintPath>SharedDLLs\Telerik.Windows.Controls.FileDialogs.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.FixedDocumentViewers">
-      <HintPath>SharedDLLs\Telerik.Windows.Controls.FixedDocumentViewers.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.GridView">
-      <HintPath>SharedDLLs\Telerik.Windows.Controls.GridView.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.Input">
-      <HintPath>SharedDLLs\Telerik.Windows.Controls.Input.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.Navigation">
-      <HintPath>SharedDLLs\Telerik.Windows.Controls.Navigation.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.resources">
-      <HintPath>SharedDLLs\Telerik.Windows.Controls.resources.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.Windows.Data">
-      <HintPath>SharedDLLs\Telerik.Windows.Data.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.Windows.Documents.Core">
-      <HintPath>SharedDLLs\Telerik.Windows.Documents.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.Windows.Documents.Fixed">
-      <HintPath>SharedDLLs\Telerik.Windows.Documents.Fixed.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.Windows.Documents.Flow">
-      <HintPath>SharedDLLs\Telerik.Windows.Documents.Flow.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.Windows.Zip">
-      <HintPath>SharedDLLs\Telerik.Windows.Zip.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <PackageReference Include="Telerik.UI.for.Wpf.NetCore" Version="2021.1.325" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\DCS_LoginLabel_500x64.png">

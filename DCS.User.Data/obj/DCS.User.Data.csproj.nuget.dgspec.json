@@ -67,15 +67,15 @@
             },
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.1.2201, )"
+              "version": "[1.1.2301, )"
             },
             "DCS.CoreLib.BaseClass": {
               "target": "Package",
-              "version": "[1.1.2401, )"
+              "version": "[1.1.2501, )"
             },
             "DCS.Data": {
               "target": "Package",
-              "version": "[1.0.2501, )"
+              "version": "[1.0.2701, )"
             },
             "DCS.Localization": {
               "target": "Package",
@@ -84,6 +84,10 @@
             "DCS.Log": {
               "target": "Package",
               "version": "[1.0.701.5, )"
+            },
+            "Telerik.UI.for.Wpf.NetCore": {
+              "target": "Package",
+              "version": "[2021.1.325, )"
             }
           },
           "imports": [
@@ -169,11 +173,11 @@
             },
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.1.2201, )"
+              "version": "[1.1.2301, )"
             },
             "DCS.Data": {
               "target": "Package",
-              "version": "[1.0.2501, )"
+              "version": "[1.0.2701, )"
             },
             "DCS.Localization": {
               "target": "Package",
@@ -185,7 +189,7 @@
             },
             "DCS.Resource": {
               "target": "Package",
-              "version": "[1.0.301, )"
+              "version": "[1.0.601, )"
             },
             "Microsoft.CodeAnalysis.FxCopAnalyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -196,6 +200,10 @@
             "System.Management": {
               "target": "Package",
               "version": "[9.0.10, )"
+            },
+            "Telerik.UI.for.Wpf.NetCore": {
+              "target": "Package",
+              "version": "[2021.1.325, )"
             }
           },
           "imports": [

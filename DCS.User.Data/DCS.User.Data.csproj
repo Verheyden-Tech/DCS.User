@@ -28,11 +28,12 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DCS.Authorisation" Version="1.0.2801" />
-    <PackageReference Include="DCS.CoreLib" Version="1.1.2201" />
-    <PackageReference Include="DCS.CoreLib.BaseClass" Version="1.1.2401" />
-    <PackageReference Include="DCS.Data" Version="1.0.2501" />
+    <PackageReference Include="DCS.CoreLib" Version="1.1.2301" />
+    <PackageReference Include="DCS.CoreLib.BaseClass" Version="1.1.2501" />
+    <PackageReference Include="DCS.Data" Version="1.0.2701" />
     <PackageReference Include="DCS.Localization" Version="1.0.501" />
     <PackageReference Include="DCS.Log" Version="1.0.701.5" />
+    <PackageReference Include="Telerik.UI.for.Wpf.NetCore" Version="2021.1.325" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DCS.User\DCS.User.csproj" />

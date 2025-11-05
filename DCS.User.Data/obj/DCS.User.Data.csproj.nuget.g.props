@@ -14,4 +14,7 @@
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
     <SourceRoot Include="C:\Program Files (x86)\Progress\ToolboxNuGetPackages\" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgTelerik_UI_for_Wpf_NetCore Condition=" '$(PkgTelerik_UI_for_Wpf_NetCore)' == '' ">C:\Users\verhe\Documents\DCS\Nuget\telerik.ui.for.wpf.netcore\2021.1.325</PkgTelerik_UI_for_Wpf_NetCore>
+  </PropertyGroup>
 </Project>
