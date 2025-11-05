@@ -8,7 +8,7 @@
         xmlns:win="clr-namespace:DCS.CoreLib.View;assembly=DCS.CoreLib.View"
         xmlns:resource="clr-namespace:DCS.Resource;assembly=DCS.Resource"
         mc:Ignorable="d" d:DataContext="{d:DesignInstance local:UserViewModel}"
-        d:DesignHeight="350" d:DesignWidth="400" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner">
+        d:DesignHeight="350" d:DesignWidth="400" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
 
     <Grid Margin="10">
 

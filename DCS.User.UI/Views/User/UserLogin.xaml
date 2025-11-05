@@ -39,8 +39,6 @@
                     </DataTemplate>
                 </telerik:RadComboBox.EmptySelectionBoxTemplate>
             </telerik:RadComboBox>
-            <TextBlock Text="{Binding CurrentDB, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" MinWidth="100" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#b8860b"/>
-            <telerik:RadButton x:Name="ChooseDB" Content="Datenbank wählen.." Click="ChooseDB_Click" Background="{x:Null}" TabIndex="5" Foreground="#b8860b" BorderBrush="{x:Null}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">

@@ -129,11 +129,5 @@ namespace DCS.User.UI
                 CurrentDomainService.Instance.SetDomain(domain);
             }
         }
-
-        private void ChooseDB_Click(object sender, RoutedEventArgs e)
-        {
-            var dbWin = new DBManagerView();
-            dbWin.Show();
-        }
     }
 }
