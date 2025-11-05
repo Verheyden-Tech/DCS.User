@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "DCS.User.UI/1.0.9901.1": {
+      "DCS.User.UI/1.0.101.2": {
         "dependencies": {
           "DCS.Authorisation": "1.0.2801",
           "DCS.CoreLib": "1.1.2301",
@@ -19,8 +19,8 @@
           "DCS.OnBoarding": "1.0.501",
           "DCS.OnBoarding.UI": "1.0.501",
           "DCS.Resource": "1.0.601",
-          "DCS.User": "1.0.5801.1",
-          "DCS.User.Service": "1.0.5701.1",
+          "DCS.User": "1.0.5901.1",
+          "DCS.User.Service": "1.0.5801.1",
           "Telerik.UI.for.Wpf.NetCore": "2021.1.325"
         },
         "runtime": {
@@ -124,8 +124,8 @@
           "DCS.CoreLib.Collection": "1.1.2201",
           "DCS.Data": "1.0.2701",
           "DCS.Resource": "1.0.601",
-          "DCS.User": "1.0.5801.1",
-          "DCS.User.Service": "1.0.5701.1"
+          "DCS.User": "1.0.5901.1",
+          "DCS.User.Service": "1.0.5801.1"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.Contact.dll": {
@@ -300,7 +300,7 @@
           "DCS.Data": "1.0.2701",
           "DCS.HR": "1.0.401",
           "DCS.Log": "1.0.701.5",
-          "DCS.User": "1.0.5801.1"
+          "DCS.User": "1.0.5901.1"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.OnBoarding.dll": {
@@ -321,7 +321,7 @@
           "DCS.HR": "1.0.401",
           "DCS.Log": "1.0.701.5",
           "DCS.OnBoarding": "1.0.501",
-          "DCS.User": "1.0.5801.1"
+          "DCS.User": "1.0.5901.1"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.OnBoarding.Data.dll": {
@@ -344,7 +344,7 @@
           "DCS.Log": "1.0.701.5",
           "DCS.OnBoarding": "1.0.501",
           "DCS.OnBoarding.Data": "1.0.501",
-          "DCS.User": "1.0.5801.1"
+          "DCS.User": "1.0.5901.1"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.OnBoarding.Service.dll": {
@@ -366,7 +366,7 @@
           "DCS.Log": "1.0.701.5",
           "DCS.OnBoarding": "1.0.501",
           "DCS.OnBoarding.Service": "1.0.501",
-          "DCS.User": "1.0.5801.1"
+          "DCS.User": "1.0.5901.1"
         },
         "runtime": {
           "lib/net7.0-windows7.0/DCS.OnBoarding.UI.dll": {
@@ -1959,7 +1959,7 @@
           }
         }
       },
-      "DCS.User/1.0.5801.1": {
+      "DCS.User/1.0.5901.1": {
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
           "DCS.Authorisation": "1.0.2801",
@@ -1973,12 +1973,12 @@
         },
         "runtime": {
           "DCS.User.dll": {
-            "assemblyVersion": "1.0.5801.1",
-            "fileVersion": "1.0.5801.1"
+            "assemblyVersion": "1.0.5901.1",
+            "fileVersion": "1.0.5901.1"
           }
         }
       },
-      "DCS.User.Data/1.0.5701.1": {
+      "DCS.User.Data/1.0.5801.1": {
         "dependencies": {
           "DCS.Authorisation": "1.0.2801",
           "DCS.CoreLib": "1.1.2301",
@@ -1986,17 +1986,17 @@
           "DCS.Data": "1.0.2701",
           "DCS.Localization": "1.0.501",
           "DCS.Log": "1.0.701.5",
-          "DCS.User": "1.0.5801.1",
+          "DCS.User": "1.0.5901.1",
           "Telerik.UI.for.Wpf.NetCore": "2021.1.325"
         },
         "runtime": {
           "DCS.User.Data.dll": {
-            "assemblyVersion": "1.0.5701.1",
-            "fileVersion": "1.0.5701.1"
+            "assemblyVersion": "1.0.5801.1",
+            "fileVersion": "1.0.5801.1"
           }
         }
       },
-      "DCS.User.Service/1.0.5701.1": {
+      "DCS.User.Service/1.0.5801.1": {
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
           "DCS.Authorisation": "1.0.2801",
@@ -2005,21 +2005,21 @@
           "DCS.Data": "1.0.2701",
           "DCS.Localization": "1.0.501",
           "DCS.Log": "1.0.701.5",
-          "DCS.User": "1.0.5801.1",
-          "DCS.User.Data": "1.0.5701.1",
+          "DCS.User": "1.0.5901.1",
+          "DCS.User.Data": "1.0.5801.1",
           "Telerik.UI.for.Wpf.NetCore": "2021.1.325"
         },
         "runtime": {
           "DCS.User.Service.dll": {
-            "assemblyVersion": "1.0.5701.1",
-            "fileVersion": "1.0.5701.1"
+            "assemblyVersion": "1.0.5801.1",
+            "fileVersion": "1.0.5801.1"
           }
         }
       }
     }
   },
   "libraries": {
-    "DCS.User.UI/1.0.9901.1": {
+    "DCS.User.UI/1.0.101.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -3102,17 +3102,17 @@
       "path": "telerik.ui.for.wpf.netcore/2021.1.325",
       "hashPath": "telerik.ui.for.wpf.netcore.2021.1.325.nupkg.sha512"
     },
-    "DCS.User/1.0.5801.1": {
+    "DCS.User/1.0.5901.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "DCS.User.Data/1.0.5701.1": {
+    "DCS.User.Data/1.0.5801.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "DCS.User.Service/1.0.5701.1": {
+    "DCS.User.Service/1.0.5801.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

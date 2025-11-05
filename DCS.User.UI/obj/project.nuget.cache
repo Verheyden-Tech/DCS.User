@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "K/zoeCgXxC4=",
+  "dgSpecHash": "XlSHjD4vfnk=",
   "success": true,
   "projectFilePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
   "expectedPackageFiles": [
@@ -157,10 +157,7 @@
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\telerik.ui.for.wpf.netcore\\2021.1.325\\telerik.ui.for.wpf.netcore.2021.1.325.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.user\\1.0.5801.1\\dcs.user.1.0.5801.1.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.user.data\\1.0.5701.1\\dcs.user.data.1.0.5701.1.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.user.service\\1.0.5701.1\\dcs.user.service.1.0.5701.1.nupkg.sha512"
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\telerik.ui.for.wpf.netcore\\2021.1.325\\telerik.ui.for.wpf.netcore.2021.1.325.nupkg.sha512"
   ],
   "logs": [
     {
