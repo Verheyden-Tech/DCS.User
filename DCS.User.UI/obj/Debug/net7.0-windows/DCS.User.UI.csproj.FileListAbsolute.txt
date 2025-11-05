@@ -197,3 +197,17 @@ C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\DC
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\ref\DCS.User.UI.dll
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\Telerik.Licensing.Runtime.dll
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\Telerik.Windows.Controls.resources.dll
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\Telerik.Pivot.Core.dll
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\Telerik.Windows.Controls.Data.dll
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\Telerik.Windows.Controls.dll
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\Telerik.Windows.Controls.Docking.dll
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\Telerik.Windows.Controls.FileDialogs.dll
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\Telerik.Windows.Controls.FixedDocumentViewers.dll
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\Telerik.Windows.Controls.GridView.dll
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\Telerik.Windows.Controls.Input.dll
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\Telerik.Windows.Controls.Navigation.dll
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\Telerik.Windows.Data.dll
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\Telerik.Windows.Documents.Core.dll
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\Telerik.Windows.Documents.Fixed.dll
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\Telerik.Windows.Documents.Flow.dll
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\Telerik.Windows.Zip.dll

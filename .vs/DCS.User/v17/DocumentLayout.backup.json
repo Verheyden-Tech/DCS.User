@@ -71,12 +71,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DCS.User.Service",
+              "Title": "DCS.User.Service.csproj",
               "DocumentMoniker": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj",
               "RelativeDocumentMoniker": "DCS.User.Service\\DCS.User.Service.csproj",
               "ToolTip": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj",
               "RelativeToolTip": "DCS.User.Service\\DCS.User.Service.csproj",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAmwHAAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAmwHAAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-11-05T14:17:30.22Z",
               "EditorCaption": ""
@@ -84,12 +84,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DCS.User.UI",
+              "Title": "DCS.User.UI.csproj",
               "DocumentMoniker": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
               "RelativeDocumentMoniker": "DCS.User.UI\\DCS.User.UI.csproj",
               "ToolTip": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
               "RelativeToolTip": "DCS.User.UI\\DCS.User.UI.csproj",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAmwHkAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAmwHkAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-11-05T14:17:29.547Z",
               "EditorCaption": ""
@@ -102,7 +102,7 @@
               "RelativeDocumentMoniker": "DCS.User\\DCS.User.csproj",
               "ToolTip": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj",
               "RelativeToolTip": "DCS.User\\DCS.User.csproj",
-              "ViewState": "AgIAABEAAAAAAAAAAAAmwIAAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAmwIAAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-11-05T13:54:05.475Z",
               "EditorCaption": ""
@@ -116,7 +116,8 @@
               "ToolTip": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\Views\\User\\RegistrateUser.xaml",
               "RelativeToolTip": "DCS.User.UI\\Views\\User\\RegistrateUser.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-05T11:39:32.424Z"
+              "WhenOpened": "2025-11-05T11:39:32.424Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -127,7 +128,8 @@
               "ToolTip": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\Views\\User\\CreateNewUserDomain.xaml",
               "RelativeToolTip": "DCS.User.UI\\Views\\User\\CreateNewUserDomain.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-05T11:39:24.097Z"
+              "WhenOpened": "2025-11-05T11:39:24.097Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -139,7 +141,8 @@
               "RelativeToolTip": "DCS.User\\Model\\UserDomain.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T11:31:17.128Z"
+              "WhenOpened": "2025-11-05T11:31:17.128Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -150,7 +153,8 @@
               "ToolTip": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\Views\\User\\UserLogin.xaml",
               "RelativeToolTip": "DCS.User.UI\\Views\\User\\UserLogin.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-05T11:29:44.241Z"
+              "WhenOpened": "2025-11-05T11:29:44.241Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -162,7 +166,8 @@
               "RelativeToolTip": "DCS.User.UI\\Viewmodels\\UserViewModel.cs",
               "ViewState": "AgIAACYAAAAAAAAAAAAQwEkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T09:04:02.892Z"
+              "WhenOpened": "2025-11-05T09:04:02.892Z",
+              "EditorCaption": ""
             }
           ]
         },
