@@ -65,6 +65,8 @@ namespace DCS.User.UI
         {
             this.Model = user;
 
+            Collection = userService.GetAll();
+
             var ua = new UserAssignement();
             assignementViewModel = new UserAssignementViewModel(ua);
 
@@ -74,6 +76,8 @@ namespace DCS.User.UI
                 UserOrganisations = GetUserOrganisations(user);
                 UserRoles = GetUserRoles(user);
             }
+
+            Domains = domainService.GetAll();
         }
 
         /// <summary>
