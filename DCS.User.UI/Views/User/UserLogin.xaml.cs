@@ -12,8 +12,6 @@ namespace DCS.User.UI
     /// </summary>
     public partial class UserLogin : DefaultMainWindow
     {
-        private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
-
         private UserViewModel viewModel;
 
         /// <summary>

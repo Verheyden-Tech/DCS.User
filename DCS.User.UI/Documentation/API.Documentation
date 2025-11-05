@@ -593,6 +593,15 @@
             error occurs during the operation, the method logs the error and returns <see langword="false"/>.</remarks>
             <returns><see langword="true"/> if the domain list was successfully refreshed; otherwise, <see langword="false"/>.</returns>
         </member>
+        <member name="M:DCS.User.UI.UserViewModel.GetAllDomains">
+            <summary>
+            Retrieves all user domains.
+            </summary>
+            <remarks>This method fetches all user domains from the underlying data source.  If an error
+            occurs during retrieval, an empty collection is returned, and the error is logged.</remarks>
+            <returns>An <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/> of <see cref="T:DCS.User.UserDomain"/> objects representing all user domains. 
+            Returns an empty collection if an error occurs.</returns>
+        </member>
         <member name="M:DCS.User.UI.UserViewModel.RegistrateUser">
             <summary>
             Registers a new user with the specified credentials and settings.

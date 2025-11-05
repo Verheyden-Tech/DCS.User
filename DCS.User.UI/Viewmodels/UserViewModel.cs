@@ -65,14 +65,8 @@ namespace DCS.User.UI
         {
             this.Model = user;
 
-            Collection = userService.GetAll();
-
             var ua = new UserAssignement();
             assignementViewModel = new UserAssignementViewModel(ua);
-
-            AllGroups = groupService.GetAll();
-            AllOrganisations = organisationService.GetAll();
-            AllRoles = roleService.GetAll();
 
             if(user.Guid != default)
             {
@@ -80,8 +74,6 @@ namespace DCS.User.UI
                 UserOrganisations = GetUserOrganisations(user);
                 UserRoles = GetUserRoles(user);
             }
-
-            Domains = domainService.GetAll();
         }
 
         /// <summary>
@@ -102,6 +94,26 @@ namespace DCS.User.UI
             {
                 Log.LogManager.Singleton.Error($"Error while refreshing domains: {ex.Message}.", $"{ex.Source}");
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// Retrieves all user domains.
+        /// </summary>
+        /// <remarks>This method fetches all user domains from the underlying data source.  If an error
+        /// occurs during retrieval, an empty collection is returned, and the error is logged.</remarks>
+        /// <returns>An <see cref="ObservableCollection{T}"/> of <see cref="UserDomain"/> objects representing all user domains. 
+        /// Returns an empty collection if an error occurs.</returns>
+        public ObservableCollection<UserDomain> GetAllDomains()
+        {
+            try
+            {
+                return domainService.GetAll();
+            }
+            catch (Exception ex)
+            {
+                Log.LogManager.Singleton.Error($"Error while retrieving all domains: {ex.Message}.", $"{ex.Source}");
+                return new ObservableCollection<UserDomain>();
             }
         }
 
