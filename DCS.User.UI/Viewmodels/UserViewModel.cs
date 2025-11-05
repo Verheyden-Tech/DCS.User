@@ -140,7 +140,7 @@ namespace DCS.User.UI
                     {
                         Guid = Guid.NewGuid(),
                         UserName = Model.UserName,
-                        PassWord = userService.GetSha256Hash(Model.PassWord),
+                        PassWord = CryptographyHelper.HashSHA256(Model.PassWord),
                         Domain = CurrentDomainService.Instance.CurrentDomain.DomainName,
                         IsActive = true,
                         IsAdmin = Model.IsAdmin,
@@ -269,7 +269,7 @@ namespace DCS.User.UI
                 var user = Collection.FirstOrDefault(u => u.UserName == Model.UserName);
                 if (user != null)
                 {
-                    var hasehedPassword = userService.GetSha256Hash(Model.PassWord);
+                    var hasehedPassword = CryptographyHelper.HashSHA256(Model.PassWord);
                     if (user.PassWord == hasehedPassword && user.Domain == Model.Domain)
                     {
                         CurrentUserService.Instance.SetUser(user);
