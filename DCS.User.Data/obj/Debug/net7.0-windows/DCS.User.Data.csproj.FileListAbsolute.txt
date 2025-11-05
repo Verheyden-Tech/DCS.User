@@ -32,8 +32,8 @@ C:\Users\Tobias\source\repos\Verheyden-Tech\DCS.User\DCS.User.Data\obj\Debug\net
 C:\Users\Tobias\source\repos\Verheyden-Tech\DCS.User\DCS.User.Data\obj\Debug\net7.0-windows\DCS.User.Data.sourcelink.json
 C:\Users\Tobias\source\repos\Verheyden-Tech\DCS.User\DCS.User.Data\obj\Debug\net7.0-windows\DCS.User.83C6DA0E.Up2Date
 C:\Users\Tobias\source\repos\Verheyden-Tech\DCS.User\DCS.User.Data\obj\Debug\net7.0-windows\ref\DCS.User.Data.dll
-C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.Data\bin\Debug\net7.0-windows\DCS.User.Data.deps.json
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.Data\bin\Debug\net7.0-windows\DCS.User.Data.dll
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.Data\bin\Debug\net7.0-windows\DCS.User.Data.deps.json
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.Data\bin\Debug\net7.0-windows\DCS.User.Data.pdb
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.Data\bin\Debug\net7.0-windows\API.Documentation
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.Data\bin\Debug\net7.0-windows\DCS.User.dll

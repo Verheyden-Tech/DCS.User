@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj": {
-      "version": "1.0.5401.1",
+      "version": "1.0.5501.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
         "projectName": "DCS.User.Data",
@@ -63,19 +63,19 @@
           "dependencies": {
             "DCS.Authorisation": {
               "target": "Package",
-              "version": "[1.0.2601, )"
+              "version": "[1.0.2701, )"
             },
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.1.1901, )"
+              "version": "[1.1.2101, )"
             },
             "DCS.CoreLib.BaseClass": {
               "target": "Package",
-              "version": "[1.1.2101, )"
+              "version": "[1.1.2301, )"
             },
             "DCS.Data": {
               "target": "Package",
-              "version": "[1.0.2201, )"
+              "version": "[1.0.2501, )"
             },
             "DCS.Localization": {
               "target": "Package",
@@ -107,7 +107,7 @@
       }
     },
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj": {
-      "version": "1.0.5401.1",
+      "version": "1.0.5501.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj",
         "projectName": "DCS.User.Service",
@@ -172,19 +172,19 @@
             },
             "DCS.Authorisation": {
               "target": "Package",
-              "version": "[1.0.2601, )"
+              "version": "[1.0.2701, )"
             },
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.1.1901, )"
+              "version": "[1.1.2101, )"
             },
             "DCS.CoreLib.BaseClass": {
               "target": "Package",
-              "version": "[1.1.2101, )"
+              "version": "[1.1.2301, )"
             },
             "DCS.Data": {
               "target": "Package",
-              "version": "[1.0.2201, )"
+              "version": "[1.0.2501, )"
             },
             "DCS.Localization": {
               "target": "Package",
@@ -193,10 +193,6 @@
             "DCS.Log": {
               "target": "Package",
               "version": "[1.0.701.5, )"
-            },
-            "Dapper": {
-              "target": "Package",
-              "version": "[2.1.66, )"
             }
           },
           "imports": [
@@ -220,7 +216,7 @@
       }
     },
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj": {
-      "version": "1.0.5501.1",
+      "version": "1.0.5601.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj",
         "projectName": "DCS.User",
@@ -278,15 +274,15 @@
             },
             "DCS.Authorisation": {
               "target": "Package",
-              "version": "[1.0.2601, )"
+              "version": "[1.0.2701, )"
             },
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.1.1901, )"
+              "version": "[1.1.2101, )"
             },
             "DCS.Data": {
               "target": "Package",
-              "version": "[1.0.2201, )"
+              "version": "[1.0.2501, )"
             },
             "DCS.Localization": {
               "target": "Package",

@@ -13,7 +13,7 @@ TRACE;DEBUG;NET;NET7_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR
 12-201990861
 
 19-209364526
-261-1550381348
+261-1893621658
 Views\Group\GroupEditor.xaml;Views\Group\GroupManagement.xaml;Views\Organisation\OrganisationEditor.xaml;Views\Organisation\OrganisationManagement.xaml;Views\Role\RoleEditor.xaml;Views\Role\RoleManagement.xaml;Views\User\ChangeUserPassword.xaml;Views\User\CreateNewUserDomain.xaml;Views\User\RegistrateUser.xaml;Views\User\UserEditor.xaml;Views\User\UserLogin.xaml;Views\User\UserManagement.xaml;
 
 False
