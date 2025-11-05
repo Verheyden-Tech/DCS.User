@@ -121,3 +121,5 @@ C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.Service\obj\Debug\net7.0-windo
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.Service\obj\Debug\net7.0-windows7.0\refint\DCS.User.Service.dll
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.Service\obj\Debug\net7.0-windows7.0\DCS.User.Service.pdb
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.Service\obj\Debug\net7.0-windows7.0\ref\DCS.User.Service.dll
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.Service\bin\Debug\net7.0-windows7.0\Telerik.Licensing.Runtime.dll
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.Service\bin\Debug\net7.0-windows7.0\Telerik.Windows.Controls.resources.dll

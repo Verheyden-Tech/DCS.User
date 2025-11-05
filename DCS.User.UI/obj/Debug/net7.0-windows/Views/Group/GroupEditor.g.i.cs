@@ -127,7 +127,7 @@ namespace DCS.User.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DCS.User.UI;V1.0.101.2;component/views/group/groupeditor.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DCS.User.UI;component/views/group/groupeditor.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Group\GroupEditor.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
