@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HsFLeOynIWU=",
+  "dgSpecHash": "XJCx0620bgY=",
   "success": true,
   "projectFilePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
   "expectedPackageFiles": [
@@ -8,12 +8,12 @@
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\commonservicelocator\\2.0.7\\commonservicelocator.2.0.7.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.authorisation\\1.0.2401\\dcs.authorisation.1.0.2401.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.authorisation\\1.0.2501\\dcs.authorisation.1.0.2501.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib\\1.1.1701\\dcs.corelib.1.1.1701.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.baseclass\\1.1.1901\\dcs.corelib.baseclass.1.1.1901.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.collection\\1.1.1001\\dcs.corelib.collection.1.1.1001.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data\\1.0.2001\\dcs.data.1.0.2001.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data.sql\\1.0.2201\\dcs.data.sql.1.0.2201.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data\\1.0.2101\\dcs.data.1.0.2101.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data.sql\\1.0.2301\\dcs.data.sql.1.0.2301.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.localization\\1.0.501\\dcs.localization.1.0.501.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.log\\1.0.701.5\\dcs.log.1.0.701.5.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.resource\\1.0.301\\dcs.resource.1.0.301.nupkg.sha512",

@@ -93,7 +93,7 @@ namespace DCS.User.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DCS.User.UI;V1.0.9301.1;component/views/organisation/organisationeditor.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DCS.User.UI;component/views/organisation/organisationeditor.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Organisation\OrganisationEditor.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

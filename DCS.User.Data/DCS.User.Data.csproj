@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
-    <Version>1.0.5201.1</Version>
+    <Version>1.0.5301.1</Version>
     <ImplicitUsings>enable</ImplicitUsings>
     <Authors>Tobias Verheyden</Authors>
     <Company>Verheyden Tech</Company>
@@ -27,10 +27,10 @@
     <None Remove="Nuget\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DCS.Authorisation" Version="1.0.2401" />
+    <PackageReference Include="DCS.Authorisation" Version="1.0.2501" />
     <PackageReference Include="DCS.CoreLib" Version="1.1.1701" />
     <PackageReference Include="DCS.CoreLib.BaseClass" Version="1.1.1901" />
-    <PackageReference Include="DCS.Data" Version="1.0.2001" />
+    <PackageReference Include="DCS.Data" Version="1.0.2101" />
     <PackageReference Include="DCS.Localization" Version="1.0.501" />
     <PackageReference Include="DCS.Log" Version="1.0.701.5" />
   </ItemGroup>
