@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "DCS.User.Data/1.0.5801.1": {
+      "DCS.User.Data/1.0.5901.1": {
         "dependencies": {
           "DCS.Authorisation": "1.0.2801",
           "DCS.CoreLib": "1.1.2301",
@@ -14,7 +14,7 @@
           "DCS.Data": "1.0.2701",
           "DCS.Localization": "1.0.501",
           "DCS.Log": "1.0.701.5",
-          "DCS.User": "1.0.5901.1",
+          "DCS.User": "1.0.6001.1",
           "Telerik.UI.for.Wpf.NetCore": "2021.1.325"
         },
         "runtime": {
@@ -1734,7 +1734,7 @@
           }
         }
       },
-      "DCS.User/1.0.5901.1": {
+      "DCS.User/1.0.6001.1": {
         "dependencies": {
           "CommonServiceLocator": "2.0.7",
           "DCS.Authorisation": "1.0.2801",
@@ -1748,15 +1748,15 @@
         },
         "runtime": {
           "DCS.User.dll": {
-            "assemblyVersion": "1.0.5901.1",
-            "fileVersion": "1.0.5901.1"
+            "assemblyVersion": "1.0.6001.1",
+            "fileVersion": "1.0.6001.1"
           }
         }
       }
     }
   },
   "libraries": {
-    "DCS.User.Data/1.0.5801.1": {
+    "DCS.User.Data/1.0.5901.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -2762,7 +2762,7 @@
       "path": "telerik.ui.for.wpf.netcore/2021.1.325",
       "hashPath": "telerik.ui.for.wpf.netcore.2021.1.325.nupkg.sha512"
     },
-    "DCS.User/1.0.5901.1": {
+    "DCS.User/1.0.6001.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

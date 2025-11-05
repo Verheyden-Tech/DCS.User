@@ -2877,7 +2877,7 @@
           }
         }
       },
-      "DCS.User/1.0.5901.1": {
+      "DCS.User/1.0.6001.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -2901,7 +2901,7 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "DCS.User.Data/1.0.5801.1": {
+      "DCS.User.Data/1.0.5901.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -2911,7 +2911,7 @@
           "DCS.Data": "1.0.2701",
           "DCS.Localization": "1.0.501",
           "DCS.Log": "1.0.701.5",
-          "DCS.User": "1.0.5901.1",
+          "DCS.User": "1.0.6001.1",
           "Telerik.UI.for.Wpf.NetCore": "2021.1.325"
         },
         "compile": {
@@ -8090,12 +8090,12 @@
         "tools/VisualStudioToolsManifest.xml"
       ]
     },
-    "DCS.User/1.0.5901.1": {
+    "DCS.User/1.0.6001.1": {
       "type": "project",
       "path": "../DCS.User/DCS.User.csproj",
       "msbuildProject": "../DCS.User/DCS.User.csproj"
     },
-    "DCS.User.Data/1.0.5801.1": {
+    "DCS.User.Data/1.0.5901.1": {
       "type": "project",
       "path": "../DCS.User.Data/DCS.User.Data.csproj",
       "msbuildProject": "../DCS.User.Data/DCS.User.Data.csproj"
@@ -8110,8 +8110,8 @@
       "DCS.Data >= 1.0.2701",
       "DCS.Localization >= 1.0.501",
       "DCS.Log >= 1.0.701.5",
-      "DCS.User >= 1.0.5901.1",
-      "DCS.User.Data >= 1.0.5801.1",
+      "DCS.User >= 1.0.6001.1",
+      "DCS.User.Data >= 1.0.5901.1",
       "Telerik.UI.for.Wpf.NetCore >= 2021.1.325"
     ]
   },
@@ -8121,7 +8121,7 @@
     "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages": {}
   },
   "project": {
-    "version": "1.0.5801.1",
+    "version": "1.0.5901.1",
     "restore": {
       "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Service\\DCS.User.Service.csproj",
       "projectName": "DCS.User.Service",

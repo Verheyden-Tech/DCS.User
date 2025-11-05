@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ejmWU3BmzuQ=",
+  "dgSpecHash": "cU+1wXDh054=",
   "success": true,
   "projectFilePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
   "expectedPackageFiles": [
@@ -146,8 +146,7 @@
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\telerik.ui.for.wpf.netcore\\2021.1.325\\telerik.ui.for.wpf.netcore.2021.1.325.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.user\\1.0.5901.1\\dcs.user.1.0.5901.1.nupkg.sha512"
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\telerik.ui.for.wpf.netcore\\2021.1.325\\telerik.ui.for.wpf.netcore.2021.1.325.nupkg.sha512"
   ],
   "logs": []
 }
