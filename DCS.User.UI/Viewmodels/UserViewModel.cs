@@ -262,14 +262,14 @@ namespace DCS.User.UI
         /// password, and domain against the stored user data. If the credentials are valid, the user is set as the
         /// current user in the system.</remarks>
         /// <returns><see langword="true"/> if the login is successful; otherwise, <see langword="false"/>.</returns>
-        public bool LoginUser()
+        public bool LoginUser(string rawPassword)
         {
             if (Model != null)
             {
                 var user = Collection.FirstOrDefault(u => u.UserName == Model.UserName);
                 if (user != null)
                 {
-                    var hasehedPassword = CryptographyHelper.HashSHA256(Model.PassWord);
+                    var hasehedPassword = CryptographyHelper.HashSHA256(rawPassword);
                     if (user.PassWord == hasehedPassword && user.Domain == Model.Domain)
                     {
                         CurrentUserService.Instance.SetUser(user);

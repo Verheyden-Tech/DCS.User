@@ -43,7 +43,13 @@ namespace DCS.User.UI
         #region Private methods/click handler
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Current.LoginUser())
+            if(string.IsNullOrWhiteSpace(PassWordLoginBox.Password))
+            {
+                MessageBox.Show("Bitte Passwort eingeben.", "Fehler beim Login", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            if (Current.LoginUser(PassWordLoginBox.Password))
             {
                 if (KeepLoggedInCheckBox.IsChecked == true)
                 {

@@ -630,7 +630,7 @@
             exception occurs, an error log entry is created, and the method returns <see langword="false"/>.</remarks>
             <returns><see langword="true"/> if the user was successfully deleted; otherwise, <see langword="false"/>.</returns>
         </member>
-        <member name="M:DCS.User.UI.UserViewModel.LoginUser">
+        <member name="M:DCS.User.UI.UserViewModel.LoginUser(System.String)">
             <summary>
             Attempts to log in a user based on the provided user model and credentials.
             </summary>
