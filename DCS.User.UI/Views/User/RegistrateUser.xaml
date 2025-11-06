@@ -8,7 +8,7 @@
         xmlns:win="clr-namespace:DCS.CoreLib.View;assembly=DCS.CoreLib.View"
         xmlns:resource="clr-namespace:DCS.Resource;assembly=DCS.Resource"
         mc:Ignorable="d" d:DataContext="{d:DesignInstance local:UserViewModel}"
-        d:DesignHeight="350" d:DesignWidth="400" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+        Height="350" Width="500" WindowStartupLocation="CenterScreen">
 
     <Grid Margin="10">
 
@@ -24,13 +24,13 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Image Source="/DCS.User;component/Resources/Images/DCS_LoginLabel_500x64.png" Grid.Row="0" Grid.Column="0" Height="64" Width="300" Stretch="Uniform" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Image Source="/DCS.User;component/Resources/Images/DCS_LoginLabel_500x64.png" Grid.Row="0" Grid.Column="0" Height="64" Width="300" Margin="5" Stretch="Uniform" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
-        <telerik:RadWatermarkTextBox Grid.Row="1" Grid.Column="0" x:Name="UserNameTextBox" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Neuen Benutzernamen festlegen" MinWidth="200" Margin="5" Foreground="#b8860b" BorderBrush="#b8860b" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <telerik:RadWatermarkTextBox Grid.Row="1" Grid.Column="0" x:Name="UserNameTextBox" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Neuen Benutzernamen festlegen" MinWidth="200" Margin="5" Foreground="#b8860b" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
-        <telerik:RadPasswordBox x:Name="PassWordBox" Grid.Row="2" Grid.Column="0" WatermarkContent="Neues Passwort festlegen" MinWidth="200" Margin="5" Foreground="#b8860b" BorderBrush="#b8860b" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <telerik:RadPasswordBox x:Name="PassWordBox" Grid.Row="2" Grid.Column="0" WatermarkContent="Neues Passwort festlegen" MinWidth="200" Margin="5" Foreground="#b8860b" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
-        <telerik:RadPasswordBox x:Name="PassWordRepeatBox" Grid.Row="3" Grid.Column="0" WatermarkContent="Neues Passwort wiederholen" MinWidth="200" Margin="5" Foreground="#b8860b" BorderBrush="#b8860b" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <telerik:RadPasswordBox x:Name="PassWordRepeatBox" Grid.Row="3" Grid.Column="0" WatermarkContent="Neues Passwort wiederholen" MinWidth="200" Margin="5" Foreground="#b8860b" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Stretch" Grid.Row="4" Grid.Column="0">
             <CheckBox x:Name="KeepLoggedInCheckBox" Content="Angemeldet bleiben" Margin="5" IsChecked="{Binding KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Foreground="#b8860b" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>

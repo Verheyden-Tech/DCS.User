@@ -109,7 +109,7 @@ namespace DCS.User.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DCS.User.UI;V1.1.601.2;component/views/user/changeuserpassword.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DCS.User.UI;V1.1.801.2;component/views/user/changeuserpassword.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\User\ChangeUserPassword.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

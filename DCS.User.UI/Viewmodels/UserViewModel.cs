@@ -270,7 +270,7 @@ namespace DCS.User.UI
                 if (user != null)
                 {
                     var hasehedPassword = CryptographyHelper.HashSHA256(rawPassword);
-                    if (user.PassWord == hasehedPassword && user.Domain == Model.Domain)
+                    if (user.PassWord == hasehedPassword)
                     {
                         CurrentUserService.Instance.SetUser(user);
                         Log.LogManager.Singleton.Warning($"User {Model.UserName} logged in successfully.", "UserViewModel");
