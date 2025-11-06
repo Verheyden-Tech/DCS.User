@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj": {
-      "version": "1.0.6401.1",
+      "version": "1.0.6501.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
         "projectName": "DCS.User.Data",
@@ -67,11 +67,11 @@
             },
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.1.2301, )"
+              "version": "[1.1.2401, )"
             },
             "DCS.CoreLib.BaseClass": {
               "target": "Package",
-              "version": "[1.1.2501, )"
+              "version": "[1.1.2601, )"
             },
             "DCS.Data": {
               "target": "Package",
@@ -107,7 +107,7 @@
       }
     },
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj": {
-      "version": "1.0.6501.1",
+      "version": "1.0.6601.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj",
         "projectName": "DCS.User",
@@ -169,7 +169,7 @@
             },
             "DCS.CoreLib": {
               "target": "Package",
-              "version": "[1.1.2301, )"
+              "version": "[1.1.2401, )"
             },
             "DCS.Data": {
               "target": "Package",
@@ -185,7 +185,7 @@
             },
             "DCS.Resource": {
               "target": "Package",
-              "version": "[1.0.801, )"
+              "version": "[1.0.1201, )"
             },
             "Microsoft.CodeAnalysis.FxCopAnalyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

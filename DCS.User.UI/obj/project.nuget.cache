@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vaNzlbaxAoo=",
+  "dgSpecHash": "romt7Oo5JRI=",
   "success": true,
   "projectFilePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
   "expectedPackageFiles": [
@@ -12,13 +12,13 @@
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.authorisation\\1.0.2801\\dcs.authorisation.1.0.2801.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.billing\\1.0.501\\dcs.billing.1.0.501.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.contact\\1.0.1101\\dcs.contact.1.0.1101.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib\\1.1.2301\\dcs.corelib.1.1.2301.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.baseclass\\1.1.2501\\dcs.corelib.baseclass.1.1.2501.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.collection\\1.1.2201\\dcs.corelib.collection.1.1.2201.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.view\\1.1.4401\\dcs.corelib.view.1.1.4401.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib\\1.1.2401\\dcs.corelib.1.1.2401.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.baseclass\\1.1.2601\\dcs.corelib.baseclass.1.1.2601.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.collection\\1.1.2301\\dcs.corelib.collection.1.1.2301.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.corelib.view\\1.1.4601\\dcs.corelib.view.1.1.4601.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data\\1.0.2701\\dcs.data.1.0.2701.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data.db\\1.0.1201\\dcs.data.db.1.0.1201.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data.sql\\1.0.2801\\dcs.data.sql.1.0.2801.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data.sql\\1.0.2901\\dcs.data.sql.1.0.2901.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data.ui\\1.0.301\\dcs.data.ui.1.0.301.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.hr\\1.0.401\\dcs.hr.1.0.401.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.localization\\1.0.501\\dcs.localization.1.0.501.nupkg.sha512",
@@ -27,7 +27,7 @@
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.onboarding.data\\1.0.501\\dcs.onboarding.data.1.0.501.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.onboarding.service\\1.0.501\\dcs.onboarding.service.1.0.501.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.onboarding.ui\\1.0.501\\dcs.onboarding.ui.1.0.501.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.resource\\1.0.801\\dcs.resource.1.0.801.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.resource\\1.0.1201\\dcs.resource.1.0.1201.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\microsoft.bcl.asyncinterfaces\\9.0.5\\microsoft.bcl.asyncinterfaces.9.0.5.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\microsoft.bcl.cryptography\\9.0.4\\microsoft.bcl.cryptography.9.0.4.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\microsoft.data.sqlclient\\6.1.2\\microsoft.data.sqlclient.6.1.2.nupkg.sha512",
@@ -75,10 +75,7 @@
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.text.encodings.web\\9.0.5\\system.text.encodings.web.9.0.5.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.text.json\\9.0.5\\system.text.json.9.0.5.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.user\\1.0.6501.1\\dcs.user.1.0.6501.1.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.user.data\\1.0.6401.1\\dcs.user.data.1.0.6401.1.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.user.service\\1.0.6401.1\\dcs.user.service.1.0.6401.1.nupkg.sha512"
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
   "logs": [
     {
