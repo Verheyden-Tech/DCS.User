@@ -148,7 +148,6 @@ C:\Users\Tobias\source\repos\Verheyden-Tech\DCS.User\DCS.User.UI\obj\Debug\net7.
 C:\Users\Tobias\source\repos\Verheyden-Tech\DCS.User\DCS.User.UI\obj\Debug\net7.0-windows\DCS.User.64500F30.Up2Date
 C:\Users\Tobias\source\repos\Verheyden-Tech\DCS.User\DCS.User.UI\obj\Debug\net7.0-windows\ref\DCS.User.UI.dll
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\DCS.User.UI.csproj.AssemblyReference.cache
-C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\UserEditor.baml
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\Group\GroupEditor.g.cs
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\Group\GroupManagement.g.cs
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\Organisation\OrganisationEditor.g.cs
@@ -159,6 +158,7 @@ C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Vi
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\CreateNewUserDomain.g.cs
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\RegistrateUser.g.cs
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\UserEditor.g.cs
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\UserLogin.g.cs
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\UserManagement.g.cs
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\DCS.User.UI_MarkupCompile.cache
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\DCS.User.UI_MarkupCompile.lref
@@ -188,7 +188,7 @@ C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\Te
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.Service.pdb
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.pdb
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\bin\Debug\net7.0-windows\DCS.User.Data.pdb
-C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\UserLogin.g.cs
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\UserLanguageSelector.g.cs
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\Group\GroupEditor.baml
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\Group\GroupManagement.baml
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\Organisation\OrganisationEditor.baml
@@ -198,6 +198,8 @@ C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Vi
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\ChangeUserPassword.baml
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\CreateNewUserDomain.baml
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\RegistrateUser.baml
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\UserEditor.baml
+C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\UserLanguageSelector.baml
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\UserLogin.baml
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\Views\User\UserManagement.baml
 C:\Users\verhe\source\repos\DCS\DCS-User\DCS.User.UI\obj\Debug\net7.0-windows\DCS.User.UI.g.resources

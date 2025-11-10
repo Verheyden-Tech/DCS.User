@@ -69,5 +69,10 @@
         /// Gets or sets the path to the user's profile picture.
         /// </summary>
         public string? ProfilePicturePath { get; set; }
+
+        /// <summary>
+        /// Gets or sets the prefered language for the user.
+        /// </summary>
+        public string Language { get; set; }
     }
 }

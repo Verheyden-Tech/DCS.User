@@ -319,6 +319,11 @@
             Gets or sets the path to the user's profile picture.
             </summary>
         </member>
+        <member name="P:DCS.User.User.Language">
+            <summary>
+            Gets or sets the prefered language for the user.
+            </summary>
+        </member>
         <member name="T:DCS.User.UserAssignement">
             <summary>
             Represents the assignment of a user to a group, organisation, and/or role.

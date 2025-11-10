@@ -637,6 +637,20 @@
             exception occurs, an error log entry is created, and the method returns <see langword="false"/>.</remarks>
             <returns><see langword="true"/> if the user was successfully deleted; otherwise, <see langword="false"/>.</returns>
         </member>
+        <member name="M:DCS.User.UI.UserViewModel.LoginUser(System.String,System.String)">
+            <summary>
+            Attempts to log in a user by verifying the provided password and optionally updating the user's preferred
+            language.
+            </summary>
+            <remarks>This method verifies the provided password against the stored hashed password for the
+            user. If the password matches and a new language is specified, the user's preferred language is updated. If
+            the language is not specified, the user's current language is used to set the application culture. The
+            method logs warnings for failed login attempts and errors if the user model is unavailable.</remarks>
+            <param name="rawPassword">The plain-text password provided by the user for authentication.</param>
+            <param name="language">The preferred language to set for the user. If <see langword="null"/>, the language remains unchanged.</param>
+            <returns><see langword="true"/> if the login is successful and the user is authenticated; otherwise, <see
+            langword="false"/>.</returns>
+        </member>
         <member name="M:DCS.User.UI.UserViewModel.LoginUser(System.String)">
             <summary>
             Attempts to log in a user based on the provided user model and credentials.
@@ -855,6 +869,11 @@
         <member name="P:DCS.User.UI.UserViewModel.ProfilePicturePath">
             <summary>
             Gets or sets the file path to the user's profile picture.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserViewModel.Language">
+            <summary>
+            Gets or sets the prefered language associated for the current user.
             </summary>
         </member>
         <member name="T:DCS.User.UI.GroupEditor">
@@ -1135,6 +1154,27 @@
             </summary>
         </member>
         <member name="M:DCS.User.UI.UserEditor.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:DCS.User.UI.UserLanguageSelector">
+            <summary>
+            Interaction logic for UserLanguageSelector.xaml
+            </summary>
+            <summary>
+            UserLanguageSelector
+            </summary>
+        </member>
+        <member name="M:DCS.User.UI.UserLanguageSelector.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DCS.User.UI.UserLanguageSelector"/> class.
+            </summary>
+            <remarks>This constructor sets up the necessary components for the <see
+            cref="T:DCS.User.UI.UserLanguageSelector"/> control. Ensure that the control is properly added to the user interface
+            before use.</remarks>
+        </member>
+        <member name="M:DCS.User.UI.UserLanguageSelector.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>

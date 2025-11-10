@@ -1,0 +1,28 @@
+﻿<dcs:DefaultMainWindow x:Class="DCS.User.UI.UserLanguageSelector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DCS.User.UI"
+        xmlns:dcs="http://schemas.verheyden-tech.com/2025/xaml/presentation"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        mc:Ignorable="d" d:DataContext="{d:DesignInstance local:UserViewModel}"
+        Title="Benutzersprache festlegen" Height="200" Width="300">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <telerik:RadAutoSuggestBox Grid.Row="0" Grid.Column="0" WatermarkContent="Search.." SuggestionChosen="RadAutoSuggestBox_SuggestionChosen" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+
+        <telerik:RadListBox Grid.Row="1" Grid.Column="0" x:Name="LanguageListView" ItemsSource="{Binding AvialableLanguages, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" DisplayMemberPath="DisplayName" SelectionChanged="LanguageListView_SelectionChanged" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+
+    </Grid>
+
+</dcs:DefaultMainWindow>

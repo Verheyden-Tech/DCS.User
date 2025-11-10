@@ -50,14 +50,10 @@
         </StackPanel>
 
         <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Left">
-            <Label x:Name="LanguageFlagImage" Margin="2" Width="16" Height="16" Visibility="Collapsed" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <telerik:RadComboBox x:Name="LanguageDropDownButton" FontSize="8" Background="{x:Null}" BorderBrush="DarkGoldenrod" SelectionChanged="LanguageDropDownButton_SelectionChanged" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinWidth="150" VerticalContentAlignment="Center" HorizontalContentAlignment="Left">
-                <telerik:RadComboBox.EmptySelectionBoxTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="Sprache wählen" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Left" Background="{x:Null}"/>
-                    </DataTemplate>
-                </telerik:RadComboBox.EmptySelectionBoxTemplate>
-            </telerik:RadComboBox>
+            <Label x:Name="LanguageFlagImage" Margin="2" Width="16" Height="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <TextBlock x:Name="CurrentLanguageTextBlock" FontSize="8" Background="{x:Null}" Text="Aktuelle Benutzer Sprache" Margin="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Left"/>
+            <Separator Margin="2" Width="5" Background="{x:Null}"/>
+            <telerik:RadButton x:Name="ChangeUserLanguageButton" Margin="2" Background="{x:Null}" BorderBrush="{x:Null}" Content="Sprache ändern.." FontSize="8" Click="ChangeUserLanguageButton_Click" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
         </StackPanel>
         
         <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch">

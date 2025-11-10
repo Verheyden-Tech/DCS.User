@@ -87,6 +87,15 @@ namespace DCS.User.UI
             }
 
             Domains = domainService.GetAll();
+
+            if (!string.IsNullOrWhiteSpace(user.Language))
+            {
+                var culture = CurrentLanguageService.Instance.GetAvailableLanguages().FirstOrDefault(c => c.DisplayName == user.Language);
+                if (culture != null)
+                {
+                    CurrentLanguageService.Instance.SetLanguage(culture.DisplayName);
+                }
+            }
         }
 
         /// <summary>
@@ -261,6 +270,55 @@ namespace DCS.User.UI
             }
 
             Log.LogManager.Singleton.Error("User model is null during deletion.", "UserViewModel");
+            return false;
+        }
+
+        /// <summary>
+        /// Attempts to log in a user by verifying the provided password and optionally updating the user's preferred
+        /// language.
+        /// </summary>
+        /// <remarks>This method verifies the provided password against the stored hashed password for the
+        /// user. If the password matches and a new language is specified, the user's preferred language is updated. If
+        /// the language is not specified, the user's current language is used to set the application culture. The
+        /// method logs warnings for failed login attempts and errors if the user model is unavailable.</remarks>
+        /// <param name="rawPassword">The plain-text password provided by the user for authentication.</param>
+        /// <param name="language">The preferred language to set for the user. If <see langword="null"/>, the language remains unchanged.</param>
+        /// <returns><see langword="true"/> if the login is successful and the user is authenticated; otherwise, <see
+        /// langword="false"/>.</returns>
+        public bool LoginUser(string rawPassword, string language)
+        {
+            if (Model != null)
+            {
+                var user = Collection.FirstOrDefault(u => u.UserName == Model.UserName);
+                if (user != null)
+                {
+                    var hasehedPassword = CryptographyHelper.HashSHA256(rawPassword);
+                    if (user.PassWord == hasehedPassword)
+                    {
+                        if (language != null && Model.Language != language)
+                        {
+                            Model.Language = language;
+                            UpdateUser();
+                        }
+                        else if (Model.Language != null)
+                        {
+                            var culture = CurrentLanguageService.Instance.GetAvailableLanguages().FirstOrDefault(c => c.DisplayName == Model.Language);
+                            if (culture != null)
+                            {
+                                CurrentLanguageService.Instance.SetLanguage(culture.DisplayName);
+                            }
+                        }
+                        CurrentUserService.Instance.SetUser(user);
+                        Log.LogManager.Singleton.Warning($"User {Model.UserName} logged in successfully.", "UserViewModel");
+                        return true;
+                    }
+
+                    Log.LogManager.Singleton.Warning($"Failed login attempt for user account {Model.UserName}", "UserViewModel");
+                    return false;
+                }
+            }
+
+            Log.LogManager.Singleton.Error("User model is null during login.", "UserViewModel");
             return false;
         }
 
@@ -764,7 +822,14 @@ namespace DCS.User.UI
         public Guid Guid
         {
             get => Model.Guid;
-            set => Model.Guid = value;
+            set
+            {
+                if (Model.Guid != value)
+                {
+                    Model.Guid = value;
+                    OnPropertyChanged(nameof(Guid));
+                }
+            }
         }
 
         /// <summary>
@@ -773,7 +838,14 @@ namespace DCS.User.UI
         public string UserName
         {
             get => Model.UserName;
-            set => Model.UserName = value;
+            set
+            {
+                if (Model.UserName != value)
+                {
+                    Model.UserName = value;
+                    OnPropertyChanged(nameof(UserName));
+                }
+            }
         }
 
         /// <summary>
@@ -782,7 +854,14 @@ namespace DCS.User.UI
         public string PassWord
         {
             get => Model.PassWord;
-            set => Model.PassWord = value;
+            set
+            {
+                if (Model.PassWord != value)
+                {
+                    Model.PassWord = value;
+                    OnPropertyChanged(nameof(PassWord));
+                }
+            }
         }
 
         /// <summary>
@@ -791,7 +870,14 @@ namespace DCS.User.UI
         public string Domain
         {
             get => Model.Domain;
-            set => Model.Domain = value;
+            set
+            {
+                if (Model.Domain != value)
+                {
+                    Model.Domain = value;
+                    OnPropertyChanged(nameof(Domain));
+                }
+            }
         }
 
         /// <summary>
@@ -800,7 +886,14 @@ namespace DCS.User.UI
         public bool IsActive
         {
             get => Model.IsActive;
-            set => Model.IsActive = value;
+            set
+            {
+                if (Model.IsActive != value)
+                {
+                    Model.IsActive = value;
+                    OnPropertyChanged(nameof(IsActive));
+                }
+            }
         }
 
         /// <summary>
@@ -809,7 +902,14 @@ namespace DCS.User.UI
         public bool KeepLoggedIn
         {
             get => Model.KeepLoggedIn;
-            set => Model.KeepLoggedIn = value;
+            set
+            {
+                if (Model.KeepLoggedIn != value)
+                {
+                    Model.KeepLoggedIn = value;
+                    OnPropertyChanged(nameof(KeepLoggedIn));
+                }
+            }
         }
 
         /// <summary>
@@ -818,7 +918,14 @@ namespace DCS.User.UI
         public bool IsAdmin
         {
             get => Model.IsAdmin;
-            set => Model.IsAdmin = value;
+            set
+            {
+                if (Model.IsAdmin != value)
+                {
+                    Model.IsAdmin = value;
+                    OnPropertyChanged(nameof(IsAdmin));
+                }
+            }
         }
 
         /// <summary>
@@ -827,7 +934,14 @@ namespace DCS.User.UI
         public bool IsADUser
         {
             get => Model.IsADUser;
-            set => Model.IsADUser = value;
+            set
+            {
+                if (Model.IsADUser != value)
+                {
+                    Model.IsADUser = value;
+                    OnPropertyChanged(nameof(IsADUser));
+                }
+            }
         }
 
         /// <summary>
@@ -836,7 +950,14 @@ namespace DCS.User.UI
         public DateTime? CreationDate
         {
             get => Model.CreationDate;
-            set => Model.CreationDate = value;
+            set
+            {
+                if (Model.CreationDate != value)
+                {
+                    Model.CreationDate = value;
+                    OnPropertyChanged(nameof(CreationDate));
+                }
+            }
         }
 
         /// <summary>
@@ -845,7 +966,14 @@ namespace DCS.User.UI
         public DateTime? SubstitutionEnd
         {
             get => Model.SubstitutionEnd;
-            set => Model.SubstitutionEnd = value;
+            set
+            {
+                if (Model.SubstitutionEnd != value)
+                {
+                    Model.SubstitutionEnd = value;
+                    OnPropertyChanged(nameof(SubstitutionEnd));
+                }
+            }
         }
 
         /// <summary>
@@ -854,7 +982,14 @@ namespace DCS.User.UI
         public DateTime? LastManipulation
         {
             get => Model.LastManipulation;
-            set => Model.LastManipulation = value;
+            set
+            {
+                if (Model.LastManipulation != value)
+                {
+                    Model.LastManipulation = value;
+                    OnPropertyChanged(nameof(LastManipulation));
+                }
+            }
         }
 
         /// <summary>
@@ -863,7 +998,30 @@ namespace DCS.User.UI
         public string? ProfilePicturePath
         {
             get => Model.ProfilePicturePath;
-            set => Model.ProfilePicturePath = value;
+            set
+            {
+                if (Model.ProfilePicturePath != value)
+                {
+                    Model.ProfilePicturePath = value;
+                    OnPropertyChanged(nameof(ProfilePicturePath));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the prefered language associated for the current user.
+        /// </summary>
+        public string Language
+        {
+            get => Model.Language;
+            set
+            {
+                if (Model.Language != value)
+                {
+                    Model.Language = value;
+                    OnPropertyChanged(nameof(Language));
+                }
+            }
         }
         #endregion
     }

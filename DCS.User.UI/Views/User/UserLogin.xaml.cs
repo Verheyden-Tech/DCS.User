@@ -29,10 +29,6 @@ namespace DCS.User.UI
             if (Current.Domains != null && Current.Domains.Count > 0)
                 ServerComboBox.SelectedItem = Current.Domains.FirstOrDefault();
 
-            LanguageDropDownButton.ItemsSource = CurrentLanguageService.Instance.GetAvailableLanguages();
-            LanguageDropDownButton.DisplayMemberPath = "DisplayName";
-            if(CurrentLanguageService.Instance.CurrentLanguage != null)
-                LanguageDropDownButton.Text = CurrentLanguageService.Instance.CurrentLanguage;
         }
 
         /// <summary>
@@ -55,7 +51,26 @@ namespace DCS.User.UI
                 return;
             }
 
-            if (Current.LoginUser(PassWordLoginBox.Password))
+            if(!string.IsNullOrWhiteSpace(CurrentLanguageTextBlock.Text))
+            {
+                if(CurrentLanguageService.Instance.CurrentLanguage != CurrentLanguageTextBlock.Text)
+                {
+                    CurrentLanguageService.Instance.SetLanguage(CurrentLanguageTextBlock.Text);
+                    LanguageFlagImage.Visibility = Visibility.Visible;
+                    LanguageFlagImage.Content = iconService.GetLanguageFlag(CurrentLanguageService.Instance.CurrentFlag);
+                    Log.LogManager.Singleton.Info($"User changed application language to {CurrentLanguageService.Instance.CurrentLanguage}", "UserLogin");
+                    if(Current.Language != CurrentLanguageService.Instance.CurrentLanguage)
+                    {
+                        Current.Language = CurrentLanguageService.Instance.CurrentLanguage;
+                        if (Current.UpdateUser())
+                            Log.LogManager.Singleton.Info($"User language preference updated to {Current.Language} for user account.", "UserLogin");
+                    }
+
+                    DialogResult = true;
+                    this.Close();
+                }
+            }
+            else if (Current.LoginUser(PassWordLoginBox.Password))
             {
                 if (KeepLoggedInCheckBox.IsChecked == true)
                 {
@@ -155,6 +170,18 @@ namespace DCS.User.UI
             else
             {
                 MessageBox.Show("Fehler beim Ändern der Sprache.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void ChangeUserLanguageButton_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new UserLanguageSelector();
+            if (win.ShowDialog() == true)
+            {
+                LanguageFlagImage.Visibility = Visibility.Visible;
+                LanguageFlagImage.Content = iconService.GetLanguageFlag(CurrentLanguageService.Instance.CurrentFlag);
+                Log.LogManager.Singleton.Info($"User changed application language to {CurrentLanguageService.Instance.CurrentLanguage}", "UserLogin");
+                MessageBox.Show($"Die Sprache wurde geändert zu {CurrentLanguageService.Instance.CurrentLanguage}.", "Sprache geändert", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
     }
