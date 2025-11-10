@@ -1,5 +1,4 @@
 ﻿using DCS.CoreLib.View;
-using DCS.Data.UI;
 using DCS.User.Service;
 using System.Windows;
 using System.Windows.Input;
@@ -26,7 +25,9 @@ namespace DCS.User.UI
             DataContext = viewModel;
 
             if (Current.Domains != null && Current.Domains.Count > 0)
-                ServerComboBox.Text = Current.Domains.First().DomainName;
+                ServerComboBox.SelectedItem = Current.Domains.FirstOrDefault();
+
+            
         }
 
         /// <summary>
@@ -43,7 +44,7 @@ namespace DCS.User.UI
         #region Private methods/click handler
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(PassWordLoginBox.Password))
+            if (string.IsNullOrWhiteSpace(PassWordLoginBox.Password))
             {
                 MessageBox.Show("Bitte Passwort eingeben.", "Fehler beim Login", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -54,7 +55,7 @@ namespace DCS.User.UI
                 if (KeepLoggedInCheckBox.IsChecked == true)
                 {
                     Current.KeepLoggedIn = true;
-                    if(Current.UpdateUser())
+                    if (Current.UpdateUser())
                         Log.LogManager.Singleton.Warning($"User chose to keep logged in for user account. Keep logged in flag succesful setted.", "UserLogin");
                 }
 
@@ -115,7 +116,7 @@ namespace DCS.User.UI
             var comboBox = (sender as RadComboBox);
             if (comboBox != null)
             {
-                if (!string.IsNullOrEmpty(comboBox.SelectedValue as string))
+                if (!string.IsNullOrEmpty((string)comboBox.SelectedValue))
                     comboBox.ClearSelectionButtonVisibility = Visibility.Visible;
                 else
                 {

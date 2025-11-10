@@ -15,6 +15,7 @@ namespace DCS.User.UI
 
         private ObservableCollection<User> Users { get; set; }
         private UserViewModel viewModel;
+        private DataGrid UserDataGrid;
 
         /// <summary>
         /// Default constructor for <see cref="UserManagement"/>.
@@ -25,7 +26,6 @@ namespace DCS.User.UI
 
             Users = new ObservableCollection<User>();
             Users = userService.GetAll();
-            UserGridView.ItemsSource = Users;
 
             var obj = new User();
             viewModel = new UserViewModel(obj);
@@ -48,7 +48,7 @@ namespace DCS.User.UI
             var win = new AddTestDataWindow();
             if (win.ShowDialog() == true)
             {
-                UserGridView.Items.Refresh();
+                UserDataGrid.Items.Refresh();
             }
         }
 
@@ -58,7 +58,7 @@ namespace DCS.User.UI
             {
                 try
                 {
-                    foreach (User user in UserGridView.SelectedItems)
+                    foreach (User user in UserDataGrid.SelectedItems)
                     {
                         if (!userService.Delete(user.Guid))
                         {
@@ -79,17 +79,17 @@ namespace DCS.User.UI
 
         private void EditUser_Click(object sender, RoutedEventArgs e)
         {
-            if (UserGridView.SelectedItems != null || UserGridView.SelectedItems is IList<User>)
+            if (UserDataGrid.SelectedItems != null || UserDataGrid.SelectedItems is IList<User>)
             {
-                var user = UserGridView.SelectedItems.FirstOrDefault() as User;
+                var user = UserDataGrid.SelectedItems.FirstOrDefault() as User;
 
                 if (user != null)
                 {
                     var editor = new UserEditor(user);
-                    editor.AddPagingObjects(UserGridView.SelectedItems);
+                    editor.AddPagingObjects(UserDataGrid.SelectedItems);
                     if (editor.ShowDialog() == true)
                     {
-                        UserGridView.Items.Refresh();
+                        UserDataGrid.Items.Refresh();
                     }
                 }
                 else
@@ -97,10 +97,10 @@ namespace DCS.User.UI
                     Log.LogManager.Singleton.Warning($"User {user.UserName} failed to open to edit.", "UserEditor");
 
                     var editor = new UserEditor(Current.Model);
-                    editor.AddPagingObjects(UserGridView.SelectedItems);
+                    editor.AddPagingObjects(UserDataGrid.SelectedItems);
                     if (editor.ShowDialog() == true)
                     {
-                        UserGridView.Items.Refresh();
+                        UserDataGrid.Items.Refresh();
                     }
                 }
             }
@@ -111,7 +111,7 @@ namespace DCS.User.UI
             var win = new UserEditor(Current.Model);
             if (win.ShowDialog() == true)
             {
-                UserGridView.Items.Refresh();
+                UserDataGrid.Items.Refresh();
             }
         }
     }

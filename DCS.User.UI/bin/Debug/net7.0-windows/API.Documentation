@@ -853,14 +853,19 @@
             GroupEditor
             </summary>
         </member>
+        <member name="M:DCS.User.UI.GroupEditor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DCS.User.UI.GroupEditor"/> class with the specified group and view model.
+            </summary>
+        </member>
         <member name="M:DCS.User.UI.GroupEditor.#ctor(DCS.User.Group)">
             <summary>
             Initializes a new instance of the <see cref="T:DCS.User.UI.GroupEditor"/> class with the specified group.
             </summary>
-            <remarks>This constructor sets up the data context for the editor using a <see
-            cref="T:DCS.User.UI.GroupViewModel"/> initialized with the provided <paramref name="group"/>. Ensure that the <paramref
-            name="group"/> parameter is not <see langword="null"/> before calling this constructor.</remarks>
-            <param name="group">The <see cref="T:DCS.User.Group"/> instance to be edited. Cannot be <see langword="null"/>.</param>
+            <remarks>If the provided group has a non-empty name, it is used as the title of the editor.
+            The data context is set to a new instance of <see cref="T:DCS.User.UI.GroupViewModel"/> initialized with the specified
+            group. Additionally, the group members are retrieved and stored if available.</remarks>
+            <param name="group">The group to be edited. Must not be <see langword="null"/> and should have a valid name.</param>
         </member>
         <member name="P:DCS.User.UI.GroupEditor.Current">
             <summary>
@@ -898,11 +903,22 @@
             OrganisationEditor
             </summary>
         </member>
-        <member name="M:DCS.User.UI.OrganisationEditor.#ctor(DCS.User.Organisation)">
+        <member name="M:DCS.User.UI.OrganisationEditor.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:DCS.User.UI.OrganisationEditor"/> class.
             </summary>
-            <param name="organisation">Instance of <see cref="T:DCS.User.Organisation"/>.</param>
+            <remarks>This constructor initializes the <see cref="T:DCS.User.UI.OrganisationEditor"/> component and sets
+            up the necessary resources.</remarks>
+        </member>
+        <member name="M:DCS.User.UI.OrganisationEditor.#ctor(DCS.User.Organisation)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DCS.User.UI.OrganisationEditor"/> class with the specified organisation.
+            </summary>
+            <remarks>This constructor sets the data context to an instance of <see
+            cref="T:DCS.User.UI.OrganisationViewModel"/> initialized with the provided organisation. If the organisation has a name,
+            it is used as the title of the editor. Additionally, the list of organisation members is retrieved and
+            stored if available.</remarks>
+            <param name="organisation">The organisation to be edited. Cannot be <see langword="null"/>.</param>
         </member>
         <member name="P:DCS.User.UI.OrganisationEditor.Current">
             <summary>
@@ -941,11 +957,22 @@
             RoleEditor
             </summary>
         </member>
-        <member name="M:DCS.User.UI.RoleEditor.#ctor(DCS.User.Role)">
+        <member name="M:DCS.User.UI.RoleEditor.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:DCS.User.UI.RoleEditor"/> class.
             </summary>
-            <param name="role">Instance of <see cref="T:DCS.User.Role"/>.</param>
+            <remarks>This constructor initializes the <see cref="T:DCS.User.UI.RoleEditor"/> component and prepares it
+            for use.</remarks>
+        </member>
+        <member name="M:DCS.User.UI.RoleEditor.#ctor(DCS.User.Role)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DCS.User.UI.RoleEditor"/> class with the specified role.
+            </summary>
+            <remarks>This constructor sets the data context to a new instance of <see
+            cref="T:DCS.User.UI.RoleViewModel"/> initialized with the specified role. If the role has a non-empty name, it is used as
+            the title of the editor. Additionally, the role's members are retrieved and assigned to the
+            <c>RoleMember</c> property if available.</remarks>
+            <param name="role">The role to be edited. Must not be <see langword="null"/>.</param>
         </member>
         <member name="P:DCS.User.UI.RoleEditor.Current">
             <summary>
@@ -983,11 +1010,26 @@
             ChangeUserPassword
             </summary>
         </member>
+        <member name="M:DCS.User.UI.ChangeUserPassword.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DCS.User.UI.ChangeUserPassword"/> class.
+            </summary>
+            <remarks>This constructor sets up the necessary components for the <see
+            cref="T:DCS.User.UI.ChangeUserPassword"/> class. Ensure that the required initialization logic is completed before using
+            this instance.</remarks>
+        </member>
         <member name="M:DCS.User.UI.ChangeUserPassword.#ctor(DCS.User.User)">
             <summary>
             Initializes a new instance of the <see cref="T:DCS.User.UI.ChangeUserPassword"/> class with the specified user.
             </summary>
-            <param name="user">The user whose password is to be changed. Cannot be <see langword="null"/>.</param>
+            <remarks>This constructor initializes the data context with a <see cref="T:DCS.User.UI.UserViewModel"/>
+            instance created for the specified user.</remarks>
+            <param name="user">The user whose password is to be changed. This parameter cannot be <see langword="null"/>.</param>
+        </member>
+        <member name="P:DCS.User.UI.ChangeUserPassword.Current">
+            <summary>
+            Gets the current user view model instance as data context.
+            </summary>
         </member>
         <member name="M:DCS.User.UI.ChangeUserPassword.InitializeComponent">
             <summary>
@@ -1053,10 +1095,27 @@
             UserEditor
             </summary>
         </member>
+        <member name="M:DCS.User.UI.UserEditor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DCS.User.UI.UserEditor"/> class.
+            </summary>
+            <remarks>This constructor initializes the <see cref="T:DCS.User.UI.UserEditor"/> component and sets up the
+            necessary resources.</remarks>
+        </member>
         <member name="M:DCS.User.UI.UserEditor.#ctor(DCS.User.User)">
             <summary>
-            Default constructor initialize a new <see cref="T:DCS.User.UI.UserEditor"/> window.
+            Initializes a new instance of the <see cref="T:DCS.User.UI.UserEditor"/> class, setting up the user interface and data
+            context for editing the specified user.
             </summary>
+            <remarks>The constructor initializes the data context with a <see cref="T:DCS.User.UI.UserViewModel"/> based
+            on the provided user. It also configures the visibility and state of UI elements based on the properties of
+            the <paramref name="user"/>: <list type="bullet"> <item> <description>If the user's <see
+            cref="P:DCS.User.User.UserName"/> is not null or whitespace, the window title is set to the user's name.</description>
+            </item> <item> <description>If the user's <see cref="P:DCS.User.User.PassWord"/> is not null or empty, the password
+            change button is shown, and the password input box is hidden.</description> </item> <item> <description>If
+            the user's <see cref="P:DCS.User.User.ProfilePicturePath"/> is null or empty, the profile picture button is enabled and
+            visible, and the profile picture display is hidden.</description> </item> </list></remarks>
+            <param name="user">The <see cref="T:DCS.User.User"/> object to be edited. This parameter must not be null.</param>
         </member>
         <member name="P:DCS.User.UI.UserEditor.Current">
             <summary>

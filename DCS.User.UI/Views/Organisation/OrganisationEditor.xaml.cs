@@ -1,3 +1,4 @@
+using DCS.CoreLib.BaseClass;
 using DCS.CoreLib.View;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
@@ -16,11 +17,23 @@ namespace DCS.User.UI
         /// <summary>
         /// Initializes a new instance of the <see cref="OrganisationEditor"/> class.
         /// </summary>
-        /// <param name="organisation">Instance of <see cref="Organisation"/>.</param>
-        public OrganisationEditor(Organisation organisation) : base(organisation)
+        /// <remarks>This constructor initializes the <see cref="OrganisationEditor"/> component and sets
+        /// up the necessary resources.</remarks>
+        public OrganisationEditor() : base()
         {
             InitializeComponent();
-            
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganisationEditor"/> class with the specified organisation.
+        /// </summary>
+        /// <remarks>This constructor sets the data context to an instance of <see
+        /// cref="OrganisationViewModel"/> initialized with the provided organisation. If the organisation has a name,
+        /// it is used as the title of the editor. Additionally, the list of organisation members is retrieved and
+        /// stored if available.</remarks>
+        /// <param name="organisation">The organisation to be edited. Cannot be <see langword="null"/>.</param>
+        public OrganisationEditor(Organisation organisation) : base(organisation)
+        {
             viewModel = new OrganisationViewModel(organisation);
             this.DataContext = viewModel;
 

@@ -1,25 +1,25 @@
-﻿<win:DefaultMainWindow x:Class="DCS.User.UI.UserLogin"
+﻿<dcs:DefaultMainWindow x:Class="DCS.User.UI.UserLogin"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
         xmlns:local="clr-namespace:DCS.User.UI"
-        xmlns:win="clr-namespace:DCS.CoreLib.View;assembly=DCS.CoreLib.View"
+        xmlns:dcs="http://schemas.verheyden-tech.com/2025/xaml/presentation"
         xmlns:resource="clr-namespace:DCS.Resource;assembly=DCS.Resource"
         mc:Ignorable="d" d:DataContext="{d:DesignInstance local:UserViewModel}"
         WindowStartupLocation="CenterScreen" KeyDown="DefaultMainWindow_KeyDown"
-        Title="DCS" MinHeight="250" MinWidth="500" SizeToContent="WidthAndHeight">
+        Title="DCS - Login" Height="300" Width="500">
 
     <Grid Margin="10">
 
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -27,29 +27,39 @@
 
         <Image x:Name="DCS_Label_Image" Grid.Row="0" Grid.Column="1" Source="/DCS.User;component/Resources/Images/DCS_LoginLabel_500x64.png" Height="64" Width="250" Stretch="Uniform" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
-        <telerik:RadWatermarkTextBox x:Name="UserNameLoginTextBox" Grid.Row="1" Grid.Column="1" WatermarkContent="Benutzername eingeben" Margin="2" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" TabIndex="1" Foreground="#b8860b" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Border Grid.Row="1" Grid.Column="1" Margin="5" BorderBrush="DarkGoldenrod" BorderThickness="1" CornerRadius="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <telerik:RadWatermarkTextBox x:Name="UserNameLoginTextBox" WatermarkContent="Benutzername eingeben" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" TabIndex="1" BorderBrush="{x:Null}" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        </Border>
 
-        <telerik:RadPasswordBox x:Name="PassWordLoginBox" Grid.Row="2" Grid.Column="1" WatermarkContent="Passwort eingeben" Margin="2" TabIndex="2" Foreground="#b8860b" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Border Grid.Row="2" Grid.Column="1" Margin="5" BorderBrush="DarkGoldenrod" BorderThickness="1" CornerRadius="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <telerik:RadPasswordBox x:Name="PassWordLoginBox" Grid.Row="2" Grid.Column="1" WatermarkContent="Passwort eingeben" TabIndex="2" BorderBrush="{x:Null}" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        </Border>
 
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <telerik:RadComboBox Name="ServerComboBox" ItemsSource="{Binding Domains, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectionChanged="ServerComboBox_SelectionChanged" DisplayMemberPath="DomainName" MinWidth="150" TabIndex="3" Margin="2" IsTextSearchEnabled="True" ClearSelectionButtonVisibility="Collapsed" CanKeyboardNavigationSelectItems="True" DropDownOpened="ServerComboBox_DropDownOpened" ClearSelectionButtonContent="Auswahl aufheben" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <telerik:RadComboBox Name="ServerComboBox" ItemsSource="{Binding Domains, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectionChanged="ServerComboBox_SelectionChanged" DisplayMemberPath="DomainName" MinWidth="150" Margin="5" TabIndex="3" BorderBrush="DarkGoldenrod" IsTextSearchEnabled="True" ClearSelectionButtonVisibility="Collapsed" CanKeyboardNavigationSelectItems="True" DropDownOpened="ServerComboBox_DropDownOpened" ClearSelectionButtonContent="Auswahl aufheben" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 <telerik:RadComboBox.EmptySelectionBoxTemplate>
                     <DataTemplate>
-                        <TextBlock Text="Domain wählen" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock Text="Domain wählen" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Left" Background="{x:Null}"/>
                     </DataTemplate>
                 </telerik:RadComboBox.EmptySelectionBoxTemplate>
             </telerik:RadComboBox>
         </StackPanel>
 
-        <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <CheckBox x:Name="KeepLoggedInCheckBox" Content="Angemeldet bleiben" TabIndex="4" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#b8860b" IsChecked="{Binding Path=KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <CheckBox x:Name="KeepLoggedInCheckBox" Content="Angemeldet bleiben" TabIndex="4" VerticalAlignment="Center" HorizontalAlignment="Left" IsChecked="{Binding Path=KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Stretch">
-            <Button x:Name="RegistrateButton" Click="RegistrateButton_Click" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" TabIndex="5" IsEnabled="True" Foreground="#b8860b" Content="Registrieren" Style="{DynamicResource ButtonAcc/Dec}"/>
-            <Button x:Name="LoginButton" Click="LoginButton_Click" Content="Anmelden" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" TabIndex="6" Foreground="#b8860b" Style="{DynamicResource ButtonAcc/Dec}"/>
+        <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Left">
+            <Label x:Name="LanguageFlagImage" Margin="2" Width="16" Height="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <telerik:RadAutoSuggestBox x:Name="LanguageDropDownButton" Text="Sprache auswählen" QueryButtonVisibility="Collapsed" FontSize="8" Background="{x:Null}" BorderBrush="{x:Null}" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinWidth="150" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch">
+            <Button x:Name="LoginButton" Click="LoginButton_Click" Content="Anmelden" Margin="2" Background="{x:Null}" BorderBrush="{x:Null}" TabIndex="6" Foreground="#b8860b" Style="{DynamicResource ButtonAcc/Dec}"/>
+            <TextBlock Text="oder" FontSize="6" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2" FontWeight="ExtraLight"/>
+            <Button x:Name="RegistrateButton" Click="RegistrateButton_Click" Margin="2" Background="{x:Null}" BorderBrush="{x:Null}" TabIndex="5" IsEnabled="True" Foreground="#b8860b" Content="Registrieren" Style="{DynamicResource ButtonAcc/Dec}"/>
         </StackPanel>
 
     </Grid>
 
-</win:DefaultMainWindow>
+</dcs:DefaultMainWindow>

@@ -1,5 +1,4 @@
 ﻿using DCS.CoreLib.View;
-using DCS.Resource;
 using System.Windows;
 using System.Windows.Controls;
 using Telerik.Windows.Controls;
@@ -12,15 +11,36 @@ namespace DCS.User.UI
     public partial class UserEditor : DefaultEditorWindow
     {
         private UserViewModel viewModel;
-        private IIconService iconService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IIconService>();
 
         /// <summary>
-        /// Default constructor initialize a new <see cref="UserEditor"/> window.
+        /// Initializes a new instance of the <see cref="UserEditor"/> class.
         /// </summary>
-        public UserEditor(User user) : base(user)
+        /// <remarks>This constructor initializes the <see cref="UserEditor"/> component and sets up the
+        /// necessary resources.</remarks>
+        public UserEditor() : base()
         {
             InitializeComponent();
 
+            var obj = new User();
+            viewModel = new UserViewModel(obj);
+            this.DataContext = viewModel;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserEditor"/> class, setting up the user interface and data
+        /// context for editing the specified user.
+        /// </summary>
+        /// <remarks>The constructor initializes the data context with a <see cref="UserViewModel"/> based
+        /// on the provided user. It also configures the visibility and state of UI elements based on the properties of
+        /// the <paramref name="user"/>: <list type="bullet"> <item> <description>If the user's <see
+        /// cref="User.UserName"/> is not null or whitespace, the window title is set to the user's name.</description>
+        /// </item> <item> <description>If the user's <see cref="User.PassWord"/> is not null or empty, the password
+        /// change button is shown, and the password input box is hidden.</description> </item> <item> <description>If
+        /// the user's <see cref="User.ProfilePicturePath"/> is null or empty, the profile picture button is enabled and
+        /// visible, and the profile picture display is hidden.</description> </item> </list></remarks>
+        /// <param name="user">The <see cref="User"/> object to be edited. This parameter must not be null.</param>
+        public UserEditor(User user) : base(user)
+        {
             this.viewModel = new UserViewModel(user);
             this.DataContext = viewModel;
 
@@ -59,59 +79,10 @@ namespace DCS.User.UI
             if (!string.IsNullOrEmpty(Current.PassWord))
             {
                 var win = new ChangeUserPassword(Current.Model);
-                win.Show();
-            }
-        }
-
-        private void GroupAutoCompleteBox_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
-        {
-            if (e.Key == System.Windows.Input.Key.Enter)
-            {
-                try
+                if (win.ShowDialog() == true)
                 {
-                    if (sender is RadAutoSuggestBox box)
-                    {
-                        var group = box.DataContext as Group;
-                        if (group != null)
-                        {
-                            if (!Current.UserGroups.Contains(group))
-                            {
-                                Current.AddUserToGroup(group);
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Fehler beim hinzufügen des Benutzers zur Gruppe: {ex.Message}", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
-        }
-
-        private void OrganisationAutoCompleteBox_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
-        {
-            if (e.Key == System.Windows.Input.Key.Enter)
-            {
-                try
-                {
-                    if (sender is RadAutoCompleteBox box)
-                    {
-                        var organisation = box.SelectedItem as Organisation;
-                        if (organisation != null)
-                        {
-                            if (!Current.UserOrganisations.Contains(organisation))
-                            {
-                                Current.AddUserToOrganisation(organisation);
-                                box.SelectedItem = null;
-                                box.SelectedItems = null;
-                                box.SearchText = string.Empty;
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Fehler beim hinzufügen des Benutzers zur Organisation: {ex.Message}", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Log.LogManager.Singleton.Info($"Password changed for user {Current.UserName}.", "UserEditor");
+                    MessageBox.Show("Das Passwort wurde erfolgreich geändert.", "Erfolg", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
         }
@@ -159,22 +130,24 @@ namespace DCS.User.UI
 
         private void OrganisationAutoCompleteBox_QuerySubmitted(object sender, Telerik.Windows.Controls.AutoSuggestBox.QuerySubmittedEventArgs e)
         {
-            if (e.Suggestion is Organisation organisation && organisation != null)
+            if (e.Suggestion is Organisation organisation && organisation != null && sender is RadAutoSuggestBox box)
             {
                 if (!Current.UserOrganisations.Contains(organisation))
                 {
-                    Current.AddUserToOrganisation(organisation);
+                    if (Current.AddUserToOrganisation(organisation))
+                        box.Text = string.Empty;
                 }
             }
         }
 
         private void GroupAutoCompleteBox_QuerySubmitted(object sender, Telerik.Windows.Controls.AutoSuggestBox.QuerySubmittedEventArgs e)
         {
-            if (e.Suggestion is Group group && group != null)
+            if (e.Suggestion is Group group && group != null && sender is RadAutoSuggestBox box)
             {
                 if (!Current.UserGroups.Contains(group))
                 {
-                    Current.AddUserToGroup(group);
+                    if (Current.AddUserToGroup(group))
+                        box.Text = string.Empty;
                 }
             }
         }

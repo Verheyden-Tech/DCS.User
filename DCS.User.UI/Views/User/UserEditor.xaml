@@ -1,24 +1,23 @@
-﻿<win:DefaultEditorWindow x:Class="DCS.User.UI.UserEditor"
+﻿<dcs:DefaultEditorWindow x:Class="DCS.User.UI.UserEditor"
                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                         xmlns:local="clr-namespace:DCS.User.UI"
                          xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
-                         xmlns:win="clr-namespace:DCS.CoreLib.View;assembly=DCS.CoreLib.View"
-                         mc:Ignorable="d"
-        Title="Neuen Benutzer erstellen" MinHeight="200" MinWidth="400" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
+                         xmlns:dcs="http://schemas.verheyden-tech.com/2025/xaml/presentation"
+                         mc:Ignorable="d" d:DataContext="{d:DesignInstance local:UserViewModel}"
+        Title="Neuen Benutzer erstellen" Height="250" Width="400" WindowStartupLocation="CenterScreen">
 
     <Grid Background="White" Margin="5">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
@@ -26,15 +25,13 @@
         <telerik:RadButton Grid.Row="0" Grid.Column="0" x:Name="AddUserProfilePictureButton" Click="AddUserProfilePictureButton_Click" IsEnabled="False" Background="{x:Null}" Grid.RowSpan="2" Margin="5" Width="64" Height="64" ToolTip="Benutzer Profilbild hinzufügen">
             <Image x:Name="AddUserProfilPicture" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="32" Width="32" Source="{telerik:RadGlyph Size=1, Type=Image, Glyph=&#xe652;}"/>
         </telerik:RadButton>
-        <Image Grid.Row="0" Grid.Column="0" x:Name="UserProfilePicture" Stretch="Uniform" Source="{Binding ProfilePicturePath, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.RowSpan="2" Margin="5" Width="64" Height="64" Visibility="Collapsed">
-
-        </Image>
+        <Image Grid.Row="0" Grid.Column="0" x:Name="UserProfilePicture" Stretch="Uniform" Source="{Binding ProfilePicturePath, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.RowSpan="2" Margin="5" Width="64" Height="64" Visibility="Collapsed"/>
 
         <telerik:RadWatermarkTextBox Grid.Row="0" Grid.Column="1" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Benutzername eingeben.." Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
         <telerik:RadPasswordBox Grid.Row="0" Grid.Column="2" x:Name="UserPasswordBox" Text="{Binding PassWord, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Neues Passwort festlegen.." Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
         <telerik:RadButton Grid.Row="0" Grid.Column="2" x:Name="ChangeUserPasswordButton" Visibility="Collapsed" Background="LightGray" Click="ChangeUserPasswordButton_Click" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
-            <Image x:Name="ChangeUserPasswordImage" Source="{telerik:RadGlyph Size=1, Type=Image, Glyph=&#xe113;}" Height="16" Width="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+            <Image x:Name="ChangeUserPasswordImage" Source="{telerik:RadGlyph Size=16, Type=Image, Glyph=&#xe113;}" Height="16" Width="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         </telerik:RadButton>
 
         <CheckBox Grid.Row="1" Grid.Column="2" IsChecked="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="Aktiv" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
@@ -80,8 +77,12 @@
 
                 </telerik:RadAutoSuggestBox>
 
-                <ListView Grid.Row="1" Grid.Column="0" x:Name="GroupListBox" DisplayMemberPath="Name" DataContextChanged="GroupListBox_DataContextChanged" ItemsSource="{Binding UserGroups, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="60" MinWidth="120">
-
+                <ListView Grid.Row="1" Grid.Column="0" x:Name="GroupListBox" DataContextChanged="GroupListBox_DataContextChanged" ItemsSource="{Binding UserGroups, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="60" MinWidth="120">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="ContentTemplate" Value="{StaticResource ListItem}"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
                 </ListView>
 
             </Grid>
@@ -100,8 +101,12 @@
 
                 </telerik:RadAutoSuggestBox>
 
-                <ListView Grid.Row="1" Grid.Column="0" x:Name="OrganisationListBox" DisplayMemberPath="Name" DataContextChanged="OrganisationListBox_DataContextChanged" ItemsSource="{Binding UserOrganisations, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="60" MinWidth="120">
-
+                <ListView Grid.Row="1" Grid.Column="0" x:Name="OrganisationListBox" DataContextChanged="OrganisationListBox_DataContextChanged" ItemsSource="{Binding UserOrganisations, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="60" MinWidth="120">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="ContentTemplate" Value="{StaticResource ListItem}"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
                 </ListView>
 
             </Grid>
@@ -109,4 +114,4 @@
 
     </Grid>
 
-</win:DefaultEditorWindow>
+</dcs:DefaultEditorWindow>

@@ -1,4 +1,5 @@
-﻿using DCS.CoreLib.View;
+﻿using DCS.CoreLib.BaseClass;
+using DCS.CoreLib.View;
 using System.Collections.ObjectModel;
 using System.Windows;
 

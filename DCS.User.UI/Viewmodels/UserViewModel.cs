@@ -70,7 +70,7 @@ namespace DCS.User.UI
             var ua = new UserAssignement();
             assignementViewModel = new UserAssignementViewModel(ua);
 
-            if(user.Guid != default)
+            if (user.Guid != default)
             {
                 UserGroups = GetUserGroups(user);
                 UserOrganisations = GetUserOrganisations(user);
