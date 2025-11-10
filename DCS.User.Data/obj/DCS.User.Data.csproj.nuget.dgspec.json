@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj": {
-      "version": "1.0.6601.1",
+      "version": "1.0.6701.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
         "projectName": "DCS.User.Data",
@@ -107,7 +107,7 @@
       }
     },
     "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj": {
-      "version": "1.0.6701.1",
+      "version": "1.0.6901.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User\\DCS.User.csproj",
         "projectName": "DCS.User",
@@ -185,7 +185,7 @@
             },
             "DCS.Resource": {
               "target": "Package",
-              "version": "[1.0.1301, )"
+              "version": "[1.0.1401, )"
             },
             "Microsoft.CodeAnalysis.FxCopAnalyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

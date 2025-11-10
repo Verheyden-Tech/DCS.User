@@ -1,4 +1,5 @@
 ﻿using DCS.CoreLib.View;
+using DCS.Resource;
 using DCS.User.Service;
 using System.Windows;
 using System.Windows.Input;
@@ -11,6 +12,7 @@ namespace DCS.User.UI
     /// </summary>
     public partial class UserLogin : DefaultMainWindow
     {
+        private readonly IIconService iconService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IIconService>();
         private UserViewModel viewModel;
 
         /// <summary>
@@ -27,7 +29,10 @@ namespace DCS.User.UI
             if (Current.Domains != null && Current.Domains.Count > 0)
                 ServerComboBox.SelectedItem = Current.Domains.FirstOrDefault();
 
-            
+            LanguageDropDownButton.ItemsSource = CurrentLanguageService.Instance.GetAvailableLanguages();
+            LanguageDropDownButton.DisplayMemberPath = "DisplayName";
+            if(CurrentLanguageService.Instance.CurrentLanguage != null)
+                LanguageDropDownButton.Text = CurrentLanguageService.Instance.CurrentLanguage;
         }
 
         /// <summary>
@@ -116,7 +121,7 @@ namespace DCS.User.UI
             var comboBox = (sender as RadComboBox);
             if (comboBox != null)
             {
-                if (!string.IsNullOrEmpty((string)comboBox.SelectedValue))
+                if (comboBox.SelectedValue != null)
                     comboBox.ClearSelectionButtonVisibility = Visibility.Visible;
                 else
                 {
@@ -134,6 +139,22 @@ namespace DCS.User.UI
             {
                 CurrentDomainService.Instance.UnsetDomain();
                 CurrentDomainService.Instance.SetDomain(domain);
+            }
+        }
+
+        private void LanguageDropDownButton_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if (sender is RadComboBox box && box.SelectedItem is System.Globalization.CultureInfo culture)
+            {
+                CurrentLanguageService.Instance.SetLanguage(culture.DisplayName);
+                LanguageFlagImage.Visibility = Visibility.Visible;
+                LanguageFlagImage.Content = iconService.GetLanguageFlag(CurrentLanguageService.Instance.CurrentFlag);
+                Log.LogManager.Singleton.Info($"User changed application language to {culture.Name}", "UserLogin");
+                MessageBox.Show("Die Sprache wurde geändert. Bitte starten Sie die Anwendung neu, damit die Änderungen wirksam werden.", "Sprache geändert", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("Fehler beim Ändern der Sprache.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

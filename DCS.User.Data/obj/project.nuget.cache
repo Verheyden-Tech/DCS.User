@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6OEraHZ0GZw=",
+  "dgSpecHash": "arPh+Ekdml8=",
   "success": true,
   "projectFilePath": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.Data\\DCS.User.Data.csproj",
   "expectedPackageFiles": [
@@ -16,7 +16,7 @@
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.data.sql\\1.0.2901\\dcs.data.sql.1.0.2901.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.localization\\1.0.501\\dcs.localization.1.0.501.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.log\\1.0.901.5\\dcs.log.1.0.901.5.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.resource\\1.0.1301\\dcs.resource.1.0.1301.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.resource\\1.0.1401\\dcs.resource.1.0.1401.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\microsoft.bcl.asyncinterfaces\\9.0.1\\microsoft.bcl.asyncinterfaces.9.0.1.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\microsoft.data.sqlclient\\5.2.2\\microsoft.data.sqlclient.5.2.2.nupkg.sha512",
@@ -57,8 +57,7 @@
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.user\\1.0.6701.1\\dcs.user.1.0.6701.1.nupkg.sha512"
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -3,6 +3,7 @@ using DCS.User.Service;
 using Microsoft.Win32;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 
 namespace DCS.User.UI
 {
@@ -52,6 +53,12 @@ namespace DCS.User.UI
         /// Changes to the collection, such as additions or removals, will raise notifications  to any observers, making
         /// it suitable for data binding scenarios.</remarks>
         private ObservableCollection<UserDomain> domains = new ObservableCollection<UserDomain>();
+        /// <summary>
+        /// Represents a collection of available languages as <see cref="CultureInfo"/> objects.
+        /// </summary>
+        /// <remarks>This collection is intended to store the languages supported by the application.  It
+        /// can be used to populate language selection options or to manage localization settings.</remarks>
+        private ObservableCollection<CultureInfo> avialableLanguages = new ObservableCollection<CultureInfo>();
         #endregion
 
         /// <summary>
@@ -64,6 +71,8 @@ namespace DCS.User.UI
         public UserViewModel(User user) : base(user)
         {
             this.Model = user;
+
+            //AvialableLanguages = CurrentLanguageService.Instance.GetAvailableLanguages();
 
             Collection = userService.GetAll();
 
@@ -727,6 +736,22 @@ namespace DCS.User.UI
                 {
                     domains = value;
                     OnPropertyChanged(nameof(Domains));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the collection of available languages supported by the application.
+        /// </summary>
+        public ObservableCollection<CultureInfo> AvialableLanguages
+        {
+            get => avialableLanguages;
+            set
+            {
+                if (avialableLanguages != value)
+                {
+                    avialableLanguages = value;
+                    OnPropertyChanged(nameof(AvialableLanguages));
                 }
             }
         }

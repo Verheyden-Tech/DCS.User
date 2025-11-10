@@ -438,7 +438,7 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "DCS.Resource/1.0.1301": {
+      "DCS.Resource/1.0.1401": {
         "type": "package",
         "dependencies": {
           "DCS.CoreLib": "1.1.2801",
@@ -1278,7 +1278,7 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "DCS.User/1.0.6701.1": {
+      "DCS.User/1.0.6901.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -1288,7 +1288,7 @@
           "DCS.Data": "1.0.2701",
           "DCS.Localization": "1.0.501",
           "DCS.Log": "1.0.901.5",
-          "DCS.Resource": "1.0.1301",
+          "DCS.Resource": "1.0.1401",
           "System.Management": "9.0.10"
         },
         "compile": {
@@ -1301,7 +1301,7 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "DCS.User.Data/1.0.6601.1": {
+      "DCS.User.Data/1.0.6701.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -1311,7 +1311,7 @@
           "DCS.Data": "1.0.2701",
           "DCS.Localization": "1.0.501",
           "DCS.Log": "1.0.901.5",
-          "DCS.User": "1.0.6701.1"
+          "DCS.User": "1.0.6901.1"
         },
         "compile": {
           "bin/placeholder/DCS.User.Data.dll": {}
@@ -1320,7 +1320,7 @@
           "bin/placeholder/DCS.User.Data.dll": {}
         }
       },
-      "DCS.User.Service/1.0.6601.1": {
+      "DCS.User.Service/1.0.6801.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
@@ -1331,8 +1331,8 @@
           "DCS.Data": "1.0.2701",
           "DCS.Localization": "1.0.501",
           "DCS.Log": "1.0.901.5",
-          "DCS.User": "1.0.6701.1",
-          "DCS.User.Data": "1.0.6601.1"
+          "DCS.User": "1.0.6901.1",
+          "DCS.User.Data": "1.0.6701.1"
         },
         "compile": {
           "bin/placeholder/DCS.User.Service.dll": {}
@@ -1646,13 +1646,13 @@
         "lib/net7.0-windows7.0/DCS.OnBoarding.UI.dll"
       ]
     },
-    "DCS.Resource/1.0.1301": {
-      "sha512": "MHAo3uyajtbvy2rQbfhWxLHSgjYfRohh63z5kcxWd5iRXCIDaA2DBjU4NKEjrkUmbEj4tSlgNDmjwajft23SHg==",
+    "DCS.Resource/1.0.1401": {
+      "sha512": "iktvWA1Dq/RmG0A8wDPd6i/P/aPPCZ3PVDNa4olWCTjxBpNHQ1BRPje2dKnVgTQH890VIeC5MXLmIUWBU8vKdA==",
       "type": "package",
-      "path": "dcs.resource/1.0.1301",
+      "path": "dcs.resource/1.0.1401",
       "files": [
         ".nupkg.metadata",
-        "dcs.resource.1.0.1301.nupkg.sha512",
+        "dcs.resource.1.0.1401.nupkg.sha512",
         "dcs.resource.nuspec",
         "lib/net7.0-windows7.0/DCS.Resource.dll"
       ]
@@ -3368,17 +3368,17 @@
         "version.txt"
       ]
     },
-    "DCS.User/1.0.6701.1": {
+    "DCS.User/1.0.6901.1": {
       "type": "project",
       "path": "../DCS.User/DCS.User.csproj",
       "msbuildProject": "../DCS.User/DCS.User.csproj"
     },
-    "DCS.User.Data/1.0.6601.1": {
+    "DCS.User.Data/1.0.6701.1": {
       "type": "project",
       "path": "../DCS.User.Data/DCS.User.Data.csproj",
       "msbuildProject": "../DCS.User.Data/DCS.User.Data.csproj"
     },
-    "DCS.User.Service/1.0.6601.1": {
+    "DCS.User.Service/1.0.6801.1": {
       "type": "project",
       "path": "../DCS.User.Service/DCS.User.Service.csproj",
       "msbuildProject": "../DCS.User.Service/DCS.User.Service.csproj"
@@ -3396,9 +3396,9 @@
       "DCS.Log >= 1.0.901.5",
       "DCS.OnBoarding >= 1.0.501",
       "DCS.OnBoarding.UI >= 1.0.501",
-      "DCS.Resource >= 1.0.1301",
-      "DCS.User >= 1.0.6701.1",
-      "DCS.User.Service >= 1.0.6601.1"
+      "DCS.Resource >= 1.0.1401",
+      "DCS.User >= 1.0.6901.1",
+      "DCS.User.Service >= 1.0.6801.1"
     ]
   },
   "packageFolders": {
@@ -3407,7 +3407,7 @@
     "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages": {}
   },
   "project": {
-    "version": "1.1.1001.2",
+    "version": "1.1.1201.2",
     "restore": {
       "projectUniqueName": "C:\\Users\\verhe\\source\\repos\\DCS\\DCS-User\\DCS.User.UI\\DCS.User.UI.csproj",
       "projectName": "DCS.User.UI",
@@ -3508,7 +3508,7 @@
           },
           "DCS.Resource": {
             "target": "Package",
-            "version": "[1.0.1301, )"
+            "version": "[1.0.1401, )"
           }
         },
         "imports": [
@@ -3535,12 +3535,6 @@
     }
   },
   "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "No Authorization header detected"
-    },
     {
       "code": "NU1603",
       "level": "Warning",

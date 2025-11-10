@@ -576,6 +576,13 @@
             Changes to the collection, such as additions or removals, will raise notifications  to any observers, making
             it suitable for data binding scenarios.</remarks>
         </member>
+        <member name="F:DCS.User.UI.UserViewModel.avialableLanguages">
+            <summary>
+            Represents a collection of available languages as <see cref="T:System.Globalization.CultureInfo"/> objects.
+            </summary>
+            <remarks>This collection is intended to store the languages supported by the application.  It
+            can be used to populate language selection options or to manage localization settings.</remarks>
+        </member>
         <member name="M:DCS.User.UI.UserViewModel.#ctor(DCS.User.User)">
             <summary>
             Initializes a new instance of the <see cref="T:DCS.User.UI.UserViewModel"/> class using the specified user.
@@ -783,6 +790,11 @@
         <member name="P:DCS.User.UI.UserViewModel.Domains">
             <summary>
             Gets or sets the collection of user domains associated with the current context.
+            </summary>
+        </member>
+        <member name="P:DCS.User.UI.UserViewModel.AvialableLanguages">
+            <summary>
+            Gets or sets the collection of available languages supported by the application.
             </summary>
         </member>
         <member name="P:DCS.User.UI.UserViewModel.Guid">
