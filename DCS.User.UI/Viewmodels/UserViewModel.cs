@@ -72,7 +72,7 @@ namespace DCS.User.UI
         {
             this.Model = user;
 
-            //AvialableLanguages = CurrentLanguageService.Instance.GetAvailableLanguages();
+            AvialableLanguages = CurrentLanguageService.Instance.GetAvailableLanguages();
 
             Collection = userService.GetAll();
 

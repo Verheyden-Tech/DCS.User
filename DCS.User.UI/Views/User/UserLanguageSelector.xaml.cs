@@ -8,6 +8,8 @@ namespace DCS.User.UI
     /// </summary>
     public partial class UserLanguageSelector : DefaultMainWindow 
     {
+        private UserViewModel viewModel;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="UserLanguageSelector"/> class.
         /// </summary>
@@ -17,6 +19,10 @@ namespace DCS.User.UI
         public UserLanguageSelector()
         {
             InitializeComponent();
+
+            var obj = new User();
+            viewModel = new UserViewModel(obj);
+            DataContext = viewModel;
         }
 
         private void LanguageListView_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)

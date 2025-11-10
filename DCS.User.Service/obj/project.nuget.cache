@@ -57,7 +57,9 @@
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.user\\1.0.7001.1\\dcs.user.1.0.7001.1.nupkg.sha512",
+    "C:\\Users\\verhe\\Documents\\DCS\\Nuget\\dcs.user.data\\1.0.6801.1\\dcs.user.data.1.0.6801.1.nupkg.sha512"
   ],
   "logs": []
 }
