@@ -23,6 +23,7 @@ namespace DCS.User
 
         private string currentLanguage;
         private string currentFlag;
+        private IEnumerable<CultureInfo> _availableLanguages;
 
         /// <summary>
         /// Gets or sets the current language for the application.
@@ -94,14 +95,15 @@ namespace DCS.User
         /// whitespace-only names are excluded.</remarks>
         /// <returns>An array of strings containing the language codes of all available specific cultures.  The array will be
         /// empty if no specific cultures are available.</returns>
-        public ObservableCollection<CultureInfo> GetAvailableLanguages()
+        public List<CultureInfo> GetAvailableLanguages()
         {
-            ObservableCollection<CultureInfo> cultures = new ObservableCollection<CultureInfo>(
-                System.Globalization.CultureInfo.GetCultures(System.Globalization.CultureTypes.AllCultures)
-                    .Where(c => !c.IsNeutralCulture && !string.IsNullOrWhiteSpace(c.DisplayName) && !string.IsNullOrWhiteSpace(c.TwoLetterISOLanguageName))
-                    .Distinct());
+            _availableLanguages = new List<CultureInfo>();
 
-            return cultures;
+            var languageCodes = new[] { "en-US", "de-DE", "fr-FR", "es-ES" };
+            _availableLanguages = CultureInfo.GetCultures(CultureTypes.AllCultures)
+                                             .Where(c => languageCodes.Contains(c.Name)).ToList();
+
+            return (List<CultureInfo>)_availableLanguages;
         }
 
         /// <summary>

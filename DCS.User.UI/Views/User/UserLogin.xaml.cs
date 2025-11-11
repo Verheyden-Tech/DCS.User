@@ -29,6 +29,7 @@ namespace DCS.User.UI
             if (Current.Domains != null && Current.Domains.Count > 0)
                 ServerComboBox.SelectedItem = Current.Domains.FirstOrDefault();
 
+
         }
 
         /// <summary>
@@ -56,9 +57,6 @@ namespace DCS.User.UI
                 if(CurrentLanguageService.Instance.CurrentLanguage != CurrentLanguageTextBlock.Text)
                 {
                     CurrentLanguageService.Instance.SetLanguage(CurrentLanguageTextBlock.Text);
-                    LanguageFlagImage.Visibility = Visibility.Visible;
-                    LanguageFlagImage.Content = iconService.GetLanguageFlag(CurrentLanguageService.Instance.CurrentFlag);
-                    Log.LogManager.Singleton.Info($"User changed application language to {CurrentLanguageService.Instance.CurrentLanguage}", "UserLogin");
                     if(Current.Language != CurrentLanguageService.Instance.CurrentLanguage)
                     {
                         Current.Language = CurrentLanguageService.Instance.CurrentLanguage;
@@ -162,10 +160,8 @@ namespace DCS.User.UI
             if (sender is RadComboBox box && box.SelectedItem is System.Globalization.CultureInfo culture)
             {
                 CurrentLanguageService.Instance.SetLanguage(culture.DisplayName);
-                LanguageFlagImage.Visibility = Visibility.Visible;
                 LanguageFlagImage.Content = iconService.GetLanguageFlag(CurrentLanguageService.Instance.CurrentFlag);
-                Log.LogManager.Singleton.Info($"User changed application language to {culture.Name}", "UserLogin");
-                MessageBox.Show("Die Sprache wurde geändert. Bitte starten Sie die Anwendung neu, damit die Änderungen wirksam werden.", "Sprache geändert", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show($"Die Sprache wurde geändert zu {culture.DisplayName}", "Sprache geändert", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {

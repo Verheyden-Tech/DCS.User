@@ -58,7 +58,7 @@ namespace DCS.User.UI
         /// </summary>
         /// <remarks>This collection is intended to store the languages supported by the application.  It
         /// can be used to populate language selection options or to manage localization settings.</remarks>
-        private ObservableCollection<CultureInfo> avialableLanguages = new ObservableCollection<CultureInfo>();
+        private List<CultureInfo> avialableLanguages = new List<CultureInfo>();
         #endregion
 
         /// <summary>
@@ -801,7 +801,7 @@ namespace DCS.User.UI
         /// <summary>
         /// Gets or sets the collection of available languages supported by the application.
         /// </summary>
-        public ObservableCollection<CultureInfo> AvialableLanguages
+        public List<CultureInfo> AvialableLanguages
         {
             get => avialableLanguages;
             set

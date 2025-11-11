@@ -130,6 +130,6 @@
     <EditorConfigFiles Remove="C:\Users\verhe\source\repos\DCS\DCS-User\.editorconfig" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Users\verhe\source\repos\DCS\DCS-User\.editorconfig" />
+    <EditorConfigFiles Remove="C:\Users\verhe\source\repos\DCS\DCS-User\.editorconfig" />
   </ItemGroup>
 </Project>
