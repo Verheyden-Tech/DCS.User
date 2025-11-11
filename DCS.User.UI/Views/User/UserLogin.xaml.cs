@@ -1,6 +1,7 @@
 ﻿using DCS.CoreLib.View;
 using DCS.Resource;
 using DCS.User.Service;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Input;
 using Telerik.Windows.Controls;
@@ -29,7 +30,10 @@ namespace DCS.User.UI
             if (Current.Domains != null && Current.Domains.Count > 0)
                 ServerComboBox.SelectedItem = Current.Domains.FirstOrDefault();
 
-
+            var cultures = new List<CultureInfo>(CurrentLanguageService.Instance.GetAvailableLanguages());
+            CurrentLanguageService.Instance.SetLanguage(cultures.Where(c => c.Name == "de-DE").First().DisplayName);
+            CurrentLanguageTextBlock.Text = CurrentLanguageService.Instance.CurrentLanguage;
+            LanguageFlagImage.Content = iconService.GetLanguageFlag(CurrentLanguageService.Instance.CurrentFlag);
         }
 
         /// <summary>

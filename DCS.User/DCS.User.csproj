@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
-    <Version>1.0.7001.1</Version>
+    <Version>1.0.7101.1</Version>
     <ProjectGuid>{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <Authors>Tobias Verheyden</Authors>
@@ -57,6 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\DCS_LoginLabel_500x64.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\german_Flag.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
@@ -131,5 +134,8 @@
   </ItemGroup>
   <ItemGroup>
     <EditorConfigFiles Remove="C:\Users\verhe\source\repos\DCS\DCS-User\.editorconfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\Images\german_Flag.png" />
   </ItemGroup>
 </Project>
