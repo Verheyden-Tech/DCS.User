@@ -31,3 +31,9 @@ bld/
 # Other
 *.dbmdl
 *.mtx
+/DCS.User.Data/obj/Debug/net7.0-windows/DCS.User.Data.assets.cache
+/DCS.User.Data/obj/Debug/net7.0-windows/DCS.User.Data.csproj.FileListAbsolute.txt
+/DCS.User.Service/obj/Debug/net7.0-windows7.0/DCS.User.Service.assets.cache
+/DCS.User.Service/obj/Debug/net7.0-windows7.0/DCS.User.Service.csproj.FileListAbsolute.txt
+/DCS.User.UI/obj/Debug/net7.0-windows/DCS.User.UI.assets.cache
+/DCS.User.UI/obj/Debug/net7.0-windows/DCS.User.UI.csproj.FileListAbsolute.txt
