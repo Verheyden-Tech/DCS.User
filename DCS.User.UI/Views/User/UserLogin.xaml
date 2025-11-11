@@ -51,12 +51,8 @@
         </StackPanel>
 
         <StackPanel Grid.Row="5" Grid.Column="0" Margin="5" Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Left">
-            <Label x:Name="LanguageFlagImage" Margin="2" Width="16" Height="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
-                <Label.Content>
-                    <Image x:Name="DefaultLanguageFlagImage" Source="/DCS.User;component/Resources/Images/german_Flag.png" Stretch="Uniform" Width="8" Height="8"/>
-                </Label.Content>
-            </Label>
-            <TextBlock x:Name="CurrentLanguageTextBlock" FontSize="8" Background="{x:Null}" Text="Deutsch" Margin="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Left"/>
+            <Label x:Name="LanguageFlagImage" Margin="2" Width="16" Height="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <TextBlock x:Name="CurrentLanguageTextBlock" FontSize="8" Background="{x:Null}" Margin="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Left"/>
             <Border Margin="2" Width="0.5" Background="{x:Null}" BorderBrush="DarkGoldenrod" BorderThickness="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
             <telerik:RadButton x:Name="ChangeUserLanguageButton" Foreground="Gray" Margin="2" Background="{x:Null}" BorderBrush="{x:Null}" Content="Sprache ändern.." FontSize="8" Click="ChangeUserLanguageButton_Click" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
         </StackPanel>

@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
-    <Version>1.0.7101.1</Version>
+    <Version>1.0.7201.1</Version>
     <ProjectGuid>{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <Authors>Tobias Verheyden</Authors>
@@ -48,7 +48,7 @@
     <PackageReference Include="DCS.Data" Version="1.0.2701" />
     <PackageReference Include="DCS.Localization" Version="1.0.501" />
     <PackageReference Include="DCS.Log" Version="1.0.901.5" />
-    <PackageReference Include="DCS.Resource" Version="1.0.1401" />
+    <PackageReference Include="DCS.Resource" Version="1.0.1501" />
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
