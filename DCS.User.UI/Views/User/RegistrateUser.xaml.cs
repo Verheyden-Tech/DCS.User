@@ -1,4 +1,5 @@
 ﻿using DCS.CoreLib.View;
+using DCS.Resource;
 using DCS.User.Service;
 using System.Windows;
 
@@ -45,7 +46,7 @@ namespace DCS.User.UI
 
                 if (Current.RegistrateUser())
                 {
-                    CurrentUserService.Instance.SetUser(Current.Model);
+                    CurrentSessionService.Instance.SetCurrentUser(Current.Model.UserName);
                     this.DialogResult = true;
                     this.Close();
                 }

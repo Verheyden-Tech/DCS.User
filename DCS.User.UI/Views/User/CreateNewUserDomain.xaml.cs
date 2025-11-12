@@ -1,4 +1,5 @@
 ﻿using DCS.CoreLib.View;
+using DCS.Resource;
 using DCS.User.Service;
 using System.Windows;
 
@@ -42,7 +43,7 @@ namespace DCS.User.UI
             {
                 if (Current.CreateNewDomain())
                 {
-                    CurrentDomainService.Instance.SetDomain(Current.Model);
+                    CurrentSessionService.Instance.SetCurrentUserDomain(Current.Model.DomainName);
                     this.DialogResult = true;
                     this.Close();
                 }

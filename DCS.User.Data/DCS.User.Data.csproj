@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
-    <Version>1.0.7001.1</Version>
+    <Version>1.0.7101.1</Version>
     <ImplicitUsings>enable</ImplicitUsings>
     <Authors>Tobias Verheyden</Authors>
     <Company>Verheyden Tech</Company>

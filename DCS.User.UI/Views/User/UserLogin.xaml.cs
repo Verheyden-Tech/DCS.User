@@ -30,10 +30,10 @@ namespace DCS.User.UI
             if (Current.Domains != null && Current.Domains.Count > 0)
                 ServerComboBox.SelectedItem = Current.Domains.FirstOrDefault();
 
-            var cultures = new List<CultureInfo>(CurrentLanguageService.Instance.GetAvailableLanguages());
-            CurrentLanguageService.Instance.SetLanguage(cultures.Where(c => c.Name == "de-DE").First().DisplayName);
-            CurrentLanguageTextBlock.Text = CurrentLanguageService.Instance.CurrentLanguage;
-            LanguageFlagImage.Content = iconService.GetLanguageFlag(CurrentLanguageService.Instance.CurrentFlag);
+            var cultures = new List<CultureInfo>(CurrentSessionService.Instance.GetAvailableCultures());
+            CurrentSessionService.Instance.SetCurrentUserCulture(cultures.Where(c => c.Name == "de-DE").First());
+            CurrentLanguageTextBlock.Text = CurrentSessionService.Instance.CurrentUserCulture.DisplayName;
+            LanguageFlagImage.Content = iconService.GetLanguageFlag(CurrentSessionService.Instance.CurrentUserCulture.TwoLetterISOLanguageName);
         }
 
         /// <summary>
@@ -58,12 +58,13 @@ namespace DCS.User.UI
 
             if(!string.IsNullOrWhiteSpace(CurrentLanguageTextBlock.Text))
             {
-                if(CurrentLanguageService.Instance.CurrentLanguage != CurrentLanguageTextBlock.Text)
+                if(CurrentSessionService.Instance.CurrentUserCulture.DisplayName != CurrentLanguageTextBlock.Text)
                 {
-                    CurrentLanguageService.Instance.SetLanguage(CurrentLanguageTextBlock.Text);
-                    if(Current.Language != CurrentLanguageService.Instance.CurrentLanguage)
+                    var culture = CurrentSessionService.Instance.GetAvailableCultures().Where(c => c.DisplayName == CurrentLanguageTextBlock.Text).First();
+                    CurrentSessionService.Instance.SetCurrentUserCulture(culture);
+                    if(Current.Language != CurrentSessionService.Instance.CurrentUserCulture.DisplayName)
                     {
-                        Current.Language = CurrentLanguageService.Instance.CurrentLanguage;
+                        Current.Language = CurrentSessionService.Instance.CurrentUserCulture.DisplayName;
                         if (Current.UpdateUser())
                             Log.LogManager.Singleton.Info($"User language preference updated to {Current.Language} for user account.", "UserLogin");
                     }
@@ -95,7 +96,7 @@ namespace DCS.User.UI
         private void RegistrateButton_Click(object sender, RoutedEventArgs e)
         {
             var win = new RegistrateUser();
-            if (CurrentDomainService.Instance.CurrentDomain != null)
+            if (!string.IsNullOrWhiteSpace(CurrentSessionService.Instance.CurrentUserDomain))
             {
                 if (win.ShowDialog() == true)
                 {
@@ -152,19 +153,19 @@ namespace DCS.User.UI
         {
             var domain = Current.Domains.FirstOrDefault(d => d.DomainName == ServerComboBox.Text);
 
-            if (domain != null && domain != CurrentDomainService.Instance.CurrentDomain)
+            if (domain != null && domain.DomainName != CurrentSessionService.Instance.CurrentUserDomain)
             {
-                CurrentDomainService.Instance.UnsetDomain();
-                CurrentDomainService.Instance.SetDomain(domain);
+                CurrentSessionService.Instance.UnsetCurrentUserDomain();
+                CurrentSessionService.Instance.SetCurrentUserDomain(domain.DomainName);
             }
         }
 
         private void LanguageDropDownButton_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            if (sender is RadComboBox box && box.SelectedItem is System.Globalization.CultureInfo culture)
+            if (sender is RadComboBox box && box.SelectedItem is CultureInfo culture)
             {
-                CurrentLanguageService.Instance.SetLanguage(culture.DisplayName);
-                LanguageFlagImage.Content = iconService.GetLanguageFlag(CurrentLanguageService.Instance.CurrentFlag);
+                CurrentSessionService.Instance.SetCurrentUserCulture(culture);
+                LanguageFlagImage.Content = iconService.GetLanguageFlag(CurrentSessionService.Instance.CurrentUserCulture.TwoLetterISOLanguageName);
                 MessageBox.Show($"Die Sprache wurde geändert zu {culture.DisplayName}", "Sprache geändert", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
@@ -179,9 +180,9 @@ namespace DCS.User.UI
             if (win.ShowDialog() == true)
             {
                 LanguageFlagImage.Visibility = Visibility.Visible;
-                LanguageFlagImage.Content = iconService.GetLanguageFlag(CurrentLanguageService.Instance.CurrentFlag);
-                Log.LogManager.Singleton.Info($"User changed application language to {CurrentLanguageService.Instance.CurrentLanguage}", "UserLogin");
-                MessageBox.Show($"Die Sprache wurde geändert zu {CurrentLanguageService.Instance.CurrentLanguage}.", "Sprache geändert", MessageBoxButton.OK, MessageBoxImage.Information);
+                LanguageFlagImage.Content = iconService.GetLanguageFlag(CurrentSessionService.Instance.CurrentUserCulture.TwoLetterISOLanguageName);
+                Log.LogManager.Singleton.Info($"User changed application language to {CurrentSessionService.Instance.CurrentUserCulture.DisplayName}", "UserLogin");
+                MessageBox.Show($"Die Sprache wurde geändert zu {CurrentSessionService.Instance.CurrentUserCulture.DisplayName}.", "Sprache geändert", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
     }

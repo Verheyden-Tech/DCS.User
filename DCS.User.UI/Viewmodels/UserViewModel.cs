@@ -1,4 +1,5 @@
 ﻿using DCS.CoreLib.BaseClass;
+using DCS.Resource;
 using DCS.User.Service;
 using Microsoft.Win32;
 using System.Collections.ObjectModel;
@@ -72,7 +73,7 @@ namespace DCS.User.UI
         {
             this.Model = user;
 
-            AvialableLanguages = CurrentLanguageService.Instance.GetAvailableLanguages();
+            AvialableLanguages = CurrentSessionService.Instance.GetAvailableCultures();
 
             Collection = userService.GetAll();
 
@@ -90,10 +91,10 @@ namespace DCS.User.UI
 
             if (!string.IsNullOrWhiteSpace(user.Language))
             {
-                var culture = CurrentLanguageService.Instance.GetAvailableLanguages().FirstOrDefault(c => c.DisplayName == user.Language);
+                var culture = CurrentSessionService.Instance.GetAvailableCultures().FirstOrDefault(c => c.DisplayName == user.Language);
                 if (culture != null)
                 {
-                    CurrentLanguageService.Instance.SetLanguage(culture.DisplayName);
+                    CurrentSessionService.Instance.SetCurrentUserCulture(culture);
                 }
             }
         }
@@ -159,7 +160,7 @@ namespace DCS.User.UI
                         Guid = Guid.NewGuid(),
                         UserName = Model.UserName,
                         PassWord = CryptographyHelper.HashSHA256(Model.PassWord),
-                        Domain = CurrentDomainService.Instance.CurrentDomain.DomainName,
+                        Domain = CurrentSessionService.Instance.CurrentUserDomain,
                         IsActive = true,
                         IsAdmin = Model.IsAdmin,
                         IsADUser = false,
@@ -172,7 +173,7 @@ namespace DCS.User.UI
                     if (userService.New(newUser))
                     {
                         Model = newUser;
-                        CurrentUserService.Instance.SetUser(newUser);
+                        CurrentSessionService.Instance.SetCurrentUser(newUser.UserName);
                         return true;
                     }
 
@@ -285,7 +286,7 @@ namespace DCS.User.UI
         /// <param name="language">The preferred language to set for the user. If <see langword="null"/>, the language remains unchanged.</param>
         /// <returns><see langword="true"/> if the login is successful and the user is authenticated; otherwise, <see
         /// langword="false"/>.</returns>
-        public bool LoginUser(string rawPassword, string language)
+        public bool LoginUser(string rawPassword, string? language)
         {
             if (Model != null)
             {
@@ -302,13 +303,13 @@ namespace DCS.User.UI
                         }
                         else if (Model.Language != null)
                         {
-                            var culture = CurrentLanguageService.Instance.GetAvailableLanguages().FirstOrDefault(c => c.DisplayName == Model.Language);
+                            var culture = CurrentSessionService.Instance.GetAvailableCultures().FirstOrDefault(c => c.DisplayName == Model.Language);
                             if (culture != null)
                             {
-                                CurrentLanguageService.Instance.SetLanguage(culture.DisplayName);
+                                CurrentSessionService.Instance.SetCurrentUserCulture(culture);
                             }
                         }
-                        CurrentUserService.Instance.SetUser(user);
+                        CurrentSessionService.Instance.SetCurrentUser(user.UserName);
                         Log.LogManager.Singleton.Warning($"User {Model.UserName} logged in successfully.", "UserViewModel");
                         return true;
                     }
@@ -339,7 +340,7 @@ namespace DCS.User.UI
                     var hasehedPassword = CryptographyHelper.HashSHA256(rawPassword);
                     if (user.PassWord == hasehedPassword)
                     {
-                        CurrentUserService.Instance.SetUser(user);
+                        CurrentSessionService.Instance.SetCurrentUser(user.UserName);
                         Log.LogManager.Singleton.Warning($"User {Model.UserName} logged in successfully.", "UserViewModel");
                         return true;
                     }

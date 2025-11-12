@@ -1,4 +1,5 @@
 ﻿using DCS.CoreLib.View;
+using DCS.Resource;
 using System.Windows;
 
 namespace DCS.User.UI
@@ -29,7 +30,7 @@ namespace DCS.User.UI
         {
             if(LanguageListView.SelectedItem != null && LanguageListView.SelectedItem is System.Globalization.CultureInfo culture)
             {
-                CurrentLanguageService.Instance.SetLanguage(culture.DisplayName);
+                CurrentSessionService.Instance.SetCurrentUserCulture(culture);
                 DialogResult = true;
                 Close();
             }
@@ -39,7 +40,7 @@ namespace DCS.User.UI
         {
             if(e.Suggestion != null && e.Suggestion is System.Globalization.CultureInfo culture)
             {
-                CurrentLanguageService.Instance.SetLanguage(culture.DisplayName);
+                CurrentSessionService.Instance.SetCurrentUserCulture(culture);
                 DialogResult = true;
                 Close();
             }
