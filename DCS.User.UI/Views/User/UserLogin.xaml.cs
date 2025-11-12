@@ -68,12 +68,10 @@ namespace DCS.User.UI
                         if (Current.UpdateUser())
                             Log.LogManager.Singleton.Info($"User language preference updated to {Current.Language} for user account.", "UserLogin");
                     }
-
-                    DialogResult = true;
-                    this.Close();
                 }
             }
-            else if (Current.LoginUser(PassWordLoginBox.Password))
+
+            if (Current.LoginUser(PassWordLoginBox.Password))
             {
                 if (KeepLoggedInCheckBox.IsChecked == true)
                 {
