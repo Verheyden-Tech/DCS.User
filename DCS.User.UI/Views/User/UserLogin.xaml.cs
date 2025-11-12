@@ -1,6 +1,5 @@
 ﻿using DCS.CoreLib.View;
 using DCS.Resource;
-using DCS.User.Service;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Input;
@@ -179,6 +178,7 @@ namespace DCS.User.UI
             {
                 LanguageFlagImage.Visibility = Visibility.Visible;
                 LanguageFlagImage.Content = iconService.GetLanguageFlag(CurrentSessionService.Instance.CurrentUserCulture.TwoLetterISOLanguageName);
+                CurrentLanguageTextBlock.Text = CurrentSessionService.Instance.CurrentUserCulture.DisplayName;
                 Log.LogManager.Singleton.Info($"User changed application language to {CurrentSessionService.Instance.CurrentUserCulture.DisplayName}", "UserLogin");
                 MessageBox.Show($"Die Sprache wurde geändert zu {CurrentSessionService.Instance.CurrentUserCulture.DisplayName}.", "Sprache geändert", MessageBoxButton.OK, MessageBoxImage.Information);
             }

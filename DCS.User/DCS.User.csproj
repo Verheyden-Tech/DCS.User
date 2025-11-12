@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
-    <Version>1.0.7301.1</Version>
+    <Version>1.0.7401.1</Version>
     <ProjectGuid>{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <Authors>Tobias Verheyden</Authors>

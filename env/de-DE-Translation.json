@@ -1,14 +1,13 @@
 {
   "UserName": "Benutzername",
   "PassWord": "Passwort",
-  "Domain": "Domäne",
+  "Domain": "Domï¿½ne",
   "IsActive": "Aktiv",
   "KeepLoggedIn": "Eingeloggt bleiben",
   "IsAdmin": "Administrator",
   "IsADUser": "AD-Benutzer",
   "CreationDate": "Erstellungsdatum",
   "SubstitutionEnd": "Vertragsauslauf",
-  "LastManipulation": "Letzte Änderung",
-  "ProfilePicturePath": "Pfad zum Profilbild",
-
+  "LastManipulation": "Letzte ï¿½nderung",
+  "ProfilePicturePath": "Pfad zum Profilbild"
 }

@@ -48,7 +48,7 @@
         <telerik:RadAutoCompleteBox x:Name="SearchUserBox" Grid.Row="0" Grid.Column="0" WatermarkContent="Benutzer suchen.." Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <telerik:RadButton Grid.Row="0" Grid.Column="1" x:Name="CreateNewUserButton" CornerRadius="5" Content="Neuen Benutzer anlegen" Click="NewUser_Click" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
-        <dcs:DataGrid x:Name="UserGridView" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Grid x:Name="UserDataGrid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 
     </Grid>
 

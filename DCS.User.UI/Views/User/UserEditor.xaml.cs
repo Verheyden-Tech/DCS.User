@@ -41,25 +41,27 @@ namespace DCS.User.UI
         /// <param name="user">The <see cref="User"/> object to be edited. This parameter must not be null.</param>
         public UserEditor(User user) : base(user)
         {
-            this.viewModel = new UserViewModel(user);
-            this.DataContext = viewModel;
+            viewModel = new UserViewModel(user);
+            DataContext = viewModel;
 
             if (!string.IsNullOrWhiteSpace(user.UserName))
             {
-                this.Title = user.UserName;
+                Title = user.UserName;
             }
 
             if (!string.IsNullOrEmpty(user.PassWord))
             {
-                this.ChangeUserPasswordButton.Visibility = System.Windows.Visibility.Visible;
-                this.UserPasswordBox.Visibility = System.Windows.Visibility.Collapsed;
+                ChangeUserPasswordButton.Visibility = System.Windows.Visibility.Visible;
+                UserPasswordBox.Visibility = System.Windows.Visibility.Collapsed;
             }
 
             if (user.ProfilePicturePath == string.Empty || user.ProfilePicturePath == null)
             {
-                this.AddUserProfilePictureButton.Visibility = Visibility.Visible;
-                this.AddUserProfilePictureButton.IsEnabled = true;
-                this.UserProfilePicture.Visibility = Visibility.Collapsed;
+                if(AddUserProfilePictureButton != null && UserProfilePicture != null)
+                {
+                    AddUserProfilePictureButton.Visibility = Visibility.Visible;
+                    UserProfilePicture.Visibility = Visibility.Collapsed;
+                }
             }
         }
 
@@ -89,13 +91,10 @@ namespace DCS.User.UI
 
         private void AddUserProfilePictureButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Current.SetUserProfilePicture() == true)
+            if (Current.SetUserProfilePicture())
             {
-                this.AddUserProfilePictureButton.Visibility = Visibility.Collapsed;
-                this.AddUserProfilePictureButton.IsEnabled = false;
-                this.UserProfilePicture.Visibility = Visibility.Visible;
-                this.UserProfilePicture.Width = 16;
-                this.UserProfilePicture.Height = 16;
+                AddUserProfilePictureButton.Visibility = Visibility.Collapsed;
+                UserProfilePicture.Visibility = Visibility.Visible;
             }
         }
 
