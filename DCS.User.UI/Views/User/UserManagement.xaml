@@ -48,7 +48,40 @@
         <telerik:RadAutoCompleteBox x:Name="SearchUserBox" Grid.Row="0" Grid.Column="0" WatermarkContent="Benutzer suchen.." Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <telerik:RadButton Grid.Row="0" Grid.Column="1" x:Name="CreateNewUserButton" CornerRadius="5" Content="Neuen Benutzer anlegen" Click="NewUser_Click" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
-        <Grid x:Name="UserDataGrid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <telerik:RadGridView x:Name="UserDataGrid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" AutoGenerateColumns="False" IsReadOnly="True">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Header="Benutzername" DataMemberBinding="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="*"/>
+                <telerik:GridViewDataColumn Header="Domain" DataMemberBinding="{Binding DomainName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="*"/>
+                <telerik:GridViewCheckBoxColumn Header="Aktiv" DataMemberBinding="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="auto"/>
+                <telerik:GridViewCheckBoxColumn Header="Admin" DataMemberBinding="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="auto"/>
+                <telerik:GridViewCheckBoxColumn Header="Angemeldet bleiben" DataMemberBinding="{Binding KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="auto"/>
+            </telerik:RadGridView.Columns>
+            <telerik:RadGridView.RowDetailsTemplate>
+                <DataTemplate>
+                    <Grid>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image x:Name="UserProfilePicture" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Stretch="Uniform" Source="{Binding ProfilePicturePath, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" Width="32" Height="32"/>
+
+                        <TextBlock Grid.Column="1" Grid.Row="0" Text="Erstellt am" FontWeight="Bold" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" TextAlignment="Left"/>
+                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding CreationDate, StringFormat=dd.MM.yyyy, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" TextAlignment="Center"/>
+
+                        <TextBlock Grid.Column="2" Grid.Row="0" Text="Letzte Anmeldung" FontWeight="Bold" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" TextAlignment="Left"/>
+                        <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding LastManipulation, StringFormat=dd.MM.yyyy HH:mm, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" TextAlignment="Center"/>
+
+                    </Grid>
+                </DataTemplate>
+            </telerik:RadGridView.RowDetailsTemplate>
+        </telerik:RadGridView>
 
     </Grid>
 

@@ -32,7 +32,7 @@ namespace DCS.User.UI
             var cultures = new List<CultureInfo>(CurrentSessionService.Instance.GetAvailableCultures());
             CurrentSessionService.Instance.SetCurrentUserCulture(cultures.Where(c => c.Name == "de-DE").First());
             CurrentLanguageTextBlock.Text = CurrentSessionService.Instance.CurrentUserCulture.DisplayName;
-            LanguageFlagImage.Content = iconService.GetLanguageFlag(CurrentSessionService.Instance.CurrentUserCulture.TwoLetterISOLanguageName);
+            LanguageFlagImage.Content = iconService.GetImage("german_Flag.png");
         }
 
         /// <summary>

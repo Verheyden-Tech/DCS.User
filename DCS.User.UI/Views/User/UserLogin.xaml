@@ -10,7 +10,7 @@
         xmlns:resource="clr-namespace:DCS.Resource;assembly=DCS.Resource"
         mc:Ignorable="d" d:DataContext="{d:DesignInstance local:UserViewModel}"
         WindowStartupLocation="CenterScreen" KeyDown="DefaultMainWindow_KeyDown"
-        Title="DCS - Login" Height="300" Width="500">
+        Title="DCS - Login" Height="350" Width="600">
 
     <Grid Margin="10">
 
@@ -53,14 +53,14 @@
         <StackPanel Grid.Row="5" Grid.Column="0" Margin="5" Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Left">
             <Label x:Name="LanguageFlagImage" Margin="2" Width="24" Height="24" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
             <TextBlock x:Name="CurrentLanguageTextBlock" FontSize="12" Background="{x:Null}" Margin="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Left"/>
-            <Border Margin="2" Width="0.5" Background="{x:Null}" BorderBrush="DarkGoldenrod" BorderThickness="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+            <Border Margin="5" Width="0.5" Background="{x:Null}" BorderBrush="DarkGoldenrod" BorderThickness="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
             <telerik:RadButton x:Name="ChangeUserLanguageButton" Foreground="Gray" Margin="2" Background="{x:Null}" BorderBrush="{x:Null}" Content="Sprache ändern.." FontSize="12" Click="ChangeUserLanguageButton_Click" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
         </StackPanel>
         
-        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch">
-            <Button x:Name="LoginButton" Click="LoginButton_Click" Content="Anmelden" Margin="2" Background="{x:Null}" BorderBrush="{x:Null}" TabIndex="6" Foreground="#b8860b" Style="{DynamicResource ButtonAcc/Dec}"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Stretch">
+            <Button x:Name="LoginButton" Click="LoginButton_Click" Content="Anmelden" Margin="2" FontSize="12" Background="{x:Null}" BorderBrush="{x:Null}" TabIndex="6" Foreground="#b8860b" Style="{DynamicResource ButtonAcc/Dec}"/>
             <TextBlock Text="oder" FontSize="6" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2" FontWeight="ExtraLight"/>
-            <Button x:Name="RegistrateButton" Click="RegistrateButton_Click" Margin="2" Background="{x:Null}" BorderBrush="{x:Null}" TabIndex="5" IsEnabled="True" Foreground="#b8860b" Content="Registrieren" Style="{DynamicResource ButtonAcc/Dec}"/>
+            <Button x:Name="RegistrateButton" Click="RegistrateButton_Click" Margin="2" FontSize="12" Background="{x:Null}" BorderBrush="{x:Null}" TabIndex="5" IsEnabled="True" Foreground="#b8860b" Content="Registrieren" Style="{DynamicResource ButtonAcc/Dec}"/>
         </StackPanel>
 
     </Grid>

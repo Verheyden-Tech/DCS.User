@@ -30,16 +30,6 @@ namespace DCS.User.UI
             var obj = new User();
             viewModel = new UserViewModel(obj);
             this.DataContext = viewModel;
-
-            _userDataGrid = new DataGrid(obj)
-            {
-                ItemsSource = Users,
-                AutoGenerateColumns = false,
-                VerticalAlignment = VerticalAlignment.Stretch,
-                HorizontalAlignment = HorizontalAlignment.Stretch
-            };
-
-            UserDataGrid.Children.Add(_userDataGrid);
         }
 
         /// <summary>
@@ -88,12 +78,12 @@ namespace DCS.User.UI
         {
             if (_userDataGrid.SelectedItems != null || _userDataGrid.SelectedItems is IList<User>)
             {
-                var user = _userDataGrid.SelectedItems.FirstOrDefault() as User;
+                var users = _userDataGrid.SelectedItems;
 
-                if (user != null)
+                if (users != null)
                 {
-                    var editor = new UserEditor(user);
-                    editor.AddPagingObjects(_userDataGrid.SelectedItems);
+                    var editor = new UserEditor();
+                    editor.AddPagingObjects(users);
                     if (editor.ShowDialog() == true)
                     {
                         _userDataGrid.Items.Refresh();
@@ -101,7 +91,7 @@ namespace DCS.User.UI
                 }
                 else
                 {
-                    Log.LogManager.Singleton.Warning($"User {user.UserName} failed to open to edit.", "UserEditor");
+                    Log.LogManager.Singleton.Warning($"Users {users} failed to open to edit.", "UserEditor");
 
                     var editor = new UserEditor(Current.Model);
                     editor.AddPagingObjects(_userDataGrid.SelectedItems);
@@ -115,7 +105,7 @@ namespace DCS.User.UI
 
         private void NewUser_Click(object sender, RoutedEventArgs e)
         {
-            var win = new UserEditor(Current.Model);
+            var win = new UserEditor();
             if (win.ShowDialog() == true)
             {
                 _userDataGrid.Items.Refresh();
