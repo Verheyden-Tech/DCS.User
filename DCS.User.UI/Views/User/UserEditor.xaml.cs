@@ -39,7 +39,7 @@ namespace DCS.User.UI
         /// the user's <see cref="User.ProfilePicturePath"/> is null or empty, the profile picture button is enabled and
         /// visible, and the profile picture display is hidden.</description> </item> </list></remarks>
         /// <param name="user">The <see cref="User"/> object to be edited. This parameter must not be null.</param>
-        public UserEditor(User user) : base(user)
+        public UserEditor(User user) : this()
         {
             viewModel = new UserViewModel(user);
             DataContext = viewModel;

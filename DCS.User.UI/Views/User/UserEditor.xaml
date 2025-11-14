@@ -78,11 +78,21 @@
                 </telerik:RadAutoSuggestBox>
 
                 <ListView Grid.Row="1" Grid.Column="0" x:Name="GroupListBox" DataContextChanged="GroupListBox_DataContextChanged" ItemsSource="{Binding UserGroups, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="60" MinWidth="120">
-                    <ListView.ItemContainerStyle>
-                        <Style TargetType="ListViewItem">
-                            <Setter Property="ContentTemplate" Value="{StaticResource ListItem}"/>
-                        </Style>
-                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+                        <DataTemplate DataType="ListViewItem">
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Column="0" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2"/>
+                                <Button Grid.Column="1" Content="X" x:Name="RemoveItemButton" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" Click="RemoveItemButton_Click"/>
+
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
                 </ListView>
 
             </Grid>
@@ -102,11 +112,21 @@
                 </telerik:RadAutoSuggestBox>
 
                 <ListView Grid.Row="1" Grid.Column="0" x:Name="OrganisationListBox" DataContextChanged="OrganisationListBox_DataContextChanged" ItemsSource="{Binding UserOrganisations, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinHeight="60" MinWidth="120">
-                    <ListView.ItemContainerStyle>
-                        <Style TargetType="ListViewItem">
-                            <Setter Property="ContentTemplate" Value="{StaticResource ListItem}"/>
-                        </Style>
-                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+                        <DataTemplate DataType="ListViewItem">
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Column="0" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2"/>
+                                <Button Grid.Column="1" Content="X" x:Name="RemoveItemButton" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" Click="RemoveItemButton_Click"/>
+
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
                 </ListView>
 
             </Grid>
