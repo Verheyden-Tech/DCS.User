@@ -32,7 +32,6 @@ namespace DCS.User.UI
             var cultures = new List<CultureInfo>(CurrentSessionService.Instance.GetAvailableCultures());
             CurrentSessionService.Instance.SetCurrentUserCulture(cultures.Where(c => c.Name == "de-DE").First());
             CurrentLanguageTextBlock.Text = CurrentSessionService.Instance.CurrentUserCulture.DisplayName;
-            LanguageFlagImage.Content = iconService.GetImage("german_Flag.png");
         }
 
         /// <summary>
@@ -162,7 +161,7 @@ namespace DCS.User.UI
             if (sender is RadComboBox box && box.SelectedItem is CultureInfo culture)
             {
                 CurrentSessionService.Instance.SetCurrentUserCulture(culture);
-                LanguageFlagImage.Content = iconService.GetLanguageFlag(CurrentSessionService.Instance.CurrentUserCulture.TwoLetterISOLanguageName);
+                LanguageFlagImage.Source = iconService.GetLanguageFlag(CurrentSessionService.Instance.CurrentUserCulture.TwoLetterISOLanguageName);
                 MessageBox.Show($"Die Sprache wurde geändert zu {culture.DisplayName}", "Sprache geändert", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
@@ -177,7 +176,7 @@ namespace DCS.User.UI
             if (win.ShowDialog() == true)
             {
                 LanguageFlagImage.Visibility = Visibility.Visible;
-                LanguageFlagImage.Content = iconService.GetLanguageFlag(CurrentSessionService.Instance.CurrentUserCulture.TwoLetterISOLanguageName);
+                LanguageFlagImage.Source = iconService.GetLanguageFlag(CurrentSessionService.Instance.CurrentUserCulture.TwoLetterISOLanguageName);
                 CurrentLanguageTextBlock.Text = CurrentSessionService.Instance.CurrentUserCulture.DisplayName;
                 Log.LogManager.Singleton.Info($"User changed application language to {CurrentSessionService.Instance.CurrentUserCulture.DisplayName}", "UserLogin");
                 MessageBox.Show($"Die Sprache wurde geändert zu {CurrentSessionService.Instance.CurrentUserCulture.DisplayName}.", "Sprache geändert", MessageBoxButton.OK, MessageBoxImage.Information);
