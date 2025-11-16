@@ -1,5 +1,6 @@
 ﻿using CommonServiceLocator;
 using DCS.CoreLib.View;
+using DCS.Localization;
 using System.Collections.ObjectModel;
 using System.Windows;
 
@@ -8,8 +9,9 @@ namespace DCS.User.UI
     /// <summary>
     /// Interaction logic for RoleManagement.xaml
     /// </summary>
-    public partial class RoleManagement : DefaultAppControl
+    public partial class RoleManagement : DcsInternPage
     {
+        private readonly ILocalizationService localizationService = ServiceLocator.Current.GetInstance<ILocalizationService>();
         private readonly IRoleService roleService = ServiceLocator.Current.GetInstance<IRoleService>();
 
         private ObservableCollection<Role> Roles { get; set; }
@@ -22,9 +24,15 @@ namespace DCS.User.UI
         {
             InitializeComponent();
 
+            Title = localizationService.Translate("RoleManagement");
+            DisplayName = localizationService.Translate("RoleManagement");
+            base.Name = "RoleManagement";
+            base.GroupName = "User";
+
             Roles = new ObservableCollection<Role>();
             Roles = roleService.GetAll();
             RoleGridView.ItemsSource = Roles;
+            RoleGridView.SelectionMode = System.Windows.Controls.SelectionMode.Multiple;
 
             var obj = new Role();
             viewModel = new RoleViewModel(obj);

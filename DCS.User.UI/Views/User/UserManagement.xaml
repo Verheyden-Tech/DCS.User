@@ -1,4 +1,4 @@
-﻿<dcs:DefaultAppControl x:Class="DCS.User.UI.UserManagement"
+﻿<dcs:DcsInternPage x:Class="DCS.User.UI.UserManagement"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -45,13 +45,13 @@
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
-        <telerik:RadAutoCompleteBox x:Name="SearchUserBox" Grid.Row="0" Grid.Column="0" WatermarkContent="Benutzer suchen.." Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <telerik:RadAutoSuggestBox x:Name="SearchUserBox" Grid.Row="0" Grid.Column="0" WatermarkContent="Benutzer suchen.." ItemsSource="{Binding}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <telerik:RadButton Grid.Row="0" Grid.Column="1" x:Name="CreateNewUserButton" CornerRadius="5" Content="Neuen Benutzer anlegen" Click="NewUser_Click" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
         <telerik:RadGridView x:Name="UserDataGrid" ItemsSource="{Binding Collection, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" AutoGenerateColumns="False" IsReadOnly="True">
             <telerik:RadGridView.Columns>
                 <telerik:GridViewDataColumn Header="Benutzername" DataMemberBinding="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="*"/>
-                <telerik:GridViewDataColumn Header="Domain" DataMemberBinding="{Binding DomainName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="*"/>
+                <telerik:GridViewDataColumn Header="Domain" DataMemberBinding="{Binding Domain, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="*"/>
                 <telerik:GridViewCheckBoxColumn Header="Aktiv" DataMemberBinding="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="auto"/>
                 <telerik:GridViewCheckBoxColumn Header="Admin" DataMemberBinding="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="auto"/>
                 <telerik:GridViewCheckBoxColumn Header="Angemeldet bleiben" DataMemberBinding="{Binding KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="auto"/>
@@ -85,4 +85,4 @@
 
     </Grid>
 
-</dcs:DefaultAppControl>
+</dcs:DcsInternPage>

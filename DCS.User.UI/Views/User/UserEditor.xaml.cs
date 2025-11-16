@@ -1,4 +1,6 @@
 ﻿using DCS.CoreLib.View;
+using DCS.Localization;
+using DCS.Resource;
 using System.Windows;
 using System.Windows.Controls;
 using Telerik.Windows.Controls;
@@ -10,6 +12,8 @@ namespace DCS.User.UI
     /// </summary>
     public partial class UserEditor : DefaultEditorWindow
     {
+        private readonly ILocalizationService localizationService = CommonServiceLocator.ServiceLocator.Current.GetInstance<ILocalizationService>();
+        private readonly IIconService iconService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IIconService>();
         private UserViewModel viewModel;
 
         /// <summary>
@@ -20,6 +24,9 @@ namespace DCS.User.UI
         public UserEditor() : base()
         {
             InitializeComponent();
+
+            UsernameTextBox.WatermarkContent = localizationService.Translate("InputUsername");
+            UserPasswordBox.WatermarkContent = localizationService.Translate("InputPassword");
 
             var obj = new User();
             viewModel = new UserViewModel(obj);
@@ -55,13 +62,11 @@ namespace DCS.User.UI
                 UserPasswordBox.Visibility = System.Windows.Visibility.Collapsed;
             }
 
-            if (user.ProfilePicturePath == string.Empty || user.ProfilePicturePath == null)
+            if (!string.IsNullOrWhiteSpace(user.ProfilePicturePath) || user.ProfilePicturePath != null)
             {
-                if(AddUserProfilePictureButton != null && UserProfilePicture != null)
-                {
-                    AddUserProfilePictureButton.Visibility = Visibility.Visible;
-                    UserProfilePicture.Visibility = Visibility.Collapsed;
-                }
+                AddUserProfilePictureButton.Visibility = Visibility.Collapsed;
+                UserProfilePicture.Visibility = Visibility.Visible;
+                UserProfilePicture.Source = iconService.GetUserProfilePicture(user.UserName);
             }
         }
 
@@ -84,7 +89,7 @@ namespace DCS.User.UI
                 if (win.ShowDialog() == true)
                 {
                     Log.LogManager.Singleton.Info($"Password changed for user {Current.UserName}.", "UserEditor");
-                    MessageBox.Show("Das Passwort wurde erfolgreich geändert.", "Erfolg", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show(localizationService.Translate("PasswordChangedSuccess"), localizationService.Translate("Success"), MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
         }
@@ -95,6 +100,10 @@ namespace DCS.User.UI
             {
                 AddUserProfilePictureButton.Visibility = Visibility.Collapsed;
                 UserProfilePicture.Visibility = Visibility.Visible;
+                if (!string.IsNullOrWhiteSpace(Current.ProfilePicturePath) && iconService.SetUserProfilePicture(Current.UserName, Current.ProfilePicturePath))
+                {
+                    UserProfilePicture.Source = iconService.GetUserProfilePicture(Current.UserName);
+                }
             }
         }
 

@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
-    <Version>1.1.2301.2</Version>
+    <Version>1.1.2401.2</Version>
     <ProjectGuid>{0CB90033-1BC7-4F75-AFFE-CEBB629C22CA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <Authors>Tobias Verheyden</Authors>
@@ -37,17 +37,17 @@
     <Page Remove="SharedDLLs\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DCS.Authorisation" Version="1.0.3001" />
-    <PackageReference Include="DCS.CoreLib" Version="1.1.2801" />
+    <PackageReference Include="DCS.Authorisation" Version="1.0.3501" />
+    <PackageReference Include="DCS.CoreLib" Version="1.1.2901" />
     <PackageReference Include="DCS.CoreLib.BaseClass" Version="1.1.3001" />
-    <PackageReference Include="DCS.CoreLib.View" Version="1.1.6101" />
+    <PackageReference Include="DCS.CoreLib.View" Version="1.1.6301" />
     <PackageReference Include="DCS.Data" Version="1.0.2701" />
     <PackageReference Include="DCS.Data.UI" Version="1.0.301" />
     <PackageReference Include="DCS.Localization" Version="1.0.501" />
     <PackageReference Include="DCS.Log" Version="1.0.901.5" />
     <PackageReference Include="DCS.OnBoarding" Version="1.0.501" />
     <PackageReference Include="DCS.OnBoarding.UI" Version="1.0.501" />
-    <PackageReference Include="DCS.Resource" Version="1.0.1901" />
+    <PackageReference Include="DCS.Resource" Version="1.0.2001" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DCS.User.Service\DCS.User.Service.csproj" />

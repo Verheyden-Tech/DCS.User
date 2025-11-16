@@ -1,4 +1,5 @@
 ﻿using DCS.CoreLib.View;
+using DCS.Localization;
 using DCS.OnBoarding.UI;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -9,9 +10,10 @@ namespace DCS.User.UI
     /// <summary>
     /// Interaction logic for UserManagement.xaml
     /// </summary>
-    public partial class UserManagement : DefaultAppControl
+    public partial class UserManagement : DcsInternPage
     {
-        private IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
+        private readonly ILocalizationService localizationService = CommonServiceLocator.ServiceLocator.Current.GetInstance<ILocalizationService>();
+        private readonly IUserService userService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IUserService>();
 
         private ObservableCollection<User> Users { get; set; }
         private UserViewModel viewModel;
@@ -23,6 +25,11 @@ namespace DCS.User.UI
         public UserManagement()
         {
             InitializeComponent();
+
+            Title = localizationService.Translate("UserManagement");
+            DisplayName = localizationService.Translate("UserManagement");
+            base.Name = "UserManagement";
+            base.GroupName = "User";
 
             Users = new ObservableCollection<User>();
             Users = userService.GetAll();
@@ -51,7 +58,7 @@ namespace DCS.User.UI
 
         private void DeleteUser_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Möchten Sie den Nutzer wirklich löschen?", "Nutzer löschen", MessageBoxButton.YesNo, MessageBoxImage.Hand) == MessageBoxResult.Yes)
+            if (MessageBox.Show(localizationService.Translate("ConfirmDeleteUser"), localizationService.Translate("DeleteUser"), MessageBoxButton.YesNo, MessageBoxImage.Hand) == MessageBoxResult.Yes)
             {
                 try
                 {
@@ -59,7 +66,7 @@ namespace DCS.User.UI
                     {
                         if (!userService.Delete(user.Guid))
                         {
-                            MessageBox.Show($"Fehler beim löschen des Benutzers {user.UserName}.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                            MessageBox.Show(localizationService.Translate("ErrorOccurred") + $": {user.UserName}", localizationService.Translate("Error"), MessageBoxButton.OK, MessageBoxImage.Error);
                             Log.LogManager.Singleton.Warning($"Error while deleting {user.UserName}.", "DeleteUser");
                             return;
                         }
@@ -76,7 +83,7 @@ namespace DCS.User.UI
 
         private void EditUser_Click(object sender, RoutedEventArgs e)
         {
-            if (_userDataGrid.SelectedItems != null || _userDataGrid.SelectedItems is IList<User>)
+            if (_userDataGrid.SelectedItems != null)
             {
                 var users = _userDataGrid.SelectedItems;
 

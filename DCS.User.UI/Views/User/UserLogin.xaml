@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
         xmlns:local="clr-namespace:DCS.User.UI"
+        xmlns:localization="clr-namespace:DCS.Localization;assembly=DCS.Localization"
         xmlns:user="clr-namespace:DCS.User;assembly=DCS.User"
         xmlns:dcs="http://schemas.verheyden-tech.com/2025/xaml/presentation"
         xmlns:resource="clr-namespace:DCS.Resource;assembly=DCS.Resource"
@@ -37,7 +38,7 @@
         </Border>
 
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <telerik:RadComboBox Name="ServerComboBox" ItemsSource="{Binding Domains, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectionChanged="ServerComboBox_SelectionChanged" DisplayMemberPath="DomainName" MinWidth="150" Margin="5" TabIndex="3" BorderBrush="DarkGoldenrod" IsTextSearchEnabled="True" ClearSelectionButtonVisibility="Collapsed" CanKeyboardNavigationSelectItems="True" DropDownOpened="ServerComboBox_DropDownOpened" ClearSelectionButtonContent="Auswahl aufheben" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <telerik:RadComboBox Name="DomainComboBox" ItemsSource="{Binding Domains, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectionChanged="ServerComboBox_SelectionChanged" DisplayMemberPath="DomainName" MinWidth="150" Margin="5" TabIndex="3" BorderBrush="DarkGoldenrod" IsTextSearchEnabled="True" ClearSelectionButtonVisibility="Collapsed" CanKeyboardNavigationSelectItems="True" DropDownOpened="ServerComboBox_DropDownOpened" ClearSelectionButtonContent="Auswahl aufheben" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 <telerik:RadComboBox.EmptySelectionBoxTemplate>
                     <DataTemplate>
                         <TextBlock Text="Domain wählen" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Left" Background="{x:Null}"/>

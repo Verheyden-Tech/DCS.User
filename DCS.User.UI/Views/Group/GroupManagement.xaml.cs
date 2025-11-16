@@ -1,5 +1,5 @@
-﻿using DCS.CoreLib.BaseClass;
-using DCS.CoreLib.View;
+﻿using DCS.CoreLib.View;
+using DCS.Localization;
 using System.Collections.ObjectModel;
 using System.Windows;
 
@@ -8,8 +8,9 @@ namespace DCS.User.UI
     /// <summary>
     /// Interaction logic for GroupManagement.xaml
     /// </summary>
-    public partial class GroupManagement : DefaultAppControl
+    public partial class GroupManagement : DcsInternPage
     {
+        private readonly ILocalizationService localizationService = CommonServiceLocator.ServiceLocator.Current.GetInstance<ILocalizationService>();
         private readonly IGroupService groupService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IGroupService>();
 
         private ObservableCollection<Group> Groups { get; set; }
@@ -22,9 +23,15 @@ namespace DCS.User.UI
         {
             InitializeComponent();
 
+            Title = localizationService.Translate("GroupManagement");
+            DisplayName = localizationService.Translate("GroupManagement");
+            base.Name = "GroupManagement";
+            base.GroupName = "User";
+
             Groups = new ObservableCollection<Group>();
             Groups = groupService.GetAll();
             GroupGridView.ItemsSource = Groups;
+            GroupGridView.SelectionMode = System.Windows.Controls.SelectionMode.Multiple;
 
             var obj = new Group();
             viewModel = new GroupViewModel(obj);
@@ -43,10 +50,14 @@ namespace DCS.User.UI
 
         private void EditGroup_Click(object sender, RoutedEventArgs e)
         {
-            if (GroupGridView.SelectedItem is Group selectedGroup)
+            if (GroupGridView.SelectedItems != null)
             {
-                var editor = new GroupEditor(selectedGroup);
-                editor.ShowDialog();
+                var editor = new GroupEditor();
+                editor.AddPagingObjects(GroupGridView.SelectedItems);
+                if (editor.ShowDialog() == true) 
+                {
+                    GroupGridView.Items.Refresh();
+                }
             }
         }
 
@@ -54,7 +65,7 @@ namespace DCS.User.UI
         {
             if (GroupGridView.SelectedItem is Group selectedGroup)
             {
-                if (MessageBox.Show($"Möchten Sie die Rolle '{selectedGroup.Name}' wirklich löschen?", "Löschen bestätigen", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                if (MessageBox.Show(localizationService.Translate("ConfirmDeleteGroup") + $"{selectedGroup.Name}", localizationService.Translate("Delete"), MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
                     groupService.Delete(selectedGroup.Guid);
                     Groups.Remove(selectedGroup);

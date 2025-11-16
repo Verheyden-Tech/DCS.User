@@ -33,7 +33,7 @@ namespace DCS.User.UI
         /// the title of the editor. Additionally, the role's members are retrieved and assigned to the
         /// <c>RoleMember</c> property if available.</remarks>
         /// <param name="role">The role to be edited. Must not be <see langword="null"/>.</param>
-        public RoleEditor(Role role) : base(role)
+        public RoleEditor(Role role) : this()
         {
             viewModel = new RoleViewModel(role);
             this.DataContext = viewModel;

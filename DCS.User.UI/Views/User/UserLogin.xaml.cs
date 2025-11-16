@@ -1,4 +1,5 @@
 ﻿using DCS.CoreLib.View;
+using DCS.Localization;
 using DCS.Resource;
 using System.Globalization;
 using System.Windows;
@@ -12,6 +13,7 @@ namespace DCS.User.UI
     /// </summary>
     public partial class UserLogin : DefaultMainWindow
     {
+        private readonly ILocalizationService localizationService = CommonServiceLocator.ServiceLocator.Current.GetInstance<ILocalizationService>();
         private readonly IIconService iconService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IIconService>();
         private UserViewModel viewModel;
 
@@ -26,8 +28,12 @@ namespace DCS.User.UI
             viewModel = new UserViewModel(obj);
             DataContext = viewModel;
 
+            UserNameLoginTextBox.Text = localizationService.Translate("InputUsername");
+            PassWordLoginBox.WatermarkContent = localizationService.Translate("InputPassword");
+            DomainComboBox.EmptyText = localizationService.Translate("SelectDomain");
+
             if (Current.Domains != null && Current.Domains.Count > 0)
-                ServerComboBox.SelectedItem = Current.Domains.FirstOrDefault();
+                DomainComboBox.SelectedItem = Current.Domains.FirstOrDefault();
 
             var cultures = new List<CultureInfo>(CurrentSessionService.Instance.GetAvailableCultures());
             CurrentSessionService.Instance.SetCurrentUserCulture(cultures.Where(c => c.Name == "de-DE").First());
@@ -50,7 +56,7 @@ namespace DCS.User.UI
         {
             if (string.IsNullOrWhiteSpace(PassWordLoginBox.Password))
             {
-                MessageBox.Show("Bitte Passwort eingeben.", "Fehler beim Login", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(localizationService.Translate("PasswordCannotBeEmpty"), localizationService.Translate("Error"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -64,7 +70,7 @@ namespace DCS.User.UI
                     {
                         Current.Language = CurrentSessionService.Instance.CurrentUserCulture.DisplayName;
                         if (Current.UpdateUser())
-                            Log.LogManager.Singleton.Info($"User language preference updated to {Current.Language} for user account.", "UserLogin");
+                            Log.LogManager.Singleton.Info($"User language preference updated to {Current.Language} for user account.", $"{LoginButton_Click}");
                     }
                 }
             }
@@ -75,7 +81,7 @@ namespace DCS.User.UI
                 {
                     Current.KeepLoggedIn = true;
                     if (Current.UpdateUser())
-                        Log.LogManager.Singleton.Warning($"User chose to keep logged in for user account. Keep logged in flag succesful setted.", "UserLogin");
+                        Log.LogManager.Singleton.Warning($"User chose to keep logged in for user account. Keep logged in flag succesful setted.", $"{LoginButton_Click}");
                 }
 
                 this.DialogResult = true;
@@ -83,8 +89,8 @@ namespace DCS.User.UI
             }
             else
             {
-                MessageBox.Show("Login nicht erfolgreich. Bitte überprüfen Sie ihre Anmeldedaten.", "Fehler beim Login", MessageBoxButton.OK, MessageBoxImage.Error);
-                Log.LogManager.Singleton.Warning($"Failed login attempt for user account", "UserLogin");
+                MessageBox.Show(localizationService.Translate("ErrorLogin"), localizationService.Translate("Error"), MessageBoxButton.OK, MessageBoxImage.Error);
+                Log.LogManager.Singleton.Warning($"Failed login attempt for user account", $"{LoginButton_Click}");
                 return;
             }
         }
@@ -100,7 +106,7 @@ namespace DCS.User.UI
                     {
                         Current.KeepLoggedIn = true;
                         if (Current.UpdateUser())
-                            Log.LogManager.Singleton.Warning($"New crated user chose to keep logged in for user account. Keep logged in flag succesful set.", "UserRegistration");
+                            Log.LogManager.Singleton.Warning($"New crated user chose to keep logged in for user account. Keep logged in flag succesful set.", $"{RegistrateButton_Click}");
                     }
 
                     this.DialogResult = true;
@@ -109,7 +115,7 @@ namespace DCS.User.UI
             }
             else
             {
-                MessageBox.Show("Bitte Domain wählen vor der registrierung.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(localizationService.Translate("SelectDomainBeforeRegister"), localizationService.Translate("Error"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
         }
@@ -122,7 +128,7 @@ namespace DCS.User.UI
             }
             if (e.Key == Key.Escape)
             {
-                if (MessageBox.Show("Möchten Sie DCS wirklich schließen?", "DCS beenden?", MessageBoxButton.OKCancel, MessageBoxImage.Warning) == MessageBoxResult.OK)
+                if (MessageBox.Show(localizationService.Translate("CloseMessage"), localizationService.Translate("Exit"), MessageBoxButton.OKCancel, MessageBoxImage.Warning) == MessageBoxResult.OK)
                 {
                     this.DialogResult = false;
                     this.Close();
@@ -147,7 +153,7 @@ namespace DCS.User.UI
 
         private void ServerComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            var domain = Current.Domains.FirstOrDefault(d => d.DomainName == ServerComboBox.Text);
+            var domain = Current.Domains.FirstOrDefault(d => d.DomainName == DomainComboBox.Text);
 
             if (domain != null && domain.DomainName != CurrentSessionService.Instance.CurrentUserDomain)
             {
@@ -160,13 +166,20 @@ namespace DCS.User.UI
         {
             if (sender is RadComboBox box && box.SelectedItem is CultureInfo culture)
             {
+                if(!localizationService.SetLanguage(culture.Name))
+                {
+                    Log.LogManager.Singleton.Info($"Failed to changed application language to {culture.DisplayName}", "UserLogin");
+                    MessageBox.Show(localizationService.Translate("ErrorChangingLanguage") + $"{culture.DisplayName}", localizationService.Translate("Error"), MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
                 CurrentSessionService.Instance.SetCurrentUserCulture(culture);
                 LanguageFlagImage.Source = iconService.GetLanguageFlag(CurrentSessionService.Instance.CurrentUserCulture.TwoLetterISOLanguageName);
-                MessageBox.Show($"Die Sprache wurde geändert zu {culture.DisplayName}", "Sprache geändert", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(localizationService.Translate("LanguageChanged") + $"{culture.DisplayName}", localizationService.Translate("Success"), MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
-                MessageBox.Show("Fehler beim Ändern der Sprache.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(localizationService.Translate("FailedChangeLanguageTry"), localizationService.Translate("Error"), MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -178,8 +191,8 @@ namespace DCS.User.UI
                 LanguageFlagImage.Visibility = Visibility.Visible;
                 LanguageFlagImage.Source = iconService.GetLanguageFlag(CurrentSessionService.Instance.CurrentUserCulture.TwoLetterISOLanguageName);
                 CurrentLanguageTextBlock.Text = CurrentSessionService.Instance.CurrentUserCulture.DisplayName;
-                Log.LogManager.Singleton.Info($"User changed application language to {CurrentSessionService.Instance.CurrentUserCulture.DisplayName}", "UserLogin");
-                MessageBox.Show($"Die Sprache wurde geändert zu {CurrentSessionService.Instance.CurrentUserCulture.DisplayName}.", "Sprache geändert", MessageBoxButton.OK, MessageBoxImage.Information);
+                Log.LogManager.Singleton.Info($"User changed application language to {CurrentSessionService.Instance.CurrentUserCulture.DisplayName}", $"{ChangeUserLanguageButton_Click}");
+                MessageBox.Show(localizationService.Translate("LanguageChanged") + $"{CurrentSessionService.Instance.CurrentUserCulture.DisplayName}", localizationService.Translate("Success"), MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
     }

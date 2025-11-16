@@ -32,7 +32,7 @@ namespace DCS.User.UI
         /// it is used as the title of the editor. Additionally, the list of organisation members is retrieved and
         /// stored if available.</remarks>
         /// <param name="organisation">The organisation to be edited. Cannot be <see langword="null"/>.</param>
-        public OrganisationEditor(Organisation organisation) : base(organisation)
+        public OrganisationEditor(Organisation organisation) : this()
         {
             viewModel = new OrganisationViewModel(organisation);
             this.DataContext = viewModel;

@@ -1,4 +1,5 @@
 ﻿using DCS.CoreLib.View;
+using DCS.Localization;
 using DCS.Resource;
 using System.Windows;
 
@@ -9,6 +10,7 @@ namespace DCS.User.UI
     /// </summary>
     public partial class UserLanguageSelector : DefaultMainWindow 
     {
+        private readonly ILocalizationService localizationService = CommonServiceLocator.ServiceLocator.Current.GetInstance<ILocalizationService>();
         private UserViewModel viewModel;
 
         /// <summary>
@@ -40,9 +42,16 @@ namespace DCS.User.UI
         {
             if(e.Suggestion != null && e.Suggestion is System.Globalization.CultureInfo culture)
             {
-                CurrentSessionService.Instance.SetCurrentUserCulture(culture);
-                DialogResult = true;
-                Close();
+                if (localizationService.SetLanguage(culture.Name))
+                {
+                    CurrentSessionService.Instance.SetCurrentUserCulture(culture);
+                    DialogResult = true;
+                    Close();
+                }
+                
+                Log.LogManager.Singleton.Info($"Failed to changed application language to {culture.DisplayName}", "UserLanguageSelector");
+                MessageBox.Show(localizationService.Translate("ErrorChangingLanguage") + $"{culture.DisplayName}", localizationService.Translate("Error"), MessageBoxButton.OK);
+                return;
             }
         }
     }

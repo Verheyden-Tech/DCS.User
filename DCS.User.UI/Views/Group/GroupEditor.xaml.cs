@@ -29,7 +29,7 @@ namespace DCS.User.UI
         /// The data context is set to a new instance of <see cref="GroupViewModel"/> initialized with the specified
         /// group. Additionally, the group members are retrieved and stored if available.</remarks>
         /// <param name="group">The group to be edited. Must not be <see langword="null"/> and should have a valid name.</param>
-        public GroupEditor(Group group) : base(group)
+        public GroupEditor(Group group) : this()
         {
             if (!string.IsNullOrWhiteSpace(group.Name))
             {
