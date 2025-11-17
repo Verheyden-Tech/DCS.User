@@ -57,3 +57,4 @@ bld/
 /DCS.User.UI/obj/Debug/net7.0-windows/DCS.User.UI_MarkupCompile.i.cache
 /DCS.User.UI/obj/DCS.User.UI.csproj.nuget.dgspec.json
 /DCS.User.UI/obj/project.assets.json
+*.tmp
