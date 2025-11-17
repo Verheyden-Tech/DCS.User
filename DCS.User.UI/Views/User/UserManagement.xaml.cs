@@ -4,6 +4,7 @@ using DCS.OnBoarding.UI;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
+using Telerik.Windows.Controls;
 
 namespace DCS.User.UI
 {
@@ -17,7 +18,7 @@ namespace DCS.User.UI
 
         private ObservableCollection<User> Users { get; set; }
         private UserViewModel viewModel;
-        private DataGrid _userDataGrid;
+        private RadGridView _userDataGrid;
 
         /// <summary>
         /// Default constructor for <see cref="UserManagement"/>.
@@ -28,8 +29,9 @@ namespace DCS.User.UI
 
             Title = localizationService.Translate("UserManagement");
             DisplayName = localizationService.Translate("UserManagement");
-            base.Name = "UserManagement";
-            base.GroupName = "User";
+            Name = "UserManagement";
+            GroupName = "User";
+            _userDataGrid = UserDataGrid;
 
             Users = new ObservableCollection<User>();
             Users = userService.GetAll();
@@ -62,7 +64,7 @@ namespace DCS.User.UI
             {
                 try
                 {
-                    foreach (User user in _userDataGrid.SelectedItems)
+                    foreach (User user in UserDataGrid.SelectedItems)
                     {
                         if (!userService.Delete(user.Guid))
                         {
@@ -83,30 +85,19 @@ namespace DCS.User.UI
 
         private void EditUser_Click(object sender, RoutedEventArgs e)
         {
-            if (_userDataGrid.SelectedItems != null)
+            if (UserDataGrid.SelectedItems != null)
             {
-                var users = _userDataGrid.SelectedItems;
-
-                if (users != null)
+                var editor = new UserEditor();
+                editor.AddPagingObjects(UserDataGrid.SelectedItems);
+                if (editor.ShowDialog() == true)
                 {
-                    var editor = new UserEditor();
-                    editor.AddPagingObjects(users);
-                    if (editor.ShowDialog() == true)
-                    {
-                        _userDataGrid.Items.Refresh();
-                    }
+                    UserDataGrid.Items.Refresh();
                 }
-                else
-                {
-                    Log.LogManager.Singleton.Warning($"Users {users} failed to open to edit.", "UserEditor");
-
-                    var editor = new UserEditor(Current.Model);
-                    editor.AddPagingObjects(_userDataGrid.SelectedItems);
-                    if (editor.ShowDialog() == true)
-                    {
-                        _userDataGrid.Items.Refresh();
-                    }
-                }
+            }
+            else
+            {
+                Log.LogManager.Singleton.Warning($"Users failed to open to edit.", $"{EditUser_Click}");
+                return;
             }
         }
 
@@ -115,7 +106,7 @@ namespace DCS.User.UI
             var win = new UserEditor();
             if (win.ShowDialog() == true)
             {
-                _userDataGrid.Items.Refresh();
+                UserDataGrid.Items.Refresh();
             }
         }
     }

@@ -11,7 +11,7 @@
         xmlns:resource="clr-namespace:DCS.Resource;assembly=DCS.Resource"
         mc:Ignorable="d" d:DataContext="{d:DesignInstance local:UserViewModel}"
         WindowStartupLocation="CenterScreen" KeyDown="DefaultMainWindow_KeyDown"
-        Title="DCS - Login" Height="350" Width="600">
+        Title="DCS - Login" Height="370" Width="620">
 
     <Grid Margin="10">
 
@@ -29,13 +29,9 @@
 
         <Image x:Name="DCS_Label_Image" Grid.Row="0" Grid.Column="1" Source="/DCS.User;component/Resources/Images/DCS_LoginLabel_500x64.png" Height="64" Width="250" Stretch="Uniform" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
-        <Border Grid.Row="1" Grid.Column="1" Margin="5" BorderBrush="DarkGoldenrod" BorderThickness="1" CornerRadius="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            <telerik:RadWatermarkTextBox x:Name="UserNameLoginTextBox" WatermarkContent="Benutzername eingeben" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" TabIndex="1" BorderBrush="{x:Null}" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        </Border>
+        <telerik:RadWatermarkTextBox x:Name="UserNameLoginTextBox" Grid.Row="1" Grid.Column="1" Margin="5" WatermarkContent="Benutzername eingeben" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" TabIndex="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
-        <Border Grid.Row="2" Grid.Column="1" Margin="5" BorderBrush="DarkGoldenrod" BorderThickness="1" CornerRadius="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            <telerik:RadPasswordBox x:Name="PassWordLoginBox" Grid.Row="2" Grid.Column="1" WatermarkContent="Passwort eingeben" TabIndex="2" BorderBrush="{x:Null}" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        </Border>
+        <telerik:RadPasswordBox x:Name="PassWordLoginBox" Grid.Row="2" Grid.Column="1" Margin="5" WatermarkContent="Passwort eingeben" TabIndex="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <telerik:RadComboBox Name="DomainComboBox" ItemsSource="{Binding Domains, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectionChanged="ServerComboBox_SelectionChanged" DisplayMemberPath="DomainName" MinWidth="150" Margin="5" TabIndex="3" BorderBrush="DarkGoldenrod" IsTextSearchEnabled="True" ClearSelectionButtonVisibility="Collapsed" CanKeyboardNavigationSelectItems="True" DropDownOpened="ServerComboBox_DropDownOpened" ClearSelectionButtonContent="Auswahl aufheben" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
@@ -57,7 +53,7 @@
             <Border Margin="5" Width="0.5" Background="{x:Null}" BorderBrush="DarkGoldenrod" BorderThickness="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
             <telerik:RadButton x:Name="ChangeUserLanguageButton" Foreground="Gray" Margin="2" Background="{x:Null}" BorderBrush="{x:Null}" Content="Sprache ändern.." FontSize="12" Click="ChangeUserLanguageButton_Click" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
         </StackPanel>
-        
+
         <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Stretch">
             <Button x:Name="LoginButton" Click="LoginButton_Click" Content="Anmelden" Margin="2" FontSize="12" Background="{x:Null}" BorderBrush="{x:Null}" TabIndex="6" Foreground="#b8860b" Style="{DynamicResource ButtonAcc/Dec}"/>
             <TextBlock Text="oder" FontSize="6" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2" FontWeight="ExtraLight"/>

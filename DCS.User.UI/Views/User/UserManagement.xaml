@@ -48,7 +48,7 @@
         <telerik:RadAutoSuggestBox x:Name="SearchUserBox" Grid.Row="0" Grid.Column="0" WatermarkContent="Benutzer suchen.." ItemsSource="{Binding}" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <telerik:RadButton Grid.Row="0" Grid.Column="1" x:Name="CreateNewUserButton" CornerRadius="5" Content="Neuen Benutzer anlegen" Click="NewUser_Click" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
-        <telerik:RadGridView x:Name="UserDataGrid" ItemsSource="{Binding Collection, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" AutoGenerateColumns="False" IsReadOnly="True">
+        <telerik:RadGridView x:Name="UserDataGrid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Collection, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectionMode="Multiple" AutoGenerateColumns="False" IsReadOnly="True">
             <telerik:RadGridView.Columns>
                 <telerik:GridViewDataColumn Header="Benutzername" DataMemberBinding="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="*"/>
                 <telerik:GridViewDataColumn Header="Domain" DataMemberBinding="{Binding Domain, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="*"/>

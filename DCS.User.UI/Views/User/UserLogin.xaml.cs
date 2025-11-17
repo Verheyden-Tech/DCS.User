@@ -29,7 +29,6 @@ namespace DCS.User.UI
             DataContext = viewModel;
 
             UserNameLoginTextBox.Text = localizationService.Translate("InputUsername");
-            PassWordLoginBox.WatermarkContent = localizationService.Translate("InputPassword");
             DomainComboBox.EmptyText = localizationService.Translate("SelectDomain");
 
             if (Current.Domains != null && Current.Domains.Count > 0)
