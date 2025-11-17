@@ -88,7 +88,7 @@ namespace DCS.User.UI
             if (UserDataGrid.SelectedItems != null)
             {
                 var editor = new UserEditor();
-                editor.AddPagingObjects(UserDataGrid.SelectedItems);
+                editor.Edit(UserDataGrid.SelectedItems);
                 if (editor.ShowDialog() == true)
                 {
                     UserDataGrid.Items.Refresh();
