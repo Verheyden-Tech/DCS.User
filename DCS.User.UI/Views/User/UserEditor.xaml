@@ -7,7 +7,7 @@
                          xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
                          xmlns:dcs="http://schemas.verheyden-tech.com/2025/xaml/presentation"
                          mc:Ignorable="d" d:DataContext="{d:DesignInstance local:UserViewModel}"
-        Title="Neuen Benutzer erstellen" Height="250" Width="400" WindowStartupLocation="CenterScreen">
+        Title="Neuen Benutzer erstellen" Height="300" Width="500" WindowStartupLocation="CenterScreen">
 
     <Grid Background="White" Margin="5">
 
