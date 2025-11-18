@@ -25,13 +25,12 @@ namespace DCS.User.UI
 
             Title = localizationService.Translate("GroupManagement");
             DisplayName = localizationService.Translate("GroupManagement");
-            base.Name = "GroupManagement";
-            base.GroupName = "User";
+            Name = "GroupManagement";
+            GroupName = "User";
 
             Groups = new ObservableCollection<Group>();
             Groups = groupService.GetAll();
             GroupGridView.ItemsSource = Groups;
-            GroupGridView.SelectionMode = System.Windows.Controls.SelectionMode.Multiple;
 
             var obj = new Group();
             viewModel = new GroupViewModel(obj);
@@ -40,11 +39,10 @@ namespace DCS.User.UI
 
         private void NewGroup_Click(object sender, RoutedEventArgs e)
         {
-            var newGroup = new Group();
-            var editor = new GroupEditor(newGroup);
+            var editor = new GroupEditor();
             if (editor.ShowDialog() == true)
             {
-                Groups.Add(newGroup);
+                GroupGridView.Items.Refresh();
             }
         }
 
@@ -53,7 +51,7 @@ namespace DCS.User.UI
             if (GroupGridView.SelectedItems != null)
             {
                 var editor = new GroupEditor();
-                editor.AddPagingObjects(GroupGridView.SelectedItems);
+                editor.Edit(GroupGridView.SelectedItems);
                 if (editor.ShowDialog() == true) 
                 {
                     GroupGridView.Items.Refresh();
@@ -63,12 +61,18 @@ namespace DCS.User.UI
 
         private void DeleteGroup_Click(object sender, RoutedEventArgs e)
         {
-            if (GroupGridView.SelectedItem is Group selectedGroup)
+            if (GroupGridView.SelectedItems != null)
             {
-                if (MessageBox.Show(localizationService.Translate("ConfirmDeleteGroup") + $"{selectedGroup.Name}", localizationService.Translate("Delete"), MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                if (MessageBox.Show(localizationService.Translate("ConfirmDeleteGroup"), localizationService.Translate("Delete"), MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
-                    groupService.Delete(selectedGroup.Guid);
-                    Groups.Remove(selectedGroup);
+                    foreach(Group group in GroupGridView.SelectedItems)
+                    {
+                        if (!groupService.Delete(group.Guid))
+                        {
+                            MessageBox.Show(localizationService.Translate("ErrorOccurred"), localizationService.Translate("Error"), MessageBoxButton.OK, MessageBoxImage.Error);
+                            return;
+                        }
+                    }
                 }
             }
         }

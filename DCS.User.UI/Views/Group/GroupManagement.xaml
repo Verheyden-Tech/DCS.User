@@ -6,7 +6,7 @@
         xmlns:dcs="http://schemas.verheyden-tech.com/2025/xaml/presentation"
         xmlns:local="clr-namespace:DCS.User.UI"
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
-        mc:Ignorable="d"
+        mc:Ignorable="d" d:DataContext="{d:DesignInstance Type=local:GroupViewModel}"
         d:DesignHeight="450" d:DesignWidth="800">
     
     <Grid Background="White">
@@ -45,15 +45,15 @@
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
-        <telerik:RadAutoCompleteBox x:Name="SearchUserGroupBox" Grid.Row="0" Grid.Column="0" WatermarkContent="Gruppe suchen.." Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        <telerik:RadButton Grid.Row="0" Grid.Column="1" x:Name="CreateNewGroupButton" Content="Neue Gruppe erstellen" CornerRadius="5" Click="CreateNewGroupButton_Click" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <telerik:RadAutoCompleteBox x:Name="SearchUserGroupBox" Grid.Row="0" Grid.Column="0" WatermarkContent="Gruppe suchen.." Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <telerik:RadButton Grid.Row="0" Grid.Column="1" x:Name="CreateNewGroupButton" Content="Neue Gruppe erstellen" CornerRadius="5" Click="CreateNewGroupButton_Click" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
-        <telerik:RadGridView x:Name="GroupGridView" ShowGroupPanel="True" GroupPanelBackground="White" Margin="5" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <telerik:RadGridView x:Name="GroupGridView" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ShowGroupPanel="True" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Multiple" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <telerik:RadGridView.Columns>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding Ident}" Header="ID" MinWidth="70"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="Gruppenname" MinWidth="150"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding Description}" Header="Beschreibung" MinWidth="200"/>
-                <telerik:GridViewCheckBoxColumn DataMemberBinding="{Binding IsActive}" Header="Aktiv" MinWidth="50"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Ident, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Header="ID" Width="50"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Header="Gruppenname" Width="*"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Description, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Header="Beschreibung" Width="*"/>
+                <telerik:GridViewCheckBoxColumn DataMemberBinding="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Header="Aktiv" MinWidth="50"/>
             </telerik:RadGridView.Columns>
         </telerik:RadGridView>
 

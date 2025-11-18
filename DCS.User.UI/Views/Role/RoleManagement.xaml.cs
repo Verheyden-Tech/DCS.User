@@ -26,13 +26,12 @@ namespace DCS.User.UI
 
             Title = localizationService.Translate("RoleManagement");
             DisplayName = localizationService.Translate("RoleManagement");
-            base.Name = "RoleManagement";
-            base.GroupName = "User";
+            Name = "RoleManagement";
+            GroupName = "User";
 
             Roles = new ObservableCollection<Role>();
             Roles = roleService.GetAll();
             RoleGridView.ItemsSource = Roles;
-            RoleGridView.SelectionMode = System.Windows.Controls.SelectionMode.Multiple;
 
             var obj = new Role();
             viewModel = new RoleViewModel(obj);
@@ -46,31 +45,40 @@ namespace DCS.User.UI
 
         private void NewRole_Click(object sender, RoutedEventArgs e)
         {
-            var newRole = new Role();
-            var editor = new RoleEditor(newRole);
+            var editor = new RoleEditor();
             if (editor.ShowDialog() == true)
             {
-                Roles.Add(newRole);
+                RoleGridView.Items.Refresh();
             }
         }
 
         private void EditRole_Click(object sender, RoutedEventArgs e)
         {
-            if (RoleGridView.SelectedItem is Role selectedRole)
+            if(RoleGridView.SelectedItems != null)
             {
-                var editor = new RoleEditor(selectedRole);
-                editor.ShowDialog();
+                var editor = new RoleEditor();
+                editor.Edit(RoleGridView.SelectedItems);
+                if (editor.ShowDialog() == true)
+                {
+                    RoleGridView.Items.Refresh();
+                }
             }
         }
 
         private void DeleteRole_Click(object sender, RoutedEventArgs e)
         {
-            if (RoleGridView.SelectedItem is Role selectedRole)
+            if (RoleGridView.SelectedItems != null)
             {
-                if (MessageBox.Show($"Möchten Sie die Rolle '{selectedRole.Name}' wirklich löschen?", "Löschen bestätigen", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                if (MessageBox.Show($"Möchten Sie die Rolle/-n wirklich löschen?", "Löschen bestätigen", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
-                    roleService.Delete(selectedRole.Guid);
-                    Roles.Remove(selectedRole);
+                    foreach (Role role in RoleGridView.SelectedItems)
+                    {
+                        if (!roleService.Delete(role.Guid))
+                        {
+                            MessageBox.Show(localizationService.Translate("ErrorOccurred") + $": {role.Name}", localizationService.Translate("Error"), MessageBoxButton.OK, MessageBoxImage.Error);
+                            return;
+                        }
+                    }
                 }
             }
         }

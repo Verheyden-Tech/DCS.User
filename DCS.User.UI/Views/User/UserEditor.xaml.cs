@@ -25,9 +25,6 @@ namespace DCS.User.UI
         {
             InitializeComponent();
 
-            UsernameTextBox.WatermarkContent = localizationService.Translate("InputUsername");
-            UserPasswordBox.WatermarkContent = localizationService.Translate("InputPassword");
-
             var obj = new User();
             viewModel = new UserViewModel(obj);
             this.DataContext = viewModel;

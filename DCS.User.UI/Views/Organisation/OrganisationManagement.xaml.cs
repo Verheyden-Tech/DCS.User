@@ -27,16 +27,15 @@ namespace DCS.User.UI
 
             Title = localizationService.Translate("OrganisationManagement");
             DisplayName = localizationService.Translate("OrganisationManagement");
-            base.Name = "OrganisationManagement";
-            base.GroupName = "User";
+            Name = "OrganisationManagement";
+            GroupName = "User";
 
             Organisations = organisationService.GetAll();
             OrganisationGridView.ItemsSource = Organisations;
-            OrganisationGridView.SelectionMode = System.Windows.Controls.SelectionMode.Multiple;
 
             var obj = new Organisation();
             viewModel = new OrganisationViewModel(obj);
-            this.DataContext = viewModel;
+            DataContext = viewModel;
         }
 
         private void GenerateOrganisations_Click(object sender, RoutedEventArgs e)
@@ -56,7 +55,7 @@ namespace DCS.User.UI
             if (OrganisationGridView.SelectedItems != null)
             {
                 var editor = new OrganisationEditor();
-                editor.AddPagingObjects(OrganisationGridView.SelectedItems);
+                editor.Edit(OrganisationGridView.SelectedItems);
                 if(editor.ShowDialog() == true)
                     OrganisationGridView.Items.Refresh();
             }
@@ -64,12 +63,18 @@ namespace DCS.User.UI
 
         private void DeleteOrganisation_Click(object sender, RoutedEventArgs e)
         {
-            if (OrganisationGridView.SelectedItem is Organisation selectedOrganisation)
+            if (OrganisationGridView.SelectedItems != null)
             {
-                if (MessageBox.Show(localizationService.Translate("ConfirmDeleteOrganisation") + $"{selectedOrganisation.Name}", localizationService.Translate("Delete"), MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                if (MessageBox.Show(localizationService.Translate("ConfirmDeleteOrganisation"), localizationService.Translate("Delete"), MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
-                    organisationService.Delete(selectedOrganisation.Guid);
-                    Organisations.Remove(selectedOrganisation);
+                    foreach(Organisation organisation in OrganisationGridView.SelectedItems)
+                    {
+                        if (!organisationService.Delete(organisation.Guid))
+                        {
+                            MessageBox.Show(localizationService.Translate("ErrorOccurred") + $": {organisation.Name}", localizationService.Translate("Error"), MessageBoxButton.OK, MessageBoxImage.Error);
+                            return;
+                        }
+                    }
                 }
             }
         }
