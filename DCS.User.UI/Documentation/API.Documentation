@@ -1148,6 +1148,12 @@
             visible, and the profile picture display is hidden.</description> </item> </list></remarks>
             <param name="user">The <see cref="T:DCS.User.User"/> object to be edited. This parameter must not be null.</param>
         </member>
+        <member name="M:DCS.User.UI.UserEditor.#ctor(DCS.User.UI.UserViewModel)">
+            <summary>
+            Initializes a new instance of the UserEditor class with the specified user view model.
+            </summary>
+            <param name="viewModel">The UserViewModel that provides data and commands for the editor. Cannot be null.</param>
+        </member>
         <member name="P:DCS.User.UI.UserEditor.Current">
             <summary>
             Returns the current instance of the <see cref="T:DCS.User.UI.UserViewModel"/> class as DataContext.

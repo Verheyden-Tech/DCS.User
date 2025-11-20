@@ -9,7 +9,7 @@
                          mc:Ignorable="d" d:DataContext="{d:DesignInstance local:UserViewModel}"
         Title="Neuen Benutzer erstellen" Height="350" Width="500" WindowStartupLocation="CenterScreen">
 
-    <Grid Background="White" Margin="5">
+    <Grid Background="White">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

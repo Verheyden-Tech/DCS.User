@@ -50,7 +50,6 @@
 
         <telerik:RadGridView x:Name="GroupGridView" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ShowGroupPanel="True" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Multiple" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <telerik:RadGridView.Columns>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding Ident, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Header="ID" Width="50"/>
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Header="Gruppenname" Width="*"/>
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding Description, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Header="Beschreibung" Width="*"/>
                 <telerik:GridViewCheckBoxColumn DataMemberBinding="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Header="Aktiv" MinWidth="50"/>

@@ -71,7 +71,7 @@ namespace DCS.User.UI
         /// <param name="user">The user model used to initialize the view model. Cannot be <see langword="null"/>.</param>
         public UserViewModel(User user) : base(user)
         {
-            this.Model = user;
+            Model = user;
 
             AvialableLanguages = CurrentSessionService.Instance.GetAvailableCultures();
 

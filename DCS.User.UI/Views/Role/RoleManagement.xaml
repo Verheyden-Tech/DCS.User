@@ -51,10 +51,9 @@
             </telerik:RadGridView.ContextMenu>
 
             <telerik:RadGridView.Columns>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding Ident, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Header="ID" MinWidth="70"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Header="Rollenname" MinWidth="150"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding Description, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Header="Beschreibung" MinWidth="200"/>
-                <telerik:GridViewCheckBoxColumn DataMemberBinding="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Header="Aktiv" MinWidth="50"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Header="Rollenname" Width="*"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Description, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Header="Beschreibung" Width="*"/>
+                <telerik:GridViewCheckBoxColumn DataMemberBinding="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Header="Aktiv" Width="50"/>
             </telerik:RadGridView.Columns>
 
         </telerik:RadGridView>

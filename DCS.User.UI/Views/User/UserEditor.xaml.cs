@@ -1,4 +1,5 @@
-﻿using DCS.CoreLib.View;
+﻿using DCS.CoreLib.BaseClass;
+using DCS.CoreLib.View;
 using DCS.Localization;
 using DCS.Resource;
 using System.Windows;
@@ -14,7 +15,7 @@ namespace DCS.User.UI
     {
         private readonly ILocalizationService localizationService = CommonServiceLocator.ServiceLocator.Current.GetInstance<ILocalizationService>();
         private readonly IIconService iconService = CommonServiceLocator.ServiceLocator.Current.GetInstance<IIconService>();
-        private UserViewModel viewModel;
+        private UserViewModel _viewModel;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UserEditor"/> class.
@@ -26,8 +27,8 @@ namespace DCS.User.UI
             InitializeComponent();
 
             var obj = new User();
-            viewModel = new UserViewModel(obj);
-            this.DataContext = viewModel;
+            _viewModel = new UserViewModel(obj);
+            this.DataContext = _viewModel;
         }
 
         /// <summary>
@@ -45,8 +46,8 @@ namespace DCS.User.UI
         /// <param name="user">The <see cref="User"/> object to be edited. This parameter must not be null.</param>
         public UserEditor(User user) : this()
         {
-            viewModel = new UserViewModel(user);
-            DataContext = viewModel;
+            _viewModel = new UserViewModel(user);
+            DataContext = _viewModel;
 
             if (!string.IsNullOrWhiteSpace(user.UserName))
             {
@@ -65,6 +66,16 @@ namespace DCS.User.UI
                 UserProfilePicture.Visibility = Visibility.Visible;
                 UserProfilePicture.Source = iconService.GetUserProfilePicture(user.UserName);
             }
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the UserEditor class with the specified user view model.
+        /// </summary>
+        /// <param name="viewModel">The UserViewModel that provides data and commands for the editor. Cannot be null.</param>
+        public UserEditor(UserViewModel viewModel) : this()
+        {
+            _viewModel = viewModel;
+            DataContext = _viewModel;
         }
 
         /// <summary>
