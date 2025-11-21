@@ -1,9 +1,11 @@
-﻿namespace DCS.User
+﻿using DCS.CoreLib.BaseClass;
+
+namespace DCS.User
 {
     /// <summary>
     /// Represents the user role class.
     /// </summary>
-    public class Role
+    public class Role : ModelBase<Guid>
     {
         /// <summary>
         /// Default constructor for <see cref="Role"/> instances.
@@ -11,29 +13,14 @@
         public Role() { }
 
         /// <summary>
-        /// Role unique identifier.
-        /// </summary>
-        public Guid Guid { get; set; }
-
-        /// <summary>
         /// Role ident.
         /// </summary>
         public int Ident { get; set; }
 
         /// <summary>
-        /// Role name.
-        /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
         /// Role description.
         /// </summary>
         public string Description { get; set; }
-
-        /// <summary>
-        /// Role is active flag.
-        /// </summary>
-        public bool IsActive { get; set; }
 
         /// <summary>
         /// Role creation date.

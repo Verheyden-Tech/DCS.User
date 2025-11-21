@@ -124,29 +124,14 @@
             Default constructor for <see cref="T:DCS.User.Group"/> instances.
             </summary>
         </member>
-        <member name="P:DCS.User.Group.Guid">
-            <summary>
-            Group unique identifier.
-            </summary>
-        </member>
         <member name="P:DCS.User.Group.Ident">
             <summary>
             Group ident.
             </summary>
         </member>
-        <member name="P:DCS.User.Group.Name">
-            <summary>
-            Group name.
-            </summary>
-        </member>
         <member name="P:DCS.User.Group.Description">
             <summary>
             Group description.
-            </summary>
-        </member>
-        <member name="P:DCS.User.Group.IsActive">
-            <summary>
-            Group is active flag.
             </summary>
         </member>
         <member name="P:DCS.User.Group.CreationDate">
@@ -169,29 +154,14 @@
             Default constructor for <see cref="T:DCS.User.Organisation"/> instances.
             </summary>
         </member>
-        <member name="P:DCS.User.Organisation.Guid">
-            <summary>
-            Organisation unique identifier.
-            </summary>
-        </member>
         <member name="P:DCS.User.Organisation.Ident">
             <summary>
             Organisation ident.
             </summary>
         </member>
-        <member name="P:DCS.User.Organisation.Name">
-            <summary>
-            Organisation name.
-            </summary>
-        </member>
         <member name="P:DCS.User.Organisation.Description">
             <summary>
             Organisation description.
-            </summary>
-        </member>
-        <member name="P:DCS.User.Organisation.IsActive">
-            <summary>
-            Organisation is active flag.
             </summary>
         </member>
         <member name="P:DCS.User.Organisation.CreationDate">
@@ -214,29 +184,14 @@
             Default constructor for <see cref="T:DCS.User.Role"/> instances.
             </summary>
         </member>
-        <member name="P:DCS.User.Role.Guid">
-            <summary>
-            Role unique identifier.
-            </summary>
-        </member>
         <member name="P:DCS.User.Role.Ident">
             <summary>
             Role ident.
             </summary>
         </member>
-        <member name="P:DCS.User.Role.Name">
-            <summary>
-            Role name.
-            </summary>
-        </member>
         <member name="P:DCS.User.Role.Description">
             <summary>
             Role description.
-            </summary>
-        </member>
-        <member name="P:DCS.User.Role.IsActive">
-            <summary>
-            Role is active flag.
             </summary>
         </member>
         <member name="P:DCS.User.Role.CreationDate">
@@ -259,11 +214,6 @@
             Default constructor for <see cref="T:DCS.User.User"/> instances.
             </summary>
         </member>
-        <member name="P:DCS.User.User.Guid">
-            <summary>
-            User unique identifier.
-            </summary>
-        </member>
         <member name="P:DCS.User.User.UserName">
             <summary>
             User name.
@@ -277,11 +227,6 @@
         <member name="P:DCS.User.User.Domain">
             <summary>
             User domain name.
-            </summary>
-        </member>
-        <member name="P:DCS.User.User.IsActive">
-            <summary>
-            User is active flag.
             </summary>
         </member>
         <member name="P:DCS.User.User.KeepLoggedIn">
@@ -334,11 +279,6 @@
             Initializes a new instance of the <see cref="T:DCS.User.UserAssignement"/> class.
             </summary>
         </member>
-        <member name="P:DCS.User.UserAssignement.Guid">
-            <summary>
-            Gets or sets the unique identifier for the assignement.
-            </summary>
-        </member>
         <member name="P:DCS.User.UserAssignement.UserGuid">
             <summary>
             Gets or sets the unique identifier for the user to assign.
@@ -357,11 +297,6 @@
         <member name="P:DCS.User.UserAssignement.RoleGuid">
             <summary>
             Gets or sets the unique identifier for the role to assign to.
-            </summary>
-        </member>
-        <member name="P:DCS.User.UserAssignement.IsActive">
-            <summary>
-            Gets or sets a value indicating whether the assignement is currently active.
             </summary>
         </member>
         <member name="P:DCS.User.UserAssignement.CreationDate">
@@ -392,11 +327,6 @@
         <member name="M:DCS.User.UserDomain.#ctor">
             <summary>
             Default constructor for <see cref="T:DCS.User.UserDomain"/> class.
-            </summary>
-        </member>
-        <member name="P:DCS.User.UserDomain.Guid">
-            <summary>
-            Gets or sets the unique identifier for the domain.
             </summary>
         </member>
         <member name="P:DCS.User.UserDomain.DomainName">

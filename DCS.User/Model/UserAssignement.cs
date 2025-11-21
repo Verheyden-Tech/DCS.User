@@ -1,19 +1,16 @@
-﻿namespace DCS.User
+﻿using DCS.CoreLib.BaseClass;
+
+namespace DCS.User
 {
     /// <summary>
     /// Represents the assignment of a user to a group, organisation, and/or role.
     /// </summary>
-    public class UserAssignement
+    public class UserAssignement : ModelBase<Guid>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UserAssignement"/> class.
         /// </summary>
         public UserAssignement() { }
-
-        /// <summary>
-        /// Gets or sets the unique identifier for the assignement.
-        /// </summary>
-        public Guid Guid { get; set; }
 
         /// <summary>
         /// Gets or sets the unique identifier for the user to assign.
@@ -34,11 +31,6 @@
         /// Gets or sets the unique identifier for the role to assign to.
         /// </summary>
         public Guid RoleGuid { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the assignement is currently active.
-        /// </summary>
-        public bool IsActive { get; set; }
 
         /// <summary>
         /// Gets or sets the date and time when the assignement was created.

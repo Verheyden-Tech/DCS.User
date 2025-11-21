@@ -1,19 +1,16 @@
-﻿namespace DCS.User
+﻿using DCS.CoreLib.BaseClass;
+
+namespace DCS.User
 {
     /// <summary>
     /// Represents the user class.
     /// </summary>
-    public class User
+    public class User : ModelBase<Guid>
     {
         /// <summary>
         /// Default constructor for <see cref="User"/> instances.
         /// </summary>
         public User() { }
-
-        /// <summary>
-        /// User unique identifier.
-        /// </summary>
-        public Guid Guid { get; set; }
 
         /// <summary>
         /// User name.
@@ -29,11 +26,6 @@
         /// User domain name.
         /// </summary>
         public string Domain { get; set; }
-
-        /// <summary>
-        /// User is active flag.
-        /// </summary>
-        public bool IsActive { get; set; }
 
         /// <summary>
         /// User keep logged in flag.

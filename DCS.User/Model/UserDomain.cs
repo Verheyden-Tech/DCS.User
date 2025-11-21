@@ -1,19 +1,16 @@
-﻿namespace DCS.User
+﻿using DCS.CoreLib.BaseClass;
+
+namespace DCS.User
 {
     /// <summary>
     /// Model for Active Directory user.
     /// </summary>
-    public class UserDomain
+    public class UserDomain : ModelBase<Guid>
     {
         /// <summary>
         /// Default constructor for <see cref="UserDomain"/> class.
         /// </summary>
         public UserDomain() { }
-
-        /// <summary>
-        /// Gets or sets the unique identifier for the domain.
-        /// </summary>
-        public Guid Guid { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the domain.

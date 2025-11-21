@@ -1,9 +1,11 @@
-﻿namespace DCS.User
+﻿using DCS.CoreLib.BaseClass;
+
+namespace DCS.User
 {
     /// <summary>
     /// Represents the user group class.
     /// </summary>
-    public class Group
+    public class Group : ModelBase<Guid>
     {
         /// <summary>
         /// Default constructor for <see cref="Group"/> instances.
@@ -11,29 +13,14 @@
         public Group() { }
 
         /// <summary>
-        /// Group unique identifier.
-        /// </summary>
-        public Guid Guid { get; set; }
-
-        /// <summary>
         /// Group ident.
         /// </summary>
         public int Ident { get; set; }
 
         /// <summary>
-        /// Group name.
-        /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
         /// Group description.
         /// </summary>
         public string Description { get; set; }
-
-        /// <summary>
-        /// Group is active flag.
-        /// </summary>
-        public bool IsActive { get; set; }
 
         /// <summary>
         /// Group creation date.
