@@ -1,11 +1,12 @@
-﻿using DCS.CoreLib.BaseClass;
+﻿using DCS.CoreLib;
+using DCS.CoreLib.BaseClass;
 
 namespace DCS.User
 {
     /// <summary>
-    /// Represents the user organisation class.
+    /// Represents an organization, including its identifier, description, and key dates.
     /// </summary>
-    public class Organisation : ModelBase<Guid>
+    public class Organisation : ModelBase, IEntity<Guid>
     {
         /// <summary>
         /// Default constructor for <see cref="Organisation"/> instances.

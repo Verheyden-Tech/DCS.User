@@ -1,11 +1,15 @@
-﻿using DCS.CoreLib.BaseClass;
+﻿using DCS.CoreLib;
+using DCS.CoreLib.BaseClass;
 
 namespace DCS.User
 {
     /// <summary>
-    /// Model for Active Directory user.
+    /// Represents a user domain and its associated subscription information.
     /// </summary>
-    public class UserDomain : ModelBase<Guid>
+    /// <remarks>The UserDomain class encapsulates details about a domain, including its name, subscription
+    /// status, license key, and subscription period. This class is typically used to manage and track domain-level
+    /// licensing and subscription data within an application.</remarks>
+    public class UserDomain : ModelBase, IEntity<Guid>
     {
         /// <summary>
         /// Default constructor for <see cref="UserDomain"/> class.

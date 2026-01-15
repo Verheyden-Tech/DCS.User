@@ -1,11 +1,16 @@
-﻿using DCS.CoreLib.BaseClass;
+﻿using DCS.CoreLib;
+using DCS.CoreLib.BaseClass;
 
 namespace DCS.User
 {
     /// <summary>
-    /// Represents the assignment of a user to a group, organisation, and/or role.
+    /// Represents an assignment of a user to a group, organization, and role, including membership and audit
+    /// information.
     /// </summary>
-    public class UserAssignement : ModelBase<Guid>
+    /// <remarks>Use this class to model the association between a user and their assigned group,
+    /// organization, and role within a system. The class also tracks membership duration and audit timestamps for
+    /// creation and updates. All identifiers are represented as GUIDs to ensure uniqueness across the system.</remarks>
+    public class UserAssignement : ModelBase, IEntity<Guid>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UserAssignement"/> class.

@@ -1,11 +1,17 @@
-﻿using DCS.CoreLib.BaseClass;
+﻿using DCS.CoreLib;
+using DCS.CoreLib.BaseClass;
 
 namespace DCS.User
 {
     /// <summary>
-    /// Represents the user class.
+    /// Represents a user account with authentication, profile, and administrative properties.
     /// </summary>
-    public class User : ModelBase<Guid>
+    /// <remarks>The User class encapsulates information related to user identity, authentication, and profile
+    /// preferences. It includes properties for user credentials, domain association, administrative rights, and profile
+    /// customization. This class can be used to manage user accounts in authentication and authorization scenarios, as
+    /// well as to store user-specific settings such as language and profile picture. Thread safety is not guaranteed;
+    /// if instances are shared across threads, callers should implement appropriate synchronization.</remarks>
+    public class User : ModelBase, IEntity<Guid>
     {
         /// <summary>
         /// Default constructor for <see cref="User"/> instances.

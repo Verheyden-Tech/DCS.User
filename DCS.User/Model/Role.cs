@@ -1,11 +1,12 @@
-﻿using DCS.CoreLib.BaseClass;
+﻿using DCS.CoreLib;
+using DCS.CoreLib.BaseClass;
 
 namespace DCS.User
 {
     /// <summary>
-    /// Represents the user role class.
+    /// Represents a user role within the system, including its identifier, description, and audit information.
     /// </summary>
-    public class Role : ModelBase<Guid>
+    public class Role : ModelBase, IEntity<Guid>
     {
         /// <summary>
         /// Default constructor for <see cref="Role"/> instances.

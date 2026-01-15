@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
-    <Version>1.0.8201.1</Version>
+    <Version>1.0.8301.1</Version>
     <ProjectGuid>{03409F8D-D061-46C7-BF50-2D0EC8A0C2B9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <Authors>Tobias Verheyden</Authors>
@@ -43,8 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CommonServiceLocator" Version="2.0.7" />
-    <PackageReference Include="DCS.Authorisation" Version="1.0.3801" />
-    <PackageReference Include="DCS.CoreLib" Version="1.1.3501" />
+    <PackageReference Include="DCS.Authorisation" Version="1.0.3901" />
+    <PackageReference Include="DCS.CoreLib" Version="1.1.3601" />
+    <PackageReference Include="DCS.CoreLib.BaseClass" Version="1.1.3801" />
     <PackageReference Include="DCS.Data" Version="1.0.2701" />
     <PackageReference Include="DCS.Localization" Version="1.0.501" />
     <PackageReference Include="DCS.Log" Version="1.0.901.5" />

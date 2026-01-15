@@ -1,11 +1,12 @@
-﻿using DCS.CoreLib.BaseClass;
+﻿using DCS.CoreLib;
+using DCS.CoreLib.BaseClass;
 
 namespace DCS.User
 {
     /// <summary>
-    /// Represents the user group class.
+    /// Represents a group entity with identifying information, description, and audit metadata.
     /// </summary>
-    public class Group : ModelBase<Guid>
+    public class Group : ModelBase, IEntity<Guid>
     {
         /// <summary>
         /// Default constructor for <see cref="Group"/> instances.
