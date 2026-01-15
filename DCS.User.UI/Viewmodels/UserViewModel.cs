@@ -1,6 +1,5 @@
 ﻿using DCS.CoreLib.BaseClass;
 using DCS.Resource;
-using DCS.User.Service;
 using Microsoft.Win32;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
