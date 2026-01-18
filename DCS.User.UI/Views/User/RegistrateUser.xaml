@@ -38,8 +38,8 @@
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Stretch" Grid.Row="5" Grid.Column="0" Margin="5">
-            <Button x:Name="RegistrateButton" Click="RegistrateButton_Click" Content="Registrieren" Margin="2" FontSize="12" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#b8860b" Style="{DynamicResource ButtonAcc/Dec}"/>
-            <Button x:Name="DeclineButton" Click="DeclineButton_Click" Content="Abbrechen" Margin="2" FontSize="12" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#b8860b" Style="{DynamicResource ButtonAcc/Dec}"/>
+            <telerik:RadButton x:Name="RegistrateButton" Click="RegistrateButton_Click" Content="Registrieren" Margin="2" FontSize="12" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#b8860b"/>
+            <telerik:RadButton x:Name="DeclineButton" Click="DeclineButton_Click" Content="Abbrechen" Margin="2" FontSize="12" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#b8860b"/>
         </StackPanel>
 
     </Grid>
