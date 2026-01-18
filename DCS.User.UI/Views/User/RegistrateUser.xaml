@@ -26,38 +26,20 @@
 
         <Image Source="/DCS.User;component/Resources/Images/DCS_LoginLabel_500x64.png" Grid.Row="0" Grid.Column="0" Height="64" Width="300" Margin="5" Stretch="Uniform" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
-        <telerik:RadWatermarkTextBox Grid.Row="1" Grid.Column="0" x:Name="UserNameTextBox" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Neuen Benutzernamen festlegen" MinWidth="200" Margin="5" Foreground="#b8860b" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <telerik:RadWatermarkTextBox Grid.Row="1" Grid.Column="0" x:Name="UserNameTextBox" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" WatermarkContent="Neuen Benutzernamen festlegen" MinWidth="200" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
-        <telerik:RadPasswordBox x:Name="PassWordBox" Grid.Row="2" Grid.Column="0" WatermarkContent="Neues Passwort festlegen" MinWidth="200" Margin="5" Foreground="#b8860b" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <telerik:RadPasswordBox x:Name="PassWordBox" Grid.Row="2" Grid.Column="0" WatermarkContent="Neues Passwort festlegen" MinWidth="200" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
-        <telerik:RadPasswordBox x:Name="PassWordRepeatBox" Grid.Row="3" Grid.Column="0" WatermarkContent="Neues Passwort wiederholen" MinWidth="200" Margin="5" Foreground="#b8860b" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <telerik:RadPasswordBox x:Name="PassWordRepeatBox" Grid.Row="3" Grid.Column="0" WatermarkContent="Neues Passwort wiederholen" MinWidth="200" Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Stretch" Grid.Row="4" Grid.Column="0">
-            <CheckBox x:Name="KeepLoggedInCheckBox" Content="Angemeldet bleiben" Margin="5" IsChecked="{Binding KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Foreground="#b8860b" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <CheckBox x:Name="IsAdminCheckBox" Content="Admin" Margin="5" IsChecked="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Foreground="#b8860b" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Stretch" Grid.Row="4" Grid.Column="0" Margin="5">
+            <CheckBox x:Name="KeepLoggedInCheckBox" Content="Angemeldet bleiben" Margin="2" IsChecked="{Binding KeepLoggedIn, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <CheckBox x:Name="IsAdminCheckBox" Content="Admin" Margin="2" IsChecked="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Stretch" Grid.Row="5" Grid.Column="0">
-            <telerik:RadButton x:Name="RegistrateButton" Click="RegistrateButton_Click" Content="Registrieren" Margin="5" BorderBrush="#b8860b" CornerRadius="5" FontSize="14">
-                <telerik:RadButton.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="White"/>
-                        <GradientStop Color="Gainsboro" Offset="0.209"/>
-                        <GradientStop Color="#FFD6D6D6"/>
-                        <GradientStop Color="#FF60ED2E" Offset="1"/>
-                    </LinearGradientBrush>
-                </telerik:RadButton.Background>
-            </telerik:RadButton>
-            <telerik:RadButton x:Name="DeclineButton" Click="DeclineButton_Click" Content="Abbrechen" Margin="5" BorderBrush="#b8860b" CornerRadius="5" FontSize="14">
-                <telerik:RadButton.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="White"/>
-                        <GradientStop Color="Gainsboro" Offset="0.309"/>
-                        <GradientStop Color="#FFEDEDED"/>
-                        <GradientStop Color="#FFE24040" Offset="1"/>
-                    </LinearGradientBrush>
-                </telerik:RadButton.Background>
-            </telerik:RadButton>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Stretch" Grid.Row="5" Grid.Column="0" Margin="5">
+            <telerik:RadButton x:Name="RegistrateButton" Click="RegistrateButton_Click" Content="Registrieren" Margin="2" FontSize="12" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#b8860b"/>
+            <telerik:RadButton x:Name="DeclineButton" Click="DeclineButton_Click" Content="Abbrechen" Margin="2" FontSize="12" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#b8860b"/>
         </StackPanel>
 
     </Grid>
